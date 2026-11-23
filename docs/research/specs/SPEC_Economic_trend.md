@@ -1,5 +1,9 @@
 # SPEC: Economic trend (step 3.1, Agent A, 2026-11-23)
 
+> **Status (2026-11-23): APPROVED WITH CORRECTIONS at step 3.2.** Written at step 3.1 (Opus, agent A); checked by a
+> fresh Opus agent (checks/CHECK_3.2_A.md); its 8 corrections to this spec are applied. Claim ids and quotes
+> script-checked (ALL OK). Nothing registered or run; open items go to step 3.4 (check section 4, NOTES_3.1_agent_A.md).
+
 Engine read: gm-1.2.2 / gm-2.0.2-candidate (gm/signals.py, book.py, config.py, panel.py, vol.py), read only. Nothing run.
 
 ## 0. Header
@@ -37,12 +41,12 @@ growth series computed in themes() (signals.py:205-210) never enters a score. St
 1. zchg(x) = (x(t) - x(t-12)) / standard deviation of that 12-month change over the last 120 months (at least 36),
    clipped to [-3, 3]; no mean removed.
 2. Inflation = zchg(OECD CPI year-on-year rate, FRED CPALTT01 fallback; euro uses Germany) lagged 1 month.
-3. Trade = zchg(-ln BIS nominal effective exchange rate; euro uses the euro-area index) lagged 1 month (positive =
+3. Trade = zchg(-ln BIS nominal effective exchange rate; the euro uses Germany's index NBDEBIS, because the euro's themes are Germany's, signals.py:255 with FX_MACRO, and the map BIS EZ -> XM at signals.py:43 is never reached) lagged 1 month (positive =
    currency weakening).
 4. Monetary = zchg(2-year yield at month end for US, DE, CA, AU, JP; else the OECD 3-month rate of the previous month;
    spliced, the 2-year yield first) with no further lag (positive = tightening).
 5. Risk = mean of (a) the 12-month sum of the first listed index's monthly excess return for cc (signals.py EQ_CC
-   order) over its 120-month standard deviation (at least 36) x sqrt(12), clipped to [-3, 3], and (b)
+   order; for DE that is eq_eu_stoxx50, not eq_de_dax, so Germany's risk theme, which also serves fx_eur and the commodity block, is the credit part alone until about 2003-07; CN uses eq_hk_hsi, KR eq_kr_kospi; the mean takes the parts present) over its 120-month standard deviation (at least 36) x sqrt(12), clipped to [-3, 3], and (b)
    zchg(-BAA10YM) lagged 1 month (US Baa spread for every country) (positive = falling risk aversion).
 6. Market mapping: equity index -> its country; bond or note -> its country (signals.py BD); currency -> local theme
    minus US theme (the currency's macro country); commodity -> equal mean of the US, DE, JP and CN themes.
@@ -105,7 +109,7 @@ turnover figure.
 
 ## 10. What would prove it wrong (design window)
 - The averaged pod's net return is zero or below in both eras.
-- If D5 makes the claim "slow reaction": no fading with delay (Sharpe at 3 months' delay at least half the no-delay
+- Not a design-window test (D5 picks the reading the design data agree with, so neither line can fail on 1975-2010); both lines bind the holdout report and the live record only. If D5 makes the claim "slow reaction": no fading with delay (Sharpe at 3 months' delay at least half the no-delay
   Sharpe) proves it wrong. If D5 makes it "a lasting state": a large fade with delay contradicts it.
 - The news reading fails if the profit comes only from the price-built parts. Reported split, closed here: the score is
   a mean of theme parts and never exceeds 1 in size, so each theme's part of the position is exact (part / themes
@@ -134,7 +138,7 @@ turnover figure.
 | Lags | CPI 1, NEER 1, credit 1, 3-month rate 1, yields 0 | engine convention (gm-1.2.0 audit) |
 | Commodity themes | equal mean US, DE, JP, CN | engine convention (paper: consumption weights) |
 | Pod share | 0.30 / 0.15 | 0.15 adopted after design results (protocol_batch0.md B0.2); book level |
-Chosen or kept after seeing design results, fixed: growth off, risk-theme content, one score per market = 3 (+1 book).
+Chosen or kept after seeing design results, fixed: growth off, risk-theme content, one score per market = 3 (+3 book: pod share, no risk scaler, no scenario limit; SPEC_Trend section 12).
 
 ## 13. Gating diagnostics
 - D5 (charter): Economic trend alone, net, positions 0, 1, 3, 6, 12 months late. Gate: Sharpe at 3 months' delay under
@@ -147,13 +151,13 @@ Chosen or kept after seeing design results, fixed: growth off, risk-theme conten
 | Item | Code fact | Measure at |
 |---|---|---|
 | Trend (C11) | risk theme = half the country index's own 12-month return, exact for 13 of 18 indexes | A2 report |
-| No growth theme (C1; T63, T75, T84, T97, T99, T106) | growth-based items (falling growth so long bonds; weak growth with hot inflation; large recession so short oil; China reopening) are NOT held | 3.2 re-checks each card claim |
-| Rising inflation: short stocks and bonds, long commodities | held directionally: EQ -1, FI -1, CM +1 on the 12-month change of realised CPI (not its level, not surveys) | card D2s at B2 |
+| No growth theme (C1; T63, T75, T84, T97, T99, T106) | growth-based items (falling growth so long bonds; weak growth with hot inflation; large recession so short oil; China reopening) are NOT held; nor is T75's cross-country bond spread (the pod is directional per market) | 3.2 re-checks each card claim |
+| Rising inflation: short stocks and bonds, long commodities | held directionally: EQ -1, FI -1, CM +1 on the 12-month change of the headline (all-items) CPI inflation rate (not its level, not surveys); core inflation is not an input, so a core-only rise (T84's core point, passed to this spec) is not held | card D2s at B2 |
 | T23 card 3 R1 (C2) | FX monetary theme = local minus US 12-month change of the 2-year yield or 3-month rate, sign +1: about one quarter of the currency score | card 3 D1 at B2, against this pod's positions |
 | T17 card 1 R5 (C3) | trade theme: EQ +1 after the trade-weighted currency weakens; FI -1, where R5's bond version buys | card 1 D2 |
 | T21 card 2 R2 (C4) | EQ monetary -1: short US equities after a 12-month rise in the US 2-year yield; partial overlap | card 2 D2 |
-| T16 card 1 R4, T20, T25 | FI inflation -1 and monetary -1 short bonds on rising inflation or yields | card D2s |
-| T32 card 4 R5 | falling CPI change -> FI long (inflation theme) | card 4 D2 |
+| T16 card 1 R4, T20, T25 | partial at most: FI inflation -1 and monetary -1 short bonds after a 12-month rise in inflation or yields, while these rules fire on levels (core inflation above 5% with Fed funds below it; real yield below a bar; priced easing with core PCE above 3), and T25 needs the 2-year yield 0.5 below Fed funds, a state the pod does not read | card D2s |
+| T32 card 4 R5 | falling CPI change -> FI long on both maturities (inflation theme), so only R5's long 2-year leg agrees; its short 10-year leg is opposite | card 4 D2 |
 | T10, T11 | strips would take FI signs | D1 extension |
 
 ## 15. Open choices

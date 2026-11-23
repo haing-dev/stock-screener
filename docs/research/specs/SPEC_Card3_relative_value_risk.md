@@ -1,5 +1,9 @@
 # Pod spec: Card 3, macro relative value and risk (Graham Capital, Elliott)
 
+> **Status (2026-11-23): APPROVED WITH CORRECTIONS at step 3.2.** Written at step 3.1 (Opus, agent C); checked by a
+> fresh Opus agent (checks/CHECK_3.2_C.md); its 7 corrections to this spec are applied. Claim ids and quotes
+> script-checked (ALL OK). Nothing registered or run; open items go to step 3.4 (check section 4, NOTES_3.1_agent_C.md).
+
 Step 3.1, Agent C, 2026-11-23. Nothing here is registered or run. Sources: CARD_1.4_relative_value_risk.md (final text,
 41 corrections applied) and its check; THESIS_REGISTER_1.5.md rows T23-T27; code read in gm/signals.py, gm/book.py,
 gm/config.py, gm/panel.py, gm/vol.py. "Closed here" marks a choice the notes left open.
@@ -58,7 +62,7 @@ R1 Hawkish currency.
    as the short leg, once inside the basket): stated as the card's rule (check C).
 6. Activity gate (version): on only while the highest minus the lowest FEDFUNDS of the last 12 months (t-11..t) is at
    least 0.50.
-7. Positions in the panel FX markets (long a currency = long fx_xxx).
+7. Positions in the panel FX markets (long a currency = long fx_xxx). A currency without a panel return that month (the euro before 1999; the panel has no mark) is left out of shape A's comparison and of shape B's ranking and baskets (closed here).
 
 R2 Steepener.
 1. S(t) = GS10(t) minus GS2(t) (lag 0).
@@ -77,7 +81,7 @@ R3 Cuts priced too early.
 
 R4 No alternative.
 1. E(t) = 100 x LSEG S&P 500 12-month forward EPS (@:USSP500, A12FE; digest) at month end divided by the S&P 500 index
-   level at the same month end (^GSPC close; closed here: the level the panel already reads).
+   level at the same month end (^GSPC month-end close; closed here: the Yahoo file the engine already reads in signals.equity_dy and daily.py; panel.py holds no S&P price level).
 2. On while E(t) minus TB3MS(t) < B, B = 1.0 or 0.0. Position: short eq_us_spx.
 3. Lag 0: the consensus value as of the month end (Datastream monthly with a month-end start date returns the last
    weekday; digest).
@@ -103,7 +107,7 @@ forecasts F1, F3-F6 go to the ledger; F2 and F7 are context only (claim text).
 
 | Market | Role | Earliest usable design month |
 |---|---|---|
-| fx_jpy, fx_chf, fx_eur, fx_gbp, fx_cad, fx_sek | R1 | first month with a panel return and a rate change of length L; with LSEG deposit rates from 1975 (digest), 1975-07 (L 6) and 1976-01 (L 12); fx_eur before 1999 is the panel's EUR series, whose pre-1999 source (stooq eurusd) is not shown to be the mark: the builder records it |
+| fx_jpy, fx_chf, fx_eur, fx_gbp, fx_cad, fx_sek | R1 | first month with a panel return and a rate change of length L at lag 1; with LSEG deposit rates from 1975-01 (digest), 1975-08 (L 6) and 1976-02 (L 12); fx_sek from about 1982 and fx_eur from 1999 only (engine_ref.json: 347 and 143 design months); the panel holds no mark series, so that leg cannot trade before 1999 |
 | bd_us_2y, bd_us_10y | R2 pair; R3 short 2-year | first month of GS2 (reader: 1976-06) and of bd_us_2y |
 | eq_us_spx | R4 | first month of the LSEG forward EPS series (digest: 1985) |
 
@@ -118,7 +122,7 @@ not in R1 (card).
 2. Leg notional while on = direction x 0.40 / vol / k: R1 shape A k = 6 (each currency one leg), shape B k = 2 (a
    basket leg holds its six currencies at equal risk inside it); R2 one leg (the pair); R3, R4 one leg.
 3. Fixed size while on (card s6: Singer's reader's rule; register B16): the notional is set at the month a state turns on
-   and kept until it turns off (each weekly tranche fixes its own notional on its own on-day). Closed here: "fixed size" read as fixed for the
+   and kept until it turns off (each weekly tranche fixes its own notional on its own on-day). For R1 an on-run is a run of months in which a leg keeps the same sign and the same role (R1's gate-off versions are never off, so without this one notional would be fixed from 1975 to 2010). Closed here: "fixed size" read as fixed for the
    life of an on-run, since state rules already hold one size per month; this answers check JP5 by keeping it as a
    rule, not a version.
 4. Signals net before sizing: "you can net the signals" (MT121-C06-2): opposite positions in one market net inside the
@@ -145,7 +149,7 @@ diagnostic.
 ## 7. Sample
 
 Design window 1975-01 to 2010-12, monthly. Starts (first month every input of at least half the versions exists): R1
-1975-07 if every LSEG deposit rate starts in 1975-01 (the L 6 versions; L 12 join 1976-01); if a currency's rate starts
+1975-08 if every LSEG deposit rate starts in 1975-01 (the L 6 versions, lag 1; L 12 join 1976-02); if a currency's rate starts
 later, that currency joins when its change exists. R2 and R3 the first month of GS2 (every version reads GS2). R4 the
 first month of the LSEG forward EPS series (digest: 1985). Eras 1975-89 and 1990-2010 (reported; R4's first era holds
 about 60 months only). Months excluded: none inside. Never 2011 or later.
@@ -176,7 +180,7 @@ crosses the dollar's (likely the highest turnover in the pod, reader). Double-co
 
 Card s8 (a)-(d), fixed now, on the design window:
 - (a) A rule is not positive after costs or fails its placebo.
-- (b) R1's gate-on versions do no better than its gate-off versions (against C1).
+- (b) R1's gate-on versions do no better than its gate-off versions (against C1). R2: the pair's mean monthly return over on-months is zero or less, or more than 80% of its P&L comes in months with FEDFUNDS down over 6 months (the easing trade, not the duration premium; numbers as card 4 R5, this check's). R4: the S&P's mean excess return in on-months is no lower than in off-months.
 - (c) The pod loses on average in the worst tenth of S&P months, against "about two thirds of three quarters of the
   time" (MT214-C03-3) negative correlation.
 - R3, mechanism check: R3 claims the front end reprices toward inflation; if its short earns mainly through the
@@ -190,7 +194,7 @@ Card s8 (a)-(d), fixed now, on the design window:
 
 ## 11. When it should stop working
 
-Card s8: central banks on hold and guiding the path (their account of 2010-21); crowding, but the card records the
+Card s8: central banks on hold and guiding the path (their account of 2010-21; observable live as R1's activity gate off, FEDFUNDS 12-month range below 0.50); crowding, but the card records the
 disagreement: the risk officer says "in times of the higher correlation we actually have a higher information ratio
 among our PMS" (MT067-C05-2). Closed here (check JP6): crowding is a reported risk line, not a stop condition, because
 the source's own risk officer contradicts it. Tropin expects decay: "there's no way you can do what worked 10 years ago

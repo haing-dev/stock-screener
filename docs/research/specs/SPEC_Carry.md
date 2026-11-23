@@ -1,5 +1,9 @@
 # SPEC: Carry (step 3.1, Agent A, 2026-11-23)
 
+> **Status (2026-11-23): APPROVED WITH CORRECTIONS at step 3.2.** Written at step 3.1 (Opus, agent A); checked by a
+> fresh Opus agent (checks/CHECK_3.2_A.md); its 12 corrections to this spec are applied. Claim ids and quotes
+> script-checked (ALL OK). Nothing registered or run; open items go to step 3.4 (check section 4, NOTES_3.1_agent_A.md).
+
 Engine read: gm-1.2.2 / gm-2.0.2-candidate (gm/signals.py carry_values, panel.py, book.py, bloomberg.py), read only.
 
 ## 0. Header
@@ -60,7 +64,7 @@ Registered form:
   for the same contract, r = 100 - settlement price. Carry = the roll down the strip if the curve does not move: each
   contract's rate falls to its nearer neighbour's in three months, gaining 0.25 x (r_i - r_i-1) / 100, i.e.
   (r_i - r_i-1) / 100 a year; averaged over i = 1..8 with r_0 = the local 3-month rate of the previous month, carry =
-  (r_8 - r_0) / 800 a year per unit of face value. Scaling: the same per-unit-of-face-value, per-year basis as bond
+  (r_8 - r_0) / 800 a year per unit of face value. Scaling: 2-year equivalent, carry x 1.9 / 0.25 = (r_8 - r_0) x 0.0095 a year, the basis of its gross weight (variants.py us_3m_rate 0.25 / 1.9); per unit of face value the strip's carry is about a quarter of the US 2-year note's on the same curve, so it would rank near the bottom of the FI class most months and version 2 would hold a standing relative short that no carry reading supports (corrected in 3.2); bond
   carry, ranked in the FI class unchanged (bond carry per unit of duration was tested and rejected, protocol_batch1.md C1).
 Signs fixed: long positive carry; long high rank.
 
@@ -69,7 +73,7 @@ FI 14 (bd_us_2y, bd_us_5y, bd_us_10y, bd_us_30y, bd_de_10y, bd_gb_10y, bd_jp_10y
 st_gb_5y, st_ca_2y, st_au_2y, st_jp_2y); FX 13 (fx_eur, fx_jpy, fx_gbp, fx_chf, fx_aud, fx_nzd, fx_cad, fx_sek,
 fx_nok, fx_mxn, fx_brl, fx_krw, fx_zar); CM 4 (cm_wti, cm_natgas, cm_heatoil, cm_gasoline). First return months as
 SPEC_Trend section 4. A market's first position needs its carry (yield and both rates, or EIA contracts 1 and 2: CL
-from 1983) and a volatility estimate (12 months); version 2 needs 3 markets in its class (CM: from the month the third
+from 1983 for contract 1; the WTI return, the EIA contract 2 to 1 roll, has 311 design months in engine_ref.json, i.e. starts 1985-02 if without gaps, so CL carry very likely starts about 1985-01; the builder confirms) and a volatility estimate (12 months); version 2 needs 3 markets in its class (CM: from the month the third
 energy market has carry; before it the CM block holds version 1 only). Not in the pod: equities (book.py:106), Brent,
 other commodities. Through a gate: T10 strips (D1 extension; eight contracts locked and a registered live source;
 today none).
@@ -95,25 +99,25 @@ Design window 1975-01 to 2010-12; markets enter as data start; months before a p
 |---|---|---|---|
 | Bond and note yields | FRED DGS, Bundesbank, BoE, BoC, RBA, MoF files; month end | same, 1 day | free |
 | 3-month rates | OECD IR3TIB01 / TB3MS monthly averages | same, 1 month; GB and euro-area series end 2026-01, carried forward at most 12 months (panel.py:368-370) | free |
-| EIA contracts 1, 2 | EIA NYMEX daily, from 1983 (CL) | EIA, 1 day | free |
+| EIA contracts 1, 2 | EIA NYMEX daily, contract 1 from 1983, contract 2 very likely from 1985 (CL; section 4) | EIA, 1 day | free |
 | Strips (T10) | LSEG (Euribor 1994), Bloomberg sterling 1-5; not locked | LSEG only | not registered |
 Rule 7: every input of the 31 markets has a free live source: the pod can be Core on rule 7, once a replacement for the
 GB and euro OECD rates exists (3.4). Strip markets cannot join a Core pod without a registered live source.
 
 ## 9. Costs
 book.py:46-57: bonds and notes 1.0 bp one-way, 4 rolls a year; developed currencies 2.0, 4; EM currencies (MXN, BRL,
-KRW, ZAR) 8.0, 4; WTI, heating oil, gasoline 4.0, 12; natural gas 6.0, 12. Strip markets: 8 bp (D1 admission cost), 4
-rolls. Double-cost test applies. No turnover figure in the notes.
+KRW, ZAR) 8.0, 4; WTI, heating oil, gasoline 4.0, 12; natural gas 6.0, 12. Strip markets: 8 bp (D1 admission cost) per 2-year-equivalent unit, i.e. 8 x 0.25 / 1.9 = about 1.05 bp per unit of strip face value, the basis of its gross weight (8 bp per unit of strip face value would be 32 bp of rate per contract side, 64 times Strip reversion's half a bp of rate; closed in 3.2, confirmed with the D1 extension at 3.4), 4
+rolls. Double-cost test applies. No turnover figure in the notes. A strip rolls one of its eight contracts a quarter, so charging 4 full rolls a year over-costs it (conservative; 3.4).
 
 ## 10. What would prove it wrong (design window)
 - The averaged pod, or a leg, earns zero or less net in both eras.
-- Currencies: losses that come without a bad state (the risk story predicts losses in bad states and pay otherwise).
+- Currencies: losses that come without a bad state (the risk story predicts losses in bad states and pay otherwise). Fixed here: bad-state months = the design stress windows of config.py STRESS_WINDOWS that end by 2010-12 (1987-10..11, 1990-08..10, 1994-02..11, 1998-08..10, 2007-07..08, 2008-09..12) plus the worst fifth of eq_us_spx months over 1975-2010; the claim fails if the currency leg's mean return in those months is not below its mean in the other months.
 - Commodities: high-carry positions lose on average. ("backwardation is not the norm" (QP08-C05-6) is a stop sign,
   not a falsifier.)
-- Bonds: the leg is only a standing long: its return is matched by a position with the same average exposure and no
+- Bonds: the leg is only a standing long: its design net return is not above that of a constant position in each bond equal to the leg's average position in it (same sizing and costs; computed whether or not 3.4 registers a placebo for existing pods), a position with the same average exposure and no
   timing (placebo, if registered for existing pods at 3.4).
 - Profit source: the X2 income/price split, reported by leg for this pod too (income = carry / 12 at the prior month
-  end): a Carry leg whose price part is strongly negative and income part positive is paid as carry says; a leg paid
+  end): the carry claim fails for a leg whose income part is zero or below, or whose price part is larger than its income part (paid by price moves, not by carry); in short, a leg paid
   mostly by price is not the carry mechanism.
 - Loss event (P3): "full liquidity break, a dash for cash" (MT083-C05-1); in the window: 1998-08 to 1998-10 and 2008-09 to
   2008-12 (config.py STRESS_WINDOWS). Not flagged.
@@ -133,10 +137,10 @@ rolls. Double-cost test applies. No turnover figure in the notes.
 | Energy measure | F1 / F2, annualised | engine convention (EIA has 4 contracts) |
 | Rates | OECD 3-month, lagged 1 month | engine convention (gm-1.2.0 audit) |
 | Markets | 14 + 13 + 4 | EM currency set hand-picked (gm_CHANGES gm-1.2.0 "Known and documented") |
-| Strip carry and scale | (r_8 - r_0) / 800, per face value | closed here |
+| Strip carry and scale | (r_8 - r_0) / 800 per face value, x 1.9 / 0.25 (2-year equivalent) | closed here, scale corrected in 3.2; a short-rate market was already seen and rejected (protocol_batch1.md S1, synthetic US 3-month market), and the 0.25 / 1.9 gross weight comes from it |
 | X1 gate 0.25, five months | 0.25, 5 | 1.3b (fixed before results) |
 | Pod share | 0.20 / 0.25 | 0.25 adopted after design results (B0.2); book level |
-Chosen or kept after seeing design results, fixed: equities out, bond carry per face value, market list = 3 (+1 book).
+Chosen or kept after seeing design results, fixed: equities out, bond carry per face value, market list = 3 (+3 book: pod share, no risk scaler, no scenario limit; SPEC_Trend section 12).
 
 ## 13. Gating diagnostics
 - X1 (1.3b): per energy market, share of carry-signal variance explained by its 12 calendar-month means over design
@@ -166,8 +170,8 @@ Chosen or kept after seeing design results, fixed: equities out, bond carry per 
 | Bond leg: pattern or dated source (1.3b JP2) | rule: kept in the pod as a pattern, as the note keeps it; dating C, holdout descriptive. |
 | Equities left out on a directional 51% correlation (JP8) | rule: stay out (1.3b "Fixed"); 3.2 confirms. |
 | Bloomberg non-energy curve carry (D6, D16) | rule: off (section 3); engine flag registered at 3.4 with A1. |
-| Strip carry formula and scaling (1.3a correction 15) | rule in section 3; per face value, as bond carry. |
-| Strip cost and gross weight | rule: 8 bp (D1), 0.25 / 1.9 (variants.py). |
+| Strip carry formula and scaling (1.3a correction 15) | rule in section 3; 2-year equivalent, the basis of its gross weight (corrected in 3.2). |
+| Strip cost and gross weight | rule: 8 bp (D1) per 2-year-equivalent unit, 0.25 / 1.9 (variants.py). |
 | Placebo for existing pods (JP6), mixed-leg dating, pod share | 3.4. |
 | GB and euro OECD rates after 2026-01 | 3.4 (live source). |
 | Register vs note | none found. |

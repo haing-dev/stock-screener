@@ -1,5 +1,9 @@
 # Pod spec: Card 4, flows and volatility (Cem Karsan)
 
+> **Status (2026-11-23): APPROVED WITH CORRECTIONS at step 3.2.** Written at step 3.1 (Opus, agent C); checked by a
+> fresh Opus agent (checks/CHECK_3.2_C.md); its 4 corrections to this spec are applied. Claim ids and quotes
+> script-checked (ALL OK). Nothing registered or run; open items go to step 3.4 (check section 4, NOTES_3.1_agent_C.md).
+
 Step 3.1, Agent C, 2026-11-23. Nothing here is registered or run. Sources: CARD_1.4_flows_volatility.md (final text, 26
 corrections applied) and its check; THESIS_REGISTER_1.5.md rows T28-T33; code read in gm/daily.py, gm/panel.py,
 gm/book.py, gm/signals.py, gm/vol.py, gm/config.py. K = Karsan. "Closed here" marks a choice the notes left open.
@@ -48,8 +52,8 @@ Friday of the month (the trading day before it if a holiday). R5 is checked at m
 
 Daily S&P excess return (closed here: the panel holds monthly excess returns only). For trading day d in month m:
 e(d) = ^GSPC price return of day d + c(m) / N(m), where c(m) = panel eq_us_spx monthly excess return minus the ^GSPC
-monthly price return (dividends minus cash for that month) and N(m) = trading days in m. So a rule held all month earns
-exactly the panel's monthly excess return. Live: SPY total return minus the daily cash rate.
+monthly price return (dividends minus cash for that month; before SPY in 1993 also the gap between the French US market return and the S&P 500 price return, since the panel's eq_us_spx is the French market then) and N(m) = trading days in m. So a rule held all month earns
+exactly the panel's monthly excess return. Live: SPY total return minus the daily cash rate. A rule's monthly return for the test sheet = the sum over the month's trading days of its position times e(d) (closed here).
 
 R1 Year-end window.
 1. Entry (version): close of the last trading day of October ("late October", MT227-C05-X1), or close of the last
@@ -188,7 +192,7 @@ From card s8, fixed now, on the design window:
 - D1: volatility rising with the market and no larger later falls (card s8).
 - Loss path (P3): R2 has the profile 1.3c warns about, "95% of time" with violent exceptions (card s13); its loss event
   is a crash inside a pre-expiry window; the falls of 14-16 October 1987 lay inside an R2 window (X = 16 October 1987,
-  reader's calendar arithmetic), and the 19 October crash fell in the gap after it. R1 and R4 lose in a
+  reader's calendar arithmetic), and in the two versions that exit at the close of the next trading day the 19 October crash (the Monday after X) is inside the window; in the other two it falls in the gap. R1 and R4 lose in a
   year-end crash (window: 1987, 2008). Flag "loss not seen": no.
 - Analyst: answers on width (questions 1-3) no better than base rates at the checkpoint (card s8).
 
@@ -256,7 +260,7 @@ Re-checked against the code:
 
 | # | Choice | Closed how |
 |---|---|---|
-| 1 | Support before X: reading of "for the next two weeks" (MT076-C07-4) (check JP1) | kept as the card places it; 3.2 |
+| 1 | Support before X: reading of "for the next two weeks" (MT076-C07-4) (check JP1) | kept as the card places it; confirmed at 3.2: MT076 was uploaded 2024-05-02 and May 2024's expiry was the 17th, so the two weeks run into expiry, and the weakness comes after it: "a lot of the all that Bond and charm is now passed coming out of that weekend" (MT076-C06-X1) |
 | 2 | Daily S&P and daily cash back to 1975 (JP2) | closed: daily excess return built from ^GSPC daily plus the panel's monthly carry part (section 3); start rule in section 4 |
 | 3 | No weekly tranches for date rules (JP3) | card text kept; 3.2 / 3.4 against rule 2 |
 | 4 | Form C sign variable (JP4) | rule: year to date, as the card reads it; 3.2 may change it before registration |

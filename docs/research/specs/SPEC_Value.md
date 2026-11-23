@@ -1,5 +1,9 @@
 # SPEC: Value (step 3.1, Agent A, 2026-11-23)
 
+> **Status (2026-11-23): APPROVED WITH CORRECTIONS at step 3.2.** Written at step 3.1 (Opus, agent A); checked by a
+> fresh Opus agent (checks/CHECK_3.2_A.md); its 3 corrections to this spec are applied. Claim ids and quotes
+> script-checked (ALL OK). Nothing registered or run; open items go to step 3.4 (check section 4, NOTES_3.1_agent_A.md).
+
 Engine read: gm-1.2.2 / gm-2.0.2-candidate (gm/signals.py value_values and equity_dy, book.py, panel.py,
 bloomberg.py, variants.py), read only. Nothing run.
 
@@ -91,7 +95,7 @@ after 2010-12. The expanding mean of version 2 uses months up to t only.
 | Bond yields | as SPEC_Carry | 1 day | free |
 | CPI year-on-year | OECD / FRED CPALTT01, revised | about 1 month | free |
 | Exchange rates | Fed H.10, Yahoo, stooq month end | 1 day | free |
-Rule 7: every input has a free live source (non-US dividend yield weak), so Value passes rule 7; rule 5, not rule 7,
+Rule 7: every input has a free live source (non-US dividend yield weak), so Value passes rule 7 once the GB and euro-area OECD 3-month rates have a replacement (they end 2026-01, panel.py:368-370; Value's sizing and returns use the excess returns of fx_gbp, fx_eur, bd_gb_10y and bd_de_10y, missing from early 2027; 3.4); rule 5, not rule 7,
 keeps it from Core. The quarterly-CPI as-of rule of SPEC_Economic_trend section 3 applies to the CPI inputs here too.
 
 ## 9. Costs
@@ -125,7 +129,7 @@ book.py:46-57: US equities 1.0 bp, 4 rolls; other developed equities 2.0, 4; bon
 | At least 3 markets | 3 | engine convention (signals.py:393) |
 | Pod share | 0.15 | engine plan (gm-1.0.0), unchanged |
 Chosen or kept after seeing design results, fixed: equity measure, commodities out, currency no-skip = 3; plus version
-2's bond leg, whose result is already seen through V1. Hindsight count: 3 (+1 seen version leg).
+2's bond leg, whose result is already seen through V1. Hindsight count: 3 (+1 seen version leg; +3 book: pod share, no risk scaler, no scenario limit; SPEC_Trend section 12).
 
 ## 13. Gating diagnostics
 - X2 (1.3b): per leg and version, monthly excess return split into income (one twelfth of: dividend yield minus
@@ -143,7 +147,7 @@ Chosen or kept after seeing design results, fixed: equity measure, commodities o
   only relative ones (confirmed, signals.py:388-393).
 - Card 5 R1 (T34, C15) and card 4 T93, T94: Value holds NO commodities (book.py:105), so "Value bets the other way" in
   slow-supply commodities and "oil bought cheap" as a Value position are not held. For 3.2.
-- Card 1: "in currencies valuation never matters" (MT203-C10-4), against the currency leg (C14): recorded, no change.
+- Card 1: "in currencies valuation never matters" (MT203-C10-4), against the currency leg (C14): recorded, no change. Card 2 T70 (short the most successful stock market, "Value may hold it"): held only in part: Value ranks 8 developed indexes on dividend yield, not on past return, and the 10 indexes without a free dividend yield (emerging, Nasdaq 100, Russell 2000, Euro Stoxx 50) are never ranked.
 
 ## 15. Open choices
 | Choice | Closed as |

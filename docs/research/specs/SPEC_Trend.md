@@ -1,5 +1,9 @@
 # SPEC: Trend (step 3.1, Agent A, 2026-11-23)
 
+> **Status (2026-11-23): APPROVED WITH CORRECTIONS at step 3.2.** Written at step 3.1 (Opus, agent A); checked by a
+> fresh Opus agent (checks/CHECK_3.2_A.md); its 8 corrections to this spec are applied. Claim ids and quotes
+> script-checked (ALL OK). Nothing registered or run; open items go to step 3.4 (check section 4, NOTES_3.1_agent_A.md).
+
 Engine read: gm-1.2.2 (BASE) and gm-2.0.2-candidate (CANDIDATE), gm/config.py, book.py, vol.py, daily.py, panel.py,
 signals.py, bloomberg.py (read only). Nothing run. Line numbers are today's.
 
@@ -49,7 +53,7 @@ Registered change (charter s4): one version per cell of the grid in section 6. V
 1. Inputs: R up to t (monthly excess return of month t is known at the close of t).
 2. Shape "sign": s = sign(lvl(t) / lvl(t-h) - 1), h = the version's lookback; 0 if exactly 0; no value if lvl(t-h) is missing.
 3. Shape "graded": s = clip( sum of ln(1 + R) over months t-h+1..t / (vol_v(t) x sqrt(h / 12)), -2, 2 ) / 2
-   (book.py:73-76, cap 2.0 from config.py BASE trend cap). vol_v is the version's own estimate (step 4).
+   (book.py:73-76, cap 2.0 from config.py BASE trend cap); no value if any of the h months is missing (book.py:75, min_periods = h), unlike the sign shape. vol_v is the version's own estimate (step 4).
 4. Volatility vol_v: "m36" = 36-month standard deviation of monthly R, at least 12 months, x sqrt(12) (vol.py:16-17);
    "hybrid" = max(0.7 x fast + 0.3 x slow, 0.75 x slow), fast = EWMA of daily squared log returns, half-life 35
    days, at least 40 days, where free daily data exist (daily.py), else EWMA of monthly squared returns, half-life
@@ -60,8 +64,8 @@ Registered change (charter s4): one version per cell of the grid in section 6. V
 6. Pod position = sum over the 16 versions of p_v / 16, a missing p_v counted as 0 (closed here: each version is a
    complete pod as the charter says; averaging at the unscaled position keeps today's book arithmetic, book.py:188-195).
 7. Rebalancing: decided at the month-end close; traded on the first trading day after month end (config.py comment,
-   execution rule); earns month t+1. Weekly tranches (B7, charter s4), closed here: tranche j = 0..3 decides on trading
-   day 5 x j after the month's last trading day, holds one quarter of the pod until its next decision day, and uses only
+   execution rule); earns month t+1. Code fact: the monthly design run earns from the decision-day close (book.py:209, pos.shift(1) x R; timing.py k = 0), so it reads and trades the same close; WORKFLOW s5 asks for the one-day delay of free daily data (timing.py k = 1); the k = 1 form is reported for every version at A2 and which form is decisive is fixed at 3.4. Weekly tranches (B7, charter s4), closed here: tranche j = 0..3 decides on trading
+   day 5 x j after the month's last trading day (trading days = weekdays the New York Stock Exchange is open; a market without a price that day uses its last price; closed in 3.2), holds one quarter of the pod until its next decision day, and uses only
    prices at that day's close and series published by that day; monthly design runs use tranche 0 only; the tranche
    form runs only in the 1990-2010 weekly check.
 The SIGN is fixed: long when the trailing excess return is positive. It cannot be flipped after results.
@@ -112,7 +116,7 @@ Total 16. No version exists only through a diagnostic. Markets added by D1 (T09,
 ## 7. Sample
 Design window 1975-01 to 2010-12 (TESTING_PROTOCOL s1); every input of every version exists for most markets by
 then. Months before a market or a version has a position count as flat, not excluded. Eras 1975-89 and 1990-2010
-(protocol.py ERAS). Weekly check 1990-2010 only. No month after 2010-12 is read, printed or used, including by the
+(protocol.py ERAS). Weekly check 1990-2010 only. No day after 2010-12-31 is read, printed or used: in the weekly check and in the one-day-late (k = 1) report every holding period is cut at the close of 2010-12-31 (tranches 1-3 decided in December 2010 and the k = 1 trade decided at 2010-11 would otherwise earn January 2011 days). No month after 2010-12 is read, printed or used, including by the
 lookbacks and the vol windows of the last design months (they read only earlier months).
 
 ## 8. Data
@@ -122,7 +126,7 @@ lookbacks and the vol windows of the last design months (they read only earlier 
 | Daily returns for hybrid vol and tranches | free (daily.py): FX 1971, US bonds 1962, Japan 1974, Bundesbank 1997, BoE 1993, RBA 1995, BoC 2001, Yahoo equities, EIA energy 1983, other commodities 2000 | free, 1 day | free |
 | T09 candidates | LSEG GSCI by commodity 1970-87, LSEG L8 others, LME 1970; not locked | none | LSEG on the user's PC, not registered as live |
 | T10 strips | LSEG Euribor 1994; Bloomberg sterling 1-5 1988 (no live); not locked | LSEG only | LSEG not registered |
-Rule 7: every input of the 61 ids has a free live source, so Trend can be Core on rule 7. T09 and T10 markets cannot
+Rule 7: every input of the 61 ids has a free live source, so Trend can be Core on rule 7, once the GB and euro-area OECD 3-month rates have a replacement: they end 2026-01 and are carried forward at most 12 months (panel.py:368-370), so from early 2027 (the carried rate ends 2027-01 and is used one month late) fx_gbp, fx_eur, bd_gb_10y, st_gb_5y, bd_de_10y and st_de_2y have no excess return and eq_gb_ftse and eq_eu_stoxx50 fall back to the US rate (panel.py:427-431, 478, 504, 511); 3.4. T09 and T10 markets cannot
 join a Core Trend until each has a registered live source.
 
 ## 9. Costs
@@ -140,7 +144,7 @@ Brent, heating oil, gasoline 4.0, 12; natural gas 6.0, 12; other commodities 4.0
   pod's carry values of section 3 of SPEC_Carry, bonds and currencies only) shows the price part zero or below.
 - The relative part (T12 split, below) carries the profit while the class-average part is zero or below: the claim is
   about each market's own direction, so this would point to cross-sectional momentum instead.
-- Loss event (P3): sharp V-shaped reversals and young, shallow equity falls (MT194-C06-4); in the window: 1987-10 to
+- Loss event (P3): sharp V-shaped reversals (MT042-C09-2; the line young, shallow equity fall is added here only if D4 opens it, section 13); in the window: 1987-10 to
   1987-11 (config.py STRESS_WINDOWS). Not flagged "loss not seen".
 
 ## 11. When it should stop working (live kill and review conditions)
@@ -167,7 +171,7 @@ Brent, heating oil, gasoline 4.0, 12; natural gas 6.0, 12; other commodities 4.0
 | Pod share | 0.30 / 0.45 | 0.45 adopted after design results (protocol_batch0.md B0.2); book level |
 | Tranche offsets | 0, 5, 10, 15 trading days | closed here (charter "one week apart") |
 Chosen or kept after seeing design results, fixed (not averaged): total vs spot, equal weight in class, trade timing,
-market list = 4 pod-level knobs; plus 1 book-level (pod share 0.45). Hindsight count: 4 (+1 book).
+market list = 4 pod-level knobs; plus 3 book-level: pod share 0.45; no early-warning risk scaler (gm_trials.csv scaler-credit, scaler-corr, scaler-ddbrake, none adopted); no scenario limit (gm_trials.csv scenario limit 3%, cand2 + scenario 5% / 3%, rejected). Hindsight count: 4 (+3 book).
 
 ## 13. Gating diagnostics
 - D1 (charter): gates T09 and T10 markets. A candidate joins only if both averaged shares are under one half, it has
@@ -204,7 +208,7 @@ market list = 4 pod-level knobs; plus 1 book-level (pod share 0.45). Hindsight c
 |---|---|
 | Static or slow-only vol version (charter JP1) | rule: not added. m36 is the slow end in code; slow-only (120 months) is 30% of the hybrid and sets its floor (charter s4, VARIANTS C2); static-at-entry sizing is not built and would be resized anyway by the 36-month block and book scalers, so no static book exists. 3.2 confirms. |
 | Total vs spot as a version (JP4) | rule: written blend (section 1); split reported (section 10). |
-| Class risk as a version (JP7) | rule: four classes at equal risk stay (charter s4 "Fixed"); any other vector would come from QP09-C21-5's 1989-97 fund shares, a sample-fitted weight. Report by class. 3.2 confirms. |
+| Class risk as a version (JP7) | rule: four classes at equal risk stay (charter s4 "Fixed"); any other vector would come from the CTA trading shares QP09-C21-5 cites from Billingsley and Chance (1996), a sample-fitted weight. Report by class. 3.2 confirms. |
 | Directional only while Carry has both forms (1.3b JP3) | rule: Trend's claim is about each market's own move, class-wide moves included (section 1); the T12 split shows what is relative. |
 | Tranche offsets | rule: 0, 5, 10, 15 trading days after month end (section 3). |
 | Cap vol for the per-market cap | rule: CANDIDATE hybrid estimate (section 5). |

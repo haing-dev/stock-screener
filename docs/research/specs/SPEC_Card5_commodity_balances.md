@@ -1,5 +1,9 @@
 # Pod spec: Card 5, commodity balances (Pierre Andurand)
 
+> **Status (2026-11-23): APPROVED WITH CORRECTIONS at step 3.2.** Written at step 3.1 (Opus, agent C); checked by a
+> fresh Opus agent (checks/CHECK_3.2_C.md); its 6 corrections to this spec are applied. Claim ids and quotes
+> script-checked (ALL OK). Nothing registered or run; open items go to step 3.4 (check section 4, NOTES_3.1_agent_C.md).
+
 Step 3.1, Agent C, 2026-11-23. Nothing here is registered or run. Sources: CARD_1.4_commodity_balances.md (final text,
 33 corrections applied) and its check; THESIS_REGISTER_1.5.md rows T34-T36; code read in gm/panel.py, gm/signals.py,
 gm/book.py, gm/vol.py, gm/config.py. "Closed here" marks a choice the notes left open. [P] = MT115, identity probable.
@@ -90,8 +94,8 @@ it can cite; such views are scored apart (card s6). Open forecasts F1-F3 go to t
 
 | Market | Role | Earliest usable design month |
 |---|---|---|
-| cm_copper (P: LSEG COMEX copper c1; returns: panel) | R1 | P history from 1973 (digest: metals curves from 1973), so the first possible trigger is the 121st month of P, about 1983; returns: cm_copper's panel source, which before futures data is World Bank monthly average spot (panel flag "spot avg") |
-| cm_wti (P: LSEG CL c1; returns: panel, EIA contracts from 1983) | R1 crude version | first possible trigger about 1993 (LSEG WTI from 1983 plus 120 months) |
+| cm_copper (P: LSEG COMEX copper c1; returns: panel) | R1 | P history from 1973 (digest: metals curves from 1973), so the first possible trigger is the 121st month of P, about 1983; returns: cm_copper's panel source, which in the free engine covers only about 89 design months (engine_ref.json market_months, so from about 2003; no World Bank spot, panel.py ALLOW_AVG off): copper runs before then earn nothing unless A1's Bloomberg swap has given cm_copper a GSCI excess-return history before B2 is registered (3.4 records which) |
+| cm_wti (P: LSEG CL c1; returns: panel, EIA contracts (cm_wti has 311 design months in engine_ref.json, so from 1985)) | R1 crude version | first possible trigger about 1993 (LSEG WTI from 1983 plus 120 months) |
 | cocoa, LME aluminium, zinc, nickel, lead, tin | not traded; C5-D2 reported line only (section 13) | LSEG: London cocoa from 1974; LME via Datastream from 1970 (digest) |
 | wheat, corn, soybeans | C5-D2 comparison class only | LSEG grain curves from 1973 (digest) |
 
@@ -131,12 +135,12 @@ the design months). Eras 1975-89 (short: about 1983-89) and 1990-2010, reported.
 | Input | History, first date | Live, delay | Licence |
 |---|---|---|---|
 | LSEG front contracts (COMEX copper, NYMEX WTI; for D2 also cocoa, LME cash, grains) | LSEG Datastream, 1970-83 per market (digest); contract codes fixed at registration | LSEG on the user's PC, not registered as live | LSEG, not registered |
-| Panel returns cm_copper, cm_wti | free panel (copper before futures: World Bank monthly average) | free daily closes, 1 day | free |
+| Panel returns cm_copper, cm_wti | free panel (free engine: copper from about 2003, WTI from 1985; engine_ref.json) | free daily closes, 1 day | free |
 | CPILFESL (real-ceiling version) | FRED / ALFRED first-published | FRED, lag 1 | free |
 | Analyst: EIA, CFTC, exchange stocks, ICCO, UNRATE, LSEG fronts | live public reports | public / LSEG | mixed |
 
 Rule 7: P has no registered live source, so R1 cannot be Core; it cannot be Core in any case (dating class C).
-Pack note: monthly-average spot returns before futures data smooth returns (TESTING_PROTOCOL warns of false trends);
+Pack note: the panel uses no monthly-average spot returns (panel.py ALLOW_AVG off), so TESTING_PROTOCOL's false-trend warning does not apply to these returns;
 the copper return source by period is in the panel's SRC record and must be reported with any R1 result.
 
 ## 9. Costs
@@ -192,7 +196,7 @@ Zero slots, no returns of the rule read.
   crude reported apart, as the card says), because the gate decides whether R1 is built. Reported line, no gate: the
   same count on LSEG cocoa and the LME cash prices. Likely outcome named by the check: with copper alone the floor of 10
   breaks fails and R1 is dropped (check JP3).
-- C5-D1 overlap (gates R1). Share of R1's on-months in which the Trend versions with the longest lookback (12 months,
+- C5-D1 overlap (gates R1). Share of R1's on-months (closed here: months in which any version holds a position, because trigger months are new all-time highs at which every 12-month Trend version is long by construction) in which the Trend versions with the longest lookback (12 months,
   all their shape and volatility versions) are long the same market by their average sign. 75% or more: R1 is not
   registered. R2 part reported only while R2 is held back. Reported: overlap with card 1 R4-B.
 Sealed months: C5-D2 is cut at 2008-12 by the card; C5-D1 reads positions only. None reads 2011.
@@ -232,5 +236,5 @@ Re-checked against the code:
 ## 16. Builder must not change
 
 Sign (long only); the trigger (all-time month-end high after 120 months), H, the real-ceiling rule and the crude
-version; markets copper and WTI only; the window and the D2 cut at 2008-12; the grid of section 6 (8 versions, 16 with
+version; markets as fixed at 3.4 (copper, and WTI in the crude version, unless a registered Batch A item has added a slow-class market, section 3); the window and the D2 cut at 2008-12; the grid of section 6 (8 versions, 16 with
 sizing), averaged; LSEG c1 for P and panel returns for P&L; engine costs and the double-cost test; R2 stays held back.

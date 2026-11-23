@@ -1,5 +1,9 @@
 # Pod spec: Strip reversion (step 3.1, draft for the 3.2 check)
 
+> **Status (2026-11-23): APPROVED WITH CORRECTIONS at step 3.2.** Written at step 3.1 (Opus, agent B); checked by a
+> fresh Opus agent (checks/CHECK_3.2_B.md); its 11 corrections to this spec are applied. Claim ids and quotes
+> script-checked (ALL OK). Nothing registered or run; open items go to step 3.4 (check section 4, NOTES_3.1_agent_B.md).
+
 Opus 5.5 (Agent B), 2026-11-23. Read only: register 1.5, note 1.3a and its check, charter 1.2, note 1.3c, WORKFLOW,
 TESTING_PROTOCOL, gm/*.py. No data, no backtest. Nothing here is registered or run. "Closed here" marks a computation
 the note left open, closed by this spec. bp = basis point of rate unless "of notional" is written.
@@ -47,7 +51,7 @@ weeks later):
    curvature (rule 3-B), "the spread into a point minus the spread out of it": K_n = 2 y_n - y_(n-1) - y_(n+1),
    n = 2..7 (6 measures).
 5. Normal, no look-ahead: for each currency, measure and expiry month g of contract n (March, June, September,
-   December), the simple average of that measure at all earlier month-ends (last trading days of earlier months) at
+   December), the simple average of that measure, built on the strip of step 1 as defined at each such month-end (its own holding period), at all earlier month-ends (last trading days of earlier months) at
    which contract n expired in month g, averaging "till the preceding month" (QP06-C10-6). Month-end values enter the normal
    whenever every contract the measure uses has a month-end settlement (monthly history from 1981-12), screened or not.
    A normal is used only once the measure's first month-end value is at least 60 calendar months before d. No normal
@@ -68,7 +72,7 @@ weeks later):
     capital (gm/bloomberg.py short_rate_market() convention). Since every 3-month contract has the same DV01 per
     notional, x_j = lambda x q_j.
 12. Risk scaling per currency: lambda = 0.40 / sigma, sigma = the engine's hybrid estimate (gm/vol.py) of the
-    annualised volatility of the return of today's q applied to past rate changes by strip position: fast part =
+    annualised volatility of the return of today's q applied to past rate changes by strip position (each change measured on the identified contract that held that position at the start of the period, never a c-series change across a roll): fast part =
     EWMA of daily squared returns (half-life 35 trading days), slow part = standard deviation of monthly returns over
     120 months (minimum 36), fast weight 0.7, floor 0.75 x slow. Closed here: "scaled to the shop's standard market
     target on its current volatility" (1.3a s3.1) in the engine's own estimator.
@@ -90,7 +94,7 @@ weeks later):
 | Euroyen | six contracts | out |
 
 Entry gate for every market: the data rule of section 3 step 1. R1 tests the dollar only; other currencies inherit
-its result. Live contracts: SOFR and SONIA futures (from 2018) and Euribor, each with a new normal.
+its result. Live contracts: SOFR and SONIA futures (from 2018), each with a new normal, and Euribor, whose normal continues (no change of reference rate, section 3 step 5).
 
 ## 5. Sizing
 1. Per version: currency positions as section 3 steps 10-12; currencies at equal risk (divide by the number of
@@ -99,11 +103,11 @@ its result. Live contracts: SOFR and SONIA futures (from 2018) and Euribor, each
 3. Pod block scaled to unit ex-ante volatility (trailing 36-month realised volatility of its return, lagged,
    multiplier capped at 50; book.py run()).
 4. The pod's test return: the block alone at the book's 10% target (trailing 36 months, lagged), with the
-   per-instrument cap and the 5x gross cap, net of costs. Each contract counts at 0.25/1.9 of its notional in the
+   per-instrument cap, applied as the leg cap of item 5, and the 5x gross cap, net of costs (both 36-month scalers need at least 24 months, book.py min_periods, and are lagged one month). Each contract counts at 0.25/1.9 of its notional in the
    gross cap (gm/variants.py, st_us_3m: "2-year equivalent").
 5. Leg cap (1.3a s3.1: "no contract is held larger than the shop's standard position in that contract alone").
    Closed here: each contract's notional is at most the book's per-market cap, market_risk_cap x book_vol x 3 / vol_j
-   (config.py, book.py run()), with vol_j = the hybrid volatility of that strip position's outright monthly return.
+   (config.py, book.py run()), with vol_j = the hybrid volatility of that strip position's outright return (fast part from daily returns, slow part monthly, as section 3 step 12). Where any contract exceeds its cap, the currency's whole contract vector is multiplied by the smallest ratio cap_j / |x_j| over its contracts, never clipped contract by contract, so the position stays level-neutral (book.py clips each column alone, which would leave a net rate position).
    Same rule as Curve carry; reason: the engine's only face-value limit per instrument; a cap before the block scaler
    would be undone by it. Expected: the caps bind often, because quiet spreads at constant risk need high leverage:
    "if you try to make this spread provide you with that risk you will have to leverage your position" (MT073-C05-1). Reported: share of months a cap binds, and the achieved volatility.
@@ -125,11 +129,11 @@ exist only if R1 passes (section 13); if it fails, neither is built. No other di
   of at least one version has its 60-month normal (both versions need contract 8; dollar contracts 5-8 have no known
   monthly start, register D8). Measures enter one by one as their normals mature. Fixed by metadata, not returns.
 - End: return month 2010-11. Closed here: the December 2010 holding ends at the settlement of 2011-01-03 (sealed), so
-  it is excluded. If the window has fewer than 120 months, the pod is "insufficient data" (TESTING_PROTOCOL s1).
-- Eras: only 1990-2010 has data; the 1975-89 era test cannot run (TESTING_PROTOCOL test 3 and WORKFLOW s5 disagree on
+  it is excluded. If the window has fewer than 120 months with a scaled test return (counted after the warm-up of both scalers of section 5, about 48 months after the first position), the pod is "insufficient data" (TESTING_PROTOCOL s1).
+- Eras: only 1990-2010 has data; under TESTING_PROTOCOL test 3 the 1975-89 era has no new data and passes by construction, so it tests nothing (TESTING_PROTOCOL test 3 and WORKFLOW s5 disagree on
   whether eras are decisive, register F2: step 3.4).
 - Weekly-implementation check 1990-2010: possible (the pod runs on daily data); all four tranches.
-- Excluded: every month from 2011-01; no input reads forward (normal, screen and volatility are trailing).
+- Excluded: every month from 2011-01, and every holding of any tranche whose exit settlement falls after 2010-12-31 (tranche 0 decided at end-November 2010; tranches 1-3 decided in December 2010); no input reads forward (normal, screen and volatility are trailing).
 
 ## 8. Data
 | Input | History (source, first date) | Live (source, delay) | Licence status |
@@ -157,7 +161,7 @@ SOFR month-ends before its normal exists.
    noise in the price that gave the signal.
 3. Not paid by bends fading: the correlation of the pod's monthly gross return with the sum of |G| over the measures
    held is zero or below (the paper's payoff tracks gap size, QP06-C24-3).
-4. Roll, not reversion (1.3a point 2): ex-ante roll part = minus the sum over held contracts of x_j times the change
+4. Roll, not reversion (1.3a point 2): ex-ante roll part = the step 11 return of the held x_j, with each contract's price change set to minus the change (in points, bp / 100)
    in r_j that ageing by the holding period implies on the decision-day strip (linear interpolation in time to
    expiry; below contract 1, extrapolation from contracts 1 and 2). If its mean is at least the pod's gross mean, the
    profit is Carry (the front-end carry of QP07, whose model will "predict a fall in forward rates" (QP07-C19-3)).
@@ -166,7 +170,7 @@ SOFR month-ends before its normal exists.
 
 ## 11. When it should stop working (live kill and review conditions)
 1. Ample arbitrage capital: gaps stay below cost and the rule goes flat (traders "rapidly seek out" (QP06-C26-2)
-   such trades). Review when the pod is flat at 9 of 12 decision days (reader threshold).
+   such trades). Review when the pod is flat at 9 of the last 12 month-end (tranche 0) decision days (reader threshold).
 2. A front end pinned by policy: a flat strip. Review while the policy rate of the currency is below 0.25%.
 3. Funding stress: review when any held gap exceeds the largest gap of that measure in the design window.
 4. A new reference rate or contract design: the currency is flat until its new contract has a 60-month normal.
@@ -187,7 +191,7 @@ SOFR month-ends before its normal exists.
 | Risk scaling | 0.40 / sigma, currencies equal risk, block unit vol | engine convention (book.py) |
 | Volatility estimator | hybrid 0.7 / 0.3, floor 0.75 | chosen after design results: adopted on book Sharpe (gm_trials.csv "vol hybrid", 2026-11-01; batch 0 B0.1) |
 | Leg cap | book per-market cap | engine convention; definition closed here |
-| Gross weight | 0.25/1.9 | engine convention (gm/variants.py) |
+| Gross weight | 0.25/1.9 | engine convention (gm/variants.py); book target 10%, 5x gross cap and block multiplier cap 50 are engine conventions too (config.py, book.py run()); currency set (eight contracts, daily, one source) and joint scaling of a currency's contracts under the leg cap are closed here |
 | Sample end | return month 2010-11 | closed here (seal) |
 
 Knobs chosen after seeing design results: 1 (the hybrid estimator, chosen on the whole book). No design result of

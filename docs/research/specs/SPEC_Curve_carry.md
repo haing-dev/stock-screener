@@ -1,5 +1,9 @@
 # Pod spec: Curve carry (step 3.1, draft for the 3.2 check)
 
+> **Status (2026-11-23): APPROVED WITH CORRECTIONS at step 3.2.** Written at step 3.1 (Opus, agent B); checked by a
+> fresh Opus agent (checks/CHECK_3.2_B.md); its 14 corrections to this spec are applied. Claim ids and quotes
+> script-checked (ALL OK). Nothing registered or run; open items go to step 3.4 (check section 4, NOTES_3.1_agent_B.md).
+
 Opus 5.5 (Agent B), 2026-11-23. Read only: register 1.5, charter 1.2 and its check, notes 1.3a, 1.3b, 1.3c and their
 checks, card 5 and its check, foundation U04 and U05, WORKFLOW, TESTING_PROTOCOL, gm/*.py. No data, no backtest.
 Nothing here is registered or run. "Closed here" marks a computation the notes left open, closed by this spec.
@@ -14,7 +18,7 @@ Nothing here is registered or run. "Closed here" marks a computation the notes l
 | Register status | B1, "or B2 if its history is not locked when B1 is registered" (charter s3). No diagnostic of register section A gates it. Precondition: a locked LSEG contract history with the 2011+ seal (register D3). |
 | Dating class | C (hindsight-flagged). The only dated text is a product design of about 2011: "probably goes back 15 years" (MT130-C08-X1); Erb and Harvey 2006 and de Roon, Nijman and Veld 2000 are not this spread (register T08). |
 | What rule 5 allows | No holdout verdict: the holdout result is descriptive. With no registered live source either (rule 7), the best verdict is Incubator. |
-| Loss flag (protocol item P3) | Loss event named in section 10; design months with such an event exist (1990 oil spike), so the pod is not flagged "loss not seen". |
+| Loss flag (protocol item P3) | Loss event named in section 10; the 1990 oil spike counts only if a crude or oil-product spread is held then (whether a 12-month-later oil contract exists before 1995 is not on the sheet, register D14); otherwise the months of section 10 item 3 decide, and with none the pod is flagged "loss not seen". |
 
 ## 1. Economic claim
 Commodity holders and hedgers trade the near contracts (reader). Near contracts lose more on each roll than far
@@ -26,7 +30,7 @@ is not named. Grade, exactly as the charter gives it after its check: "ASSERTED 
 ## 2. What is predicted
 The one-month excess return of a spread, long the contract that delivers 12 months after the front leg and short the
 front leg, equal face value, per commodity. Sign: positive on average. Largest in contango that is steepest at the
-front (1.3b s3: far against near loses carry in backwardation if the curve is steepest in front), and, by the
+front (reader, mirroring 1.3b s3, which says only that far against near loses carry in backwardation if the curve is steepest in front), and, by the
 seller's words, "in a non-inflationary recession, it actually performs well" (MT167-C11-X9). Worst when a supply shock
 lifts the front: "you are exposed to what we call uh shifting to a backwardation" (MT130-C08-2).
 
@@ -37,7 +41,7 @@ For each market m in section 4, at each decision day (tranche 0 = last trading d
    identified contract from settlement to settlement; never a change of a continuous c-series across its roll.
 2. Front leg F = the nearest listed contract of m whose delivery month is at least three calendar months after month
    t. Closed here: it is the simplest rule that keeps every leg out of its delivery month, first-notice day and
-   expiry during the holding month on NYMEX, COMEX, CBOT and ICE US calendars ("no front contract in its delivery
+   expiry during the holding month on NYMEX, COMEX, CBOT and ICE US calendars as the writer states them (cattle trades on CME and Brent on ICE Futures Europe, which this reason does not cover: step 3.4 confirms both from the contract specifications) ("no front contract in its delivery
    month", 1.3a s3.3; and "Contracts end, becoming more variable as" (QP12-C29-1) expiry nears).
 3. Far leg D = the contract of m with the same delivery month one year after F's. Closed here: one rule for every
    market; it is "about 12 months" (charter s3); it meets 1.3a's seasonal rule (s3.3), which rests on "Strong seasonal
@@ -61,7 +65,7 @@ For each market m in section 4, at each decision day (tranche 0 = last trading d
    family_positions() form: score x 40% / vol).
 10. As-of: settlements are public the same day; no other input; no publication lag. The decision uses only
     settlements up to the decision day; the trade is made at the decision day's settlement, as the engine's monthly
-    runs assume (positions decided at month-end t earn month t+1, book.py run()).
+    runs assume (positions decided at month-end t earn month t+1, book.py run()). This departs from WORKFLOW s5 (free daily data used with a one-day delay; section 8 gives a one-day live delay): V2's state and the stale screen use the settlement that is traded. The departure is reported through WORKFLOW s5's one-period trading delay line and listed for step 3.4 (a next-day trade needs daily far-contract settlements, not pulled).
 11. Rebalancing: monthly, one-month hold, then a new decision. Four weekly tranches (rule 2; charter s4: tranche 0
     decides at month-end, tranches 1-3 one, two, three weeks later). Monthly design runs use tranche 0; the weekly
     check uses all four (section 7).
@@ -70,7 +74,7 @@ For each market m in section 4, at each decision day (tranche 0 = last trading d
 The 16 panel commodities (gm/panel.py COMMOD): cm_wti, cm_brent, cm_natgas, cm_heatoil, cm_gasoline, cm_gold,
 cm_silver, cm_copper, cm_platinum, cm_corn, cm_wheat, cm_soybeans, cm_sugar, cm_coffee, cm_cotton, cm_cattle. Each
 spread is a new instrument (id cc_ plus the market name, for example cc_wti), built from LSEG contracts. Closed here:
-the panel list, because the engine's cost table (book.py cost_bp) and outright volatilities cover exactly these;
+the panel list, because the engine's cost table (book.py cost_bp) covers exactly these (the free panel's outright returns cover them for only 33 to 311 design months each, engine_ref.json market_months);
 other commodities would be a breadth choice no note registers for this pod.
 
 | Group | LSEG curve history (data sheet, register T08) | Earliest usable design month |
@@ -87,17 +91,17 @@ commodities (no panel id). No market enters through a gate.
 
 ## 5. Sizing
 1. Per version: raw positions from section 3 step 9; equal weight inside the pod (divide by the number of markets with
-   a position, book.py family_positions()).
+   a score that month, zero scores of V2 included, as book.py family_positions() counts every non-missing position; markets without a position for data reasons, section 3 steps 3-4, are not counted).
 2. Pod = equal-weight average of the two versions' positions (charter s4). In contango both versions hold the full
    spread; in backwardation the pod holds half of it.
 3. Pod block scaled to unit ex-ante volatility: trailing 36-month realised volatility of the block's return, lagged,
    multiplier capped at 50 (book.py run(), block_vol_months).
 4. The pod's test return: the block alone at the book's 10% target (trailing 36 months, lagged), with the book's
-   per-instrument cap and 5x gross cap, net of costs (book.py run() conventions).
+   per-instrument cap, applied as the leg cap of item 5 (no separate cap on the spread instrument), and 5x gross cap, net of costs (book.py run() conventions; both 36-month scalers need at least 24 months, book.py min_periods, and are lagged one month).
 5. Leg cap (charter s3: "a cap on the face value of each leg"; U05's warning: "if you try to make this spread provide
    you with that risk you will have to leverage your position" (MT073-C05-1)). Closed here: each leg's face value is
    at most the book's per-market cap, market_risk_cap x book_vol x 3 / vol (config.py, book.py run()), with vol =
-   the engine's volatility of the outright panel market. Reason: it is the engine's only face-value limit per
+   the hybrid volatility (monthly form, section 3 step 8) of the monthly returns of the front leg F itself (identified LSEG contracts); both legs take this one cap, so they stay at equal face value (the free panel's outright commodity returns cover only 33 to 311 design months, engine_ref.json, so they cannot set the cap in most design years). Reason: it is the engine's only face-value limit per
    instrument; a cap before the block scaler would be undone by it. Both legs count at full face value in the 5x
    gross cap (gross weight 1). Reported: share of months a leg cap binds, and the achieved volatility.
 6. In the book: WORKFLOW 5.1 puts Core pods at equal risk; config.py has no share for this pod (BASE family_w
@@ -120,19 +124,19 @@ dynamic choice of the far contract are not versions (no note registers them).
   return month 2010-12 (last decision 2010-11 month-end). Closed here: half the markets, the brief's "half" rule
   applied to inputs, because both versions share every input; the month is fixed by metadata (contract start dates)
   at the LSEG lock, never by returns. Markets enter as they become eligible after that month. If fewer than 120
-  months result, the pod is "insufficient data" (TESTING_PROTOCOL s1).
+  months with a scaled test return result (counted after the warm-up of both scalers of section 5, about 48 months after the first position), the pod is "insufficient data" (TESTING_PROTOCOL s1).
 - Eras: 1975-89 and 1990-2010 (TESTING_PROTOCOL s2 test 3; WORKFLOW s5 reports them, register F2: step 3.4).
 - Weekly-implementation check (1990-2010): needs daily settlements of the far contracts, which no pulled file holds
   (LSEG daily L9a has c1 and c2 only). Until such a pull is locked, the weekly check for this pod is not run and
   the result sheet says so (register D9 extended).
-- Excluded: every month from 2011-01 (sealed). Nothing reads forward: volatility and screens are trailing.
+- Excluded: every month from 2011-01 (sealed), and in the weekly check every holding whose exit settlement falls after 2010-12-31 (tranches 1-3 decided in December 2010). Nothing reads forward: volatility and screens are trailing.
 
 ## 8. Data
 | Input | History (source, first date) | Live (source, delay) | Licence status |
 |---|---|---|---|
 | Contract settlements by delivery month, front and 12-month legs | LSEG Datastream / Workspace curves: grains, softs, metals 1973; WTI 1983 (24 contracts from 1995); Brent 1988; natural gas 1990; others not on the sheet. Bloomberg monthly curves: not usable (first-pull copies) | LSEG on the user's PC, one day | LSEG: not registered as a source (no reader, lock or seal), licence for trading use unverified |
 | Contract identity per observation (delivery month of the contract a c-series held) | must come with the LSEG reader; a market-month without it is out | as history | as above |
-| Outright volatility for the leg cap | free panel (gm/panel.py), engine vol | free, one day | free |
+| Outright volatility for the leg cap | front leg F's own monthly returns (LSEG contracts, as the first row); the free panel covers only 33 to 311 design months per commodity (engine_ref.json) | LSEG, one day | as the first row |
 
 Free EIA files hold contracts 1-4 only, no 12-month contract (panel.py eia_curve()). Rule 7: the pod has no
 registered live source for its main input, so it cannot be Core.
@@ -149,11 +153,11 @@ quotes are not used. No turnover figure is given in the notes. The double-cost t
 ## 10. What would prove it wrong (design window, fixed now)
 1. No premium: the mean monthly gross return of V1, pooled at equal risk over markets, is zero or below.
 2. Wrong source: the premium is said to come from the roll on a front-steep curve. If V1's mean gross return in
-   contango months (B = 0) is zero or below while it is positive only because of backwardation months, the profit is
+   contango market-months (B = 0 for that market at the decision; V1's pooled return split by each market's own state) is zero or below while it is positive only because of backwardation market-months, the profit is
    a bet on backwardation ending, not the roll premium.
 3. Wrong loss state: the loss is said to be "the number one risk factor" (MT130-C09-2), a front lifted into
    backwardation. If fewer than half of V1's ten worst months fall in months where at least one market's front moved
-   from below to above its far contract, the risk is something else (reader threshold).
+   from below to above its far contract, or if that share is not above the share of all design-window months with such a move in any of the pod's markets, the risk is something else (reader threshold; the base-rate clause stops the test passing by construction when such moves are common across 16 markets).
 4. Side claim (reported): mean return in NBER recession months (USREC) with falling 12-month CPILFESL change is zero or
    below: "in a non-inflationary recession, it actually performs well" (MT167-C11-X9) fails.
 5. Loss event for P3: a supply shock that shifts the front into backwardation; design months with such an event:
@@ -181,7 +185,7 @@ quotes are not used. No turnover figure is given in the notes. The double-cost t
 | Volatility estimator | hybrid 0.7 fast / 0.3 slow, floor 0.75 | chosen after design results: adopted on book Sharpe (gm_trials.csv "vol hybrid", 2026-11-01; batch 0 B0.1) |
 | Minimum history | 36 spread returns | closed here |
 | Stale screen | 15 of 20 days; unchanged month-end | 1.3a s3.1 reader setting; monthly form closed here |
-| Leg cap | book per-market cap | engine convention (config.py market_risk_cap); closed here as the definition |
+| Leg cap | book per-market cap, from front-leg F's volatility, one cap for both legs | engine convention (config.py market_risk_cap); closed here as the definition; book target 10%, 5x gross cap (legs at weight 1) and block multiplier cap 50 are engine conventions too (config.py, book.py run()); markets = the 16 panel commodities, closed here (section 4) |
 | Start rule | 8 of 16 markets eligible | closed here |
 | Costs | book.py cost_bp per leg | engine convention |
 | Tranches | four weekly | rule 2 convention |

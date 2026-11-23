@@ -1,5 +1,9 @@
 # Pod spec: Card 2, regime and debt cycle (Bridgewater)
 
+> **Status (2026-11-23): APPROVED WITH CORRECTIONS at step 3.2.** Written at step 3.1 (Opus, agent C); checked by a
+> fresh Opus agent (checks/CHECK_3.2_C.md); its 5 corrections to this spec are applied. Claim ids and quotes
+> script-checked (ALL OK). Nothing registered or run; open items go to step 3.4 (check section 4, NOTES_3.1_agent_C.md).
+
 Step 3.1, Agent C, 2026-11-23. Nothing here is registered or run. Sources: CARD_1.4_regime_debt_cycle.md (final text,
 29 corrections applied) and its check; THESIS_REGISTER_1.5.md rows T20-T22; code read in gm/signals.py, gm/book.py,
 gm/config.py, gm/vol.py. RD = Dalio, BP = Prince, GJ = Jensen, KT = Karniol-Tambour. "Closed here" marks a choice the
@@ -126,7 +130,7 @@ months of y, available long before 1975; the labour gate needs 240 months of UNR
 |---|---|---|---|
 | GS10, TB3MS | FRED, 1953 / 1934 (reader) | FRED, lag 0 | free |
 | CPILFESL, UNRATE | FRED / ALFRED first-published; vintage coverage of design years not confirmed (register D12) | FRED, lag 1 | free |
-| ^GSPC month-end; panel eq_us_spx, bd_us_10y | free panel, 1975 | Yahoo / panel, 1 day | free |
+| ^GSPC month-end (Yahoo file read by signals.equity_dy and daily.py, not a panel series; first date not confirmed); panel eq_us_spx, bd_us_10y | free panel, 1975 | Yahoo / panel, 1 day | free |
 | WALCL (stop line only) | FRED, late 2002 (checker's recollection) | FRED, lag 0 | free |
 | Analyst series (daily 10-year yield, SPY, IEF, FXE, FXY, T5YIFR, panel) | live only | FRED / Yahoo | free |
 
@@ -141,9 +145,9 @@ Turnover: not given in the notes; R1 is a slow state rule, R2 has a 12-month tai
 
 From card s8, fixed now, on the design window:
 - R1: the 10-year's mean excess return in R1 on-months is no worse than in off-months (card's own falsifier).
-- R2: the S&P's return in the 12 months after on-months is no lower than in other months (card's own falsifier).
+- R2: the S&P's return in the 12 months after on-months is no lower than in other months (card's own falsifier); both sets use months up to 2009-12 only, so no 12-month look reads 2011.
 - R2, mechanism check (reported with the falsifier): R2 claims stocks fall from a later profit fall, not from further
-  rate rises; if the S&P's loss after on-months comes with GS10 rising a further 1.0 or more over the same 12 months
+  rate rises; if the S&P's loss after on-months comes with GS10 rising a further 1.0 or more over the same 12 months (on-months up to 2009-12 only)
   in most episodes, the gain is a rates bet, not the profit bet she names (numbers this spec's).
 - Loss path (P3): R1 loses most when the central bank prints and bonds rally with low real yields (chain 1's other
   branch); the window holds low-real-yield bond rallies (1975-76, 2008-10). R2 loses in a rate shock followed by a boom
@@ -163,7 +167,7 @@ short rate below 1.0 becomes a stop line); the framework is public, with "many i
 |---|---|
 | R1 bar 0.0 | quote direction "High Enough" (MT058-C06-3); 0.0 = holder loses to inflation (reader) |
 | R1 lowest third, 120 months | reader |
-| R1 hedge gate, 12-month correlation above zero | reader, joining MT138-C06-X1 and MT068-C10-3 |
+| R1 hedge gate, 12-month correlation above zero | reader, joining MT138-C06-X1 and MT068-C10-3; same window and threshold as the Macro Compass stockbond switch (data sheet; macro/registry.py derisk 4.1.0, bonds_if_corr_below 0.0), adopted there after backtests from 1975 that include the design and holdout years: seen in a related rule |
 | R2 X 1.5 and multiplier 10 | quote (MT147-C04-4) |
 | R2 X 1.0 | reader (earlier entry) |
 | R2 12-month yield window | Compass window, not hers (card R2) |
@@ -171,7 +175,7 @@ short rate below 1.0 becomes a stop line); the framework is public, with "many i
 | R2 labour gate at a 240-month low | reader ("in decades" read as two decades) |
 | 0.40 / vol, hybrid vol | engine convention |
 
-Chosen after seeing design results: 0. Chosen with sight of post-2010 history as the notes state it: none named
+Chosen after seeing design results: 0 in gm_trials.csv and CHANGES; seen in a related rule of another tool: 1 (the hedge gate's window and threshold, Macro Compass). Chosen with sight of post-2010 history as the notes state it: none named
 explicitly; both rules are hindsight-flagged (card s9).
 
 ## 13. Gating diagnostics

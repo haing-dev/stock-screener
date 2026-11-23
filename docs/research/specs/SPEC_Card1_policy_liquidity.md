@@ -1,5 +1,9 @@
 # Pod spec: Card 1, policy and liquidity (Druckenmiller, Bessent)
 
+> **Status (2026-11-23): APPROVED WITH CORRECTIONS at step 3.2.** Written at step 3.1 (Opus, agent C); checked by a
+> fresh Opus agent (checks/CHECK_3.2_C.md); its 16 corrections to this spec are applied. Claim ids and quotes
+> script-checked (ALL OK). Nothing registered or run; open items go to step 3.4 (check section 4, NOTES_3.1_agent_C.md).
+
 Step 3.1, Agent C, 2026-11-23. Nothing here is registered or run. Sources: CARD_1.4_policy_liquidity.md (final text, 45
 corrections applied) and its check; THESIS_REGISTER_1.5.md rows T13-T19; code read in gm/signals.py, gm/book.py,
 gm/config.py, gm/panel.py, gm/vol.py. D = Druckenmiller, B = Bessent. "Closed here" marks a choice the notes left open.
@@ -53,7 +57,7 @@ Common to R1-R5 (card s4, check items 9-10, closed where marked):
    the data known on those days; each holds a quarter. Monthly design runs use tranche 0; the 1990-2010 weekly check
    runs all four.
 5. Entry versions (pod level, card s6): E1 full size at the first condition month; E3 one third at the first condition
-   month, full once that leg's cumulative excess return since the entry month end is above zero at a month end; once
+   month, full once that leg's cumulative excess return since the entry month end, multiplied by the leg's direction (+1 long, -1 short), is above zero at a month end; once
    full it stays full to the end of the episode; a new episode starts at one third again. Closed here: "moved the
    trade's way" is judged per leg, on its cumulative panel excess return.
 6. Every version is run and averaged; an off version counts as zero.
@@ -64,7 +68,7 @@ R1 Squeeze.
 2. Condition at t: x(t) > x(t-L) for each of WTISPLC, D and r, using the latest known values (WTISPLC compares t-1 with
    t-1-L). Each L-month change of D is taken inside one series: TWEXMMTH while both ends lie in its range, else
    DTWEXBGS (check item 11). L = 6 or 12.
-3. Gate version: no position in a month in which R4's state at 5.0 is on (R4 step 2).
+3. Gate version: no position in a month in which R4's state at 5.0 is on (R4 step 1).
 4. Position: long bd_us_2y and long bd_us_10y.
 
 R2 Tightening into warnings.
@@ -78,11 +82,11 @@ R2 Tightening into warnings.
 R3 Easing into strength.
 1. Condition at t: FEDFUNDS(t) <= FEDFUNDS(t-3) - 0.25; and BAA minus GS10 below the median (version a) or at or below
    the 33.3rd percentile (version b) of its values from the first month both series exist up to t; and the S&P 500
-   month-end price level (^GSPC close, the series panel.py reads; spx_trend live) above the mean of its last 10
+   month-end price level (^GSPC month-end close from the Yahoo file that signals.equity_dy and daily.py read; panel.py holds no S&P price level, its eq_us_spx is the French US market before SPY; first date of the file not confirmed; spx_trend live) above the mean of its last 10
    month-end levels including t.
 2. Gold version: also require the panel gold level at a 12-month high, i.e. the cumulated cm_gold excess-return index
    at t is the highest of the 12 month ends t-11..t. Closed here: the index is built as book.trend_signal builds levels
-   (cumulated panel excess returns), so history and live use one construction; live from GC=F.
+   (cumulated panel excess returns), so history and live use one construction; live from GC=F. In the free engine cm_gold has about 108 design months (tools/bbgq/engine_ref.json market_months, so from about 2002); until 12 month-ends of panel gold exist the gold versions are off (zero), unless A1's Bloomberg data swap has given cm_gold an earlier history before B2 is registered (3.4 records which).
 3. Position: short bd_us_10y, long eq_us_spx.
 
 R4 Behind on inflation.
@@ -91,12 +95,12 @@ R4 Behind on inflation.
 2. Action A: short bd_us_10y and short bd_us_2y. Action B: A plus short eq_us_spx and long a commodity basket. The
    basket holds every panel commodity with a return that month (cm_wti, cm_brent, cm_natgas, cm_heatoil, cm_gasoline,
    cm_gold, cm_silver, cm_copper, cm_platinum, cm_corn, cm_wheat, cm_soybeans, cm_sugar, cm_coffee, cm_cotton,
-   cm_cattle; not cm_aqr_ew, no Bloomberg alternative commodities), equal risk inside the basket. Closed here: action
+   cm_cattle; not cm_aqr_ew, no Bloomberg alternative commodities), equal risk inside the basket. Code fact: panel.py uses no World Bank spot (ALLOW_AVG off); in the free engine the first of these returns starts in 1985 (cm_wti) and most start in 2000-2003 (engine_ref.json market_months), so in the 1970s state months (card s13: one long episode) the basket is empty, its leg holds zero (k stays 4) and action B is A plus the S&P short; whether cm_aqr_ew or A1's Bloomberg indexes should fill it is for 3.4 and changes no rule here. Closed here: action
    B has four legs at equal risk (2-year, 10-year, S&P, basket), so the 16 commodities do not outweigh the rest.
 
 R5 After the fall.
-1. Universe: G10 currencies in the panel, other than the dollar, whose stock index and 10-year bond are in the panel:
-   fx_eur (mark, then euro: eq_de_dax, bd_de_10y; check item 20), fx_jpy (eq_jp_nikkei, bd_jp_10y), fx_gbp (eq_gb_ftse,
+1. Universe: G10 currencies in the panel, other than the dollar, whose stock index and 10-year bond are panel markets (panel.py ids; membership is static, so the trigger set does not wait for the bonds; a leg without a return that month holds zero and k stays as in section 5):
+   fx_eur (euro only: the panel holds no mark series and fx_eur has about 143 design months in engine_ref.json, so from 1999; eq_de_dax, bd_de_10y; the card's mark mapping, check item 20, cannot be built from the panel), fx_jpy (eq_jp_nikkei, bd_jp_10y), fx_gbp (eq_gb_ftse,
    bd_gb_10y), fx_aud (eq_au_asx, bd_au_10y), fx_cad (eq_ca_tsx, bd_ca_10y). Code fact: the panel has no Swiss,
    New Zealand, Swedish or Norwegian stock index (panel.py EQUITY), so fx_chf, fx_nzd, fx_sek, fx_nok are out.
 2. For each, m(t) = % change of its month-end USD value (panel.fx_usd_value) over 6 months. Closed here: the price
@@ -135,10 +139,10 @@ to the ledger as they stand. The analyst never touches the trade list (rule 6) a
 | bd_us_10y | R1, R2 long; R3, R4 short | 1975-01 (DGS10 month-end) |
 | bd_us_2y | R1, R2 long; R4 short | first month of bd_us_2y in the panel (DGS2 plus stooq; panel.py BONDS, charter s4); reader's recollection: DGS2 from 1976-06 |
 | eq_us_spx | R3 long; R4-B short | 1975-01 (French US market before SPY) |
-| 16 panel commodities | R4-B basket | each from its first panel month; before about 2000 many are World Bank monthly average spot (panel flag "spot avg") |
+| 16 panel commodities | R4-B basket | each from its first panel month: in the free engine WTI from 1985, natural gas and heating oil from 1994, the rest from 2000-2003 (engine_ref.json market_months); no World Bank spot is used (panel.py ALLOW_AVG off) |
 | eq_de_dax, eq_jp_nikkei, eq_gb_ftse, eq_au_asx, eq_ca_tsx | R5 long | first panel month of each, not before 1975-01 |
 | bd_de_10y, bd_jp_10y, bd_gb_10y, bd_au_10y, bd_ca_10y | R5 bond version | first panel month of each |
-| fx_eur, fx_jpy, fx_gbp, fx_aud, fx_cad | R5 trigger input only, not traded | first month of panel.fx_usd_value; fx_eur before 1999: the panel's source (stooq eurusd) is not shown to be the mark in the code; builder records what it is |
+| fx_eur, fx_jpy, fx_gbp, fx_aud, fx_cad | R5 trigger input only, not traded | first month of panel.fx_usd_value (H.10 daily from 1971 for JPY, GBP, AUD, CAD); fx_eur from 1999 only (engine_ref.json: 143 design months); there is no mark series in the panel |
 
 Markets entering through a gate: none added. C1-D2 may remove a leg (section 13). Gold (cm_gold) is an input to R3's
 version only.
@@ -194,7 +198,7 @@ rule's start; none inside. Never 2011 or later. The weekly-tranche check: 1990-2
 | CPILFESL, M2SL | FRED / ALFRED first-published; vintage coverage of the design years not confirmed (register D12) | FRED, lag 1 | free |
 | WTISPLC | FRED | FRED, lag 1 | free |
 | TWEXMMTH, DTWEXBGS | FRED; TWEXMMTH from 1973-01, DTWEXBGS daily from 2006 (reader) | FRED (DTWEXBGS), lag 0 | free |
-| ^GSPC month-end, panel returns (bonds, equities, FX values, commodities, gold) | free panel (gm/panel.py) from 1975 | free daily / monthly closes, 1 day | free |
+| ^GSPC month-end, panel returns (bonds, equities, FX values, commodities, gold) | free panel (gm/panel.py): US bonds and equities from 1975, each other market from its own first month (free engine: euro 1999, gold about 2002, copper about 2003, WTI 1985; engine_ref.json); ^GSPC is a Yahoo file read by signals.py and daily.py, first date not confirmed | free daily / monthly closes, 1 day | free |
 | Analyst series (WALCL, WTREGEN, RRPONTSYD, ETFs, PCOPPUSDM, GC=F, GLD) | n/a (live only) | FRED / Yahoo | free |
 
 Rule 7: every rule input has a free live source, but the pod cannot be Core in any case (dating class C; rule layers
@@ -212,12 +216,12 @@ double-cost test (WORKFLOW decisive test 2, cost_mult 2.0) applies.
 
 Fixed now, on the design window, positions only from the rule; numbers are this spec's, from the card's direction:
 - R1, R2: the averaged position earns a mean monthly excess return of zero or less over its held months; or, in more
-  than half of the episodes, GS2 is higher 12 months after the last condition month than at it (the Fed did not reverse,
+  than half of the episodes whose last condition month is 2009-12 or earlier (so the 12-month look stays inside the design window), GS2 is higher 12 months after the last condition month than at it (the Fed did not reverse,
   against C2/C3).
 - R3: the bond leg earns zero or more on its held months (rates did not rise after easing into strength); or the stock
   leg's gain comes only from months in which Trend's average S&P position is long by the same sign (no new source).
 - R4: in state months the 10-year leg's mean excess return is zero or more.
-- R5: the stock leg's mean excess return over the 12 months after triggers is zero or less; or it is positive only in
+- R5: the stock leg's mean excess return over its held months up to 2010-12 is zero or less; or it is positive only in
   episodes in which Economic trend's trade theme already held the same long.
 - Loss path (protocol item P3): R1, R2 lose most in inflationary tightening; such months are in the window (1977-81).
   R3 loses in a melt-up that ends ("bought the exact top", MT069-C06-3; 1999-2000 in the window). R4 loses when
@@ -241,14 +245,14 @@ registered live checkpoint (3.4); this spec adds no automatic switch.
 | R1 L 6 / 12 | Compass window / the model's horizon (reader) |
 | R1 rate FEDFUNDS / GS10; R1, R2 R4 gate | reader; the gate was "made knowing 2022-23" (card R1) |
 | R2 0.25, T 6 / 12, k 2 / 3, 6-month spread window, 24-month M2 window | reader; Compass window; "over the last couple years" (MT152-C04-3) |
-| R3 0.25 over 3 months, median / lowest third, 10-month average, gold 12-month high | reader; quote for the trio: "to cut 50 basis points with credit spreads tight gold at new highs" (MT151-C01-5) |
+| R3 0.25 over 3 months, median / lowest third, 10-month average, gold 12-month high (the 10-month S&P average is the Macro Compass growth-trend cut, macro/registry.py derisk 4.0.0, adopted after combination backtests from 1975 that include the design and holdout years: seen in a related rule) | reader; quote for the trio: "to cut 50 basis points with credit spreads tight gold at new highs" (MT151-C01-5) |
 | R4 5.0 / 4.5 | quote (MT148-C02-2, MT148-C02-1) |
 | R5 15 / 10 points, 6 months | 15 is D's break size; 10 earlier entry; 6 months Compass window (reader) |
 | Entry thirds | quote: "I tend to trade in thirds" (MT141-C10-8) |
 | 0.40 / vol, hybrid vol | engine convention (book.py, charter s4) |
 | Splice rule, first-published rule, basket legs, per-leg entry test | closed here (section 3) |
 
-Chosen after seeing design results: 0 (no gm_trials.csv row or CHANGES entry touches any card knob). Chosen with sight
+Chosen after seeing design results: 0 in gm_trials.csv and CHANGES (no row touches a card knob); seen in a related rule of another tool: 1 (the 10-month S&P average, Macro Compass). Chosen with sight
 of post-2010 history, as the card says: 1 (the R4 gate). Every rule is hindsight-flagged in any case.
 
 ## 13. Gating diagnostics
@@ -258,7 +262,7 @@ Zero slots, positions only, no returns of the rule, design months 1975-01 to 201
   counted; closed here, as card 2's wording). A new episode starts at an on-month whose previous on-month is 12 or more
   months earlier (closed here: the register notes the gap was not fixed). Gate: fewer than 6 episodes, the rule leaves
   the layer and becomes an analyst watch condition. Card: R4 is the likely casualty.
-- C1-D2 already held (gates each leg). Share of months in which the leg holds a position (any version, tail
+- C1-D2 already held (gates each leg). Share of months in which the leg holds a position (closed here: held months, not only condition months, because the question is whether the position is already held; the card says "on-months"; any version, tail
   included) where the registered systematic pods combined hold that market with the same sign. Combined = sign of the
   incumbent book's net position in that market (book.run "pos" of the registered CANDIDATE config with the specs of
   Agent A). Closed here: the register notes the combination was not fixed. Gate: above 80%, the leg is dropped.
@@ -271,7 +275,7 @@ None of these reads a sealed month. The five "already held" thresholds across ca
 Re-checked against the code (gm/signals.py, CANDIDATE config):
 - R1, R2 long bonds against Trend (book.trend_signal: mean sign of 1/3/12-month excess return, short after yields
   rise) and against Economic trend's monetary theme (signals.themes: m = 12-month change of the 2-year yield, SIGNS FI
-  monetary -1: short bonds after rates rise). Carry (signals.carry_values: yield minus 3-month rate) is short a bond
+  monetary -1: short bonds after rates rise). Carry's directional half (signals.carry_values: yield minus 3-month rate; book.family_positions kind half = half sign, half rank) is short a bond
   whose yield is below the 3-month rate, so on an inverted curve it opposes R2 too. Confirmed.
 - R3: the stock leg (S&P above its 10-month average) is close to Trend's long (C1-D2 measures it); after cuts Trend
   and Carry tend to hold bonds, so the bond leg is opposite (card; consistent with the code).
