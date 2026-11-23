@@ -478,10 +478,25 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   0/0.4/0.8/1.2. PROPOSAL for 3.4: alpha + bootstrap p, Holm 2.5% over systematic pods only (state measured ~3%);
   double costs, placebo, tail decisive; eras reported; hygiene by non-inferiority; >= 48 on-months and >= 3 episodes per
   rule layer; A2 compared against the incumbent as run; break-even IR for equal-risk sizing ~0.24 (step 5.1).
-  NEXT: 3.4 registration (TESTING_PROTOCOL), 3.5 checker test. Engine fixes to register before A1: Bloomberg
-  switches OFF + bloomberg.py:52 map, CPI release dates, k=1 form, holding cut at 2010-12-31.
-  User 2026-11-22: NO MORE FABLE UNITS for now. NEXT: 3.1 pod specs (Opus), 3.2 spec check (fresh Opus), 3.3 power
-  check, 3.4 registration (TESTING_PROTOCOL), 3.5 checker test; LSEG reader + lock + seal to register LSEG as a source.
+  STEP 3.4 REGISTRATION DONE 2026-11-23: TESTING_PROTOCOL.md section 7 (Opus high draft ~0.44M; fresh Opus check
+  ~0.35M: APPROVED WITH CORRECTIONS, 32 applied by script and re-verified). Full record docs/research/registration/
+  (REGISTRATION_3.4.md = section 7 + table of 100 items (93 settled, 7 blocked) + gm/CHANGES.md entries to write before
+  the first run; CHECK_3.4.md; SUMMARY_FOR_USER.md). KEY RULES: rule 5 = a pre-2011 source states the RULE (what, which
+  way, on what), mechanism not required, dated per pod/leg/version (measure-family clause for equity value; Trend's
+  source is a lookback straddle, caveat kept) -> Core-eligible: Trend, ranked currency carry, energy carry, equity value;
+  shadow: Economic trend, bond carry, directional currency carry, bond and currency value (departure from rule 1: Core
+  parts tested and held separately). Core book at EQUAL RISK (defined exactly; family shares 45/25/15/15 dropped). Existing
+  pods reach Core by placebo, double costs, tail and rebuild; their alpha only reported (design data seen): stated as a
+  departure from WORKFLOW s5; holdout = the existing book's only independent test. No new pod can be Core with today's
+  data (Curve carry undated; Strip reversion no registered live source) -> B1/B2 decide Incubator/Shelved; Holm counts
+  Core-eligible pods only (~4% false adoption if Strip reversion is the only one). Test 1 = alpha + whole-month
+  bootstrap p; eras reported; hygiene = non-inferiority; rule layers need >= 48 on-months and >= 3 episodes; A1 untested
+  (named conflict); live checkpoints at 120 (not 60) months; holdout fail -> expected Sharpe = min(design minus
+  inflation, holdout). BLOCKED (7): LSEG registration + licence statement, T09/T10 histories, Eurodollar daily 3/5/6/7,
+  Fung-Hsieh factor file, PC pandas block, UK/euro 3m replacement (rule + 2027-01 deadline set).
+  NEXT: 3.5 checker test (Opus plants defects, fresh Opus checks, script scores); write the gm/CHANGES.md entries of
+  REGISTRATION_3.4.md part (c) and build them (engine fixes, k=1, tranches, averaging, test code) before Batch A;
+  LSEG reader + lock + seal + licence statement to register LSEG. User 2026-11-22: NO MORE FABLE UNITS for now.
 - MT228 (2026-11-10): raw X posts of John Galt @AtlasShrug1 (1,359 posts, Jul 2025 - 8 Nov 2026) extracted like a transcript
   with dates: 733 claims (185 rules/tells, 188 dated forecasts), Sonnet single read, quotes script-checked, cross-check
   pending; macro-vault raw/sonnet/MT228.json, brief pipeline/X_EXTRACT_BRIEF.md. Use: forecast ledger (step 2), rule
