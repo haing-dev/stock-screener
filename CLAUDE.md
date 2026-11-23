@@ -441,6 +441,15 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   2y) and D2 (LOCK_v2) resolved the same day. Vault 9ffc55d; PC vault copy job vault_sync_20261122c queued.
   STEP 3.1 STARTED 2026-11-23: three Opus high agents in parallel (A existing pods, B Curve carry + Strip reversion,
   C five card pods), work dir scratchpad spec_3.1 (BRIEF_OPUS.md = the spec form, 17 sections). PC vault copy 22c done.
+  3.1 DONE: 11 draft specs in docs/research/specs/ (+ NOTES_3.1_agent_A/B/C.md; tokens A 0.48M, B 0.42M, C 0.49M; ids
+  ALL OK). Key notes: Value v2's bond leg = rejected batch-1 challenger V1 (already seen, count it at 3.4); BUG
+  gm/bloomberg.py:52 maps eq_eu_stoxx50 -> MXEM (MSCI EM) and NDX/R2K -> MXUS (Bloomberg path only, not live; fix with
+  the registered Bloomberg-switches-OFF engine change before A1); book.py drops commodity value and equity carry (Value
+  holds no commodities); OECD GB/euro 3m rates end 2026-01 (carried 12 months: live-source gap before 2027-01); CPI
+  1-month lag may read quarterly CPI (AU, NZ) early (release-date fix proposed); C3-D1 needs a "Core book" that does not
+  exist yet; C4-D1 and R1 read 2011 (end state months 2010-06 / 2010-11); strip contracts need contract-month ids from
+  the LSEG reader; spread pods sit far below 10% target under the caps; 5 card pods vs "at most 4" per B batch.
+  STEP 3.2 STARTED: three fresh Opus checkers (check_A/B/C in spec_3.1; BRIEF_CHECK_3.2.md; tools/apply_check.py).
   User 2026-11-22: NO MORE FABLE UNITS for now. NEXT: 3.1 pod specs (Opus), 3.2 spec check (fresh Opus), 3.3 power
   check, 3.4 registration (TESTING_PROTOCOL), 3.5 checker test; LSEG reader + lock + seal to register LSEG as a source.
 - MT228 (2026-11-10): raw X posts of John Galt @AtlasShrug1 (1,359 posts, Jul 2025 - 8 Nov 2026) extracted like a transcript
