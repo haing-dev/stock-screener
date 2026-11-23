@@ -13,8 +13,10 @@ SPY, and the rule result. No holding, no stock, no other filer's name or return.
 Job names (template steps only):
   eq_rec_pull_v<n>: pull(sql, save, out, DATA, budget=N)   resumable; re-run until ALL PULLS COMPLETE
   eq_rec_v<n>:      report(load, out)
+  eq_rec_scan_v<n>: scan(load, out)                          every filer; lists those that pass (A12 item 8)
 1.0.0 (2026-11-22): first version.
 1.0.1 (2026-11-22, after the v1 output; A12 item 7): the investor's own quarters need >= 1 CRSP holding (not 5); peers unchanged.
+1.1.0 (2026-11-23, A12 item 8): scan() over all filers with the 1-point margin; report() unchanged.
 """
 import json
 import os
@@ -27,7 +29,7 @@ import pandas as pd
 INV = json.loads("[{\"name\": \"Joel Greenblatt\", \"group\": \"roster\", \"record\": \"fund\", \"fundnos\": [56165, 58470, 59064], \"mgrnos\": []}, {\"name\": \"Joel Greenblatt (13F view, reported only)\", \"group\": \"roster\", \"record\": \"13f\", \"mgrnos\": [10969, 12775]}, {\"name\": \"Dev Kantesaria\", \"group\": \"roster\", \"record\": \"13f\", \"mgrnos\": [14460]}, {\"name\": \"Chris Hohn\", \"group\": \"roster\", \"record\": \"13f\", \"mgrnos\": [11194]}, {\"name\": \"Glenn Greenberg\", \"group\": \"roster\", \"record\": \"13f\", \"mgrnos\": [16080]}, {\"name\": \"Val Zlatev\", \"group\": \"roster\", \"record\": \"13f\", \"mgrnos\": [7142]}, {\"name\": \"Derek Pilecki\", \"group\": \"roster\", \"record\": \"fund\", \"fundnos\": [6972], \"mgrnos\": []}, {\"name\": \"Derek Pilecki (13F view, reported only)\", \"group\": \"roster\", \"record\": \"13f\", \"mgrnos\": [8799]}, {\"name\": \"Bill Nygren and Alex Fitch\", \"group\": \"roster\", \"record\": \"fund\", \"fundnos\": [14612, 14617], \"mgrnos\": []}, {\"name\": \"Bill Nygren and Alex Fitch (13F view, reported only)\", \"group\": \"roster\", \"record\": \"13f\", \"mgrnos\": [43485]}, {\"name\": \"Murray Stahl\", \"group\": \"roster\", \"record\": \"fund\", \"fundnos\": [17878], \"mgrnos\": []}, {\"name\": \"Murray Stahl (13F view, reported only)\", \"group\": \"roster\", \"record\": \"13f\", \"mgrnos\": [44850, 49373]}, {\"name\": \"Pat Dorsey\", \"group\": \"roster\", \"record\": \"13f\", \"mgrnos\": [14201]}, {\"name\": \"Chris Davis\", \"group\": \"roster\", \"record\": \"fund\", \"fundnos\": [7317, 8750, 28357], \"mgrnos\": []}, {\"name\": \"Chris Davis (13F view, reported only)\", \"group\": \"roster\", \"record\": \"13f\", \"mgrnos\": [78320]}, {\"name\": \"Joseph Shaposhnik\", \"group\": \"roster\", \"record\": \"fund\", \"fundnos\": [86781], \"mgrnos\": []}, {\"name\": \"Alex Sacerdote\", \"group\": \"roster\", \"record\": \"13f\", \"mgrnos\": [11405]}, {\"name\": \"David Einhorn\", \"group\": \"roster\", \"record\": \"13f\", \"mgrnos\": [42315]}, {\"name\": \"Stan Druckenmiller\", \"group\": \"roster\", \"record\": \"13f\", \"mgrnos\": [13021, 23704]}, {\"name\": \"Todd Kantor\", \"group\": \"roster\", \"record\": \"13f\", \"mgrnos\": [13431]}, {\"name\": \"Bob Robotti\", \"group\": \"roster\", \"record\": \"13f\", \"mgrnos\": [10247]}, {\"name\": \"Fred Martin\", \"group\": \"roster\", \"record\": \"13f\", \"mgrnos\": [23050]}, {\"name\": \"Brad Gerstner\", \"group\": \"roster\", \"record\": \"13f\", \"mgrnos\": [13112]}, {\"name\": \"Chris Bloomstran\", \"group\": \"roster\", \"record\": \"13f\", \"mgrnos\": [11757]}, {\"name\": \"Li Lu\", \"group\": \"roster\", \"record\": \"13f\", \"mgrnos\": [14546]}, {\"name\": \"Terry Smith (removed, reference)\", \"group\": \"removed\", \"record\": \"13f\", \"mgrnos\": [13408]}, {\"name\": \"William Harnisch\", \"group\": \"candidate\", \"record\": \"13f\", \"mgrnos\": [], \"patterns\": [\"PECONIC PARTNERS\"]}, {\"name\": \"Paul Singer\", \"group\": \"candidate\", \"record\": \"13f\", \"mgrnos\": [78988]}, {\"name\": \"Cliff Sosin\", \"group\": \"candidate\", \"record\": \"13f\", \"mgrnos\": [21801]}, {\"name\": \"Nathaniel August\", \"group\": \"candidate\", \"record\": \"13f\", \"mgrnos\": [13534], \"patterns\": []}, {\"name\": \"John Hussman\", \"group\": \"candidate\", \"record\": \"13f\", \"mgrnos\": [], \"patterns\": [\"HUSSMAN\"]}]")
 # <<< FROZEN INPUT
 
-VERSION = "eq_rec-1.0.1"
+VERSION = "eq_rec-1.1.0"
 QW = ["%d-%s" % (y, d) for y in range(2010, 2026) for d in ("03-31", "06-30", "09-30", "12-31")][3:-1]  # 2010-12..2025-09
 SPY_PERMNO = 84398
 MIN_POS, MIN_VAL, MIN_Q = 5, 1e8, 20
@@ -242,4 +244,91 @@ def report(load, out):
         if gaps:
             out("    %d quarters missing since the first eligible one (last %s): window starts after the last gap"
                 % (len(gaps), gaps[-1][:7]))
+    out("ALL DONE")
+
+
+# ------------------------------------------------------------------------------------------------------ scan (1.1.0)
+MARGIN = 0.01                       # A12 item 8: 2021-25 annualised may trail SPY by up to 1 point a year
+LIST_MIN_VAL, LIST_POS = 5e8, (5, 200)   # listed: latest 13F value >= $500m and 5..200 CRSP holdings (stock pickers)
+MAX_LINES = 300
+
+
+def scan(load, out):
+    out("%s  scan of all 13F filers, roster rule v3 with the 1-point margin (A12 item 8)" % VERSION)
+    names = load("eq_rec_names")
+    names["mgrno"] = names.mgrno.astype("int64")
+    names = names.sort_values("rdate2").drop_duplicates("mgrno", keep="last").set_index("mgrno").mgrname
+    q = []
+    for d in QW:
+        f = load("eq_rec_q_%s" % d[:7].replace("-", ""))
+        f["q"] = d
+        q.append(f)
+    q = pd.concat(q, ignore_index=True)
+    q["mgrno"] = q.mgrno.astype("int64")
+    mw = q.pivot(index="mgrno", columns="q", values="mw").reindex(columns=QW)
+    mw20 = q.pivot(index="mgrno", columns="q", values="mw20").reindex(columns=QW)
+    npos = q.pivot(index="mgrno", columns="q", values="ncrsp").reindex(columns=QW)
+    vall = q.pivot(index="mgrno", columns="q", values="vall").reindex(columns=QW)
+    elig = (npos >= MIN_POS) & (vall >= MIN_VAL) & mw.notna()
+    own = (npos >= 1) & (vall >= MIN_VAL) & mw.notna()
+    spy = _spy_q(load)
+    spy_r = _ann(_chain([spy[x] for x in RECENT]), 20)
+    years = [2021, 2022, 2023, 2024, 2025]
+    spy_y = {y: _chain([spy[x] for x in RECENT if _year_of(x) == y]) for y in years}
+    # last unbroken own run ending 2025-09
+    o = own.to_numpy()
+    run = np.zeros(len(own), int)
+    for i in range(len(own)):
+        k = 0
+        for j in range(len(QW) - 1, -1, -1):
+            if o[i, j]:
+                k += 1
+            else:
+                break
+        run[i] = k
+    cand = own.index[run >= MIN_Q]
+    out("filers with an unbroken own record of >= %d quarters ending 2025-09: %d" % (MIN_Q, len(cand)))
+    rows = []
+    starts = {}
+    for m, k in zip(own.index, run):
+        if k >= MIN_Q:
+            starts.setdefault(len(QW) - k, []).append(m)
+    for s, ms in starts.items():
+        win = QW[s:]
+        peers = elig[win].all(axis=1)
+        pc = np.sort(((1 + mw.loc[peers, win]).prod(axis=1) - 1).to_numpy())
+        lc = (1 + mw.loc[ms, win]).prod(axis=1) - 1
+        for m in ms:
+            c = lc[m]
+            rank = float(np.searchsorted(pc, c, side="left")) / len(pc) if len(pc) else np.nan
+            rows.append((m, win[0], len(win), _ann(c, len(win)), _ann(_chain([spy[x] for x in win]), len(win)), rank))
+    r = pd.DataFrame(rows, columns=["mgrno", "start", "nq", "long", "spy_long", "rank"]).set_index("mgrno")
+    rec = (1 + mw.loc[r.index, RECENT]).prod(axis=1) - 1
+    r["recent"] = [(_ann(x, 20)) for x in rec]
+    r["top20"] = [_ann(x, 20) for x in ((1 + mw20.loc[r.index, RECENT]).prod(axis=1) - 1)]
+    for y in years:
+        qs = [x for x in RECENT if _year_of(x) == y]
+        r["d%d" % y] = ((1 + mw.loc[r.index, qs]).prod(axis=1) - 1) - spy_y[y]
+    r["ahead"] = (r[["d%d" % y for y in years]] > 0).sum(axis=1)
+    r["a"] = (r["rank"] >= 0.60)
+    r["b"] = (r.recent >= spy_r - MARGIN) & (r.ahead >= 3)
+    r["val"] = vall.loc[r.index, QW[-1]]
+    r["pos"] = npos.loc[r.index, QW[-1]]
+    r["name"] = [str(names.get(m, "?")) for m in r.index]
+    p = r[r.a & r.b]
+    out("pass (a) %d, (b) %d, both %d" % (int(r.a.sum()), int(r.b.sum()), len(p)))
+    lst = p[(p.val >= LIST_MIN_VAL) & p.pos.between(*LIST_POS)].copy()
+    out("listed (13F value 2025-09 >= $%.0fm, %d-%d CRSP holdings): %d" % (LIST_MIN_VAL / 1e6, LIST_POS[0], LIST_POS[1], len(lst)))
+    lst["ex"] = lst.recent - spy_r
+    lst = lst.sort_values("ex", ascending=False)
+    out("SPY 2021-25 %s%%/yr; margin %.0f point" % (_p(spy_r), 100 * MARGIN))
+    out("columns: mgrno | filer name | 13F value 2025-09 $bn | holdings | window | quarters | long ann % | rank | "
+        "2021-25 ann % | vs SPY | years ahead | 2021..2025 minus SPY | top-20 2021-25 %")
+    for m, x in lst.head(MAX_LINES).iterrows():
+        out("%d | %s | %.1f | %d | %s..2025-12 | %d%s | %s | %.2f | %s | %s | %d of 5 | %s | %s" % (
+            m, x["name"][:40], x.val / 1e9, int(x.pos), "%d-%02d" % (int(x.start[:4]) + (1 if x.start[5:7] == "12" else 0), 1 if x.start[5:7] == "12" else int(x.start[5:7]) + 1), int(x.nq), "" if x.nq >= 40 else " (short)",
+            _p(x.long), x["rank"], _p(x.recent), _p(x.ex), int(x.ahead),
+            " ".join(_p(x["d%d" % y]) for y in years), _p(x.top20)))
+    if len(lst) > MAX_LINES:
+        out("(%d more not printed)" % (len(lst) - MAX_LINES))
     out("ALL DONE")

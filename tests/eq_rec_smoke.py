@@ -40,3 +40,8 @@ assert [l for l in lines if l.startswith("Fred Martin")][0].endswith("FAIL")
 assert "short record" in [l for l in lines if l.startswith("Val Zlatev")][0]
 assert "William Harnisch | candidate | 13F 990001" in txt
 print("\nSMOKE OK")
+
+lines.clear()
+eq_rec.scan(load, lambda *a: (lines.append(" ".join(map(str, a))), print(*a)))
+assert any(l.startswith("21801 |") for l in lines), "planted winner not listed"
+print("\nSCAN SMOKE OK")

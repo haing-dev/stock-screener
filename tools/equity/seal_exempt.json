@@ -179,9 +179,9 @@
   {
    "registered_job": "record_check",
    "module": "eq_rec",
-   "code_sha256": "be0e950efecd97457689f3d56edee6c839ed87cc09974500ebaa4f3ca68eb114",
+   "code_sha256": "6681e2b8ee643bddee9de29f21693142a431974380079d4aecb2cdebb5da2ed5",
    "registration": "docs/research/equity/V04_REGISTRATION.md addendum A12 (roster rule v3)",
-   "output": "eq_rec.report: per listed investor only: long-record rank share, 2021-25 and calendar-year returns against SPY, rule result; no holding, no stock, no other filer",
+   "output": "eq_rec.report: per listed investor only: long-record rank share, 2021-25 and calendar-year returns against SPY, rule result; no holding, no stock, no other filer; eq_rec.scan: filers that pass rule v3 with the 1-point margin (name, 13F value, holdings, record lines)",
    "names": [
     {
      "pattern": "eq_rec_pull_v\\d+[a-z]?",
@@ -194,6 +194,12 @@
      "functions": {
       "report": "load, out"
      }
+    },
+    {
+     "pattern": "eq_rec_scan_v\\d+[a-z]?",
+     "functions": {
+      "scan": "load, out"
+     }
     }
    ],
    "code_history": [
@@ -201,6 +207,11 @@
      "code_sha256": "d91c44c92170f88041f0cddd33ff55298b59bc9b9d6a5ece1ce965622751dfc7",
      "version": "eq_rec-1.0.0",
      "note": "ran as eq_rec_v1 (report in docs/research/equity/eq_rec_v1_report.txt)"
+    },
+    {
+     "code_sha256": "be0e950efecd97457689f3d56edee6c839ed87cc09974500ebaa4f3ca68eb114",
+     "version": "eq_rec-1.0.1",
+     "note": "ran as eq_rec_v2 (decisive report, eq_rec_v2_report.txt)"
     }
    ]
   }

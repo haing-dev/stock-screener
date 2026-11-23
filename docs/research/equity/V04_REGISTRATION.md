@@ -451,3 +451,10 @@ as such. Replaces R1.1 (record); R1.2 (material) and R1.3 (screenability) stay.
    peer group (at least 5 holdings) is unchanged. Mangrove's filer (13534) was not found by name in v1; its number is
    now listed. Both reports are kept; v2 decides. Fund records with missing months (Shaposhnik's fund, Greenblatt's
    fund before 2012-10) are unchanged.
+8. **Margin and user picks (2026-11-23, user, after seeing v2).** (b) is relaxed: the 2021-25 annualised return may
+   trail SPY by up to 1 point a year; "ahead in at least 3 of 5 calendar years" stays. This brings back Kantesaria
+   (-0.2) and Li Lu (-0.0). The user also keeps Hohn (2 of 5 years), Sosin (2021-25 10.2%) and Pilecki (fund record
+   includes years before his tenure) by her own choice, outside the rule; logged as user picks. Roster: 15. The same
+   rule with the margin is run over every 13F filer (eq_rec 1.1.0 `scan`, job eq_rec_scan_v1) to fill open places;
+   listed are filers with 13F value at least $500m and 5-200 CRSP holdings at 2025-09. A listed filer still needs
+   R1.2 (material) and R1.3 (screenability) before it joins.
