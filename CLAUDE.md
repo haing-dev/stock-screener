@@ -439,6 +439,8 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   2011; Trend/Value/commodity carry/Strip reversion partly; the rest hindsight -> 3.4 must fix how rule 5 is read;
   (5) whether the card rule layers count against "at most 4 pods" per B batch is not settled. Preconditions D1 (doubled
   2y) and D2 (LOCK_v2) resolved the same day. Vault 9ffc55d; PC vault copy job vault_sync_20261122c queued.
+  STEP 3.1 STARTED 2026-11-23: three Opus high agents in parallel (A existing pods, B Curve carry + Strip reversion,
+  C five card pods), work dir scratchpad spec_3.1 (BRIEF_OPUS.md = the spec form, 17 sections). PC vault copy 22c done.
   User 2026-11-22: NO MORE FABLE UNITS for now. NEXT: 3.1 pod specs (Opus), 3.2 spec check (fresh Opus), 3.3 power
   check, 3.4 registration (TESTING_PROTOCOL), 3.5 checker test; LSEG reader + lock + seal to register LSEG as a source.
 - MT228 (2026-11-10): raw X posts of John Galt @AtlasShrug1 (1,359 posts, Jul 2025 - 8 Nov 2026) extracted like a transcript
