@@ -34,7 +34,8 @@ import time
 import numpy as np
 import pandas as pd
 
-VERSION = "gm_engine-1.1.0"   # 1.1.0 (gm-1.2.3, E5): design runs sealed at config.SEAL_END
+VERSION = "gm_engine-1.2.0"   # 1.1.0 (gm-1.2.3, E5): design runs sealed at config.SEAL_END; 1.2.0 (gm-2.1.0): the
+                              # feature paths (k = 1, grid, Core / shadow, tranches, card 4 daily) for the truncation test
 DESIGN_END = pd.Period("2010-12", "M")
 ERAS = {"1975-2010": ("1975-01", "2010-12"), "1990-2010": ("1990-01", "2010-12")}
 CONFIGS = ("BASE", "CANDIDATE")
@@ -176,7 +177,7 @@ def bbg_dict(bbg, asof):
     return bbg(asof) if callable(bbg) else bbg
 
 
-def run(free_dir=None, cut=None, M=None, bbg=None, seal=True):
+def run(free_dir=None, cut=None, M=None, bbg=None, seal=True, features=False):
     """panel -> signals (E, C, V as gm.signals.main computes them) -> daily returns -> BASE and CANDIDATE books
     (gm.book.run with daily data and the signals, as gm.protocol does). cut: a date T for the truncation test.
     bbg: optional Bloomberg inputs, a gm.bloomberg workbook dict or a function asof -> dict (see bbg_dict; with a cut
@@ -184,7 +185,9 @@ def run(free_dir=None, cut=None, M=None, bbg=None, seal=True):
     seal (E5, gm-1.2.3): True = a design run: without a cut every loader is cut at gm.config.SEAL_END (2010-12-31), so
     no input dated later reaches the rules; gm.book.run is sealed; the panel, signals and daily returns kept in the
     result end at the seal and the result is checked by gm.seal.check_output. False = the unsealed engine (diagnostic
-    only: shows that the seal changes no design number)."""
+    only: shows that the seal changes no design number).
+    features (gm-2.1.0): also compute the feature paths (feature_paths below) for the truncation test; the k = 0 books
+    and every reference item are computed exactly as without it."""
     M = M or setup(free_dir)
     M["BBG"]._CACHE.clear()
     P, G, DL, B, CF = M["P"], M["G"], M["DL"], M["B"], M["CF"]
@@ -204,6 +207,11 @@ def run(free_dir=None, cut=None, M=None, bbg=None, seal=True):
             C = G.carry_values(R)
             V = G.value_values(R)
             D = DL.build()
+            if features:
+                from gm import execution as EX
+                EV = G.econ_versions(R, ("sign",))
+                V2 = G.value_v2(R)
+                gspc = DL.yahoo_daily("^GSPC")
     S = {"E": E, "C": C, "V": V}
     after_empty = None
     if eff is not None:
@@ -227,7 +235,48 @@ def run(free_dir=None, cut=None, M=None, bbg=None, seal=True):
         out["after_cut_empty"] = after_empty
     if T_seal is not None:
         SL.check_output({k: out[k] for k in ("R", "S", "D", "books", "trend")}, SL.DESIGN, "gm_engine.run")
+    if features:
+        S2 = dict(S, E_sign=EV["sign"], V2=V2)
+        if T_seal is not None:
+            S2 = SL.cut_inputs(T_seal, S2)
+            gspc = SL.cut_inputs(T_seal, gspc)
+        if eff is not None:
+            gspc = gspc[gspc.index <= pd.Timestamp(eff)]
+        out["S_features"] = S2
+        out["gspc"] = gspc
+        out["features"] = feature_paths(R, S2, D, gspc, M)
     return out
+
+
+FEATURE_CFGS = ("BASE", "CANDIDATE", "A2_CHALLENGER")
+
+
+def feature_paths(R, S, D, gspc, M):
+    """gm-2.1.0 feature paths on given inputs (design run, sealed): NYSE days from the ^GSPC dates; k = 1 returns and
+    flags; k = 1 books of BASE, CANDIDATE and the A2 challenger (grid); the equal-risk Core and shadow books of the A2
+    challenger at k = 1; the four tranches of the A2 challenger; card 4 daily excess return; and the check that Carry's
+    two versions reproduce today's half-and-half family position (CANDIDATE, positions only). Returns frames only: no
+    statistic is computed here."""
+    from gm import execution as EX
+    B, CF = M["B"], M["CF"]
+    sink = io.StringIO()
+    with contextlib.redirect_stdout(sink):
+        days = EX.nyse_days(gspc=gspc)
+        R1, flags = EX.k1_returns(R, D, days)
+        books = {}
+        for name in FEATURE_CFGS:
+            books[name] = EX.run_k1(R, getattr(CF, name), D, S, days)
+        g = CF.A2_CHALLENGER
+        core = EX.run_k1(R, g, D, S, days, parts=CF.CORE_PARTS)
+        shadow = EX.run_k1(R, g, D, S, days, parts=CF.SHADOW_PARTS)
+        tr = EX.tranches(R, g, D, S, days)
+        e = EX.spx_daily_excess(R, gspc)
+        old, _ = B.family_positions(R, CF.CANDIDATE, D, S)
+        new, _, _ = B.family_positions(R, CF.CANDIDATE, D, S, components=True)
+    carry_diff = max(float((old["carry"][c] - new["carry"][c]).abs().max().max()) for c in old["carry"])
+    carry_nan = sum(int((old["carry"][c].isna() != new["carry"][c].isna()).sum().sum()) for c in old["carry"])
+    return {"days": days, "R1": R1, "flags": flags, "books": books, "core": core, "shadow": shadow, "tranches": tr,
+            "e": e, "carry_half_check": {"maxdiff": carry_diff, "nan_mismatch": carry_nan}}
 
 
 # =====================================================================================================================
@@ -407,6 +456,129 @@ def trunc_compare(full, cut_res, T):
         r["pass"] = r["differ"] == 0
         rows.append(r)
     return rows
+
+
+# =====================================================================================================================
+# truncation test of the gm-2.1.0 feature paths
+# =====================================================================================================================
+def feature_stages(res):
+    """Stage name -> (frame or series, horizon). Horizon 'T': decided or known by month T (positions, signals, scaled
+    part returns); 'T-1': a k = 1 or tranche return, a tranche decision or a tranche panel value whose holding or
+    decision day falls in month T+1 in the full run (cut at T in the cut run: the holding cut rule), compared up to T-1
+    (up to T when T is the seal); 'day': daily series, days <= T. (gm/CHANGES.md gm-2.1.0, closed here item 9.)"""
+    f = res["features"]
+    S2 = res["S_features"]
+    st = {"NYSE days (from ^GSPC dates)": (pd.Series(1.0, index=f["days"]), "day"),
+          "signal econ sign shape (E_sign)": (S2["E_sign"], "T"), "signal value version 2 (V2)": (S2["V2"], "T"),
+          "k1 returns per market (R1)": (f["R1"], "T-1"), "k1 flags": (f["flags"].astype(float), "T-1")}
+    for name, bk in f["books"].items():
+        st["k1 book net %s" % name] = (bk["net"], "T-1")
+    g = f["books"]["A2_CHALLENGER"]
+    st["positions A2_CHALLENGER (grid)"] = (g["pos"], "T")
+    st["volatility A2_CHALLENGER"] = (g["vol"], "T")
+    for fam, p in g["fam_pos"].items():
+        st["family position %s A2_CHALLENGER" % fam] = (p, "T")
+    for q, bk in (("Core", f["core"]), ("shadow", f["shadow"])):
+        st["positions %s book (A2, equal risk)" % q] = (bk["pos"], "T")
+        st["part returns %s book" % q] = (bk["part_ret"], "T")
+        st["k1 book net %s book" % q] = (bk["net"], "T-1")
+    tr = f["tranches"]
+    for j in (1, 2, 3):
+        b = tr["tranche"][j]
+        st["tranche %d panel X (A2)" % j] = (b["X"], "T-1")
+        st["tranche %d holding returns (A2)" % j] = (b["R_earn"], "T-1")
+        st["tranche %d positions (A2)" % j] = (b["pos"], "T-1")
+        st["tranche %d flags (A2)" % j] = (tr["flags"][j].astype(float), "T-1")
+    st["tranche form net (A2)"] = (tr["net"], "T-1")
+    st["card 4 daily excess e(d)"] = (f["e"], "day")
+    return st
+
+
+def _daily_diff(a, b, T):
+    T = pd.Timestamp(T)
+    a = a.loc[a.index <= T]
+    b = b.reindex(a.index)
+    x, y = a.to_numpy(dtype="float64"), b.to_numpy(dtype="float64")
+    na, nb = np.isnan(x), np.isnan(y)
+    d = np.where(~na & ~nb, np.abs(x - y), 0.0)
+    differ = (d > TRUNC_TOL) | (na != nb)
+    return {"cells": int((~na | ~nb).sum()), "differ": int(differ.sum()), "maxdiff": float(d.max()) if d.size else 0.0,
+            "markets": [], "first": str(a.index[differ][0].date()) if differ.any() else "",
+            "last": str(a.index[differ][-1].date()) if differ.any() else ""}
+
+
+def feature_compare(full, cut_res, T):
+    from gm import seal as SL
+    Tp = pd.Period(pd.Timestamp(T), "M")
+    sealp = pd.Period(SL.resolve(SL.DESIGN), "M")
+    a, b = feature_stages(full), feature_stages(cut_res)
+    rows = []
+    for k, (x, hz) in a.items():
+        y = b[k][0]
+        if hz == "day":
+            r = _daily_diff(x, y, T)
+        else:
+            up = Tp if (hz == "T" or Tp >= sealp) else Tp - 1
+            r = _frame_diff(x, y, up)
+            if up < Tp:      # control: month T itself must differ for a path whose holding crosses T (the cut bites)
+                r["at_T"] = _frame_diff(x, y, Tp)["differ"] - r["differ"]
+        r["stage"], r["horizon"] = k, hz
+        r["pass"] = r["differ"] == 0
+        rows.append(r)
+    return rows
+
+
+def run_isolated_features(full, T, M):
+    """The feature paths ALONE on the full run's inputs cut at T (values after T missing; the ^GSPC dates and daily
+    returns after T dropped), so a failure is the feature code's own look-ahead."""
+    Rm = _mask(full["R"], T)
+    Sm = {k: _mask(v, T) for k, v in full["S_features"].items()}
+    Dm = full["D"].loc[full["D"].index <= pd.Timestamp(T)]
+    g = full["gspc"]
+    gm_ = g[g.index <= pd.Timestamp(T)]
+    return {"features": feature_paths(Rm, Sm, Dm, gm_, M), "S_features": Sm}
+
+
+def feature_truncation_report(free_dir, dates, out=print, M=None):
+    """Truncation test of the gm-2.1.0 feature paths: full run with features, then per cut date the end-to-end run cut
+    at T (every loader cut) and each feature stage alone; prints differing cells and max abs differences only."""
+    t0 = time.time()
+    M = M or setup(free_dir)
+    full = run(M=M, features=True)
+    ch = full["features"]["carry_half_check"]
+    out("FEATURE PATHS (gm-2.1.0) | full run %.0fs | Carry v1 + v2 averaged vs half-and-half family position "
+        "(CANDIDATE, design months): max abs diff %.1e, missing-pattern mismatches %d" % (
+            time.time() - t0, ch["maxdiff"], ch["nan_mismatch"]))
+    summary = []
+    for T in dates:
+        t1 = time.time()
+        if pd.Timestamp(T) > pd.Timestamp("2010-12-31"):
+            out("CUT %s skipped: after the design period" % T)
+            continue
+        c = run(M=M, cut=T, features=True)
+        iso = run_isolated_features(full, T, M)
+        e2e = feature_compare(full, c, T)
+        own = {r["stage"]: r for r in feature_compare(full, iso, T)}
+        nf = sum(1 for r in e2e if not r["pass"])
+        no = sum(1 for r in own.values() if not r["pass"])
+        out("CUT %s | inputs after T seen by the engine: %s | feature stages failing end-to-end %d of %d, alone %d "
+            "| %.0fs" % (T, "none" if c["after_cut_empty"] else "SOME (cut incomplete)", nf, len(e2e), no,
+                         time.time() - t1))
+        for r in e2e:
+            o = own[r["stage"]]
+            out("  %-44s | %-4s | %s %d/%d max %.1e %s | alone %s %d%s" % (
+                r["stage"], r["horizon"], "PASS" if r["pass"] else "FAIL", r["differ"], r["cells"], r["maxdiff"],
+                ("%s..%s" % (r["first"], r["last"])) if r["first"] else "", "PASS" if o["pass"] else "FAIL",
+                o["differ"], (" | month T itself: %d cells cut (holding cut, expected)" % r["at_T"])
+                if "at_T" in r else ""))
+        summary.append((T, nf, len(e2e), no))
+    out("--- feature summary")
+    for T, nf, n, no in summary:
+        out("FEATURE TRUNC %s | %s | end-to-end failing stages %d of %d | stages failing alone %d" % (
+            T, "PASS" if nf == 0 and no == 0 else "FAIL", nf, n, no))
+    ok = all(nf == 0 and no == 0 for _, nf, _, no in summary)
+    out("FEATURE TRUNCATION TEST %s" % ("PASS" if ok else "FAIL"))
+    return summary
 
 
 # =====================================================================================================================

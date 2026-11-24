@@ -163,6 +163,28 @@ Closed here, before the code (details the registered text leaves open; simplest 
 9. Truncation horizons for the new stages: positions and signals compare months <= T; a k = 1 or tranche return or a
    tranche position whose holding or decision day falls after T in the full run is cut at T in the cut run (the holding
    cut rule), so these compare months <= T - 1 (all months at T = 2010-12-31, the seal); daily e(d) compares days <= T.
+Closed while coding (before any real-data run of a new path; simplest reading, none from results):
+10. E9 active months of an equal-risk book: months with a scaled part return r_P(t) x k_P(t), the convention of
+    book.py's blocks table (r x k) for the old book. Found on synthetic data: counting months from the first scaled
+    BLOCK return let the book scaler read about 24 warm-up months of exact zeros (while the part scalers warm up), so
+    its 36-month volatility was 0 and the first positions were infinite (then clipped to every market's cap).
+11. E8 labels before the calendar's first month (before 1970) or whose month-end lacks a neighbour: X = R, the market
+    earns tranche 0's return and holds tranche 0's position, flagged (as "no daily data"). Tranches 1-3 of a label whose
+    decision day lies after the seal hold no position (their positions are missing at 2010-12).
+12. E7 the version path builds the components of the four pods even where a config's family share is 0 (a parts book
+    can hold them); the ordinary book still drops a family with share 0 (BASE xsmom 5%, CANDIDATE xsmom 0). Trend
+    version "m36" = gm/vol.py m36 whatever the config's own model; "hybrid" = CANDIDATE's vol parameters (equal to the
+    config's estimate when the config uses them, then reused).
+13. E10 the placebo runner (gm/book.py placebo_net_fn) runs the pod itself on the same version path with the identity
+    map, so pod and placebos share one code path; a date map covers the months from the window's first month to the
+    last design month.
+14. Code layout: gm/execution.py (calendar, E6, E8, E14), gm/book.py (E7 version path family_positions_v, E9
+    mask_components and the parts book, E11 cap_positions; run() keeps today's code path when no new option is used),
+    gm/stats.py (E10), gm/signals.py (econ_versions, value_v2), gm/vol.py (daily volatility sampled at a given day),
+    gm/config.py (grids, A2_CHALLENGER, CORE_PARTS, SHADOW_PARTS, STRIP_GROSS_WEIGHT, test constants,
+    ENGINE_VERSION). Engine runner tools/bbgq/lib/gm_engine.py 1.2.0 (feature paths and their truncation stages);
+    tools/bbgq/engine_repro_cloud.py (k = 0 reproduction in the cloud, PASS / FAIL and differences only);
+    tools/bbgq/engine_ref.py --rehash (rewrites the reference's code block only after a 24 of 24, difference 0 run).
 
 ## gm-1.2.3 and gm-2.0.3 candidate (registered 2026-11-24, BEFORE the code change): E1-E5
 Fix version (may change design numbers). Registered in docs/research/global_macro/TESTING_PROTOCOL.md section 7.4 rows

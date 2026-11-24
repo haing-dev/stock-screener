@@ -12,6 +12,11 @@ Runs gm/ unchanged (panel -> signals -> daily -> BASE and CANDIDATE books, as gm
   code / configs / libraries / inputs   gm commit and file hashes, config hashes, library versions, input files + hashes
 Nothing dated after 2010-12 is printed or stored (gm_engine.fingerprint checks the keys). gm's own console output is
 discarded unread (panel.build prints a count over the full sample).
+
+python3 tools/bbgq/engine_ref.py --rehash OLD_NAME   (gm-2.1.0: a version that must not change any number)
+    runs the engine, compares the fingerprint with the current reference and, ONLY if every item passes with
+    difference 0, keeps the old file as engine_ref_<OLD_NAME>.json and rewrites the reference's code block (gm file
+    hashes, gm commit, engine helper version, date); every number stays the old one. Prints no statistic.
 """
 import datetime as dt
 import json
@@ -88,5 +93,35 @@ def main():
                                                                      x["vol"] * 100, x["maxdd"] * 100, g["sr"]))
 
 
+def rehash(old_name):
+    import shutil
+    ref = json.load(open(OUT, encoding="utf-8"))
+    M = GE.setup()
+    fp = GE.fingerprint(GE.run(M=M), M)
+    rows = GE.compare(fp, ref)
+    bad = [r["item"] for r in rows if not r["pass"] or r["maxdiff"] != 0.0]
+    if bad:
+        sys.exit("rehash refused: %d of %d items differ from the reference (%s)" % (len(bad), len(rows), bad[:3]))
+    shutil.copy(OUT, os.path.join(HERE, "engine_ref_%s.json" % old_name))
+    commit = subprocess.run(["git", "-C", REPO, "log", "-1", "--format=%H", "--", "gm"], capture_output=True,
+                            text=True, timeout=30).stdout.strip()
+    dirty = subprocess.run(["git", "-C", REPO, "status", "--porcelain", "--", "gm"], capture_output=True,
+                           text=True, timeout=30).stdout.strip()
+    ref["code"] = {"gm_commit": commit, "gm_dirty": bool(dirty), "gm_files_sha256": GE.gm_code_hashes(),
+                   "gm_data_sha256": GE.gm_data_hashes()}
+    ref["engine_helper"] = GE.VERSION
+    ref["rehash"] = {"made": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d"), "old_file":
+                     "engine_ref_%s.json" % old_name, "numbers_made": ref.get("made"),
+                     "note": "code block only: the engine reproduced every item of the old reference with difference 0"}
+    with open(OUT, "w", encoding="utf-8") as f:
+        json.dump(ref, f, indent=1, sort_keys=True)
+    print("engine_ref.json code block rewritten (%d of %d items identical, difference 0; old file kept as "
+          "engine_ref_%s.json; gm commit %s%s)" % (len(rows), len(rows), old_name, commit[:10],
+                                                   ", gm/ has uncommitted changes" if dirty else ""))
+
+
 if __name__ == "__main__":
-    main()
+    if len(sys.argv) > 2 and sys.argv[1] == "--rehash":
+        rehash(sys.argv[2])
+    else:
+        main()

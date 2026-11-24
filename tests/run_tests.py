@@ -1001,6 +1001,12 @@ print("\nGlobal Macro Book (gm-1.2.3 fixes)")
 import gm_seal_smoke  # noqa: E402
 gm_seal_smoke.run(check)
 
+# Global Macro Book (gm/): feature version gm-2.1.0 (E6 k = 1, E7 grids, E8 tranches, E9 masks and the equal-risk Core
+# book, E10 test code, E11 joint caps, E14 card 4 daily excess return), synthetic data only
+print("\nGlobal Macro Book (gm-2.1.0 features)")
+import gm_feature_smoke  # noqa: E402
+gm_feature_smoke.run(check)
+
 shutil.rmtree(TMP, ignore_errors=True)
 print(f"\n{'ALL TESTS PASSED' if not failures else str(len(failures)) + ' FAILED: ' + ', '.join(failures)}")
 sys.exit(1 if failures else 0)

@@ -296,33 +296,46 @@ ECON_THEMES = ("inflation", "trade", "monetary", "risk")   # v1.1: growth (OECD 
                                                             # vintages exist (CLI is heavily revised; v1 used it)
 
 
+ECON_SHAPES = {"tanh": lambda z: np.tanh(z / 2), "sign": np.sign}   # E7 (gm-2.1.0): Economic trend v1 / v2 shapes
+
+
 def econ_scores(R):
     """Directional score per market in [-1, 1]: average over themes of sign x tanh(theme z / 2)."""
-    cache, out = {}, {}
+    return econ_versions(R, ("tanh",))["tanh"]
+
+
+def econ_versions(R, shapes=("tanh", "sign")):
+    """E7 (gm-2.1.0): the Economic trend score per shape f in one pass over the themes: average over themes of
+    sign x f(theme z) ('tanh' f = tanh(z / 2), today's score; 'sign' f = sign(z), 0 if z = 0, SPEC_Economic_trend s3
+    step 8). f is applied where tanh(z / 2) was: FX to local minus US theme, commodities to the four-country mean."""
+    cache, out = {}, {sh: {} for sh in shapes}
 
     def th(cc):
         if cc not in cache:
             cache[cc] = themes(cc, R)
         return cache[cc]
 
-    def combine(ths, sg):
-        parts = [np.tanh(ths[k] / 2) * s for k, s in sg.items() if k in ECON_THEMES]
+    def combine(ths, sg, f):
+        parts = [f(ths[k]) * s for k, s in sg.items() if k in ECON_THEMES]
         return pd.concat(parts, axis=1).mean(axis=1, skipna=True).where(pd.concat(parts, axis=1).notna().sum(axis=1) >= 2)
 
     for k in R.columns:
         if k.startswith("eq_") and k in EQ_CC:
-            out[k] = combine(th(EQ_CC[k]), SIGNS["EQ"])
+            ths, sg = th(EQ_CC[k]), SIGNS["EQ"]
         elif k in BD:
-            out[k] = combine(th(BD[k][0]), SIGNS["FI"])
+            ths, sg = th(BD[k][0]), SIGNS["FI"]
         elif k in FX_CC:
             cur, cc = FX_CC[k]
             loc, us = th(FX_MACRO.get(cc, cc)), th("US")
-            rel = {n: loc[n] - us[n] for n in loc}            # local minus US: drives the currency vs the dollar
-            out[k] = combine(rel, SIGNS["FX"])
+            ths, sg = {n: loc[n] - us[n] for n in loc}, SIGNS["FX"]   # local minus US: drives the currency vs the dollar
         elif k.startswith("cm_"):
-            glob = {n: pd.concat([th(c)[n] for c in GLOBAL], axis=1).mean(axis=1) for n in th("US")}
-            out[k] = combine(glob, SIGNS["CM"])
-    return pd.DataFrame(out).reindex(GRID)
+            ths = {n: pd.concat([th(c)[n] for c in GLOBAL], axis=1).mean(axis=1) for n in th("US")}
+            sg = SIGNS["CM"]
+        else:
+            continue
+        for sh in shapes:
+            out[sh][k] = combine(ths, sg, ECON_SHAPES[sh])
+    return {sh: pd.DataFrame(v).reindex(GRID) for sh, v in out.items()}
 
 
 def econ_theme_scores(R):
@@ -455,6 +468,35 @@ def value_values(R, eq_measure="dy", dy_lag=None):
         infl_gap = ((lp - us_p) / 100 / 12).rolling(60, min_periods=60).sum()   # ~5y cumulative inflation gap
         real_chg = np.log(fxv / fxv.shift(60)) + infl_gap                     # real appreciation over 5 years
         out[k] = -real_chg
+    return pd.DataFrame(out).reindex(GRID)
+
+
+def value_v2(R, dy_lag=None):
+    """E7 (gm-2.1.0): Value version 2 (SPEC_Value s3, s6). Equities: as version 1 (the 12-month dividend yield, lag of
+    E4). Bonds (the same 10y / 30y markets): yield(t) - yield(t - 60 month-ends), higher = cheaper. Currencies:
+    q(t) = ln USD value(t) + cumulative sum of (local CPI yoy - US CPI yoy) / 100 / 12 (CPI as version 1: carried at
+    most 18 months, lagged 1 month; the sum starts at the first month both CPIs exist and a month without a gap adds
+    nothing); signal = -(q(t) - mean of q over all months up to and including t), at least 60 values of q (long cheap)."""
+    dy_lag = CF.VALUE_DY_LAG if dy_lag is None else dy_lag
+    out = {}
+    dy = equity_dy(dy_lag)
+    for k in dy.columns:
+        out[k] = dy[k]
+    for k, (cc, n) in BD.items():
+        if n >= 10:
+            y = yield_of(cc, n).reindex(GRID)
+            out[k] = (y - y.shift(60)) / 100
+    us_p = cpi_yoy("US").ffill(limit=18).shift(1)
+    for k, (cur, cc) in FX_CC.items():
+        fxv = P.fx_usd_value(cur).reindex(GRID)
+        lp = cpi_yoy(FX_MACRO.get(cc, cc)).ffill(limit=18).shift(1)
+        gap = ((lp - us_p) / 100 / 12).reindex(GRID)
+        started = gap.notna().cummax()
+        cum = gap.fillna(0).cumsum().where(started)
+        q = (np.log(fxv) + cum).where(fxv.notna() & started)
+        cnt = q.notna().cumsum()
+        mean = q.fillna(0).cumsum() / cnt.where(cnt > 0)
+        out[k] = (-(q - mean)).where(cnt >= 60)
     return pd.DataFrame(out).reindex(GRID)
 
 

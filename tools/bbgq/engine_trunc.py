@@ -1,6 +1,8 @@
 """engine_trunc: truncation test of the book engine (WORKFLOW v2.1 step 0.5, gate "truncation test passes").
 
-python3 tools/bbgq/engine_trunc.py [YYYY-MM-DD ...]     (default: gm_engine.CUT_DATES, 1980-2010)
+python3 tools/bbgq/engine_trunc.py [--features] [YYYY-MM-DD ...]     (default: gm_engine.CUT_DATES, 1980-2010)
+--features (gm-2.1.0): after the 21 k = 0 stages, the feature paths (k = 1 returns and books, grid, Core and shadow
+books, the four tranches, card 4 daily excess return) are cut at each date as well (gm_engine.feature_truncation_report).
 Same code as the PC job jobs/gm_trunc_v1.py (gm_engine.truncation_report), here on the repo cache.
 
 For each cut date T the engine is rerun with every input cut at T at the LOADER level (no observation dated after T
@@ -21,5 +23,9 @@ sys.path[:0] = [REPO, os.path.join(HERE, "lib")]
 import gm_engine as GE  # noqa: E402
 
 if __name__ == "__main__":
-    dates = sys.argv[1:] or list(GE.CUT_DATES)
-    GE.truncation_report(None, dates, print)
+    feats = "--features" in sys.argv
+    dates = [a for a in sys.argv[1:] if not a.startswith("--")] or list(GE.CUT_DATES)
+    M = GE.setup()
+    GE.truncation_report(None, dates, print, M=M)
+    if feats:
+        GE.feature_truncation_report(None, dates, print, M=M)

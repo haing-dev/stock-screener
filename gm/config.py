@@ -96,3 +96,39 @@ VALUE_DY_LAG = 12
 # E5 (gm-1.2.3, registered 2026-11-24, TESTING_PROTOCOL 7.3 item 5): seal and holding cut. In a design run no input
 # dated after this close is used and no holding earns past it (gm/seal.py; gm.book.run seals by default).
 SEAL_END = "2010-12-31"
+
+# ---------------------------------------------------------------------------------------------------------------------
+# gm-2.1.0 feature version (registered 2026-11-24, gm/CHANGES.md; TESTING_PROTOCOL 7.3, 7.4 E6-E11 and E14, 7.7).
+# Nothing here changes BASE or CANDIDATE at k = 0: every new key below is absent from them.
+ENGINE_VERSION = "gm-2.1.0"
+
+# E7 version grids (approved specs, section 6). Trend versions: (lookback months, shape, volatility model).
+TREND_GRID = tuple((h, shape, vm) for shape, vm in (("sign", "hybrid"), ("sign", "m36"), ("graded", "hybrid"),
+                                                  ("graded", "m36")) for h in (1, 3, 6, 12))   # v1..v16, SPEC_Trend s6
+ECON_GRID = ("tanh", "sign")       # SPEC_Economic_trend s6: v1 f(z) = tanh(z / 2), v2 f(z) = sign(z)
+CARRY_GRID = ("dir", "cs")         # SPEC_Carry s6: v1 sign of carry, v2 rank in class
+VALUE_GRID = (1, 2)                # SPEC_Value s6: v1 as coded, v2 (bonds 60-month yield change, FX real-rate deviation)
+A2_CHALLENGER = variant(CANDIDATE, name="gm-2.1.0-a2-challenger",
+                        grid={"trend": TREND_GRID, "econ": ECON_GRID, "carry": CARRY_GRID, "value": VALUE_GRID})
+
+# E9 component masks: (pod, class, version); "*" = every class or every version. Versions are numbered as the grids
+# (1-based); a config without a grid has one version per pod, except Carry, which is always split into v1 (sign) and
+# v2 (rank) for masks. TESTING_PROTOCOL 7.2 item 5 and 7.6 step 6.
+CORE_PARTS = {"trend": [("trend", "*", "*")],
+              "carry": [("carry", "FX", 2), ("carry", "CM", 1), ("carry", "CM", 2)],
+              "value": [("value", "EQ", "*")]}
+SHADOW_PARTS = {"econ": [("econ", "*", "*")],
+                "carry": [("carry", "FX", 1), ("carry", "FI", "*")],
+                "value": [("value", "FI", "*"), ("value", "FX", "*")]}
+
+# E11 spread pods: a 3-month contract counts at 0.25 / 1.9 of its notional in the gross cap (2-year equivalent,
+# gm/variants.py us_3m_rate; SPEC_Strip_reversion s5, SPEC_Carry s5). Used through a config's "gross_weights".
+STRIP_GROSS_WEIGHT = 0.25 / 1.9
+
+# E10 registered test constants (TESTING_PROTOCOL 7.7)
+TEST_SEED = 20261101
+ALPHA_BOOT_N, ALPHA_BOOT_BLOCK = 10000, 6
+PLACEBO_N, PLACEBO_BLOCK = 1000, 12
+LAMBDA_COMBINED = 0.5
+HOLM_LEVEL = 0.025
+NI_MARGIN = -0.10
