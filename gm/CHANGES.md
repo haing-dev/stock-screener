@@ -4,6 +4,166 @@ Every rule change gets a new VERSION in gm/run.py and a line here. Every variant
 (1990-2010; extra check 1975-89) is logged so the deflated Sharpe can count the trials. The holdout (2011-2026) is run
 once, after the rules are frozen, by gm/holdout.py.
 
+## gm-2.1.0 feature version (registered 2026-11-24, BEFORE the code): E6-E11, E14
+Feature version (no change to BASE or CANDIDATE at k = 0). Registered in docs/research/global_macro/TESTING_PROTOCOL.md
+section 7.4 rows E6-E11 and E14 with 7.3 items 1-3, 5, 6 and 7.7 (step 3.4, 2026-11-23); this is entry 2 of
+docs/research/registration/REGISTRATION_3.4.md part (c). The fix version gm-1.2.3 (E1-E5, entry 1) is done (afca6b2,
+d68c0d6, c27d9d2). Each item below is the registered text (quoted where possible); none is chosen from results, and none
+is revisited after them. Not in this version: E12, E13, E15, the LSEG source, the pod builds (Curve carry, Strip
+reversion, the card rule-layer engine of part (c) item 6), and every diagnostic run (7.5).
+1. E6 "k = 1 return form of 7.3 item 2 with flags" (7.3 item 1: decisive timing is k = 1). 7.3 item 1: "a position
+   decided at the close of month-end t is traded at the close of the first trading day after t and held to the close of
+   the first trading day after month-end t+1. Reported beside it: k = 0 (the engine's same-close form, book.py run,
+   timing.py k = 0) and the one-period (one-month) delay of WORKFLOW s5." 7.3 item 2: "k = 1 return of market m for the
+   holding decided at t: the panel's monthly excess return of month t+1, plus the price return of m on the first trading
+   day of month t+2, minus the price return of m on the first trading day of month t+1 (carry and dividends accrue
+   monthly, as timing.py assumes). It applies where a daily price of m exists on both days. Where it does not, the k = 0
+   monthly return is used and the market-month is flagged; the result sheet reports, by year, the share of gross position
+   flagged. Costs are charged as today."
+2. E7 "Version-grid machinery: each version computed as a complete pod, pod position = equal-weight mean of version
+   positions at the unscaled stage, a missing version counted as 0 (SPEC_Trend s3 step 6); Trend 16, Economic trend sign
+   shape, Carry versions 1/2 as separate signals, Value version 2". Grids as the approved specs fix them (section 6 of
+   each): Trend v1-v4 lookback 1/3/6/12 months, sign, hybrid volatility; v5-v8 the same with m36; v9-v12 graded (cap 2),
+   hybrid; v13-v16 graded, m36 (SPEC_Trend s3 steps 1-6). Economic trend v1 f(z) = tanh(z / 2) (today), v2 f(z) =
+   sign(z) (SPEC_Economic_trend s3 step 8). Carry v1 directional w = sign(carry), v2 cross-asset w = rank in class
+   (SPEC_Carry s3; "this reproduces today's half-and-half exactly"). Value v1 as coded; v2 bonds yield(t) - yield(t-60
+   month-ends), currencies minus the deviation of q(t) = ln USD value(t) + cumulative (local CPI yoy - US CPI yoy) / 100
+   / 12 from its expanding mean (at least 60 months of q), equities as v1 (SPEC_Value s3). Each version: position = w x
+   0.40 / vol, divided by the count of markets in the class with a position that month; Trend versions use their own
+   volatility (vol_v), every other pod the CANDIDATE hybrid estimate. 7.6 step 3 defines the A2 challenger ("CANDIDATE
+   with Trend 16 versions, Economic trend 2, Carry 2, Value 2"): its config is written here; it is not run.
+3. E8 "Weekly tranche engine of 7.3 item 6" (registration part (c): "NYSE calendar, offsets 0/5/10/15, k = 1 trades,
+   cut"). 7.3 item 6: "tranche j = 0, 1, 2, 3 decides on trading day 5 x j after the month's last trading day. Trading
+   days = days the New York Stock Exchange is open; a market without a price that day uses its last price ... Each
+   tranche holds a quarter of the pod from the close of the trading day after its decision day (k = 1) to the same point
+   after its next decision day. Decisions dated after 2010-12-31 do not exist (tranches 1-3 of month-end 2010-12 decide
+   in January 2011); holdings of tranches 1-3 decided in December 2010 end at the 2010-12-31 close. Monthly design runs
+   use tranche 0 only. The tranche form runs only in the weekly-implementation check (1990-2010, reported). In it, a
+   market without daily data holds its tranche-0 position all month and is flagged ... coverage is reported." Card 4
+   R1-R4 and Curve carry have no tranches (registered exceptions).
+4. E9 "Component masks (pod x class x version) so that the Core book holds only Core parts and the shadow book the
+   rest; Core book at equal risk: each Core part's summed scaled-block return is rescaled to unit volatility (trailing
+   36-month realised volatility, lagged one month, as the block scaler) and weighted 1/n before the book scaler (book.py
+   family weights alone give a 4-block part up to about twice the risk of a 1-block part)". Core parts (7.2 item 5, 7.6
+   step 6): Trend (all classes and versions); Carry currencies version 2 plus energy versions 1 and 2; Value equities
+   (both versions). Shadow: Economic trend; Carry currencies version 1 and bonds (both versions); Value bonds and
+   currencies (both versions). "Core book v1 = the Core parts at equal risk as defined in 7.4 E9, 10% target, the
+   engine's caps."
+5. E10 "Test code: alpha bootstrap (7.7 T1) in gm/stats.py; placebo engine (7.7 T3) for monthly signals, rule states
+   and date rules; non-inferiority decision for hygiene (7.7 H1-H4)". T1: "Intercept of the least-squares regression of
+   the pod's monthly net return on the Core book's monthly net return over the window. One-sided p for H0 alpha <= 0
+   from the centred stationary bootstrap: whole months, mean block 6, 10,000 resamples, seed 20261101, the regression
+   re-fitted in every resample; p = share of resamples with (alpha_b - alpha_hat) >= alpha_hat"; Holm-adjusted p < 0.025
+   over the Core-eligible systematic pods. T2: alpha of T1 with every cost doubled > 0. T3: "1,000 placebos, seed
+   20261101. Monthly pods and state rules: the score array (before division by volatility) of all markets moved jointly
+   in 12-month blocks in random order (blocks aligned to the window's first month, the last part-block kept), then
+   re-sized with each month's own volatility, scalers and caps, same costs. Card 4 R1-R4: each window moved to a random
+   start in the same calendar year (R1, R3) or month (R2, R4), same length in trading days, gates re-read at the new
+   dates"; pass: "share of placebos with net Sharpe >= the pod's < 0.05". T4: test 5 on the combined book (Core book +
+   pod at lambda 0.5, rescaled to 10% by its trailing 36-month realised volatility, lagged one month) against the Core
+   book alone. H1 "one-sided 95% lower bound of dSR (paired stationary bootstrap of section 2, pooled design window) >
+   -0.10; H2 dSR at twice the costs, reported; H3 tail test 5 between the two books; H4 (A3 only) the item's own target,
+   point estimate ... Pass = H1, H3 and, in A3, H4."
+6. E11 "Spread pods: joint caps (a currency's whole Strip contract vector multiplied by the smallest ratio cap_j /
+   abs(x_j); Curve carry's two legs share one cap from the front leg's hybrid volatility); per-instrument gross weight
+   (3-month contracts at 0.25/1.9 of notional)". Why (7.4): "book.py clips each column alone, which breaks level
+   neutrality (SPEC_Strip_reversion s5; SPEC_Curve_carry s5; CHECK_3.2_B s4)". Machinery only: no spread pod is built.
+7. E14 "Daily S&P excess return for card 4 (spec s3: ^GSPC daily price return + the panel's monthly carry part spread
+   over trading days)". SPEC_Card4 s3: "e(d) = ^GSPC price return of day d + c(m) / N(m), where c(m) = panel eq_us_spx
+   monthly excess return minus the ^GSPC monthly price return ... and N(m) = trading days in m. So a rule held all month
+   earns exactly the panel's monthly excess return."
+8. E5 in every new path (part (c) item 2: "E5's seal and holding cut are built into each new path in this entry"):
+   7.3 item 5, every holding of the k = 1, tranche and daily paths ends at the close of 2010-12-31 at the latest; no
+   price or statistic dated after 2010-12-31 is read; "under k = 1 the decision at month-end 2010-12 is never traded; the
+   holding decided at month-end 2010-11 ends at the 2010-12-31 close (the move to 2011-01-03 is not read)"; card 4
+   windows that would run into 2011 end at the last trading day of 2010. Each new path's output passes gm/seal.py
+   check_output.
+Version names: the engine version is gm-2.1.0 (gm/config.py ENGINE_VERSION). BASE stays gm-1.2.3 and CANDIDATE
+gm-2.0.3-candidate (nothing changes at k = 0; gm/run.py VERSION stays the BASE name gm-1.2.3). The A2 challenger config
+is named gm-2.1.0-a2-challenger. No rule, weight, threshold or cost of BASE or CANDIDATE changes.
+Gate (7.4 "Gate for E6-E14", part (c) item 2): BASE and CANDIDATE at k = 0 reproduce the gm-1.2.3 reference
+(tools/bbgq/engine_ref.json) exactly, 24 of 24 items, difference 0; the truncation test passes at all 8 cut dates,
+including the k = 1, tranche and daily paths (and the grid, Core and shadow positions) cut at each date; tests pass
+(tests/run_tests.py with a new synthetic-data test of every item). NO PERFORMANCE STATISTIC OF ANY NEW PATH IS COMPUTED
+IN THIS VERSION: no return, Sharpe, drawdown, hit rate, alpha, p-value or placebo result of any k = 1 form, version,
+grid, tranche, Core or shadow book or pod, on real data, in any period. On real data only the k = 0 reproduction and
+the truncation test (positions, signals and value differences across cut dates) are run. Every test of the new
+statistics runs on synthetic data with known answers. No gm/trials.csv row (nothing is a trial). The live paper ledger
+and the holdout are untouched.
+Closed here, before the code (details the registered text leaves open; simplest reading consistent with the specs):
+1. NYSE calendar (E6, E8, E14): the NYSE open days are the dates of the daily ^GSPC closes in the free daily file
+   (gm/daily.py EQ_DAILY, from 1970-01-02), the engine's only record of NYSE days; it includes the special closures
+   (e.g. 2001-09-11 to 09-14). "Month-end" = the month's last NYSE day; "first trading day" = its first NYSE day.
+2. E6 price return of m on a day = gm/daily.py build()'s daily return of m on that day turned into a price return
+   (bonds and notes: -duration x yield change, already a price return; every other market: exp(log return) - 1); a day
+   without a value (no price, or removed by daily.py's 25% filter) has no price, so the market-month is flagged and
+   earns the k = 0 return. Positions, signals, scalers, caps and costs are the same under k = 0 and k = 1: only the
+   return a holding earns changes (the block and book scalers keep reading the k = 0 returns, which are known at the
+   decision close; the k = 1 return of the last holding is not). Cost timing as today (the same cost series, same
+   lag). Holding cut: where the first trading day of t+2 lies after the seal (or after the last day of a truncated run),
+   the holding ends at the close of month-end t+1: return = R(t+1) - price return of the first trading day of t+1, not
+   flagged. Months whose first trading day is missing from the calendar (before 1970) are flagged.
+3. E7 configs: a config key "grid" ({pod: versions}); absent = today's single form, so BASE and CANDIDATE are unchanged.
+   A missing version adds 0; a market-month where no version has a position holds no position (missing, as today), so
+   block starts are unchanged. Each version counts its own markets with a position (n_v). The alternative-commodity
+   30% cap (inactive while E1 is off) applies to the averaged pod. Trend vol_v: "hybrid" = CANDIDATE's vol parameters,
+   "m36" = vol.py m36; the per-market cap uses the config's engine volatility (SPEC_Trend s5: CANDIDATE hybrid). Economic
+   trend sign shape: f is applied where tanh(z / 2) is applied today (FX: to local minus US theme; commodities: to the
+   four-country mean); both shapes come from one pass over the themes. Value v2 currencies: CPI as v1 (carried at most
+   18 months, lagged 1 month); the cumulative inflation gap starts at the first month both CPIs exist and a month
+   without a gap adds nothing; q is missing where the USD value is missing; the expanding mean is over all q values up
+   to and including t. Carry: v1 = sign of carry through the "dir" form, v2 = cs_rank; whenever components or a grid are
+   used, Carry is computed as these two versions (equal to the half-and-half form; checked on synthetic data, and on
+   real positions in the result commit).
+4. E8: decision day d_j(t) = the (5j)-th NYSE day after month-end t (j = 0: month-end t); the holding runs from the
+   close of the NYSE day after d_j(t) to the same point after d_j(t+1). Tranche j's decision panel X_j(t) = R(t) - pr(m,
+   month-end t-1 -> d_j(t-1)) + pr(m, month-end t -> d_j(t)) and its earned return Y_j(t+1) = R(t+1) - pr(month-end t ->
+   d_j(t)+1 day) + pr(month-end t+1 -> d_j(t+1)+1 day), where pr(a -> b) = the ratio of m's last daily price at or before
+   b to its last daily price at or before a, minus 1 ("uses its last price"); carry accrues monthly, as for k = 1.
+   Tranche 0 is exactly the E6 monthly k = 1 path (its flags included), so the monthly design run is tranche 0. Price
+   trend, cross-sectional momentum and every volatility estimate of tranche j read X_j and the daily EWMA at d_j(t)
+   (the last daily value at or before it); Economic trend, Carry and Value use their month-end t values (all published
+   by d_j(t)). A market has daily data for label t if its first daily price is at or before month-end t-1 (decided by
+   the past only, so the rule is truncation-safe); a market without daily data uses R(t) in X_j, earns tranche 0's k = 1
+   return and holds tranche 0's final position (overwritten after the caps), flagged. Each tranche is a full book run
+   with its own costs; the tranche form's return = one quarter of the sum of the four tranche returns (a tranche without
+   a return that month adds 0). Decision days after the seal do not exist (no position); holding ends are capped at the
+   seal close.
+5. E9: a component = (pod, class, version), versions numbered as the grids (a config without a grid has one version per
+   pod, except Carry, always split into v1 and v2 for masks). Component position = its term p_v / V in the pod average,
+   so the Core and shadow components partition the pod. Masked block = the sum of a class's masked components, scaled
+   by the block scaler (36 months, at least 24, lagged, multiplier capped at 50). Part return = the sum over its blocks
+   of the scaled block position's return r_b(t) x k_b(t-1) (book.py's blocks table records r_b(t) x k_b(t); the part
+   scaler needs the return of the position it scales); part scaler = the block scaler's convention (36 months, at least
+   24, lagged one month, capped at 50); weight 1/n with n = the number of parts in the book (3 for the Core book),
+   constant. Then the book scaler, the per-market cap, the gross cap and costs exactly as book.run; family shares are not
+   used. Shadow book: the same construction over the shadow parts (Economic trend; Carry shadow; Value shadow). BASE's
+   cross-sectional momentum is not a component.
+6. E10: the bootstrap index matrix is gm.stats._stationary_idx(T, 10000, 6, 20261101) (the registered section 2
+   bootstrap); p = (number of resamples with alpha_b - alpha_hat >= alpha_hat) / 10,000, as registered ("share"); the
+   count is returned too (tools/power used (count + 1) / 10,001, as paired_sr_test does; the test checks the counts
+   agree). A zero Core book (7.6 step 6: "alpha against a zero book (the pod's own mean)"): beta 0, alpha = mean. The
+   window is the common months of the two series. Placebo: the window's months are cut into 12-month blocks from its
+   first month (the last part-block kept), the blocks are put in random order by numpy default_rng(20261101).permutation,
+   drawn in sequence, 1,000 placebos; the permuted array is every version's score or rank weight (before x 0.40 / vol),
+   rows inside the window only, all markets jointly; p = (placebos with net Sharpe >= the pod's) / 1,000 on the window;
+   pass p < 0.05. Date rules: each window's entry is redrawn uniformly among the NYSE days of its calendar year (R1, R3)
+   or month (R2, R4), length kept in trading days, cut at the seal close; the caller re-reads the gates. H1-H3: H1 = the
+   lb95 of gm.stats.paired_sr_test on the common pooled window > -0.10; H3 = check 5 of gm.protocol.decide (max fall not
+   more than 2 points worse, worst month not more than 1 point worse); identical books pass. T4: the combined book is
+   rescaled; the Core book is taken as run (its own book scaler is the same convention); common months.
+7. E11: config key "cap_groups" = list of {"members": [...], "cap_from": None or a member}; a group's ratio = min(1,
+   min over members with a position of cap_j / abs(x_j)), cap_j = the per-market cap of j (or of cap_from for every
+   member); all members are multiplied by it; columns outside a group clip as today; no group = today. Gross weight:
+   config.STRIP_GROSS_WEIGHT = 0.25 / 1.9 through the existing "gross_weights" config key.
+8. E14: price return of day d = ratio of consecutive ^GSPC closes minus 1; c(m) = panel eq_us_spx(m) minus the SUM of
+   the daily price returns of m (the reading that makes "a rule held all month earns exactly the panel's monthly
+   excess return" true); N(m) = number of ^GSPC days in m; no value in a month without a panel return or without daily
+   closes; no day after 2010-12-31.
+9. Truncation horizons for the new stages: positions and signals compare months <= T; a k = 1 or tranche return or a
+   tranche position whose holding or decision day falls after T in the full run is cut at T in the cut run (the holding
+   cut rule), so these compare months <= T - 1 (all months at T = 2010-12-31, the seal); daily e(d) compares days <= T.
+
 ## gm-1.2.3 and gm-2.0.3 candidate (registered 2026-11-24, BEFORE the code change): E1-E5
 Fix version (may change design numbers). Registered in docs/research/global_macro/TESTING_PROTOCOL.md section 7.4 rows
 E1-E5 and 7.3 item 5 (step 3.4, 2026-11-23); this is entry 1 of docs/research/registration/REGISTRATION_3.4.md part (c).
