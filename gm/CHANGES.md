@@ -48,6 +48,58 @@ config, not a selection trial). New reference tools/bbgq/engine_ref.json (old on
 Live paper ledgers: untouched (workflow disabled); the next live run restates under the new version name. Holdout not
 run. The PC engine is redeployed when PC jobs that import pandas run again (7.4 precondition).
 
+Result (2026-11-24, free data, design months only; inputs = the repo cache, the same 239 files as the gm-1.2.2
+reference, which the cloud reproduced 24/24 before the change; code commit d68c0d6): truncation test PASS at all 8 cut dates
+(1980-06 ... 2010-12), every stage (21 of 21), BASE and CANDIDATE, 0 differing market-months
+(tools/bbgq/results/engine_trunc_cloud_2026-11-24_gm-1.2.3.txt). Which item moves numbers (engine fingerprint, 24
+items, vs the gm-1.2.2 reference): E1 + E2 + E3 with E4 at lag 0, unsealed engine 24/24 identical (E1 alone changes no
+number on free data, nor do E2 and E3); the same sealed (E5) 24/24 identical; gm-1.2.3 sealed vs unsealed 24/24
+identical. Only E4 changes numbers: Value's signal for the 7 non-US equity markets and everything that follows from
+it (other signals, volatility estimates and market months identical). So the reported lag-0 form of E4 has exactly
+the gm-1.2.2 statistics (the "old" column). Net of costs, old -> new:
+| Config | Period | Sharpe | Mean %/yr | Vol %/yr | Worst drawdown % |
+|---|---|---|---|---|---|
+| BASE gm-1.2.2 -> gm-1.2.3 | 1975-2010 | 1.222 -> 1.226 | 12.34 -> 12.46 | 10.10 -> 10.17 | -19.9 -> -21.0 |
+| BASE gm-1.2.2 -> gm-1.2.3 | 1990-2010 | 1.452 -> 1.469 | 14.27 -> 14.47 | 9.83 -> 9.86 | -12.5 -> -12.3 |
+| CANDIDATE gm-2.0.2 -> gm-2.0.3 | 1975-2010 | 1.456 -> 1.461 | 14.27 -> 14.38 | 9.81 -> 9.84 | -16.9 -> -16.8 |
+| CANDIDATE gm-2.0.2 -> gm-2.0.3 | 1990-2010 | 1.608 -> 1.620 | 16.23 -> 16.38 | 10.09 -> 10.11 | -16.9 -> -16.8 |
+E3 metadata (tools/bbgq/cpi_freq_meta.py -> tools/bbgq/results/cpi_freq_meta_2026-11-24.txt): the cached
+oecd_cpi_yoy.csv holds monthly rows only (19 countries, 0 quarterly; macro/fetch_research.py requests frequency M), so
+the quarterly as-of rule is built and tested on synthetic rows but INACTIVE on this file; it acts if quarterly rows ever
+arrive. Australia has OECD rows only after 2010-12 and New Zealand none, and neither has a FRED fallback file, so
+neither has CPI in design months (unchanged; a new CPI source would be a data entry). Every other country: OECD monthly
+from 1990-01, FRED monthly before.
+Closed here (details the registered text leaves open; simplest reading, not chosen from results):
+1. E1: the four switches are module-level registered constants (gm/config.py BBG_SWITCHES), not keys of the BASE /
+   CANDIDATE dicts, because the panel and the signals are shared by both configs. Growth surprise off = an empty series
+   (the theme is unused anyway: ECON_THEMES has no growth and GROWTH_SOURCE stays 'off'). The Bloomberg excess-return
+   indexes of the 16 panel commodities are not an E1 switch: they are the A1 data swap (7.6 A1, E15).
+2. E3: a quarterly value sits on the quarter's last month and is carried two more months; with the callers' existing
+   one-month publication lag (Economic trend lag 1, Value shift 1) it enters at the end of the month after the quarter
+   ends and stays until the next quarter enters. Where a country has both, its monthly value wins month by month. A
+   period that is neither YYYY-MM nor YYYY-Qn, or any read error, raises OECDParseError; a MISSING file still gives an
+   empty table (the registered text names the parse error only). The metadata listing counts rows up to 2010-12 only
+   and shows a first date only if it is in the design period; it also lists the FRED fallback's spacing.
+3. E4: the lag-12 value at t is exactly the 12-month sum ending at t-12, with no carry-forward (the old 12-month
+   carry-forward stays only in the lag-0 form), so a file that does not reach t-12 gives no value. Only Value changes:
+   equity carry (not in the book) keeps the lag-0 form; the Bloomberg-composite path (switched off) ranks the same
+   lagged yield. Flag: gm/config.py VALUE_DY_LAG (12); value_values(dy_lag=0) gives the reported form.
+4. E5: a design run is every run except gm/run.py (live) and gm/holdout.py (the one-shot holdout), which pass
+   seal=None; gm.book.run seals by default (inputs after 2010-12-31 are dropped, not masked; outputs end at 2010-12 and
+   are checked by gm/seal.py check_output). Under k = 0 the decision at month-end 2010-12 is computed but earns
+   nothing, and its trading cost (charged in 2011-01) is not charged. The engine runner (gm_engine 1.1.0) cuts every
+   loader at 2010-12-31 in a design run and stops if an input dated later reached the engine; the truncation test's
+   full run is therefore sealed and its 2010-12-31 cut passes by construction (the unsealed comparison above, 24/24,
+   stands in for that cut's old meaning). gm/timing.py (delay diagnostic, an existing path): days after 2010-12-31 are
+   dropped and a delayed holding ends at the 2010-12-31 close at the latest; this changes only that diagnostic's
+   2010-12 month for delays k > 0 (it used to read k days of January 2011).
+5. gm/trials.csv rows: from the sealed engine books with gm.stats.summary, as for the gm-1.2.2 rows.
+Tests: tests/run_tests.py ALL TESTS PASSED (incl. the new tests/gm_seal_smoke.py);
+tests/gm_bloomberg_smoke.py PASSED; tests/bbgq_engine_smoke.py OK (packaged engine reproduces the new reference
+24/24, truncation at 1995-12 PASS, curve carry only with its switch on). Logged in gm/trials.csv as family "fix" (two rows). Reference: tools/bbgq/engine_ref.json (old
+one kept as engine_ref_gm-1.2.2.json). Not built here (registered for entry 2): the k = 1, tranche and daily paths and
+their cut. PC engine not redeployed (pandas blocked on the PC).
+
 ## gm-1.2.2 and gm-2.0.2 candidate (registered 2026-11-22, BEFORE the code change): doubled US 2-year market removed
 Found by code reading in the systematic charter (docs/research/fable/CHARTER_1.2.md section 9 item 2; confirmed by its
 independent Opus check): `st_us_2y` and `bd_us_2y` are the same series (the 2-year par note priced from DGS2, less the

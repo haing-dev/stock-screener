@@ -120,7 +120,12 @@ Engine on the PC (deploy with `python3 tools/bbgq/build_engine.py`, which fills 
 | C3 whole-sample 500-day gate | gm/daily.py | FIXED: gate dropped; no design number changes |
 | C4 whole-sample 24 / 36-month gates on Bloomberg series | gm/panel.py, signals.py, bloomberg.py, config.py | FIXED: counted up to each month; GSCI before BCOM by fixed order; inactive on free data |
 Truncation test: PASS at all 8 cut dates for BASE and CANDIDATE (free data), and at 3 dates with mock Bloomberg inputs.
-The reference `engine_ref.json` is for gm-1.2.2 (2026-11-22: doubled US 2-year market removed, registered in
-gm/CHANGES.md; truncation PASS at all 8 dates, results/engine_trunc_cloud_2026-11-22_gm-1.2.2.txt);
-`engine_ref_gm-1.2.1.json` and `engine_ref_gm-1.2.0.json` keep the old ones.
+The reference `engine_ref.json` is for gm-1.2.3 / gm-2.0.3-candidate (2026-11-24: fix version E1-E5 registered in
+gm/CHANGES.md: Bloomberg switches off, EQ_INDEX fix, CPI as-of rule, Value non-US dividend yield lagged 12 months, seal
+and holding cut at 2010-12-31; truncation PASS at all 8 dates, results/engine_trunc_cloud_2026-11-24_gm-1.2.3.txt);
+`engine_ref_gm-1.2.2.json`, `engine_ref_gm-1.2.1.json` and `engine_ref_gm-1.2.0.json` keep the old ones.
+Since gm_engine 1.1.0 (E5) every design run is sealed: `run()` cuts every loader at 2010-12-31 (the truncation test's
+Cut), gm.book.run drops inputs after the seal, and the result ends at 2010-12; so the truncation test's full run is
+sealed too and its 2010-12-31 cut passes by construction. `run(seal=False)` (unsealed engine) is a diagnostic only.
+E3 metadata: `cpi_freq_meta.py` -> results/cpi_freq_meta_2026-11-24.txt.
 
