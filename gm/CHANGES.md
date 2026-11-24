@@ -4,6 +4,50 @@ Every rule change gets a new VERSION in gm/run.py and a line here. Every variant
 (1990-2010; extra check 1975-89) is logged so the deflated Sharpe can count the trials. The holdout (2011-2026) is run
 once, after the rules are frozen, by gm/holdout.py.
 
+## gm-1.2.3 and gm-2.0.3 candidate (registered 2026-11-24, BEFORE the code change): E1-E5
+Fix version (may change design numbers). Registered in docs/research/global_macro/TESTING_PROTOCOL.md section 7.4 rows
+E1-E5 and 7.3 item 5 (step 3.4, 2026-11-23); this is entry 1 of docs/research/registration/REGISTRATION_3.4.md part (c).
+Each item is the registered text; none is chosen from results, and none is revisited after them.
+1. E1 gm/config.py (flags), read by gm/signals.py and gm/panel.py: Bloomberg switches OFF by default, by registered
+   config flags: Value's Bloomberg equity composite; Carry's farthest-contract commodity curve carry; the alternative
+   commodity columns (until charter D1 admits a market through A3); Bloomberg growth surprise. Why: different measures
+   on different markets, switched on by which tickers load (register D4-D6, D16); a Bloomberg-only input cannot run
+   live (rule 7). With no Bloomberg file present (the cloud and free-data case) E1 alone changes no number; this is
+   shown before the other items are coded.
+2. E2 gm/bloomberg.py EQ_INDEX: remove the mappings eq_eu_stoxx50 -> "MXEM Index", eq_us_ndx -> MSCI USA, eq_us_r2k ->
+   MSCI USA; every remaining mapping (a local index to the MSCI index of the same country) is used only if the A1 rule
+   of 7.6 step 2 admits the series. Why: code defect (NOTES_3.1_agent_A item 3; CHECK_3.2_A s4 item 12). Inactive on
+   free data.
+3. E3 gm/signals.py: CPI as-of rule: a country whose OECD CPI series is quarterly enters a quarter's value at the end
+   of the month after the quarter ends; oecd_sdmx raises an error instead of returning an empty table when the csv
+   cannot be parsed; a metadata job lists, per country, monthly or quarterly and the first date (metadata only, design
+   rows only). Why: look-ahead (SPEC_Economic_trend s3; CHECK_3.2_A s4 item 7: a parse error silently moves every
+   country to FRED). Found while reading the code before this entry: the current parser reads a quarterly period
+   "YYYY-Qn" as the FIRST month of the quarter (pandas), so a quarterly value would enter before its quarter ends.
+4. E4 gm/signals.py, Value, the 7 non-US equity markets (Germany, UK, France, Japan, Canada, Australia, Hong Kong; Ken
+   French country files): the trailing 12-month dividend yield used at month t is the one ending at t-12 (design and
+   live alike); US (SPY) unchanged. Why: the live Ken French file can be up to 12 months stale (ffill limit 12) while
+   the design run used month t (CHECK_3.2_A s4 item 5); using the bound means live is never staler than the backtest.
+   Reported: the lag-0 form, kept as a flag (default = the registered lag-12 form).
+5. E5 seal and holding cut (7.3 item 5): every holding period of every pod, tranche, rule and diagnostic ends at the
+   close of 2010-12-31 at the latest. No price, settlement or statistic dated after 2010-12-31 is read, printed or used
+   before the holdout. Under k = 1 the decision at month-end 2010-12 is never traded; the holding decided at month-end
+   2010-11 ends at the 2010-12-31 close (the move to 2011-01-03 is not read). Why: sealed days were reachable through
+   k = 1, tranches and forward windows (checks A item 9, C item 3; register D15). This entry covers the paths that exist
+   now: the monthly k = 0 book (gm/book.py), the existing trade-delay diagnostic (gm/timing.py) and the engine runner
+   (tools/bbgq/lib/gm_engine.py); the k = 1, tranche and daily paths are built in entry 2 with the cut built in. A guard
+   and a test fail if any design output has a date after 2010-12 or uses an input dated later. The live run
+   (gm/run.py) and the one-shot holdout run (gm/holdout.py) are not design runs and say so explicitly.
+VERSION gm-1.2.3 in gm/run.py; config names gm-1.2.3 (BASE) and gm-2.0.3-candidate (CANDIDATE). No other rule, weight,
+threshold or cost changes.
+Gate: the truncation test passes at all 8 cut dates for BASE and CANDIDATE on free data; tests pass
+(tests/run_tests.py, tests/bbgq_engine_smoke.py, tests/gm_bloomberg_smoke.py); the current reference (gm-1.2.2) is
+reproduced 24/24 before the change. Reported once: design-period statistics before and after (net Sharpe, mean, vol,
+worst drawdown; BASE and CANDIDATE; 1975-2010 and 1990-2010). Logged in gm/trials.csv as family "fix" (one row per
+config, not a selection trial). New reference tools/bbgq/engine_ref.json (old one kept as engine_ref_gm-1.2.2.json).
+Live paper ledgers: untouched (workflow disabled); the next live run restates under the new version name. Holdout not
+run. The PC engine is redeployed when PC jobs that import pandas run again (7.4 precondition).
+
 ## gm-1.2.2 and gm-2.0.2 candidate (registered 2026-11-22, BEFORE the code change): doubled US 2-year market removed
 Found by code reading in the systematic charter (docs/research/fable/CHARTER_1.2.md section 9 item 2; confirmed by its
 independent Opus check): `st_us_2y` and `bd_us_2y` are the same series (the 2-year par note priced from DGS2, less the
