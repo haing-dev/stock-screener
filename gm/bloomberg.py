@@ -49,7 +49,10 @@ EQ_INDEX = {"eq_us_spx": "MXUS Index", "eq_jp_nikkei": "MXJP Index", "eq_gb_ftse
             "eq_de_dax": "MXDE Index", "eq_fr_cac": "MXFR Index", "eq_ca_tsx": "MXCA Index",
             "eq_au_asx": "MXAU Index", "eq_hk_hsi": "MXHK Index", "eq_cn": "MXCN Index", "eq_kr_kospi": "MXKR Index",
             "eq_tw": "MXTW Index", "eq_in": "MXIN Index", "eq_br_ibov": "MXBR Index", "eq_mx_ipc": "MXMX Index",
-            "eq_za": "MXZA Index", "eq_eu_stoxx50": "MXEM Index", "eq_us_ndx": "MXUS Index", "eq_us_r2k": "MXUS Index"}
+            "eq_za": "MXZA Index"}
+# E2 (gm-1.2.3): the wrong mappings eq_eu_stoxx50 -> MXEM (MSCI Emerging Markets), eq_us_ndx -> MXUS and eq_us_r2k ->
+# MXUS are removed. Every remaining mapping (a local index to the MSCI index of the same country) is used only if the A1
+# data rule (TESTING_PROTOCOL 7.6 step 2) admits the series.
 
 
 def available():

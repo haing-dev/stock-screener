@@ -1,0 +1,42 @@
+E3 CPI metadata (design rows only, <= 2010-12): oecd_cpi_yoy.csv
+country  frequency  FREQ column  first (design)                   design rows
+AUS      monthly    monthly      after 2010-12 (no design rows)   0
+BRA      monthly    monthly      1990-01                          252
+CAN      monthly    monthly      1990-01                          252
+CHE      monthly    monthly      1990-01                          252
+CHN      monthly    monthly      1990-01                          252
+DEU      monthly    monthly      1990-01                          252
+ESP      monthly    monthly      1990-01                          252
+FRA      monthly    monthly      1990-01                          252
+GBR      monthly    monthly      1990-01                          252
+IND      monthly    monthly      1990-01                          252
+ITA      monthly    monthly      1990-01                          252
+JPN      monthly    monthly      1990-01                          252
+KOR      monthly    monthly      1990-01                          252
+MEX      monthly    monthly      1990-01                          252
+NLD      monthly    monthly      1990-01                          252
+NOR      monthly    monthly      1990-01                          252
+SWE      monthly    monthly      1990-01                          252
+USA      monthly    monthly      1990-01                          252
+ZAF      monthly    monthly      1990-01                          252
+countries with quarterly rows: 0 of 19
+CPI countries the engine asks for (Economic trend, Value): AU, BR, CA, CH, CN, DE, FR, GB, IN, JP, KR, MX, NO, NZ, SE, US, ZA
+(the engine splices: OECD file first, FRED CPALTT01<cc>M659N fills the months the OECD file lacks)
+  AU  AUS  OECD none                    | FRED: no file
+  BR  BRA  OECD monthly from 1990-01    | FRED: monthly (median spacing 1 months), first 1980-12, design rows 361
+  CA  CAN  OECD monthly from 1990-01    | FRED: monthly (median spacing 1 months), first 1915-01, design rows 1152
+  CH  CHE  OECD monthly from 1990-01    | FRED: monthly (median spacing 1 months), first 1956-01, design rows 660
+  CN  CHN  OECD monthly from 1990-01    | FRED: monthly (median spacing 1 months), first 1987-01, design rows 288
+  DE  DEU  OECD monthly from 1990-01    | FRED: monthly (median spacing 1 months), first 1956-01, design rows 660
+  FR  FRA  OECD monthly from 1990-01    | FRED: monthly (median spacing 1 months), first 1956-01, design rows 660
+  GB  GBR  OECD monthly from 1990-01    | FRED: monthly (median spacing 1 months), first 1956-01, design rows 660
+  IN  IND  OECD monthly from 1990-01    | FRED: monthly (median spacing 1 months), first 1958-01, design rows 636
+  JP  JPN  OECD monthly from 1990-01    | FRED: monthly (median spacing 1 months), first 1956-01, design rows 660
+  KR  KOR  OECD monthly from 1990-01    | FRED: monthly (median spacing 1 months), first 1960-01, design rows 612
+  MX  MEX  OECD monthly from 1990-01    | FRED: monthly (median spacing 1 months), first 1969-01, design rows 504
+  NO  NOR  OECD monthly from 1990-01    | FRED: monthly (median spacing 1 months), first 1956-01, design rows 660
+  NZ  NZL  OECD none                    | FRED: no file
+  SE  SWE  OECD monthly from 1990-01    | FRED: monthly (median spacing 1 months), first 1956-01, design rows 660
+  US  USA  OECD monthly from 1990-01    | FRED: monthly (median spacing 1 months), first 1956-01, design rows 660
+  ZA  ZAF  OECD monthly from 1990-01    | FRED: monthly (median spacing 1 months), first 1958-01, design rows 636
+=== END ===

@@ -3,9 +3,9 @@
 A config is a plain dict. `book.run(R, cfg=...)` reads only these keys, so a variant is a changed copy of a config
 (`variant(BASE, trend={"kind": "cont"})`) and every trial is reproducible from its config (gm/trials.py logs it).
 
-BASE = gm-1.2.2 (the live paper book; gm-1.2.0 with the registered input-layer look-ahead fixes C1-C4, gm/CHANGES.md
-2026-11-11, and without the doubled US 2-year market, 2026-11-22). CANDIDATE = the gm-2.0.2 candidate (gm-2.0 + the
-same changes), frozen only after the Bloomberg data
+BASE = gm-1.2.3 (the live paper book; gm-1.2.0 with the registered input-layer look-ahead fixes C1-C4, gm/CHANGES.md
+2026-11-11, without the doubled US 2-year market, 2026-11-22, and with the fix version E1-E5, 2026-11-24).
+CANDIDATE = the gm-2.0.3 candidate (gm-2.0 + the same changes), frozen only after the Bloomberg data
 and the decisions in docs/research/global_macro/gap_review_crosscheck_2026-10-31.md.
 """
 import copy
@@ -13,7 +13,7 @@ import hashlib
 import json
 
 BASE = {
-    "name": "gm-1.2.2",
+    "name": "gm-1.2.3",
     # family risk shares (sum 1)
     "family_w": {"trend": 0.30, "econ": 0.30, "carry": 0.20, "value": 0.15, "xsmom": 0.05},
     # price trend: 'sign' = mean of sign(n-month excess return); 'cont' = mean of clip(z_n, -cap, cap) / cap, where
@@ -60,7 +60,7 @@ def cfg_hash(cfg):
     return hashlib.sha1(json.dumps(cfg, sort_keys=True, default=list).encode()).hexdigest()[:10]
 
 
-CANDIDATE = variant(BASE, name="gm-2.0.2-candidate",
+CANDIDATE = variant(BASE, name="gm-2.0.3-candidate",
                     family_w={"trend": 0.45, "econ": 0.15, "carry": 0.25, "value": 0.15, "xsmom": 0.0},
                     vol={"model": "hybrid"})
 
@@ -78,3 +78,21 @@ STRESS_WINDOWS = {
 # decided by the index family in the ticker name only (no data needed): S&P GSCI ("SPGS...") first, then Bloomberg
 # Commodity ("BCOM..."), the order of gm/bloomberg.py COMMOD_ER and of its docstring "GSCI, else BCOM".
 BBG_ER_PREFERENCE = ("SPGS", "BCOM")
+
+# E1 (gm-1.2.3, registered 2026-11-24, TESTING_PROTOCOL 7.4): Bloomberg switches, OFF by default. Each one is a
+# registered flag; switching one on is a registered change (A1 data rule, charter D1 / A3), never a result of which
+# tickers happen to load. The panel and the signals are shared by BASE and CANDIDATE, so the flags live here and not in
+# the config dicts.
+#   value_composite  Value: Bloomberg equity composite (forward E/P, B/P, D/P ranks) instead of the dividend yield
+#   curve_carry      Carry: farthest-contract commodity curve carry from Bloomberg generic curves
+#   alt_commodities  the alternative commodity columns (gm/bloomberg.py ALT_COMMOD) as markets
+#   growth_surprise  Economic trend growth theme from Bloomberg data surprises (signals.GROWTH_SOURCE 'surprise')
+BBG_SWITCHES = {"value_composite": False, "curve_carry": False, "alt_commodities": False, "growth_surprise": False}
+
+# E4 (gm-1.2.3, registered 2026-11-24): Value's trailing 12-month dividend yield for the 7 non-US equity markets (Ken
+# French country files) is the one ending at t - 12 (design and live alike); 0 = the lag-0 form, reported only.
+VALUE_DY_LAG = 12
+
+# E5 (gm-1.2.3, registered 2026-11-24, TESTING_PROTOCOL 7.3 item 5): seal and holding cut. In a design run no input
+# dated after this close is used and no holding earns past it (gm/seal.py; gm.book.run seals by default).
+SEAL_END = "2010-12-31"

@@ -20,7 +20,7 @@ from . import book as B
 from . import panel as P
 from . import signals as G
 
-VERSION = "gm-1.2.2"
+VERSION = "gm-1.2.3"
 NAMES = {"eq_": "equity", "bd_": "bond", "st_": "2-5y note", "fx_": "currency vs USD", "cm_": "commodity"}
 
 
@@ -69,7 +69,7 @@ def exposure_lines(R, pos, as_of):
 def main(out_dir="gm_out"):
     os.makedirs(out_dir, exist_ok=True)
     R, SRC, FLAG, sig_txt = build_all()
-    res, x2 = B.run(R), B.run(R, cost_mult=2.0)
+    res, x2 = B.run(R, seal=None), B.run(R, cost_mult=2.0, seal=None)     # live paper run: not a design run (E5)
     as_of = pd.Period(pd.Timestamp.today(), "M") - 1
     pos = res["pos"].loc[as_of]
     vol = (R.rolling(36, min_periods=12).std() * np.sqrt(12)).loc[as_of]

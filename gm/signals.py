@@ -22,6 +22,7 @@ import pickle
 import numpy as np
 import pandas as pd
 
+from . import config as CF
 from . import panel as P
 
 GRID = P.GRID
@@ -62,19 +63,79 @@ def rate(cc):
 _SDMX = {}
 
 
+class OECDParseError(RuntimeError):
+    """E3 (gm-1.2.3): an OECD SDMX csv that cannot be parsed stops the run (no silent fallback to FRED)."""
+
+
+def _sdmx_table(p):
+    """Parse an OECD SDMX csv into a month-indexed table (columns = REF_AREA), point in time on the reference month:
+    monthly rows (TIME_PERIOD 'YYYY-MM') sit on their month; E3 (gm-1.2.3): quarterly rows ('YYYY-Qn') sit on the
+    LAST month of their quarter and are carried over the next two months, so that the callers' one-month publication
+    lag makes a quarter's value enter at the end of the month after the quarter ends (and stay until the next quarter
+    enters). Where a country has both, its monthly value wins. Any other period format raises OECDParseError."""
+    x = pd.read_csv(p)
+    need = ("REF_AREA", "TIME_PERIOD", "OBS_VALUE")
+    if any(c not in x.columns for c in need):
+        raise OECDParseError("%s: columns %s missing" % (p, [c for c in need if c not in x.columns]))
+    tp = x["TIME_PERIOD"].astype(str).str.strip()
+    mon = tp.str.fullmatch(r"\d{4}-(0[1-9]|1[0-2])")
+    qtr = tp.str.fullmatch(r"\d{4}-Q[1-4]")
+    bad = ~(mon | qtr)
+    if bad.any():
+        raise OECDParseError("%s: %d rows with a period that is neither YYYY-MM nor YYYY-Qn (e.g. %r)" % (
+            p, int(bad.sum()), tp[bad].iloc[0]))
+    val = pd.to_numeric(x["OBS_VALUE"], errors="coerce")
+    out = pd.DataFrame()
+    if mon.any():
+        m = x[mon].assign(m=pd.PeriodIndex(tp[mon], freq="M"), v=val[mon])
+        out = m.pivot_table(index="m", columns="REF_AREA", values="v", aggfunc="last")
+    if qtr.any():
+        q = x[qtr].assign(m=pd.PeriodIndex(tp[qtr], freq="Q").asfreq("M", how="end"), v=val[qtr])
+        tq = q.pivot_table(index="m", columns="REF_AREA", values="v", aggfunc="last")
+        tq = tq.reindex(pd.period_range(tq.index.min(), tq.index.max() + 2, freq="M")).ffill(limit=2)
+        out = tq if out.empty else out.combine_first(tq)
+    return out.sort_index()
+
+
 def oecd_sdmx(fname, iso3):
-    """Series for one country from an OECD SDMX csv download (columns REF_AREA, TIME_PERIOD, OBS_VALUE)."""
+    """Series for one country from an OECD SDMX csv download (columns REF_AREA, TIME_PERIOD, OBS_VALUE).
+    E3 (gm-1.2.3): a missing file gives an empty series; a file that cannot be parsed raises OECDParseError."""
     if fname not in _SDMX:
         p = os.path.join(P.RD, fname)
-        try:
-            x = pd.read_csv(p)
-            x = x[[c for c in x.columns if c in ("REF_AREA", "TIME_PERIOD", "OBS_VALUE")]]
-            x["m"] = pd.PeriodIndex(x["TIME_PERIOD"].astype(str).str[:7], freq="M")
-            _SDMX[fname] = x.pivot_table(index="m", columns="REF_AREA", values="OBS_VALUE", aggfunc="last")
-        except Exception:  # noqa: BLE001
+        if not os.path.exists(p):
             _SDMX[fname] = pd.DataFrame()
+        else:
+            try:
+                _SDMX[fname] = _sdmx_table(p)
+            except OECDParseError:
+                raise
+            except Exception as e:  # noqa: BLE001
+                raise OECDParseError("%s cannot be parsed: %s: %s" % (p, type(e).__name__, e)) from e
     t = _SDMX[fname]
     return t[iso3].reindex(GRID) if iso3 in t else pd.Series(np.nan, index=GRID)
+
+
+def sdmx_meta(fname):
+    """E3 metadata: per country, frequency (monthly / quarterly / both) and first period, from the raw file. Design
+    rows only: rows dated after 2010-12 are not counted and a first date after 2010-12 is not shown."""
+    x = pd.read_csv(os.path.join(P.RD, fname))
+    tp = x["TIME_PERIOD"].astype(str).str.strip()
+    q = tp.str.fullmatch(r"\d{4}-Q[1-4]")
+    per = pd.Series([pd.Period(t, "Q").asfreq("M", how="end") if iq else pd.Period(t[:7], "M")
+                     for t, iq in zip(tp, q)], index=x.index)
+    end = pd.Period("2010-12", "M")
+    rows = []
+    for cc in sorted(x["REF_AREA"].astype(str).unique()):
+        sel = x["REF_AREA"].astype(str) == cc
+        fr = sorted(set(x.loc[sel, "FREQ"].astype(str))) if "FREQ" in x else []
+        kind = {"M": "monthly", "Q": "quarterly"}
+        isq = q[sel]
+        f = "both" if isq.any() and (~isq).any() else ("quarterly" if isq.all() else "monthly")
+        d = per[sel]
+        dd = d[d <= end]
+        rows.append({"country": cc, "frequency": f, "FREQ column": "/".join(kind.get(v, v) for v in fr),
+                     "first": str(dd.min()) if len(dd) else "after 2010-12 (no design rows)", "design rows": len(dd)})
+    return rows
 
 
 def cpi_yoy(cc):
@@ -188,7 +249,10 @@ SURPRISE_MAP = {  # country -> (Bloomberg ticker, sign): growth news only
 
 
 def growth_surprise(cc):
-    """Growth theme from data surprises: 3-month average of (first release - consensus) z-scores, sign by series."""
+    """Growth theme from data surprises: 3-month average of (first release - consensus) z-scores, sign by series.
+    E1 (gm-1.2.3): empty unless the registered switch config.BBG_SWITCHES['growth_surprise'] is on."""
+    if not CF.BBG_SWITCHES["growth_surprise"]:
+        return pd.Series(np.nan, index=GRID)
     from . import bloomberg as BBG
     parts = [BBG.surprise(tk, sg) for tk, sg in SURPRISE_MAP.get(FX_MACRO.get(cc, cc), [])]
     parts = [p.where(p.notna().cumsum() > 24) for p in parts]      # C4 (gm-1.2.1): counted up to each month
@@ -314,14 +378,20 @@ def _french_mkt(fname, name):
     return (s.where(s > -99) / 100).reindex(GRID)
 
 
-def equity_dy():
+def equity_dy(lag=0):
     """Trailing 12-month dividend yield per equity market: Ken French country market portfolio with minus without
-    dividends (1975+, annual update; carried forward up to 12 months); US from SPY total return minus S&P 500 price
-    (1993+). Point in time: known at month end."""
+    dividends (1975+, annual update); US from SPY total return minus S&P 500 price (1993+). Point in time: known at
+    month end.
+    lag 0  (gm-1.1 .. gm-1.2.2 form; Carry, and Value's reported option): the 12 months ending at t, carried forward up
+           to 12 months when the file is stale.
+    lag L  (E4, gm-1.2.3, Value's registered form L = 12): the 12 months ending at t - L, the same in design and live,
+           so live is never staler than the backtest (no carry-forward).
+    US (SPY) is the same in both forms."""
     out = {}
     for k, n in FRENCH_DY.items():
         d = _french_mkt("french_intl_countries_ff.zip", n) - _french_mkt("french_intl_countries_ff_xdiv.zip", n)
-        out[k] = d.rolling(12, min_periods=12).sum().ffill(limit=12)
+        roll = d.rolling(12, min_periods=12).sum()
+        out[k] = roll.shift(lag) if lag else roll.ffill(limit=12)
     us = (P.ret(P.Y("SPY")) - P.ret(P.Y("^GSPC"))).rolling(12, min_periods=12).sum()
     out["eq_us_spx"] = us.clip(0, 0.1)
     return pd.DataFrame(out).reindex(GRID)
@@ -340,8 +410,8 @@ def carry_values(R):
     for k in dy.columns:
         out[k] = dy[k] - rate(G_EQ_RATE.get(k, "US")).shift(1) / 100     # dividend yield minus local 3m rate
     from . import bloomberg as BBG
-    for k in BBG.CURVE_ROOT:                            # commodity carry from Bloomberg curves (non-energy too)
-        if k in R.columns:
+    for k in BBG.CURVE_ROOT if CF.BBG_SWITCHES["curve_carry"] else ():   # E1 (gm-1.2.3): off unless switched on
+        if k in R.columns:                              # commodity carry from Bloomberg curves (non-energy too)
             cc = BBG.commodity_carry(k)
             cc = cc.where(cc.notna().cumsum() > 24)     # C4 (gm-1.2.1): more than 24 months counted up to each month
             if cc.notna().any():
@@ -349,8 +419,11 @@ def carry_values(R):
     return pd.DataFrame(out).reindex(GRID)
 
 
-def value_values(R, eq_measure="dy"):
-    """eq_measure 'dy': equities by dividend yield (v1.1); 'rev': 5-year reversal (v1, failed)."""
+def value_values(R, eq_measure="dy", dy_lag=None):
+    """eq_measure 'dy': equities by dividend yield (v1.1); 'rev': 5-year reversal (v1, failed).
+    dy_lag: months by which the non-US dividend yield is lagged (None = config.VALUE_DY_LAG, the registered 12 of E4;
+    0 = the reported lag-0 form)."""
+    dy_lag = CF.VALUE_DY_LAG if dy_lag is None else dy_lag
     out = {}
     for k in R.columns:
         if k.startswith("cm_") and k != "cm_aqr_ew" or (k.startswith("eq_") and eq_measure == "rev"):
@@ -359,8 +432,9 @@ def value_values(R, eq_measure="dy"):
     if eq_measure == "dy":
         from . import bloomberg as BBG
         eqs = [k for k in R.columns if k.startswith("eq_")]
-        vc = BBG.value_composite(eqs)                   # Bloomberg: forward E/P + B/P + D/P (incl. emerging markets)
-        dy = equity_dy()
+        # Bloomberg: forward E/P + B/P + D/P (incl. emerging markets); E1 (gm-1.2.3): off unless switched on
+        vc = BBG.value_composite(eqs) if CF.BBG_SWITCHES["value_composite"] else pd.DataFrame(index=GRID)
+        dy = equity_dy(dy_lag)
         for k in dy.columns:
             out[k] = dy[k]
         if not vc.empty and vc.notna().sum().sum() > 0:

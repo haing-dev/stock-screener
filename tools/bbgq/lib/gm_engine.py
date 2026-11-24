@@ -13,7 +13,9 @@ Holdout rule: gm builds its monthly grid up to today, so the engine computes ove
 from data after 2010-12 leaves this module: fingerprint() and the comparisons slice to DESIGN_END first, and gm's own
 console output (panel.build prints a count of big moves over the FULL sample) is captured and discarded unread.
 
-run(free_dir=None, cut=None) -> dict          one engine run (panel -> signals -> daily -> BASE and CANDIDATE books)
+run(free_dir=None, cut=None, seal=True)       one engine run (panel -> signals -> daily -> BASE and CANDIDATE books);
+                                              E5 (gm-1.2.3): sealed by default = every loader cut at 2010-12-31 and
+                                              gm.book.run sealed, outputs end at 2010-12 (seal=False: diagnostic only)
 fingerprint(res) -> dict                      design-period fingerprint (statistics, per-year sums, per-market sums)
 compare(fp, ref) -> list of rows              PASS / FAIL per item with the largest absolute difference
 trunc_compare(full, cut_res, T) -> rows       truncation test: per stage, differing market-months up to T
@@ -32,7 +34,7 @@ import time
 import numpy as np
 import pandas as pd
 
-VERSION = "gm_engine-1.0.0"
+VERSION = "gm_engine-1.1.0"   # 1.1.0 (gm-1.2.3, E5): design runs sealed at config.SEAL_END
 DESIGN_END = pd.Period("2010-12", "M")
 ERAS = {"1975-2010": ("1975-01", "2010-12"), "1990-2010": ("1990-01", "2010-12")}
 CONFIGS = ("BASE", "CANDIDATE")
@@ -174,19 +176,26 @@ def bbg_dict(bbg, asof):
     return bbg(asof) if callable(bbg) else bbg
 
 
-def run(free_dir=None, cut=None, M=None, bbg=None):
+def run(free_dir=None, cut=None, M=None, bbg=None, seal=True):
     """panel -> signals (E, C, V as gm.signals.main computes them) -> daily returns -> BASE and CANDIDATE books
     (gm.book.run with daily data and the signals, as gm.protocol does). cut: a date T for the truncation test.
     bbg: optional Bloomberg inputs, a gm.bloomberg workbook dict or a function asof -> dict (see bbg_dict; with a cut
-    the function is called with T, so the adapter's as-of guard applies; None = free data only, the reference run)."""
+    the function is called with T, so the adapter's as-of guard applies; None = free data only, the reference run).
+    seal (E5, gm-1.2.3): True = a design run: without a cut every loader is cut at gm.config.SEAL_END (2010-12-31), so
+    no input dated later reaches the rules; gm.book.run is sealed; the panel, signals and daily returns kept in the
+    result end at the seal and the result is checked by gm.seal.check_output. False = the unsealed engine (diagnostic
+    only: shows that the seal changes no design number)."""
     M = M or setup(free_dir)
     M["BBG"]._CACHE.clear()
-    wb = bbg_dict(bbg, cut if cut is not None else "2010-12-31")
+    P, G, DL, B, CF = M["P"], M["G"], M["DL"], M["B"], M["CF"]
+    from gm import seal as SL
+    T_seal = SL.resolve(SL.DESIGN) if seal else None
+    eff = cut if cut is not None else (str(T_seal.date()) if T_seal is not None else None)
+    wb = bbg_dict(bbg, eff if eff is not None else "2010-12-31")
     if wb is not None:
         M["BBG"]._CACHE["wb"] = wb
-    P, G, DL, B, CF = M["P"], M["G"], M["DL"], M["B"], M["CF"]
     t0 = time.time()
-    ctx = Cut(M, cut) if cut is not None else contextlib.nullcontext()
+    ctx = Cut(M, eff) if eff is not None else contextlib.nullcontext()
     sink = io.StringIO()
     with ctx:
         with contextlib.redirect_stdout(sink):           # gm prints full-sample counts (incl. 2011+): discarded
@@ -196,18 +205,28 @@ def run(free_dir=None, cut=None, M=None, bbg=None):
             V = G.value_values(R)
             D = DL.build()
     S = {"E": E, "C": C, "V": V}
+    after_empty = None
+    if eff is not None:
+        Tp = pd.Period(pd.Timestamp(eff), "M")
+        after_empty = bool(R.loc[R.index > Tp].isna().all().all()) and \
+            bool(D.loc[D.index > pd.Timestamp(eff)].isna().all().all())
+    if T_seal is not None:
+        if cut is None and not after_empty:
+            raise SL.SealBreach("design run: an input dated after %s reached the engine" % T_seal.date())
+        R, D, S = SL.cut_inputs(T_seal, R, D, S)
     books = {}
     with contextlib.redirect_stdout(sink):
         for name in CONFIGS:
-            books[name] = B.run(R, cfg=getattr(CF, name), daily=D, S=S)
+            books[name] = B.run(R, cfg=getattr(CF, name), daily=D, S=S, seal=SL.DESIGN if seal else None)
         trend = B.trend_signal(R, CF.BASE, books["BASE"]["vol"], S)
     del sink
     out = {"R": R, "S": S, "D": D, "books": books, "trend": trend, "seconds": time.time() - t0, "cut": cut,
+           "seal": str(T_seal.date()) if T_seal is not None else None,
            "bbg_tickers": sum(len(b) for b in wb.values()) if wb else 0}
     if cut is not None:
-        Tp = pd.Period(pd.Timestamp(cut), "M")
-        out["after_cut_empty"] = bool(R.loc[R.index > Tp].isna().all().all()) and \
-            bool(D.loc[D.index > pd.Timestamp(cut)].isna().all().all())
+        out["after_cut_empty"] = after_empty
+    if T_seal is not None:
+        SL.check_output({k: out[k] for k in ("R", "S", "D", "books", "trend")}, SL.DESIGN, "gm_engine.run")
     return out
 
 

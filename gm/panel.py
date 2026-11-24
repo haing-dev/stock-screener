@@ -567,7 +567,9 @@ def build():
     note("sp_de_2s10s", ["Bundesbank 2y / 10y month-end"], [] if d2.notna().sum() > 120 else
          ["MISSING: German 2-year yield (stooq 2dey.b; alternative Bundesbank SDMX)"])
 
-    for k in BBG.ALT_COMMOD:                             # alternative commodities exist only with Bloomberg data
+    from . import config as CF
+    # alternative commodities exist only with Bloomberg data; E1 (gm-1.2.3): off unless the registered switch is on
+    for k in BBG.ALT_COMMOD if CF.BBG_SWITCHES["alt_commodities"] else ():
         bb = BBG.commodity_return(k)
         bb = bb.where(bb.notna().cumsum() > 36)           # C4 (gm-1.2.1): more than 36 months counted up to each month
         if bb.notna().any():

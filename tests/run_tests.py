@@ -995,6 +995,12 @@ triage_smoke.run(check)
 import macro_smoke  # noqa: E402
 macro_smoke.run(check)
 
+# Global Macro Book (gm/): fix version gm-1.2.3 (E1-E5: Bloomberg switches, EQ_INDEX, CPI as-of, Value dividend lag,
+# seal and holding cut at 2010-12-31), synthetic data
+print("\nGlobal Macro Book (gm-1.2.3 fixes)")
+import gm_seal_smoke  # noqa: E402
+gm_seal_smoke.run(check)
+
 shutil.rmtree(TMP, ignore_errors=True)
 print(f"\n{'ALL TESTS PASSED' if not failures else str(len(failures)) + ' FAILED: ' + ', '.join(failures)}")
 sys.exit(1 if failures else 0)

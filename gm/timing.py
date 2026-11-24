@@ -22,10 +22,18 @@ from . import stats as ST
 DELAYS = (0, 1, 3, 5, 10)
 
 
-def delayed_pnl(pos, D, k):
-    """pos: monthly positions (PeriodIndex, decided at month end). D: daily returns. Returns monthly P&L series."""
+def delayed_pnl(pos, D, k, seal="design"):
+    """pos: monthly positions (PeriodIndex, decided at month end). D: daily returns. Returns monthly P&L series.
+    seal (E5, gm-1.2.3): in a design run (default) no day after the seal close (2010-12-31) is read: days after it are
+    dropped and a holding that would run past it ends at the last close at or before it (the holding decided at
+    month-end 2010-11 ends at the 2010-12-31 close; the decision at month-end 2010-12 earns nothing)."""
+    from . import seal as SL
+    T = SL.resolve(seal)
+    if T is not None:
+        D, pos = SL.cut_inputs(T, D, pos)
     D = D.fillna(0.0)
     days = D.index
+    cap = SL.last_day(days, T) if T is not None else None
     m_end = pd.Series(days, index=days).groupby(days.to_period("M")).max()   # last trading day per month
     loc = {p: days.get_loc(d) for p, d in m_end.items()}
     cols = [c for c in pos.columns if c in D.columns]
@@ -35,11 +43,16 @@ def delayed_pnl(pos, D, k):
         if t not in loc or (t + 1) not in loc:
             continue
         i0, i1 = loc[t] + k, loc[t + 1] + k
+        if cap is not None:
+            if i0 >= cap:
+                continue
+            i1 = min(i1, cap)
         if i1 >= len(days):
             continue
         move = cum.iloc[i1] - cum.iloc[i0]
         out[t + 1] = float((pos.loc[t, cols].fillna(0) * move).sum())
-    return pd.Series(out)
+    out = pd.Series(out, dtype=float)
+    return SL.check_output(out, T, "gm.timing.delayed_pnl") if T is not None else out
 
 
 def grid(cfg, D=None, R=None, label=""):

@@ -1,6 +1,7 @@
 """Smoke test for the Bloomberg adapter with a SYNTHETIC workbook (random numbers in the exact layout of
 docs/data_requests/build_bloomberg.py). Checks the plumbing only: parsing, alternative commodity markets, commodity
-carry from curves, the equity value composite and the growth-surprise theme. Writes nothing to the real cache.
+carry from curves, the equity value composite and the growth-surprise theme; E1 (gm-1.2.3): the alternative
+commodity columns stay out while their switch is off (default). Writes nothing to the real cache.
 
 python3 tests/gm_bloomberg_smoke.py
 """
@@ -82,8 +83,17 @@ def main():
     assert s.notna().sum() > 300, "surprise missing"
     m = BBG.short_rate_market()
     assert m.notna().sum() > 300, "short-rate market missing"
+    from gm import config as CF
     from gm import panel as P
-    R, SRC, FLAG, rf = P.build()
+    # E1 (gm-1.2.3): the alternative commodity columns enter only when their registered switch is on
+    assert not any(CF.BBG_SWITCHES.values()), CF.BBG_SWITCHES
+    R0, *_ = P.build()
+    assert not [k for k in R0.columns if k in BBG.ALT_COMMOD], "alternative commodities entered with the switch off"
+    CF.BBG_SWITCHES["alt_commodities"] = True
+    try:
+        R, SRC, FLAG, rf = P.build()
+    finally:
+        CF.BBG_SWITCHES["alt_commodities"] = False
     alts = [k for k in R.columns if k in BBG.ALT_COMMOD]
     assert len(alts) >= 5, alts
     print("BLOOMBERG SMOKE PASSED: sheets %s; alternative markets %d; carry rows %d; value cells %d" % (

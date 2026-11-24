@@ -176,9 +176,18 @@ def scenario_scale(pos, R, limit, windows):
     return pos.mul(f, axis=0), f
 
 
-def run(R, cost_mult=1.0, cfg=None, daily=None, S=None):
+def run(R, cost_mult=1.0, cfg=None, daily=None, S=None, seal="design"):
+    """seal (E5, gm-1.2.3): 'design' (default) = a design run sealed at config.SEAL_END (2010-12-31): inputs dated
+    later are dropped before anything is computed and the outputs are checked (gm/seal.py); None = live paper run or
+    the one-shot holdout run only (gm/run.py, gm/holdout.py)."""
     from . import config as CF
+    from . import seal as SL
     cfg = cfg or CF.BASE
+    T = SL.resolve(seal)
+    if T is not None:
+        if S is None:
+            S = pickle.load(open(os.path.join(P.OUT, "signals.pkl"), "rb"))
+        R, daily, S = SL.cut_inputs(T, R, daily, S)
     fam, vol = family_positions(R, cfg, daily, S)
     fw = cfg["family_w"]
     total = pd.DataFrame(0.0, index=R.index, columns=R.columns)
@@ -216,8 +225,10 @@ def run(R, cost_mult=1.0, cfg=None, daily=None, S=None):
     turnover = trade.sum(axis=1)
     shrink = (pos.abs().sum(axis=1) / total.mul(s, axis=0).abs().sum(axis=1)).fillna(1)   # effect of the caps
     fam_pos = {f: v.mul(s * shrink, axis=0) for f, v in by_fam.items()}
-    return {"pos": pos, "gross": gross, "net": net, "blocks": pd.DataFrame(blocks), "turnover": turnover,
-            "cost": (tc + borrow), "fam_pos": fam_pos, "vol": vol, "scenario_scale": scen, "cfg": cfg}
+    out = {"pos": pos, "gross": gross, "net": net, "blocks": pd.DataFrame(blocks), "turnover": turnover,
+           "cost": (tc + borrow), "fam_pos": fam_pos, "vol": vol, "scenario_scale": scen, "cfg": cfg,
+           "seal": None if T is None else str(T.date())}
+    return SL.check_output(out, T, "gm.book.run") if T is not None else out
 
 
 def stats(r, spx=None):

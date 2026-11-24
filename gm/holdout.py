@@ -27,7 +27,7 @@ def main():
     if os.path.exists(out):
         sys.exit("holdout already run for %s: %s" % (VERSION, out))
     R = pickle.load(open(os.path.join(P.OUT, "panel.pkl"), "rb"))["R"]
-    res, x2 = B.run(R), B.run(R, cost_mult=2.0)
+    res, x2 = B.run(R, seal=None), B.run(R, cost_mult=2.0, seal=None)     # the one-shot holdout run (E5)
     end = pd.Period(pd.Timestamp.today(), "M") - 1
     spx = R["eq_us_spx"]
     a, b = "2011-01", str(end)

@@ -142,7 +142,19 @@ def main():
         assert not any(c in Rb.columns for c in GE.gm_modules()["BBG"].ALT_COMMOD), "held-back market entered the book"
         n_carry_b = int(withb["S"]["C"].loc[:E].reindex(columns=cm).notna().any().sum())
         n_carry_f = int(base["S"]["C"].loc[:E].reindex(columns=cm).notna().any().sum())
-        assert n_carry_b > n_carry_f, (n_carry_b, n_carry_f)
+        # E1 (gm-1.2.3): Bloomberg curve carry is used only when its registered switch is on (default off)
+        assert n_carry_b == n_carry_f, ("curve carry used with the switch off", n_carry_b, n_carry_f)
+        CF_ = GE.gm_modules()["CF"]
+        assert not any(CF_.BBG_SWITCHES.values()), CF_.BBG_SWITCHES
+        CF_.BBG_SWITCHES["curve_carry"] = True
+        try:
+            withc = GE.run(M=M, bbg=wb)
+        finally:
+            CF_.BBG_SWITCHES["curve_carry"] = False
+        n_carry_c = int(withc["S"]["C"].loc[:E].reindex(columns=cm).notna().any().sum())
+        assert n_carry_c > n_carry_f, (n_carry_c, n_carry_f)
+        assert withb["R"].index.max() <= E and withb["books"]["BASE"]["net"].index.max() <= E and \
+            withb["D"].index.max() <= GE.pd.Timestamp("2010-12-31"), "design run past the seal (E5)"
         # the truncation cut covers the Bloomberg inputs too (gm.bloomberg.load is wrapped)
         M["BBG"]._CACHE["wb"] = wb
         with GE.Cut(M, "1995-12-31"):
@@ -151,9 +163,9 @@ def main():
                        if len(df))
             assert M["BBG"].commodity_return("cm_wti").last_valid_index() <= GE.pd.Period("1995-12", "M")
         assert M["BBG"].load() is wb
-        print("  adapter: %d commodity markets switched to Bloomberg returns, commodity carry for %d markets (free "
-              "data: %d), other markets unchanged, held-back markets absent (%.0fs)" % (
-                  len(changed), n_carry_b, n_carry_f, time.time() - t))
+        print("  adapter: %d commodity markets switched to Bloomberg returns, commodity carry for %d markets with the "
+              "curve switch on (off: %d = free data %d), other markets unchanged, held-back markets absent (%.0fs)" % (
+                  len(changed), n_carry_c, n_carry_b, n_carry_f, time.time() - t))
         print("  whitelist: %d job outputs clean (no dated value rows, nothing after 2010, no mock values)" % len(outs))
         print("BBGQ ENGINE SMOKE OK")
     finally:
