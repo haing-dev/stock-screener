@@ -494,9 +494,26 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   (named conflict); live checkpoints at 120 (not 60) months; holdout fail -> expected Sharpe = min(design minus
   inflation, holdout). BLOCKED (7): LSEG registration + licence statement, T09/T10 histories, Eurodollar daily 3/5/6/7,
   Fung-Hsieh factor file, PC pandas block, UK/euro 3m replacement (rule + 2027-01 deadline set).
-  NEXT: 3.5 checker test (Opus plants defects, fresh Opus checks, script scores); write the gm/CHANGES.md entries of
-  REGISTRATION_3.4.md part (c) and build them (engine fixes, k=1, tranches, averaging, test code) before Batch A;
-  LSEG reader + lock + seal + licence statement to register LSEG. User 2026-11-22: NO MORE FABLE UNITS for now.
+  2026-11-24: PC RUNNER BACK; pandas loads again (gm_repro_v3 24/24, diff 0). winctl_diag_v1: Smart App Control is ON
+  (state 1); the one block (pandas algos .pyd, 2026-11-22 16:10 UTC, events 3033/3077) looks like a failed reputation
+  lookup; nothing changed. If it recurs: Windows Security > App & browser control > Smart App Control > Off.
+  STEP 3.5 CHECKER TEST PASS 2026-11-24: docs/research/checker_test/ (CHECKER_TEST_3.5.md, SCORING_RULES.md fixed
+  before cases, BRIEF_CHECKER.md v1 = the backtest checker brief for step 4, score_output.txt); cases/key/verdicts on
+  macro-vault pipeline/ct_3.5 (key SHA pushed before checking). 10 of 10 planted defects caught (2 per type:
+  look-ahead, sample, costs, period-selection, tuned-knob), 0 false alarms on 10 clean. Floor only (small synthetic
+  cases, defects >= 0.17 Sharpe; 10/10 consistent with ~74% true rate): script checks stay. Re-run if the brief changes.
+  ENGINE FIX gm-1.2.3 / gm-2.0.3-candidate DONE 2026-11-24 (registration afca6b2 BEFORE code d68c0d6; results c27d9d2;
+  Opus builder ~0.30M): E1 Bloomberg switches OFF (gm/config.py BBG_SWITCHES), E2 bloomberg.py map fix, E3 quarterly CPI
+  rule + OECDParseError (inactive: cached OECD file is monthly only; AU/NZ have NO CPI in design months, no fallback),
+  E4 Value non-US dividend yield lag 12 (VALUE_DY_LAG; lag-0 reported), E5 seal (gm/seal.py; book.run seals design runs
+  by default; gm_engine 1.1.0 cuts loaders at 2010-12-31; timing.py sealed). Only E4 moves numbers: BASE 1975-2010 SR
+  1.222 -> 1.226, 1990-2010 1.452 -> 1.469; CANDIDATE 1.456 -> 1.461, 1.608 -> 1.620. Truncation PASS 8/8 dates (21
+  stages); tests/gm_seal_smoke.py added; run_tests ALL PASSED; new engine_ref.json (old engine_ref_gm-1.2.2.json).
+  PC redeploy + gm_repro_v4 queued (see below when it ran).
+  NEXT: engine feature version gm-2.1.0 (REGISTRATION_3.4 part (c) item 2: E6 k=1, E7 version grids, E8 weekly
+  tranches, E9 component masks + equal-risk Core book, E10 test code, E11 spread caps, E14 card 4 daily) -> then the
+  diagnostics (7.5) and Batch A. In parallel: LSEG reader + lock + seal + licence statement. User 2026-11-22: NO MORE
+  FABLE UNITS for now.
 - MT228 (2026-11-10): raw X posts of John Galt @AtlasShrug1 (1,359 posts, Jul 2025 - 8 Nov 2026) extracted like a transcript
   with dates: 733 claims (185 rules/tells, 188 dated forecasts), Sonnet single read, quotes script-checked, cross-check
   pending; macro-vault raw/sonnet/MT228.json, brief pipeline/X_EXTRACT_BRIEF.md. Use: forecast ledger (step 2), rule

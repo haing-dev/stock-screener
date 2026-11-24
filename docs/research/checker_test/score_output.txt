@@ -1,0 +1,23 @@
+C01 planted sample           -> DEFECT ['look-ahead', 'sample', 'costs'] : CAUGHT
+C02 clean                  -> CLEAN ['costs'] : ok
+C03 clean                  -> CLEAN ['costs'] : ok
+C04 clean                  -> CLEAN ['costs'] : ok
+C05 planted period-selection -> DEFECT ['period-selection', 'report-mismatch'] : CAUGHT
+C06 clean                  -> CLEAN ['costs'] : ok
+C07 clean                  -> CLEAN ['costs'] : ok
+C08 planted look-ahead       -> DEFECT ['look-ahead'] : CAUGHT
+C09 planted costs            -> DEFECT ['costs'] : CAUGHT
+C10 planted costs            -> DEFECT ['costs'] : CAUGHT
+C11 clean                  -> CLEAN ['costs'] : ok
+C12 planted look-ahead       -> DEFECT ['look-ahead', 'sample', 'costs'] : CAUGHT
+C13 clean                  -> CLEAN ['costs'] : ok
+C14 planted period-selection -> DEFECT ['period-selection'] : CAUGHT
+C15 planted tuned-knob       -> DEFECT ['tuned-knob', 'other'] : CAUGHT
+C16 clean                  -> CLEAN ['costs'] : ok
+C17 clean                  -> CLEAN ['costs'] : ok
+C18 clean                  -> CLEAN ['other'] : ok
+C19 planted sample           -> DEFECT ['sample', 'report-mismatch'] : CAUGHT
+C20 planted tuned-knob       -> DEFECT ['tuned-knob'] : CAUGHT
+
+automatic: caught 10 of 10; missed 0; DEFECT with other type 0; clean flagged 0 of 10; by type {'sample': [2, 2], 'period-selection': [2, 2], 'look-ahead': [2, 2], 'costs': [2, 2], 'tuned-knob': [2, 2]}; verdicts missing []
+manual reads needed: []
