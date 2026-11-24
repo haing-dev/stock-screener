@@ -1,0 +1,24 @@
+# Verdicts, checker 2 (brief v1), 2026-11-24
+
+All ten backtests were run as given: every headline number in every REPORT.md reproduces exactly. The fixes are in
+work/c01_c09.py and work/c12_c15_c17.py. They are run on copies loaded from the cases, and the case files are unchanged.
+
+C01 | verdict: DEFECT | sample, look-ahead | C01/backtest.py:24-26,56 `usable_months` drops every month in which any market's return of THAT month is > 6 rolling sd. The spec does not register this filter. It removes 22 of 432 months (e.g. 1985-08..10, 1998-10, 2008-10, 2009-01), so the report has "410 months". The filter uses the same month's return to choose which months count. With all 432 registered months: net SR 0.62 (reported 0.87), mean 7.38%, DD -27.3%, at 2x costs 0.58, eras 0.42 / 0.82 (reported 0.61 / 1.13). | high
+
+C02 | verdict: CLEAN | - | The CPI as-of shift is correct (backtest.py:24, `cpi.shift(1)` = reference month t-1 at the close of t), the prior-12 average excludes the current print (:26), the position is held from t+1 (:37) and costs are charged on changes of the held position (:39). The window is 432 months. All report numbers reproduce (net -0.09, 227 on-months, eras 0.26 / -0.41). The report's "fails" reading matches the numbers. | high
+
+C03 | verdict: CLEAN | - | The ranks use carry at t, the vol window ends at t, gross[t] = pos[t-1]·R[t], and cost[t] = abs(pos[t-1] - pos[t-2]) at 2 bp (backtest.py:45-59). The window is 1975-01..2010-12 with 432 months. Net 0.56, gross 0.58, 2x costs 0.53, eras 0.63 / 0.47 and the worst months all reproduce. | high
+
+C09 | verdict: DEFECT | costs | backtest.py:51 charges the cost on the change in pair UNITS, `u.shift(1).diff().abs() * (BP_a + BP_b)`. The spec (s3) charges each LEG's notional, and those are units/vol_a and -units/vol_b (:49). So costs are understated by about 1/vol. Charged per leg notional (abs(Δpa)·bp_a + abs(Δpb)·bp_b): costs 1.29%/yr (reported 0.17%), net SR 0.92 (reported 1.09), at 2x costs 0.71 (reported 1.07), eras 0.96 / 0.87. The claim "robust to doubling costs" does not hold. | high
+
+C12 | verdict: DEFECT | look-ahead | backtest.py:32-33 `standardise` z-scores VALUE with the FULL-SAMPLE mean and std of each market (1970..2015, including the post-2010 months). The spec (s2.2) asks for an expanding mean and std up to t with at least 60 months. With the expanding 60-month z-score: net SR 0.20 (reported 0.74), mean 3.43%, DD -72.9%, at 2x costs 0.18, eras 0.47 / -0.01 (reported 1.08 / 0.47). | high
+
+C13 | verdict: CLEAN | - | The sign of the 12-month sum uses min_periods 12 and the vol window ends at t. The division is by the number of markets in the class with a position, as the spec has it (not sqrt). Positions are held shift(1) and costs are charged on changes of the held position by class bp (backtest.py:19-43). Net 0.38, 2x costs 0.36, eras -0.00 / 0.87, turnover 14.5x and costs 0.25%/yr all reproduce. The report states the era weakness openly. | medium-high
+
+C14 | verdict: DEFECT | period-selection | The code is sound and all numbers reproduce, but REPORT.md:5-8 leads with "Headline: 1993-2010" (net SR 0.71) and the "Best year 2008". The spec (s5) registers the full design window as the headline and the eras as "reported, not decisive". The registered headline is net SR 0.43 (era 1 0.13), and it appears only in a secondary table. The reading then dismisses the early era after seeing it. | high
+
+C15 | verdict: DEFECT | tuned-knob | The spec (s2.2) leaves the momentum window and gap to "as set in backtest.py" (WINDOW_MONTHS=6, GAP=1, backtest.py:12-13), so the spec does not fix the knob. The chosen value is an isolated peak on the registered window. Net SR, gap 1: w3 0.15 / **w6 0.43** / w9 0.27 / w12 0.25. At w6: gap 0 0.11, gap 2 0.24. The full grid (gaps 0-2, windows 3-12) runs 0.01-0.43, and every other cell is <= 0.27. The report's "remarkably even across eras, a clean candidate" holds only at this setting. | high
+
+C17 | verdict: CLEAN | - | The 12-month high runs up to t from the excess-return level, the rule is on at a fall of 20% or more, positions are held shift(1), and costs are charged on changes of the held position (backtest.py:20-36). All counts and numbers reproduce (154 months, 424 market-months, net 0.03, on-month SR 0.05). A trivial note: 2 of the 424 on market-months had no vol yet and therefore no position, and this does not change the 154-month count. | high
+
+C18 | verdict: CLEAN | - | The sign of carry is taken at t, the vol window ends at t, the scaling is by sqrt(markets with a position), and the cost is 4 bp (natural gas 6 bp) on changes of the held position (backtest.py:26-39). The headline is all eight markets over 432 months as registered, and the energy and other-legs split is labelled diagnostic. All numbers reproduce (net 0.33, eras 0.05 / 0.74). The reading ("weak, era-dependent") matches. | high

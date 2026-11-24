@@ -1,0 +1,142 @@
+{
+ "C01": {
+  "defect": true,
+  "type": "sample",
+  "where": "backtest.py:56 (df = df[usable_months(P['R'])]; filter at :24-26, PRINT_CHECK = 6.0 at :18)",
+  "what": "Months in which ANY of the 32 panel markets returns more than 6 of its own trailing 36-month sds are dropped from the result series (22 of 432 months, including crash/unwind months). Spec registers all 432 months; report says 'Sample 1975-01..2010-12 (410 months)'.",
+  "effect": "headline net Sharpe 0.87 as reported (410 months) -> 0.62 on all 432 registered months (fix: delete line 56)"
+ },
+ "C02": {
+  "defect": false,
+  "type": "clean",
+  "where": "",
+  "what": "Soft-print CPI rule layer on 6 bonds, publication lag applied (cpi.shift(1)).",
+  "effect": "headline net Sharpe -0.09"
+ },
+ "C03": {
+  "defect": false,
+  "type": "clean",
+  "where": "",
+  "what": "FX carry, cross-sectional rank.",
+  "effect": "headline net Sharpe 0.56"
+ },
+ "C04": {
+  "defect": false,
+  "type": "clean",
+  "where": "",
+  "what": "Bond/note cross-sectional momentum 12-1.",
+  "effect": "headline net Sharpe 0.32"
+ },
+ "C05": {
+  "defect": true,
+  "type": "period-selection",
+  "where": "REPORT.md:5-10 (headline block); code backtest.py:62-66 computes the FX+CM subset",
+  "what": "Spec registers all three classes (FI+FX+CM) as the headline; the report leads with an unregistered market subset 'core carry (currencies + commodities)' chosen after seeing that the bond block loses, and puts the registered pod lower down.",
+  "effect": "headline as reported 0.53 (FX+CM) -> registered headline 0.22 (FI+FX+CM)"
+ },
+ "C06": {
+  "defect": false,
+  "type": "clean",
+  "where": "",
+  "what": "Pair reversion spread pod, costs on each leg's notional change.",
+  "effect": "headline net Sharpe 0.89"
+ },
+ "C07": {
+  "defect": false,
+  "type": "clean",
+  "where": "",
+  "what": "Cross-asset value with expanding (as-of) z-score, at least 60 months.",
+  "effect": "headline net Sharpe 0.10"
+ },
+ "C08": {
+  "defect": true,
+  "type": "look-ahead",
+  "where": "backtest.py:23 (lc = np.log(cpi))",
+  "what": "CPI publication lag ignored: the rule at the close of t uses the CPI of reference month t, which is published in month t+1 (spec section 2.1 and synth docstring). The bonds react in month t+1 to that print, so the rule trades on news before it is out.",
+  "effect": "headline net Sharpe 0.23 -> -0.18 with the lag (lc = np.log(cpi.shift(1))); era 2 0.07 -> -0.48"
+ },
+ "C09": {
+  "defect": true,
+  "type": "costs",
+  "where": "backtest.py:51 (cost += u.shift(1).diff().abs() ... * (BP[a] + BP[b]) / 1e4)",
+  "what": "Costs charged on the change in pair 'units' (risk units) instead of on each leg's notional change (units x 1/vol, i.e. several times larger for bonds); spec registers costs on each leg's notional. Costs come out about 7x too small.",
+  "effect": "headline net Sharpe 1.09 (costs 0.17%/yr) -> 0.92 (costs 1.29%/yr); net at 2x costs 1.07 -> 0.71"
+ },
+ "C10": {
+  "defect": true,
+  "type": "costs",
+  "where": "backtest.py:18 (ONE_WAY = 1.0e-5)",
+  "what": "Unit slip: 1 bp registered (spec section 3) but 1.0e-5 (0.1 bp) used for both trades and rolls, so all costs are 10x too small.",
+  "effect": "headline net Sharpe 0.41 (costs 0.13%/yr) -> 0.11 (costs 1.31%/yr); net at 2x costs 0.38 -> -0.21"
+ },
+ "C11": {
+  "defect": false,
+  "type": "clean",
+  "where": "",
+  "what": "Trend 1/3/12 months, EWMA risk.",
+  "effect": "headline net Sharpe 0.66"
+ },
+ "C12": {
+  "defect": true,
+  "type": "look-ahead",
+  "where": "backtest.py:33 (standardise: V.apply(lambda s: (s - s.mean()) / s.std()))",
+  "what": "Full-sample z-score of the valuation level (mean and sd over 1970-2015, including the future and the post-2010 months) instead of the registered as-of expanding z-score (spec section 2.2).",
+  "effect": "headline net Sharpe 0.74 -> 0.20 with an expanding z-score (min 60 months); era 2 0.47 -> -0.01"
+ },
+ "C13": {
+  "defect": false,
+  "type": "clean",
+  "where": "",
+  "what": "Trend 12-month sign, all markets.",
+  "effect": "headline net Sharpe 0.38"
+ },
+ "C14": {
+  "defect": true,
+  "type": "period-selection",
+  "where": "REPORT.md:5-9 (headline block)",
+  "what": "Report leads with the 1993-2010 era as 'Headline' and argues the early era is less relevant; spec registers the full 1975-2010 window as headline and eras as reported only.",
+  "effect": "headline as reported 0.71 (1993-2010) -> registered headline 0.43 (1975-2010)"
+ },
+ "C15": {
+  "defect": true,
+  "type": "tuned-knob",
+  "where": "backtest.py:12-13 (WINDOW_MONTHS = 6, GAP = 1); spec section 2.2 leaves both to the code",
+  "what": "Momentum window and gap are not fixed by the spec; (6, 1) is the best cell of a 12 x 3 grid (window 1-12, gap 0-2). Report silent about the choice.",
+  "effect": "headline net Sharpe 0.43 = grid max; grid median 0.15; one step: gap 0 -> 0.11, gap 2 -> 0.24, window 5 -> 0.39, window 7 -> 0.35; window 3 -> 0.15; window 12 -> 0.25"
+ },
+ "C16": {
+  "defect": false,
+  "type": "clean",
+  "where": "",
+  "what": "Bond carry, sign and rank versions averaged.",
+  "effect": "headline net Sharpe -0.15"
+ },
+ "C17": {
+  "defect": false,
+  "type": "clean",
+  "where": "",
+  "what": "After-the-fall rule on equity indexes, registered 20% / 12 months.",
+  "effect": "headline net Sharpe 0.03"
+ },
+ "C18": {
+  "defect": false,
+  "type": "clean",
+  "where": "",
+  "what": "Commodity curve carry, directional; energy split diagnostic only.",
+  "effect": "headline net Sharpe 0.33"
+ },
+ "C19": {
+  "defect": true,
+  "type": "sample",
+  "where": "backtest.py:21 (return R.dropna(how='any'))",
+  "what": "Rows with any missing commodity are dropped, so the panel silently starts 1990-04 (cm_natgas start) and positions only from 1992; spec says markets enter as their data allow over 1975-2010. Code prints the configured window '1975-01..2010-12', not the months used; era 1975-1992 line shows vol 3.21% (only 1990-92).",
+  "effect": "headline net Sharpe 0.94 -> 0.39 on the registered window (fix: return R); era 1 0.78 -> -0.05"
+ },
+ "C20": {
+  "defect": true,
+  "type": "tuned-knob",
+  "where": "backtest.py:15 (LOOK = 2); spec section 2.2 leaves it to the code",
+  "what": "Look-back not fixed by the spec; 2 months is the best of a 1-12 month grid (vol window fixed at 36 as registered). Report silent about the choice.",
+  "effect": "headline net Sharpe 0.34 = grid max; grid median 0.095; one step: LOOK 1 -> 0.10, LOOK 3 -> 0.24; LOOK 12 -> 0.01"
+ }
+}
