@@ -37,3 +37,8 @@
    multi-code form). Short sterling and Euroswiss have no expired-contract codes on LSEG: their strips cannot be
    identified (they hold nothing in Strip reversion unless another source appears). Gasoline before 2006 (HU) is
    not on LSEG.
+10. L13a-c were too large for LSEG to load at once (user 2026-11-25) -> replaced by twelve small files L14a-L14l
+   (builder tools/lseg/build_lseg_l14.py; <= 360 monthly or 60 daily contract series per file; one delivery year
+   per formula). Changes: design deliveries only (to 2012; holdout-year contracts pulled after the freeze); NG, HO,
+   GC, KC not pulled (listing rule >= 99.5% at every depth: their legs come from the continuous series). The old
+   L13 templates are deleted on the PC by job delete_l13_templates_20261125.
