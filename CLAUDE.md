@@ -526,8 +526,15 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   (continuous closes carry no delivery month) -> L11_contract_identity.xlsx (175 formulas: contract calendar 22 roots,
   field-name tests, roll checks, ED daily c3/c5/c6/c7) saved to G:\My Drive\Screener project\LSEG\09_contract_identity
   (USER REFRESHES once: open, wait for B4, Ctrl+S); weekly file in ...\LSEG\10_weekly_live. lsegdata + CSVs deployed to
-  local\lib (read back identical); jobs lseg_build_v1 + lseg_check_v1 QUEUED. OPEN: user's licence statement for
-  live/trading use (asked 2026-11-24); L11 field names are guesses to confirm.
+  local\lib (read back identical). lseg_build_v1 + lseg_check_v1 RAN 2026-11-24 17:04 PC time (reports
+  tools/bbgq/results/lseg_build_v1.txt, lseg_check_v1.txt; lock docs/research/lseg/LOCK_LSEG_v1.json, id fca46921...):
+  1,692 expected series: ok 1,476, empty 145 (incl. all 109 L11 blocks: template not yet refreshed), invalid 62,
+  no-dates 3, wrong-series 6, copies 0 (5 identical groups = same instrument under two fields; GSICTOT/GSINTOT share 12
+  windows: review). NEED vs specs: OK 18, SHORT 3 (Brent curve 2005, gasoline 2005, short sterling strip 2002), LATE 3
+  (copper front 1988 vs 1973, yen 3m 1978-08, krona 3m 1997), MISSING 15 (daily strip contracts c3/c5-c7 for ED, Euribor,
+  Euroswiss, short sterling; commodity curve depth beyond c12 / c6-c9 for 11 roots). IDENTITY NONE for all 22 roots
+  (needs L11). PC engine gm-2.1.0 deployed; gm_repro_v5 24/24 PASS. OPEN: user refreshes L11 (then re-queue build +
+  check: lock id changes); licence statement for live/trading use (asked 2026-11-24); L11 field names are guesses.
   NEXT: engine feature version gm-2.1.0 (REGISTRATION_3.4 part (c) item 2: E6 k=1, E7 version grids, E8 weekly
   tranches, E9 component masks + equal-risk Core book, E10 test code, E11 spread caps, E14 card 4 daily) -> then the
   diagnostics (7.5) and Batch A. In parallel: LSEG reader + lock + seal + licence statement. User 2026-11-22: NO MORE
