@@ -1,0 +1,969 @@
+=== lseg_check_v3 === 2026-11-24 19:23
+lsegdata lsegdata-1.0.0 | LOCK 94498c88231cf94e511de81372d7689a7dd4a86eb34172c4ae59a125ee88d42b | design rows 1019518 | spec needs 29e1b0b33abbe99d
+--- STATUS
+STATUS L1a | ok 128 | empty 0 | invalid 0 | no-dates 0 | copy 0 | wrong-series 0
+STATUS L1b | ok 67 | empty 0 | invalid 0 | no-dates 0 | copy 0 | wrong-series 0
+STATUS L2a | ok 118 | empty 0 | invalid 10 | no-dates 0 | copy 0 | wrong-series 0
+STATUS L2b | ok 61 | empty 0 | invalid 3 | no-dates 0 | copy 0 | wrong-series 0
+STATUS L3 | ok 139 | empty 1 | invalid 0 | no-dates 0 | copy 0 | wrong-series 0
+STATUS L4a | ok 109 | empty 0 | invalid 0 | no-dates 0 | copy 0 | wrong-series 0
+STATUS L4b | ok 150 | empty 0 | invalid 0 | no-dates 0 | copy 0 | wrong-series 0
+STATUS L5 | ok 114 | empty 0 | invalid 0 | no-dates 0 | copy 0 | wrong-series 0
+STATUS L6 | ok 88 | empty 0 | invalid 2 | no-dates 0 | copy 0 | wrong-series 0
+STATUS L7 | ok 123 | empty 0 | invalid 9 | no-dates 0 | copy 0 | wrong-series 0
+STATUS L8 | ok 151 | empty 19 | invalid 21 | no-dates 0 | copy 0 | wrong-series 6
+STATUS L9a | ok 46 | empty 0 | invalid 0 | no-dates 0 | copy 0 | wrong-series 0
+STATUS L9b | ok 73 | empty 0 | invalid 0 | no-dates 0 | copy 0 | wrong-series 0
+STATUS L10 | ok 109 | empty 16 | invalid 17 | no-dates 3 | copy 0 | wrong-series 0
+STATUS L11 | ok 95 | empty 5 | invalid 9 | no-dates 0 | copy 0 | wrong-series 0
+STATUS all | ok 1571 | empty 41 | invalid 71 | no-dates 3 | copy 0 | wrong-series 6 | stored primary series: monthly 1400, daily 151
+--- NEED (start dates and design counts against the specs)
+NEED OK | SPEC_Strip_reversion | root:ED:1-8 D | latest first design date 1989-12-29 (needed by 1990-01) | min design count 5481 (needed 1250) | Eurodollar daily settlements contracts 1-8
+NEED OK | SPEC_Strip_reversion | root:ED:1-8 M | latest first design date 1984-09-28 (needed by 1985-01) | min design count 316 (needed 120) | Eurodollar monthly settlements contracts 1-8 (60-month normal before t
+NEED MISSING | SPEC_Strip_reversion | root:FEI:1-8 D | latest first design date 1994-06-14 (needed by -) | min design count 4219 (needed 1250) | Euribor contracts 1-8 daily | missing: c3 (not pulled), c4 (not pulled), c5 (not pulled), c6 (not pulled), c7 (not pulled), c8 (not pulled)
+NEED MISSING | SPEC_Strip_reversion | root:FES:1-8 D | latest first design date 1991-02-14 (needed by -) | min design count 5187 (needed 1250) | Euroswiss contracts 1-8 daily | missing: c3 (not pulled), c4 (not pulled), c5 (not pulled), c6 (not pulled), c7 (not pulled), c8 (not pulled)
+NEED MISSING | SPEC_Strip_reversion | root:FSS:1-8 D | latest first design date 2002-03-26 (needed by -) | min design count 2289 (needed 1250) | Short sterling contracts 1-8 daily | missing: c3 (not pulled), c4 (not pulled), c5 (not pulled), c6 (not pulled), c7 (not pulled), c8 (not pulled)
+NEED OK | SPEC_Curve_carry | root:CL:1-24 M | latest first design date 1995-09-30 (needed by -) | min design count 184 (needed 120) | WTI curve
+NEED SHORT | SPEC_Curve_carry | root:LCO:1-24 M | latest first design date 2005-02-28 (needed by -) | min design count 71 (needed 120) | Brent curve
+NEED OK | SPEC_Curve_carry | root:NG:1-24 M | latest first design date 1996-04-30 (needed by -) | min design count 177 (needed 120) | Natural gas curve
+NEED OK | SPEC_Curve_carry | root:HO:1-18 M | latest first design date 1991-06-30 (needed by -) | min design count 194 (needed 120) | Heating oil curve
+NEED SHORT | SPEC_Curve_carry | root:RB:1-18 M | latest first design date 2007-02-28 (needed by -) | min design count 47 (needed 120) | Gasoline curve
+NEED OK | SPEC_Curve_carry | root:GC:1-14 M | latest first design date 1982-11-30 (needed by -) | min design count 269 (needed 120) | Gold curve
+NEED OK | SPEC_Curve_carry | root:SI:1-14 M | latest first design date 1978-08-31 (needed by -) | min design count 264 (needed 120) | Silver curve
+NEED OK | SPEC_Curve_carry | root:HG:1-18 M | latest first design date 1989-07-31 (needed by -) | min design count 248 (needed 120) | Copper curve
+NEED SHORT | SPEC_Curve_carry | root:PL:1-8 M | latest first design date 1979-03-31 (needed by -) | min design count 23 (needed 120) | Platinum curve
+NEED OK | SPEC_Curve_carry | root:C:1-9 M | latest first design date 1993-01-31 (needed by -) | min design count 198 (needed 120) | Corn curve
+NEED OK | SPEC_Curve_carry | root:W:1-9 M | latest first design date 1996-03-31 (needed by -) | min design count 147 (needed 120) | Wheat curve
+NEED OK | SPEC_Curve_carry | root:S:1-11 M | latest first design date 1988-06-30 (needed by -) | min design count 185 (needed 120) | Soybeans curve
+NEED OK | SPEC_Curve_carry | root:SB:1-8 M | latest first design date 1978-10-31 (needed by -) | min design count 252 (needed 120) | Sugar curve
+NEED SHORT | SPEC_Curve_carry | root:KC:1-9 M | latest first design date 2002-07-31 (needed by -) | min design count 102 (needed 120) | Coffee curve
+NEED OK | SPEC_Curve_carry | root:CT:1-9 M | latest first design date 1981-04-30 (needed by -) | min design count 199 (needed 120) | Cotton curve
+NEED SHORT | SPEC_Curve_carry | root:LC:1-9 M | latest first design date 2003-03-31 (needed by -) | min design count 73 (needed 120) | Cattle curve
+NEED LATE | SPEC_Card5_commodity_balances | HP:HGc1|CLOSE M | latest first design date 1988-07-31 (needed by 1973-01) | min design count 270 (needed 240) | COMEX copper front month-end close P
+NEED OK | SPEC_Card5_commodity_balances | HP:CLc1|CLOSE M | latest first design date 1983-03-31 (needed by 1983-04) | min design count 334 (needed 240) | NYMEX WTI front month-end close P
+NEED OK | SPEC_Card5_commodity_balances | HP:LCCc1|CLOSE M | latest first design date 1974-04-30 (needed by -) | min design count 441 (needed 120) | London cocoa front (C5-D2 reported line)
+NEED OK | SPEC_Card5_commodity_balances | DS:LCPCASH|X M | latest first design date 1969-12-31 (needed by -) | min design count 493 (needed 120) | LME copper cash (C5-D2 reported line)
+NEED OK | SPEC_Card3_relative_value_risk | DS:@:USSP500|A12FE M | latest first design date 1985-01-31 (needed by 1985-01) | min design count 312 (needed 120) | S&P 500 12-month forward EPS
+NEED LATE | SPEC_Card3_relative_value_risk | DS:ECJAP3M|X M | latest first design date 1978-08-31 (needed by 1975-01) | min design count 389 (needed 120) | yen 3-month deposit rate
+NEED OK | SPEC_Card3_relative_value_risk | DS:ECSWF3M|X M | latest first design date 1975-01-31 (needed by 1975-01) | min design count 432 (needed 120) | Swiss franc 3-month deposit rate
+NEED OK | SPEC_Card3_relative_value_risk | DS:ECUKP3M|X M | latest first design date 1975-01-31 (needed by 1975-01) | min design count 432 (needed 120) | sterling 3-month deposit rate
+NEED OK | SPEC_Card3_relative_value_risk | DS:ECCAD3M|X M | latest first design date 1975-01-31 (needed by 1975-01) | min design count 432 (needed 120) | Canadian dollar 3-month deposit rate
+NEED LATE | SPEC_Card3_relative_value_risk | DS:ECSWE3M|X M | latest first design date 1997-04-30 (needed by 1975-01) | min design count 165 (needed 120) | Swedish krona 3-month deposit rate
+NEED OK | SPEC_Card3_relative_value_risk | DS:ECEUR3M|X M | latest first design date 1999-01-29 (needed by 1999-01) | min design count 144 (needed 120) | euro 3-month deposit rate
+NEED OK | SPEC_Card3_relative_value_risk | DS:ECWGM3M|X M | latest first design date 1975-01-31 (needed by 1975-01) | min design count 432 (needed 120) | German mark 3-month deposit rate
+NEED OK | SPEC_Carry | root:CL:1-2 M | latest first design date 1983-03-31 (needed by -) | min design count 334 (needed 120) | WTI contracts 1 and 2 (A1 data swap of the EIA measure)
+NEED OK | SPEC_Carry | root:NG:1-2 M | latest first design date 1990-04-30 (needed by -) | min design count 249 (needed 120) | natural gas contracts 1 and 2
+NEED OK | SPEC_Carry | root:HO:1-2 M | latest first design date 1980-01-31 (needed by -) | min design count 372 (needed 120) | heating oil contracts 1 and 2
+NEED SHORT | SPEC_Carry | root:RB:1-2 M | latest first design date 2005-10-31 (needed by -) | min design count 63 (needed 120) | gasoline contracts 1 and 2
+NEED OK | SPEC_Carry | root:FEI:1-8 M | latest first design date 1995-12-31 (needed by -) | min design count 181 (needed 120) | T10 Euribor strip
+NEED SHORT | SPEC_Carry | root:FSS:1-8 M | latest first design date 2002-03-29 (needed by -) | min design count 106 (needed 120) | T10 short sterling strip
+NEED summary | LATE 3 | MISSING 3 | OK 26 | SHORT 7
+--- GAP (inside each primary series' design range)
+GAP M RH:BRL1MO=|BID | runs over 2 months: 1 | longest 3 months after 2003-01-31 | design range 2001-08-31 .. 2010-12-31
+GAP M RH:NOK3MO=|BID | runs over 2 months: 1 | longest 9 months after 2002-12-31 | design range 2002-12-31 .. 2010-12-31
+GAP M RH:BRL3MO=|BID | runs over 2 months: 1 | longest 3 months after 2003-01-31 | design range 2001-11-30 .. 2010-12-31
+GAP M RH:NOK1YO=|BID | runs over 2 months: 1 | longest 12 months after 2002-12-31 | design range 2002-12-31 .. 2010-12-31
+GAP M RH:BRL1YO=|BID | runs over 2 months: 1 | longest 3 months after 2003-01-31 | design range 2001-11-30 .. 2010-12-31
+GAP M RD:FR2YT=RR|TR.BIDYIELD | runs over 2 months: 1 | longest 28 months after 1991-09-30 | design range 1989-01-31 .. 2010-12-31
+GAP M RD:IT2YT=RR|TR.BIDYIELD | runs over 2 months: 6 | longest 11 months after 1999-12-31 | design range 1989-07-31 .. 2010-12-30
+GAP M RD:JP2YT=RR|TR.BIDYIELD | runs over 2 months: 9 | longest 10 months after 1980-03-31 | design range 1979-03-30 .. 2010-12-30
+GAP M RD:DE5YT=RR|TR.BIDYIELD | runs over 2 months: 1 | longest 39 months after 1990-10-31 | design range 1986-01-31 .. 2010-12-30
+GAP M RD:FR5YT=RR|TR.BIDYIELD | runs over 2 months: 5 | longest 28 months after 1998-12-31 | design range 1989-01-31 .. 2010-12-31
+GAP M RD:IT5YT=RR|TR.BIDYIELD | runs over 2 months: 2 | longest 3 months after 1991-07-31 | design range 1988-11-30 .. 2010-12-31
+GAP M RD:NO5YT=RR|TR.BIDYIELD | runs over 2 months: 1 | longest 9 months after 1995-03-31 | design range 1994-02-28 .. 2010-12-30
+GAP M RD:DK5YT=RR|TR.BIDYIELD | runs over 2 months: 1 | longest 9 months after 1994-02-28 | design range 1994-02-17 .. 2010-12-30
+GAP M RD:JP5YT=RR|TR.BIDYIELD | runs over 2 months: 2 | longest 3 months after 1991-03-31 | design range 1985-12-31 .. 2010-12-30
+GAP M RD:NZ5YT=RR|TR.BIDYIELD | runs over 2 months: 3 | longest 12 months after 1999-12-31 | design range 1994-07-29 .. 2010-12-31
+GAP M RD:IT10YT=RR|TR.BIDYIELD | runs over 2 months: 1 | longest 3 months after 1991-07-31 | design range 1991-03-29 .. 2010-12-31
+GAP M HP:CLc12|CLOSE | runs over 2 months: 3 | longest 6 months after 1987-01-31 | design range 1983-12-31 .. 2010-12-31
+GAP M HP:CLc13|CLOSE | runs over 2 months: 3 | longest 21 months after 1986-07-31 | design range 1984-04-30 .. 2010-12-31
+GAP M HP:CLc14|CLOSE | runs over 2 months: 2 | longest 39 months after 1985-12-31 | design range 1984-10-31 .. 2010-12-31
+GAP M HP:CLc15|CLOSE | runs over 2 months: 2 | longest 42 months after 1985-11-30 | design range 1984-10-31 .. 2010-12-31
+GAP M HP:CLc16|CLOSE | runs over 2 months: 1 | longest 50 months after 1985-03-31 | design range 1984-10-31 .. 2010-12-31
+GAP M HP:CLc17|CLOSE | runs over 2 months: 1 | longest 50 months after 1985-03-31 | design range 1984-10-31 .. 2010-12-31
+GAP M HP:CLc18|CLOSE | runs over 2 months: 1 | longest 56 months after 1984-12-31 | design range 1984-10-31 .. 2010-12-31
+GAP M HP:CLc19|CLOSE | runs over 2 months: 2 | longest 64 months after 1984-12-31 | design range 1984-12-31 .. 2010-12-31
+GAP M HP:LCOc5|CLOSE | runs over 2 months: 1 | longest 3 months after 1989-04-30 | design range 1989-04-30 .. 2010-12-31
+GAP M HP:LCOc7|CLOSE | runs over 2 months: 2 | longest 9 months after 1990-08-31 | design range 1989-08-31 .. 2010-12-31
+GAP M HP:LCOc8|CLOSE | runs over 2 months: 1 | longest 22 months after 1989-08-31 | design range 1989-08-31 .. 2010-12-31
+GAP M HP:LCOc10|CLOSE | runs over 2 months: 1 | longest 17 months after 1992-10-31 | design range 1992-10-31 .. 2010-12-31
+GAP M HP:LCOc13|CLOSE | runs over 2 months: 1 | longest 15 months after 1996-08-31 | design range 1996-08-31 .. 2010-12-31
+GAP M HP:LCOc19|CLOSE | runs over 2 months: 1 | longest 62 months after 1999-11-30 | design range 1999-11-30 .. 2010-12-31
+GAP M HP:HOc9|CLOSE | runs over 2 months: 1 | longest 3 months after 1980-10-31 | design range 1980-01-31 .. 2010-12-31
+GAP M HP:HOc10|CLOSE | runs over 2 months: 1 | longest 3 months after 1980-10-31 | design range 1980-01-31 .. 2010-12-31
+GAP M HP:HOc11|CLOSE | runs over 2 months: 4 | longest 7 months after 1980-02-29 | design range 1980-02-29 .. 2010-12-31
+GAP M HP:HOc12|CLOSE | runs over 2 months: 4 | longest 10 months after 1984-06-30 | design range 1981-02-28 .. 2010-12-31
+GAP M HP:LGOc9|CLOSE | runs over 2 months: 1 | longest 4 months after 1987-06-30 | design range 1981-04-30 .. 2010-12-31
+GAP M HP:LGOc10|CLOSE | runs over 2 months: 6 | longest 24 months after 1985-11-30 | design range 1985-11-30 .. 2010-12-31
+GAP M HP:NGc13|CLOSE | runs over 2 months: 1 | longest 3 months after 1991-05-31 | design range 1990-12-31 .. 2010-12-31
+GAP M HP:NGc14|CLOSE | runs over 2 months: 1 | longest 3 months after 1991-09-30 | design range 1991-09-30 .. 2010-12-31
+GAP M HP:NGc19|CLOSE | runs over 2 months: 4 | longest 23 months after 1992-07-31 | design range 1992-03-31 .. 2010-12-31
+GAP M HP:SIc8|CLOSE | runs over 2 months: 6 | longest 3 months after 1973-10-31 | design range 1973-02-28 .. 2010-12-31
+GAP M HP:PLc4|CLOSE | runs over 2 months: 6 | longest 7 months after 2003-04-30 | design range 1973-02-28 .. 2010-12-31
+GAP M HP:PLc5|CLOSE | runs over 2 months: 8 | longest 25 months after 2001-10-31 | design range 1978-10-31 .. 2010-12-31
+GAP M HP:PLc6|CLOSE | runs over 2 months: 13 | longest 77 months after 2000-03-31 | design range 1978-10-31 .. 2010-12-31
+GAP M HP:PAc3|CLOSE | runs over 2 months: 2 | longest 5 months after 2002-03-31 | design range 1980-01-31 .. 2010-12-31
+GAP M HP:PAc4|CLOSE | runs over 2 months: 6 | longest 14 months after 2002-02-28 | design range 1980-01-31 .. 2010-12-31
+GAP M HP:PAc5|CLOSE | runs over 2 months: 10 | longest 47 months after 1999-06-30 | design range 1980-01-31 .. 2010-12-31
+GAP M HP:PAc6|CLOSE | runs over 2 months: 7 | longest 151 months after 1993-06-30 | design range 1980-01-31 .. 2010-12-31
+GAP M HP:Cc7|CLOSE | runs over 2 months: 4 | longest 19 months after 1979-07-31 | design range 1979-03-31 .. 2010-12-31
+GAP M HP:Cc8|CLOSE | runs over 2 months: 6 | longest 9 months after 1988-07-31 | design range 1988-05-31 .. 2010-12-31
+GAP M HP:Cc9|CLOSE | runs over 2 months: 2 | longest 8 months after 1993-03-31 | design range 1993-01-31 .. 2010-12-31
+GAP M HP:Sc9|CLOSE | runs over 2 months: 2 | longest 17 months after 1979-03-31 | design range 1979-01-31 .. 2010-12-31
+GAP M HP:Wc6|CLOSE | runs over 2 months: 1 | longest 3 months after 1978-03-31 | design range 1976-11-30 .. 2010-12-31
+GAP M HP:Wc7|CLOSE | runs over 2 months: 2 | longest 104 months after 1983-05-31 | design range 1983-05-31 .. 2010-12-31
+GAP M HP:Wc8|CLOSE | runs over 2 months: 2 | longest 41 months after 1992-08-31 | design range 1992-03-31 .. 2010-12-31
+GAP M HP:Wc9|CLOSE | runs over 2 months: 3 | longest 19 months after 1997-05-31 | design range 1996-03-31 .. 2010-12-31
+GAP M HP:KWc6|CLOSE | runs over 2 months: 8 | longest 7 months after 1983-09-30 | design range 1980-09-30 .. 2010-12-31
+GAP M HP:KWc7|CLOSE | runs over 2 months: 11 | longest 111 months after 1984-05-31 | design range 1982-07-31 .. 2010-12-31
+GAP M HP:KWc8|CLOSE | runs over 2 months: 7 | longest 24 months after 1998-03-31 | design range 1997-02-28 .. 2010-12-31
+GAP M HP:KWc9|CLOSE | runs over 2 months: 3 | longest 106 months after 1997-03-31 | design range 1997-03-31 .. 2010-12-31
+GAP M HP:BOc9|CLOSE | runs over 2 months: 1 | longest 3 months after 1987-01-31 | design range 1977-11-30 .. 2010-12-31
+GAP M HP:SMc9|CLOSE | runs over 2 months: 1 | longest 4 months after 1976-12-31 | design range 1976-12-31 .. 2010-12-31
+GAP M HP:SBc6|CLOSE | runs over 2 months: 5 | longest 5 months after 1990-06-30 | design range 1974-04-30 .. 2010-12-31
+GAP M HP:OJc6|CLOSE | runs over 2 months: 1 | longest 3 months after 1990-11-30 | design range 1973-01-31 .. 2010-12-31
+GAP M HP:FFc11|CLOSE | runs over 2 months: 1 | longest 3 months after 2000-04-30 | design range 2000-03-31 .. 2010-12-31
+GAP M HP:FEIc11|CLOSE | runs over 2 months: 1 | longest 8 months after 1997-05-31 | design range 1997-01-31 .. 2010-12-31
+GAP M HP:VXc8|CLOSE | runs over 2 months: 1 | longest 4 months after 2009-04-30 | design range 2006-10-31 .. 2010-12-31
+GAP M HP:RRc1|CLOSE | runs over 2 months: 1 | longest 18 months after 1985-01-31 | design range 1981-04-30 .. 2010-12-31
+GAP M HP:RRc2|CLOSE | runs over 2 months: 1 | longest 20 months after 1984-11-30 | design range 1981-04-30 .. 2010-12-31
+GAP M HP:RRc3|CLOSE | runs over 2 months: 1 | longest 22 months after 1984-09-30 | design range 1981-04-30 .. 2010-12-31
+GAP M HP:LSUc1|CLOSE | runs over 2 months: 1 | longest 17 months after 1986-02-28 | design range 1983-07-31 .. 2010-12-31
+GAP M HP:LSUc2|CLOSE | runs over 2 months: 1 | longest 18 months after 1986-01-31 | design range 1983-07-31 .. 2010-12-31
+GAP M HP:LSUc3|CLOSE | runs over 2 months: 1 | longest 19 months after 1985-12-31 | design range 1983-07-31 .. 2010-12-31
+GAP M HP:CGFc1|CLOSE | runs over 2 months: 1 | longest 100 months after 2001-03-31 | design range 2001-03-31 .. 2010-12-31
+GAP M HP:FGBLc3|CLOSE | runs over 2 months: 1 | longest 3 months after 1998-06-30 | design range 1991-03-31 .. 2010-12-31
+GAP D HP:PLc1|CLOSE | runs over 10 business days: 28 | longest 44 business days after 2004-07-27 | design range 1990-01-02 .. 2010-12-31
+GAP D HP:PAc1|CLOSE | runs over 10 business days: 32 | longest 45 business days after 2001-09-25 | design range 1990-01-02 .. 2010-12-31
+GAP D HP:PLc2|CLOSE | runs over 10 business days: 16 | longest 45 business days after 2007-09-26 | design range 1990-01-02 .. 2010-12-31
+GAP D HP:PAc2|CLOSE | runs over 10 business days: 30 | longest 46 business days after 2008-11-25 | design range 1990-01-02 .. 2010-12-31
+GAP D HP:LCc2|CLOSE | runs over 10 business days: 1 | longest 22 business days after 2004-11-30 | design range 1990-01-02 .. 2010-12-31
+GAP D HP:TUc2|CLOSE | runs over 10 business days: 20 | longest 33 business days after 1991-12-19 | design range 1990-06-22 .. 2010-12-31
+GAP D HP:FGBLc2|CLOSE | runs over 10 business days: 1 | longest 17 business days after 1998-09-08 | design range 1990-12-07 .. 2010-12-30
+GAP D HP:JGBc2|CLOSE | runs over 10 business days: 2 | longest 21 business days after 2007-09-10 | design range 1990-01-04 .. 2010-12-30
+GAP D HP:CGBc2|CLOSE | runs over 10 business days: 31 | longest 44 business days after 1994-03-22 | design range 1990-01-02 .. 2010-12-31
+GAP D HP:DE10YT=RR|B_YLD_1 | runs over 10 business days: 3 | longest 51 business days after 1999-10-21 | design range 1990-01-01 .. 2010-12-30
+GAP D HP:FR10YT=RR|B_YLD_1 | runs over 10 business days: 2 | longest 65 business days after 1990-06-07 | design range 1990-01-01 .. 2010-12-31
+GAP D HP:IT10YT=RR|B_YLD_1 | runs over 10 business days: 1 | longest 66 business days after 1991-07-31 | design range 1991-03-01 .. 2010-12-31
+GAP D HP:ES10YT=RR|B_YLD_1 | runs over 10 business days: 1 | longest 22 business days after 1994-02-17 | design range 1994-02-01 .. 2010-12-30
+GAP D HP:US2YT=RR|B_YLD_1 | runs over 10 business days: 1 | longest 27 business days after 1990-08-27 | design range 1990-01-08 .. 2010-12-31
+GAP D HP:JP2YT=RR|B_YLD_1 | runs over 10 business days: 15 | longest 49 business days after 1997-10-17 | design range 1990-01-01 .. 2010-12-30
+GAP M HP:JEYc5|CLOSE | runs over 2 months: 3 | longest 6 months after 1990-09-30 | design range 1989-06-30 .. 2010-12-31
+GAP M HP:JEYc6|CLOSE | runs over 2 months: 1 | longest 20 months after 1989-07-31 | design range 1989-06-30 .. 2010-12-31
+GAP M HP:JPYSB6L1Y=|CLOSE | runs over 2 months: 1 | longest 10 months after 1999-07-31 | design range 1996-01-31 .. 2010-12-31
+GAP M HP:DCSc1|CLOSE | runs over 2 months: 2 | longest 8 months after 2005-02-28 | design range 1998-02-28 .. 2010-12-31
+GAP M HP:DCSc2|CLOSE | runs over 2 months: 2 | longest 8 months after 2005-02-28 | design range 1998-02-28 .. 2010-12-31
+GAP M HP:DCSc3|CLOSE | runs over 2 months: 2 | longest 8 months after 2005-02-28 | design range 1998-02-28 .. 2010-12-31
+GAP M HP:10TBc1|CLOSE | runs over 2 months: 4 | longest 8 months after 2008-09-30 | design range 2008-02-29 .. 2010-12-31
+GAP M HP:Oc5|CLOSE | runs over 2 months: 1 | longest 3 months after 1974-07-31 | design range 1973-07-31 .. 2010-12-31
+GAP M HP:RRc6|CLOSE | runs over 2 months: 8 | longest 32 months after 1984-03-31 | design range 1981-04-30 .. 2010-12-31
+GAP M HP:HOc13|CLOSE | runs over 2 months: 8 | longest 18 months after 1984-06-30 | design range 1981-03-31 .. 2010-12-31
+GAP M HP:HOc14|CLOSE | runs over 2 months: 7 | longest 28 months after 1983-08-31 | design range 1981-05-31 .. 2010-12-31
+GAP M HP:HOc15|CLOSE | runs over 2 months: 3 | longest 15 months after 1988-05-31 | design range 1988-05-31 .. 2010-12-31
+GAP M HP:HOc16|CLOSE | runs over 2 months: 1 | longest 3 months after 1991-08-31 | design range 1991-01-31 .. 2010-12-31
+GAP M HP:HOc17|CLOSE | runs over 2 months: 3 | longest 4 months after 1991-07-31 | design range 1991-03-31 .. 2010-12-31
+GAP M HP:HOc18|CLOSE | runs over 2 months: 4 | longest 15 months after 1992-06-30 | design range 1991-06-30 .. 2010-12-31
+GAP M HP:RBc13|CLOSE | runs over 2 months: 1 | longest 13 months after 2005-12-31 | design range 2005-10-31 .. 2010-12-31
+GAP M HP:GCc14|CLOSE | runs over 2 months: 3 | longest 39 months after 1987-06-30 | design range 1982-11-30 .. 2010-12-31
+GAP M HP:SIc13|CLOSE | runs over 2 months: 1 | longest 4 months after 1982-01-31 | design range 1978-07-31 .. 2010-12-31
+GAP M HP:SIc14|CLOSE | runs over 2 months: 12 | longest 13 months after 1981-09-30 | design range 1978-08-31 .. 2010-12-31
+GAP M HP:HGc18|CLOSE | runs over 2 months: 1 | longest 3 months after 1990-12-31 | design range 1989-07-31 .. 2010-12-31
+GAP M HP:PLc7|CLOSE | runs over 2 months: 10 | longest 116 months after 1997-04-30 | design range 1978-10-31 .. 2010-12-31
+GAP M HP:PLc8|CLOSE | runs over 2 months: 9 | longest 269 months after 1987-10-31 | design range 1979-03-31 .. 2010-11-30
+GAP M HP:Sc10|CLOSE | runs over 2 months: 11 | longest 11 months after 1985-08-31 | design range 1983-07-31 .. 2010-12-31
+GAP M HP:Sc11|CLOSE | runs over 2 months: 13 | longest 11 months after 1989-07-31 | design range 1988-06-30 .. 2010-12-31
+GAP M HP:SBc7|CLOSE | runs over 2 months: 6 | longest 11 months after 1990-02-28 | design range 1978-10-31 .. 2010-12-31
+GAP M HP:SBc8|CLOSE | runs over 2 months: 6 | longest 57 months after 1989-02-28 | design range 1978-10-31 .. 2010-12-31
+GAP M HP:KCc8|CLOSE | runs over 2 months: 22 | longest 8 months after 1992-07-31 | design range 1980-03-31 .. 2010-12-31
+GAP M HP:CTc9|CLOSE | runs over 2 months: 4 | longest 94 months after 1986-07-31 | design range 1981-04-30 .. 2010-12-31
+GAP M HP:LCc7|CLOSE | runs over 2 months: 2 | longest 15 months after 1982-10-31 | design range 1980-01-31 .. 2010-12-31
+GAP M HP:LCc8|CLOSE | runs over 2 months: 7 | longest 80 months after 1996-06-30 | design range 1980-09-30 .. 2010-12-31
+GAP M HP:LCc9|CLOSE | runs over 2 months: 2 | longest 13 months after 2005-07-31 | design range 2003-03-31 .. 2010-12-31
+GAP summary | monthly series with gaps 105 | daily series with gaps 15
+--- STALE (unchanged value runs; untouched instruments skipped)
+STALE M DS:BMNZ02Y|RY | runs of 6+ unchanged values: 1 | longest 30
+STALE M DS:BMNZ02Y|RI | runs of 6+ unchanged values: 1 | longest 30
+STALE M DS:BMDK30Y|RY | runs of 6+ unchanged values: 1 | longest 40
+STALE M DS:BMDK30Y|RI | runs of 6+ unchanged values: 1 | longest 40
+STALE M RD:AU5YT=RR|TR.BIDYIELD | runs of 6+ unchanged values: 1 | longest 6
+STALE M RD:AU10YT=RR|TR.BIDYIELD | runs of 6+ unchanged values: 2 | longest 6
+STALE M HP:Wc9|CLOSE | runs of 6+ unchanged values: 2 | longest 7
+STALE M HP:FFc10|CLOSE | runs of 6+ unchanged values: 1 | longest 8
+STALE M HP:FFc11|CLOSE | runs of 6+ unchanged values: 2 | longest 10
+STALE M HP:FFc12|CLOSE | runs of 6+ unchanged values: 1 | longest 28
+STALE M DS:ECJAP3M|X | runs of 6+ unchanged values: 2 | longest 10
+STALE D HP:PLc1|CLOSE | runs of 10+ unchanged values: 3 | longest 13
+STALE D HP:LCc1|CLOSE | runs of 10+ unchanged values: 4 | longest 21
+STALE D HP:LCc2|CLOSE | runs of 10+ unchanged values: 2 | longest 17
+STALE D HP:JGBc1|CLOSE | runs of 10+ unchanged values: 1 | longest 17
+STALE D HP:FEIc1|CLOSE | runs of 10+ unchanged values: 1 | longest 10
+STALE D HP:FFc1|CLOSE | runs of 10+ unchanged values: 45 | longest 33
+STALE D HP:TUc2|CLOSE | runs of 10+ unchanged values: 5 | longest 31
+STALE D HP:JGBc2|CLOSE | runs of 10+ unchanged values: 2 | longest 21
+STALE D HP:FFc2|CLOSE | runs of 10+ unchanged values: 41 | longest 34
+STALE D HP:MXN=|BID | runs of 10+ unchanged values: 26 | longest 37
+STALE D HP:JP10YT=RR|B_YLD_1 | runs of 10+ unchanged values: 1 | longest 12
+STALE D HP:JP2YT=RR|B_YLD_1 | runs of 10+ unchanged values: 7 | longest 15
+STALE M DS:<EDc7>|X | runs of 6+ unchanged values: 1 | longest 10
+STALE M DS:<BAXc9>|X | runs of 6+ unchanged values: 1 | longest 81
+STALE D DS:<EDc1>|X | runs of 10+ unchanged values: 3 | longest 15
+STALE D DS:<BAXc1>|X | runs of 10+ unchanged values: 17 | longest 19
+STALE D DS:<FESc2>|X | runs of 10+ unchanged values: 1 | longest 10
+STALE D HP:JEYc1|CLOSE | runs of 10+ unchanged values: 26 | longest 38
+STALE D HP:JEYc2|CLOSE | runs of 10+ unchanged values: 17 | longest 36
+STALE M HP:JPYSB6L1Y=|CLOSE | runs of 6+ unchanged values: 1 | longest 7
+STALE D DS:<EDc5>|X | runs of 10+ unchanged values: 1 | longest 16
+STALE D DS:<EDc6>|X | runs of 10+ unchanged values: 1 | longest 16
+STALE M HP:Sc10|CLOSE | runs of 6+ unchanged values: 1 | longest 6
+STALE M HP:SX5^0|CLOSE | runs of 6+ unchanged values: 1 | longest 13
+STALE summary | monthly 16 | daily 19
+--- COPY
+COPY status copy (identical arrays under 3+ instruments): 0 series in 0 groups
+IDENTICAL whole arrays M | DS:USCESIR|X = HP:.CESIUSD|CLOSE
+IDENTICAL whole arrays M | HP:US5YTIP=RR|B_YLD_1 = HP:US5YTIP=RR|CLOSE = HP:US5YTIP=RR|CLOSE#L8.L8-013
+IDENTICAL whole arrays M | HP:US10YTIP=RR|B_YLD_1 = HP:US10YTIP=RR|CLOSE = HP:US10YTIP=RR|CLOSE#L8.L8-014
+IDENTICAL whole arrays M | HP:US30YTIP=RR|B_YLD_1 = HP:US30YTIP=RR|CLOSE = HP:US30YTIP=RR|CLOSE#L8.L8-015
+IDENTICAL whole arrays M | HP:US10YT=RR|B_YLD_1 = HP:US10YT=RR|CLOSE
+COPY identical whole arrays between different instruments: 5 groups (legit aliases possible: review)
+COPY identical value runs (24 months / 60 days) shared by different instruments: 20 pairs
+RUN M | US10YT=RR|B_YLD_1 = US10YT=RR|CLOSE | shared windows 469
+RUN M | US10YT=RR|B_YLD_1 = US10YT=RR|TR.BIDYIELD | shared windows 409
+RUN M | US10YT=RR|CLOSE = US10YT=RR|TR.BIDYIELD | shared windows 409
+RUN M | .DXY|CLOSE = .DXY|TR.PRICECLOSE | shared windows 349
+RUN M | .SPX|TR.PRICECLOSE = S&PCOMP|PI | shared windows 317
+RUN M | FRTBS3M|X = US3MT=RR|CLOSE | shared windows 298
+RUN M | CLC1|CLOSE = NCLCS00|X | shared windows 213
+RUN M | EDC1|X = IEDCS00|X | shared windows 160
+RUN M | US10YTIP=RR|B_YLD_1 = US10YTIP=RR|CLOSE | shared windows 144
+RUN M | US30YTIP=RR|B_YLD_1 = US30YTIP=RR|CLOSE | shared windows 118
+RUN M | BMBD02Y|RY = DE2YT=RR|TR.BIDYIELD | shared windows 94
+RUN M | .CESIUSD|CLOSE = USCESIR|X | shared windows 73
+RUN M | BMUS10Y|RY = US10YT=RR|B_YLD_1 | shared windows 68
+RUN M | BMUS10Y|RY = US10YT=RR|CLOSE | shared windows 68
+RUN M | BMUS10Y|RY = US10YT=RR|TR.BIDYIELD | shared windows 68
+RUN M | US5YTIP=RR|B_YLD_1 = US5YTIP=RR|CLOSE | shared windows 52
+RUN M | EDC2|X = IEDCS20|X | shared windows 50
+RUN M | CFFCS00|X = FFC2|CLOSE | shared windows 48
+RUN M | ECEUR3M|X = ECWGM3M|X | shared windows 31
+RUN M | GSICTOT|X = GSINTOT|X | shared windows 12
+--- DSDATE (month-end date convention of monthly series, design dates)
+DSDATE DS | no design data 4 | last_trading_or_other 94 | last_weekday 373
+DSDATE HP | no design data 41 | calendar_me 580
+DSDATE RD | no design data 3 | last_trading_or_other 41 | last_weekday 52
+DSDATE RH | no design data 26 | calendar_me 183 | last_weekday 3
+DSDATE holiday month-ends DS:BMUS02Y|RY | US 0 | UK 7 | both 7 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:BMUS02Y|RI | US 0 | UK 7 | both 7 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:BMBD02Y|RY | US 0 | UK 7 | both 7 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:BMBD02Y|RI | US 0 | UK 7 | both 7 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:BMJP02Y|RY | US 0 | UK 6 | both 7 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:BMJP02Y|RI | US 0 | UK 6 | both 7 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:BMAU02Y|RY | US 0 | UK 5 | both 6 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:BMAU02Y|RI | US 0 | UK 5 | both 6 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:BMCN02Y|RY | US 0 | UK 6 | both 6 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:BMCN02Y|RI | US 0 | UK 6 | both 6 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:BMUS05Y|RY | US 0 | UK 7 | both 7 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:BMUS05Y|RI | US 0 | UK 7 | both 7 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:BMUK05Y|RY | US 0 | UK 7 | both 7 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:BMUK05Y|RI | US 0 | UK 7 | both 7 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:BMUS10Y|RY | US 0 | UK 7 | both 7 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:BMUS10Y|RI | US 0 | UK 7 | both 7 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:BMUK10Y|RY | US 0 | UK 7 | both 7 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:BMUK10Y|RI | US 0 | UK 7 | both 7 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:BMBD10Y|RY | US 0 | UK 7 | both 7 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:BMBD10Y|RI | US 0 | UK 7 | both 7 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:BMJP10Y|RY | US 0 | UK 6 | both 6 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:BMJP10Y|RI | US 0 | UK 6 | both 6 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:BMAU10Y|RY | US 0 | UK 5 | both 6 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:BMAU10Y|RI | US 0 | UK 5 | both 6 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:BMCN10Y|RY | US 0 | UK 6 | both 6 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:BMCN10Y|RI | US 0 | UK 6 | both 6 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:BMUS30Y|RY | US 0 | UK 7 | both 7 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:BMUS30Y|RI | US 0 | UK 7 | both 7 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:S&PCOMP|PI | US 0 | UK 8 | both 10 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:S&PCOMP|RI | US 0 | UK 4 | both 6 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:ECUSD3M|X | US 0 | UK 8 | both 8 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:ECEUR3M|X | US 0 | UK 1 | both 4 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:ECWGM3M|X | US 0 | UK 8 | both 8 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:ECJAP3M|X | US 0 | UK 7 | both 7 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:ECUKP3M|X | US 0 | UK 8 | both 8 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:ECSWF3M|X | US 0 | UK 8 | both 8 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:ECCAD3M|X | US 0 | UK 8 | both 8 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:ECAUD3M|X | US 0 | UK 2 | both 4 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:ECNZD3M|X | US 0 | UK 2 | both 4 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:ECSWE3M|X | US 0 | UK 2 | both 4 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:ECNOR3M|X | US 0 | UK 2 | both 4 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:ECDKN3M|X | US 0 | UK 6 | both 6 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:<EDc1>|X | US 0 | UK 6 | both 7 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:<EDc4>|X | US 0 | UK 6 | both 7 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:<EDc8>|X | US 0 | UK 6 | both 6 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:<FSSc1>|X | US 0 | UK 1 | both 3 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:<FESc1>|X | US 0 | UK 4 | both 6 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:@:USSP500|A12FE | US 0 | UK 6 | both 6 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:<EDc2>|X | US 0 | UK 6 | both 7 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:<EDc3>|X | US 0 | UK 6 | both 7 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:<EDc5>|X | US 0 | UK 6 | both 6 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:<EDc6>|X | US 0 | UK 6 | both 6 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:<EDc7>|X | US 0 | UK 6 | both 6 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:<EDc9>|X | US 0 | UK 5 | both 6 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:<EDc10>|X | US 0 | UK 5 | both 6 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:<EDc11>|X | US 0 | UK 5 | both 6 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:<EDc12>|X | US 0 | UK 5 | both 6 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:<FSSc2>|X | US 0 | UK 1 | both 3 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:<FSSc3>|X | US 0 | UK 1 | both 3 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:<FSSc4>|X | US 0 | UK 1 | both 3 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:<FSSc5>|X | US 0 | UK 1 | both 3 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:<FSSc6>|X | US 0 | UK 1 | both 3 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:<FSSc7>|X | US 0 | UK 1 | both 3 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:<FSSc8>|X | US 0 | UK 1 | both 3 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:<FESc2>|X | US 0 | UK 4 | both 6 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:<FESc3>|X | US 0 | UK 4 | both 6 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:<FESc4>|X | US 0 | UK 4 | both 6 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:<FESc5>|X | US 0 | UK 3 | both 4 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:<FESc6>|X | US 0 | UK 3 | both 4 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:<FESc7>|X | US 0 | UK 2 | both 4 (value = the previous trading day's, unscreened)
+DSDATE holiday month-ends DS:<FESc8>|X | US 0 | UK 2 | both 4 (value = the previous trading day's, unscreened)
+DSDATE monthly series with at least one month-end on a US or UK holiday | DS 467 | HP 556 | RD 88 | RH 177
+--- LABEL (monthly value vs the daily copy of the same series, design months)
+LABEL HP:CLc1|CLOSE | months 252 | month date is a daily date 173 | equal on that date 173 | equal to the month's last daily value 252 | median days from last daily date to month label 0
+LABEL HP:CLc2|CLOSE | months 252 | month date is a daily date 173 | equal on that date 173 | equal to the month's last daily value 252 | median days from last daily date to month label 0
+LABEL HP:LCOc1|CLOSE | months 252 | month date is a daily date 173 | equal on that date 173 | equal to the month's last daily value 252 | median days from last daily date to month label 0
+LABEL HP:LCOc2|CLOSE | months 252 | month date is a daily date 173 | equal on that date 173 | equal to the month's last daily value 252 | median days from last daily date to month label 0
+LABEL HP:HOc1|CLOSE | months 252 | month date is a daily date 173 | equal on that date 173 | equal to the month's last daily value 252 | median days from last daily date to month label 0
+LABEL HP:HOc2|CLOSE | months 252 | month date is a daily date 173 | equal on that date 173 | equal to the month's last daily value 252 | median days from last daily date to month label 0
+LABEL HP:RBc1|CLOSE | months 63 | month date is a daily date 44 | equal on that date 44 | equal to the month's last daily value 63 | median days from last daily date to month label 0
+LABEL HP:RBc2|CLOSE | months 63 | month date is a daily date 44 | equal on that date 44 | equal to the month's last daily value 63 | median days from last daily date to month label 0
+LABEL HP:NGc1|CLOSE | months 249 | month date is a daily date 171 | equal on that date 171 | equal to the month's last daily value 249 | median days from last daily date to month label 0
+LABEL HP:NGc2|CLOSE | months 249 | month date is a daily date 171 | equal on that date 171 | equal to the month's last daily value 249 | median days from last daily date to month label 0
+LABEL HP:GCc1|CLOSE | months 252 | month date is a daily date 174 | equal on that date 174 | equal to the month's last daily value 252 | median days from last daily date to month label 0
+LABEL HP:GCc2|CLOSE | months 252 | month date is a daily date 173 | equal on that date 173 | equal to the month's last daily value 252 | median days from last daily date to month label 0
+LABEL HP:SIc1|CLOSE | months 252 | month date is a daily date 171 | equal on that date 171 | equal to the month's last daily value 252 | median days from last daily date to month label 0
+LABEL HP:SIc2|CLOSE | months 252 | month date is a daily date 173 | equal on that date 173 | equal to the month's last daily value 252 | median days from last daily date to month label 0
+LABEL HP:HGc1|CLOSE | months 252 | month date is a daily date 173 | equal on that date 173 | equal to the month's last daily value 252 | median days from last daily date to month label 0
+LABEL HP:HGc2|CLOSE | months 252 | month date is a daily date 173 | equal on that date 173 | equal to the month's last daily value 252 | median days from last daily date to month label 0
+LABEL HP:PLc1|CLOSE | months 242 | month date is a daily date 156 | equal on that date 156 | equal to the month's last daily value 242 | median days from last daily date to month label 0
+LABEL HP:PLc2|CLOSE | months 242 | month date is a daily date 151 | equal on that date 151 | equal to the month's last daily value 242 | median days from last daily date to month label 0
+LABEL HP:Cc1|CLOSE | months 252 | month date is a daily date 173 | equal on that date 173 | equal to the month's last daily value 252 | median days from last daily date to month label 0
+LABEL HP:Cc2|CLOSE | months 252 | month date is a daily date 173 | equal on that date 173 | equal to the month's last daily value 252 | median days from last daily date to month label 0
+LABEL HP:Sc1|CLOSE | months 252 | month date is a daily date 173 | equal on that date 173 | equal to the month's last daily value 252 | median days from last daily date to month label 0
+LABEL HP:Sc2|CLOSE | months 252 | month date is a daily date 173 | equal on that date 173 | equal to the month's last daily value 252 | median days from last daily date to month label 0
+LABEL HP:Wc1|CLOSE | months 252 | month date is a daily date 173 | equal on that date 173 | equal to the month's last daily value 252 | median days from last daily date to month label 0
+LABEL HP:Wc2|CLOSE | months 252 | month date is a daily date 173 | equal on that date 173 | equal to the month's last daily value 252 | median days from last daily date to month label 0
+LABEL HP:SBc1|CLOSE | months 252 | month date is a daily date 171 | equal on that date 171 | equal to the month's last daily value 252 | median days from last daily date to month label 0
+LABEL HP:SBc2|CLOSE | months 252 | month date is a daily date 171 | equal on that date 171 | equal to the month's last daily value 252 | median days from last daily date to month label 0
+LABEL HP:KCc1|CLOSE | months 252 | month date is a daily date 171 | equal on that date 171 | equal to the month's last daily value 252 | median days from last daily date to month label 0
+LABEL HP:KCc2|CLOSE | months 252 | month date is a daily date 171 | equal on that date 171 | equal to the month's last daily value 252 | median days from last daily date to month label 0
+LABEL HP:CTc1|CLOSE | months 252 | month date is a daily date 175 | equal on that date 175 | equal to the month's last daily value 252 | median days from last daily date to month label 0
+LABEL HP:CTc2|CLOSE | months 252 | month date is a daily date 175 | equal on that date 175 | equal to the month's last daily value 252 | median days from last daily date to month label 0
+LABEL HP:LCc1|CLOSE | months 252 | month date is a daily date 175 | equal on that date 175 | equal to the month's last daily value 252 | median days from last daily date to month label 0
+LABEL HP:LCc2|CLOSE | months 252 | month date is a daily date 176 | equal on that date 176 | equal to the month's last daily value 252 | median days from last daily date to month label 0
+LABEL HP:TUc1|CLOSE | months 247 | month date is a daily date 166 | equal on that date 166 | equal to the month's last daily value 247 | median days from last daily date to month label 0
+LABEL HP:TUc2|CLOSE | months 239 | month date is a daily date 149 | equal on that date 149 | equal to the month's last daily value 238 | median days from last daily date to month label 0
+LABEL HP:FVc1|CLOSE | months 252 | month date is a daily date 176 | equal on that date 176 | equal to the month's last daily value 252 | median days from last daily date to month label 0
+LABEL HP:FVc2|CLOSE | months 252 | month date is a daily date 175 | equal on that date 175 | equal to the month's last daily value 252 | median days from last daily date to month label 0
+LABEL HP:TYc1|CLOSE | months 252 | month date is a daily date 176 | equal on that date 176 | equal to the month's last daily value 252 | median days from last daily date to month label 0
+LABEL HP:TYc2|CLOSE | months 252 | month date is a daily date 176 | equal on that date 176 | equal to the month's last daily value 252 | median days from last daily date to month label 0
+LABEL HP:USc1|CLOSE | months 252 | month date is a daily date 176 | equal on that date 176 | equal to the month's last daily value 252 | median days from last daily date to month label 0
+LABEL HP:USc2|CLOSE | months 252 | month date is a daily date 176 | equal on that date 176 | equal to the month's last daily value 252 | median days from last daily date to month label 0
+LABEL HP:FGBSc1|CLOSE | months 166 | month date is a daily date 106 | equal on that date 106 | equal to the month's last daily value 166 | median days from last daily date to month label 0
+LABEL HP:FGBSc2|CLOSE | months 166 | month date is a daily date 106 | equal on that date 106 | equal to the month's last daily value 166 | median days from last daily date to month label 0
+LABEL HP:FGBMc1|CLOSE | months 231 | month date is a daily date 149 | equal on that date 149 | equal to the month's last daily value 231 | median days from last daily date to month label 0
+LABEL HP:FGBMc2|CLOSE | months 231 | month date is a daily date 149 | equal on that date 149 | equal to the month's last daily value 231 | median days from last daily date to month label 0
+LABEL HP:FGBLc1|CLOSE | months 242 | month date is a daily date 155 | equal on that date 155 | equal to the month's last daily value 242 | median days from last daily date to month label 0
+LABEL HP:FGBLc2|CLOSE | months 241 | month date is a daily date 153 | equal on that date 153 | equal to the month's last daily value 241 | median days from last daily date to month label 0
+LABEL HP:FLGc1|CLOSE | months 252 | month date is a daily date 173 | equal on that date 173 | equal to the month's last daily value 252 | median days from last daily date to month label 0
+LABEL HP:FLGc2|CLOSE | months 252 | month date is a daily date 173 | equal on that date 173 | equal to the month's last daily value 252 | median days from last daily date to month label 0
+LABEL HP:JGBc1|CLOSE | months 252 | month date is a daily date 161 | equal on that date 161 | equal to the month's last daily value 252 | median days from last daily date to month label 0
+LABEL HP:JGBc2|CLOSE | months 252 | month date is a daily date 161 | equal on that date 135 | equal to the month's last daily value 210 | median days from last daily date to month label 0
+LABEL HP:CGBc1|CLOSE | months 252 | month date is a daily date 180 | equal on that date 180 | equal to the month's last daily value 252 | median days from last daily date to month label 0
+LABEL HP:CGBc2|CLOSE | months 244 | month date is a daily date 148 | equal on that date 148 | equal to the month's last daily value 244 | median days from last daily date to month label 0
+LABEL HP:YTCc1|CLOSE | months 228 | month date is a daily date 162 | equal on that date 162 | equal to the month's last daily value 228 | median days from last daily date to month label 0
+LABEL HP:YTCc2|CLOSE | months 228 | month date is a daily date 162 | equal on that date 162 | equal to the month's last daily value 228 | median days from last daily date to month label 0
+LABEL HP:FFc1|CLOSE | months 132 | month date is a daily date 93 | equal on that date 93 | equal to the month's last daily value 132 | median days from last daily date to month label 0
+LABEL HP:FFc2|CLOSE | months 132 | month date is a daily date 93 | equal on that date 93 | equal to the month's last daily value 132 | median days from last daily date to month label 0
+LABEL HP:FEIc1|CLOSE | months 202 | month date is a daily date 139 | equal on that date 139 | equal to the month's last daily value 202 | median days from last daily date to month label 0
+LABEL HP:FEIc2|CLOSE | months 199 | month date is a daily date 137 | equal on that date 137 | equal to the month's last daily value 199 | median days from last daily date to month label 0
+LABEL HP:ESc1|CLOSE | months 160 | month date is a daily date 111 | equal on that date 111 | equal to the month's last daily value 160 | median days from last daily date to month label 0
+LABEL HP:NQc1|CLOSE | months 139 | month date is a daily date 98 | equal on that date 98 | equal to the month's last daily value 139 | median days from last daily date to month label 0
+LABEL HP:STXEc1|CLOSE | months 151 | month date is a daily date 99 | equal on that date 99 | equal to the month's last daily value 151 | median days from last daily date to month label 0
+LABEL HP:FDXc1|CLOSE | months 242 | month date is a daily date 155 | equal on that date 155 | equal to the month's last daily value 242 | median days from last daily date to month label 0
+LABEL HP:FFIc1|CLOSE | months 252 | month date is a daily date 171 | equal on that date 171 | equal to the month's last daily value 252 | median days from last daily date to month label 0
+LABEL HP:JNIc1|CLOSE | months 252 | month date is a daily date 161 | equal on that date 161 | equal to the month's last daily value 252 | median days from last daily date to month label 0
+LABEL HP:HSIc1|CLOSE | months 252 | month date is a daily date 171 | equal on that date 171 | equal to the month's last daily value 252 | median days from last daily date to month label 0
+LABEL HP:YAPc1|CLOSE | months 128 | month date is a daily date 92 | equal on that date 92 | equal to the month's last daily value 128 | median days from last daily date to month label 0
+LABEL HP:SXFc1|CLOSE | months 136 | month date is a daily date 98 | equal on that date 98 | equal to the month's last daily value 136 | median days from last daily date to month label 0
+LABEL HP:US10YT=RR|B_YLD_1 | months 252 | month date is a daily date 174 | equal on that date 174 | equal to the month's last daily value 252 | median days from last daily date to month label 0
+LABEL DS:<EDc1>|X | months 253 | month date is a daily date 253 | equal on that date 253 | equal to the month's last daily value 253 | median days from last daily date to month label 0
+LABEL DS:<EDc4>|X | months 253 | month date is a daily date 253 | equal on that date 253 | equal to the month's last daily value 253 | median days from last daily date to month label 0
+LABEL DS:<EDc8>|X | months 253 | month date is a daily date 253 | equal on that date 253 | equal to the month's last daily value 253 | median days from last daily date to month label 0
+LABEL DS:<FSSc1>|X | months 139 | month date is a daily date 139 | equal on that date 139 | equal to the month's last daily value 139 | median days from last daily date to month label 0
+LABEL DS:<BAXc1>|X | months 253 | month date is a daily date 253 | equal on that date 253 | equal to the month's last daily value 253 | median days from last daily date to month label 0
+LABEL DS:<FESc1>|X | months 239 | month date is a daily date 239 | equal on that date 239 | equal to the month's last daily value 239 | median days from last daily date to month label 0
+LABEL HP:JEYc1|CLOSE | months 252 | month date is a daily date 164 | equal on that date 164 | equal to the month's last daily value 252 | median days from last daily date to month label 0
+LABEL DS:<EDc2>|X | months 253 | month date is a daily date 253 | equal on that date 253 | equal to the month's last daily value 253 | median days from last daily date to month label 0
+LABEL DS:<EDc3>|X | months 253 | month date is a daily date 253 | equal on that date 253 | equal to the month's last daily value 253 | median days from last daily date to month label 0
+LABEL DS:<EDc5>|X | months 253 | month date is a daily date 253 | equal on that date 253 | equal to the month's last daily value 253 | median days from last daily date to month label 0
+LABEL DS:<EDc6>|X | months 253 | month date is a daily date 253 | equal on that date 253 | equal to the month's last daily value 253 | median days from last daily date to month label 0
+LABEL DS:<EDc7>|X | months 253 | month date is a daily date 253 | equal on that date 253 | equal to the month's last daily value 253 | median days from last daily date to month label 0
+LABEL DS:<FSSc2>|X | months 106 | month date is a daily date 106 | equal on that date 106 | equal to the month's last daily value 106 | median days from last daily date to month label 0
+LABEL DS:<FESc2>|X | months 239 | month date is a daily date 239 | equal on that date 239 | equal to the month's last daily value 239 | median days from last daily date to month label 0
+LABEL HP:JEYc2|CLOSE | months 252 | month date is a daily date 164 | equal on that date 164 | equal to the month's last daily value 252 | median days from last daily date to month label 0
+LABEL HP:CLZ5^0|CLOSE | months 4 | month date is a daily date 3 | equal on that date 3 | equal to the month's last daily value 4 | median days from last daily date to month label 0
+LABEL HP:LCOZ5^0|CLOSE | months 4 | month date is a daily date 3 | equal on that date 3 | equal to the month's last daily value 4 | median days from last daily date to month label 0
+LABEL HP:NGZ5^0|CLOSE | months 4 | month date is a daily date 3 | equal on that date 3 | equal to the month's last daily value 4 | median days from last daily date to month label 0
+LABEL HP:HOZ5^0|CLOSE | months 4 | month date is a daily date 4 | equal on that date 4 | equal to the month's last daily value 4 | median days from last daily date to month label 0
+LABEL HP:GCZ5^0|CLOSE | months 5 | month date is a daily date 4 | equal on that date 4 | equal to the month's last daily value 5 | median days from last daily date to month label 0
+LABEL HP:SIZ5^0|CLOSE | months 5 | month date is a daily date 4 | equal on that date 4 | equal to the month's last daily value 5 | median days from last daily date to month label 0
+LABEL HP:HGZ5^0|CLOSE | months 5 | month date is a daily date 4 | equal on that date 4 | equal to the month's last daily value 5 | median days from last daily date to month label 0
+LABEL HP:PLF5^0|CLOSE | months 5 | month date is a daily date 2 | equal on that date 2 | equal to the month's last daily value 5 | median days from last daily date to month label 1
+LABEL HP:CZ5^0|CLOSE | months 5 | month date is a daily date 4 | equal on that date 4 | equal to the month's last daily value 5 | median days from last daily date to month label 0
+LABEL HP:WZ5^0|CLOSE | months 5 | month date is a daily date 4 | equal on that date 4 | equal to the month's last daily value 5 | median days from last daily date to month label 0
+LABEL HP:SX5^0|CLOSE | months 5 | month date is a daily date 3 | equal on that date 3 | equal to the month's last daily value 5 | median days from last daily date to month label 0
+LABEL HP:SBV5^0|CLOSE | months 4 | month date is a daily date 3 | equal on that date 3 | equal to the month's last daily value 4 | median days from last daily date to month label 0
+LABEL HP:KCZ5^0|CLOSE | months 5 | month date is a daily date 4 | equal on that date 4 | equal to the month's last daily value 5 | median days from last daily date to month label 0
+LABEL HP:CTZ5^0|CLOSE | months 5 | month date is a daily date 4 | equal on that date 4 | equal to the month's last daily value 5 | median days from last daily date to month label 0
+LABEL HP:LCZ5^0|CLOSE | months 5 | month date is a daily date 4 | equal on that date 4 | equal to the month's last daily value 5 | median days from last daily date to month label 0
+LABEL DS:<EDZ5^0>|X | months 4 | month date is a daily date 4 | equal on that date 4 | equal to the month's last daily value 4 | median days from last daily date to month label 0
+LABEL pairs checked 99
+--- IDENTITY (contract identity per futures root)
+IDENTITY rule under test: position cN holds the N-th listed contract (by delivery month) whose roll anchor (lseg_roots.csv roll_on) is on or after the day; continuous closes alone carry no delivery month, no roll day and no listed-month information, so identity needs the L11 calendar and the sample check
+IDENTITY calendar source: lseg_rules-1.0.0 (the L11 calendar returned no dates; rules checked against LSEG evidence)
+=== IDENTITY VARIANT listed=base anchor=last_trade
+IDENTITY CL | WTI crude | positions with design data: monthly 25 of 25 (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,36), daily 2 of 2 (1,2) | c1 monthly from 1983-03-31
+IDENTITY CL | calendar: 576 contracts asked, 576 listed (delivery 1982-01 .. 2029-12) | listed months FGHJKMNQUVXZ | contracts per design year: typical 12, min 12, max 12 | anchor last_trade present for 372 of 372 design-era contracts | first notice 0 | expiry 372
+IDENTITY CL | note: no first notice day returned for any contract (none expected for this root; confirm from the exchange rules)
+IDENTITY CL | sample contracts stored 4 | observations: agree 94, disagree 17, ambiguous 13, not matched to any position 74, rule cannot say 0 | last day as c1 vs anchor: CLZ5^0 last_trade-1 bd; CLZ5^0 expiry-1 bd
+IDENTITY CL | curve12 depth: design months with the far leg inside the pulled positions 334 | beyond the pulled depth 0 | far contract not listed 0 | unknown 0 | first covered month 1983-03
+IDENTITY VERDICT CL | PARTIAL | missing: roll rule not confirmed (agree 94 of 111 matched)
+IDENTITY LCO | Brent crude | positions with design data: monthly 24 of 24 (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24), daily 2 of 2 (1,2) | c1 monthly from 1988-06-30
+IDENTITY LCO | calendar: 516 contracts asked, 516 listed (delivery 1987-01 .. 2029-12) | listed months FGHJKMNQUVXZ | contracts per design year: typical 12, min 12, max 12 | anchor last_trade present for 312 of 312 design-era contracts | first notice 0 | expiry 312
+IDENTITY LCO | note: no first notice day returned for any contract (none expected for this root; confirm from the exchange rules)
+IDENTITY LCO | sample contracts stored 3 | observations: agree 65, disagree 21, ambiguous 5, not matched to any position 35, rule cannot say 0 | last day as c1 vs anchor: LCOZ5^0 last_trade+0 bd; LCOZ5^0 expiry+0 bd
+IDENTITY LCO | curve12 depth: design months with the far leg inside the pulled positions 271 | beyond the pulled depth 0 | far contract not listed 0 | unknown 0 | first covered month 1988-06
+IDENTITY VERDICT LCO | PARTIAL | missing: roll rule not confirmed (agree 65 of 86 matched)
+IDENTITY NG | Natural gas | positions with design data: monthly 24 of 24 (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24), daily 2 of 2 (1,2) | c1 monthly from 1990-04-30
+IDENTITY NG | calendar: 492 contracts asked, 492 listed (delivery 1989-01 .. 2029-12) | listed months FGHJKMNQUVXZ | contracts per design year: typical 12, min 12, max 12 | anchor last_trade present for 288 of 288 design-era contracts | first notice 0 | expiry 288
+IDENTITY NG | note: no first notice day returned for any contract (none expected for this root; confirm from the exchange rules)
+IDENTITY NG | sample contracts stored 3 | observations: agree 80, disagree 0, ambiguous 3, not matched to any position 57, rule cannot say 0 | last day as c1 vs anchor: NGZ5^0 last_trade+0 bd; NGZ5^0 expiry+0 bd
+IDENTITY NG | curve12 depth: design months with the far leg inside the pulled positions 249 | beyond the pulled depth 0 | far contract not listed 0 | unknown 0 | first covered month 1990-04
+IDENTITY VERDICT NG | COMPLETE | missing: nothing
+IDENTITY HO | Heating oil | positions with design data: monthly 18 of 18 (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18), daily 2 of 2 (1,2) | c1 monthly from 1978-11-30
+IDENTITY HO | calendar: 624 contracts asked, 624 listed (delivery 1978-01 .. 2029-12) | listed months FGHJKMNQUVXZ | contracts per design year: typical 12, min 12, max 12 | anchor last_trade present for 420 of 420 design-era contracts | first notice 0 | expiry 420
+IDENTITY HO | note: no first notice day returned for any contract (none expected for this root; confirm from the exchange rules)
+IDENTITY HO | sample contracts stored 3 | observations: agree 76, disagree 0, ambiguous 1, not matched to any position 44, rule cannot say 0 | last day as c1 vs anchor: HOZ5^0 last_trade+0 bd; HOZ5^0 expiry+0 bd
+IDENTITY HO | curve12 depth: design months with the far leg inside the pulled positions 386 | beyond the pulled depth 0 | far contract not listed 0 | unknown 0 | first covered month 1978-11
+IDENTITY VERDICT HO | COMPLETE | missing: nothing
+IDENTITY RB | Gasoline | positions with design data: monthly 18 of 18 (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18), daily 2 of 2 (1,2) | c1 monthly from 2005-10-31
+IDENTITY RB | calendar: 552 contracts asked, 552 listed (delivery 1984-01 .. 2029-12) | listed months FGHJKMNQUVXZ | contracts per design year: typical 12, min 12, max 12 | anchor last_trade present for 348 of 348 design-era contracts | first notice 0 | expiry 348
+IDENTITY RB | note: no first notice day returned for any contract (none expected for this root; confirm from the exchange rules)
+IDENTITY RB | sample contracts stored 0 | observations: agree 0, disagree 0, ambiguous 0, not matched to any position 0, rule cannot say 0
+IDENTITY RB | curve12 depth: design months with the far leg inside the pulled positions 63 | beyond the pulled depth 0 | far contract not listed 0 | unknown 0 | first covered month 2005-10
+IDENTITY VERDICT RB | PARTIAL | missing: roll rule check (sample contracts matched to the continuous series: L11 Contract sample)
+IDENTITY GC | Gold | positions with design data: monthly 14 of 14 (1,2,3,4,5,6,7,8,9,10,11,12,13,14), daily 2 of 2 (1,2) | c1 monthly from 1978-01-31
+IDENTITY GC | calendar: 336 contracts asked, 336 listed (delivery 1974-02 .. 2029-12) | listed months GJMQVZ | contracts per design year: typical 6, min 6, max 6 | anchor last_trade present for 234 of 234 design-era contracts | first notice 234 | expiry 234
+IDENTITY GC | sample contracts stored 3 | observations: agree 27, disagree 71, ambiguous 1, not matched to any position 101, rule cannot say 0 | last day as c1 vs anchor: GCZ5^0 last_trade+0 bd; GCZ5^0 first_notice+20 bd; GCZ5^0 expiry+0 bd
+IDENTITY GC | curve12 depth: design months with the far leg inside the pulled positions 396 | beyond the pulled depth 0 | far contract not listed 0 | unknown 0 | first covered month 1978-01
+IDENTITY VERDICT GC | PARTIAL | missing: roll rule not confirmed (agree 27 of 98 matched)
+IDENTITY SI | Silver | positions with design data: monthly 14 of 14 (1,2,3,4,5,6,7,8,9,10,11,12,13,14), daily 2 of 2 (1,2) | c1 monthly from 1973-01-31
+IDENTITY SI | calendar: 280 contracts asked, 280 listed (delivery 1974-03 .. 2029-12) | listed months HKNUZ | contracts per design year: typical 5, min 5, max 5 | anchor last_trade present for 195 of 195 design-era contracts | first notice 195 | expiry 195
+IDENTITY SI | sample contracts stored 3 | observations: agree 24, disagree 72, ambiguous 0, not matched to any position 94, rule cannot say 0 | last day as c1 vs anchor: SIZ5^0 last_trade+0 bd; SIZ5^0 first_notice+20 bd; SIZ5^0 expiry+0 bd
+IDENTITY SI | curve12 depth: design months with the far leg inside the pulled positions 456 | beyond the pulled depth 0 | far contract not listed 0 | unknown 0 | first covered month 1973-01
+IDENTITY VERDICT SI | PARTIAL | missing: roll rule not confirmed (agree 24 of 96 matched)
+IDENTITY HG | Copper | positions with design data: monthly 18 of 18 (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18), daily 2 of 2 (1,2) | c1 monthly from 1988-07-31
+IDENTITY HG | calendar: 280 contracts asked, 280 listed (delivery 1974-03 .. 2029-12) | listed months HKNUZ | contracts per design year: typical 5, min 5, max 5 | anchor last_trade present for 195 of 195 design-era contracts | first notice 195 | expiry 195
+IDENTITY HG | sample contracts stored 3 | observations: agree 22, disagree 57, ambiguous 3, not matched to any position 71, rule cannot say 0 | last day as c1 vs anchor: HGZ5^0 last_trade-1 bd; HGZ5^0 first_notice+19 bd; HGZ5^0 expiry-1 bd
+IDENTITY HG | curve12 depth: design months with the far leg inside the pulled positions 270 | beyond the pulled depth 0 | far contract not listed 0 | unknown 0 | first covered month 1988-07
+IDENTITY VERDICT HG | PARTIAL | missing: roll rule not confirmed (agree 22 of 79 matched)
+IDENTITY PL | Platinum | positions with design data: monthly 8 of 8 (1,2,3,4,5,6,7,8), daily 2 of 2 (1,2) | c1 monthly from 1973-01-31
+IDENTITY PL | calendar: 224 contracts asked, 224 listed (delivery 1974-01 .. 2029-10) | listed months FJNV | contracts per design year: typical 4, min 4, max 4 | anchor last_trade present for 156 of 156 design-era contracts | first notice 156 | expiry 156
+IDENTITY PL | sample contracts stored 3 | observations: agree 94, disagree 8, ambiguous 5, not matched to any position 20, rule cannot say 0 | last day as c1 vs anchor: PLF5^0 last_trade+0 bd; PLF5^0 first_notice+19 bd; PLF5^0 expiry+0 bd
+IDENTITY PL | curve12 depth: design months with the far leg inside the pulled positions 446 | beyond the pulled depth 0 | far contract not listed 0 | unknown 0 | first covered month 1973-01
+IDENTITY VERDICT PL | PARTIAL | missing: roll rule not confirmed (agree 94 of 102 matched)
+IDENTITY C | Corn | positions with design data: monthly 9 of 9 (1,2,3,4,5,6,7,8,9), daily 2 of 2 (1,2) | c1 monthly from 1973-01-31
+IDENTITY C | calendar: 280 contracts asked, 280 listed (delivery 1974-03 .. 2029-12) | listed months HKNUZ | contracts per design year: typical 5, min 5, max 5 | anchor last_trade present for 195 of 195 design-era contracts | first notice 195 | expiry 195
+IDENTITY C | sample contracts stored 3 | observations: agree 135, disagree 11, ambiguous 1, not matched to any position 11, rule cannot say 0 | last day as c1 vs anchor: CZ5^0 last_trade+0 bd; CZ5^0 first_notice+10 bd; CZ5^0 expiry+0 bd
+IDENTITY C | curve12 depth: design months with the far leg inside the pulled positions 456 | beyond the pulled depth 0 | far contract not listed 0 | unknown 0 | first covered month 1973-01
+IDENTITY VERDICT C | PARTIAL | missing: roll rule not confirmed (agree 135 of 146 matched)
+IDENTITY W | Wheat | positions with design data: monthly 9 of 9 (1,2,3,4,5,6,7,8,9), daily 2 of 2 (1,2) | c1 monthly from 1973-01-31
+IDENTITY W | calendar: 280 contracts asked, 280 listed (delivery 1974-03 .. 2029-12) | listed months HKNUZ | contracts per design year: typical 5, min 5, max 5 | anchor last_trade present for 195 of 195 design-era contracts | first notice 195 | expiry 195
+IDENTITY W | sample contracts stored 3 | observations: agree 130, disagree 11, ambiguous 2, not matched to any position 2, rule cannot say 0 | last day as c1 vs anchor: WZ5^0 last_trade+0 bd; WZ5^0 first_notice+10 bd; WZ5^0 expiry+0 bd
+IDENTITY W | curve12 depth: design months with the far leg inside the pulled positions 456 | beyond the pulled depth 0 | far contract not listed 0 | unknown 0 | first covered month 1973-01
+IDENTITY VERDICT W | PARTIAL | missing: roll rule not confirmed (agree 130 of 141 matched)
+IDENTITY S | Soybeans | positions with design data: monthly 11 of 11 (1,2,3,4,5,6,7,8,9,10,11), daily 2 of 2 (1,2) | c1 monthly from 1973-01-31
+IDENTITY S | calendar: 392 contracts asked, 392 listed (delivery 1974-01 .. 2029-11) | listed months FHKNQUX | contracts per design year: typical 7, min 7, max 7 | anchor last_trade present for 273 of 273 design-era contracts | first notice 273 | expiry 273
+IDENTITY S | sample contracts stored 3 | observations: agree 96, disagree 16, ambiguous 6, not matched to any position 38, rule cannot say 0 | last day as c1 vs anchor: SX5^0 last_trade+0 bd; SX5^0 first_notice+10 bd; SX5^0 expiry+0 bd
+IDENTITY S | curve12 depth: design months with the far leg inside the pulled positions 456 | beyond the pulled depth 0 | far contract not listed 0 | unknown 0 | first covered month 1973-01
+IDENTITY VERDICT S | PARTIAL | missing: roll rule not confirmed (agree 96 of 112 matched)
+IDENTITY SB | Sugar No. 11 | positions with design data: monthly 8 of 8 (1,2,3,4,5,6,7,8), daily 2 of 2 (1,2) | c1 monthly from 1973-01-31
+IDENTITY SB | calendar: 224 contracts asked, 224 listed (delivery 1974-03 .. 2029-10) | listed months HKNV | contracts per design year: typical 4, min 4, max 4 | anchor last_trade present for 156 of 156 design-era contracts | first notice 0 | expiry 156
+IDENTITY SB | note: no first notice day returned for any contract (none expected for this root; confirm from the exchange rules)
+IDENTITY SB | sample contracts stored 3 | observations: agree 122, disagree 0, ambiguous 9, not matched to any position 0, rule cannot say 0 | last day as c1 vs anchor: SBV5^0 last_trade+0 bd; SBV5^0 expiry+0 bd
+IDENTITY SB | curve12 depth: design months with the far leg inside the pulled positions 456 | beyond the pulled depth 0 | far contract not listed 0 | unknown 0 | first covered month 1973-01
+IDENTITY VERDICT SB | COMPLETE | missing: nothing
+IDENTITY KC | Coffee | positions with design data: monthly 9 of 9 (1,2,3,4,5,6,7,8,9), daily 2 of 2 (1,2) | c1 monthly from 1979-11-30
+IDENTITY KC | calendar: 280 contracts asked, 280 listed (delivery 1974-03 .. 2029-12) | listed months HKNUZ | contracts per design year: typical 5, min 5, max 5 | anchor last_trade present for 195 of 195 design-era contracts | first notice 195 | expiry 195
+IDENTITY KC | sample contracts stored 3 | observations: agree 129, disagree 6, ambiguous 1, not matched to any position 4, rule cannot say 0 | last day as c1 vs anchor: KCZ5^0 last_trade+0 bd; KCZ5^0 first_notice+20 bd; KCZ5^0 expiry+0 bd
+IDENTITY KC | curve12 depth: design months with the far leg inside the pulled positions 374 | beyond the pulled depth 0 | far contract not listed 0 | unknown 0 | first covered month 1979-11
+IDENTITY VERDICT KC | PARTIAL | missing: roll rule not confirmed (agree 129 of 135 matched)
+IDENTITY CT | Cotton | positions with design data: monthly 9 of 9 (1,2,3,4,5,6,7,8,9), daily 2 of 2 (1,2) | c1 monthly from 1980-01-31
+IDENTITY CT | calendar: 280 contracts asked, 280 listed (delivery 1974-03 .. 2029-12) | listed months HKNVZ | contracts per design year: typical 5, min 5, max 5 | anchor last_trade present for 195 of 195 design-era contracts | first notice 195 | expiry 195
+IDENTITY CT | sample contracts stored 3 | observations: agree 128, disagree 2, ambiguous 0, not matched to any position 5, rule cannot say 0 | last day as c1 vs anchor: CTZ5^0 last_trade+0 bd; CTZ5^0 first_notice+10 bd; CTZ5^0 expiry+0 bd
+IDENTITY CT | curve12 depth: design months with the far leg inside the pulled positions 372 | beyond the pulled depth 0 | far contract not listed 0 | unknown 0 | first covered month 1980-01
+IDENTITY VERDICT CT | PARTIAL | missing: roll rule not confirmed (agree 128 of 130 matched)
+IDENTITY LC | Live cattle | positions with design data: monthly 9 of 9 (1,2,3,4,5,6,7,8,9), daily 2 of 2 (1,2) | c1 monthly from 1980-01-31
+IDENTITY LC | calendar: 336 contracts asked, 336 listed (delivery 1974-02 .. 2029-12) | listed months GJMQVZ | contracts per design year: typical 6, min 6, max 6 | anchor last_trade present for 234 of 234 design-era contracts | first notice 234 | expiry 234
+IDENTITY LC | sample contracts stored 3 | observations: agree 28, disagree 40, ambiguous 2, not matched to any position 66, rule cannot say 0 | last day as c1 vs anchor: LCZ5^0 last_trade+0 bd; LCZ5^0 first_notice+21 bd; LCZ5^0 expiry+0 bd
+IDENTITY LC | curve12 depth: design months with the far leg inside the pulled positions 372 | beyond the pulled depth 0 | far contract not listed 0 | unknown 0 | first covered month 1980-01
+IDENTITY VERDICT LC | PARTIAL | missing: roll rule not confirmed (agree 28 of 68 matched)
+IDENTITY ED | Eurodollar | positions with design data: monthly 12 of 12 (1,2,3,4,5,6,7,8,9,10,11,12), daily 8 of 8 (1,2,3,4,5,6,7,8) | c1 monthly from 1981-12-31
+IDENTITY ED | calendar: 200 contracts asked, 200 listed (delivery 1980-03 .. 2029-12) | listed months HMUZ | contracts per design year: typical 4, min 4, max 4 | anchor last_trade present for 132 of 132 design-era contracts | first notice 0 | expiry 132
+IDENTITY ED | sample contracts stored 3 | observations: agree 57, disagree 100, ambiguous 4, not matched to any position 36, rule cannot say 0 | last day as c1 vs anchor: EDZ5^0 last_trade+0 bd; EDZ5^0 expiry+0 bd
+IDENTITY ED | strip8: design month-ends where the first 8 quarterly contracts sit inside the monthly positions 349 (beyond 0, unknown 0); inside the DAILY positions pulled 349
+IDENTITY VERDICT ED | PARTIAL | missing: roll rule not confirmed (agree 57 of 157 matched)
+IDENTITY FEI | Euribor | positions with design data: monthly 12 of 12 (1,2,3,4,5,6,7,8,9,10,11,12), daily 2 of 2 (1,2) | c1 monthly from 1994-03-31
+IDENTITY FEI | calendar: 148 contracts asked, 148 listed (delivery 1993-03 .. 2029-12) | listed months HMUZ | contracts per design year: typical 4, min 4, max 4 | anchor last_trade present for 80 of 80 design-era contracts | first notice 0 | expiry 80
+IDENTITY FEI | sample contracts stored 3 | observations: agree 29, disagree 74, ambiguous 5, not matched to any position 89, rule cannot say 0 | last day as c1 vs anchor: FEIZ5^0 last_trade+0 bd; FEIZ5^0 expiry+0 bd
+IDENTITY FEI | strip8: design month-ends where the first 8 quarterly contracts sit inside the monthly positions 202 (beyond 0, unknown 0); inside the DAILY positions pulled 0
+IDENTITY VERDICT FEI | PARTIAL | missing: roll rule not confirmed (agree 29 of 103 matched)
+IDENTITY FSS | Short sterling | positions with design data: monthly 8 of 8 (1,2,3,4,5,6,7,8), daily 2 of 2 (1,2) | c1 monthly from 1999-06-30
+IDENTITY FSS | calendar: 128 contracts asked, 128 listed (delivery 1998-03 .. 2029-12) | listed months HMUZ | contracts per design year: typical 4, min 4, max 4 | anchor last_trade present for 60 of 60 design-era contracts | first notice 0 | expiry 60
+IDENTITY FSS | sample contracts stored 0 | observations: agree 0, disagree 0, ambiguous 0, not matched to any position 0, rule cannot say 0
+IDENTITY FSS | strip8: design month-ends where the first 8 quarterly contracts sit inside the monthly positions 139 (beyond 0, unknown 0); inside the DAILY positions pulled 0
+IDENTITY VERDICT FSS | PARTIAL | missing: roll rule check (sample contracts matched to the continuous series: L11 Contract sample)
+IDENTITY FES | Euroswiss | positions with design data: monthly 8 of 8 (1,2,3,4,5,6,7,8), daily 2 of 2 (1,2) | c1 monthly from 1991-02-28
+IDENTITY FES | calendar: 160 contracts asked, 160 listed (delivery 1990-03 .. 2029-12) | listed months HMUZ | contracts per design year: typical 4, min 4, max 4 | anchor last_trade present for 92 of 92 design-era contracts | first notice 0 | expiry 92
+IDENTITY FES | sample contracts stored 0 | observations: agree 0, disagree 0, ambiguous 0, not matched to any position 0, rule cannot say 0
+IDENTITY FES | strip8: design month-ends where the first 8 quarterly contracts sit inside the monthly positions 239 (beyond 0, unknown 0); inside the DAILY positions pulled 0
+IDENTITY VERDICT FES | PARTIAL | missing: roll rule check (sample contracts matched to the continuous series: L11 Contract sample)
+IDENTITY SRA | 3m SOFR | positions with design data: monthly 0 of 12 (-), daily 0 of 0 (-) | c1 monthly from -
+IDENTITY SRA | calendar: 52 contracts asked, 52 listed (delivery 2017-03 .. 2029-12) | listed months HMUZ | contracts per design year: typical -, min -, max - | anchor last_trade present for 0 of 0 design-era contracts | first notice 0 | expiry 0
+IDENTITY SRA | sample contracts stored 0 | observations: agree 0, disagree 0, ambiguous 0, not matched to any position 0, rule cannot say 0
+IDENTITY VERDICT SRA | PARTIAL | missing: monthly positions without design data: 1,2,3,4,5,6,7,8,9,10,11,12; roll rule check (sample contracts matched to the continuous series: L11 Contract sample)
+IDENTITY SON3 | 3m SONIA | positions with design data: monthly 0 of 8 (-), daily 0 of 0 (-) | c1 monthly from -
+IDENTITY SON3 | calendar: 52 contracts asked, 52 listed (delivery 2017-03 .. 2029-12) | listed months HMUZ | contracts per design year: typical -, min -, max - | anchor last_trade present for 0 of 0 design-era contracts | first notice 0 | expiry 0
+IDENTITY SON3 | sample contracts stored 0 | observations: agree 0, disagree 0, ambiguous 0, not matched to any position 0, rule cannot say 0
+IDENTITY VERDICT SON3 | PARTIAL | missing: monthly positions without design data: 1,2,3,4,5,6,7,8; roll rule check (sample contracts matched to the continuous series: L11 Contract sample)
+IDENTITY summary | COMPLETE 3 | PARTIAL 19
+=== IDENTITY VARIANT listed=serial anchor=last_trade
+IDENTITY CL | WTI crude | positions with design data: monthly 25 of 25 (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,36), daily 2 of 2 (1,2) | c1 monthly from 1983-03-31
+IDENTITY CL | calendar: 576 contracts asked, 576 listed (delivery 1982-01 .. 2029-12) | listed months FGHJKMNQUVXZ | contracts per design year: typical 12, min 12, max 12 | anchor last_trade present for 372 of 372 design-era contracts | first notice 0 | expiry 372
+IDENTITY CL | note: no first notice day returned for any contract (none expected for this root; confirm from the exchange rules)
+IDENTITY CL | sample contracts stored 4 | observations: agree 94, disagree 17, ambiguous 13, not matched to any position 74, rule cannot say 0 | last day as c1 vs anchor: CLZ5^0 last_trade-1 bd; CLZ5^0 expiry-1 bd
+IDENTITY CL | curve12 depth: design months with the far leg inside the pulled positions 334 | beyond the pulled depth 0 | far contract not listed 0 | unknown 0 | first covered month 1983-03
+IDENTITY VERDICT CL | PARTIAL | missing: roll rule not confirmed (agree 94 of 111 matched)
+IDENTITY LCO | Brent crude | positions with design data: monthly 24 of 24 (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24), daily 2 of 2 (1,2) | c1 monthly from 1988-06-30
+IDENTITY LCO | calendar: 516 contracts asked, 516 listed (delivery 1987-01 .. 2029-12) | listed months FGHJKMNQUVXZ | contracts per design year: typical 12, min 12, max 12 | anchor last_trade present for 312 of 312 design-era contracts | first notice 0 | expiry 312
+IDENTITY LCO | note: no first notice day returned for any contract (none expected for this root; confirm from the exchange rules)
+IDENTITY LCO | sample contracts stored 3 | observations: agree 65, disagree 21, ambiguous 5, not matched to any position 35, rule cannot say 0 | last day as c1 vs anchor: LCOZ5^0 last_trade+0 bd; LCOZ5^0 expiry+0 bd
+IDENTITY LCO | curve12 depth: design months with the far leg inside the pulled positions 271 | beyond the pulled depth 0 | far contract not listed 0 | unknown 0 | first covered month 1988-06
+IDENTITY VERDICT LCO | PARTIAL | missing: roll rule not confirmed (agree 65 of 86 matched)
+IDENTITY NG | Natural gas | positions with design data: monthly 24 of 24 (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24), daily 2 of 2 (1,2) | c1 monthly from 1990-04-30
+IDENTITY NG | calendar: 492 contracts asked, 492 listed (delivery 1989-01 .. 2029-12) | listed months FGHJKMNQUVXZ | contracts per design year: typical 12, min 12, max 12 | anchor last_trade present for 288 of 288 design-era contracts | first notice 0 | expiry 288
+IDENTITY NG | note: no first notice day returned for any contract (none expected for this root; confirm from the exchange rules)
+IDENTITY NG | sample contracts stored 3 | observations: agree 80, disagree 0, ambiguous 3, not matched to any position 57, rule cannot say 0 | last day as c1 vs anchor: NGZ5^0 last_trade+0 bd; NGZ5^0 expiry+0 bd
+IDENTITY NG | curve12 depth: design months with the far leg inside the pulled positions 249 | beyond the pulled depth 0 | far contract not listed 0 | unknown 0 | first covered month 1990-04
+IDENTITY VERDICT NG | COMPLETE | missing: nothing
+IDENTITY HO | Heating oil | positions with design data: monthly 18 of 18 (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18), daily 2 of 2 (1,2) | c1 monthly from 1978-11-30
+IDENTITY HO | calendar: 624 contracts asked, 624 listed (delivery 1978-01 .. 2029-12) | listed months FGHJKMNQUVXZ | contracts per design year: typical 12, min 12, max 12 | anchor last_trade present for 420 of 420 design-era contracts | first notice 0 | expiry 420
+IDENTITY HO | note: no first notice day returned for any contract (none expected for this root; confirm from the exchange rules)
+IDENTITY HO | sample contracts stored 3 | observations: agree 76, disagree 0, ambiguous 1, not matched to any position 44, rule cannot say 0 | last day as c1 vs anchor: HOZ5^0 last_trade+0 bd; HOZ5^0 expiry+0 bd
+IDENTITY HO | curve12 depth: design months with the far leg inside the pulled positions 386 | beyond the pulled depth 0 | far contract not listed 0 | unknown 0 | first covered month 1978-11
+IDENTITY VERDICT HO | COMPLETE | missing: nothing
+IDENTITY RB | Gasoline | positions with design data: monthly 18 of 18 (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18), daily 2 of 2 (1,2) | c1 monthly from 2005-10-31
+IDENTITY RB | calendar: 552 contracts asked, 552 listed (delivery 1984-01 .. 2029-12) | listed months FGHJKMNQUVXZ | contracts per design year: typical 12, min 12, max 12 | anchor last_trade present for 348 of 348 design-era contracts | first notice 0 | expiry 348
+IDENTITY RB | note: no first notice day returned for any contract (none expected for this root; confirm from the exchange rules)
+IDENTITY RB | sample contracts stored 0 | observations: agree 0, disagree 0, ambiguous 0, not matched to any position 0, rule cannot say 0
+IDENTITY RB | curve12 depth: design months with the far leg inside the pulled positions 63 | beyond the pulled depth 0 | far contract not listed 0 | unknown 0 | first covered month 2005-10
+IDENTITY VERDICT RB | PARTIAL | missing: roll rule check (sample contracts matched to the continuous series: L11 Contract sample)
+IDENTITY GC | Gold | positions with design data: monthly 14 of 14 (1,2,3,4,5,6,7,8,9,10,11,12,13,14), daily 2 of 2 (1,2) | c1 monthly from 1978-01-31
+IDENTITY GC | calendar: 666 contracts asked, 666 listed (delivery 1974-02 .. 2029-12) | listed months FGHJKMNQUVXZ | contracts per design year: typical 12, min 6, max 12 | anchor last_trade present for 462 of 462 design-era contracts | first notice 462 | expiry 462
+IDENTITY GC | sample contracts stored 3 | observations: agree 70, disagree 28, ambiguous 1, not matched to any position 101, rule cannot say 0 | last day as c1 vs anchor: GCZ5^0 last_trade+0 bd; GCZ5^0 first_notice+20 bd; GCZ5^0 expiry+0 bd
+IDENTITY GC | curve12 depth: design months with the far leg inside the pulled positions 198 | beyond the pulled depth 0 | far contract not listed 0 | unknown 198 | first covered month 1978-01
+IDENTITY VERDICT GC | PARTIAL | missing: roll rule not confirmed (agree 70 of 98 matched)
+IDENTITY SI | Silver | positions with design data: monthly 14 of 14 (1,2,3,4,5,6,7,8,9,10,11,12,13,14), daily 2 of 2 (1,2) | c1 monthly from 1973-01-31
+IDENTITY SI | calendar: 665 contracts asked, 665 listed (delivery 1974-03 .. 2029-12) | listed months FGHJKMNQUVXZ | contracts per design year: typical 12, min 5, max 12 | anchor last_trade present for 461 of 461 design-era contracts | first notice 461 | expiry 461
+IDENTITY SI | sample contracts stored 3 | observations: agree 55, disagree 41, ambiguous 0, not matched to any position 94, rule cannot say 0 | last day as c1 vs anchor: SIZ5^0 last_trade+0 bd; SIZ5^0 first_notice+20 bd; SIZ5^0 expiry+0 bd
+IDENTITY SI | curve12 depth: design months with the far leg inside the pulled positions 202 | beyond the pulled depth 0 | far contract not listed 0 | unknown 254 | first covered month 1973-01
+IDENTITY VERDICT SI | PARTIAL | missing: roll rule not confirmed (agree 55 of 96 matched)
+IDENTITY HG | Copper | positions with design data: monthly 18 of 18 (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18), daily 2 of 2 (1,2) | c1 monthly from 1988-07-31
+IDENTITY HG | calendar: 665 contracts asked, 665 listed (delivery 1974-03 .. 2029-12) | listed months FGHJKMNQUVXZ | contracts per design year: typical 12, min 5, max 12 | anchor last_trade present for 461 of 461 design-era contracts | first notice 461 | expiry 461
+IDENTITY HG | sample contracts stored 3 | observations: agree 46, disagree 33, ambiguous 3, not matched to any position 71, rule cannot say 0 | last day as c1 vs anchor: HGZ5^0 last_trade-1 bd; HGZ5^0 first_notice+19 bd; HGZ5^0 expiry-1 bd
+IDENTITY HG | curve12 depth: design months with the far leg inside the pulled positions 112 | beyond the pulled depth 0 | far contract not listed 0 | unknown 158 | first covered month 1988-09
+IDENTITY VERDICT HG | PARTIAL | missing: roll rule not confirmed (agree 46 of 79 matched)
+IDENTITY PL | Platinum | positions with design data: monthly 8 of 8 (1,2,3,4,5,6,7,8), daily 2 of 2 (1,2) | c1 monthly from 1973-01-31
+IDENTITY PL | calendar: 664 contracts asked, 664 listed (delivery 1974-01 .. 2029-12) | listed months FGHJKMNQUVXZ | contracts per design year: typical 12, min 4, max 12 | anchor last_trade present for 460 of 460 design-era contracts | first notice 460 | expiry 460
+IDENTITY PL | sample contracts stored 3 | observations: agree 27, disagree 75, ambiguous 5, not matched to any position 20, rule cannot say 0 | last day as c1 vs anchor: PLF5^0 last_trade+0 bd; PLF5^0 first_notice+19 bd; PLF5^0 expiry+0 bd
+IDENTITY PL | curve12 depth: design months with the far leg inside the pulled positions 166 | beyond the pulled depth 0 | far contract not listed 0 | unknown 280 | first covered month 1973-01
+IDENTITY VERDICT PL | PARTIAL | missing: roll rule not confirmed (agree 27 of 102 matched)
+IDENTITY C | Corn | positions with design data: monthly 9 of 9 (1,2,3,4,5,6,7,8,9), daily 2 of 2 (1,2) | c1 monthly from 1973-01-31
+IDENTITY C | calendar: 280 contracts asked, 280 listed (delivery 1974-03 .. 2029-12) | listed months HKNUZ | contracts per design year: typical 5, min 5, max 5 | anchor last_trade present for 195 of 195 design-era contracts | first notice 195 | expiry 195
+IDENTITY C | sample contracts stored 3 | observations: agree 135, disagree 11, ambiguous 1, not matched to any position 11, rule cannot say 0 | last day as c1 vs anchor: CZ5^0 last_trade+0 bd; CZ5^0 first_notice+10 bd; CZ5^0 expiry+0 bd
+IDENTITY C | curve12 depth: design months with the far leg inside the pulled positions 456 | beyond the pulled depth 0 | far contract not listed 0 | unknown 0 | first covered month 1973-01
+IDENTITY VERDICT C | PARTIAL | missing: roll rule not confirmed (agree 135 of 146 matched)
+IDENTITY W | Wheat | positions with design data: monthly 9 of 9 (1,2,3,4,5,6,7,8,9), daily 2 of 2 (1,2) | c1 monthly from 1973-01-31
+IDENTITY W | calendar: 280 contracts asked, 280 listed (delivery 1974-03 .. 2029-12) | listed months HKNUZ | contracts per design year: typical 5, min 5, max 5 | anchor last_trade present for 195 of 195 design-era contracts | first notice 195 | expiry 195
+IDENTITY W | sample contracts stored 3 | observations: agree 130, disagree 11, ambiguous 2, not matched to any position 2, rule cannot say 0 | last day as c1 vs anchor: WZ5^0 last_trade+0 bd; WZ5^0 first_notice+10 bd; WZ5^0 expiry+0 bd
+IDENTITY W | curve12 depth: design months with the far leg inside the pulled positions 456 | beyond the pulled depth 0 | far contract not listed 0 | unknown 0 | first covered month 1973-01
+IDENTITY VERDICT W | PARTIAL | missing: roll rule not confirmed (agree 130 of 141 matched)
+IDENTITY S | Soybeans | positions with design data: monthly 11 of 11 (1,2,3,4,5,6,7,8,9,10,11), daily 2 of 2 (1,2) | c1 monthly from 1973-01-31
+IDENTITY S | calendar: 392 contracts asked, 392 listed (delivery 1974-01 .. 2029-11) | listed months FHKNQUX | contracts per design year: typical 7, min 7, max 7 | anchor last_trade present for 273 of 273 design-era contracts | first notice 273 | expiry 273
+IDENTITY S | sample contracts stored 3 | observations: agree 96, disagree 16, ambiguous 6, not matched to any position 38, rule cannot say 0 | last day as c1 vs anchor: SX5^0 last_trade+0 bd; SX5^0 first_notice+10 bd; SX5^0 expiry+0 bd
+IDENTITY S | curve12 depth: design months with the far leg inside the pulled positions 456 | beyond the pulled depth 0 | far contract not listed 0 | unknown 0 | first covered month 1973-01
+IDENTITY VERDICT S | PARTIAL | missing: roll rule not confirmed (agree 96 of 112 matched)
+IDENTITY SB | Sugar No. 11 | positions with design data: monthly 8 of 8 (1,2,3,4,5,6,7,8), daily 2 of 2 (1,2) | c1 monthly from 1973-01-31
+IDENTITY SB | calendar: 224 contracts asked, 224 listed (delivery 1974-03 .. 2029-10) | listed months HKNV | contracts per design year: typical 4, min 4, max 4 | anchor last_trade present for 156 of 156 design-era contracts | first notice 0 | expiry 156
+IDENTITY SB | note: no first notice day returned for any contract (none expected for this root; confirm from the exchange rules)
+IDENTITY SB | sample contracts stored 3 | observations: agree 122, disagree 0, ambiguous 9, not matched to any position 0, rule cannot say 0 | last day as c1 vs anchor: SBV5^0 last_trade+0 bd; SBV5^0 expiry+0 bd
+IDENTITY SB | curve12 depth: design months with the far leg inside the pulled positions 456 | beyond the pulled depth 0 | far contract not listed 0 | unknown 0 | first covered month 1973-01
+IDENTITY VERDICT SB | COMPLETE | missing: nothing
+IDENTITY KC | Coffee | positions with design data: monthly 9 of 9 (1,2,3,4,5,6,7,8,9), daily 2 of 2 (1,2) | c1 monthly from 1979-11-30
+IDENTITY KC | calendar: 280 contracts asked, 280 listed (delivery 1974-03 .. 2029-12) | listed months HKNUZ | contracts per design year: typical 5, min 5, max 5 | anchor last_trade present for 195 of 195 design-era contracts | first notice 195 | expiry 195
+IDENTITY KC | sample contracts stored 3 | observations: agree 129, disagree 6, ambiguous 1, not matched to any position 4, rule cannot say 0 | last day as c1 vs anchor: KCZ5^0 last_trade+0 bd; KCZ5^0 first_notice+20 bd; KCZ5^0 expiry+0 bd
+IDENTITY KC | curve12 depth: design months with the far leg inside the pulled positions 374 | beyond the pulled depth 0 | far contract not listed 0 | unknown 0 | first covered month 1979-11
+IDENTITY VERDICT KC | PARTIAL | missing: roll rule not confirmed (agree 129 of 135 matched)
+IDENTITY CT | Cotton | positions with design data: monthly 9 of 9 (1,2,3,4,5,6,7,8,9), daily 2 of 2 (1,2) | c1 monthly from 1980-01-31
+IDENTITY CT | calendar: 280 contracts asked, 280 listed (delivery 1974-03 .. 2029-12) | listed months HKNVZ | contracts per design year: typical 5, min 5, max 5 | anchor last_trade present for 195 of 195 design-era contracts | first notice 195 | expiry 195
+IDENTITY CT | sample contracts stored 3 | observations: agree 128, disagree 2, ambiguous 0, not matched to any position 5, rule cannot say 0 | last day as c1 vs anchor: CTZ5^0 last_trade+0 bd; CTZ5^0 first_notice+10 bd; CTZ5^0 expiry+0 bd
+IDENTITY CT | curve12 depth: design months with the far leg inside the pulled positions 372 | beyond the pulled depth 0 | far contract not listed 0 | unknown 0 | first covered month 1980-01
+IDENTITY VERDICT CT | PARTIAL | missing: roll rule not confirmed (agree 128 of 130 matched)
+IDENTITY LC | Live cattle | positions with design data: monthly 9 of 9 (1,2,3,4,5,6,7,8,9), daily 2 of 2 (1,2) | c1 monthly from 1980-01-31
+IDENTITY LC | calendar: 336 contracts asked, 336 listed (delivery 1974-02 .. 2029-12) | listed months GJMQVZ | contracts per design year: typical 6, min 6, max 6 | anchor last_trade present for 234 of 234 design-era contracts | first notice 234 | expiry 234
+IDENTITY LC | sample contracts stored 3 | observations: agree 28, disagree 40, ambiguous 2, not matched to any position 66, rule cannot say 0 | last day as c1 vs anchor: LCZ5^0 last_trade+0 bd; LCZ5^0 first_notice+21 bd; LCZ5^0 expiry+0 bd
+IDENTITY LC | curve12 depth: design months with the far leg inside the pulled positions 372 | beyond the pulled depth 0 | far contract not listed 0 | unknown 0 | first covered month 1980-01
+IDENTITY VERDICT LC | PARTIAL | missing: roll rule not confirmed (agree 28 of 68 matched)
+IDENTITY ED | Eurodollar | positions with design data: monthly 12 of 12 (1,2,3,4,5,6,7,8,9,10,11,12), daily 8 of 8 (1,2,3,4,5,6,7,8) | c1 monthly from 1981-12-31
+IDENTITY ED | calendar: 480 contracts asked, 480 listed (delivery 1980-03 .. 2029-12) | listed months FGHJKMNQUVXZ | contracts per design year: typical 12, min 4, max 12 | anchor last_trade present for 276 of 276 design-era contracts | first notice 0 | expiry 276
+IDENTITY ED | sample contracts stored 3 | observations: agree 127, disagree 30, ambiguous 4, not matched to any position 36, rule cannot say 0 | last day as c1 vs anchor: EDZ5^0 last_trade+0 bd; EDZ5^0 expiry+0 bd
+IDENTITY ED | strip8: design month-ends where the first 8 quarterly contracts sit inside the monthly positions 349 (beyond 0, unknown 0); inside the DAILY positions pulled 154
+IDENTITY VERDICT ED | PARTIAL | missing: roll rule not confirmed (agree 127 of 157 matched)
+IDENTITY FEI | Euribor | positions with design data: monthly 12 of 12 (1,2,3,4,5,6,7,8,9,10,11,12), daily 2 of 2 (1,2) | c1 monthly from 1994-03-31
+IDENTITY FEI | calendar: 396 contracts asked, 396 listed (delivery 1993-03 .. 2029-12) | listed months FGHJKMNQUVXZ | contracts per design year: typical 12, min 4, max 12 | anchor last_trade present for 192 of 192 design-era contracts | first notice 0 | expiry 192
+IDENTITY FEI | sample contracts stored 3 | observations: agree 52, disagree 51, ambiguous 5, not matched to any position 89, rule cannot say 0 | last day as c1 vs anchor: FEIZ5^0 last_trade+0 bd; FEIZ5^0 expiry+0 bd
+IDENTITY FEI | strip8: design month-ends where the first 8 quarterly contracts sit inside the monthly positions 202 (beyond 0, unknown 0); inside the DAILY positions pulled 0
+IDENTITY VERDICT FEI | PARTIAL | missing: roll rule not confirmed (agree 52 of 103 matched)
+IDENTITY FSS | Short sterling | positions with design data: monthly 8 of 8 (1,2,3,4,5,6,7,8), daily 2 of 2 (1,2) | c1 monthly from 1999-06-30
+IDENTITY FSS | calendar: 336 contracts asked, 336 listed (delivery 1998-03 .. 2029-12) | listed months FGHJKMNQUVXZ | contracts per design year: typical 12, min 4, max 12 | anchor last_trade present for 132 of 132 design-era contracts | first notice 0 | expiry 132
+IDENTITY FSS | sample contracts stored 0 | observations: agree 0, disagree 0, ambiguous 0, not matched to any position 0, rule cannot say 0
+IDENTITY FSS | strip8: design month-ends where the first 8 quarterly contracts sit inside the monthly positions 82 (beyond 57, unknown 0); inside the DAILY positions pulled 0
+IDENTITY VERDICT FSS | PARTIAL | missing: roll rule check (sample contracts matched to the continuous series: L11 Contract sample); depth: 57 month-ends need a monthly position beyond 8
+IDENTITY FES | Euroswiss | positions with design data: monthly 8 of 8 (1,2,3,4,5,6,7,8), daily 2 of 2 (1,2) | c1 monthly from 1991-02-28
+IDENTITY FES | calendar: 160 contracts asked, 160 listed (delivery 1990-03 .. 2029-12) | listed months HMUZ | contracts per design year: typical 4, min 4, max 4 | anchor last_trade present for 92 of 92 design-era contracts | first notice 0 | expiry 92
+IDENTITY FES | sample contracts stored 0 | observations: agree 0, disagree 0, ambiguous 0, not matched to any position 0, rule cannot say 0
+IDENTITY FES | strip8: design month-ends where the first 8 quarterly contracts sit inside the monthly positions 239 (beyond 0, unknown 0); inside the DAILY positions pulled 0
+IDENTITY VERDICT FES | PARTIAL | missing: roll rule check (sample contracts matched to the continuous series: L11 Contract sample)
+IDENTITY SRA | 3m SOFR | positions with design data: monthly 0 of 12 (-), daily 0 of 0 (-) | c1 monthly from -
+IDENTITY SRA | calendar: 148 contracts asked, 148 listed (delivery 2017-03 .. 2029-12) | listed months FGHJKMNQUVXZ | contracts per design year: typical -, min -, max - | anchor last_trade present for 0 of 0 design-era contracts | first notice 0 | expiry 0
+IDENTITY SRA | sample contracts stored 0 | observations: agree 0, disagree 0, ambiguous 0, not matched to any position 0, rule cannot say 0
+IDENTITY VERDICT SRA | PARTIAL | missing: monthly positions without design data: 1,2,3,4,5,6,7,8,9,10,11,12; roll rule check (sample contracts matched to the continuous series: L11 Contract sample)
+IDENTITY SON3 | 3m SONIA | positions with design data: monthly 0 of 8 (-), daily 0 of 0 (-) | c1 monthly from -
+IDENTITY SON3 | calendar: 148 contracts asked, 148 listed (delivery 2017-03 .. 2029-12) | listed months FGHJKMNQUVXZ | contracts per design year: typical -, min -, max - | anchor last_trade present for 0 of 0 design-era contracts | first notice 0 | expiry 0
+IDENTITY SON3 | sample contracts stored 0 | observations: agree 0, disagree 0, ambiguous 0, not matched to any position 0, rule cannot say 0
+IDENTITY VERDICT SON3 | PARTIAL | missing: monthly positions without design data: 1,2,3,4,5,6,7,8; roll rule check (sample contracts matched to the continuous series: L11 Contract sample)
+IDENTITY summary | COMPLETE 3 | PARTIAL 19
+=== IDENTITY VARIANT listed=base anchor=first_notice
+IDENTITY GC | Gold | positions with design data: monthly 14 of 14 (1,2,3,4,5,6,7,8,9,10,11,12,13,14), daily 2 of 2 (1,2) | c1 monthly from 1978-01-31
+IDENTITY GC | calendar: 336 contracts asked, 336 listed (delivery 1974-02 .. 2029-12) | listed months GJMQVZ | contracts per design year: typical 6, min 6, max 6 | anchor first_notice present for 234 of 234 design-era contracts | first notice 234 | expiry 234
+IDENTITY GC | sample contracts stored 3 | observations: agree 8, disagree 71, ambiguous 1, not matched to any position 101, rule cannot say 19 | last day as c1 vs anchor: GCZ5^0 last_trade+0 bd; GCZ5^0 first_notice+20 bd; GCZ5^0 expiry+0 bd
+IDENTITY GC | curve12 depth: design months with the far leg inside the pulled positions 396 | beyond the pulled depth 0 | far contract not listed 0 | unknown 0 | first covered month 1978-01
+IDENTITY VERDICT GC | PARTIAL | missing: roll rule not confirmed (agree 8 of 79 matched)
+IDENTITY SI | Silver | positions with design data: monthly 14 of 14 (1,2,3,4,5,6,7,8,9,10,11,12,13,14), daily 2 of 2 (1,2) | c1 monthly from 1973-01-31
+IDENTITY SI | calendar: 280 contracts asked, 280 listed (delivery 1974-03 .. 2029-12) | listed months HKNUZ | contracts per design year: typical 5, min 5, max 5 | anchor first_notice present for 195 of 195 design-era contracts | first notice 195 | expiry 195
+IDENTITY SI | sample contracts stored 3 | observations: agree 5, disagree 72, ambiguous 0, not matched to any position 94, rule cannot say 19 | last day as c1 vs anchor: SIZ5^0 last_trade+0 bd; SIZ5^0 first_notice+20 bd; SIZ5^0 expiry+0 bd
+IDENTITY SI | curve12 depth: design months with the far leg inside the pulled positions 456 | beyond the pulled depth 0 | far contract not listed 0 | unknown 0 | first covered month 1973-01
+IDENTITY VERDICT SI | PARTIAL | missing: roll rule not confirmed (agree 5 of 77 matched)
+IDENTITY HG | Copper | positions with design data: monthly 18 of 18 (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18), daily 2 of 2 (1,2) | c1 monthly from 1988-07-31
+IDENTITY HG | calendar: 280 contracts asked, 280 listed (delivery 1974-03 .. 2029-12) | listed months HKNUZ | contracts per design year: typical 5, min 5, max 5 | anchor first_notice present for 195 of 195 design-era contracts | first notice 195 | expiry 195
+IDENTITY HG | sample contracts stored 3 | observations: agree 4, disagree 57, ambiguous 3, not matched to any position 71, rule cannot say 18 | last day as c1 vs anchor: HGZ5^0 last_trade-1 bd; HGZ5^0 first_notice+19 bd; HGZ5^0 expiry-1 bd
+IDENTITY HG | curve12 depth: design months with the far leg inside the pulled positions 270 | beyond the pulled depth 0 | far contract not listed 0 | unknown 0 | first covered month 1988-07
+IDENTITY VERDICT HG | PARTIAL | missing: roll rule not confirmed (agree 4 of 61 matched)
+IDENTITY PL | Platinum | positions with design data: monthly 8 of 8 (1,2,3,4,5,6,7,8), daily 2 of 2 (1,2) | c1 monthly from 1973-01-31
+IDENTITY PL | calendar: 224 contracts asked, 224 listed (delivery 1974-01 .. 2029-10) | listed months FJNV | contracts per design year: typical 4, min 4, max 4 | anchor first_notice present for 156 of 156 design-era contracts | first notice 156 | expiry 156
+IDENTITY PL | sample contracts stored 3 | observations: agree 62, disagree 22, ambiguous 5, not matched to any position 20, rule cannot say 18 | last day as c1 vs anchor: PLF5^0 last_trade+0 bd; PLF5^0 first_notice+19 bd; PLF5^0 expiry+0 bd
+IDENTITY PL | curve12 depth: design months with the far leg inside the pulled positions 446 | beyond the pulled depth 0 | far contract not listed 0 | unknown 0 | first covered month 1973-01
+IDENTITY VERDICT PL | PARTIAL | missing: roll rule not confirmed (agree 62 of 84 matched)
+IDENTITY C | Corn | positions with design data: monthly 9 of 9 (1,2,3,4,5,6,7,8,9), daily 2 of 2 (1,2) | c1 monthly from 1973-01-31
+IDENTITY C | calendar: 280 contracts asked, 280 listed (delivery 1974-03 .. 2029-12) | listed months HKNUZ | contracts per design year: typical 5, min 5, max 5 | anchor first_notice present for 195 of 195 design-era contracts | first notice 195 | expiry 195
+IDENTITY C | sample contracts stored 3 | observations: agree 116, disagree 20, ambiguous 1, not matched to any position 11, rule cannot say 10 | last day as c1 vs anchor: CZ5^0 last_trade+0 bd; CZ5^0 first_notice+10 bd; CZ5^0 expiry+0 bd
+IDENTITY C | curve12 depth: design months with the far leg inside the pulled positions 456 | beyond the pulled depth 0 | far contract not listed 0 | unknown 0 | first covered month 1973-01
+IDENTITY VERDICT C | PARTIAL | missing: roll rule not confirmed (agree 116 of 136 matched)
+IDENTITY W | Wheat | positions with design data: monthly 9 of 9 (1,2,3,4,5,6,7,8,9), daily 2 of 2 (1,2) | c1 monthly from 1973-01-31
+IDENTITY W | calendar: 280 contracts asked, 280 listed (delivery 1974-03 .. 2029-12) | listed months HKNUZ | contracts per design year: typical 5, min 5, max 5 | anchor first_notice present for 195 of 195 design-era contracts | first notice 195 | expiry 195
+IDENTITY W | sample contracts stored 3 | observations: agree 111, disagree 20, ambiguous 2, not matched to any position 2, rule cannot say 10 | last day as c1 vs anchor: WZ5^0 last_trade+0 bd; WZ5^0 first_notice+10 bd; WZ5^0 expiry+0 bd
+IDENTITY W | curve12 depth: design months with the far leg inside the pulled positions 456 | beyond the pulled depth 0 | far contract not listed 0 | unknown 0 | first covered month 1973-01
+IDENTITY VERDICT W | PARTIAL | missing: roll rule not confirmed (agree 111 of 131 matched)
+IDENTITY S | Soybeans | positions with design data: monthly 11 of 11 (1,2,3,4,5,6,7,8,9,10,11), daily 2 of 2 (1,2) | c1 monthly from 1973-01-31
+IDENTITY S | calendar: 392 contracts asked, 392 listed (delivery 1974-01 .. 2029-11) | listed months FHKNQUX | contracts per design year: typical 7, min 7, max 7 | anchor first_notice present for 273 of 273 design-era contracts | first notice 273 | expiry 273
+IDENTITY S | sample contracts stored 3 | observations: agree 77, disagree 25, ambiguous 6, not matched to any position 38, rule cannot say 10 | last day as c1 vs anchor: SX5^0 last_trade+0 bd; SX5^0 first_notice+10 bd; SX5^0 expiry+0 bd
+IDENTITY S | curve12 depth: design months with the far leg inside the pulled positions 456 | beyond the pulled depth 0 | far contract not listed 0 | unknown 0 | first covered month 1973-01
+IDENTITY VERDICT S | PARTIAL | missing: roll rule not confirmed (agree 77 of 102 matched)
+IDENTITY KC | Coffee | positions with design data: monthly 9 of 9 (1,2,3,4,5,6,7,8,9), daily 2 of 2 (1,2) | c1 monthly from 1979-11-30
+IDENTITY KC | calendar: 280 contracts asked, 280 listed (delivery 1974-03 .. 2029-12) | listed months HKNUZ | contracts per design year: typical 5, min 5, max 5 | anchor first_notice present for 195 of 195 design-era contracts | first notice 195 | expiry 195
+IDENTITY KC | sample contracts stored 3 | observations: agree 76, disagree 39, ambiguous 1, not matched to any position 4, rule cannot say 20 | last day as c1 vs anchor: KCZ5^0 last_trade+0 bd; KCZ5^0 first_notice+20 bd; KCZ5^0 expiry+0 bd
+IDENTITY KC | curve12 depth: design months with the far leg inside the pulled positions 374 | beyond the pulled depth 0 | far contract not listed 0 | unknown 0 | first covered month 1979-11
+IDENTITY VERDICT KC | PARTIAL | missing: roll rule not confirmed (agree 76 of 115 matched)
+IDENTITY CT | Cotton | positions with design data: monthly 9 of 9 (1,2,3,4,5,6,7,8,9), daily 2 of 2 (1,2) | c1 monthly from 1980-01-31
+IDENTITY CT | calendar: 280 contracts asked, 280 listed (delivery 1974-03 .. 2029-12) | listed months HKNVZ | contracts per design year: typical 5, min 5, max 5 | anchor first_notice present for 195 of 195 design-era contracts | first notice 195 | expiry 195
+IDENTITY CT | sample contracts stored 3 | observations: agree 95, disagree 25, ambiguous 0, not matched to any position 5, rule cannot say 10 | last day as c1 vs anchor: CTZ5^0 last_trade+0 bd; CTZ5^0 first_notice+10 bd; CTZ5^0 expiry+0 bd
+IDENTITY CT | curve12 depth: design months with the far leg inside the pulled positions 372 | beyond the pulled depth 0 | far contract not listed 0 | unknown 0 | first covered month 1980-01
+IDENTITY VERDICT CT | PARTIAL | missing: roll rule not confirmed (agree 95 of 120 matched)
+IDENTITY LC | Live cattle | positions with design data: monthly 9 of 9 (1,2,3,4,5,6,7,8,9), daily 2 of 2 (1,2) | c1 monthly from 1980-01-31
+IDENTITY LC | calendar: 336 contracts asked, 336 listed (delivery 1974-02 .. 2029-12) | listed months GJMQVZ | contracts per design year: typical 6, min 6, max 6 | anchor first_notice present for 234 of 234 design-era contracts | first notice 234 | expiry 234
+IDENTITY LC | sample contracts stored 3 | observations: agree 14, disagree 33, ambiguous 2, not matched to any position 66, rule cannot say 21 | last day as c1 vs anchor: LCZ5^0 last_trade+0 bd; LCZ5^0 first_notice+21 bd; LCZ5^0 expiry+0 bd
+IDENTITY LC | curve12 depth: design months with the far leg inside the pulled positions 372 | beyond the pulled depth 0 | far contract not listed 0 | unknown 0 | first covered month 1980-01
+IDENTITY VERDICT LC | PARTIAL | missing: roll rule not confirmed (agree 14 of 47 matched)
+IDENTITY summary | PARTIAL 10
+=== IDENTITY VARIANT listed=serial anchor=first_notice
+IDENTITY GC | Gold | positions with design data: monthly 14 of 14 (1,2,3,4,5,6,7,8,9,10,11,12,13,14), daily 2 of 2 (1,2) | c1 monthly from 1978-01-31
+IDENTITY GC | calendar: 666 contracts asked, 666 listed (delivery 1974-02 .. 2029-12) | listed months FGHJKMNQUVXZ | contracts per design year: typical 12, min 6, max 12 | anchor first_notice present for 462 of 462 design-era contracts | first notice 462 | expiry 462
+IDENTITY GC | sample contracts stored 3 | observations: agree 34, disagree 45, ambiguous 1, not matched to any position 101, rule cannot say 19 | last day as c1 vs anchor: GCZ5^0 last_trade+0 bd; GCZ5^0 first_notice+20 bd; GCZ5^0 expiry+0 bd
+IDENTITY GC | curve12 depth: design months with the far leg inside the pulled positions 198 | beyond the pulled depth 0 | far contract not listed 0 | unknown 198 | first covered month 1978-01
+IDENTITY VERDICT GC | PARTIAL | missing: roll rule not confirmed (agree 34 of 79 matched)
+IDENTITY SI | Silver | positions with design data: monthly 14 of 14 (1,2,3,4,5,6,7,8,9,10,11,12,13,14), daily 2 of 2 (1,2) | c1 monthly from 1973-01-31
+IDENTITY SI | calendar: 665 contracts asked, 665 listed (delivery 1974-03 .. 2029-12) | listed months FGHJKMNQUVXZ | contracts per design year: typical 12, min 5, max 12 | anchor first_notice present for 461 of 461 design-era contracts | first notice 461 | expiry 461
+IDENTITY SI | sample contracts stored 3 | observations: agree 18, disagree 59, ambiguous 0, not matched to any position 94, rule cannot say 19 | last day as c1 vs anchor: SIZ5^0 last_trade+0 bd; SIZ5^0 first_notice+20 bd; SIZ5^0 expiry+0 bd
+IDENTITY SI | curve12 depth: design months with the far leg inside the pulled positions 202 | beyond the pulled depth 0 | far contract not listed 0 | unknown 254 | first covered month 1973-01
+IDENTITY VERDICT SI | PARTIAL | missing: roll rule not confirmed (agree 18 of 77 matched)
+IDENTITY HG | Copper | positions with design data: monthly 18 of 18 (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18), daily 2 of 2 (1,2) | c1 monthly from 1988-07-31
+IDENTITY HG | calendar: 665 contracts asked, 665 listed (delivery 1974-03 .. 2029-12) | listed months FGHJKMNQUVXZ | contracts per design year: typical 12, min 5, max 12 | anchor first_notice present for 461 of 461 design-era contracts | first notice 461 | expiry 461
+IDENTITY HG | sample contracts stored 3 | observations: agree 10, disagree 51, ambiguous 3, not matched to any position 71, rule cannot say 18 | last day as c1 vs anchor: HGZ5^0 last_trade-1 bd; HGZ5^0 first_notice+19 bd; HGZ5^0 expiry-1 bd
+IDENTITY HG | curve12 depth: design months with the far leg inside the pulled positions 112 | beyond the pulled depth 0 | far contract not listed 0 | unknown 158 | first covered month 1988-09
+IDENTITY VERDICT HG | PARTIAL | missing: roll rule not confirmed (agree 10 of 61 matched)
+IDENTITY PL | Platinum | positions with design data: monthly 8 of 8 (1,2,3,4,5,6,7,8), daily 2 of 2 (1,2) | c1 monthly from 1973-01-31
+IDENTITY PL | calendar: 664 contracts asked, 664 listed (delivery 1974-01 .. 2029-12) | listed months FGHJKMNQUVXZ | contracts per design year: typical 12, min 4, max 12 | anchor first_notice present for 460 of 460 design-era contracts | first notice 460 | expiry 460
+IDENTITY PL | sample contracts stored 3 | observations: agree 27, disagree 57, ambiguous 5, not matched to any position 20, rule cannot say 18 | last day as c1 vs anchor: PLF5^0 last_trade+0 bd; PLF5^0 first_notice+19 bd; PLF5^0 expiry+0 bd
+IDENTITY PL | curve12 depth: design months with the far leg inside the pulled positions 166 | beyond the pulled depth 0 | far contract not listed 0 | unknown 280 | first covered month 1973-01
+IDENTITY VERDICT PL | PARTIAL | missing: roll rule not confirmed (agree 27 of 84 matched)
+IDENTITY C | Corn | positions with design data: monthly 9 of 9 (1,2,3,4,5,6,7,8,9), daily 2 of 2 (1,2) | c1 monthly from 1973-01-31
+IDENTITY C | calendar: 280 contracts asked, 280 listed (delivery 1974-03 .. 2029-12) | listed months HKNUZ | contracts per design year: typical 5, min 5, max 5 | anchor first_notice present for 195 of 195 design-era contracts | first notice 195 | expiry 195
+IDENTITY C | sample contracts stored 3 | observations: agree 116, disagree 20, ambiguous 1, not matched to any position 11, rule cannot say 10 | last day as c1 vs anchor: CZ5^0 last_trade+0 bd; CZ5^0 first_notice+10 bd; CZ5^0 expiry+0 bd
+IDENTITY C | curve12 depth: design months with the far leg inside the pulled positions 456 | beyond the pulled depth 0 | far contract not listed 0 | unknown 0 | first covered month 1973-01
+IDENTITY VERDICT C | PARTIAL | missing: roll rule not confirmed (agree 116 of 136 matched)
+IDENTITY W | Wheat | positions with design data: monthly 9 of 9 (1,2,3,4,5,6,7,8,9), daily 2 of 2 (1,2) | c1 monthly from 1973-01-31
+IDENTITY W | calendar: 280 contracts asked, 280 listed (delivery 1974-03 .. 2029-12) | listed months HKNUZ | contracts per design year: typical 5, min 5, max 5 | anchor first_notice present for 195 of 195 design-era contracts | first notice 195 | expiry 195
+IDENTITY W | sample contracts stored 3 | observations: agree 111, disagree 20, ambiguous 2, not matched to any position 2, rule cannot say 10 | last day as c1 vs anchor: WZ5^0 last_trade+0 bd; WZ5^0 first_notice+10 bd; WZ5^0 expiry+0 bd
+IDENTITY W | curve12 depth: design months with the far leg inside the pulled positions 456 | beyond the pulled depth 0 | far contract not listed 0 | unknown 0 | first covered month 1973-01
+IDENTITY VERDICT W | PARTIAL | missing: roll rule not confirmed (agree 111 of 131 matched)
+IDENTITY S | Soybeans | positions with design data: monthly 11 of 11 (1,2,3,4,5,6,7,8,9,10,11), daily 2 of 2 (1,2) | c1 monthly from 1973-01-31
+IDENTITY S | calendar: 392 contracts asked, 392 listed (delivery 1974-01 .. 2029-11) | listed months FHKNQUX | contracts per design year: typical 7, min 7, max 7 | anchor first_notice present for 273 of 273 design-era contracts | first notice 273 | expiry 273
+IDENTITY S | sample contracts stored 3 | observations: agree 77, disagree 25, ambiguous 6, not matched to any position 38, rule cannot say 10 | last day as c1 vs anchor: SX5^0 last_trade+0 bd; SX5^0 first_notice+10 bd; SX5^0 expiry+0 bd
+IDENTITY S | curve12 depth: design months with the far leg inside the pulled positions 456 | beyond the pulled depth 0 | far contract not listed 0 | unknown 0 | first covered month 1973-01
+IDENTITY VERDICT S | PARTIAL | missing: roll rule not confirmed (agree 77 of 102 matched)
+IDENTITY KC | Coffee | positions with design data: monthly 9 of 9 (1,2,3,4,5,6,7,8,9), daily 2 of 2 (1,2) | c1 monthly from 1979-11-30
+IDENTITY KC | calendar: 280 contracts asked, 280 listed (delivery 1974-03 .. 2029-12) | listed months HKNUZ | contracts per design year: typical 5, min 5, max 5 | anchor first_notice present for 195 of 195 design-era contracts | first notice 195 | expiry 195
+IDENTITY KC | sample contracts stored 3 | observations: agree 76, disagree 39, ambiguous 1, not matched to any position 4, rule cannot say 20 | last day as c1 vs anchor: KCZ5^0 last_trade+0 bd; KCZ5^0 first_notice+20 bd; KCZ5^0 expiry+0 bd
+IDENTITY KC | curve12 depth: design months with the far leg inside the pulled positions 374 | beyond the pulled depth 0 | far contract not listed 0 | unknown 0 | first covered month 1979-11
+IDENTITY VERDICT KC | PARTIAL | missing: roll rule not confirmed (agree 76 of 115 matched)
+IDENTITY CT | Cotton | positions with design data: monthly 9 of 9 (1,2,3,4,5,6,7,8,9), daily 2 of 2 (1,2) | c1 monthly from 1980-01-31
+IDENTITY CT | calendar: 280 contracts asked, 280 listed (delivery 1974-03 .. 2029-12) | listed months HKNVZ | contracts per design year: typical 5, min 5, max 5 | anchor first_notice present for 195 of 195 design-era contracts | first notice 195 | expiry 195
+IDENTITY CT | sample contracts stored 3 | observations: agree 95, disagree 25, ambiguous 0, not matched to any position 5, rule cannot say 10 | last day as c1 vs anchor: CTZ5^0 last_trade+0 bd; CTZ5^0 first_notice+10 bd; CTZ5^0 expiry+0 bd
+IDENTITY CT | curve12 depth: design months with the far leg inside the pulled positions 372 | beyond the pulled depth 0 | far contract not listed 0 | unknown 0 | first covered month 1980-01
+IDENTITY VERDICT CT | PARTIAL | missing: roll rule not confirmed (agree 95 of 120 matched)
+IDENTITY LC | Live cattle | positions with design data: monthly 9 of 9 (1,2,3,4,5,6,7,8,9), daily 2 of 2 (1,2) | c1 monthly from 1980-01-31
+IDENTITY LC | calendar: 336 contracts asked, 336 listed (delivery 1974-02 .. 2029-12) | listed months GJMQVZ | contracts per design year: typical 6, min 6, max 6 | anchor first_notice present for 234 of 234 design-era contracts | first notice 234 | expiry 234
+IDENTITY LC | sample contracts stored 3 | observations: agree 14, disagree 33, ambiguous 2, not matched to any position 66, rule cannot say 21 | last day as c1 vs anchor: LCZ5^0 last_trade+0 bd; LCZ5^0 first_notice+21 bd; LCZ5^0 expiry+0 bd
+IDENTITY LC | curve12 depth: design months with the far leg inside the pulled positions 372 | beyond the pulled depth 0 | far contract not listed 0 | unknown 0 | first covered month 1980-01
+IDENTITY VERDICT LC | PARTIAL | missing: roll rule not confirmed (agree 14 of 47 matched)
+IDENTITY summary | PARTIAL 10
+--- IDENTITY BEST (variant with the most agreeing matched observations; registered only at >= 10 matched and >= 99% agreement)
+IDENTITY BEST CL | listed=base anchor=last_trade | PARTIAL | base/last_trade agree 94 disagree 17 | serial/last_trade agree 94 disagree 17 | missing: roll rule not confirmed (agree 94 of 111 matched)
+IDENTITY BEST LCO | listed=base anchor=last_trade | PARTIAL | base/last_trade agree 65 disagree 21 | serial/last_trade agree 65 disagree 21 | missing: roll rule not confirmed (agree 65 of 86 matched)
+IDENTITY BEST NG | listed=base anchor=last_trade | COMPLETE | base/last_trade agree 80 disagree 0 | serial/last_trade agree 80 disagree 0 | missing: nothing
+IDENTITY BEST HO | listed=base anchor=last_trade | COMPLETE | base/last_trade agree 76 disagree 0 | serial/last_trade agree 76 disagree 0 | missing: nothing
+IDENTITY BEST RB | listed=base anchor=last_trade | PARTIAL | base/last_trade agree 0 disagree 0 | serial/last_trade agree 0 disagree 0 | missing: roll rule check (sample contracts matched to the continuous series: L11 Contract sample)
+IDENTITY BEST GC | listed=serial anchor=last_trade | PARTIAL | base/last_trade agree 27 disagree 71 | serial/last_trade agree 70 disagree 28 | base/first_notice agree 8 disagree 71 | serial/first_notice agree 34 disagree 45 | missing: roll rule not confirmed (agree 70 of 98 matched)
+IDENTITY BEST SI | listed=serial anchor=last_trade | PARTIAL | base/last_trade agree 24 disagree 72 | serial/last_trade agree 55 disagree 41 | base/first_notice agree 5 disagree 72 | serial/first_notice agree 18 disagree 59 | missing: roll rule not confirmed (agree 55 of 96 matched)
+IDENTITY BEST HG | listed=serial anchor=last_trade | PARTIAL | base/last_trade agree 22 disagree 57 | serial/last_trade agree 46 disagree 33 | base/first_notice agree 4 disagree 57 | serial/first_notice agree 10 disagree 51 | missing: roll rule not confirmed (agree 46 of 79 matched)
+IDENTITY BEST PL | listed=base anchor=last_trade | PARTIAL | base/last_trade agree 94 disagree 8 | serial/last_trade agree 27 disagree 75 | base/first_notice agree 62 disagree 22 | serial/first_notice agree 27 disagree 57 | missing: roll rule not confirmed (agree 94 of 102 matched)
+IDENTITY BEST C | listed=base anchor=last_trade | PARTIAL | base/last_trade agree 135 disagree 11 | serial/last_trade agree 135 disagree 11 | base/first_notice agree 116 disagree 20 | serial/first_notice agree 116 disagree 20 | missing: roll rule not confirmed (agree 135 of 146 matched)
+IDENTITY BEST W | listed=base anchor=last_trade | PARTIAL | base/last_trade agree 130 disagree 11 | serial/last_trade agree 130 disagree 11 | base/first_notice agree 111 disagree 20 | serial/first_notice agree 111 disagree 20 | missing: roll rule not confirmed (agree 130 of 141 matched)
+IDENTITY BEST S | listed=base anchor=last_trade | PARTIAL | base/last_trade agree 96 disagree 16 | serial/last_trade agree 96 disagree 16 | base/first_notice agree 77 disagree 25 | serial/first_notice agree 77 disagree 25 | missing: roll rule not confirmed (agree 96 of 112 matched)
+IDENTITY BEST SB | listed=base anchor=last_trade | COMPLETE | base/last_trade agree 122 disagree 0 | serial/last_trade agree 122 disagree 0 | missing: nothing
+IDENTITY BEST KC | listed=base anchor=last_trade | PARTIAL | base/last_trade agree 129 disagree 6 | serial/last_trade agree 129 disagree 6 | base/first_notice agree 76 disagree 39 | serial/first_notice agree 76 disagree 39 | missing: roll rule not confirmed (agree 129 of 135 matched)
+IDENTITY BEST CT | listed=base anchor=last_trade | PARTIAL | base/last_trade agree 128 disagree 2 | serial/last_trade agree 128 disagree 2 | base/first_notice agree 95 disagree 25 | serial/first_notice agree 95 disagree 25 | missing: roll rule not confirmed (agree 128 of 130 matched)
+IDENTITY BEST LC | listed=base anchor=first_notice | PARTIAL | base/last_trade agree 28 disagree 40 | serial/last_trade agree 28 disagree 40 | base/first_notice agree 14 disagree 33 | serial/first_notice agree 14 disagree 33 | missing: roll rule not confirmed (agree 14 of 47 matched)
+IDENTITY BEST ED | listed=serial anchor=last_trade | PARTIAL | base/last_trade agree 57 disagree 100 | serial/last_trade agree 127 disagree 30 | missing: roll rule not confirmed (agree 127 of 157 matched)
+IDENTITY BEST FEI | listed=serial anchor=last_trade | PARTIAL | base/last_trade agree 29 disagree 74 | serial/last_trade agree 52 disagree 51 | missing: roll rule not confirmed (agree 52 of 103 matched)
+IDENTITY BEST FSS | listed=base anchor=last_trade | PARTIAL | base/last_trade agree 0 disagree 0 | serial/last_trade agree 0 disagree 0 | missing: roll rule check (sample contracts matched to the continuous series: L11 Contract sample)
+IDENTITY BEST FES | listed=base anchor=last_trade | PARTIAL | base/last_trade agree 0 disagree 0 | serial/last_trade agree 0 disagree 0 | missing: roll rule check (sample contracts matched to the continuous series: L11 Contract sample)
+IDENTITY BEST SRA | listed=base anchor=last_trade | PARTIAL | base/last_trade agree 0 disagree 0 | serial/last_trade agree 0 disagree 0 | missing: monthly positions without design data: 1,2,3,4,5,6,7,8,9,10,11,12; roll rule check (sample contracts matched to the continuous series: L11 Contract sample)
+IDENTITY BEST SON3 | listed=base anchor=last_trade | PARTIAL | base/last_trade agree 0 disagree 0 | serial/last_trade agree 0 disagree 0 | missing: monthly positions without design data: 1,2,3,4,5,6,7,8; roll rule check (sample contracts matched to the continuous series: L11 Contract sample)
+--- OBSERVED (rule dates against what LSEG shows)
+OBSERVED CL CLZ5^0 | daily sample last date vs rule last trade: -1 business days
+OBSERVED LCO LCOZ5^0 | daily sample last date vs rule last trade: +0 business days
+OBSERVED NG NGZ5^0 | daily sample last date vs rule last trade: +0 business days
+OBSERVED HO HOZ5^0 | daily sample last date vs rule last trade: +0 business days
+OBSERVED GC GCZ5^0 | daily sample last date vs rule last trade: +0 business days
+OBSERVED SI SIZ5^0 | daily sample last date vs rule last trade: +0 business days
+OBSERVED HG HGZ5^0 | daily sample last date vs rule last trade: +0 business days
+OBSERVED PL PLF5^0 | daily sample last date vs rule last trade: +0 business days
+OBSERVED C CZ5^0 | daily sample last date vs rule last trade: +0 business days
+OBSERVED W WZ5^0 | daily sample last date vs rule last trade: +0 business days
+OBSERVED S SX5^0 | daily sample last date vs rule last trade: +0 business days
+OBSERVED SB SBV5^0 | daily sample last date vs rule last trade: +0 business days
+OBSERVED KC KCZ5^0 | daily sample last date vs rule last trade: +0 business days
+OBSERVED CT CTZ5^0 | daily sample last date vs rule last trade: +0 business days
+OBSERVED LC LCZ5^0 | daily sample last date vs rule last trade: +0 business days
+OBSERVED ED EDZ5^0 | daily sample last date vs rule last trade: +0 business days
+OBSERVED FEI FEIZ5^0 | daily sample last date vs rule last trade: +0 business days
+OBSERVED CLc1 TR.ExpiryDate series | dates 25 | equal to the rule's held contract last trade 0 | within 3 days 0 | other 0 | not comparable 25
+OBSERVED GCc1 TR.ExpiryDate series | dates 25 | equal to the rule's held contract last trade 0 | within 3 days 0 | other 0 | not comparable 25
+--- PROBE (L11 identity probe and calendar test: which guesses returned dates)
+PROBE Calendar all blocks TR.EXPIRYDATE | contracts 12736 | with a date 0 | first error NULL
+PROBE Calendar all blocks TR.LASTTRADEDATE | contracts 12736 | with a date 0 | first error The access to field(s) denied.
+PROBE Calendar all blocks TR.LASTTRADINGDATE | contracts 12736 | with a date 0 | first error no output
+PROBE Calendar all blocks TR.FIRSTNOTICEDATE | contracts 12736 | with a date 0 | first error no output
+PROBE Calendar test L11-114 TR.EXPIRYDATE | contracts 12 | with a date 0 | first error Unable to collect data for the field 'TR.EXPIRYDATE' and som
+PROBE Calendar test L11-115 TR.EXPIRATIONDATE | contracts 12 | with a date 0 | first error no output
+PROBE Calendar test L11-116 TR.LASTTRADEDATE | contracts 12 | with a date 0 | first error The access to field(s) denied.
+PROBE Calendar test L11-117 TR.LASTTRADINGDATE | contracts 12 | with a date 0 | first error no output
+PROBE Calendar test L11-118 TR.LASTTRADINGDAY | contracts 12 | with a date 0 | first error no output
+PROBE Calendar test L11-119 TR.FIRSTNOTICEDATE | contracts 12 | with a date 0 | first error no output
+PROBE Calendar test L11-120 TR.FIRSTNOTICEDAY | contracts 12 | with a date 0 | first error no output
+PROBE Calendar test L11-121 TR.FIRSTDELIVERYDATE | contracts 12 | with a date 0 | first error no output
+PROBE Calendar test L11-122 TR.LASTDELIVERYDATE | contracts 12 | with a date 0 | first error no output
+PROBE Calendar test L11-123 TR.FIRSTTRADEDATE | contracts 12 | with a date 0 | first error Unable to collect data for the field 'TR.FirstTradeDate' and
+PROBE Identity probe L11-106 TR.EXPIRYDATE | contracts 13 | with a date 0 | first error Unable to collect data for the field 'TR.EXPIRYDATE' and som
+PROBE Identity probe L11-107 TR.FIRSTNOTICEDATE | contracts 7 | with a date 0 | first error no output
+PROBE Identity probe L11-108 EXPIR_DATE | contracts 5 | with a date 0 | first error The record could not be found (Error code: 0)
+PROBE Identity probe L11-112 LTDT | contracts 1 | with a date 0 | first error no output
+PROBE series L11 L11-102 | CLc1|TR.EXPIRYDATE | ok | design count 25 | Expiry Date
+PROBE series L11 L11-103 | CLc12|TR.EXPIRYDATE | empty | design count 0 | 
+PROBE series L11 L11-104 | GCc1|TR.EXPIRYDATE | ok | design count 25 | Expiry Date
+PROBE series L11 L11-105 | FEIc1|TR.EXPIRYDATE | empty | design count 0 | 
+PROBE series L11 L11-109 | <CLc1>|LTDT | invalid | design count 0 | $$ER: E100,INVALID CODE OR EXPRESSION ENTERED
+PROBE series L11 L11-110 | NCLCS00|LTDT | invalid | design count 0 | $$ER: E100,INVALID CODE OR EXPRESSION ENTERED
+PROBE series L11 L11-111 | NCLCS01|LTDT | invalid | design count 0 | $$ER: E100,INVALID CODE OR EXPRESSION ENTERED
+PROBE series L11 L11-113 | <CLZ5^0>|X | ok | design count 35 | NYM-LIGHT CRUDE OIL DEC 2005 - SETT. PRICE
+--- ENGINE (series mapped to engine ids)
+ENGINE bd_au_10y | M DS:BMAU10Y|RY | redemption yield (Datastream benchmark) | first design 1987-03-31 | design count 286 | last_weekday
+ENGINE bd_au_10y | M DS:BMAU10Y|RI | total return index (Datastream benchmark) | first design 1987-02-27 | design count 287 | last_weekday
+ENGINE bd_ca_10y | M DS:BMCN10Y|RY | redemption yield (Datastream benchmark) | first design 1985-01-31 | design count 312 | last_weekday
+ENGINE bd_ca_10y | M DS:BMCN10Y|RI | total return index (Datastream benchmark) | first design 1984-12-31 | design count 313 | last_weekday
+ENGINE bd_de_10y | M DS:BMBD10Y|RY | redemption yield (Datastream benchmark) | first design 1980-01-31 | design count 372 | last_weekday
+ENGINE bd_de_10y | M DS:BMBD10Y|RI | total return index (Datastream benchmark) | first design 1979-12-31 | design count 373 | last_weekday
+ENGINE bd_gb_10y | M DS:BMUK10Y|RY | redemption yield (Datastream benchmark) | first design 1980-01-31 | design count 372 | last_weekday
+ENGINE bd_gb_10y | M DS:BMUK10Y|RI | total return index (Datastream benchmark) | first design 1979-12-31 | design count 373 | last_weekday
+ENGINE bd_jp_10y | M DS:BMJP10Y|RY | redemption yield (Datastream benchmark) | first design 1984-01-31 | design count 324 | last_weekday
+ENGINE bd_jp_10y | M DS:BMJP10Y|RI | total return index (Datastream benchmark) | first design 1983-12-30 | design count 325 | last_weekday
+ENGINE bd_us_10y | M DS:BMUS10Y|RY | redemption yield (Datastream benchmark) | first design 1980-01-31 | design count 372 | last_weekday
+ENGINE bd_us_10y | M DS:BMUS10Y|RI | total return index (Datastream benchmark) | first design 1979-12-31 | design count 373 | last_weekday
+ENGINE bd_us_2y | M DS:BMUS02Y|RY | redemption yield (Datastream benchmark) | first design 1980-01-31 | design count 372 | last_weekday
+ENGINE bd_us_2y | M DS:BMUS02Y|RI | total return index (Datastream benchmark) | first design 1979-12-31 | design count 373 | last_weekday
+ENGINE bd_us_30y | M DS:BMUS30Y|RY | redemption yield (Datastream benchmark) | first design 1980-01-31 | design count 372 | last_weekday
+ENGINE bd_us_30y | M DS:BMUS30Y|RI | total return index (Datastream benchmark) | first design 1979-12-31 | design count 373 | last_weekday
+ENGINE bd_us_5y | M DS:BMUS05Y|RY | redemption yield (Datastream benchmark) | first design 1980-01-31 | design count 372 | last_weekday
+ENGINE bd_us_5y | M DS:BMUS05Y|RI | total return index (Datastream benchmark) | first design 1979-12-31 | design count 373 | last_weekday
+ENGINE card3_r4:spx_fwd_eps | M DS:@:USSP500|A12FE | S&P 500 12-month forward EPS (IBES aggregate), car | first design 1985-01-31 | design count 312 | last_weekday
+ENGINE cm_brent | D HP:LCOc1|CLOSE | continuous c1 daily close | first design 1990-01-02 | design count 5335 | daily
+ENGINE cm_brent | M HP:LCOc1|CLOSE | continuous c1 month-end close (contract identity:  | first design 1988-06-30 | design count 271 | calendar_me
+ENGINE cm_cattle | D HP:LCc1|CLOSE | continuous c1 daily close | first design 1990-01-02 | design count 5297 | daily
+ENGINE cm_cattle | M HP:LCc1|CLOSE | continuous c1 month-end close (contract identity:  | first design 1980-01-31 | design count 372 | calendar_me
+ENGINE cm_coffee | D HP:KCc1|CLOSE | continuous c1 daily close | first design 1990-01-02 | design count 5255 | daily
+ENGINE cm_coffee | M HP:KCc1|CLOSE | continuous c1 month-end close (contract identity:  | first design 1979-11-30 | design count 374 | calendar_me
+ENGINE cm_copper | D HP:HGc1|CLOSE | continuous c1 daily close | first design 1990-01-02 | design count 5268 | daily
+ENGINE cm_copper | M HP:HGc1|CLOSE | continuous c1 month-end close (contract identity:  | first design 1988-07-31 | design count 270 | calendar_me
+ENGINE cm_corn | D HP:Cc1|CLOSE | continuous c1 daily close | first design 1990-01-02 | design count 5296 | daily
+ENGINE cm_corn | M HP:Cc1|CLOSE | continuous c1 month-end close (contract identity:  | first design 1973-01-31 | design count 456 | calendar_me
+ENGINE cm_cotton | D HP:CTc1|CLOSE | continuous c1 daily close | first design 1990-01-02 | design count 5285 | daily
+ENGINE cm_cotton | M HP:CTc1|CLOSE | continuous c1 month-end close (contract identity:  | first design 1980-01-31 | design count 372 | calendar_me
+ENGINE cm_gasoline | D HP:RBc1|CLOSE | continuous c1 daily close | first design 2005-10-03 | design count 1321 | daily
+ENGINE cm_gasoline | M HP:RBc1|CLOSE | continuous c1 month-end close (contract identity:  | first design 2005-10-31 | design count 63 | calendar_me
+ENGINE cm_gold | D HP:GCc1|CLOSE | continuous c1 daily close | first design 1990-01-02 | design count 5269 | daily
+ENGINE cm_gold | M HP:GCc1|CLOSE | continuous c1 month-end close (contract identity:  | first design 1978-01-31 | design count 396 | calendar_me
+ENGINE cm_heatoil | D HP:HOc1|CLOSE | continuous c1 daily close | first design 1990-01-02 | design count 5268 | daily
+ENGINE cm_heatoil | M HP:HOc1|CLOSE | continuous c1 month-end close (contract identity:  | first design 1978-11-30 | design count 386 | calendar_me
+ENGINE cm_natgas | D HP:NGc1|CLOSE | continuous c1 daily close | first design 1990-04-03 | design count 5204 | daily
+ENGINE cm_natgas | M HP:NGc1|CLOSE | continuous c1 month-end close (contract identity:  | first design 1990-04-30 | design count 249 | calendar_me
+ENGINE cm_platinum | D HP:PLc1|CLOSE | continuous c1 daily close | first design 1990-01-02 | design count 4488 | daily
+ENGINE cm_platinum | M HP:PLc1|CLOSE | continuous c1 month-end close (contract identity:  | first design 1973-01-31 | design count 446 | calendar_me
+ENGINE cm_silver | D HP:SIc1|CLOSE | continuous c1 daily close | first design 1990-01-02 | design count 5258 | daily
+ENGINE cm_silver | M HP:SIc1|CLOSE | continuous c1 month-end close (contract identity:  | first design 1973-01-31 | design count 456 | calendar_me
+ENGINE cm_soybeans | D HP:Sc1|CLOSE | continuous c1 daily close | first design 1990-01-02 | design count 5295 | daily
+ENGINE cm_soybeans | M HP:Sc1|CLOSE | continuous c1 month-end close (contract identity:  | first design 1973-01-31 | design count 456 | calendar_me
+ENGINE cm_sugar | D HP:SBc1|CLOSE | continuous c1 daily close | first design 1990-01-02 | design count 5255 | daily
+ENGINE cm_sugar | M HP:SBc1|CLOSE | continuous c1 month-end close (contract identity:  | first design 1973-01-31 | design count 456 | calendar_me
+ENGINE cm_wheat | D HP:Wc1|CLOSE | continuous c1 daily close | first design 1990-01-02 | design count 5296 | daily
+ENGINE cm_wheat | M HP:Wc1|CLOSE | continuous c1 month-end close (contract identity:  | first design 1973-01-31 | design count 456 | calendar_me
+ENGINE cm_wti | D HP:CLc1|CLOSE | continuous c1 daily close | first design 1990-01-02 | design count 5269 | daily
+ENGINE cm_wti | M HP:CLc1|CLOSE | continuous c1 month-end close (contract identity:  | first design 1983-03-31 | design count 334 | calendar_me
+ENGINE eq_au_asx | M RD:.AXJO|TR.PRICECLOSE | price index close (same index as the free source) | first design 1992-05-29 | design count 224 | last_weekday
+ENGINE eq_br_ibov | M RD:.BVSP|TR.PRICECLOSE | price index close (same index as the free source) | first design 1982-01-29 | design count 348 | last_trading_or_other
+ENGINE eq_ca_tsx | M RD:.GSPTSE|TR.PRICECLOSE | price index close (same index as the free source) | first design 1980-07-15 | design count 363 | last_weekday
+ENGINE eq_de_dax | M RD:.GDAXI|TR.PRICECLOSE | price index close (same index as the free source) | first design 1987-12-30 | design count 277 | last_trading_or_other
+ENGINE eq_eu_stoxx50 | M RD:.STOXX50E|TR.PRICECLOSE | price index close (same index as the free source) | first design 1986-12-31 | design count 289 | last_weekday
+ENGINE eq_fr_cac | M RD:.FCHI|TR.PRICECLOSE | price index close (same index as the free source) | first design 1987-07-31 | design count 282 | last_weekday
+ENGINE eq_gb_ftse | M RD:.FTSE|TR.PRICECLOSE | price index close (same index as the free source) | first design 1984-01-31 | design count 324 | last_weekday
+ENGINE eq_hk_hsi | M RD:.HSI|TR.PRICECLOSE | price index close (same index as the free source) | first design 1975-01-31 | design count 432 | last_weekday
+ENGINE eq_in | M RD:.BSESN|TR.PRICECLOSE | price index close (same index as the free source) | first design 1979-04-27 | design count 381 | last_trading_or_other
+ENGINE eq_jp_nikkei | M RD:.N225|TR.PRICECLOSE | price index close (same index as the free source) | first design 1975-01-25 | design count 432 | last_trading_or_other
+ENGINE eq_kr_kospi | M RD:.KS11|TR.PRICECLOSE | price index close (same index as the free source) | first design 1981-04-30 | design count 357 | last_trading_or_other
+ENGINE eq_mx_ipc | M RD:.MXX|TR.PRICECLOSE | price index close (same index as the free source) | first design 1987-01-30 | design count 288 | last_weekday
+ENGINE eq_tw | M RD:.TWII|TR.PRICECLOSE | price index close (same index as the free source) | first design 1975-01-31 | design count 432 | last_trading_or_other
+ENGINE eq_us_ndx | M RD:.NDX|TR.PRICECLOSE | price index close (same index as the free source) | first design 1985-09-30 | design count 304 | last_weekday
+ENGINE eq_us_r2k | M RD:.RUT|TR.PRICECLOSE | price index close (same index as the free source) | first design 1978-12-29 | design count 385 | last_weekday
+ENGINE eq_us_spx | M DS:S&PCOMP|PI | S&P 500 price index | first design 1969-12-31 | design count 493 | last_weekday
+ENGINE eq_us_spx | M DS:S&PCOMP|RI | S&P 500 total return index | first design 1988-01-29 | design count 276 | last_weekday
+ENGINE fx_aud | D HP:AUD=|BID | spot daily | first design 1990-01-02 | design count 5473 | daily
+ENGINE fx_aud | M RH:AUD=|BID | spot month-end (RHistory label) | first design 1975-01-31 | design count 432 | calendar_me
+ENGINE fx_brl | D HP:BRL=|BID | spot daily | first design 1991-01-02 | design count 5209 | daily
+ENGINE fx_brl | M RH:BRL=|BID | spot month-end (RHistory label) | first design 1991-01-31 | design count 240 | calendar_me
+ENGINE fx_cad | D HP:CAD=|BID | spot daily | first design 1990-01-02 | design count 5471 | daily
+ENGINE fx_cad | M RH:CAD=|BID | spot month-end (RHistory label) | first design 1975-01-31 | design count 432 | calendar_me
+ENGINE fx_chf | D HP:CHF=|BID | spot daily | first design 1990-01-02 | design count 5471 | daily
+ENGINE fx_chf | M RH:CHF=|BID | spot month-end (RHistory label) | first design 1975-01-31 | design count 432 | calendar_me
+ENGINE fx_eur | D HP:EUR=|BID | spot daily | first design 1990-01-02 | design count 5471 | daily
+ENGINE fx_eur | M RH:EUR=|BID | spot month-end (RHistory label) | first design 1975-01-31 | design count 432 | calendar_me
+ENGINE fx_gbp | D HP:GBP=|BID | spot daily | first design 1990-01-02 | design count 5471 | daily
+ENGINE fx_gbp | M RH:GBP=|BID | spot month-end (RHistory label) | first design 1975-01-31 | design count 432 | calendar_me
+ENGINE fx_jpy | D HP:JPY=|BID | spot daily | first design 1990-01-02 | design count 5471 | daily
+ENGINE fx_jpy | M RH:JPY=|BID | spot month-end (RHistory label) | first design 1975-01-31 | design count 432 | calendar_me
+ENGINE fx_krw | D HP:KRW=|BID | spot daily | first design 1990-01-03 | design count 5461 | daily
+ENGINE fx_krw | M RH:KRW=|BID | spot month-end (RHistory label) | first design 1981-04-30 | design count 357 | calendar_me
+ENGINE fx_mxn | D HP:MXN=|BID | spot daily | first design 1990-01-02 | design count 5462 | daily
+ENGINE fx_mxn | M RH:MXN=|BID | spot month-end (RHistory label) | first design 1989-11-30 | design count 254 | calendar_me
+ENGINE fx_nok | D HP:NOK=|BID | spot daily | first design 1990-01-02 | design count 5471 | daily
+ENGINE fx_nok | M RH:NOK=|BID | spot month-end (RHistory label) | first design 1975-01-31 | design count 432 | calendar_me
+ENGINE fx_nzd | D HP:NZD=|BID | spot daily | first design 1990-01-02 | design count 5471 | daily
+ENGINE fx_nzd | M RH:NZD=|BID | spot month-end (RHistory label) | first design 1975-01-31 | design count 432 | calendar_me
+ENGINE fx_sek | D HP:SEK=|BID | spot daily | first design 1990-01-02 | design count 5471 | daily
+ENGINE fx_sek | M RH:SEK=|BID | spot month-end (RHistory label) | first design 1975-01-31 | design count 432 | calendar_me
+ENGINE fx_zar | D HP:ZAR=|BID | spot daily | first design 1990-01-02 | design count 5468 | daily
+ENGINE fx_zar | M RH:ZAR=|BID | spot month-end (RHistory label) | first design 1975-01-31 | design count 432 | calendar_me
+ENGINE rate3m:AU | M DS:ECAUD3M|X | 3-month deposit rate (LSEG; card 3 R1 history befo | first design 1997-04-30 | design count 165 | last_weekday
+ENGINE rate3m:CA | M DS:ECCAD3M|X | 3-month deposit rate (LSEG; card 3 R1 history befo | first design 1975-01-31 | design count 432 | last_weekday
+ENGINE rate3m:CH | M DS:ECSWF3M|X | 3-month deposit rate (LSEG; card 3 R1 history befo | first design 1975-01-31 | design count 432 | last_weekday
+ENGINE rate3m:DE | M DS:ECWGM3M|X | 3-month deposit rate (LSEG; card 3 R1 history befo | first design 1975-01-31 | design count 432 | last_weekday
+ENGINE rate3m:EZ | M DS:ECEUR3M|X | 3-month deposit rate (LSEG; card 3 R1 history befo | first design 1999-01-29 | design count 144 | last_weekday
+ENGINE rate3m:GB | M DS:ECUKP3M|X | 3-month deposit rate (LSEG; card 3 R1 history befo | first design 1975-01-31 | design count 432 | last_weekday
+ENGINE rate3m:JP | M DS:ECJAP3M|X | 3-month deposit rate (LSEG; card 3 R1 history befo | first design 1978-08-31 | design count 389 | last_weekday
+ENGINE rate3m:NO | M DS:ECNOR3M|X | 3-month deposit rate (LSEG; card 3 R1 history befo | first design 1997-04-30 | design count 165 | last_weekday
+ENGINE rate3m:NZ | M DS:ECNZD3M|X | 3-month deposit rate (LSEG; card 3 R1 history befo | first design 1997-04-30 | design count 165 | last_weekday
+ENGINE rate3m:SE | M DS:ECSWE3M|X | 3-month deposit rate (LSEG; card 3 R1 history befo | first design 1997-04-30 | design count 165 | last_weekday
+ENGINE rate3m:US | M DS:ECUSD3M|X | 3-month deposit rate (LSEG; card 3 R1 history befo | first design 1975-01-31 | design count 432 | last_weekday
+ENGINE sr_usd | M DS:<EDc1>|X | Eurodollar c1 (strip positions: lseg_roots.csv) | first design 1981-12-31 | design count 349 | last_weekday
+ENGINE st_au_2y | M DS:BMAU02Y|RY | redemption yield (Datastream benchmark) | first design 1987-03-31 | design count 286 | last_weekday
+ENGINE st_au_2y | M DS:BMAU02Y|RI | total return index (Datastream benchmark) | first design 1987-02-27 | design count 287 | last_weekday
+ENGINE st_ca_2y | M DS:BMCN02Y|RY | redemption yield (Datastream benchmark) | first design 1985-01-31 | design count 312 | last_weekday
+ENGINE st_ca_2y | M DS:BMCN02Y|RI | total return index (Datastream benchmark) | first design 1984-12-31 | design count 313 | last_weekday
+ENGINE st_de_2y | M DS:BMBD02Y|RY | redemption yield (Datastream benchmark) | first design 1980-01-31 | design count 372 | last_weekday
+ENGINE st_de_2y | M DS:BMBD02Y|RI | total return index (Datastream benchmark) | first design 1979-12-31 | design count 373 | last_weekday
+ENGINE st_gb_5y | M DS:BMUK05Y|RY | redemption yield (Datastream benchmark) | first design 1980-01-31 | design count 372 | last_weekday
+ENGINE st_gb_5y | M DS:BMUK05Y|RI | total return index (Datastream benchmark) | first design 1979-12-31 | design count 373 | last_weekday
+ENGINE st_jp_2y | M DS:BMJP02Y|RY | redemption yield (Datastream benchmark) | first design 1982-01-29 | design count 348 | last_weekday
+ENGINE st_jp_2y | M DS:BMJP02Y|RI | total return index (Datastream benchmark) | first design 1981-12-31 | design count 349 | last_weekday
+--- SEALED (structure only, from the catalog; no sealed value is opened)
+SEALED L1a | series with observations after 2010 128 | sealed observations 24073
+SEALED L1b | series with observations after 2010 67 | sealed observations 11924
+SEALED L2a | series with observations after 2010 118 | sealed observations 22281
+SEALED L2b | series with observations after 2010 61 | sealed observations 11319
+SEALED L3 | series with observations after 2010 139 | sealed observations 26186
+SEALED L4a | series with observations after 2010 109 | sealed observations 20710
+SEALED L4b | series with observations after 2010 150 | sealed observations 28499
+SEALED L5 | series with observations after 2010 114 | sealed observations 19399
+SEALED L6 | series with observations after 2010 88 | sealed observations 16720
+SEALED L7 | series with observations after 2010 121 | sealed observations 19749
+SEALED L8 | series with observations after 2010 148 | sealed observations 26658
+SEALED L9a | series with observations after 2010 46 | sealed observations 184185
+SEALED L9b | series with observations after 2010 73 | sealed observations 294339
+SEALED L10 | series with observations after 2010 109 | sealed observations 50863
+SEALED L11 | series with observations after 2010 41 | sealed observations 19775
+=== END === 1097s

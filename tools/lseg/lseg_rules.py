@@ -21,7 +21,7 @@ import pandas as pd
 
 import lsegdata as LD
 
-VERSION = "lseg_rules-1.0.0"
+VERSION = "lseg_rules-1.0.1"
 CYCLE = {
     "CL": "FGHJKMNQUVXZ", "LCO": "FGHJKMNQUVXZ", "NG": "FGHJKMNQUVXZ", "HO": "FGHJKMNQUVXZ", "RB": "FGHJKMNQUVXZ",
     "GC": "GJMQVZ", "SI": "HKNUZ", "HG": "HKNUZ", "PL": "FJNV",
@@ -151,10 +151,11 @@ def rule_calendar(roots, variant="base", y0=1972, y1=2029):
                 recs.append({"root": root, "delivery": "%d-%02d" % (y, m),
                              "ric": "%s%s%d^%d" % (rr, LD.MONTH_CODES[m - 1], y % 10, (y // 10) % 10),
                              "listed": True, "n_fields_ok": 0, "expiry": lt, "last_trade": lt, "first_notice": fn,
+                             "last_trade_m1": _back(lt, 1, MARKET.get(root, "US")),
                              "first_delivery": None, "last_delivery": None,
                              "serial": LD.MONTH_CODES[m - 1] not in CYCLE[root]})
     df = pd.DataFrame(recs)
-    for c in LD.CAL_ROLES:
+    for c in list(LD.CAL_ROLES) + ["last_trade_m1"]:
         df[c] = pd.to_datetime(df[c])
     return df
 
@@ -163,9 +164,10 @@ class RuleCalendar(LD.Calendar):
     """Calendar with serial months held only while they are among the nearest SERIAL_NEAR calendar months of the day
     (a serial contract is listed only a few months ahead)."""
 
-    def __init__(self, roots, variant="base"):
+    def __init__(self, roots, variant="base", near=None, cal=None):
         self.variant = variant
-        super().__init__(rule_calendar(roots, variant), roots)
+        self.near = near                       # overrides SERIAL_NEAR (number of nearest calendar months listed)
+        super().__init__(rule_calendar(roots, variant) if cal is None else cal, roots)
 
     def _live(self, root, day):
         live, col = super()._live(root, day)
@@ -174,5 +176,5 @@ class RuleCalendar(LD.Calendar):
         p = pd.Period(pd.Timestamp(day), "M")
         dm = pd.PeriodIndex(live["delivery"], freq="M")
         ahead = (dm - p).map(lambda x: x.n)
-        keep = (~live["serial"]) | (ahead < SERIAL_NEAR[root])
+        keep = (~live["serial"]) | (ahead < (self.near or SERIAL_NEAR[root]))
         return live[keep].reset_index(drop=True), col

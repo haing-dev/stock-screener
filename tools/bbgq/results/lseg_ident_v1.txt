@@ -1,0 +1,330 @@
+=== lseg_ident_v1 === 2026-11-24 19:43
+lsegdata lsegdata-1.0.0 | lseg_rules-1.0.1 | LOCK 94498c88231cf94e511de81372d7689a7dd4a86eb34172c4ae59a125ee88d42b
+SAMPLE CL CLZ5^9 M | L11 | dates 37 | matched to one position 24 | none 1 | several 12 | first 1992-11-30 last 1995-11-30
+SAMPLE CL CLZ5^0 M | L11 | dates 47 | matched to one position 25 | none 21 | several 1 | first 2002-01-31 last 2005-11-30
+SAMPLE CL CLZ5^0 D | L11 | dates 79 | matched to one position 43 | none 36 | several 0 | first 2005-08-01 last 2005-11-18
+SAMPLE CL CLZ5^0 M | L11 | dates 35 | matched to one position 19 | none 16 | several 0 | first 2002-12-31 last 2005-10-31
+SAMPLE LCO LCOZ5^9 M | L11 | dates 13 | matched to one position 9 | none 1 | several 3 | first 1994-11-30 last 1995-11-30
+SAMPLE LCO LCOZ5^0 M | L11 | dates 37 | matched to one position 34 | none 1 | several 2 | first 2002-11-30 last 2005-11-30
+SAMPLE LCO LCOZ5^0 D | L11 | dates 76 | matched to one position 43 | none 33 | several 0 | first 2005-08-01 last 2005-11-15
+SAMPLE NG NGZ5^9 M | L11 | dates 19 | matched to one position 16 | none 1 | several 2 | first 1994-05-31 last 1995-11-30
+SAMPLE NG NGZ5^0 M | L11 | dates 38 | matched to one position 23 | none 14 | several 1 | first 2002-10-31 last 2005-11-30
+SAMPLE NG NGZ5^0 D | L11 | dates 83 | matched to one position 41 | none 42 | several 0 | first 2005-08-01 last 2005-11-28
+SAMPLE HO HOZ5^9 M | L11 | dates 18 | matched to one position 17 | none 0 | several 1 | first 1994-06-30 last 1995-11-30
+SAMPLE HO HOZ5^0 M | L11 | dates 18 | matched to one position 18 | none 0 | several 0 | first 2004-06-30 last 2005-11-30
+SAMPLE HO HOZ5^0 D | L11 | dates 85 | matched to one position 41 | none 44 | several 0 | first 2005-08-01 last 2005-11-30
+SAMPLE GC GCZ5^9 M | L11 | dates 48 | matched to one position 29 | none 19 | several 0 | first 1992-01-31 last 1995-12-31
+SAMPLE GC GCZ5^0 M | L11 | dates 48 | matched to one position 29 | none 19 | several 0 | first 2002-01-31 last 2005-12-31
+SAMPLE GC GCZ5^0 D | L11 | dates 104 | matched to one position 40 | none 63 | several 1 | first 2005-08-01 last 2005-12-28
+SAMPLE SI SIZ5^9 M | L11 | dates 38 | matched to one position 28 | none 10 | several 0 | first 1992-11-30 last 1995-12-31
+SAMPLE SI SIZ5^0 M | L11 | dates 48 | matched to one position 27 | none 21 | several 0 | first 2002-01-31 last 2005-12-31
+SAMPLE SI SIZ5^0 D | L11 | dates 104 | matched to one position 41 | none 63 | several 0 | first 2005-08-01 last 2005-12-28
+SAMPLE HG HGZ5^9 M | L11 | dates 24 | matched to one position 21 | none 1 | several 2 | first 1994-01-31 last 1995-12-31
+SAMPLE HG HGZ5^0 M | L11 | dates 25 | matched to one position 18 | none 7 | several 0 | first 2003-12-31 last 2005-12-31
+SAMPLE HG HGZ5^0 D | L11 | dates 104 | matched to one position 40 | none 63 | several 1 | first 2005-08-01 last 2005-12-28
+SAMPLE PL PLF5^9 M | L11 | dates 15 | matched to one position 13 | none 1 | several 1 | first 1993-11-30 last 1995-01-31
+SAMPLE PL PLF5^0 M | L11 | dates 11 | matched to one position 9 | none 1 | several 1 | first 2004-03-31 last 2005-01-31
+SAMPLE PL PLF5^0 D | L11 | dates 101 | matched to one position 80 | none 18 | several 3 | first 2004-09-01 last 2005-01-27
+SAMPLE C CZ5^9 M | L11 | dates 25 | matched to one position 23 | none 1 | several 1 | first 1993-12-31 last 1995-12-31
+SAMPLE C CZ5^0 M | L11 | dates 37 | matched to one position 27 | none 10 | several 0 | first 2002-12-31 last 2005-12-31
+SAMPLE C CZ5^0 D | L11 | dates 96 | matched to one position 96 | none 0 | several 0 | first 2005-08-01 last 2005-12-14
+SAMPLE W WZ5^9 M | L11 | dates 19 | matched to one position 18 | none 1 | several 0 | first 1994-06-30 last 1995-12-31
+SAMPLE W WZ5^0 M | L11 | dates 30 | matched to one position 27 | none 1 | several 2 | first 2003-07-31 last 2005-12-31
+SAMPLE W WZ5^0 D | L11 | dates 96 | matched to one position 96 | none 0 | several 0 | first 2005-08-01 last 2005-12-14
+SAMPLE S SX5^9 M | L11 | dates 25 | matched to one position 23 | none 1 | several 1 | first 1993-11-30 last 1995-11-30
+SAMPLE S SX5^0 M | L11 | dates 36 | matched to one position 24 | none 7 | several 5 | first 2002-11-30 last 2005-11-30
+SAMPLE S SX5^0 D | L11 | dates 95 | matched to one position 65 | none 30 | several 0 | first 2005-07-01 last 2005-11-14
+SAMPLE SB SBV5^9 M | L11 | dates 22 | matched to one position 20 | none 0 | several 2 | first 1993-12-31 last 1995-09-30
+SAMPLE SB SBV5^0 M | L11 | dates 23 | matched to one position 17 | none 0 | several 6 | first 2003-11-30 last 2005-09-30
+SAMPLE SB SBV5^0 D | L11 | dates 86 | matched to one position 85 | none 0 | several 1 | first 2005-06-01 last 2005-09-30
+SAMPLE KC KCZ5^9 M | L11 | dates 18 | matched to one position 16 | none 1 | several 1 | first 1994-07-31 last 1995-12-31
+SAMPLE KC KCZ5^0 M | L11 | dates 24 | matched to one position 21 | none 3 | several 0 | first 2004-01-31 last 2005-12-31
+SAMPLE KC KCZ5^0 D | L11 | dates 98 | matched to one position 98 | none 0 | several 0 | first 2005-08-01 last 2005-12-19
+SAMPLE CT CTZ5^9 M | L11 | dates 19 | matched to one position 18 | none 1 | several 0 | first 1994-06-30 last 1995-12-31
+SAMPLE CT CTZ5^0 M | L11 | dates 25 | matched to one position 21 | none 4 | several 0 | first 2003-12-31 last 2005-12-31
+SAMPLE CT CTZ5^0 D | L11 | dates 91 | matched to one position 91 | none 0 | several 0 | first 2005-08-01 last 2005-12-07
+SAMPLE LC LCZ5^9 M | L11 | dates 15 | matched to one position 13 | none 1 | several 1 | first 1994-10-31 last 1995-12-31
+SAMPLE LC LCZ5^0 M | L11 | dates 14 | matched to one position 13 | none 0 | several 1 | first 2004-11-30 last 2005-12-31
+SAMPLE LC LCZ5^0 D | L11 | dates 107 | matched to one position 42 | none 65 | several 0 | first 2005-08-01 last 2005-12-30
+SAMPLE ED EDZ5^9 M | L11 | dates 48 | matched to one position 32 | none 12 | several 4 | first 1991-12-31 last 1995-11-30
+SAMPLE ED EDZ5^0 M | L11 | dates 48 | matched to one position 24 | none 24 | several 0 | first 2001-12-31 last 2005-11-30
+SAMPLE ED EDZ5^0 D | L11 | dates 101 | matched to one position 101 | none 0 | several 0 | first 2005-08-01 last 2005-12-19
+SAMPLE FEI FEIZ2^0 M | L11 | dates 48 | matched to one position 30 | none 18 | several 0 | first 1999-01-31 last 2002-12-31
+SAMPLE FEI FEIZ8^0 M | L11 | dates 48 | matched to one position 22 | none 22 | several 4 | first 2005-01-31 last 2008-12-31
+SAMPLE FEI FEIZ5^0 D | L11 | dates 101 | matched to one position 51 | none 49 | several 1 | first 2005-08-01 last 2005-12-19
+--- VARIANTS (agree / disagree / rule cannot say)
+IDENT CL | base/last_trade 94/17/0 | base/last_trade_m1 93/18/0
+IDENT BEST CL | base/last_trade | agree 94 of 111 (84.7%) | cannot say 0
+DIS CL base/last_trade | CLZ5^9 M 1993-02-28 | observed position 21 | rule position 33
+DIS CL base/last_trade | CLZ5^9 M 1993-04-30 | observed position 22 | rule position 31
+DIS CL base/last_trade | CLZ5^9 M 1993-06-30 | observed position 21 | rule position 29
+DIS CL base/last_trade | CLZ5^9 M 1993-07-31 | observed position 21 | rule position 28
+DIS CL base/last_trade | CLZ5^9 M 1993-08-31 | observed position 21 | rule position 27
+DIS CL base/last_trade | CLZ5^9 M 1993-09-30 | observed position 20 | rule position 26
+DIS CL base/last_trade | CLZ5^9 M 1993-10-31 | observed position 20 | rule position 25
+DIS CL base/last_trade | CLZ5^9 M 1993-11-30 | observed position 20 | rule position 24
+DIS CL base/last_trade | CLZ5^9 M 1993-12-31 | observed position 20 | rule position 23
+DIS CL base/last_trade | CLZ5^9 M 1994-01-31 | observed position 20 | rule position 22
+DIS CL base/last_trade | CLZ5^9 M 1994-02-28 | observed position 19 | rule position 21
+DIS CL base/last_trade | CLZ5^9 M 1994-03-31 | observed position 19 | rule position 20
+DIS CL base/last_trade | ... 5 more
+IDENT LCO | base/last_trade 65/21/0 | base/last_trade_m1 63/22/1
+IDENT BEST LCO | base/last_trade | agree 65 of 86 (75.6%) | cannot say 0
+DIS LCO base/last_trade | LCOZ5^0 M 2002-11-30 | observed position 18 | rule position 36
+DIS LCO base/last_trade | LCOZ5^0 M 2002-12-31 | observed position 18 | rule position 35
+DIS LCO base/last_trade | LCOZ5^0 M 2003-01-31 | observed position 18 | rule position 34
+DIS LCO base/last_trade | LCOZ5^0 M 2003-02-28 | observed position 18 | rule position 33
+DIS LCO base/last_trade | LCOZ5^0 M 2003-03-31 | observed position 18 | rule position 32
+DIS LCO base/last_trade | LCOZ5^0 M 2003-04-30 | observed position 18 | rule position 31
+DIS LCO base/last_trade | LCOZ5^0 M 2003-05-31 | observed position 17 | rule position 30
+DIS LCO base/last_trade | LCOZ5^0 M 2003-06-30 | observed position 17 | rule position 29
+DIS LCO base/last_trade | LCOZ5^0 M 2003-07-31 | observed position 17 | rule position 28
+DIS LCO base/last_trade | LCOZ5^0 M 2003-08-31 | observed position 17 | rule position 27
+DIS LCO base/last_trade | LCOZ5^0 M 2003-11-30 | observed position 16 | rule position 24
+DIS LCO base/last_trade | LCOZ5^0 M 2003-12-31 | observed position 16 | rule position 23
+DIS LCO base/last_trade | ... 9 more
+IDENT NG | base/last_trade 80/0/0 | base/last_trade_m1 78/1/1
+IDENT BEST NG | base/last_trade | agree 80 of 80 (100.0%) | cannot say 0
+IDENT HO | base/last_trade 76/0/0 | base/last_trade_m1 39/35/2
+IDENT BEST HO | base/last_trade | agree 76 of 76 (100.0%) | cannot say 0
+IDENT RB | no matched sample observation
+IDENT GC | base/last_trade 27/71/0 | base/last_trade_m1 26/71/1 | base/first_notice 8/71/19 | serial2/last_trade 48/50/0 | serial2/last_trade_m1 47/50/1 | serial2/first_notice 12/67/19 | serial3/last_trade 70/28/0 | serial3/last_trade_m1 69/28/1 | serial3/first_notice 34/45/19 | serial4/last_trade 90/8/0 | serial4/last_trade_m1 89/8/1 | serial4/first_notice 54/25/19
+IDENT BEST GC | serial4/last_trade | agree 90 of 98 (91.8%) | cannot say 0
+DIS GC base/last_trade | GCZ5^9 M 1993-07-31 | observed position 14 | rule position 15
+DIS GC base/last_trade | GCZ5^9 M 1993-10-31 | observed position 14 | rule position 13
+DIS GC base/last_trade | GCZ5^9 M 1993-11-30 | observed position 14 | rule position 13
+DIS GC base/last_trade | GCZ5^9 M 1993-12-31 | observed position 14 | rule position 12
+DIS GC base/last_trade | GCZ5^9 M 1994-01-31 | observed position 13 | rule position 12
+DIS GC base/last_trade | GCZ5^9 M 1994-02-28 | observed position 13 | rule position 11
+DIS GC base/last_trade | GCZ5^9 M 1994-03-31 | observed position 12 | rule position 11
+DIS GC base/last_trade | GCZ5^9 M 1994-04-30 | observed position 12 | rule position 10
+DIS GC base/last_trade | GCZ5^9 M 1994-05-31 | observed position 11 | rule position 10
+DIS GC base/last_trade | GCZ5^9 M 1994-06-30 | observed position 11 | rule position 9
+DIS GC base/last_trade | GCZ5^9 M 1994-07-31 | observed position 10 | rule position 9
+DIS GC base/last_trade | GCZ5^9 M 1994-08-31 | observed position 10 | rule position 8
+DIS GC base/last_trade | ... 59 more
+DIS GC serial4/last_trade | GCZ5^9 M 1993-07-31 | observed position 14 | rule position 16
+DIS GC serial4/last_trade | GCZ5^9 M 1993-08-31 | observed position 14 | rule position 16
+DIS GC serial4/last_trade | GCZ5^9 M 1993-09-30 | observed position 14 | rule position 15
+DIS GC serial4/last_trade | GCZ5^9 M 1993-10-31 | observed position 14 | rule position 15
+DIS GC serial4/last_trade | GCZ5^0 M 2003-07-31 | observed position 14 | rule position 16
+DIS GC serial4/last_trade | GCZ5^0 M 2003-08-31 | observed position 14 | rule position 16
+DIS GC serial4/last_trade | GCZ5^0 M 2003-09-30 | observed position 14 | rule position 15
+DIS GC serial4/last_trade | GCZ5^0 M 2003-10-31 | observed position 14 | rule position 15
+IDENT SI | base/last_trade 24/72/0 | base/last_trade_m1 23/72/1 | base/first_notice 5/72/19 | serial2/last_trade 45/51/0 | serial2/last_trade_m1 43/52/1 | serial2/first_notice 8/69/19 | serial3/last_trade 55/41/0 | serial3/last_trade_m1 53/42/1 | serial3/first_notice 18/59/19 | serial4/last_trade 69/27/0 | serial4/last_trade_m1 67/28/1 | serial4/first_notice 32/45/19
+IDENT BEST SI | serial4/last_trade | agree 69 of 96 (71.9%) | cannot say 0
+DIS SI base/last_trade | SIZ5^9 M 1993-09-30 | observed position 14 | rule position 11
+DIS SI base/last_trade | SIZ5^9 M 1993-10-31 | observed position 14 | rule position 11
+DIS SI base/last_trade | SIZ5^9 M 1993-11-30 | observed position 14 | rule position 11
+DIS SI base/last_trade | SIZ5^9 M 1993-12-31 | observed position 13 | rule position 10
+DIS SI base/last_trade | SIZ5^9 M 1994-01-31 | observed position 13 | rule position 10
+DIS SI base/last_trade | SIZ5^9 M 1994-02-28 | observed position 12 | rule position 10
+DIS SI base/last_trade | SIZ5^9 M 1994-03-31 | observed position 12 | rule position 9
+DIS SI base/last_trade | SIZ5^9 M 1994-04-30 | observed position 11 | rule position 9
+DIS SI base/last_trade | SIZ5^9 M 1994-05-31 | observed position 11 | rule position 8
+DIS SI base/last_trade | SIZ5^9 M 1994-06-30 | observed position 10 | rule position 8
+DIS SI base/last_trade | SIZ5^9 M 1994-07-31 | observed position 10 | rule position 7
+DIS SI base/last_trade | SIZ5^9 M 1994-08-31 | observed position 10 | rule position 7
+DIS SI base/last_trade | ... 60 more
+DIS SI serial4/last_trade | SIZ5^9 M 1993-03-31 | observed position 14 | rule position 16
+DIS SI serial4/last_trade | SIZ5^9 M 1993-09-30 | observed position 14 | rule position 13
+DIS SI serial4/last_trade | SIZ5^9 M 1993-10-31 | observed position 14 | rule position 13
+DIS SI serial4/last_trade | SIZ5^9 M 1993-11-30 | observed position 14 | rule position 13
+DIS SI serial4/last_trade | SIZ5^9 M 1993-12-31 | observed position 13 | rule position 12
+DIS SI serial4/last_trade | SIZ5^9 M 1994-01-31 | observed position 13 | rule position 12
+DIS SI serial4/last_trade | SIZ5^9 M 1994-02-28 | observed position 12 | rule position 11
+DIS SI serial4/last_trade | SIZ5^9 M 1994-03-31 | observed position 12 | rule position 11
+DIS SI serial4/last_trade | SIZ5^9 M 1994-04-30 | observed position 11 | rule position 10
+DIS SI serial4/last_trade | SIZ5^9 M 1994-05-31 | observed position 11 | rule position 10
+DIS SI serial4/last_trade | SIZ5^9 M 1994-06-30 | observed position 10 | rule position 9
+DIS SI serial4/last_trade | SIZ5^9 M 1994-07-31 | observed position 10 | rule position 9
+DIS SI serial4/last_trade | ... 15 more
+IDENT HG | base/last_trade 22/57/0 | base/last_trade_m1 22/57/0 | base/first_notice 4/57/18 | serial2/last_trade 44/35/0 | serial2/last_trade_m1 43/36/0 | serial2/first_notice 8/53/18 | serial3/last_trade 46/33/0 | serial3/last_trade_m1 45/34/0 | serial3/first_notice 10/51/18 | serial4/last_trade 48/31/0 | serial4/last_trade_m1 47/32/0 | serial4/first_notice 12/49/18
+IDENT BEST HG | serial4/last_trade | agree 48 of 79 (60.8%) | cannot say 0
+DIS HG base/last_trade | HGZ5^9 M 1994-01-31 | observed position 17 | rule position 10
+DIS HG base/last_trade | HGZ5^9 M 1994-02-28 | observed position 17 | rule position 10
+DIS HG base/last_trade | HGZ5^9 M 1994-03-31 | observed position 16 | rule position 9
+DIS HG base/last_trade | HGZ5^9 M 1994-06-30 | observed position 15 | rule position 8
+DIS HG base/last_trade | HGZ5^9 M 1994-07-31 | observed position 14 | rule position 7
+DIS HG base/last_trade | HGZ5^9 M 1994-08-31 | observed position 14 | rule position 7
+DIS HG base/last_trade | HGZ5^9 M 1994-09-30 | observed position 13 | rule position 6
+DIS HG base/last_trade | HGZ5^9 M 1994-10-31 | observed position 13 | rule position 6
+DIS HG base/last_trade | HGZ5^9 M 1994-11-30 | observed position 13 | rule position 6
+DIS HG base/last_trade | HGZ5^9 M 1994-12-31 | observed position 12 | rule position 5
+DIS HG base/last_trade | HGZ5^9 M 1995-01-31 | observed position 11 | rule position 5
+DIS HG base/last_trade | HGZ5^9 M 1995-02-28 | observed position 10 | rule position 5
+DIS HG base/last_trade | ... 45 more
+DIS HG serial4/last_trade | HGZ5^9 M 1994-01-31 | observed position 17 | rule position 12
+DIS HG serial4/last_trade | HGZ5^9 M 1994-02-28 | observed position 17 | rule position 11
+DIS HG serial4/last_trade | HGZ5^9 M 1994-03-31 | observed position 16 | rule position 11
+DIS HG serial4/last_trade | HGZ5^9 M 1994-06-30 | observed position 15 | rule position 9
+DIS HG serial4/last_trade | HGZ5^9 M 1994-07-31 | observed position 14 | rule position 9
+DIS HG serial4/last_trade | HGZ5^9 M 1994-08-31 | observed position 14 | rule position 9
+DIS HG serial4/last_trade | HGZ5^9 M 1994-09-30 | observed position 13 | rule position 8
+DIS HG serial4/last_trade | HGZ5^9 M 1994-10-31 | observed position 13 | rule position 8
+DIS HG serial4/last_trade | HGZ5^9 M 1994-11-30 | observed position 13 | rule position 8
+DIS HG serial4/last_trade | HGZ5^9 M 1994-12-31 | observed position 12 | rule position 7
+DIS HG serial4/last_trade | HGZ5^9 M 1995-01-31 | observed position 11 | rule position 7
+DIS HG serial4/last_trade | HGZ5^9 M 1995-02-28 | observed position 10 | rule position 6
+DIS HG serial4/last_trade | ... 19 more
+IDENT PL | base/last_trade 94/8/0 | base/last_trade_m1 94/7/1 | base/first_notice 62/22/18 | serial2/last_trade 34/68/0 | serial2/last_trade_m1 35/66/1 | serial2/first_notice 50/34/18 | serial3/last_trade 27/75/0 | serial3/last_trade_m1 27/74/1 | serial3/first_notice 27/57/18 | serial4/last_trade 22/80/0 | serial4/last_trade_m1 22/79/1 | serial4/first_notice 22/62/18
+IDENT BEST PL | base/last_trade_m1 | agree 94 of 101 (93.1%) | cannot say 1
+DIS PL base/last_trade | PLF5^9 M 1993-11-30 | observed position 6 | rule position 5
+DIS PL base/last_trade | PLF5^9 M 1994-08-31 | observed position 3 | rule position 2
+DIS PL base/last_trade | PLF5^0 M 2004-05-31 | observed position 4 | rule position 3
+DIS PL base/last_trade | PLF5^0 M 2004-06-30 | observed position 4 | rule position 3
+DIS PL base/last_trade | PLF5^0 M 2004-07-31 | observed position 3 | rule position 2
+DIS PL base/last_trade | PLF5^0 M 2004-08-31 | observed position 3 | rule position 2
+DIS PL base/last_trade | PLF5^0 D 2004-10-27 | observed position 1 | rule position 2
+DIS PL base/last_trade | PLF5^0 D 2004-12-10 | observed position 2 | rule position 1
+DIS PL base/last_trade_m1 | PLF5^9 M 1993-11-30 | observed position 6 | rule position 5
+DIS PL base/last_trade_m1 | PLF5^9 M 1994-08-31 | observed position 3 | rule position 2
+DIS PL base/last_trade_m1 | PLF5^0 M 2004-05-31 | observed position 4 | rule position 3
+DIS PL base/last_trade_m1 | PLF5^0 M 2004-06-30 | observed position 4 | rule position 3
+DIS PL base/last_trade_m1 | PLF5^0 M 2004-07-31 | observed position 3 | rule position 2
+DIS PL base/last_trade_m1 | PLF5^0 M 2004-08-31 | observed position 3 | rule position 2
+DIS PL base/last_trade_m1 | PLF5^0 D 2004-12-10 | observed position 2 | rule position 1
+IDENT C | base/last_trade 135/11/0 | base/last_trade_m1 133/12/1 | base/first_notice 116/20/10
+IDENT BEST C | base/last_trade | agree 135 of 146 (92.5%) | cannot say 0
+DIS C base/last_trade | CZ5^9 M 1993-12-31 | observed position 9 | rule position 10
+DIS C base/last_trade | CZ5^9 M 1994-01-31 | observed position 9 | rule position 10
+DIS C base/last_trade | CZ5^9 M 1994-02-28 | observed position 9 | rule position 10
+DIS C base/last_trade | CZ5^9 M 1994-03-31 | observed position 8 | rule position 9
+DIS C base/last_trade | CZ5^9 M 1994-04-30 | observed position 8 | rule position 9
+DIS C base/last_trade | CZ5^0 M 2002-12-31 | observed position 2 | rule position 15
+DIS C base/last_trade | CZ5^0 M 2003-09-30 | observed position 6 | rule position 11
+DIS C base/last_trade | CZ5^0 M 2003-11-30 | observed position 1 | rule position 11
+DIS C base/last_trade | CZ5^0 M 2003-12-31 | observed position 9 | rule position 10
+DIS C base/last_trade | CZ5^0 M 2004-01-31 | observed position 9 | rule position 10
+DIS C base/last_trade | CZ5^0 M 2004-02-29 | observed position 9 | rule position 10
+IDENT W | base/last_trade 130/11/0 | base/last_trade_m1 128/12/1 | base/first_notice 111/20/10
+IDENT BEST W | base/last_trade | agree 130 of 141 (92.2%) | cannot say 0
+DIS W base/last_trade | WZ5^9 M 1994-06-30 | observed position 7 | rule position 8
+DIS W base/last_trade | WZ5^9 M 1994-07-31 | observed position 6 | rule position 7
+DIS W base/last_trade | WZ5^9 M 1994-08-31 | observed position 6 | rule position 7
+DIS W base/last_trade | WZ5^0 M 2003-07-31 | observed position 9 | rule position 12
+DIS W base/last_trade | WZ5^0 M 2003-08-31 | observed position 9 | rule position 12
+DIS W base/last_trade | WZ5^0 M 2003-09-30 | observed position 9 | rule position 11
+DIS W base/last_trade | WZ5^0 M 2003-10-31 | observed position 9 | rule position 11
+DIS W base/last_trade | WZ5^0 M 2003-11-30 | observed position 9 | rule position 11
+DIS W base/last_trade | WZ5^0 M 2004-01-31 | observed position 9 | rule position 10
+DIS W base/last_trade | WZ5^0 M 2004-02-29 | observed position 9 | rule position 10
+DIS W base/last_trade | WZ5^0 M 2004-04-30 | observed position 8 | rule position 9
+IDENT S | base/last_trade 96/16/0 | base/last_trade_m1 94/17/1 | base/first_notice 77/25/10
+IDENT BEST S | base/last_trade | agree 96 of 112 (85.7%) | cannot say 0
+DIS S base/last_trade | SX5^9 M 1993-11-30 | observed position 11 | rule position 14
+DIS S base/last_trade | SX5^9 M 1993-12-31 | observed position 11 | rule position 14
+DIS S base/last_trade | SX5^9 M 1994-01-31 | observed position 10 | rule position 13
+DIS S base/last_trade | SX5^9 M 1994-02-28 | observed position 10 | rule position 13
+DIS S base/last_trade | SX5^9 M 1994-03-31 | observed position 10 | rule position 12
+DIS S base/last_trade | SX5^9 M 1994-04-30 | observed position 10 | rule position 12
+DIS S base/last_trade | SX5^9 M 1994-05-31 | observed position 9 | rule position 11
+DIS S base/last_trade | SX5^9 M 1994-06-30 | observed position 9 | rule position 11
+DIS S base/last_trade | SX5^0 M 2003-03-31 | observed position 11 | rule position 19
+DIS S base/last_trade | SX5^0 M 2003-04-30 | observed position 11 | rule position 19
+DIS S base/last_trade | SX5^0 M 2003-07-31 | observed position 11 | rule position 17
+DIS S base/last_trade | SX5^0 M 2003-10-31 | observed position 11 | rule position 15
+DIS S base/last_trade | ... 4 more
+IDENT SB | base/last_trade 122/0/0 | base/last_trade_m1 108/12/2
+IDENT BEST SB | base/last_trade | agree 122 of 122 (100.0%) | cannot say 0
+IDENT KC | base/last_trade 129/6/0 | base/last_trade_m1 127/7/1 | base/first_notice 76/39/20
+IDENT BEST KC | base/last_trade | agree 129 of 135 (95.6%) | cannot say 0
+DIS KC base/last_trade | KCZ5^0 D 2005-09-21 | observed position 2 | rule position 1
+DIS KC base/last_trade | KCZ5^0 D 2005-09-22 | observed position 2 | rule position 1
+DIS KC base/last_trade | KCZ5^0 D 2005-09-23 | observed position 2 | rule position 1
+DIS KC base/last_trade | KCZ5^0 D 2005-09-26 | observed position 2 | rule position 1
+DIS KC base/last_trade | KCZ5^0 D 2005-09-27 | observed position 2 | rule position 1
+DIS KC base/last_trade | KCZ5^0 D 2005-09-28 | observed position 2 | rule position 1
+IDENT CT | base/last_trade 128/2/0 | base/last_trade_m1 126/3/1 | base/first_notice 95/25/10
+IDENT BEST CT | base/last_trade | agree 128 of 130 (98.5%) | cannot say 0
+DIS CT base/last_trade | CTZ5^9 M 1994-06-30 | observed position 9 | rule position 8
+DIS CT base/last_trade | CTZ5^9 M 1994-07-31 | observed position 8 | rule position 7
+IDENT LC | base/last_trade 28/40/0 | base/last_trade_m1 33/33/2 | base/first_notice 14/33/21
+IDENT BEST LC | base/last_trade_m1 | agree 33 of 66 (50.0%) | cannot say 2
+DIS LC base/last_trade | LCZ5^9 M 1994-10-31 | observed position 7 | rule position 8
+DIS LC base/last_trade | LCZ5^9 M 1994-12-31 | observed position 6 | rule position 7
+DIS LC base/last_trade | LCZ5^9 M 1995-02-28 | observed position 5 | rule position 6
+DIS LC base/last_trade | LCZ5^9 M 1995-04-30 | observed position 4 | rule position 5
+DIS LC base/last_trade | LCZ5^9 M 1995-06-30 | observed position 3 | rule position 4
+DIS LC base/last_trade | LCZ5^9 M 1995-08-31 | observed position 2 | rule position 3
+DIS LC base/last_trade | LCZ5^9 M 1995-10-31 | observed position 1 | rule position 2
+DIS LC base/last_trade | LCZ5^0 M 2004-11-30 | observed position 9 | rule position 7
+DIS LC base/last_trade | LCZ5^0 M 2004-12-31 | observed position 9 | rule position 7
+DIS LC base/last_trade | LCZ5^0 M 2005-01-31 | observed position 8 | rule position 6
+DIS LC base/last_trade | LCZ5^0 M 2005-03-31 | observed position 8 | rule position 5
+DIS LC base/last_trade | LCZ5^0 M 2005-04-30 | observed position 7 | rule position 5
+DIS LC base/last_trade | ... 28 more
+DIS LC base/last_trade_m1 | LCZ5^0 M 2004-11-30 | observed position 9 | rule position 7
+DIS LC base/last_trade_m1 | LCZ5^0 M 2004-12-31 | observed position 9 | rule position 6
+DIS LC base/last_trade_m1 | LCZ5^0 M 2005-01-31 | observed position 8 | rule position 6
+DIS LC base/last_trade_m1 | LCZ5^0 M 2005-03-31 | observed position 8 | rule position 5
+DIS LC base/last_trade_m1 | LCZ5^0 M 2005-04-30 | observed position 7 | rule position 4
+DIS LC base/last_trade_m1 | LCZ5^0 M 2005-05-31 | observed position 6 | rule position 4
+DIS LC base/last_trade_m1 | LCZ5^0 M 2005-06-30 | observed position 5 | rule position 3
+DIS LC base/last_trade_m1 | LCZ5^0 M 2005-07-31 | observed position 5 | rule position 3
+DIS LC base/last_trade_m1 | LCZ5^0 M 2005-08-31 | observed position 4 | rule position 2
+DIS LC base/last_trade_m1 | LCZ5^0 M 2005-09-30 | observed position 3 | rule position 2
+DIS LC base/last_trade_m1 | LCZ5^0 M 2005-10-31 | observed position 3 | rule position 1
+DIS LC base/last_trade_m1 | LCZ5^0 M 2005-11-30 | observed position 2 | rule position 1
+DIS LC base/last_trade_m1 | ... 21 more
+IDENT ED | base/last_trade 57/100/0 | base/last_trade_m1 56/100/1 | serial2/last_trade 87/70/0 | serial2/last_trade_m1 83/73/1 | serial3/last_trade 104/53/0 | serial3/last_trade_m1 102/54/1 | serial4/last_trade 127/30/0 | serial4/last_trade_m1 124/32/1
+IDENT BEST ED | serial4/last_trade | agree 127 of 157 (80.9%) | cannot say 0
+DIS ED base/last_trade | EDZ5^9 M 1995-10-31 | observed position 2 | rule position 1
+DIS ED base/last_trade | EDZ5^0 M 2003-12-31 | observed position 12 | rule position 8
+DIS ED base/last_trade | EDZ5^0 M 2004-01-30 | observed position 12 | rule position 8
+DIS ED base/last_trade | EDZ5^0 M 2004-02-27 | observed position 12 | rule position 8
+DIS ED base/last_trade | EDZ5^0 M 2004-03-31 | observed position 11 | rule position 7
+DIS ED base/last_trade | EDZ5^0 M 2004-04-30 | observed position 11 | rule position 7
+DIS ED base/last_trade | EDZ5^0 M 2004-05-31 | observed position 11 | rule position 7
+DIS ED base/last_trade | EDZ5^0 M 2004-06-30 | observed position 10 | rule position 6
+DIS ED base/last_trade | EDZ5^0 M 2004-07-30 | observed position 10 | rule position 6
+DIS ED base/last_trade | EDZ5^0 M 2004-08-31 | observed position 10 | rule position 6
+DIS ED base/last_trade | EDZ5^0 M 2004-09-30 | observed position 9 | rule position 5
+DIS ED base/last_trade | EDZ5^0 M 2004-10-29 | observed position 9 | rule position 5
+DIS ED base/last_trade | ... 88 more
+DIS ED serial4/last_trade | EDZ5^9 M 1994-10-31 | observed position 5 | rule position 6
+DIS ED serial4/last_trade | EDZ5^9 M 1994-11-30 | observed position 5 | rule position 7
+DIS ED serial4/last_trade | EDZ5^9 M 1994-12-30 | observed position 4 | rule position 6
+DIS ED serial4/last_trade | EDZ5^9 M 1995-01-31 | observed position 4 | rule position 6
+DIS ED serial4/last_trade | EDZ5^9 M 1995-02-28 | observed position 4 | rule position 6
+DIS ED serial4/last_trade | EDZ5^9 M 1995-03-31 | observed position 3 | rule position 5
+DIS ED serial4/last_trade | EDZ5^9 M 1995-05-31 | observed position 3 | rule position 5
+DIS ED serial4/last_trade | EDZ5^9 M 1995-08-31 | observed position 2 | rule position 4
+DIS ED serial4/last_trade | EDZ5^9 M 1995-09-29 | observed position 1 | rule position 3
+DIS ED serial4/last_trade | EDZ5^0 M 2003-12-31 | observed position 12 | rule position 10
+DIS ED serial4/last_trade | EDZ5^0 M 2004-01-30 | observed position 12 | rule position 10
+DIS ED serial4/last_trade | EDZ5^0 M 2004-02-27 | observed position 12 | rule position 10
+DIS ED serial4/last_trade | ... 18 more
+IDENT FEI | base/last_trade 29/74/0 | base/last_trade_m1 28/74/1 | serial2/last_trade 52/51/0 | serial2/last_trade_m1 50/52/1 | serial3/last_trade 61/42/0 | serial3/last_trade_m1 59/43/1 | serial4/last_trade 77/26/0 | serial4/last_trade_m1 75/27/1
+IDENT BEST FEI | serial4/last_trade | agree 77 of 103 (74.8%) | cannot say 0
+DIS FEI base/last_trade | FEIZ2^0 M 2000-06-30 | observed position 12 | rule position 10
+DIS FEI base/last_trade | FEIZ2^0 M 2000-07-31 | observed position 11 | rule position 10
+DIS FEI base/last_trade | FEIZ2^0 M 2000-08-31 | observed position 11 | rule position 10
+DIS FEI base/last_trade | FEIZ2^0 M 2000-09-30 | observed position 10 | rule position 9
+DIS FEI base/last_trade | FEIZ2^0 M 2000-10-31 | observed position 11 | rule position 9
+DIS FEI base/last_trade | FEIZ2^0 M 2000-11-30 | observed position 11 | rule position 9
+DIS FEI base/last_trade | FEIZ2^0 M 2000-12-31 | observed position 10 | rule position 8
+DIS FEI base/last_trade | FEIZ2^0 M 2001-01-31 | observed position 10 | rule position 8
+DIS FEI base/last_trade | FEIZ2^0 M 2001-02-28 | observed position 10 | rule position 8
+DIS FEI base/last_trade | FEIZ2^0 M 2001-03-31 | observed position 9 | rule position 7
+DIS FEI base/last_trade | FEIZ2^0 M 2001-04-30 | observed position 9 | rule position 7
+DIS FEI base/last_trade | FEIZ2^0 M 2001-05-31 | observed position 9 | rule position 7
+DIS FEI base/last_trade | ... 62 more
+DIS FEI serial4/last_trade | FEIZ2^0 M 2000-07-31 | observed position 11 | rule position 12
+DIS FEI serial4/last_trade | FEIZ2^0 M 2000-08-31 | observed position 11 | rule position 12
+DIS FEI serial4/last_trade | FEIZ2^0 M 2000-09-30 | observed position 10 | rule position 11
+DIS FEI serial4/last_trade | FEIZ8^0 M 2006-08-31 | observed position 5 | rule position 12
+DIS FEI serial4/last_trade | FEIZ8^0 M 2007-01-31 | observed position 12 | rule position 10
+DIS FEI serial4/last_trade | FEIZ8^0 M 2007-02-28 | observed position 12 | rule position 10
+DIS FEI serial4/last_trade | FEIZ8^0 M 2007-03-31 | observed position 11 | rule position 9
+DIS FEI serial4/last_trade | FEIZ8^0 M 2007-04-30 | observed position 11 | rule position 9
+DIS FEI serial4/last_trade | FEIZ8^0 M 2007-05-31 | observed position 11 | rule position 9
+DIS FEI serial4/last_trade | FEIZ8^0 M 2007-06-30 | observed position 10 | rule position 8
+DIS FEI serial4/last_trade | FEIZ8^0 M 2007-10-31 | observed position 9 | rule position 7
+DIS FEI serial4/last_trade | FEIZ8^0 M 2007-11-30 | observed position 9 | rule position 7
+DIS FEI serial4/last_trade | ... 14 more
+IDENT FSS | no matched sample observation
+IDENT FES | no matched sample observation
+IDENT SRA | no matched sample observation
+IDENT SON3 | no matched sample observation
+=== END === 237s
