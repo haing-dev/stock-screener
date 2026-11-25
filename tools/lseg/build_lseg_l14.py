@@ -67,12 +67,15 @@ def write(name, items):
     bold = Font(bold=True)
     rows, pos, sheets = [], {}, {}
     for root, per, y, codes, f, n, rname in items:
-        ws = sheets.setdefault(root, wb.create_sheet(root))
+        if root not in sheets:
+            sheets[root] = wb.create_sheet(root)
+        ws = sheets[root]
         w = len(codes) + 2
         c = 1 + pos.get(root, 0)
         pos[root] = pos.get(root, 0) + w
         pid = "%s-%03d" % (name.split("_")[0], len(rows) + 1)
-        lab = "%s deliveries %d, %s (%d contracts)" % (rname, y, "monthly" if per == "M" else "daily", len(codes))
+        lab = rname if y == 0 else "%s deliveries %d, %s (%d contracts)" % (
+            rname, y, "monthly" if per == "M" else "daily", len(codes))
         ws.cell(2, c, pid).font = bold
         ws.cell(3, c, lab)
         ws.cell(4, c, "formula: " + f[1:])
