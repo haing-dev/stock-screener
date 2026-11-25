@@ -776,6 +776,12 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   0.09), Pilecki (fund includes pre-Gator years), Kantor (long rank 0.02), Davis, Dorsey, Martin, Gerstner, Shaposhnik
   (fund data end), Smith. PILOT must be redrawn: none of the 10 meets the material bar; screenability of Harnisch,
   Singer, August not yet checked. AWAITING the user's view.
+  2026-11-23 (A12 item 8): 1-point margin on (b) -> Kantesaria, Li Lu back; user picks Hohn, Sosin, Pilecki -> ROSTER 15.
+  Material needs: docs/research/equity/MATERIAL_NEEDS_2026-11-23.md (ready: Kantesaria only). SCAN of all filers
+  (eq_rec 1.1.0 scan, job eq_rec_scan_v1 ran 2026-11-22 21:23 PC time): 3,531 filers with >= 5y record, 293 pass, 151
+  listed ($500m+, 5-200 holdings; 10 on the roster) -> docs/research/equity/SCAN_CANDIDATES_2026-11-23.md (+csv;
+  project doc claude/equity_scan_candidates_2026-11-23.md). In library but set aside: Tepper (1 doc), Russo, Vinall,
+  Baker (judgement-led). AWAITING the user's picks for the 15 open places.
 - PLAN v0.3 (2026-11-15) = docs/research/equity/EQUITY_POD_SHOP_PLAN_v0.3.md (project doc
   claude/equity_pod_shop_plan_v0.3_2026-11-15.md): evaluation of the user's workflow idea (rank investors on 5-year
   returns to pick transcripts; technique transcripts as foundation; agentic pipeline transcript -> strategy -> portfolio ->
