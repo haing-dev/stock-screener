@@ -18,3 +18,22 @@
    samples, two over-life samples per root, and Euribor / short sterling / Euroswiss contracts 3-8 daily. Then: a
    listing-horizon rule per root (fit by value matching, an identity fact, not a performance choice), or, if
    TR.ExpiryDate history works at depth, identity read directly per observation (L13 for the other positions).
+
+## Update 2026-11-25 (L12 read; fits v3, v4)
+6. L12 (lock v3 5173fe86): TR.ExpiryDate works as a dated monthly series on c1 and c2 for every HistoricalPricing
+   root over the full history (format YYYYMMDD; empty for deeper positions and platinum). So positions 1-2 are
+   identified per observation from LSEG itself (CL 318 of 319 months match the rule calendar; LCO 250/250; NG 185/185;
+   HO 362/364; GC 368/369 with serial months; KC, W, S 100%).
+7. Last trading day by era (ident v3 LT): rules match from ~1995-2000 on; earlier the exchanges used other rules
+   (grains +3..+6 business days, cattle -5..-8, natural gas -3..-6). Observed expiries replace the rule wherever a
+   contract passed through c1/c2.
+8. Listing-rule fit (ident v4, cleaned of chance price matches): NG 100%, GC 100%, KC 100%, HO 99.5% at every depth;
+   CL 98.7%, LCO 98.6%, CT 98.4%; HG 96.9%, W 96.0%, S 95.0%, SI 94.5%, C 94.1%, PL 92.1%, LC 88.7%, SB 85.4%, FEI
+   87.1%, ED 78.0%. One rule per root cannot reach 99% for most roots (listings changed over time).
+9. DECISION (identity method, not a performance choice): use contract-level prices where identity beyond position 2
+   is needed (Curve carry legs, strip contracts 1-8). Files L13a (energy, metals: 200 formulas), L13b (grains,
+   softs, cattle: 182), L13c (ED, Euribor, SOFR, SONIA quarterly contracts daily: 49) in
+   G:\My Drive\Screener project\LSEG\09_contract_identity (builder tools/lseg/build_lseg_l13.py; Datastream
+   multi-code form). Short sterling and Euroswiss have no expired-contract codes on LSEG: their strips cannot be
+   identified (they hold nothing in Strip reversion unless another source appears). Gasoline before 2006 (HU) is
+   not on LSEG.
