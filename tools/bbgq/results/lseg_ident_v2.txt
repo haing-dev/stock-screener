@@ -1,0 +1,894 @@
+=== lseg_ident_v2 === 2026-11-24 20:35
+lsegdata lsegdata-1.0.0 | lseg_rules-1.0.1 | LOCK 5173fe8699627f2abcc211d6ccc51ed052d2247ce71e3ba246b87afe5ce64e33
+SAMPLE CL CLZ5^9 M | L11 | dates 37 | matched to one position 24 | none 1 | several 12 | first 1992-11-30 last 1995-11-30
+SAMPLE CL CLZ5^0 M | L11 | dates 47 | matched to one position 25 | none 21 | several 1 | first 2002-01-31 last 2005-11-30
+SAMPLE CL CLZ5^0 D | L11 | dates 79 | matched to one position 43 | none 36 | several 0 | first 2005-08-01 last 2005-11-18
+SAMPLE CL CLZ5^0 M | L11 | dates 35 | matched to one position 19 | none 16 | several 0 | first 2002-12-31 last 2005-10-31
+SAMPLE CL CLZ3^9 D | L12 | dates 79 | matched to one position 43 | none 36 | several 0 | first 1993-08-02 last 1993-11-19
+SAMPLE CL CLZ9^9 D | L12 | dates 79 | matched to one position 40 | none 35 | several 4 | first 1999-08-02 last 1999-11-19
+SAMPLE CL CLZ4^0 D | L12 | dates 79 | matched to one position 43 | none 36 | several 0 | first 2004-08-02 last 2004-11-19
+SAMPLE CL CLZ9^0 D | L12 | dates 79 | matched to one position 43 | none 36 | several 0 | first 2009-08-03 last 2009-11-20
+SAMPLE CL CLZ0^9 M | L12 | dates 16 | matched to one position 13 | none 1 | several 2 | first 1989-08-31 last 1990-11-30
+SAMPLE CL CLZ0^0 M | L12 | dates 47 | matched to one position 29 | none 17 | several 1 | first 1997-01-31 last 2000-11-30
+SAMPLE LCO LCOZ5^9 M | L11 | dates 13 | matched to one position 9 | none 1 | several 3 | first 1994-11-30 last 1995-11-30
+SAMPLE LCO LCOZ5^0 M | L11 | dates 37 | matched to one position 34 | none 1 | several 2 | first 2002-11-30 last 2005-11-30
+SAMPLE LCO LCOZ5^0 D | L11 | dates 76 | matched to one position 43 | none 33 | several 0 | first 2005-08-01 last 2005-11-15
+SAMPLE LCO LCOZ3^9 D | L12 | dates 75 | matched to one position 43 | none 32 | several 0 | first 1993-08-02 last 1993-11-15
+SAMPLE LCO LCOZ9^9 D | L12 | dates 75 | matched to one position 43 | none 32 | several 0 | first 1999-08-02 last 1999-11-15
+SAMPLE LCO LCOZ4^0 D | L12 | dates 75 | matched to one position 42 | none 32 | several 1 | first 2004-08-02 last 2004-11-15
+SAMPLE LCO LCOZ9^0 D | L12 | dates 75 | matched to one position 43 | none 32 | several 0 | first 2009-08-03 last 2009-11-13
+SAMPLE LCO LCOZ0^0 M | L12 | dates 36 | matched to one position 30 | none 1 | several 5 | first 1997-12-31 last 2000-11-30
+SAMPLE NG NGZ5^9 M | L11 | dates 19 | matched to one position 16 | none 1 | several 2 | first 1994-05-31 last 1995-11-30
+SAMPLE NG NGZ5^0 M | L11 | dates 38 | matched to one position 23 | none 14 | several 1 | first 2002-10-31 last 2005-11-30
+SAMPLE NG NGZ5^0 D | L11 | dates 83 | matched to one position 41 | none 42 | several 0 | first 2005-08-01 last 2005-11-28
+SAMPLE NG NGZ3^9 D | L12 | dates 79 | matched to one position 40 | none 38 | several 1 | first 1993-08-02 last 1993-11-19
+SAMPLE NG NGZ9^9 D | L12 | dates 82 | matched to one position 41 | none 41 | several 0 | first 1999-08-02 last 1999-11-24
+SAMPLE NG NGZ4^0 D | L12 | dates 82 | matched to one position 41 | none 41 | several 0 | first 2004-08-02 last 2004-11-24
+SAMPLE NG NGZ9^0 D | L12 | dates 81 | matched to one position 41 | none 40 | several 0 | first 2009-08-03 last 2009-11-24
+SAMPLE NG NGZ0^0 M | L12 | dates 37 | matched to one position 24 | none 13 | several 0 | first 1997-11-30 last 2000-11-30
+SAMPLE HO HOZ5^9 M | L11 | dates 18 | matched to one position 17 | none 0 | several 1 | first 1994-06-30 last 1995-11-30
+SAMPLE HO HOZ5^0 M | L11 | dates 18 | matched to one position 18 | none 0 | several 0 | first 2004-06-30 last 2005-11-30
+SAMPLE HO HOZ5^0 D | L11 | dates 85 | matched to one position 41 | none 44 | several 0 | first 2005-08-01 last 2005-11-30
+SAMPLE HO HOZ3^9 D | L12 | dates 84 | matched to one position 41 | none 43 | several 0 | first 1993-08-02 last 1993-11-30
+SAMPLE HO HOZ9^9 D | L12 | dates 84 | matched to one position 41 | none 43 | several 0 | first 1999-08-02 last 1999-11-30
+SAMPLE HO HOZ4^0 D | L12 | dates 84 | matched to one position 41 | none 43 | several 0 | first 2004-08-02 last 2004-11-30
+SAMPLE HO HOZ9^0 D | L12 | dates 84 | matched to one position 42 | none 42 | several 0 | first 2009-08-03 last 2009-11-30
+SAMPLE HO HOZ0^9 M | L12 | dates 15 | matched to one position 11 | none 0 | several 4 | first 1989-09-30 last 1990-11-30
+SAMPLE HO HOZ0^0 M | L12 | dates 18 | matched to one position 18 | none 0 | several 0 | first 1999-06-30 last 2000-11-30
+SAMPLE GC GCZ5^9 M | L11 | dates 48 | matched to one position 29 | none 19 | several 0 | first 1992-01-31 last 1995-12-31
+SAMPLE GC GCZ5^0 M | L11 | dates 48 | matched to one position 29 | none 19 | several 0 | first 2002-01-31 last 2005-12-31
+SAMPLE GC GCZ5^0 D | L11 | dates 104 | matched to one position 40 | none 63 | several 1 | first 2005-08-01 last 2005-12-28
+SAMPLE GC GCZ3^9 D | L12 | dates 105 | matched to one position 40 | none 63 | several 2 | first 1993-08-02 last 1993-12-29
+SAMPLE GC GCZ9^9 D | L12 | dates 103 | matched to one position 40 | none 62 | several 1 | first 1999-08-02 last 1999-12-28
+SAMPLE GC GCZ4^0 D | L12 | dates 103 | matched to one position 39 | none 62 | several 2 | first 2004-08-02 last 2004-12-28
+SAMPLE GC GCZ9^0 D | L12 | dates 104 | matched to one position 34 | none 62 | several 8 | first 2009-08-03 last 2009-12-29
+SAMPLE GC GCX5^0 D | L12 | dates 61 | matched to one position 38 | none 20 | several 3 | first 2005-08-31 last 2005-11-28
+SAMPLE GC GCZ0^9 M | L12 | dates 24 | matched to one position 23 | none 1 | several 0 | first 1989-01-31 last 1990-12-31
+SAMPLE GC GCZ0^0 M | L12 | dates 60 | matched to one position 29 | none 31 | several 0 | first 1996-01-31 last 2000-12-31
+SAMPLE SI SIZ5^9 M | L11 | dates 38 | matched to one position 28 | none 10 | several 0 | first 1992-11-30 last 1995-12-31
+SAMPLE SI SIZ5^0 M | L11 | dates 48 | matched to one position 27 | none 21 | several 0 | first 2002-01-31 last 2005-12-31
+SAMPLE SI SIZ5^0 D | L11 | dates 104 | matched to one position 41 | none 63 | several 0 | first 2005-08-01 last 2005-12-28
+SAMPLE SI SIZ3^9 D | L12 | dates 104 | matched to one position 40 | none 62 | several 2 | first 1993-08-02 last 1993-12-29
+SAMPLE SI SIZ9^9 D | L12 | dates 103 | matched to one position 35 | none 62 | several 6 | first 1999-08-02 last 1999-12-28
+SAMPLE SI SIZ4^0 D | L12 | dates 103 | matched to one position 41 | none 62 | several 0 | first 2004-08-02 last 2004-12-28
+SAMPLE SI SIZ9^0 D | L12 | dates 104 | matched to one position 34 | none 62 | several 8 | first 2009-08-03 last 2009-12-29
+SAMPLE SI SIG5^0 D | L12 | dates 59 | matched to one position 39 | none 20 | several 0 | first 2004-11-30 last 2005-02-24
+SAMPLE SI SIZ0^9 M | L12 | dates 24 | matched to one position 23 | none 1 | several 0 | first 1989-01-31 last 1990-12-31
+SAMPLE SI SIZ0^0 M | L12 | dates 60 | matched to one position 28 | none 28 | several 4 | first 1996-01-31 last 2000-12-31
+SAMPLE HG HGZ5^9 M | L11 | dates 24 | matched to one position 21 | none 1 | several 2 | first 1994-01-31 last 1995-12-31
+SAMPLE HG HGZ5^0 M | L11 | dates 25 | matched to one position 18 | none 7 | several 0 | first 2003-12-31 last 2005-12-31
+SAMPLE HG HGZ5^0 D | L11 | dates 104 | matched to one position 40 | none 63 | several 1 | first 2005-08-01 last 2005-12-28
+SAMPLE HG HGZ3^9 D | L12 | dates 104 | matched to one position 33 | none 61 | several 10 | first 1993-08-02 last 1993-12-29
+SAMPLE HG HGZ9^9 D | L12 | dates 103 | matched to one position 41 | none 62 | several 0 | first 1999-08-02 last 1999-12-28
+SAMPLE HG HGZ4^0 D | L12 | dates 103 | matched to one position 51 | none 50 | several 2 | first 2004-08-02 last 2004-12-28
+SAMPLE HG HGZ9^0 D | L12 | dates 104 | matched to one position 41 | none 62 | several 1 | first 2009-08-03 last 2009-12-29
+SAMPLE HG HGG5^0 D | L12 | dates 99 | matched to one position 37 | none 60 | several 2 | first 2004-10-01 last 2005-02-24
+SAMPLE HG HGZ0^9 M | L12 | dates 24 | matched to one position 14 | none 1 | several 9 | first 1989-01-31 last 1990-12-31
+SAMPLE HG HGZ0^0 M | L12 | dates 25 | matched to one position 17 | none 7 | several 1 | first 1998-12-31 last 2000-12-31
+SAMPLE PL PLF5^9 M | L11 | dates 15 | matched to one position 13 | none 1 | several 1 | first 1993-11-30 last 1995-01-31
+SAMPLE PL PLF5^0 M | L11 | dates 11 | matched to one position 9 | none 1 | several 1 | first 2004-03-31 last 2005-01-31
+SAMPLE PL PLF5^0 D | L11 | dates 101 | matched to one position 80 | none 18 | several 3 | first 2004-09-01 last 2005-01-27
+SAMPLE PL PLF3^9 D | L12 | dates 100 | matched to one position 100 | none 0 | several 0 | first 1992-09-01 last 1993-01-26
+SAMPLE PL PLF9^9 D | L12 | dates 100 | matched to one position 81 | none 10 | several 9 | first 1998-09-01 last 1999-01-26
+SAMPLE PL PLF4^0 D | L12 | dates 99 | matched to one position 98 | none 1 | several 0 | first 2003-09-02 last 2004-01-27
+SAMPLE PL PLF9^0 D | L12 | dates 103 | matched to one position 42 | none 61 | several 0 | first 2008-09-02 last 2009-01-28
+SAMPLE PL PLF0^9 M | L12 | dates 16 | matched to one position 12 | none 1 | several 3 | first 1988-10-31 last 1990-01-31
+SAMPLE PL PLF0^0 M | L12 | dates 15 | matched to one position 12 | none 1 | several 2 | first 1998-11-30 last 2000-01-31
+SAMPLE C CZ5^9 M | L11 | dates 25 | matched to one position 23 | none 1 | several 1 | first 1993-12-31 last 1995-12-31
+SAMPLE C CZ5^0 M | L11 | dates 37 | matched to one position 27 | none 10 | several 0 | first 2002-12-31 last 2005-12-31
+SAMPLE C CZ5^0 D | L11 | dates 96 | matched to one position 96 | none 0 | several 0 | first 2005-08-01 last 2005-12-14
+SAMPLE C CZ3^9 D | L12 | dates 101 | matched to one position 101 | none 0 | several 0 | first 1993-08-02 last 1993-12-22
+SAMPLE C CZ9^9 D | L12 | dates 99 | matched to one position 99 | none 0 | several 0 | first 1999-08-02 last 1999-12-20
+SAMPLE C CZ4^0 D | L12 | dates 95 | matched to one position 95 | none 0 | several 0 | first 2004-08-02 last 2004-12-14
+SAMPLE C CZ9^0 D | L12 | dates 94 | matched to one position 94 | none 0 | several 0 | first 2009-08-03 last 2009-12-14
+SAMPLE C CZ0^9 M | L12 | dates 20 | matched to one position 19 | none 1 | several 0 | first 1989-05-31 last 1990-12-31
+SAMPLE C CZ0^0 M | L12 | dates 32 | matched to one position 29 | none 2 | several 1 | first 1998-05-31 last 2000-12-31
+SAMPLE W WZ5^9 M | L11 | dates 19 | matched to one position 18 | none 1 | several 0 | first 1994-06-30 last 1995-12-31
+SAMPLE W WZ5^0 M | L11 | dates 30 | matched to one position 27 | none 1 | several 2 | first 2003-07-31 last 2005-12-31
+SAMPLE W WZ5^0 D | L11 | dates 96 | matched to one position 96 | none 0 | several 0 | first 2005-08-01 last 2005-12-14
+SAMPLE W WZ3^9 D | L12 | dates 101 | matched to one position 99 | none 0 | several 2 | first 1993-08-02 last 1993-12-22
+SAMPLE W WZ9^9 D | L12 | dates 99 | matched to one position 99 | none 0 | several 0 | first 1999-08-02 last 1999-12-20
+SAMPLE W WZ4^0 D | L12 | dates 95 | matched to one position 95 | none 0 | several 0 | first 2004-08-02 last 2004-12-14
+SAMPLE W WZ9^0 D | L12 | dates 94 | matched to one position 94 | none 0 | several 0 | first 2009-08-03 last 2009-12-14
+SAMPLE W WZ0^9 M | L12 | dates 16 | matched to one position 15 | none 1 | several 0 | first 1989-09-30 last 1990-12-31
+SAMPLE W WZ0^0 M | L12 | dates 24 | matched to one position 22 | none 1 | several 1 | first 1999-01-31 last 2000-12-31
+SAMPLE S SX5^9 M | L11 | dates 25 | matched to one position 23 | none 1 | several 1 | first 1993-11-30 last 1995-11-30
+SAMPLE S SX5^0 M | L11 | dates 36 | matched to one position 24 | none 7 | several 5 | first 2002-11-30 last 2005-11-30
+SAMPLE S SX5^0 D | L11 | dates 95 | matched to one position 65 | none 30 | several 0 | first 2005-07-01 last 2005-11-14
+SAMPLE S SX3^9 D | L12 | dates 100 | matched to one position 66 | none 33 | several 1 | first 1993-07-01 last 1993-11-19
+SAMPLE S SX9^9 D | L12 | dates 99 | matched to one position 64 | none 35 | several 0 | first 1999-07-01 last 1999-11-18
+SAMPLE S SX4^0 D | L12 | dates 95 | matched to one position 62 | none 31 | several 2 | first 2004-07-01 last 2004-11-12
+SAMPLE S SX9^0 D | L12 | dates 96 | matched to one position 64 | none 32 | several 0 | first 2009-07-01 last 2009-11-13
+SAMPLE S SX0^9 M | L12 | dates 19 | matched to one position 17 | none 1 | several 1 | first 1989-05-31 last 1990-11-30
+SAMPLE S SX0^0 M | L12 | dates 25 | matched to one position 24 | none 1 | several 0 | first 1998-11-30 last 2000-11-30
+SAMPLE SB SBV5^9 M | L11 | dates 22 | matched to one position 20 | none 0 | several 2 | first 1993-12-31 last 1995-09-30
+SAMPLE SB SBV5^0 M | L11 | dates 23 | matched to one position 17 | none 0 | several 6 | first 2003-11-30 last 2005-09-30
+SAMPLE SB SBV5^0 D | L11 | dates 86 | matched to one position 85 | none 0 | several 1 | first 2005-06-01 last 2005-09-30
+SAMPLE SB SBV3^9 D | L12 | dates 86 | matched to one position 85 | none 0 | several 1 | first 1993-06-01 last 1993-09-30
+SAMPLE SB SBV9^9 D | L12 | dates 86 | matched to one position 86 | none 0 | several 0 | first 1999-06-01 last 1999-09-30
+SAMPLE SB SBV4^0 D | L12 | dates 85 | matched to one position 85 | none 0 | several 0 | first 2004-06-01 last 2004-09-30
+SAMPLE SB SBV9^0 D | L12 | dates 86 | matched to one position 86 | none 0 | several 0 | first 2009-06-01 last 2009-09-30
+SAMPLE SB SBV0^9 M | L12 | dates 17 | matched to one position 17 | none 0 | several 0 | first 1989-05-31 last 1990-09-30
+SAMPLE SB SBV0^0 M | L12 | dates 23 | matched to one position 21 | none 0 | several 2 | first 1998-11-30 last 2000-09-30
+SAMPLE KC KCZ5^9 M | L11 | dates 18 | matched to one position 16 | none 1 | several 1 | first 1994-07-31 last 1995-12-31
+SAMPLE KC KCZ5^0 M | L11 | dates 24 | matched to one position 21 | none 3 | several 0 | first 2004-01-31 last 2005-12-31
+SAMPLE KC KCZ5^0 D | L11 | dates 98 | matched to one position 98 | none 0 | several 0 | first 2005-08-01 last 2005-12-19
+SAMPLE KC KCZ3^9 D | L12 | dates 97 | matched to one position 97 | none 0 | several 0 | first 1993-08-02 last 1993-12-17
+SAMPLE KC KCZ9^9 D | L12 | dates 97 | matched to one position 97 | none 0 | several 0 | first 1999-08-02 last 1999-12-17
+SAMPLE KC KCZ4^0 D | L12 | dates 98 | matched to one position 98 | none 0 | several 0 | first 2004-08-02 last 2004-12-20
+SAMPLE KC KCZ9^0 D | L12 | dates 98 | matched to one position 98 | none 0 | several 0 | first 2009-08-03 last 2009-12-18
+SAMPLE KC KCZ0^9 M | L12 | dates 18 | matched to one position 17 | none 1 | several 0 | first 1989-07-31 last 1990-12-31
+SAMPLE KC KCZ0^0 M | L12 | dates 18 | matched to one position 17 | none 1 | several 0 | first 1999-07-31 last 2000-12-31
+SAMPLE CT CTZ5^9 M | L11 | dates 19 | matched to one position 18 | none 1 | several 0 | first 1994-06-30 last 1995-12-31
+SAMPLE CT CTZ5^0 M | L11 | dates 25 | matched to one position 21 | none 4 | several 0 | first 2003-12-31 last 2005-12-31
+SAMPLE CT CTZ5^0 D | L11 | dates 91 | matched to one position 91 | none 0 | several 0 | first 2005-08-01 last 2005-12-07
+SAMPLE CT CTZ3^9 D | L12 | dates 91 | matched to one position 91 | none 0 | several 0 | first 1993-08-02 last 1993-12-09
+SAMPLE CT CTZ9^9 D | L12 | dates 92 | matched to one position 92 | none 0 | several 0 | first 1999-08-02 last 1999-12-07
+SAMPLE CT CTZ4^0 D | L12 | dates 90 | matched to one position 90 | none 0 | several 0 | first 2004-08-02 last 2004-12-08
+SAMPLE CT CTZ9^0 D | L12 | dates 90 | matched to one position 90 | none 0 | several 0 | first 2009-08-03 last 2009-12-08
+SAMPLE CT CTZ0^9 M | L12 | dates 19 | matched to one position 18 | none 1 | several 0 | first 1989-06-30 last 1990-12-31
+SAMPLE CT CTZ0^0 M | L12 | dates 25 | matched to one position 19 | none 4 | several 2 | first 1998-12-31 last 2000-12-31
+SAMPLE LC LCZ5^9 M | L11 | dates 15 | matched to one position 13 | none 1 | several 1 | first 1994-10-31 last 1995-12-31
+SAMPLE LC LCZ5^0 M | L11 | dates 14 | matched to one position 13 | none 0 | several 1 | first 2004-11-30 last 2005-12-31
+SAMPLE LC LCZ5^0 D | L11 | dates 107 | matched to one position 42 | none 65 | several 0 | first 2005-08-01 last 2005-12-30
+SAMPLE LC LCZ3^9 D | L12 | dates 102 | matched to one position 85 | none 17 | several 0 | first 1993-08-02 last 1993-12-23
+SAMPLE LC LCZ9^9 D | L12 | dates 106 | matched to one position 83 | none 22 | several 1 | first 1999-08-02 last 1999-12-30
+SAMPLE LC LCZ4^0 D | L12 | dates 106 | matched to one position 42 | none 64 | several 0 | first 2004-08-02 last 2004-12-30
+SAMPLE LC LCZ9^0 D | L12 | dates 106 | matched to one position 85 | none 21 | several 0 | first 2009-08-03 last 2009-12-31
+SAMPLE LC LCZ0^9 M | L12 | dates 13 | matched to one position 12 | none 1 | several 0 | first 1989-12-31 last 1990-12-31
+SAMPLE LC LCZ0^0 M | L12 | dates 14 | matched to one position 13 | none 0 | several 1 | first 1999-11-30 last 2000-12-31
+SAMPLE ED EDZ5^9 M | L11 | dates 48 | matched to one position 32 | none 12 | several 4 | first 1991-12-31 last 1995-11-30
+SAMPLE ED EDZ5^0 M | L11 | dates 48 | matched to one position 24 | none 24 | several 0 | first 2001-12-31 last 2005-11-30
+SAMPLE ED EDZ5^0 D | L11 | dates 101 | matched to one position 101 | none 0 | several 0 | first 2005-08-01 last 2005-12-19
+SAMPLE ED EDZ3^9 D | L12 | dates 97 | matched to one position 91 | none 0 | several 6 | first 1993-07-30 last 1993-12-13
+SAMPLE ED EDZ9^9 D | L12 | dates 97 | matched to one position 88 | none 0 | several 9 | first 1999-07-30 last 1999-12-13
+SAMPLE ED EDZ4^0 D | L12 | dates 97 | matched to one position 96 | none 1 | several 0 | first 2004-07-30 last 2004-12-13
+SAMPLE ED EDZ9^0 D | L12 | dates 96 | matched to one position 95 | none 1 | several 0 | first 2009-07-31 last 2009-12-11
+SAMPLE ED EDG5^0 D | L12 | dates 97 | matched to one position 97 | none 0 | several 0 | first 2004-10-01 last 2005-02-14
+SAMPLE ED EDZ0^9 M | L12 | dates 36 | matched to one position 33 | none 0 | several 3 | first 1987-12-31 last 1990-11-30
+SAMPLE ED EDZ0^0 M | L12 | dates 60 | matched to one position 21 | none 36 | several 3 | first 1995-12-31 last 2000-11-30
+SAMPLE FEI FEIZ2^0 M | L11 | dates 48 | matched to one position 30 | none 18 | several 0 | first 1999-01-31 last 2002-12-31
+SAMPLE FEI FEIZ8^0 M | L11 | dates 48 | matched to one position 22 | none 22 | several 4 | first 2005-01-31 last 2008-12-31
+SAMPLE FEI FEIZ5^0 D | L11 | dates 101 | matched to one position 51 | none 49 | several 1 | first 2005-08-01 last 2005-12-19
+SAMPLE FEI FEIZ9^9 D | L12 | dates 96 | matched to one position 40 | none 56 | several 0 | first 1999-08-02 last 1999-12-13
+SAMPLE FEI FEIZ4^0 D | L12 | dates 96 | matched to one position 34 | none 56 | several 6 | first 2004-08-02 last 2004-12-13
+SAMPLE FEI FEIZ9^0 D | L12 | dates 96 | matched to one position 48 | none 47 | several 1 | first 2009-08-03 last 2009-12-14
+SAMPLE FEI FEIG5^0 D | L12 | dates 97 | matched to one position 46 | none 50 | several 1 | first 2004-10-01 last 2005-02-14
+SAMPLE FEI FEIZ0^0 M | L12 | dates 48 | matched to one position 46 | none 1 | several 1 | first 1997-01-31 last 2000-12-31
+SAMPLE RB RBZ9^0 D | L12 | dates 84 | matched to one position 43 | none 41 | several 0 | first 2009-08-03 last 2009-11-30
+--- VARIANTS (agree / disagree / rule cannot say)
+IDENT CL | base/last_trade 298/24/0 | base/last_trade_m1 289/29/4
+IDENT BEST CL | base/last_trade | agree 298 of 322 (92.5%) | cannot say 0
+DIS CL base/last_trade | CLZ5^9 M 1993-02-28 | observed position 21 | rule position 33
+DIS CL base/last_trade | CLZ5^9 M 1993-04-30 | observed position 22 | rule position 31
+DIS CL base/last_trade | CLZ5^9 M 1993-06-30 | observed position 21 | rule position 29
+DIS CL base/last_trade | CLZ5^9 M 1993-07-31 | observed position 21 | rule position 28
+DIS CL base/last_trade | CLZ5^9 M 1993-08-31 | observed position 21 | rule position 27
+DIS CL base/last_trade | CLZ5^9 M 1993-09-30 | observed position 20 | rule position 26
+DIS CL base/last_trade | CLZ5^9 M 1993-10-31 | observed position 20 | rule position 25
+DIS CL base/last_trade | CLZ5^9 M 1993-11-30 | observed position 20 | rule position 24
+DIS CL base/last_trade | CLZ5^9 M 1993-12-31 | observed position 20 | rule position 23
+DIS CL base/last_trade | CLZ5^9 M 1994-01-31 | observed position 20 | rule position 22
+DIS CL base/last_trade | CLZ5^9 M 1994-02-28 | observed position 19 | rule position 21
+DIS CL base/last_trade | CLZ5^9 M 1994-03-31 | observed position 19 | rule position 20
+DIS CL base/last_trade | ... 12 more
+IDENT LCO | base/last_trade 245/42/0 | base/last_trade_m1 243/39/5
+IDENT BEST LCO | base/last_trade_m1 | agree 243 of 282 (86.2%) | cannot say 5
+DIS LCO base/last_trade | LCOZ5^0 M 2002-11-30 | observed position 18 | rule position 36
+DIS LCO base/last_trade | LCOZ5^0 M 2002-12-31 | observed position 18 | rule position 35
+DIS LCO base/last_trade | LCOZ5^0 M 2003-01-31 | observed position 18 | rule position 34
+DIS LCO base/last_trade | LCOZ5^0 M 2003-02-28 | observed position 18 | rule position 33
+DIS LCO base/last_trade | LCOZ5^0 M 2003-03-31 | observed position 18 | rule position 32
+DIS LCO base/last_trade | LCOZ5^0 M 2003-04-30 | observed position 18 | rule position 31
+DIS LCO base/last_trade | LCOZ5^0 M 2003-05-31 | observed position 17 | rule position 30
+DIS LCO base/last_trade | LCOZ5^0 M 2003-06-30 | observed position 17 | rule position 29
+DIS LCO base/last_trade | LCOZ5^0 M 2003-07-31 | observed position 17 | rule position 28
+DIS LCO base/last_trade | LCOZ5^0 M 2003-08-31 | observed position 17 | rule position 27
+DIS LCO base/last_trade | LCOZ5^0 M 2003-11-30 | observed position 16 | rule position 24
+DIS LCO base/last_trade | LCOZ5^0 M 2003-12-31 | observed position 16 | rule position 23
+DIS LCO base/last_trade | ... 30 more
+DIS LCO base/last_trade_m1 | LCOZ5^0 M 2002-11-30 | observed position 18 | rule position 36
+DIS LCO base/last_trade_m1 | LCOZ5^0 M 2002-12-31 | observed position 18 | rule position 35
+DIS LCO base/last_trade_m1 | LCOZ5^0 M 2003-01-31 | observed position 18 | rule position 34
+DIS LCO base/last_trade_m1 | LCOZ5^0 M 2003-02-28 | observed position 18 | rule position 33
+DIS LCO base/last_trade_m1 | LCOZ5^0 M 2003-03-31 | observed position 18 | rule position 32
+DIS LCO base/last_trade_m1 | LCOZ5^0 M 2003-04-30 | observed position 18 | rule position 31
+DIS LCO base/last_trade_m1 | LCOZ5^0 M 2003-05-31 | observed position 17 | rule position 30
+DIS LCO base/last_trade_m1 | LCOZ5^0 M 2003-06-30 | observed position 17 | rule position 29
+DIS LCO base/last_trade_m1 | LCOZ5^0 M 2003-07-31 | observed position 17 | rule position 28
+DIS LCO base/last_trade_m1 | LCOZ5^0 M 2003-08-31 | observed position 17 | rule position 27
+DIS LCO base/last_trade_m1 | LCOZ5^0 M 2003-11-30 | observed position 16 | rule position 24
+DIS LCO base/last_trade_m1 | LCOZ5^0 M 2003-12-31 | observed position 16 | rule position 23
+DIS LCO base/last_trade_m1 | ... 27 more
+IDENT NG | base/last_trade 261/6/0 | base/last_trade_m1 258/8/1
+IDENT BEST NG | base/last_trade | agree 261 of 267 (97.8%) | cannot say 0
+DIS NG base/last_trade | NGZ3^9 D 1993-09-24 | observed position 2 | rule position 3
+DIS NG base/last_trade | NGZ3^9 D 1993-09-27 | observed position 2 | rule position 3
+DIS NG base/last_trade | NGZ3^9 D 1993-09-28 | observed position 2 | rule position 3
+DIS NG base/last_trade | NGZ3^9 D 1993-10-25 | observed position 1 | rule position 2
+DIS NG base/last_trade | NGZ3^9 D 1993-10-26 | observed position 1 | rule position 2
+DIS NG base/last_trade | NGZ3^9 D 1993-10-27 | observed position 1 | rule position 2
+IDENT HO | base/last_trade 270/0/0 | base/last_trade_m1 196/66/8
+IDENT BEST HO | base/last_trade | agree 270 of 270 (100.0%) | cannot say 0
+IDENT RB | base/last_trade 42/1/0 | base/last_trade_m1 40/2/1
+IDENT BEST RB | base/last_trade | agree 42 of 43 (97.7%) | cannot say 0
+DIS RB base/last_trade | RBZ9^0 D 2009-08-31 | observed position 2 | rule position 4
+IDENT GC | base/last_trade 107/196/38 | base/last_trade_m1 106/195/40 | base/first_notice 20/195/126 | serial2/last_trade 242/97/2 | serial2/last_trade_m1 240/97/4 | serial2/first_notice 36/198/107 | serial3/last_trade 288/53/0 | serial3/last_trade_m1 286/53/2 | serial3/first_notice 82/154/105 | serial4/last_trade 328/13/0 | serial4/last_trade_m1 326/13/2 | serial4/first_notice 122/114/105
+IDENT BEST GC | serial4/last_trade | agree 328 of 341 (96.2%) | cannot say 0
+DIS GC base/last_trade | GCZ5^9 M 1993-07-31 | observed position 14 | rule position 15
+DIS GC base/last_trade | GCZ5^9 M 1993-10-31 | observed position 14 | rule position 13
+DIS GC base/last_trade | GCZ5^9 M 1993-11-30 | observed position 14 | rule position 13
+DIS GC base/last_trade | GCZ5^9 M 1993-12-31 | observed position 14 | rule position 12
+DIS GC base/last_trade | GCZ5^9 M 1994-01-31 | observed position 13 | rule position 12
+DIS GC base/last_trade | GCZ5^9 M 1994-02-28 | observed position 13 | rule position 11
+DIS GC base/last_trade | GCZ5^9 M 1994-03-31 | observed position 12 | rule position 11
+DIS GC base/last_trade | GCZ5^9 M 1994-04-30 | observed position 12 | rule position 10
+DIS GC base/last_trade | GCZ5^9 M 1994-05-31 | observed position 11 | rule position 10
+DIS GC base/last_trade | GCZ5^9 M 1994-06-30 | observed position 11 | rule position 9
+DIS GC base/last_trade | GCZ5^9 M 1994-07-31 | observed position 10 | rule position 9
+DIS GC base/last_trade | GCZ5^9 M 1994-08-31 | observed position 10 | rule position 8
+DIS GC base/last_trade | ... 184 more
+DIS GC serial4/last_trade | GCZ5^9 M 1993-07-31 | observed position 14 | rule position 16
+DIS GC serial4/last_trade | GCZ5^9 M 1993-08-31 | observed position 14 | rule position 16
+DIS GC serial4/last_trade | GCZ5^9 M 1993-09-30 | observed position 14 | rule position 15
+DIS GC serial4/last_trade | GCZ5^9 M 1993-10-31 | observed position 14 | rule position 15
+DIS GC serial4/last_trade | GCZ5^0 M 2003-07-31 | observed position 14 | rule position 16
+DIS GC serial4/last_trade | GCZ5^0 M 2003-08-31 | observed position 14 | rule position 16
+DIS GC serial4/last_trade | GCZ5^0 M 2003-09-30 | observed position 14 | rule position 15
+DIS GC serial4/last_trade | GCZ5^0 M 2003-10-31 | observed position 14 | rule position 15
+DIS GC serial4/last_trade | GCZ3^9 D 1993-12-29 | observed position 2 | rule position 1
+DIS GC serial4/last_trade | GCZ0^0 M 1998-07-31 | observed position 14 | rule position 16
+DIS GC serial4/last_trade | GCZ0^0 M 1998-08-31 | observed position 14 | rule position 16
+DIS GC serial4/last_trade | GCZ0^0 M 1998-09-30 | observed position 14 | rule position 15
+DIS GC serial4/last_trade | ... 1 more
+IDENT SI | base/last_trade 103/194/39 | base/last_trade_m1 101/194/41 | base/first_notice 15/194/127 | serial2/last_trade 236/98/2 | serial2/last_trade_m1 230/101/5 | serial2/first_notice 30/199/107 | serial3/last_trade 258/78/0 | serial3/last_trade_m1 253/80/3 | serial3/first_notice 53/178/105 | serial4/last_trade 285/51/0 | serial4/last_trade_m1 280/53/3 | serial4/first_notice 80/151/105
+IDENT BEST SI | serial4/last_trade | agree 285 of 336 (84.8%) | cannot say 0
+DIS SI base/last_trade | SIZ5^9 M 1993-09-30 | observed position 14 | rule position 11
+DIS SI base/last_trade | SIZ5^9 M 1993-10-31 | observed position 14 | rule position 11
+DIS SI base/last_trade | SIZ5^9 M 1993-11-30 | observed position 14 | rule position 11
+DIS SI base/last_trade | SIZ5^9 M 1993-12-31 | observed position 13 | rule position 10
+DIS SI base/last_trade | SIZ5^9 M 1994-01-31 | observed position 13 | rule position 10
+DIS SI base/last_trade | SIZ5^9 M 1994-02-28 | observed position 12 | rule position 10
+DIS SI base/last_trade | SIZ5^9 M 1994-03-31 | observed position 12 | rule position 9
+DIS SI base/last_trade | SIZ5^9 M 1994-04-30 | observed position 11 | rule position 9
+DIS SI base/last_trade | SIZ5^9 M 1994-05-31 | observed position 11 | rule position 8
+DIS SI base/last_trade | SIZ5^9 M 1994-06-30 | observed position 10 | rule position 8
+DIS SI base/last_trade | SIZ5^9 M 1994-07-31 | observed position 10 | rule position 7
+DIS SI base/last_trade | SIZ5^9 M 1994-08-31 | observed position 10 | rule position 7
+DIS SI base/last_trade | ... 182 more
+DIS SI serial4/last_trade | SIZ5^9 M 1993-03-31 | observed position 14 | rule position 16
+DIS SI serial4/last_trade | SIZ5^9 M 1993-09-30 | observed position 14 | rule position 13
+DIS SI serial4/last_trade | SIZ5^9 M 1993-10-31 | observed position 14 | rule position 13
+DIS SI serial4/last_trade | SIZ5^9 M 1993-11-30 | observed position 14 | rule position 13
+DIS SI serial4/last_trade | SIZ5^9 M 1993-12-31 | observed position 13 | rule position 12
+DIS SI serial4/last_trade | SIZ5^9 M 1994-01-31 | observed position 13 | rule position 12
+DIS SI serial4/last_trade | SIZ5^9 M 1994-02-28 | observed position 12 | rule position 11
+DIS SI serial4/last_trade | SIZ5^9 M 1994-03-31 | observed position 12 | rule position 11
+DIS SI serial4/last_trade | SIZ5^9 M 1994-04-30 | observed position 11 | rule position 10
+DIS SI serial4/last_trade | SIZ5^9 M 1994-05-31 | observed position 11 | rule position 10
+DIS SI serial4/last_trade | SIZ5^9 M 1994-06-30 | observed position 10 | rule position 9
+DIS SI serial4/last_trade | SIZ5^9 M 1994-07-31 | observed position 10 | rule position 9
+DIS SI serial4/last_trade | ... 39 more
+IDENT HG | base/last_trade 109/167/37 | base/last_trade_m1 109/167/37 | base/first_notice 20/167/126 | serial2/last_trade 239/72/2 | serial2/last_trade_m1 237/74/2 | serial2/first_notice 36/171/106 | serial3/last_trade 243/70/0 | serial3/last_trade_m1 242/71/0 | serial3/first_notice 37/172/104 | serial4/last_trade 246/67/0 | serial4/last_trade_m1 245/68/0 | serial4/first_notice 40/169/104
+IDENT BEST HG | serial4/last_trade | agree 246 of 313 (78.6%) | cannot say 0
+DIS HG base/last_trade | HGZ5^9 M 1994-01-31 | observed position 17 | rule position 10
+DIS HG base/last_trade | HGZ5^9 M 1994-02-28 | observed position 17 | rule position 10
+DIS HG base/last_trade | HGZ5^9 M 1994-03-31 | observed position 16 | rule position 9
+DIS HG base/last_trade | HGZ5^9 M 1994-06-30 | observed position 15 | rule position 8
+DIS HG base/last_trade | HGZ5^9 M 1994-07-31 | observed position 14 | rule position 7
+DIS HG base/last_trade | HGZ5^9 M 1994-08-31 | observed position 14 | rule position 7
+DIS HG base/last_trade | HGZ5^9 M 1994-09-30 | observed position 13 | rule position 6
+DIS HG base/last_trade | HGZ5^9 M 1994-10-31 | observed position 13 | rule position 6
+DIS HG base/last_trade | HGZ5^9 M 1994-11-30 | observed position 13 | rule position 6
+DIS HG base/last_trade | HGZ5^9 M 1994-12-31 | observed position 12 | rule position 5
+DIS HG base/last_trade | HGZ5^9 M 1995-01-31 | observed position 11 | rule position 5
+DIS HG base/last_trade | HGZ5^9 M 1995-02-28 | observed position 10 | rule position 5
+DIS HG base/last_trade | ... 155 more
+DIS HG serial4/last_trade | HGZ5^9 M 1994-01-31 | observed position 17 | rule position 12
+DIS HG serial4/last_trade | HGZ5^9 M 1994-02-28 | observed position 17 | rule position 11
+DIS HG serial4/last_trade | HGZ5^9 M 1994-03-31 | observed position 16 | rule position 11
+DIS HG serial4/last_trade | HGZ5^9 M 1994-06-30 | observed position 15 | rule position 9
+DIS HG serial4/last_trade | HGZ5^9 M 1994-07-31 | observed position 14 | rule position 9
+DIS HG serial4/last_trade | HGZ5^9 M 1994-08-31 | observed position 14 | rule position 9
+DIS HG serial4/last_trade | HGZ5^9 M 1994-09-30 | observed position 13 | rule position 8
+DIS HG serial4/last_trade | HGZ5^9 M 1994-10-31 | observed position 13 | rule position 8
+DIS HG serial4/last_trade | HGZ5^9 M 1994-11-30 | observed position 13 | rule position 8
+DIS HG serial4/last_trade | HGZ5^9 M 1994-12-31 | observed position 12 | rule position 7
+DIS HG serial4/last_trade | HGZ5^9 M 1995-01-31 | observed position 11 | rule position 7
+DIS HG serial4/last_trade | HGZ5^9 M 1995-02-28 | observed position 10 | rule position 6
+DIS HG serial4/last_trade | ... 55 more
+IDENT PL | base/last_trade 403/44/0 | base/last_trade_m1 405/40/2 | base/first_notice 255/107/85 | serial2/last_trade 150/297/0 | serial2/last_trade_m1 154/291/2 | serial2/first_notice 225/137/85 | serial3/last_trade 136/311/0 | serial3/last_trade_m1 137/308/2 | serial3/first_notice 97/265/85 | serial4/last_trade 128/319/0 | serial4/last_trade_m1 129/316/2 | serial4/first_notice 89/273/85
+IDENT BEST PL | base/last_trade_m1 | agree 405 of 445 (91.0%) | cannot say 2
+DIS PL base/last_trade | PLF5^9 M 1993-11-30 | observed position 6 | rule position 5
+DIS PL base/last_trade | PLF5^9 M 1994-08-31 | observed position 3 | rule position 2
+DIS PL base/last_trade | PLF5^0 M 2004-05-31 | observed position 4 | rule position 3
+DIS PL base/last_trade | PLF5^0 M 2004-06-30 | observed position 4 | rule position 3
+DIS PL base/last_trade | PLF5^0 M 2004-07-31 | observed position 3 | rule position 2
+DIS PL base/last_trade | PLF5^0 M 2004-08-31 | observed position 3 | rule position 2
+DIS PL base/last_trade | PLF5^0 D 2004-10-27 | observed position 1 | rule position 2
+DIS PL base/last_trade | PLF5^0 D 2004-12-10 | observed position 2 | rule position 1
+DIS PL base/last_trade | PLF3^9 D 1992-10-28 | observed position 1 | rule position 2
+DIS PL base/last_trade | PLF9^9 D 1998-10-28 | observed position 1 | rule position 2
+DIS PL base/last_trade | PLF4^0 D 2003-10-29 | observed position 1 | rule position 2
+DIS PL base/last_trade | PLF4^0 D 2003-12-18 | observed position 2 | rule position 1
+DIS PL base/last_trade | ... 32 more
+DIS PL base/last_trade_m1 | PLF5^9 M 1993-11-30 | observed position 6 | rule position 5
+DIS PL base/last_trade_m1 | PLF5^9 M 1994-08-31 | observed position 3 | rule position 2
+DIS PL base/last_trade_m1 | PLF5^0 M 2004-05-31 | observed position 4 | rule position 3
+DIS PL base/last_trade_m1 | PLF5^0 M 2004-06-30 | observed position 4 | rule position 3
+DIS PL base/last_trade_m1 | PLF5^0 M 2004-07-31 | observed position 3 | rule position 2
+DIS PL base/last_trade_m1 | PLF5^0 M 2004-08-31 | observed position 3 | rule position 2
+DIS PL base/last_trade_m1 | PLF5^0 D 2004-12-10 | observed position 2 | rule position 1
+DIS PL base/last_trade_m1 | PLF4^0 D 2003-12-18 | observed position 2 | rule position 1
+DIS PL base/last_trade_m1 | PLF4^0 D 2003-12-19 | observed position 2 | rule position 1
+DIS PL base/last_trade_m1 | PLF4^0 D 2003-12-22 | observed position 2 | rule position 1
+DIS PL base/last_trade_m1 | PLF4^0 D 2003-12-23 | observed position 2 | rule position 1
+DIS PL base/last_trade_m1 | PLF4^0 D 2003-12-24 | observed position 2 | rule position 1
+DIS PL base/last_trade_m1 | ... 28 more
+IDENT C | base/last_trade 529/44/10 | base/last_trade_m1 519/49/15 | base/first_notice 434/89/60
+IDENT BEST C | base/last_trade | agree 529 of 573 (92.3%) | cannot say 10
+DIS C base/last_trade | CZ5^9 M 1993-12-31 | observed position 9 | rule position 10
+DIS C base/last_trade | CZ5^9 M 1994-01-31 | observed position 9 | rule position 10
+DIS C base/last_trade | CZ5^9 M 1994-02-28 | observed position 9 | rule position 10
+DIS C base/last_trade | CZ5^9 M 1994-03-31 | observed position 8 | rule position 9
+DIS C base/last_trade | CZ5^9 M 1994-04-30 | observed position 8 | rule position 9
+DIS C base/last_trade | CZ5^0 M 2002-12-31 | observed position 2 | rule position 15
+DIS C base/last_trade | CZ5^0 M 2003-09-30 | observed position 6 | rule position 11
+DIS C base/last_trade | CZ5^0 M 2003-11-30 | observed position 1 | rule position 11
+DIS C base/last_trade | CZ5^0 M 2003-12-31 | observed position 9 | rule position 10
+DIS C base/last_trade | CZ5^0 M 2004-01-31 | observed position 9 | rule position 10
+DIS C base/last_trade | CZ5^0 M 2004-02-29 | observed position 9 | rule position 10
+DIS C base/last_trade | CZ3^9 D 1993-09-15 | observed position 2 | rule position 1
+DIS C base/last_trade | ... 32 more
+IDENT W | base/last_trade 529/26/10 | base/last_trade_m1 519/31/15 | base/first_notice 434/71/60
+IDENT BEST W | base/last_trade | agree 529 of 555 (95.3%) | cannot say 10
+DIS W base/last_trade | WZ5^9 M 1994-06-30 | observed position 7 | rule position 8
+DIS W base/last_trade | WZ5^9 M 1994-07-31 | observed position 6 | rule position 7
+DIS W base/last_trade | WZ5^9 M 1994-08-31 | observed position 6 | rule position 7
+DIS W base/last_trade | WZ5^0 M 2003-07-31 | observed position 9 | rule position 12
+DIS W base/last_trade | WZ5^0 M 2003-08-31 | observed position 9 | rule position 12
+DIS W base/last_trade | WZ5^0 M 2003-09-30 | observed position 9 | rule position 11
+DIS W base/last_trade | WZ5^0 M 2003-10-31 | observed position 9 | rule position 11
+DIS W base/last_trade | WZ5^0 M 2003-11-30 | observed position 9 | rule position 11
+DIS W base/last_trade | WZ5^0 M 2004-01-31 | observed position 9 | rule position 10
+DIS W base/last_trade | WZ5^0 M 2004-02-29 | observed position 9 | rule position 10
+DIS W base/last_trade | WZ5^0 M 2004-04-30 | observed position 8 | rule position 9
+DIS W base/last_trade | WZ3^9 D 1993-09-15 | observed position 2 | rule position 1
+DIS W base/last_trade | ... 14 more
+IDENT S | base/last_trade 363/37/9 | base/last_trade_m1 353/42/14 | base/first_notice 269/82/58
+IDENT BEST S | base/last_trade | agree 363 of 400 (90.8%) | cannot say 9
+DIS S base/last_trade | SX5^9 M 1993-11-30 | observed position 11 | rule position 14
+DIS S base/last_trade | SX5^9 M 1993-12-31 | observed position 11 | rule position 14
+DIS S base/last_trade | SX5^9 M 1994-01-31 | observed position 10 | rule position 13
+DIS S base/last_trade | SX5^9 M 1994-02-28 | observed position 10 | rule position 13
+DIS S base/last_trade | SX5^9 M 1994-03-31 | observed position 10 | rule position 12
+DIS S base/last_trade | SX5^9 M 1994-04-30 | observed position 10 | rule position 12
+DIS S base/last_trade | SX5^9 M 1994-05-31 | observed position 9 | rule position 11
+DIS S base/last_trade | SX5^9 M 1994-06-30 | observed position 9 | rule position 11
+DIS S base/last_trade | SX5^0 M 2003-03-31 | observed position 11 | rule position 19
+DIS S base/last_trade | SX5^0 M 2003-04-30 | observed position 11 | rule position 19
+DIS S base/last_trade | SX5^0 M 2003-07-31 | observed position 11 | rule position 17
+DIS S base/last_trade | SX5^0 M 2003-10-31 | observed position 11 | rule position 15
+DIS S base/last_trade | ... 25 more
+IDENT SB | base/last_trade 494/8/0 | base/last_trade_m1 461/33/8
+IDENT BEST SB | base/last_trade | agree 494 of 502 (98.4%) | cannot say 0
+DIS SB base/last_trade | SBV0^9 M 1989-05-31 | observed position 7 | rule position 6
+DIS SB base/last_trade | SBV0^9 M 1989-06-30 | observed position 7 | rule position 6
+DIS SB base/last_trade | SBV0^9 M 1989-07-31 | observed position 6 | rule position 5
+DIS SB base/last_trade | SBV0^9 M 1989-08-31 | observed position 6 | rule position 5
+DIS SB base/last_trade | SBV0^9 M 1989-09-30 | observed position 6 | rule position 5
+DIS SB base/last_trade | SBV0^9 M 1989-10-31 | observed position 5 | rule position 4
+DIS SB base/last_trade | SBV0^9 M 1989-11-30 | observed position 5 | rule position 4
+DIS SB base/last_trade | SBV0^9 M 1989-12-31 | observed position 5 | rule position 4
+IDENT KC | base/last_trade 553/6/0 | base/last_trade_m1 545/11/3 | base/first_notice 335/127/97
+IDENT BEST KC | base/last_trade | agree 553 of 559 (98.9%) | cannot say 0
+DIS KC base/last_trade | KCZ5^0 D 2005-09-21 | observed position 2 | rule position 1
+DIS KC base/last_trade | KCZ5^0 D 2005-09-22 | observed position 2 | rule position 1
+DIS KC base/last_trade | KCZ5^0 D 2005-09-23 | observed position 2 | rule position 1
+DIS KC base/last_trade | KCZ5^0 D 2005-09-26 | observed position 2 | rule position 1
+DIS KC base/last_trade | KCZ5^0 D 2005-09-27 | observed position 2 | rule position 1
+DIS KC base/last_trade | KCZ5^0 D 2005-09-28 | observed position 2 | rule position 1
+IDENT CT | base/last_trade 526/3/1 | base/last_trade_m1 517/8/5 | base/first_notice 401/78/51
+IDENT BEST CT | base/last_trade | agree 526 of 529 (99.4%) | cannot say 1
+DIS CT base/last_trade | CTZ5^9 M 1994-06-30 | observed position 9 | rule position 8
+DIS CT base/last_trade | CTZ5^9 M 1994-07-31 | observed position 8 | rule position 7
+DIS CT base/last_trade | CTZ3^9 D 1993-10-08 | observed position 2 | rule position 1
+IDENT LC | base/last_trade 311/77/0 | base/last_trade_m1 315/69/4 | base/first_notice 175/115/98
+IDENT BEST LC | base/last_trade_m1 | agree 315 of 384 (82.0%) | cannot say 4
+DIS LC base/last_trade | LCZ5^9 M 1994-10-31 | observed position 7 | rule position 8
+DIS LC base/last_trade | LCZ5^9 M 1994-12-31 | observed position 6 | rule position 7
+DIS LC base/last_trade | LCZ5^9 M 1995-02-28 | observed position 5 | rule position 6
+DIS LC base/last_trade | LCZ5^9 M 1995-04-30 | observed position 4 | rule position 5
+DIS LC base/last_trade | LCZ5^9 M 1995-06-30 | observed position 3 | rule position 4
+DIS LC base/last_trade | LCZ5^9 M 1995-08-31 | observed position 2 | rule position 3
+DIS LC base/last_trade | LCZ5^9 M 1995-10-31 | observed position 1 | rule position 2
+DIS LC base/last_trade | LCZ5^0 M 2004-11-30 | observed position 9 | rule position 7
+DIS LC base/last_trade | LCZ5^0 M 2004-12-31 | observed position 9 | rule position 7
+DIS LC base/last_trade | LCZ5^0 M 2005-01-31 | observed position 8 | rule position 6
+DIS LC base/last_trade | LCZ5^0 M 2005-03-31 | observed position 8 | rule position 5
+DIS LC base/last_trade | LCZ5^0 M 2005-04-30 | observed position 7 | rule position 5
+DIS LC base/last_trade | ... 65 more
+DIS LC base/last_trade_m1 | LCZ5^0 M 2004-11-30 | observed position 9 | rule position 7
+DIS LC base/last_trade_m1 | LCZ5^0 M 2004-12-31 | observed position 9 | rule position 6
+DIS LC base/last_trade_m1 | LCZ5^0 M 2005-01-31 | observed position 8 | rule position 6
+DIS LC base/last_trade_m1 | LCZ5^0 M 2005-03-31 | observed position 8 | rule position 5
+DIS LC base/last_trade_m1 | LCZ5^0 M 2005-04-30 | observed position 7 | rule position 4
+DIS LC base/last_trade_m1 | LCZ5^0 M 2005-05-31 | observed position 6 | rule position 4
+DIS LC base/last_trade_m1 | LCZ5^0 M 2005-06-30 | observed position 5 | rule position 3
+DIS LC base/last_trade_m1 | LCZ5^0 M 2005-07-31 | observed position 5 | rule position 3
+DIS LC base/last_trade_m1 | LCZ5^0 M 2005-08-31 | observed position 4 | rule position 2
+DIS LC base/last_trade_m1 | LCZ5^0 M 2005-09-30 | observed position 3 | rule position 2
+DIS LC base/last_trade_m1 | LCZ5^0 M 2005-10-31 | observed position 3 | rule position 1
+DIS LC base/last_trade_m1 | LCZ5^0 M 2005-11-30 | observed position 2 | rule position 1
+DIS LC base/last_trade_m1 | ... 57 more
+IDENT ED | base/last_trade 240/341/97 | base/last_trade_m1 235/342/101 | serial2/last_trade 398/214/66 | serial2/last_trade_m1 383/224/71 | serial3/last_trade 501/134/43 | serial3/last_trade_m1 484/146/48 | serial4/last_trade 607/50/21 | serial4/last_trade_m1 585/67/26
+IDENT BEST ED | serial4/last_trade | agree 607 of 657 (92.4%) | cannot say 21
+DIS ED base/last_trade | EDZ5^9 M 1995-10-31 | observed position 2 | rule position 1
+DIS ED base/last_trade | EDZ5^0 M 2003-12-31 | observed position 12 | rule position 8
+DIS ED base/last_trade | EDZ5^0 M 2004-01-30 | observed position 12 | rule position 8
+DIS ED base/last_trade | EDZ5^0 M 2004-02-27 | observed position 12 | rule position 8
+DIS ED base/last_trade | EDZ5^0 M 2004-03-31 | observed position 11 | rule position 7
+DIS ED base/last_trade | EDZ5^0 M 2004-04-30 | observed position 11 | rule position 7
+DIS ED base/last_trade | EDZ5^0 M 2004-05-31 | observed position 11 | rule position 7
+DIS ED base/last_trade | EDZ5^0 M 2004-06-30 | observed position 10 | rule position 6
+DIS ED base/last_trade | EDZ5^0 M 2004-07-30 | observed position 10 | rule position 6
+DIS ED base/last_trade | EDZ5^0 M 2004-08-31 | observed position 10 | rule position 6
+DIS ED base/last_trade | EDZ5^0 M 2004-09-30 | observed position 9 | rule position 5
+DIS ED base/last_trade | EDZ5^0 M 2004-10-29 | observed position 9 | rule position 5
+DIS ED base/last_trade | ... 329 more
+DIS ED serial4/last_trade | EDZ5^9 M 1994-10-31 | observed position 5 | rule position 6
+DIS ED serial4/last_trade | EDZ5^9 M 1994-11-30 | observed position 5 | rule position 7
+DIS ED serial4/last_trade | EDZ5^9 M 1994-12-30 | observed position 4 | rule position 6
+DIS ED serial4/last_trade | EDZ5^9 M 1995-01-31 | observed position 4 | rule position 6
+DIS ED serial4/last_trade | EDZ5^9 M 1995-02-28 | observed position 4 | rule position 6
+DIS ED serial4/last_trade | EDZ5^9 M 1995-03-31 | observed position 3 | rule position 5
+DIS ED serial4/last_trade | EDZ5^9 M 1995-05-31 | observed position 3 | rule position 5
+DIS ED serial4/last_trade | EDZ5^9 M 1995-08-31 | observed position 2 | rule position 4
+DIS ED serial4/last_trade | EDZ5^9 M 1995-09-29 | observed position 1 | rule position 3
+DIS ED serial4/last_trade | EDZ5^0 M 2003-12-31 | observed position 12 | rule position 10
+DIS ED serial4/last_trade | EDZ5^0 M 2004-01-30 | observed position 12 | rule position 10
+DIS ED serial4/last_trade | EDZ5^0 M 2004-02-27 | observed position 12 | rule position 10
+DIS ED serial4/last_trade | ... 38 more
+IDENT FEI | base/last_trade 91/180/46 | base/last_trade_m1 86/181/50 | serial2/last_trade 200/100/17 | serial2/last_trade_m1 192/104/21 | serial3/last_trade 231/86/0 | serial3/last_trade_m1 222/91/4 | serial4/last_trade 257/60/0 | serial4/last_trade_m1 248/65/4
+IDENT BEST FEI | serial4/last_trade | agree 257 of 317 (81.1%) | cannot say 0
+DIS FEI base/last_trade | FEIZ2^0 M 2000-06-30 | observed position 12 | rule position 10
+DIS FEI base/last_trade | FEIZ2^0 M 2000-07-31 | observed position 11 | rule position 10
+DIS FEI base/last_trade | FEIZ2^0 M 2000-08-31 | observed position 11 | rule position 10
+DIS FEI base/last_trade | FEIZ2^0 M 2000-09-30 | observed position 10 | rule position 9
+DIS FEI base/last_trade | FEIZ2^0 M 2000-10-31 | observed position 11 | rule position 9
+DIS FEI base/last_trade | FEIZ2^0 M 2000-11-30 | observed position 11 | rule position 9
+DIS FEI base/last_trade | FEIZ2^0 M 2000-12-31 | observed position 10 | rule position 8
+DIS FEI base/last_trade | FEIZ2^0 M 2001-01-31 | observed position 10 | rule position 8
+DIS FEI base/last_trade | FEIZ2^0 M 2001-02-28 | observed position 10 | rule position 8
+DIS FEI base/last_trade | FEIZ2^0 M 2001-03-31 | observed position 9 | rule position 7
+DIS FEI base/last_trade | FEIZ2^0 M 2001-04-30 | observed position 9 | rule position 7
+DIS FEI base/last_trade | FEIZ2^0 M 2001-05-31 | observed position 9 | rule position 7
+DIS FEI base/last_trade | ... 168 more
+DIS FEI serial4/last_trade | FEIZ2^0 M 2000-07-31 | observed position 11 | rule position 12
+DIS FEI serial4/last_trade | FEIZ2^0 M 2000-08-31 | observed position 11 | rule position 12
+DIS FEI serial4/last_trade | FEIZ2^0 M 2000-09-30 | observed position 10 | rule position 11
+DIS FEI serial4/last_trade | FEIZ8^0 M 2006-08-31 | observed position 5 | rule position 12
+DIS FEI serial4/last_trade | FEIZ8^0 M 2007-01-31 | observed position 12 | rule position 10
+DIS FEI serial4/last_trade | FEIZ8^0 M 2007-02-28 | observed position 12 | rule position 10
+DIS FEI serial4/last_trade | FEIZ8^0 M 2007-03-31 | observed position 11 | rule position 9
+DIS FEI serial4/last_trade | FEIZ8^0 M 2007-04-30 | observed position 11 | rule position 9
+DIS FEI serial4/last_trade | FEIZ8^0 M 2007-05-31 | observed position 11 | rule position 9
+DIS FEI serial4/last_trade | FEIZ8^0 M 2007-06-30 | observed position 10 | rule position 8
+DIS FEI serial4/last_trade | FEIZ8^0 M 2007-10-31 | observed position 9 | rule position 7
+DIS FEI serial4/last_trade | FEIZ8^0 M 2007-11-30 | observed position 9 | rule position 7
+DIS FEI serial4/last_trade | ... 48 more
+IDENT FSS | no matched sample observation
+IDENT FES | no matched sample observation
+IDENT SRA | no matched sample observation
+IDENT SON3 | no matched sample observation
+--- EXPIRY SERIES (TR.ExpiryDate on continuation RICs)
+EXPIRY L11 CLc1 | position 1 | dates 25 (2004-12-30 .. 2006-12-29) | formats {'yyyymmdd': 25} | days from date to expiry min 17 max 24 | implied contract found 25 of 25
+EXPIRY L11 CLc1 | base | agree 25 disagree 0 cannot say 0
+EXPIRY L11 GCc1 | position 1 | dates 25 (2004-12-30 .. 2006-12-29) | formats {'yyyymmdd': 25} | days from date to expiry min 24 max 31 | implied contract found 25 of 25
+EXPIRY L11 GCc1 | base | agree 12 disagree 13 cannot say 0
+EXPDIS GCc1 base | 2004-12-30 | implied delivery 2005-01 | rule delivery 2005-02
+EXPDIS GCc1 base | 2005-02-28 | implied delivery 2005-03 | rule delivery 2005-04
+EXPDIS GCc1 base | 2005-04-29 | implied delivery 2005-05 | rule delivery 2005-06
+EXPDIS GCc1 base | 2005-06-30 | implied delivery 2005-07 | rule delivery 2005-08
+EXPDIS GCc1 base | 2005-08-31 | implied delivery 2005-09 | rule delivery 2005-10
+EXPDIS GCc1 base | 2005-10-31 | implied delivery 2005-11 | rule delivery 2005-12
+EXPDIS GCc1 base | 2005-12-30 | implied delivery 2006-01 | rule delivery 2006-02
+EXPDIS GCc1 base | 2006-02-28 | implied delivery 2006-03 | rule delivery 2006-04
+EXPDIS GCc1 base | 2006-04-28 | implied delivery 2006-05 | rule delivery 2006-06
+EXPDIS GCc1 base | 2006-06-30 | implied delivery 2006-07 | rule delivery 2006-08
+EXPDIS GCc1 base | 2006-08-31 | implied delivery 2006-09 | rule delivery 2006-10
+EXPDIS GCc1 base | 2006-10-31 | implied delivery 2006-11 | rule delivery 2006-12
+EXPDIS GCc1 base | ... 1 more (last 2006-12-29)
+EXPIRY L11 GCc1 | serial2 | agree 25 disagree 0 cannot say 0
+EXPIRY L11 GCc1 | serial3 | agree 25 disagree 0 cannot say 0
+EXPIRY L11 GCc1 | serial4 | agree 25 disagree 0 cannot say 0
+EXPIRY L12 CLc1 | position 1 | dates 334 (1983-03-31 .. 2010-12-31) | formats {'yyyymmdd': 334} | days from date to expiry min 14 max 48 | implied contract found 319 of 334
+EXPIRY L12 CLc1 | base | agree 318 disagree 1 cannot say 15
+EXPDIS CLc1 base | 1983-03-31 | implied delivery 1983-06 | rule delivery 1983-05
+EXPIRY L12 CLc2 | position 2 | dates 334 (1983-03-31 .. 2010-12-31) | formats {'yyyymmdd': 334} | days from date to expiry min 44 max 78 | implied contract found 318 of 334
+EXPIRY L12 CLc2 | base | agree 318 disagree 0 cannot say 16
+EXPIRY L12 CLc36 | ok | no design data ()
+EXPIRY L12 LCOc1 | position 1 | dates 271 (1988-06-30 .. 2010-12-31) | formats {'yyyymmdd': 271} | days from date to expiry min 8 max 41 | implied contract found 250 of 271
+EXPIRY L12 LCOc1 | base | agree 250 disagree 0 cannot say 21
+EXPIRY L12 LCOc2 | position 2 | dates 271 (1988-06-30 .. 2010-12-31) | formats {'yyyymmdd': 271} | days from date to expiry min 37 max 71 | implied contract found 251 of 271
+EXPIRY L12 LCOc2 | base | agree 251 disagree 0 cannot say 20
+EXPIRY L12 LCOc24 | ok | no design data ()
+EXPIRY L12 NGc1 | position 1 | dates 249 (1990-04-30 .. 2010-12-31) | formats {'yyyymmdd': 249} | days from date to expiry min 19 max 33 | implied contract found 185 of 249
+EXPIRY L12 NGc1 | base | agree 185 disagree 0 cannot say 64
+EXPIRY L12 NGc2 | position 2 | dates 249 (1990-04-30 .. 2010-12-31) | formats {'yyyymmdd': 249} | days from date to expiry min 47 max 63 | implied contract found 186 of 249
+EXPIRY L12 NGc2 | base | agree 186 disagree 0 cannot say 63
+EXPIRY L12 NGc24 | position 24 | dates 1 (2006-07-05 .. 2006-07-05) | formats {'yyyymmdd': 1} | days from date to expiry min 722 max 722 | implied contract found 1 of 1
+EXPIRY L12 NGc24 | base | agree 1 disagree 0 cannot say 0
+EXPIRY L12 HOc1 | position 1 | dates 372 (1980-01-31 .. 2010-12-31) | formats {'yyyymmdd': 372} | days from date to expiry min 0 max 30 | implied contract found 364 of 372
+EXPIRY L12 HOc1 | base | agree 362 disagree 2 cannot say 8
+EXPDIS HOc1 base | 1980-07-31 | implied delivery 1980-09 | rule delivery 1980-08
+EXPDIS HOc1 base | 1981-11-30 | implied delivery 1982-01 | rule delivery 1981-12
+EXPIRY L12 HOc2 | position 2 | dates 372 (1980-01-31 .. 2010-12-31) | formats {'yyyymmdd': 372} | days from date to expiry min 26 max 61 | implied contract found 364 of 372
+EXPIRY L12 HOc2 | base | agree 362 disagree 2 cannot say 8
+EXPDIS HOc2 base | 1980-07-31 | implied delivery 1980-10 | rule delivery 1980-09
+EXPDIS HOc2 base | 1981-10-30 | implied delivery 1982-01 | rule delivery 1981-12
+EXPIRY L12 HOc18 | ok | no design data ()
+EXPIRY L12 RBc1 | position 1 | dates 48 (2005-10-31 .. 2010-12-31) | formats {'yyyymmdd': 48} | days from date to expiry min 0 max 60 | implied contract found 48 of 48
+EXPIRY L12 RBc1 | base | agree 46 disagree 2 cannot say 0
+EXPDIS RBc1 base | 2005-10-31 | implied delivery 2006-01 | rule delivery 2005-11
+EXPDIS RBc1 base | 2005-11-30 | implied delivery 2006-01 | rule delivery 2005-12
+EXPIRY L12 RBc2 | position 2 | dates 63 (2005-10-31 .. 2010-12-31) | formats {'yyyymmdd': 63} | days from date to expiry min 28 max 92 | implied contract found 63 of 63
+EXPIRY L12 RBc2 | base | agree 61 disagree 2 cannot say 0
+EXPDIS RBc2 base | 2005-10-31 | implied delivery 2006-02 | rule delivery 2005-12
+EXPDIS RBc2 base | 2005-11-30 | implied delivery 2006-02 | rule delivery 2006-01
+EXPIRY L12 RBc18 | ok | no design data ()
+EXPIRY L12 GCc1 | position 1 | dates 372 (1980-01-31 .. 2010-12-31) | formats {'yyyymmdd': 372} | days from date to expiry min 0 max 33 | implied contract found 369 of 372
+EXPIRY L12 GCc1 | base | agree 185 disagree 184 cannot say 3
+EXPDIS GCc1 base | 1980-02-29 | implied delivery 1980-03 | rule delivery 1980-04
+EXPDIS GCc1 base | 1980-04-30 | implied delivery 1980-05 | rule delivery 1980-06
+EXPDIS GCc1 base | 1980-06-30 | implied delivery 1980-07 | rule delivery 1980-08
+EXPDIS GCc1 base | 1980-08-29 | implied delivery 1980-09 | rule delivery 1980-10
+EXPDIS GCc1 base | 1980-10-31 | implied delivery 1980-11 | rule delivery 1980-12
+EXPDIS GCc1 base | 1980-12-31 | implied delivery 1981-01 | rule delivery 1981-02
+EXPDIS GCc1 base | 1981-02-27 | implied delivery 1981-03 | rule delivery 1981-04
+EXPDIS GCc1 base | 1981-04-30 | implied delivery 1981-05 | rule delivery 1981-06
+EXPDIS GCc1 base | 1981-06-30 | implied delivery 1981-07 | rule delivery 1981-08
+EXPDIS GCc1 base | 1981-08-31 | implied delivery 1981-09 | rule delivery 1981-10
+EXPDIS GCc1 base | 1981-10-30 | implied delivery 1981-11 | rule delivery 1981-12
+EXPDIS GCc1 base | 1981-12-31 | implied delivery 1982-01 | rule delivery 1982-02
+EXPDIS GCc1 base | ... 172 more (last 2010-12-31)
+EXPIRY L12 GCc1 | serial2 | agree 368 disagree 1 cannot say 3
+EXPDIS GCc1 serial2 | 1987-12-31 | implied delivery 1987-12 | rule delivery 1988-01
+EXPIRY L12 GCc1 | serial3 | agree 368 disagree 1 cannot say 3
+EXPDIS GCc1 serial3 | 1987-12-31 | implied delivery 1987-12 | rule delivery 1988-01
+EXPIRY L12 GCc1 | serial4 | agree 368 disagree 1 cannot say 3
+EXPDIS GCc1 serial4 | 1987-12-31 | implied delivery 1987-12 | rule delivery 1988-01
+EXPIRY L12 GCc2 | position 2 | dates 372 (1980-01-31 .. 2010-12-31) | formats {'yyyymmdd': 372} | days from date to expiry min 27 max 63 | implied contract found 369 of 372
+EXPIRY L12 GCc2 | base | agree 0 disagree 369 cannot say 3
+EXPDIS GCc2 base | 1980-01-31 | implied delivery 1980-03 | rule delivery 1980-04
+EXPDIS GCc2 base | 1980-02-29 | implied delivery 1980-04 | rule delivery 1980-06
+EXPDIS GCc2 base | 1980-03-31 | implied delivery 1980-05 | rule delivery 1980-06
+EXPDIS GCc2 base | 1980-04-30 | implied delivery 1980-06 | rule delivery 1980-08
+EXPDIS GCc2 base | 1980-05-30 | implied delivery 1980-07 | rule delivery 1980-08
+EXPDIS GCc2 base | 1980-06-30 | implied delivery 1980-08 | rule delivery 1980-10
+EXPDIS GCc2 base | 1980-07-31 | implied delivery 1980-09 | rule delivery 1980-10
+EXPDIS GCc2 base | 1980-08-29 | implied delivery 1980-10 | rule delivery 1980-12
+EXPDIS GCc2 base | 1980-09-30 | implied delivery 1980-11 | rule delivery 1980-12
+EXPDIS GCc2 base | 1980-11-28 | implied delivery 1981-01 | rule delivery 1981-02
+EXPDIS GCc2 base | 1980-12-31 | implied delivery 1981-02 | rule delivery 1981-04
+EXPDIS GCc2 base | 1981-01-30 | implied delivery 1981-03 | rule delivery 1981-04
+EXPDIS GCc2 base | ... 357 more (last 2010-12-31)
+EXPIRY L12 GCc2 | serial2 | agree 184 disagree 185 cannot say 3
+EXPDIS GCc2 serial2 | 1980-01-31 | implied delivery 1980-03 | rule delivery 1980-04
+EXPDIS GCc2 serial2 | 1980-03-31 | implied delivery 1980-05 | rule delivery 1980-06
+EXPDIS GCc2 serial2 | 1980-05-30 | implied delivery 1980-07 | rule delivery 1980-08
+EXPDIS GCc2 serial2 | 1980-07-31 | implied delivery 1980-09 | rule delivery 1980-10
+EXPDIS GCc2 serial2 | 1980-09-30 | implied delivery 1980-11 | rule delivery 1980-12
+EXPDIS GCc2 serial2 | 1980-11-28 | implied delivery 1981-01 | rule delivery 1981-02
+EXPDIS GCc2 serial2 | 1981-01-30 | implied delivery 1981-03 | rule delivery 1981-04
+EXPDIS GCc2 serial2 | 1981-03-31 | implied delivery 1981-05 | rule delivery 1981-06
+EXPDIS GCc2 serial2 | 1981-05-29 | implied delivery 1981-07 | rule delivery 1981-08
+EXPDIS GCc2 serial2 | 1981-07-31 | implied delivery 1981-09 | rule delivery 1981-10
+EXPDIS GCc2 serial2 | 1981-09-30 | implied delivery 1981-11 | rule delivery 1981-12
+EXPDIS GCc2 serial2 | 1981-11-30 | implied delivery 1982-01 | rule delivery 1982-02
+EXPDIS GCc2 serial2 | ... 173 more (last 2010-11-30)
+EXPIRY L12 GCc2 | serial3 | agree 368 disagree 1 cannot say 3
+EXPDIS GCc2 serial3 | 1987-12-31 | implied delivery 1988-01 | rule delivery 1988-02
+EXPIRY L12 GCc2 | serial4 | agree 368 disagree 1 cannot say 3
+EXPDIS GCc2 serial4 | 1987-12-31 | implied delivery 1988-01 | rule delivery 1988-02
+EXPIRY L12 GCc14 | ok | no design data ()
+EXPIRY L12 SIc1 | position 1 | dates 372 (1980-01-31 .. 2010-12-31) | formats {'yyyymmdd': 372} | days from date to expiry min 0 max 88 | implied contract found 365 of 372
+EXPIRY L12 SIc1 | base | agree 154 disagree 211 cannot say 7
+EXPDIS SIc1 base | 1980-01-31 | implied delivery 1980-02 | rule delivery 1980-03
+EXPDIS SIc1 base | 1980-03-31 | implied delivery 1980-04 | rule delivery 1980-05
+EXPDIS SIc1 base | 1980-05-30 | implied delivery 1980-06 | rule delivery 1980-07
+EXPDIS SIc1 base | 1980-07-31 | implied delivery 1980-08 | rule delivery 1980-09
+EXPDIS SIc1 base | 1980-09-30 | implied delivery 1980-10 | rule delivery 1980-12
+EXPDIS SIc1 base | 1980-10-31 | implied delivery 1980-11 | rule delivery 1980-12
+EXPDIS SIc1 base | 1980-12-31 | implied delivery 1981-01 | rule delivery 1981-03
+EXPDIS SIc1 base | 1981-01-30 | implied delivery 1981-02 | rule delivery 1981-03
+EXPDIS SIc1 base | 1981-05-29 | implied delivery 1981-06 | rule delivery 1981-07
+EXPDIS SIc1 base | 1981-07-31 | implied delivery 1981-08 | rule delivery 1981-09
+EXPDIS SIc1 base | 1981-09-30 | implied delivery 1981-10 | rule delivery 1981-12
+EXPDIS SIc1 base | 1981-10-30 | implied delivery 1981-11 | rule delivery 1981-12
+EXPDIS SIc1 base | ... 199 more (last 2010-12-31)
+EXPIRY L12 SIc1 | serial2 | agree 359 disagree 6 cannot say 7
+EXPDIS SIc1 serial2 | 1982-01-29 | implied delivery 1982-01 | rule delivery 1982-02
+EXPDIS SIc1 serial2 | 1982-03-31 | implied delivery 1982-05 | rule delivery 1982-04
+EXPDIS SIc1 serial2 | 1982-05-31 | implied delivery 1982-07 | rule delivery 1982-06
+EXPDIS SIc1 serial2 | 1982-09-30 | implied delivery 1982-12 | rule delivery 1982-10
+EXPDIS SIc1 serial2 | 1982-10-29 | implied delivery 1982-12 | rule delivery 1982-11
+EXPDIS SIc1 serial2 | 2003-02-28 | implied delivery 2003-02 | rule delivery 2003-03
+EXPIRY L12 SIc1 | serial3 | agree 359 disagree 6 cannot say 7
+EXPDIS SIc1 serial3 | 1982-01-29 | implied delivery 1982-01 | rule delivery 1982-02
+EXPDIS SIc1 serial3 | 1982-03-31 | implied delivery 1982-05 | rule delivery 1982-04
+EXPDIS SIc1 serial3 | 1982-05-31 | implied delivery 1982-07 | rule delivery 1982-06
+EXPDIS SIc1 serial3 | 1982-09-30 | implied delivery 1982-12 | rule delivery 1982-10
+EXPDIS SIc1 serial3 | 1982-10-29 | implied delivery 1982-12 | rule delivery 1982-11
+EXPDIS SIc1 serial3 | 2003-02-28 | implied delivery 2003-02 | rule delivery 2003-03
+EXPIRY L12 SIc1 | serial4 | agree 359 disagree 6 cannot say 7
+EXPDIS SIc1 serial4 | 1982-01-29 | implied delivery 1982-01 | rule delivery 1982-02
+EXPDIS SIc1 serial4 | 1982-03-31 | implied delivery 1982-05 | rule delivery 1982-04
+EXPDIS SIc1 serial4 | 1982-05-31 | implied delivery 1982-07 | rule delivery 1982-06
+EXPDIS SIc1 serial4 | 1982-09-30 | implied delivery 1982-12 | rule delivery 1982-10
+EXPDIS SIc1 serial4 | 1982-10-29 | implied delivery 1982-12 | rule delivery 1982-11
+EXPDIS SIc1 serial4 | 2003-02-28 | implied delivery 2003-02 | rule delivery 2003-03
+EXPIRY L12 SIc2 | position 2 | dates 372 (1980-01-31 .. 2010-12-31) | formats {'yyyymmdd': 372} | days from date to expiry min 25 max 119 | implied contract found 367 of 372
+EXPIRY L12 SIc2 | base | agree 5 disagree 362 cannot say 5
+EXPDIS SIc2 base | 1980-01-31 | implied delivery 1980-03 | rule delivery 1980-05
+EXPDIS SIc2 base | 1980-02-29 | implied delivery 1980-04 | rule delivery 1980-05
+EXPDIS SIc2 base | 1980-03-31 | implied delivery 1980-05 | rule delivery 1980-07
+EXPDIS SIc2 base | 1980-04-30 | implied delivery 1980-06 | rule delivery 1980-07
+EXPDIS SIc2 base | 1980-05-30 | implied delivery 1980-07 | rule delivery 1980-09
+EXPDIS SIc2 base | 1980-06-30 | implied delivery 1980-08 | rule delivery 1980-09
+EXPDIS SIc2 base | 1980-07-31 | implied delivery 1980-09 | rule delivery 1980-12
+EXPDIS SIc2 base | 1980-08-29 | implied delivery 1980-10 | rule delivery 1980-12
+EXPDIS SIc2 base | 1980-09-30 | implied delivery 1980-11 | rule delivery 1981-03
+EXPDIS SIc2 base | 1980-11-28 | implied delivery 1981-01 | rule delivery 1981-03
+EXPDIS SIc2 base | 1980-12-31 | implied delivery 1981-02 | rule delivery 1981-05
+EXPDIS SIc2 base | 1981-01-30 | implied delivery 1981-03 | rule delivery 1981-05
+EXPDIS SIc2 base | ... 350 more (last 2010-12-31)
+EXPIRY L12 SIc2 | serial2 | agree 152 disagree 215 cannot say 5
+EXPDIS SIc2 serial2 | 1980-02-29 | implied delivery 1980-04 | rule delivery 1980-05
+EXPDIS SIc2 serial2 | 1980-04-30 | implied delivery 1980-06 | rule delivery 1980-07
+EXPDIS SIc2 serial2 | 1980-06-30 | implied delivery 1980-08 | rule delivery 1980-09
+EXPDIS SIc2 serial2 | 1980-08-29 | implied delivery 1980-10 | rule delivery 1980-12
+EXPDIS SIc2 serial2 | 1980-09-30 | implied delivery 1980-11 | rule delivery 1980-12
+EXPDIS SIc2 serial2 | 1980-11-28 | implied delivery 1981-01 | rule delivery 1981-03
+EXPDIS SIc2 serial2 | 1980-12-31 | implied delivery 1981-02 | rule delivery 1981-03
+EXPDIS SIc2 serial2 | 1981-04-30 | implied delivery 1981-06 | rule delivery 1981-07
+EXPDIS SIc2 serial2 | 1981-06-30 | implied delivery 1981-08 | rule delivery 1981-09
+EXPDIS SIc2 serial2 | 1981-08-31 | implied delivery 1981-10 | rule delivery 1981-12
+EXPDIS SIc2 serial2 | 1981-09-30 | implied delivery 1981-11 | rule delivery 1981-12
+EXPDIS SIc2 serial2 | 1981-11-30 | implied delivery 1982-01 | rule delivery 1982-03
+EXPDIS SIc2 serial2 | ... 203 more (last 2010-12-31)
+EXPIRY L12 SIc2 | serial3 | agree 356 disagree 11 cannot say 5
+EXPDIS SIc2 serial3 | 1982-01-29 | implied delivery 1982-02 | rule delivery 1982-03
+EXPDIS SIc2 serial3 | 1982-02-26 | implied delivery 1982-05 | rule delivery 1982-04
+EXPDIS SIc2 serial3 | 1982-03-31 | implied delivery 1982-07 | rule delivery 1982-05
+EXPDIS SIc2 serial3 | 1982-04-30 | implied delivery 1982-07 | rule delivery 1982-06
+EXPDIS SIc2 serial3 | 1982-05-31 | implied delivery 1982-09 | rule delivery 1982-07
+EXPDIS SIc2 serial3 | 1982-08-31 | implied delivery 1982-12 | rule delivery 1982-10
+EXPDIS SIc2 serial3 | 1982-09-30 | implied delivery 1983-01 | rule delivery 1982-11
+EXPDIS SIc2 serial3 | 1982-10-29 | implied delivery 1983-01 | rule delivery 1982-12
+EXPDIS SIc2 serial3 | 2003-02-28 | implied delivery 2003-03 | rule delivery 2003-04
+EXPDIS SIc2 serial3 | 2003-06-30 | implied delivery 2003-07 | rule delivery 2003-08
+EXPDIS SIc2 serial3 | 2004-04-30 | implied delivery 2004-05 | rule delivery 2004-06
+EXPIRY L12 SIc2 | serial4 | agree 356 disagree 11 cannot say 5
+EXPDIS SIc2 serial4 | 1982-01-29 | implied delivery 1982-02 | rule delivery 1982-03
+EXPDIS SIc2 serial4 | 1982-02-26 | implied delivery 1982-05 | rule delivery 1982-04
+EXPDIS SIc2 serial4 | 1982-03-31 | implied delivery 1982-07 | rule delivery 1982-05
+EXPDIS SIc2 serial4 | 1982-04-30 | implied delivery 1982-07 | rule delivery 1982-06
+EXPDIS SIc2 serial4 | 1982-05-31 | implied delivery 1982-09 | rule delivery 1982-07
+EXPDIS SIc2 serial4 | 1982-08-31 | implied delivery 1982-12 | rule delivery 1982-10
+EXPDIS SIc2 serial4 | 1982-09-30 | implied delivery 1983-01 | rule delivery 1982-11
+EXPDIS SIc2 serial4 | 1982-10-29 | implied delivery 1983-01 | rule delivery 1982-12
+EXPDIS SIc2 serial4 | 2003-02-28 | implied delivery 2003-03 | rule delivery 2003-04
+EXPDIS SIc2 serial4 | 2003-06-30 | implied delivery 2003-07 | rule delivery 2003-08
+EXPDIS SIc2 serial4 | 2004-04-30 | implied delivery 2004-05 | rule delivery 2004-06
+EXPIRY L12 SIc14 | ok | no design data ()
+EXPIRY L12 HGc1 | position 1 | dates 270 (1988-07-29 .. 2010-12-31) | formats {'yyyymmdd': 270} | days from date to expiry min 0 max 182 | implied contract found 270 of 270
+EXPIRY L12 HGc1 | base | agree 109 disagree 161 cannot say 0
+EXPDIS HGc1 base | 1988-07-29 | implied delivery 1989-01 | rule delivery 1988-09
+EXPDIS HGc1 base | 1988-08-31 | implied delivery 1989-01 | rule delivery 1988-09
+EXPDIS HGc1 base | 1988-09-30 | implied delivery 1989-01 | rule delivery 1988-12
+EXPDIS HGc1 base | 1988-10-31 | implied delivery 1989-01 | rule delivery 1988-12
+EXPDIS HGc1 base | 1988-11-30 | implied delivery 1989-01 | rule delivery 1988-12
+EXPDIS HGc1 base | 1988-12-30 | implied delivery 1989-01 | rule delivery 1989-03
+EXPDIS HGc1 base | 1989-01-31 | implied delivery 1989-02 | rule delivery 1989-03
+EXPDIS HGc1 base | 1989-03-31 | implied delivery 1989-04 | rule delivery 1989-05
+EXPDIS HGc1 base | 1989-05-31 | implied delivery 1989-06 | rule delivery 1989-07
+EXPDIS HGc1 base | 1989-07-31 | implied delivery 1989-08 | rule delivery 1989-09
+EXPDIS HGc1 base | 1989-09-29 | implied delivery 1989-10 | rule delivery 1989-12
+EXPDIS HGc1 base | 1989-10-31 | implied delivery 1989-11 | rule delivery 1989-12
+EXPDIS HGc1 base | ... 149 more (last 2010-12-31)
+EXPIRY L12 HGc1 | serial2 | agree 264 disagree 6 cannot say 0
+EXPDIS HGc1 serial2 | 1988-07-29 | implied delivery 1989-01 | rule delivery 1988-08
+EXPDIS HGc1 serial2 | 1988-08-31 | implied delivery 1989-01 | rule delivery 1988-09
+EXPDIS HGc1 serial2 | 1988-09-30 | implied delivery 1989-01 | rule delivery 1988-10
+EXPDIS HGc1 serial2 | 1988-10-31 | implied delivery 1989-01 | rule delivery 1988-11
+EXPDIS HGc1 serial2 | 1988-11-30 | implied delivery 1989-01 | rule delivery 1988-12
+EXPDIS HGc1 serial2 | 2002-11-27 | implied delivery 2002-11 | rule delivery 2002-12
+EXPIRY L12 HGc1 | serial3 | agree 264 disagree 6 cannot say 0
+EXPDIS HGc1 serial3 | 1988-07-29 | implied delivery 1989-01 | rule delivery 1988-08
+EXPDIS HGc1 serial3 | 1988-08-31 | implied delivery 1989-01 | rule delivery 1988-09
+EXPDIS HGc1 serial3 | 1988-09-30 | implied delivery 1989-01 | rule delivery 1988-10
+EXPDIS HGc1 serial3 | 1988-10-31 | implied delivery 1989-01 | rule delivery 1988-11
+EXPDIS HGc1 serial3 | 1988-11-30 | implied delivery 1989-01 | rule delivery 1988-12
+EXPDIS HGc1 serial3 | 2002-11-27 | implied delivery 2002-11 | rule delivery 2002-12
+EXPIRY L12 HGc1 | serial4 | agree 264 disagree 6 cannot say 0
+EXPDIS HGc1 serial4 | 1988-07-29 | implied delivery 1989-01 | rule delivery 1988-08
+EXPDIS HGc1 serial4 | 1988-08-31 | implied delivery 1989-01 | rule delivery 1988-09
+EXPDIS HGc1 serial4 | 1988-09-30 | implied delivery 1989-01 | rule delivery 1988-10
+EXPDIS HGc1 serial4 | 1988-10-31 | implied delivery 1989-01 | rule delivery 1988-11
+EXPDIS HGc1 serial4 | 1988-11-30 | implied delivery 1989-01 | rule delivery 1988-12
+EXPDIS HGc1 serial4 | 2002-11-27 | implied delivery 2002-11 | rule delivery 2002-12
+EXPIRY L12 HGc2 | position 2 | dates 270 (1988-07-29 .. 2010-12-31) | formats {'yyyymmdd': 270} | days from date to expiry min 31 max 243 | implied contract found 270 of 270
+EXPIRY L12 HGc2 | base | agree 3 disagree 267 cannot say 0
+EXPDIS HGc2 base | 1988-07-29 | implied delivery 1989-03 | rule delivery 1988-12
+EXPDIS HGc2 base | 1988-08-31 | implied delivery 1989-03 | rule delivery 1988-12
+EXPDIS HGc2 base | 1988-12-30 | implied delivery 1989-02 | rule delivery 1989-05
+EXPDIS HGc2 base | 1989-01-31 | implied delivery 1989-03 | rule delivery 1989-05
+EXPDIS HGc2 base | 1989-02-28 | implied delivery 1989-04 | rule delivery 1989-05
+EXPDIS HGc2 base | 1989-03-31 | implied delivery 1989-05 | rule delivery 1989-07
+EXPDIS HGc2 base | 1989-04-28 | implied delivery 1989-06 | rule delivery 1989-07
+EXPDIS HGc2 base | 1989-05-31 | implied delivery 1989-07 | rule delivery 1989-09
+EXPDIS HGc2 base | 1989-06-30 | implied delivery 1989-08 | rule delivery 1989-09
+EXPDIS HGc2 base | 1989-07-31 | implied delivery 1989-09 | rule delivery 1989-12
+EXPDIS HGc2 base | 1989-08-31 | implied delivery 1989-10 | rule delivery 1989-12
+EXPDIS HGc2 base | 1989-09-29 | implied delivery 1989-11 | rule delivery 1990-03
+EXPDIS HGc2 base | ... 255 more (last 2010-12-31)
+EXPIRY L12 HGc2 | serial2 | agree 111 disagree 159 cannot say 0
+EXPDIS HGc2 serial2 | 1988-07-29 | implied delivery 1989-03 | rule delivery 1988-09
+EXPDIS HGc2 serial2 | 1988-08-31 | implied delivery 1989-03 | rule delivery 1988-12
+EXPDIS HGc2 serial2 | 1988-09-30 | implied delivery 1989-03 | rule delivery 1988-12
+EXPDIS HGc2 serial2 | 1988-10-31 | implied delivery 1989-03 | rule delivery 1988-12
+EXPDIS HGc2 serial2 | 1988-12-30 | implied delivery 1989-02 | rule delivery 1989-03
+EXPDIS HGc2 serial2 | 1989-02-28 | implied delivery 1989-04 | rule delivery 1989-05
+EXPDIS HGc2 serial2 | 1989-04-28 | implied delivery 1989-06 | rule delivery 1989-07
+EXPDIS HGc2 serial2 | 1989-06-30 | implied delivery 1989-08 | rule delivery 1989-09
+EXPDIS HGc2 serial2 | 1989-08-31 | implied delivery 1989-10 | rule delivery 1989-12
+EXPDIS HGc2 serial2 | 1989-09-29 | implied delivery 1989-11 | rule delivery 1989-12
+EXPDIS HGc2 serial2 | 1989-11-30 | implied delivery 1990-01 | rule delivery 1990-03
+EXPDIS HGc2 serial2 | 1989-12-29 | implied delivery 1990-02 | rule delivery 1990-03
+EXPDIS HGc2 serial2 | ... 147 more (last 2010-12-31)
+EXPIRY L12 HGc2 | serial3 | agree 264 disagree 6 cannot say 0
+EXPDIS HGc2 serial3 | 1988-07-29 | implied delivery 1989-03 | rule delivery 1988-09
+EXPDIS HGc2 serial3 | 1988-08-31 | implied delivery 1989-03 | rule delivery 1988-10
+EXPDIS HGc2 serial3 | 1988-09-30 | implied delivery 1989-03 | rule delivery 1988-11
+EXPDIS HGc2 serial3 | 1988-10-31 | implied delivery 1989-03 | rule delivery 1988-12
+EXPDIS HGc2 serial3 | 1988-11-30 | implied delivery 1989-03 | rule delivery 1989-01
+EXPDIS HGc2 serial3 | 2002-11-27 | implied delivery 2002-12 | rule delivery 2003-01
+EXPIRY L12 HGc2 | serial4 | agree 264 disagree 6 cannot say 0
+EXPDIS HGc2 serial4 | 1988-07-29 | implied delivery 1989-03 | rule delivery 1988-09
+EXPDIS HGc2 serial4 | 1988-08-31 | implied delivery 1989-03 | rule delivery 1988-10
+EXPDIS HGc2 serial4 | 1988-09-30 | implied delivery 1989-03 | rule delivery 1988-11
+EXPDIS HGc2 serial4 | 1988-10-31 | implied delivery 1989-03 | rule delivery 1988-12
+EXPDIS HGc2 serial4 | 1988-11-30 | implied delivery 1989-03 | rule delivery 1989-01
+EXPDIS HGc2 serial4 | 2002-11-27 | implied delivery 2002-12 | rule delivery 2003-01
+EXPIRY L12 HGc18 | ok | no design data ()
+EXPIRY L12 PLc1 | ok | no design data ()
+EXPIRY L12 PLc2 | ok | no design data ()
+EXPIRY L12 PLc8 | ok | no design data ()
+EXPIRY L12 Cc1 | position 1 | dates 432 (1975-01-31 .. 2010-12-31) | formats {'yyyymmdd': 432} | days from date to expiry min 14 max 83 | implied contract found 133 of 432
+EXPIRY L12 Cc1 | base | agree 127 disagree 6 cannot say 299
+EXPDIS Cc1 base | 2000-09-29 | implied delivery 2000-11 | rule delivery 2000-12
+EXPDIS Cc1 base | 2000-10-31 | implied delivery 2000-11 | rule delivery 2000-12
+EXPDIS Cc1 base | 2000-12-29 | implied delivery 2001-01 | rule delivery 2001-03
+EXPDIS Cc1 base | 2001-09-28 | implied delivery 2001-11 | rule delivery 2001-12
+EXPDIS Cc1 base | 2001-10-31 | implied delivery 2001-11 | rule delivery 2001-12
+EXPDIS Cc1 base | 2001-12-31 | implied delivery 2002-01 | rule delivery 2002-03
+EXPIRY L12 Cc2 | position 2 | dates 432 (1975-01-31 .. 2010-12-31) | formats {'yyyymmdd': 432} | days from date to expiry min 43 max 174 | implied contract found 136 of 432
+EXPIRY L12 Cc2 | base | agree 124 disagree 12 cannot say 296
+EXPDIS Cc2 base | 2000-07-31 | implied delivery 2000-11 | rule delivery 2000-12
+EXPDIS Cc2 base | 2000-08-31 | implied delivery 2000-11 | rule delivery 2000-12
+EXPDIS Cc2 base | 2000-09-29 | implied delivery 2000-12 | rule delivery 2001-03
+EXPDIS Cc2 base | 2000-10-31 | implied delivery 2000-12 | rule delivery 2001-03
+EXPDIS Cc2 base | 2000-11-30 | implied delivery 2001-01 | rule delivery 2001-03
+EXPDIS Cc2 base | 2000-12-29 | implied delivery 2001-03 | rule delivery 2001-05
+EXPDIS Cc2 base | 2001-07-31 | implied delivery 2001-11 | rule delivery 2001-12
+EXPDIS Cc2 base | 2001-08-31 | implied delivery 2001-11 | rule delivery 2001-12
+EXPDIS Cc2 base | 2001-09-28 | implied delivery 2001-12 | rule delivery 2002-03
+EXPDIS Cc2 base | 2001-10-31 | implied delivery 2001-12 | rule delivery 2002-03
+EXPDIS Cc2 base | 2001-11-30 | implied delivery 2002-01 | rule delivery 2002-03
+EXPDIS Cc2 base | 2001-12-31 | implied delivery 2002-03 | rule delivery 2002-05
+EXPIRY L12 Cc9 | position 9 | dates 201 (1993-01-29 .. 2010-12-31) | formats {'yyyymmdd': 201} | days from date to expiry min 409 max 5256 | implied contract found 154 of 201
+EXPIRY L12 Cc9 | base | agree 85 disagree 69 cannot say 47
+EXPDIS Cc9 base | 1995-07-25 | implied delivery 2009-12 | rule delivery 1997-05
+EXPDIS Cc9 base | 1996-05-21 | implied delivery 2007-12 | rule delivery 1998-03
+EXPDIS Cc9 base | 1998-05-29 | implied delivery 2000-12 | rule delivery 2000-03
+EXPDIS Cc9 base | 1998-06-30 | implied delivery 2000-07 | rule delivery 2000-03
+EXPDIS Cc9 base | 1998-07-22 | implied delivery 2000-12 | rule delivery 2000-05
+EXPDIS Cc9 base | 1998-08-31 | implied delivery 2000-12 | rule delivery 2000-05
+EXPDIS Cc9 base | 1998-09-30 | implied delivery 2000-12 | rule delivery 2000-07
+EXPDIS Cc9 base | 1998-10-30 | implied delivery 2000-12 | rule delivery 2000-07
+EXPDIS Cc9 base | 1998-11-30 | implied delivery 2000-12 | rule delivery 2000-07
+EXPDIS Cc9 base | 1998-12-31 | implied delivery 2000-12 | rule delivery 2000-09
+EXPDIS Cc9 base | 1999-01-29 | implied delivery 2000-12 | rule delivery 2000-09
+EXPDIS Cc9 base | 1999-02-26 | implied delivery 2000-12 | rule delivery 2000-09
+EXPDIS Cc9 base | ... 57 more (last 2008-02-29)
+EXPIRY L12 Wc1 | position 1 | dates 432 (1975-01-31 .. 2010-12-31) | formats {'yyyymmdd': 432} | days from date to expiry min 14 max 83 | implied contract found 133 of 432
+EXPIRY L12 Wc1 | base | agree 133 disagree 0 cannot say 299
+EXPIRY L12 Wc2 | position 2 | dates 432 (1975-01-31 .. 2010-12-31) | formats {'yyyymmdd': 432} | days from date to expiry min 73 max 174 | implied contract found 136 of 432
+EXPIRY L12 Wc2 | base | agree 136 disagree 0 cannot say 296
+EXPIRY L12 Wc9 | position 9 | dates 149 (1996-03-20 .. 2010-12-31) | formats {'yyyymmdd': 149} | days from date to expiry min 563 max 1056 | implied contract found 142 of 149
+EXPIRY L12 Wc9 | base | agree 27 disagree 115 cannot say 7
+EXPDIS Wc9 base | 1999-01-29 | implied delivery 2001-07 | rule delivery 2000-09
+EXPDIS Wc9 base | 1999-02-26 | implied delivery 2001-07 | rule delivery 2000-09
+EXPDIS Wc9 base | 1999-03-31 | implied delivery 2001-07 | rule delivery 2000-12
+EXPDIS Wc9 base | 1999-04-30 | implied delivery 2001-07 | rule delivery 2000-12
+EXPDIS Wc9 base | 1999-05-21 | implied delivery 2001-07 | rule delivery 2001-03
+EXPDIS Wc9 base | 1999-07-30 | implied delivery 2001-12 | rule delivery 2001-05
+EXPDIS Wc9 base | 1999-08-31 | implied delivery 2001-12 | rule delivery 2001-05
+EXPDIS Wc9 base | 1999-09-30 | implied delivery 2002-07 | rule delivery 2001-07
+EXPDIS Wc9 base | 1999-10-29 | implied delivery 2002-07 | rule delivery 2001-07
+EXPDIS Wc9 base | 1999-11-30 | implied delivery 2002-07 | rule delivery 2001-07
+EXPDIS Wc9 base | 1999-12-30 | implied delivery 2002-07 | rule delivery 2001-09
+EXPDIS Wc9 base | 2000-01-31 | implied delivery 2002-07 | rule delivery 2001-09
+EXPDIS Wc9 base | ... 103 more (last 2009-05-29)
+EXPIRY L12 Sc1 | position 1 | dates 432 (1975-01-31 .. 2010-12-31) | formats {'yyyymmdd': 432} | days from date to expiry min 14 max 54 | implied contract found 136 of 432
+EXPIRY L12 Sc1 | base | agree 136 disagree 0 cannot say 296
+EXPIRY L12 Sc2 | position 2 | dates 432 (1975-01-31 .. 2010-12-31) | formats {'yyyymmdd': 432} | days from date to expiry min 43 max 116 | implied contract found 138 of 432
+EXPIRY L12 Sc2 | base | agree 138 disagree 0 cannot say 294
+EXPIRY L12 Sc11 | position 11 | dates 192 (1988-06-30 .. 2010-12-31) | formats {'yyyymmdd': 192} | days from date to expiry min 482 max 958 | implied contract found 140 of 192
+EXPIRY L12 Sc11 | base | agree 75 disagree 65 cannot say 52
+EXPDIS Sc11 base | 1998-07-31 | implied delivery 2000-11 | rule delivery 2000-01
+EXPDIS Sc11 base | 1998-08-20 | implied delivery 2000-11 | rule delivery 2000-03
+EXPDIS Sc11 base | 1998-11-18 | implied delivery 2000-11 | rule delivery 2000-07
+EXPDIS Sc11 base | 1998-12-31 | implied delivery 2000-11 | rule delivery 2000-07
+EXPDIS Sc11 base | 1999-01-29 | implied delivery 2000-11 | rule delivery 2000-08
+EXPDIS Sc11 base | 1999-02-26 | implied delivery 2000-11 | rule delivery 2000-08
+EXPDIS Sc11 base | 1999-03-22 | implied delivery 2000-11 | rule delivery 2000-09
+EXPDIS Sc11 base | 1999-05-28 | implied delivery 2001-11 | rule delivery 2000-11
+EXPDIS Sc11 base | 1999-06-30 | implied delivery 2001-11 | rule delivery 2000-11
+EXPDIS Sc11 base | 1999-07-21 | implied delivery 2000-11 | rule delivery 2001-01
+EXPDIS Sc11 base | 1999-08-20 | implied delivery 2001-07 | rule delivery 2001-03
+EXPDIS Sc11 base | 2000-01-14 | implied delivery 2001-11 | rule delivery 2001-07
+EXPDIS Sc11 base | ... 53 more (last 2008-07-31)
+EXPIRY L12 SBc1 | position 1 | dates 432 (1975-01-31 .. 2010-12-31) | formats {'yyyymmdd': 432} | days from date to expiry min 0 max 123 | implied contract found 417 of 432
+EXPIRY L12 SBc1 | base | agree 346 disagree 71 cannot say 15
+EXPDIS SBc1 base | 1975-07-31 | implied delivery 1975-09 | rule delivery 1975-10
+EXPDIS SBc1 base | 1975-08-29 | implied delivery 1975-09 | rule delivery 1975-10
+EXPDIS SBc1 base | 1975-10-31 | implied delivery 1976-01 | rule delivery 1976-03
+EXPDIS SBc1 base | 1975-11-28 | implied delivery 1976-01 | rule delivery 1976-03
+EXPDIS SBc1 base | 1975-12-31 | implied delivery 1976-01 | rule delivery 1976-03
+EXPDIS SBc1 base | 1976-07-30 | implied delivery 1976-09 | rule delivery 1976-10
+EXPDIS SBc1 base | 1976-08-31 | implied delivery 1976-09 | rule delivery 1976-10
+EXPDIS SBc1 base | 1976-10-29 | implied delivery 1977-01 | rule delivery 1977-03
+EXPDIS SBc1 base | 1976-11-30 | implied delivery 1977-01 | rule delivery 1977-03
+EXPDIS SBc1 base | 1976-12-30 | implied delivery 1977-01 | rule delivery 1977-03
+EXPDIS SBc1 base | 1977-07-29 | implied delivery 1977-09 | rule delivery 1977-10
+EXPDIS SBc1 base | 1977-08-31 | implied delivery 1977-09 | rule delivery 1977-10
+EXPDIS SBc1 base | ... 59 more (last 2003-11-28)
+EXPIRY L12 SBc2 | position 2 | dates 432 (1975-01-31 .. 2010-12-31) | formats {'yyyymmdd': 432} | days from date to expiry min 22 max 214 | implied contract found 418 of 432
+EXPIRY L12 SBc2 | base | agree 297 disagree 121 cannot say 14
+EXPDIS SBc2 base | 1975-05-30 | implied delivery 1975-09 | rule delivery 1975-10
+EXPDIS SBc2 base | 1975-06-30 | implied delivery 1975-09 | rule delivery 1975-10
+EXPDIS SBc2 base | 1975-07-31 | implied delivery 1975-10 | rule delivery 1976-03
+EXPDIS SBc2 base | 1975-08-29 | implied delivery 1975-10 | rule delivery 1976-03
+EXPDIS SBc2 base | 1975-09-30 | implied delivery 1976-01 | rule delivery 1976-03
+EXPDIS SBc2 base | 1975-10-31 | implied delivery 1976-03 | rule delivery 1976-05
+EXPDIS SBc2 base | 1975-11-28 | implied delivery 1976-03 | rule delivery 1976-05
+EXPDIS SBc2 base | 1975-12-31 | implied delivery 1976-03 | rule delivery 1976-05
+EXPDIS SBc2 base | 1976-05-28 | implied delivery 1976-09 | rule delivery 1976-10
+EXPDIS SBc2 base | 1976-06-30 | implied delivery 1976-09 | rule delivery 1976-10
+EXPDIS SBc2 base | 1976-07-30 | implied delivery 1976-10 | rule delivery 1977-03
+EXPDIS SBc2 base | 1976-08-31 | implied delivery 1976-10 | rule delivery 1977-03
+EXPDIS SBc2 base | ... 109 more (last 2003-11-28)
+EXPIRY L12 SBc8 | position 8 | dates 258 (1978-10-31 .. 2010-12-31) | formats {'yyyymmdd': 258} | days from date to expiry min 394 max 703 | implied contract found 245 of 258
+EXPIRY L12 SBc8 | base | agree 98 disagree 147 cannot say 13
+EXPDIS SBc8 base | 1978-10-31 | implied delivery 1980-03 | rule delivery 1980-10
+EXPDIS SBc8 base | 1978-11-30 | implied delivery 1980-03 | rule delivery 1980-10
+EXPDIS SBc8 base | 1978-12-29 | implied delivery 1980-03 | rule delivery 1980-10
+EXPDIS SBc8 base | 1979-01-31 | implied delivery 1980-05 | rule delivery 1980-10
+EXPDIS SBc8 base | 1979-02-28 | implied delivery 1980-05 | rule delivery 1980-10
+EXPDIS SBc8 base | 1979-03-30 | implied delivery 1980-07 | rule delivery 1981-03
+EXPDIS SBc8 base | 1979-04-30 | implied delivery 1980-07 | rule delivery 1981-03
+EXPDIS SBc8 base | 1979-05-31 | implied delivery 1980-09 | rule delivery 1981-05
+EXPDIS SBc8 base | 1979-06-29 | implied delivery 1980-09 | rule delivery 1981-05
+EXPDIS SBc8 base | 1979-07-31 | implied delivery 1980-10 | rule delivery 1981-07
+EXPDIS SBc8 base | 1979-08-31 | implied delivery 1980-10 | rule delivery 1981-07
+EXPDIS SBc8 base | 1979-09-27 | implied delivery 1981-01 | rule delivery 1981-07
+EXPDIS SBc8 base | ... 135 more (last 2009-11-30)
+EXPIRY L12 KCc1 | position 1 | dates 374 (1979-11-30 .. 2010-12-31) | formats {'yyyymmdd': 374} | days from date to expiry min 14 max 84 | implied contract found 361 of 374
+EXPIRY L12 KCc1 | base | agree 361 disagree 0 cannot say 13
+EXPIRY L12 KCc2 | position 2 | dates 374 (1979-11-30 .. 2010-12-31) | formats {'yyyymmdd': 374} | days from date to expiry min 79 max 173 | implied contract found 365 of 374
+EXPIRY L12 KCc2 | base | agree 365 disagree 0 cannot say 9
+EXPIRY L12 KCc9 | position 9 | dates 103 (2002-06-28 .. 2010-12-31) | formats {'yyyymmdd': 103} | days from date to expiry min 567 max 662 | implied contract found 100 of 103
+EXPIRY L12 KCc9 | base | agree 100 disagree 0 cannot say 3
+EXPIRY L12 CTc1 | position 1 | dates 372 (1980-01-31 .. 2010-12-31) | formats {'yyyymmdd': 372} | days from date to expiry min 4 max 71 | implied contract found 372 of 372
