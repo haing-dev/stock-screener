@@ -1,0 +1,41 @@
+spec,input,target,per,need_first,min_design,note
+# target: a series id, or root:<ROOT>:<positions> (continuous positions of lseg_roots.csv). need_first = first month the spec's design window needs (blank = report the start only: the market enters when its data start)
+SPEC_Strip_reversion,Eurodollar daily settlements contracts 1-8,root:ED:1-8,D,1990-01,1250,design start = later of 1990-01 and the first month all eight have daily settlements (s7); R1 needs the same
+SPEC_Strip_reversion,Eurodollar monthly settlements contracts 1-8 (60-month normal before the design start),root:ED:1-8,M,1985-01,120,normal needs 60 months of month-ends before d (s3 step 5)
+SPEC_Strip_reversion,Euribor contracts 1-8 daily,root:FEI:1-8,D,,1250,other currency: enters when all eight have locked daily settlements
+SPEC_Strip_reversion,Euroswiss contracts 1-8 daily,root:FES:1-8,D,,1250,as above
+SPEC_Strip_reversion,Short sterling contracts 1-8 daily,root:FSS:1-8,D,,1250,as above
+SPEC_Curve_carry,WTI curve,root:CL:1-24,M,,120,front leg >= 3 months out and the contract 12 months later (s3 steps 2-3)
+SPEC_Curve_carry,Brent curve,root:LCO:1-24,M,,120,
+SPEC_Curve_carry,Natural gas curve,root:NG:1-24,M,,120,
+SPEC_Curve_carry,Heating oil curve,root:HO:1-18,M,,120,positions 13-18 from L11 Curve depth
+SPEC_Curve_carry,Gasoline curve,root:RB:1-18,M,,120,positions 13-18 from L11 Curve depth
+SPEC_Curve_carry,Gold curve,root:GC:1-14,M,,120,
+SPEC_Curve_carry,Silver curve,root:SI:1-14,M,,120,
+SPEC_Curve_carry,Copper curve,root:HG:1-18,M,,120,
+SPEC_Curve_carry,Platinum curve,root:PL:1-8,M,,120,
+SPEC_Curve_carry,Corn curve,root:C:1-9,M,,120,
+SPEC_Curve_carry,Wheat curve,root:W:1-9,M,,120,
+SPEC_Curve_carry,Soybeans curve,root:S:1-11,M,,120,
+SPEC_Curve_carry,Sugar curve,root:SB:1-8,M,,120,
+SPEC_Curve_carry,Coffee curve,root:KC:1-9,M,,120,
+SPEC_Curve_carry,Cotton curve,root:CT:1-9,M,,120,
+SPEC_Curve_carry,Cattle curve,root:LC:1-9,M,,120,
+SPEC_Card5_commodity_balances,COMEX copper front month-end close P,HP:HGc1|CLOSE,M,1973-01,240,R1 needs 120 months of P before the first trigger (about 1983)
+SPEC_Card5_commodity_balances,NYMEX WTI front month-end close P,HP:CLc1|CLOSE,M,1983-04,240,crude version
+SPEC_Card5_commodity_balances,London cocoa front (C5-D2 reported line),HP:LCCc1|CLOSE,M,,120,untouched (allow_untouched)
+SPEC_Card5_commodity_balances,LME copper cash (C5-D2 reported line),DS:LCPCASH|X,M,,120,untouched (allow_untouched)
+SPEC_Card3_relative_value_risk,S&P 500 12-month forward EPS,DS:@:USSP500|A12FE,M,1985-01,120,R4 starts at the first month of this series (s7)
+SPEC_Card3_relative_value_risk,yen 3-month deposit rate,DS:ECJAP3M|X,M,1975-01,120,R1 history before FRED (cross-check)
+SPEC_Card3_relative_value_risk,Swiss franc 3-month deposit rate,DS:ECSWF3M|X,M,1975-01,120,
+SPEC_Card3_relative_value_risk,sterling 3-month deposit rate,DS:ECUKP3M|X,M,1975-01,120,
+SPEC_Card3_relative_value_risk,Canadian dollar 3-month deposit rate,DS:ECCAD3M|X,M,1975-01,120,
+SPEC_Card3_relative_value_risk,Swedish krona 3-month deposit rate,DS:ECSWE3M|X,M,1975-01,120,
+SPEC_Card3_relative_value_risk,euro 3-month deposit rate,DS:ECEUR3M|X,M,1999-01,120,
+SPEC_Card3_relative_value_risk,German mark 3-month deposit rate,DS:ECWGM3M|X,M,1975-01,120,no mark series in the panel: register 7.4 code facts
+SPEC_Carry,WTI contracts 1 and 2 (A1 data swap of the EIA measure),root:CL:1-2,M,,120,allowed at A1 as a data swap of the same formula
+SPEC_Carry,natural gas contracts 1 and 2,root:NG:1-2,M,,120,
+SPEC_Carry,heating oil contracts 1 and 2,root:HO:1-2,M,,120,
+SPEC_Carry,gasoline contracts 1 and 2,root:RB:1-2,M,,120,
+SPEC_Carry,T10 Euribor strip,root:FEI:1-8,M,,120,only if admitted through D1 (7.6 A3)
+SPEC_Carry,T10 short sterling strip,root:FSS:1-8,M,,120,

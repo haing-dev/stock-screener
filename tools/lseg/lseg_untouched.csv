@@ -1,0 +1,6 @@
+pattern,reason
+# instruments the book does not trade (mirror of tools/bbgq/untouched_markets.csv): hidden unless Panel(allow_untouched=True). Patterns match the upper-case code without < > and spaces.
+^(KW|LH|FC|BO|SM|OJ|CC|LGO|PA|O|RR|TFMBM|LRC|LSU|RS|FCPO|BL2|SZZF|DA|UX|CFI2Z|JRU|LCC|NCFM|ATW|COM|NGLNM|LBR|DCS)C\d+$,alternative commodity not in the book (gm ALT_COMMOD or not listed): futures contract
+^L(CP|AH|ZZ|NI|ED|TI)(CASH|3MTH)$,alternative commodity not in the book: LME cash / 3m price
+^GS(GO|IA|IK|IZ|IL|KW|CC|LH|FC|PA|PD)(TOT|EXR)$,alternative commodity not in the book: GSCI single-commodity index
+^(TRY|PLN|HUF|CZK|ILS|SGD|THB|HKD|CNH|CNY|INR|IDR|PHP|TWD|MYR|CLP|COP|PEN)[0-9A-Z]*=$,emerging-market currency not traded by the book: spot / forward / NDF / implied vol

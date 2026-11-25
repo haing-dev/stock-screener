@@ -1,0 +1,36 @@
+file,sheet,code,kind,delay_days,live,note
+# delay = days after the observation date on which a value counts as known (as-of guard). Market closes and futures settlements are public the same day (SPEC_Curve_carry s3 step 10, SPEC_Strip_reversion s3 step 14); decisions at the close use them (TESTING_PROTOCOL 7.3 item 4). Economic series carry no release date in these pulls: a fixed lag (as bbgdata live_sources.csv for Bloomberg economics without ECO_RELEASE_DT).
+L1a,*,*,market,0,,FX spot and forwards (RHistory month labels)
+L1b,*,*,market,0,,FX implied volatility and SOFR swaps
+L2a,*,*,market,0,,Datastream benchmark bonds (yield, return index)
+L2b,*,*,market,0,,Workspace government yields (RDP.Data)
+L3,DS markets,*,market,0,,Datastream total markets
+L3,Indexes,*,market,0,,index closes (RDP.Data)
+L3,DS other,*,market,0,,S&P 500, MSCI, GSCI, spot commodities
+L3,DS other,USCONPRCE,economics,45,,US CPI: released mid-month after the month
+L3,DS other,USUN%TOTQ,economics,45,,US unemployment rate
+L3,DS other,USCNFBUSQ,economics,45,,US ISM manufacturing
+L4a,*,*,market,0,,energy futures curves
+L4b,*,*,market,0,,metals, grains, softs, livestock curves
+L5,*,*,market,0,,bond, short-rate, equity-index and VIX futures
+L6,*,*,market,0,,commodity indexes, MSCI, Citi surprise indexes (daily-quoted indexes)
+L7,Short rates,*,market,0,,3-month deposit rates (daily quotes; monthly value = last weekday)
+L7,Swaps,*,market,0,,swaps, basis swaps, TIPS yields
+L7,Economics,*,economics,45,,national economics (Datastream, dated by observation period)
+L7,Economics,USGDP...D,economics,90,,quarterly GDP: later and revised
+L8,*,*,market,0,,fixes and LSEG alternatives (rates, futures, swaps, commodities, FX, indexes)
+L8,Fixes,EKCONPRCF,economics,45,,euro area CPI
+L8,Fixes,EKUN%TOTQ,economics,45,,euro area unemployment
+L8,Fixes,EKIPTOT.G,economics,60,,euro area industrial production
+L8,Fixes,EKGDP...D,economics,90,,euro area GDP
+L8,Fixes,EKOL2000Q,economics,45,,OECD leading indicator
+L8,Fixes,CHGDP..YR,economics,90,,China GDP
+L8,Fixes,INIPTOT.H,economics,60,,India industrial production
+L8,Fixes,CNIPTOT.H,economics,60,,Canada industrial production
+L8,Indexes,@:USSP500,market,0,,IBES S&P 500 forward EPS aggregate (computed mid-month; month label)
+L9a,*,*,market,0,,daily commodity futures c1 c2 from 1990
+L9b,*,*,market,0,,daily rates, equity futures, FX, yields from 1990
+L10,*,*,market,0,,ended rate futures strips (monthly and daily), swaps, guesses
+L11,*,*,market,0,,contract identity pull: Eurodollar daily 3/5/6/7, curve depth, sample contracts, calendar
+W,*,*,market,0,lseg_weekly,weekly live file (latest weeks of the series the registered pods read live)
+W,Monthly,*,market,0,lseg_weekly,IBES forward EPS aggregate (monthly)

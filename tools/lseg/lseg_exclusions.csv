@@ -1,0 +1,8 @@
+fn,code,field,reason
+# wrong series: the code returned another instrument (read reports tools/bbgq/results/lseg_pull_2026-11-12_read_v1c.txt, CLAUDE.md 2026-11-12 evening)
+DS,CEDCS00,*,"guess for Eurodollar continuous returned a grain contract (CME-S&P GRA DESERT WEST CONT.)"
+DS,LSSCS00,*,"guess for short sterling continuous returned the LIFFE 2-year euro swapnote"
+DS,MBACS00,*,"guess for Canada BA continuous returned the MexDer 3-year bond"
+DS,LESCS00,*,"guess for Euroswiss continuous returned a Telefon Ericsson single-stock future"
+DS,GSPTTOT,*,"GSCI platinum guess returned the GSCI petroleum total return index"
+DS,GSPTEXR,*,"GSCI platinum guess returned the GSCI petroleum excess return index"

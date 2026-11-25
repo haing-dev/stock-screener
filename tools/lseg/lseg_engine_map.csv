@@ -1,0 +1,117 @@
+series_id,per,engine_id,role,note
+RH:EUR=|BID,M,fx_eur,spot month-end (RHistory label),"quote convention as LSEG (EUR, GBP, AUD, NZD: USD per unit; others: units per USD)"
+RH:JPY=|BID,M,fx_jpy,spot month-end (RHistory label),"quote convention as LSEG (EUR, GBP, AUD, NZD: USD per unit; others: units per USD)"
+RH:GBP=|BID,M,fx_gbp,spot month-end (RHistory label),"quote convention as LSEG (EUR, GBP, AUD, NZD: USD per unit; others: units per USD)"
+RH:CHF=|BID,M,fx_chf,spot month-end (RHistory label),"quote convention as LSEG (EUR, GBP, AUD, NZD: USD per unit; others: units per USD)"
+RH:AUD=|BID,M,fx_aud,spot month-end (RHistory label),"quote convention as LSEG (EUR, GBP, AUD, NZD: USD per unit; others: units per USD)"
+RH:NZD=|BID,M,fx_nzd,spot month-end (RHistory label),"quote convention as LSEG (EUR, GBP, AUD, NZD: USD per unit; others: units per USD)"
+RH:CAD=|BID,M,fx_cad,spot month-end (RHistory label),"quote convention as LSEG (EUR, GBP, AUD, NZD: USD per unit; others: units per USD)"
+RH:SEK=|BID,M,fx_sek,spot month-end (RHistory label),"quote convention as LSEG (EUR, GBP, AUD, NZD: USD per unit; others: units per USD)"
+RH:NOK=|BID,M,fx_nok,spot month-end (RHistory label),"quote convention as LSEG (EUR, GBP, AUD, NZD: USD per unit; others: units per USD)"
+RH:MXN=|BID,M,fx_mxn,spot month-end (RHistory label),"quote convention as LSEG (EUR, GBP, AUD, NZD: USD per unit; others: units per USD)"
+RH:BRL=|BID,M,fx_brl,spot month-end (RHistory label),"quote convention as LSEG (EUR, GBP, AUD, NZD: USD per unit; others: units per USD)"
+RH:KRW=|BID,M,fx_krw,spot month-end (RHistory label),"quote convention as LSEG (EUR, GBP, AUD, NZD: USD per unit; others: units per USD)"
+RH:ZAR=|BID,M,fx_zar,spot month-end (RHistory label),"quote convention as LSEG (EUR, GBP, AUD, NZD: USD per unit; others: units per USD)"
+HP:EUR=|BID,D,fx_eur,spot daily,
+HP:JPY=|BID,D,fx_jpy,spot daily,
+HP:GBP=|BID,D,fx_gbp,spot daily,
+HP:CHF=|BID,D,fx_chf,spot daily,
+HP:AUD=|BID,D,fx_aud,spot daily,
+HP:NZD=|BID,D,fx_nzd,spot daily,
+HP:CAD=|BID,D,fx_cad,spot daily,
+HP:SEK=|BID,D,fx_sek,spot daily,
+HP:NOK=|BID,D,fx_nok,spot daily,
+HP:MXN=|BID,D,fx_mxn,spot daily,
+HP:BRL=|BID,D,fx_brl,spot daily,
+HP:KRW=|BID,D,fx_krw,spot daily,
+HP:ZAR=|BID,D,fx_zar,spot daily,
+DS:BMUS02Y|RI,M,bd_us_2y,total return index (Datastream benchmark),not the free source's construction (par yield returns): A1-style overlap test before any use
+DS:BMUS02Y|RY,M,bd_us_2y,redemption yield (Datastream benchmark),
+DS:BMUS05Y|RI,M,bd_us_5y,total return index (Datastream benchmark),not the free source's construction (par yield returns): A1-style overlap test before any use
+DS:BMUS05Y|RY,M,bd_us_5y,redemption yield (Datastream benchmark),
+DS:BMUS10Y|RI,M,bd_us_10y,total return index (Datastream benchmark),not the free source's construction (par yield returns): A1-style overlap test before any use
+DS:BMUS10Y|RY,M,bd_us_10y,redemption yield (Datastream benchmark),
+DS:BMUS30Y|RI,M,bd_us_30y,total return index (Datastream benchmark),not the free source's construction (par yield returns): A1-style overlap test before any use
+DS:BMUS30Y|RY,M,bd_us_30y,redemption yield (Datastream benchmark),
+DS:BMBD10Y|RI,M,bd_de_10y,total return index (Datastream benchmark),not the free source's construction (par yield returns): A1-style overlap test before any use
+DS:BMBD10Y|RY,M,bd_de_10y,redemption yield (Datastream benchmark),
+DS:BMUK10Y|RI,M,bd_gb_10y,total return index (Datastream benchmark),not the free source's construction (par yield returns): A1-style overlap test before any use
+DS:BMUK10Y|RY,M,bd_gb_10y,redemption yield (Datastream benchmark),
+DS:BMJP10Y|RI,M,bd_jp_10y,total return index (Datastream benchmark),not the free source's construction (par yield returns): A1-style overlap test before any use
+DS:BMJP10Y|RY,M,bd_jp_10y,redemption yield (Datastream benchmark),
+DS:BMCN10Y|RI,M,bd_ca_10y,total return index (Datastream benchmark),not the free source's construction (par yield returns): A1-style overlap test before any use
+DS:BMCN10Y|RY,M,bd_ca_10y,redemption yield (Datastream benchmark),
+DS:BMAU10Y|RI,M,bd_au_10y,total return index (Datastream benchmark),not the free source's construction (par yield returns): A1-style overlap test before any use
+DS:BMAU10Y|RY,M,bd_au_10y,redemption yield (Datastream benchmark),
+DS:BMBD02Y|RI,M,st_de_2y,total return index (Datastream benchmark),not the free source's construction (par yield returns): A1-style overlap test before any use
+DS:BMBD02Y|RY,M,st_de_2y,redemption yield (Datastream benchmark),
+DS:BMUK05Y|RI,M,st_gb_5y,total return index (Datastream benchmark),not the free source's construction (par yield returns): A1-style overlap test before any use
+DS:BMUK05Y|RY,M,st_gb_5y,redemption yield (Datastream benchmark),
+DS:BMCN02Y|RI,M,st_ca_2y,total return index (Datastream benchmark),not the free source's construction (par yield returns): A1-style overlap test before any use
+DS:BMCN02Y|RY,M,st_ca_2y,redemption yield (Datastream benchmark),
+DS:BMAU02Y|RI,M,st_au_2y,total return index (Datastream benchmark),not the free source's construction (par yield returns): A1-style overlap test before any use
+DS:BMAU02Y|RY,M,st_au_2y,redemption yield (Datastream benchmark),
+DS:BMJP02Y|RI,M,st_jp_2y,total return index (Datastream benchmark),not the free source's construction (par yield returns): A1-style overlap test before any use
+DS:BMJP02Y|RY,M,st_jp_2y,redemption yield (Datastream benchmark),
+RD:.STOXX50E|TR.PRICECLOSE,M,eq_eu_stoxx50,price index close (same index as the free source),
+RD:.GDAXI|TR.PRICECLOSE,M,eq_de_dax,price index close (same index as the free source),
+RD:.FTSE|TR.PRICECLOSE,M,eq_gb_ftse,price index close (same index as the free source),
+RD:.FCHI|TR.PRICECLOSE,M,eq_fr_cac,price index close (same index as the free source),
+RD:.N225|TR.PRICECLOSE,M,eq_jp_nikkei,price index close (same index as the free source),
+RD:.GSPTSE|TR.PRICECLOSE,M,eq_ca_tsx,price index close (same index as the free source),
+RD:.AXJO|TR.PRICECLOSE,M,eq_au_asx,price index close (same index as the free source),
+RD:.HSI|TR.PRICECLOSE,M,eq_hk_hsi,price index close (same index as the free source),
+RD:.KS11|TR.PRICECLOSE,M,eq_kr_kospi,price index close (same index as the free source),
+RD:.TWII|TR.PRICECLOSE,M,eq_tw,price index close (same index as the free source),
+RD:.BSESN|TR.PRICECLOSE,M,eq_in,price index close (same index as the free source),
+RD:.BVSP|TR.PRICECLOSE,M,eq_br_ibov,price index close (same index as the free source),
+RD:.MXX|TR.PRICECLOSE,M,eq_mx_ipc,price index close (same index as the free source),
+RD:.NDX|TR.PRICECLOSE,M,eq_us_ndx,price index close (same index as the free source),
+RD:.RUT|TR.PRICECLOSE,M,eq_us_r2k,price index close (same index as the free source),
+DS:S&PCOMP|RI,M,eq_us_spx,S&P 500 total return index,
+DS:S&PCOMP|PI,M,eq_us_spx,S&P 500 price index,
+DS:ECUSD3M|X,M,rate3m:US,"3-month deposit rate (LSEG; card 3 R1 history before FRED, cross-check)",
+DS:ECEUR3M|X,M,rate3m:EZ,"3-month deposit rate (LSEG; card 3 R1 history before FRED, cross-check)",
+DS:ECJAP3M|X,M,rate3m:JP,"3-month deposit rate (LSEG; card 3 R1 history before FRED, cross-check)",
+DS:ECUKP3M|X,M,rate3m:GB,"3-month deposit rate (LSEG; card 3 R1 history before FRED, cross-check)",
+DS:ECSWF3M|X,M,rate3m:CH,"3-month deposit rate (LSEG; card 3 R1 history before FRED, cross-check)",
+DS:ECCAD3M|X,M,rate3m:CA,"3-month deposit rate (LSEG; card 3 R1 history before FRED, cross-check)",
+DS:ECAUD3M|X,M,rate3m:AU,"3-month deposit rate (LSEG; card 3 R1 history before FRED, cross-check)",
+DS:ECSWE3M|X,M,rate3m:SE,"3-month deposit rate (LSEG; card 3 R1 history before FRED, cross-check)",
+DS:ECNZD3M|X,M,rate3m:NZ,"3-month deposit rate (LSEG; card 3 R1 history before FRED, cross-check)",
+DS:ECNOR3M|X,M,rate3m:NO,"3-month deposit rate (LSEG; card 3 R1 history before FRED, cross-check)",
+DS:ECWGM3M|X,M,rate3m:DE,"3-month deposit rate (LSEG; card 3 R1 history before FRED, cross-check)",
+DS:@:USSP500|A12FE,M,card3_r4:spx_fwd_eps,"S&P 500 12-month forward EPS (IBES aggregate), card 3 R4 input",
+HP:CLc1|CLOSE,M,cm_wti,continuous c1 month-end close (contract identity: lseg_roots.csv),card 5 R1 price P for HG and CL
+HP:CLc1|CLOSE,D,cm_wti,continuous c1 daily close,
+HP:LCOc1|CLOSE,M,cm_brent,continuous c1 month-end close (contract identity: lseg_roots.csv),
+HP:LCOc1|CLOSE,D,cm_brent,continuous c1 daily close,
+HP:NGc1|CLOSE,M,cm_natgas,continuous c1 month-end close (contract identity: lseg_roots.csv),
+HP:NGc1|CLOSE,D,cm_natgas,continuous c1 daily close,
+HP:HOc1|CLOSE,M,cm_heatoil,continuous c1 month-end close (contract identity: lseg_roots.csv),
+HP:HOc1|CLOSE,D,cm_heatoil,continuous c1 daily close,
+HP:RBc1|CLOSE,M,cm_gasoline,continuous c1 month-end close (contract identity: lseg_roots.csv),
+HP:RBc1|CLOSE,D,cm_gasoline,continuous c1 daily close,
+HP:GCc1|CLOSE,M,cm_gold,continuous c1 month-end close (contract identity: lseg_roots.csv),
+HP:GCc1|CLOSE,D,cm_gold,continuous c1 daily close,
+HP:SIc1|CLOSE,M,cm_silver,continuous c1 month-end close (contract identity: lseg_roots.csv),
+HP:SIc1|CLOSE,D,cm_silver,continuous c1 daily close,
+HP:HGc1|CLOSE,M,cm_copper,continuous c1 month-end close (contract identity: lseg_roots.csv),card 5 R1 price P for HG and CL
+HP:HGc1|CLOSE,D,cm_copper,continuous c1 daily close,
+HP:PLc1|CLOSE,M,cm_platinum,continuous c1 month-end close (contract identity: lseg_roots.csv),
+HP:PLc1|CLOSE,D,cm_platinum,continuous c1 daily close,
+HP:Cc1|CLOSE,M,cm_corn,continuous c1 month-end close (contract identity: lseg_roots.csv),
+HP:Cc1|CLOSE,D,cm_corn,continuous c1 daily close,
+HP:Wc1|CLOSE,M,cm_wheat,continuous c1 month-end close (contract identity: lseg_roots.csv),
+HP:Wc1|CLOSE,D,cm_wheat,continuous c1 daily close,
+HP:Sc1|CLOSE,M,cm_soybeans,continuous c1 month-end close (contract identity: lseg_roots.csv),
+HP:Sc1|CLOSE,D,cm_soybeans,continuous c1 daily close,
+HP:SBc1|CLOSE,M,cm_sugar,continuous c1 month-end close (contract identity: lseg_roots.csv),
+HP:SBc1|CLOSE,D,cm_sugar,continuous c1 daily close,
+HP:KCc1|CLOSE,M,cm_coffee,continuous c1 month-end close (contract identity: lseg_roots.csv),
+HP:KCc1|CLOSE,D,cm_coffee,continuous c1 daily close,
+HP:CTc1|CLOSE,M,cm_cotton,continuous c1 month-end close (contract identity: lseg_roots.csv),
+HP:CTc1|CLOSE,D,cm_cotton,continuous c1 daily close,
+HP:LCc1|CLOSE,M,cm_cattle,continuous c1 month-end close (contract identity: lseg_roots.csv),
+HP:LCc1|CLOSE,D,cm_cattle,continuous c1 daily close,
+DS:<EDc1>|X,M,sr_usd,Eurodollar c1 (strip positions: lseg_roots.csv),

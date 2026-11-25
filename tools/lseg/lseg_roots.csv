@@ -1,0 +1,24 @@
+root,name,engine_market,exchange,ric_root,ric_root_alt,alt_until,c_sid_m,c_sid_d,depth_m,depth_m_l11,positions_d,positions_d_l11,first_year,roll_on,need,sample_month,spec_users
+# roll_on = the calendar date through which a continuous position keeps a contract (LSEG continuation series are understood to roll after expiry: TO BE CONFIRMED by lseg_check on sample contracts). need: curve12 = Curve carry far leg 12 months after a front leg >= 3 months out; strip8 = first eight quarterly contracts; front = c1 only.
+CL,WTI crude,cm_wti,NYMEX,CL,,,HP:CLc{n}|CLOSE,HP:CLc{n}|CLOSE,1-24;36,,1;2,,1983,last_trade,curve12;front,Z,Curve carry; card 5 R1 (crude version); Carry A1 swap
+LCO,Brent crude,cm_brent,ICE Futures Europe,LCO,,,HP:LCOc{n}|CLOSE,HP:LCOc{n}|CLOSE,1-24,,1;2,,1988,last_trade,curve12,Z,Curve carry
+NG,Natural gas,cm_natgas,NYMEX,NG,,,HP:NGc{n}|CLOSE,HP:NGc{n}|CLOSE,1-24,,1;2,,1990,last_trade,curve12,Z,Curve carry; Carry A1 swap
+HO,Heating oil,cm_heatoil,NYMEX,HO,,,HP:HOc{n}|CLOSE,HP:HOc{n}|CLOSE,1-12,13-18,1;2,,1979,last_trade,curve12,Z,Curve carry; Carry A1 swap
+RB,Gasoline,cm_gasoline,NYMEX,RB,HU,2006,HP:RBc{n}|CLOSE,HP:RBc{n}|CLOSE,1-12,13-18,1;2,,1985,last_trade,curve12,Z,Curve carry (unleaded HU to RBOB RB 2005-06); Carry A1 swap
+GC,Gold,cm_gold,COMEX,GC,,,HP:GCc{n}|CLOSE,HP:GCc{n}|CLOSE,1-12,13-14,1;2,,1975,last_trade,curve12,Z,Curve carry
+SI,Silver,cm_silver,COMEX,SI,,,HP:SIc{n}|CLOSE,HP:SIc{n}|CLOSE,1-12,13-14,1;2,,1975,last_trade,curve12,Z,Curve carry
+HG,Copper,cm_copper,COMEX,HG,,,HP:HGc{n}|CLOSE,HP:HGc{n}|CLOSE,1-12,13-18,1;2,,1975,last_trade,curve12;front,Z,Curve carry; card 5 R1
+PL,Platinum,cm_platinum,NYMEX,PL,,,HP:PLc{n}|CLOSE,HP:PLc{n}|CLOSE,1-6,7-8,1;2,,1975,last_trade,curve12,F,Curve carry
+C,Corn,cm_corn,CBOT,C,,,HP:Cc{n}|CLOSE,HP:Cc{n}|CLOSE,1-9,,1;2,,1975,last_trade,curve12,Z,Curve carry
+W,Wheat,cm_wheat,CBOT,W,,,HP:Wc{n}|CLOSE,HP:Wc{n}|CLOSE,1-9,,1;2,,1975,last_trade,curve12,Z,Curve carry
+S,Soybeans,cm_soybeans,CBOT,S,,,HP:Sc{n}|CLOSE,HP:Sc{n}|CLOSE,1-9,10-11,1;2,,1975,last_trade,curve12,X,Curve carry
+SB,Sugar No. 11,cm_sugar,ICE Futures US,SB,,,HP:SBc{n}|CLOSE,HP:SBc{n}|CLOSE,1-6,7-8,1;2,,1975,last_trade,curve12,V,Curve carry
+KC,Coffee,cm_coffee,ICE Futures US,KC,,,HP:KCc{n}|CLOSE,HP:KCc{n}|CLOSE,1-6,7-9,1;2,,1975,last_trade,curve12,Z,Curve carry
+CT,Cotton,cm_cotton,ICE Futures US,CT,,,HP:CTc{n}|CLOSE,HP:CTc{n}|CLOSE,1-6,7-9,1;2,,1975,last_trade,curve12,Z,Curve carry
+LC,Live cattle,cm_cattle,CME,LC,,,HP:LCc{n}|CLOSE,HP:LCc{n}|CLOSE,1-6,7-9,1;2,,1975,last_trade,curve12,Z,Curve carry
+ED,Eurodollar,sr_usd,CME,ED,,,DS:<EDc{n}>|X,DS:<EDc{n}>|X,1-12,,1;2;4;8,3;5;6;7,1981,last_trade,strip8,Z,Strip reversion (design market; R1)
+FEI,Euribor,sr_eur,LIFFE / ICE Futures Europe,FEI,,,HP:FEIc{n}|CLOSE,HP:FEIc{n}|CLOSE,1-12,,1;2,,1994,last_trade,strip8,Z,Strip reversion (enters with 8 daily contracts); T10 strip market
+FSS,Short sterling,sr_gbp,LIFFE,FSS,,,DS:<FSSc{n}>|X,DS:<FSSc{n}>|X,1-8,,1;2,,1999,last_trade,strip8,Z,Strip reversion; T10 strip market
+FES,Euroswiss,sr_chf,LIFFE,FES,,,DS:<FESc{n}>|X,DS:<FESc{n}>|X,1-8,,1;2,,1991,last_trade,strip8,Z,Strip reversion
+SRA,3m SOFR,sr_usd_live,CME,SRA,,,HP:SRAc{n}|CLOSE,HP:SRAc{n}|CLOSE,1-12,,,,2018,last_trade,strip8,,Strip reversion live dollar strip (no design data; history 2018+ is sealed)
+SON3,3m SONIA,sr_gbp_live,ICE Futures Europe,SON3,,,HP:SON3c{n}|CLOSE,HP:SON3c{n}|CLOSE,1-8,,,,2018,last_trade,strip8,,Strip reversion live sterling strip; T10 (sealed history)

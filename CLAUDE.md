@@ -509,7 +509,25 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   by default; gm_engine 1.1.0 cuts loaders at 2010-12-31; timing.py sealed). Only E4 moves numbers: BASE 1975-2010 SR
   1.222 -> 1.226, 1990-2010 1.452 -> 1.469; CANDIDATE 1.456 -> 1.461, 1.608 -> 1.620. Truncation PASS 8/8 dates (21
   stages); tests/gm_seal_smoke.py added; run_tests ALL PASSED; new engine_ref.json (old engine_ref_gm-1.2.2.json).
-  PC redeploy + gm_repro_v4 queued (see below when it ran).
+  PC redeployed (read back identical); gm_repro_v4 on the PC: 24/24 PASS, diff 0.
+  ENGINE FEATURE VERSION gm-2.1.0 DONE 2026-11-24 (registration af93bb6 BEFORE code 9efa371; results eb32dfe; Opus builder
+  ~0.45M; NO performance statistic of any new path computed): E6 k=1 returns + flags (gm/execution.py), E7 version
+  grids (config key "grid"), E8 weekly tranches (NYSE days = ^GSPC daily dates; offsets 0/5/10/15), E9 component masks +
+  equal-risk Core/shadow books, E10 alpha bootstrap (p = count/10,000), placebo engine (12-month blocks, date mover),
+  non-inferiority, E11 joint caps ("cap_groups") + strip gross weight, E14 card 4 daily excess return. BASE/CANDIDATE
+  unchanged at k=0 (24/24 diff 0; engine_ref numbers unchanged, code block rehashed; old engine_ref_gm-1.2.3.json);
+  truncation PASS 8/8 dates, 21 old + 34 new stages; tests/gm_feature_smoke.py (67 checks), run_tests ALL PASSED.
+  ENGINE_VERSION gm-2.1.0 in config; gm_engine 1.2.0. 14 "closed here" choices in gm/CHANGES.md. NOT built: E12, E13,
+  E15, pod builds (Curve carry, Strip reversion), card rule-layer engine, diagnostics. PC not yet redeployed for 2.1.0.
+  LSEG SOURCE CODE 2026-11-24 (Opus ~0.53M; mock-tested, ALL 75 checks PASS): tools/lseg/ (lsegdata.py 1.0.0 reader +
+  as-of guard + 2011 seal + lock + contract calendar + weekly store; 6 config CSVs; jobs lseg_build_v1, lseg_check_v1,
+  lseg_weekly_v1; builders build_lseg_contract_pull.py, build_lseg_weekly.py), docs/research/lseg/LSEG_SOURCE_PLAN.md
+  (run order, draft gm/CHANGES data entry, open items) + LSEG_WEEKLY.md. Contract identity today = NONE for every root
+  (continuous closes carry no delivery month) -> L11_contract_identity.xlsx (175 formulas: contract calendar 22 roots,
+  field-name tests, roll checks, ED daily c3/c5/c6/c7) saved to G:\My Drive\Screener project\LSEG\09_contract_identity
+  (USER REFRESHES once: open, wait for B4, Ctrl+S); weekly file in ...\LSEG\10_weekly_live. lsegdata + CSVs deployed to
+  local\lib (read back identical); jobs lseg_build_v1 + lseg_check_v1 QUEUED. OPEN: user's licence statement for
+  live/trading use (asked 2026-11-24); L11 field names are guesses to confirm.
   NEXT: engine feature version gm-2.1.0 (REGISTRATION_3.4 part (c) item 2: E6 k=1, E7 version grids, E8 weekly
   tranches, E9 component masks + equal-risk Core book, E10 test code, E11 spread caps, E14 card 4 daily) -> then the
   diagnostics (7.5) and Batch A. In parallel: LSEG reader + lock + seal + licence statement. User 2026-11-22: NO MORE

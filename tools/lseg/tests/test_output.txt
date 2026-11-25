@@ -1,0 +1,80 @@
+PASS every block formula of the 1579 real pull-template blocks parses (unparsed 0; {'DS': 399, 'HP': 850, 'RH': 225, 'RD': 105})
+PASS reader runs end to end on the 14 real (unrefreshed) L templates: 1583 expected series, statuses ['empty', 'wrong-series']
+PASS DSGRID multi-code expected series
+PASS HistoricalPricing without RH:Timestamp is recognised as undated
+PASS probe file P2 listed, not read
+PASS DSGRID two datatypes -> two ok series
+PASS DSGRID $$ER block -> invalid (both datatypes)
+PASS HistoricalPricing without dates -> no-dates
+PASS CEDCS00 -> wrong-series (exclusion list)
+PASS three codes with identical arrays -> copy
+PASS a shared run (not whole arrays) stays ok
+PASS block without any output -> empty
+PASS invalid Datastream code -> invalid
+PASS RHistory label after the save day dropped (1 row)
+PASS RHistory monthly date rule = calendar month-end labels
+PASS Datastream monthly = last weekday
+PASS RDP.Data with instrument column -> ok
+PASS TRY= flagged untouched
+PASS same id in L8 and L10 -> one primary, one #suffix duplicate
+PASS holiday month-ends flagged
+PASS seal: design table ends 2010-12-31, sealed table holds only later observations
+PASS no calendar without L11
+PASS asof 2005-06-30: no CL observation after the date
+PASS asof month-end: RHistory label of that month known (delay 0)
+PASS economics delay 45 days: May value (obs 05-31) not known on 06-30
+PASS known(): indexed by the day each value became known
+PASS monthly() of a daily series: month labels
+PASS asof after the seal refused (HoldoutSealed)
+PASS holdout key refused while none is registered
+PASS live mode refused while LIVE_START is not registered
+PASS refused attempts logged in sealed_access.log
+PASS untouched TRY= hidden by default, visible with allow_untouched
+PASS wrong series not served
+PASS rebuild of the same files gives the same lock id; old manifest moved to history/
+PASS one changed value gives a new lock id
+PASS lock.json: lock id and per-series dates
+PASS lseg_build_v1 runs (before L11)
+PASS build reports no calendar before L11
+PASS lseg_build_v1 output holds no data value (export whitelist) []
+PASS lseg_check_v1 runs (before L11)
+PASS identity before L11: NONE, says the calendar and the roll-rule check are missing
+PASS need: Eurodollar daily contracts 3/5/6/7 reported missing
+PASS need: forward EPS found
+PASS gap over 2 months reported
+PASS stale run reported
+PASS identical value run shared by two codes
+PASS copy group members listed
+PASS Datastream holiday month-ends reported for Eurodollar
+PASS monthly vs daily label check
+PASS lseg_check_v1 output holds no data value []
+L11_contract_identity.xlsx | 175 formulas | ED daily 4, Curve depth 37, Contract sample 60, Identity probe 12, Calendar test 10, Calendar 52 | contracts listed 12736 (+12 test)
+PASS build reads L11 and its calendar
+PASS lseg_build_v1 output (with L11) holds no data value []
+PASS heating oil identity COMPLETE (calendar + depth 18 + roll rule agrees)
+PASS Eurodollar identity COMPLETE (quarterly strip inside positions 1-8)
+PASS WTI PARTIAL: far leg beyond the pulled depth
+PASS listed months (no serial) reported
+PASS roll rule on HO samples: no disagreement
+PASS root without calendar dates or samples: NONE
+PASS Eurodollar daily 1-8 complete after L11
+PASS probe blocks reported
+PASS lseg_check_v1 output (with L11) holds no data value []
+PASS Calendar.held(CL, 3, day) = true contract
+PASS Calendar.held without calendar dates -> None
+LSEG_weekly_live.xlsx | 244 formulas | Curves 208, Strips 32, Monthly 1, Identity now 3 | live positions 240
+PASS weekly ingest 1 adds rows
+PASS stale weekly series reported
+PASS live identity agrees with the locked calendar + roll rule
+PASS lseg_weekly_v1 output holds no data value []
+PASS the same saved file is not ingested twice
+LSEG_weekly_live.xlsx | 244 formulas | Curves 208, Strips 32, Monthly 1, Identity now 3 | live positions 240
+PASS second week: new rows added, changed values kept as revisions (append-only)
+PASS live mode: history (design + sealed) plus the weekly rows
+PASS live mode: as-of guard holds
+PASS live mode refuses as-of dates before LIVE_START
+L11_contract_identity.xlsx | 175 formulas | ED daily 4, Curve depth 37, Contract sample 60, Identity probe 12, Calendar test 10, Calendar 52 | contracts listed 12736 (+12 test)
+PASS L11 holds Eurodollar daily contracts 3, 5, 6, 7
+PASS L11 stays small (175 formulas, 12736 contracts)
+PASS every L11 formula is readable by lsegdata
+ALL LSEG TESTS PASSED
