@@ -1,0 +1,91 @@
+python3 tests/run_tests.py, 2026-11-24, code commit 9efa371 (gm-2.1.0): 420 checks ok, 0 failed; excerpt below = the two gm sections (synthetic data only) and the final line
+Global Macro Book (gm-1.2.3 fixes)
+  ok   E5 seal: no design output of gm.book.run is dated after 2010-12  ({})
+  ok   E5 holding cut: last return month 2010-12 (held from month-end 2010-11), nothing earned later  (2010-11    0.005236
+2010-12   -0.001965
+Freq: M, dtype: float64)
+  ok   E5 seal: changing every input dated after the seal leaves every design output unchanged
+  ok   E5 seal: the unsealed engine (live / holdout only) does run past 2010 (test not vacuous)
+  ok   E5 seal: k = 0 design numbers up to 2010-12 equal the unsealed engine's
+  ok   E5 guard: a value dated 2011-01 in a design output raises SealBreach (an empty late row does not)
+  ok   E5 delay diagnostic: no month after 2010-12, the 2010-11 holding ends at the 2010-12-31 close, later days unread  ({Period('2010-12', 'M'): 0.010593460328042793} 0.010593460328042793)
+  ok   E2 EQ_INDEX: no eq_eu_stoxx50 / eq_us_ndx / eq_us_r2k mapping; same-country MSCI mappings kept
+  ok   E1 Bloomberg switches: all four OFF by default
+  ok   E1 switches off: Value ignores the Bloomberg composite, Carry the Bloomberg curves, growth the surprises
+  ok   E1 switches on: each Bloomberg input is used (the flags are live)  ([0.123] [0.777] [0.5])
+  ok   E3 quarterly CPI: Q1 sits on March (+ the callers' 1-month lag = end of April), carried to May; monthly rows unchanged; monthly wins over quarterly  ({Period('2009-03', 'M'): 3.0, Period('2009-04', 'M'): 3.0, Period('2009-05', 'M'): 3.0, Period('2009-06', 'M'): 4.0, Period('2009-07', 'M'): 4.0, Period('2009-08', 'M'): 4.0})
+  ok   E3 as-of: with the 1-month lag a quarter enters at the end of the month after it ends
+  ok   E3 oecd_sdmx raises on an unparseable csv (no silent fallback); a missing file stays empty
+  ok   E3 metadata listing: frequency per country and first design date  ({'AAA': {'country': 'AAA', 'frequency': 'monthly', 'FREQ column': 'monthly', 'first': '2009-01', 'design rows': 2}, 'BBB': {'country': 'BBB', 'frequency': 'quarterly', 'FREQ column': 'quarterly', 'first': '2009-03', 'design rows': 2}, 'CCC': {'country': 'CCC', 'frequency': 'both', 'FREQ column': 'monthly/quarterly', 'first': '2009-03', 'design rows': 2}})
+  ok   E4 Value dividend yield: non-US = the 12 months ending at t-12 (no carry-forward); US unchanged; registered lag is 12
+
+Global Macro Book (gm-2.1.0 features)
+  ok   E8 calendar: NYSE days from the ^GSPC dates, cut at the seal
+  ok   E6 k = 1 = R(t) - r(first day of t) + r(first day of t+1)
+  ok   E6 bonds: the daily value is already a price return (no exp)
+  ok   E6 no price on a first day -> k = 0 return, flagged
+  ok   E6 no daily data at all (cm_gold, cm_natgas) -> k = 0, flagged
+  ok   E6 holding cut: the holding decided at 2010-11 ends at the 2010-12-31 close (no January day read)
+  ok   E5 k = 1: no output after 2010-12
+  ok   E5 k = 1 unchanged when every input after the seal changes
+  ok   E6 a k = 1 book holds the k = 0 positions
+  ok   E6 a k = 1 book earns the k = 1 returns
+  ok   E6 costs charged as today (same cost series)
+  ok   E6 flag report: share of gross position flagged by year, in [0, 1]
+  ok   E7 Carry v1 (sign) and v2 (rank) averaged = today's half-and-half (1e-12)
+  ok   E7 single-version pods unchanged on the version path
+  ok   E7 version counts: Trend 16, Economic trend 2, Carry 2, Value 2
+  ok   E7 pod position = sum of version terms p_v / V, a missing version = 0
+  ok   E7 a missing version adds 0 (Value v2 missing for fx_aud before 1991: pod = v1 / 2)
+  ok   E7 Trend v2 (3 months, sign, hybrid) = sign x 0.40 / vol / n / 16
+  ok   E7 Trend v16 (12 months, graded cap 2, m36) by hand
+  ok   E7 a grid run without the Value v2 signal stops
+  ok   E5 grid book: no output after 2010-12
+  ok   E9 Core and shadow masks partition every (pod, class, version) component
+  ok   E9 Core + shadow masked positions = the whole pod position
+  ok   E9 Core holds Carry FX v2 only, energy v1 + v2, Value EQ only
+  ok   E9 equal-risk Core book = parts at unit volatility x 1/n, then the book scaler (by hand)
+  ok   E9 each Core part rescaled to about unit volatility (three parts, each 0.6-1.6)
+  ok   E5 Core and shadow books: no output after 2010-12
+  ok   E8 offsets: tranche j decides on NYSE day 5j after month-end, trades the next NYSE day
+  ok   E8 holidays: the special closure is skipped (5 NYSE days after 2001-08-31 = 2001-09-07, 10 = 2001-09-20)
+  ok   E8 tranche 0 = the monthly k = 1 path
+  ok   E8 tranche panel X_j(t) = R(t) - pr(me(t-1) -> d_j(t-1)) + pr(me(t) -> d_j(t))
+  ok   E8 tranche holding return runs from the day after d_j(t-1) to the day after d_j(t)
+  ok   E8 a market without a price that day uses its last price
+  ok   E8 no daily data (cm_wti before 1995): tranche 0's position, tranche 0's k = 1 return, flagged
+  ok   E8 a market with daily data has its own tranche position
+  ok   E8 tranche form = one quarter of the four tranche returns
+  ok   E5 tranches: no decision after 2010-12-31 (tranches 1-3 of 2010-12 decide in January 2011)
+  ok   E5 tranches: holdings decided in December 2010 end at the 2010-12-31 close
+  ok   E5 tranches unchanged when every input after the seal changes
+  ok   E5 tranches: no output after 2010-12
+  ok   E10 alpha = least-squares intercept, beta = slope
+  ok   E10 a strong true alpha: p = 0
+  ok   E10 a strong negative alpha: p = 1
+  ok   E10 alpha bootstrap agrees with tools/power boot_alpha (same alpha; count = p x 10,001 - 1)
+  ok   E10 a zero Core book: alpha = the pod's own mean
+  ok   E10 Holm at 2.5% over the batch (two pods at 0.01 / 0.012 -> 0.02 / 0.02 pass)
+  ok   E10 placebo maps: permutations of whole 12-month blocks aligned to the window start, last part-block kept
+  ok   E10 placebo maps are fixed by the registered seed
+  ok   E10 placebo: a pod that times every month beats all its placebos (p = 0, pass)
+  ok   E10 placebo: a standing long exposure is no better than its placebos (p = 1, fail)
+  ok   E10 placebo engine: the identity map reproduces the pod on the version path
+  ok   E10 placebo engine: scores moved jointly in the window, re-sized with each month's own volatility
+  ok   E10 date-rule mover: same year / month, same length in NYSE days, cut at the seal
+  ok   E10 H1-H3: identical books pass
+  ok   E10 H1: a challenger 12%/yr worse fails non-inferiority
+  ok   E10 H4: an A3 item that misses its own target fails
+  ok   E10 test 5 agrees with gm.protocol.decide check 5 (100 of 100)
+  ok   E10 T4: Core book + a zero pod, rescaled by the book scaler's convention
+  ok   E11 strip vector times the smallest cap_j / |x_j| (proportions kept)
+  ok   E11 columns outside a group clip alone, as today
+  ok   E11 Curve carry legs share the front leg's cap
+  ok   E11 no group = today's clip
+  ok   E11 gross weight 0.25/1.9 counts in the gross cap
+  ok   E14 a month held in full earns exactly the panel's monthly excess return
+  ok   E14 e(d) = price return of d + (panel - month's summed price returns) / N(m)
+  ok   E5 card 4 daily excess: no day after 2010-12-31
+  ok   E5 card 4 daily excess unchanged when every input after the seal changes
+
+ALL TESTS PASSED

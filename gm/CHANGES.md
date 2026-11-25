@@ -186,6 +186,38 @@ Closed while coding (before any real-data run of a new path; simplest reading, n
     tools/bbgq/engine_repro_cloud.py (k = 0 reproduction in the cloud, PASS / FAIL and differences only);
     tools/bbgq/engine_ref.py --rehash (rewrites the reference's code block only after a 24 of 24, difference 0 run).
 
+Result (2026-11-24/25, free data, design months only; code commit 9efa371; inputs = the repo cache, the same files as
+the gm-1.2.3 reference). No performance statistic of any new path was computed, printed or logged; on real data only
+the two gate runs below were made.
+1. k = 0 reproduction (tools/bbgq/engine_repro_cloud.py -> tools/bbgq/results/engine_repro_cloud_2026-11-24_gm-2.1.0.txt):
+   BASE and CANDIDATE reproduce the gm-1.2.3 reference 24 of 24 items, largest difference 0.0 (statistics, per-year
+   book returns, positions, volatility, family positions, signals, market months). REPRODUCTION PASS.
+2. Truncation test (tools/bbgq/engine_trunc.py --features -> tools/bbgq/results/engine_trunc_cloud_2026-11-24_gm-2.1.0.txt):
+   PASS at all 8 cut dates (1980-06 ... 2010-12): the 21 k = 0 stages (BASE, CANDIDATE) 0 differing cells end-to-end
+   and alone; the 34 feature stages (NYSE days; Economic trend sign shape and Value v2 signals; k = 1 returns and flags;
+   k = 1 book returns of BASE, CANDIDATE and the A2 challenger; the challenger's positions, volatility and family
+   positions; positions, part returns and k = 1 returns of the equal-risk Core and shadow books; panel, holding
+   returns, positions and flags of tranches 1-3 and the tranche form; card 4 daily excess return) 0 differing cells
+   end-to-end and alone, every input cut at the loader. Control: for the stages compared up to T - 1, month T itself
+   differs between the full and the cut run (the holding cut bites; e.g. 1998-06: 38 k = 1 return cells, 44-65 cells
+   per tranche panel / holding return / position), except the tranche flags, which depend only on when daily data
+   start. Positions only, real data: Carry v1 + v2 averaged equals the half-and-half family position of CANDIDATE
+   (largest difference 1.4e-14, no missing-pattern mismatch), as SPEC_Carry states.
+3. Tests: tests/run_tests.py ALL TESTS PASSED (420 checks; tests/gm_feature_smoke.py adds 67 synthetic-data checks:
+   tools/bbgq/results/run_tests_gm_2026-11-24_gm-2.1.0.txt); tests/gm_bloomberg_smoke.py PASSED;
+   tests/bbgq_engine_smoke.py BBGQ ENGINE SMOKE OK (packaged engine reproduces the reference 24 of 24, truncation at
+   1995-12 PASS, Bloomberg adapter on mocks, output whitelist clean).
+4. Reference: every number of tools/bbgq/engine_ref.json is unchanged (made 2026-11-24 by gm-1.2.3); only its code
+   block (gm file hashes, gm commit 9efa371, engine helper gm_engine-1.2.0) was rewritten by engine_ref.py --rehash
+   after a 24 of 24, difference-0 run; the previous file is kept as engine_ref_gm-1.2.3.json.
+5. Version strings: gm/config.py ENGINE_VERSION = gm-2.1.0; BASE name gm-1.2.3 and CANDIDATE gm-2.0.3-candidate
+   unchanged (config hashes 7651ea6ebc / a9466df18b, as in the reference); gm/run.py VERSION stays gm-1.2.3 (the BASE
+   name, nothing changes at k = 0); tools/bbgq/lib/gm_engine.py VERSION gm_engine-1.2.0. No gm/trials.csv row.
+Not built here (as registered): E12, E13, E15, the LSEG source, the Curve carry and Strip reversion pods (E11 is the
+cap machinery only), the card rule-layer engine (rule states, entry versions, netting; E10's mover and move_rows are
+its placebo tools), every diagnostic of 7.5. The PC engine is not redeployed in this version (the packaged copy is
+built and checked by tests/bbgq_engine_smoke.py; a PC run of gm_repro with the new lib is the next PC step).
+
 ## gm-1.2.3 and gm-2.0.3 candidate (registered 2026-11-24, BEFORE the code change): E1-E5
 Fix version (may change design numbers). Registered in docs/research/global_macro/TESTING_PROTOCOL.md section 7.4 rows
 E1-E5 and 7.3 item 5 (step 3.4, 2026-11-23); this is entry 1 of docs/research/registration/REGISTRATION_3.4.md part (c).

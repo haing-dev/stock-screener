@@ -198,7 +198,7 @@
   }
  },
  "code": {
-  "gm_commit": "d68c0d6c7bdd6c750a683d097bf93ac01cc0464a",
+  "gm_commit": "9efa371c765591ca2dae3441e6219577ca9eeb96",
   "gm_data_sha256": {
    "RBI_CALLMONEY_M.csv": "9bb122c913492c0436042cf1e7f5beae5260f152544c3c76744830e8ece1ad4c"
   },
@@ -207,9 +207,10 @@
    "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
    "audit.py": "e16260c9a3e521e92c94e741f8cbfd271498b3aa3e696606ffc6f940bcff91b6",
    "bloomberg.py": "b268a545d775220e9ca4ad67b5d8647bd312677bc63f603f6a5e60786b4e3041",
-   "book.py": "bc77c96ba467ebba4cf8e2244d39ecf880a16254e7d1cd9b6b548f9cfdb46edd",
-   "config.py": "d33879e145a4cebcb2102e9aebd36394d6afbb62a7c9fdf703025bf2419d19a3",
+   "book.py": "4c0693c38e81d708fecc36eee08b42ae358759efb07aed6eb92288ebff71e53b",
+   "config.py": "4ccd8884f3ee6a8accbf18146baf9c745c24f1eba8d18070098ac405670ff221",
    "daily.py": "eaf4d6673fc7d66639f9ba1d86ac24685a8962a1d24c8a224c0a5edd72d36c86",
+   "execution.py": "2c2fecd8e8b63da299cfb745e7713faf3619ab95b7ea430d8c436cebf7951033",
    "holdout.py": "d29d31d3824117681993819a8454c233849719cb8c89d1d37f6ef10741eacc49",
    "imf_revisions.py": "62e7f6aaa1fd13babdd0e40ba8dcdc8ae4abe8b12cb3a94189272358ba69037e",
    "panel.py": "8818ce65ff5682fead859268f509d850a3bb13396c7ef3628c4d1a46bacc0ebc",
@@ -217,12 +218,12 @@
    "protocol.py": "796424b17709b53fd2c1f0e8c85bef4e2c488a744d3f77f74e9b5539c69865af",
    "run.py": "55b0be48202a41ef5fc1fe8835dc1a3c480f89d2e89ee83bf83982c268ff9dcb",
    "seal.py": "f53f76d8926f9dd95e9483e04da6f11ab7b83a17d6c74f6e372b0d91e7be2979",
-   "signals.py": "217916c499024898621252107bb36be48ee91f35cf40d4a2a189c282a823b4a9",
-   "stats.py": "b599637d584ba70f923923a386eea8debd739776f1f6fc2bdae3413b2ecae9fd",
+   "signals.py": "bb685348a83da639d255748848ea76ea2c355c02d2750219f4b3e332a0b6948d",
+   "stats.py": "8ca2e54c17dddfb4640acf92919e752b3fbb96650a941e11f0371644114f9203",
    "timing.py": "6c28999a3096c5c240d0111191836cb2d0f181aea7ad037e36b4a17133d55b78",
    "trials.py": "2826099b09c5b71b7c5b4e1000b9b272fe7d34f8f3099314433ee6ba5a30f9b8",
    "variants.py": "0470a419356ef377d605873e4653b4506552485586de6f5c73175fb4865a5ebc",
-   "vol.py": "b650bda478767c3aabf877aeaa1f9de9921a72f650fc86e02fa07f56798a5952"
+   "vol.py": "7a8497d02ee2c0d2a2f8bbc384258eb490e40c0f6dde313094d0e71383355bce"
   }
  },
  "configs": {
@@ -230,7 +231,7 @@
   "CANDIDATE": "a9466df18b"
  },
  "design_end": "2010-12",
- "engine_helper": "gm_engine-1.1.0",
+ "engine_helper": "gm_engine-1.2.0",
  "fam_abs_sum": {
   "BASE": {
    "carry": {
@@ -1773,6 +1774,12 @@
    "st_gb_5y": 22.36764903,
    "st_jp_2y": 222.01498126
   }
+ },
+ "rehash": {
+  "made": "2026-11-24",
+  "note": "code block only: the engine reproduced every item of the old reference with difference 0",
+  "numbers_made": "2026-11-24",
+  "old_file": "engine_ref_gm-1.2.3.json"
  },
  "run_seconds": 46,
  "signal_abs_sum": {
