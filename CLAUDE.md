@@ -533,8 +533,13 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   windows: review). NEED vs specs: OK 18, SHORT 3 (Brent curve 2005, gasoline 2005, short sterling strip 2002), LATE 3
   (copper front 1988 vs 1973, yen 3m 1978-08, krona 3m 1997), MISSING 15 (daily strip contracts c3/c5-c7 for ED, Euribor,
   Euroswiss, short sterling; commodity curve depth beyond c12 / c6-c9 for 11 roots). IDENTITY NONE for all 22 roots
-  (needs L11). PC engine gm-2.1.0 deployed; gm_repro_v5 24/24 PASS. OPEN: user refreshes L11 (then re-queue build +
-  check: lock id changes); licence statement for live/trading use (asked 2026-11-24); L11 field names are guesses.
+  (needs L11). PC engine gm-2.1.0 deployed; gm_repro_v5 24/24 PASS. 2026-11-25: LICENCE STATEMENT recorded (docs/research/lseg/LICENCE_STATEMENT.md). L11 refreshed -> lock v2
+  94498c88 (LOCK_LSEG_v2.json): LSEG gives NO contract dates (all 12,736 calendar requests fail: NULL / access denied /
+  no output) -> calendar from exchange rules tools/lseg/lseg_rules.py 1.0.1, checked by value matching (jobs
+  lseg_check_v3, lseg_ident_v1): rule last-trade day = observed last priced day for 16 of 17 roots; far positions
+  disagree (listing horizons, serial months); none registrable yet. Status: docs/research/lseg/IDENTITY_STATUS.md.
+  USER REFRESHES L12 (G:\...\LSEG\09_contract_identity\L12_identity_evidence.xlsx, 188 formulas), then re-run build
+  (v3) + ident (v2: also read the TR.ExpiryDate series format; v1 found them 'not comparable').
   NEXT: engine feature version gm-2.1.0 (REGISTRATION_3.4 part (c) item 2: E6 k=1, E7 version grids, E8 weekly
   tranches, E9 component masks + equal-risk Core book, E10 test code, E11 spread caps, E14 card 4 daily) -> then the
   diagnostics (7.5) and Batch A. In parallel: LSEG reader + lock + seal + licence statement. User 2026-11-22: NO MORE
