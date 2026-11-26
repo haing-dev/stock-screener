@@ -1,4 +1,4 @@
-"""lseg_contract_v1: check of the contract-level files L14a-L14l (DESIGN part only; counts and dates, no value).
+"""lseg_contract_v2: check of the contract-level files L14a-L14l (DESIGN part only; counts and dates, no value).
   FILES    blocks and contract series per file by status
   ROOT     per root: contracts expected / with data, deliveries covered, design months with data
   LEGS     Curve carry (SPEC_Curve_carry s3): per design month t, front leg F = nearest contract with data delivering
@@ -21,7 +21,7 @@ from collections import Counter, defaultdict  # noqa: E402
 
 T0 = time.time()
 WORK = os.environ.get("BBG_WORK", os.path.join(os.getcwd(), "work"))
-print("=== lseg_contract_v1 ===", dt.datetime.now().strftime("%Y-%m-%d %H:%M"))
+print("=== lseg_contract_v2 ===", dt.datetime.now().strftime("%Y-%m-%d %H:%M"))
 try:
     import lsegdata as LD
     import lseg_rules as LR
@@ -55,7 +55,7 @@ L14 = cat[cat["file"].astype(str).str.match(r"^L14[a-z]")]
 print("--- FILES")
 for f, g in L14.groupby("file"):
     st = Counter(g["status"])
-    print("FILES %s | blocks %d | contract series %d | %s" % (f, g["pid"].nunique(), len(g),
+    print("FILES %s | blocks %d | contract series %d | %s" % (f, g["block"].nunique(), len(g),
                                                              ", ".join("%s %d" % kv for kv in sorted(st.items()))))
 # contract table: (root, per) -> {delivery index: {month index or day: value}}
 con = defaultdict(dict)
