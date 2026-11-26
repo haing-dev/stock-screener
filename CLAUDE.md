@@ -183,6 +183,9 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   ~2010, VIX (free source). Files were read via the bridge with the metadata reader because the PC runner is stalled.
   PROPOSED NEXT (not done): LSEG reader + lock with the 2011+ seal (like bbgdata), register LSEG in the data plan as the
   source for the families it covers (same source in backtest and live), Bloomberg for the gaps and as cross-check.
+- USER RULE 2026-11-26 (LSEG FILE SIZE): every LSEG workbook for the user is CHOPPED SMALL like the L14 set: at most
+  ~360 monthly or ~60 daily series per file, one small block per formula (e.g. one delivery year, <= 12 codes), one
+  sheet per market, no stray sheets; big files stay on 'retrieving'. Several small files beat one large one.
 - 2026-11-12 (later) USER RULE: Bloomberg needs a campus visit; anything LSEG can supply should come from LSEG (refreshable
   daily on her PC). Done: (1) LSEG set 3 = build_lseg_pull3.py -> L8_fixes_and_alternatives (181 formulas: failed codes +
   guessed LSEG alternatives for ended rate futures via Datastream, swaps by Workspace codes, inflation-linked yields, LME via
