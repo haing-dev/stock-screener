@@ -42,3 +42,12 @@
    per formula). Changes: design deliveries only (to 2012; holdout-year contracts pulled after the freeze); NG, HO,
    GC, KC not pulled (listing rule >= 99.5% at every depth: their legs come from the continuous series). The old
    L13 templates are deleted on the PC by job delete_l13_templates_20261125.
+11. L14 read (lock v4 bfb92fbb; job lseg_contract_v2, 2026-11-26): 2,572 of 2,908 contract series with data.
+    The contract codes are the right instruments: continuous c1/c2 month-end values match one contract whose
+    delivery agrees with the TR.ExpiryDate identity in 99-100% of matched months (sugar 95%). STRIPS: Eurodollar
+    1990-2010 all eight quarterly contracts priced on 5,475 of 5,480 trading days; Euribor 1999-2010 on 3,149 of
+    3,149. CURVE CARRY legs (front >= 3 months out and the same month a year later both priced, design months):
+    HG 100% (from 1988-07), CT 96%, SB 86%, CL 80%, C 79%, SI 78%, RB 76%, S 64%, W 40%, PL 19%, LC 13%: the far leg
+    is mostly not yet priced (exchanges list cattle, platinum and wheat only about a year ahead), so those months hold
+    nothing (spec s3). Missing: Brent 1988-2003 (Datastream rejects the codes -> L16a-e in HistoricalPricing form),
+    copper before 1988, cotton and cattle 1970s (L16f probe), Euribor before 1999 (did not exist).
