@@ -200,6 +200,21 @@ choice below reads a result: each is closed from the registered text, with the r
 10. Cloud: no diagnostic statistic is computed on the free, A1 or LSEG data. Cloud work = the code, tests on synthetic
    panels and a mock LSEG store (tests/diag_preb_smoke.py in tests/run_tests.py), the engine gates (k = 0 reproduction
    24 of 24, truncation 8 of 8; gm/ is unchanged, so engine_ref.json is unchanged).
+Correction found while coding (2026-11-27, BEFORE any run; from the rule text, no data; item 5 F0 g is not rewritten):
+item 5 F0 g is wrong for card 4 R1. Its six versions are averaged, and on a day inside one entry's window form A (+1),
+form B (+1 above last year's close, else 0) and form C (+1 above, -1 below) sum to 3 above the bar and to 1 + 0 - 1 = 0
+below it: the averaged R1 rule is flat in every year whose close before both entries is below the previous year's
+close. So R1's held months and episodes depend on the data, as for any state rule; the job computes them. What stays
+true from the rule text: card 4 R2 (every version long before every monthly expiry) has one episode on any data; R4
+holds around every month end unless both versions' month-to-date signs cancel or are exactly zero, so it has one
+episode unless that happens in 11 months running. F0 is computed as registered for all four.
+Correction 2 found while coding (2026-11-27, BEFORE any run; no data read): item 5 C5-D2's "Reported line: London cocoa
+(HP:LCCc1|CLOSE) and the LME cash prices" is NOT computed. Those instruments are held back: tools/lseg/lseg_untouched.csv
+(part of LOCK_LSEG_v5's config) lists LCC and CC futures ("alternative commodity not in the book") and the LME cash / 3m
+prices, and lsegdata hides them unless Panel(allow_untouched=True), which no registered entry grants for a design run
+(the A1 rule likewise excludes held-back markets). The job opens the LSEG store with allow_untouched=False and prints
+the line as "not computed (held-back instruments)". The gate (copper against wheat, corn, soybeans) is unchanged; no
+gate input is held back (HG, CL, W, C, S, ED, the S&P 500 forward EPS are not on the list).
 
 ## Core book v1 (registered 2026-11-27, BEFORE the Core book v1 code and run): TESTING_PROTOCOL 7.6 step 6
 Registered run entry (no rule, weight, threshold, gate, cost or market change; no gm/ code change; no statistic of S1-S4,
