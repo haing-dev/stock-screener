@@ -201,6 +201,21 @@ the PC, so every diagnostic is computed by one PC job (tools/bbgq/jobs/gm_diag_v
    prints differences only (D2 rebuild = book.run positions; X2 income + price = total; theme parts sum to the held
    Economic trend position).
 
+Code and cloud gates (2026-11-27; entry 3fdd3f9 before the code 3fd5d1b; no diagnostic statistic computed in the
+cloud): tools/bbgq/lib/diag_a2.py 1.0.0 (sha256 b811df2b4a9ad009668856bb0a2fdd84cc03334aa5d4213e473e4165a99e9caa), PC job
+tools/bbgq/jobs/gm_diag_v1.py (8d50d30e651bd702640ec3df90879ba6bf01641d016b9295afb7c5ce774c9c9a), a2_batch-1.1.1
+(35339f673f351f43315ad3c7010ba733b6fb8990a6a41feb1ef20de324de58c6), cloud script tools/bbgq/diag_plumbing.py, test
+tests/diag_a2_smoke.py (48 checks, in tests/run_tests.py). gm/ unchanged, so engine_ref.json is unchanged. Gates: k = 0
+reproduction 24 of 24, difference 0 (tools/bbgq/results/engine_repro_cloud_2026-11-27e_gm-2.2.1.txt); truncation PASS at
+all 8 cut dates, 21 k = 0 and 37 feature stages (results/engine_trunc_cloud_2026-11-27e_gm-2.2.1.txt); run_tests ALL
+TESTS PASSED (results/run_tests_gm_2026-11-27e_gm-2.2.1.txt; a2_batch_smoke 44 checks with the frozen 1.1.0 copy for the
+gm_a2_v1 job); free-panel identities PASS (results/diag_plumbing_cloud_2026-11-27.txt: D2 rebuild = book.run positions
+difference 0; income + price = total 6.9e-18; theme parts = held Economic trend position 2.2e-16 and theme scores
+reproduce E exactly; 62 Trend book markets, 61 without cm_aqr_ew). Closed while coding (no rule change): a D2 market-month
+counts in the scores-held share under the same exclusion as in item 4 D2 c; the cost drag's per-market costs must sum to
+the book's cost (printed check); the A2 facts parser reads only the incumbent's BOOK (costs x1, 1975-2010), POD and P4
+lines of gm_a2_v1.txt. NOT RUN: queue in docs/research/batches/DIAG_A2_BUILD_2026-11-27.md.
+
 ## gm-2.2.1 fix: cm_aqr_ew a Trend market in CM only (registered 2026-11-27, BEFORE the code change; found while building A2)
 Registered fix of the existing engine (TESTING_PROTOCOL 7.4: a found defect gets a registered engine version, as C1-C4,
 gm-1.2.2 and E1-E5). Found while coding A2 (gm/CHANGES.md "A2" item 13, commit d0ecdc7), BEFORE any A2 statistic was

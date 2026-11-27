@@ -1,0 +1,5 @@
+PASS D2 rebuild = book.run positions | max abs diff 0.0e+00 | missing pattern diff 0
+PASS X2 / Carry 5 split: income + price = total, every leg | max abs diff 6.9e-18
+PASS theme split: theme parts add to the held Economic trend position (max diff 2.2e-16); theme scores reproduce E (max diff 0.0e+00)
+PASS D1 markets: 62 Trend book markets, 61 without cm_aqr_ew
+DIAG PLUMBING PASS | 49s | no diagnostic statistic computed or printed
