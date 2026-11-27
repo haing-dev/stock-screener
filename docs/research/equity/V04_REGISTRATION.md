@@ -543,3 +543,15 @@ as such. Replaces R1.1 (record); R1.2 (material) and R1.3 (screenability) stay.
     in the buy part (countercyclical buying of loss-making cyclicals; bonds not owned in a recession when inflation is
     above 5%; shorting a post-bubble rally) -> FAIL. Card v1.1 with DRU2 merged, labelled "held-out failed"; thin (no
     written source). His record is mostly currencies and bonds (DRU6-C002): the 13F covers only his equity longs.
+16. **Recall code registered (2026-11-27, before any WRDS run).** eq_recall-1.0.0, code sha256 20d8ca89bbd0...a6d19d5,
+    seal-exempt job 9 `recall` (lock 004bef34...). Smoke test with synthetic data only. Choices made in the code where
+    RECALL_SPEC_v1 was silent (fixed here, before any result): eligible set = R3 universe with a GICS sector after the
+    house exclusions; decisive result = mean of R2 versions a and b ("either version" reported); bootstrap over quarters
+    with a counted purchase, same draws for both versions, 5th-95th percentile; size thirds by company market value,
+    the purchased stock counts in its own cell; S03 = standard deviation of the 9 yearly growth rates (all years
+    present); growth with a base <= 0 is missing; annual data older than 550 days at t is missing; missing
+    acquisitions = none and missing share pay = 0 in the decisive form (stricter readings reported); P2/P3 on
+    month-end split-adjusted closes, at least 9 of 12 months; Treasury value within 40 days; full form = 108 versions
+    averaged, version-sets with no passer in their cells left out (count printed); B12 not implemented (portfolio
+    check, not an entry rule); reference-book score recomputed with eq_ref code; the job stops without GICS history or
+    the Treasury series. The per-criterion universe column is withheld from the recipe writer (A10 item 9 feedback).

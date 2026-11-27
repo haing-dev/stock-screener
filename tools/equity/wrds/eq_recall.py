@@ -467,7 +467,8 @@ def price_direction(msf, out):
 def build_panel(D, out):
     """copied from eq_ref 1.1.0 build_panel. Changes: (1) the next-month return (ret_next) is NOT computed (this job
     reads no forward return); (2) the recipe's quarterly inputs (recall_quarter_measures) are joined at t with the
-    same as-of rule; (3) returns (u, msf, price direction)."""
+    same as-of rule; (3) the as-of keys are cast to datetime64[ns] (pandas versions differ); (4) returns (u, msf,
+    price direction, GICS source)."""
     msf = D["msf"].copy()
     msf["mcap"] = msf.prc * msf.shrout * 1000.0
     msf = msf[msf.usincflg.astype(str).str.upper() == "Y"]
@@ -529,6 +530,9 @@ def build_panel(D, out):
     q = q.rename(columns={"avail": "avail_key"})
     left["gvkey"] = left.gvkey.astype(str)
     q["gvkey"] = q.gvkey.astype(str)
+    left["avail_key"] = left.avail_key.astype("datetime64[ns]")
+    q["avail_key"] = q.avail_key.astype("datetime64[ns]")
+    q["datadate"] = q.datadate.astype("datetime64[ns]")
     out("account join: %d of %d universe line-months have a gvkey; %d keys in the quarterly table, %d shared" % (
         len(left), len(u), q.gvkey.nunique(), len(set(left.gvkey) & set(q.gvkey))))
     j = pd.merge_asof(left, q, on="avail_key", by="gvkey", direction="backward")
@@ -851,12 +855,14 @@ def summarize(sets, cols, nboot=NBOOT, seed=SEED, min_n=MIN_N):
     if ok:
         res["recall"] = float(np.mean([r["recall"] for r in ok]))
         res["base"] = float(np.mean([r["base"] for r in ok]))
-        lifts = [r["lift"] for r in ok]
-        res["lift"] = float(np.nanmean(lifts)) if np.isfinite(lifts).any() else float("nan")
+        lifts = np.array([r["lift"] for r in ok], float)
+        fin = np.isfinite(lifts)
+        res["lift"] = float(lifts[fin].mean()) if fin.any() else float("nan")
+        res["lift_undefined"] = int((~fin).sum())      # versions whose cells never pass (base 0): left out of the mean
         res["n"] = {r["set"]: r["n"] for r in ok}
-        if Ld:
+        if Ld and fin.any():
             with np.errstate(invalid="ignore"):
-                L = np.vstack(Ld)
+                L = np.vstack(Ld)[fin]
                 good = np.isfinite(L).all(axis=0)
                 avg = L[:, good].mean(axis=0)
             res["draws_used"] = int(good.sum())
@@ -969,18 +975,15 @@ def run(load, save, out):
     r = rank_panel(u)
     E = recall_panel(D, u, msf, s, out)
     F = rec["flags"](E)
-    E["dec"] = rec["entry"](F).values
-    E["dec_strict"] = rec["entry"](F, strict=True).values
     FV = rec["full"](F)
     fcols = list(FV.columns)
-    for c in fcols:
-        E[c] = FV[c].values
+    add = {"dec": rec["entry"](F).values, "dec_strict": rec["entry"](F, strict=True).values}
+    add.update({c: FV[c].values for c in fcols})
     for c, _, _ in rec["criteria"]:
-        if c != "P2|P3":
-            E["f_" + c] = F[c].values
-    E["f_P2|P3"] = (F.P2 | F.P3).values
+        add["f_" + c] = (F.P2 | F.P3).values if c == "P2|P3" else F[c].values
     for c, _ in rec["full_extra"]:
-        E["f_" + c] = F[c].values
+        add["f_" + c] = F[c].values
+    E = pd.concat([E, pd.DataFrame(add, index=E.index)], axis=1)
     rk = r[["permno", "yyyymm", "sec_pct"]]
     E = E.merge(rk, on=["permno", "yyyymm"], how="left")
     E["ref"] = E.sec_pct.fillna(0) >= REF_TOP
@@ -996,7 +999,7 @@ def run(load, save, out):
             continue
         cov = " ".join("%6.0f" % (100 * (d[c] > 0).mean() if c == "fy_run" else 100 * d[c].notna().mean()) for c in mcols)
         out("%d  %5d %5d  %5.1f %5.1f  %s" % (t, len(d), int(d.dec.sum()), 100 * d.dec.mean(), 100 * d.ref.mean(), cov))
-    out("coverage = %% of eligible stocks with the measure (fy_run: with any run); rate = decisive pass rate; ref = "
+    out("coverage = % of eligible stocks with the measure (fy_run: with any run); rate = decisive pass rate; ref = "
         "reference-book top fifth inside sector")
     out("share-pay source among eligible: quarterly %.1f%%, annual %.1f%%, none (decisive: 0; strict: missing) %.1f%%; "
         "acquisitions filled as none where missing: %.1f%%" % tuple(
@@ -1013,8 +1016,7 @@ def run(load, save, out):
     S = sets_for(Pk, E, cols)
     inu = u[u.in_univ & u.gsector.notna()][["permno", "yyyymm", "excluded"]].rename(columns={"yyyymm": "t"})
     pu = Pk.merge(inu, on=["permno", "t"], how="left")
-    out("\n## 2. %s (13F %s): conviction purchases 2010-2025 evaluated at the quarter-end before purchase" % (
-        TARGET["name"], ",".join(TARGET["mgrnos"])))
+    out("\n## 2. %s: conviction purchases 2010-2025 evaluated at the quarter-end before purchase" % TARGET["name"])
     out("purchases: either %d (version a %d, b %d); in the eligible universe at t: either %d (a %d, b %d); in the "
         "universe but in a house-excluded industry (A8 2a, not counted): %d; not in the universe: %d" % (
             len(Pk), int(Pk.a.sum()), int(Pk.b.sum()), len(S["either"]), len(S["a"]), len(S["b"]),
@@ -1025,9 +1027,12 @@ def run(load, save, out):
     def line(label, res):
         if not res["measurable"]:
             return "%-44s not measurable (fewer than %d counted purchases)" % (label, MIN_N)
-        return "%-44s recall %s  base %s  lift %s  90%% [%s, %s]" % (
+        return "%-44s recall %s  base %s  lift %s  90%% [%s, %s]%s" % (
             label, fmt(res["recall"], True), fmt(res["base"], True), fmt(res["lift"]), fmt(res.get("lo", np.nan)),
-            fmt(res.get("hi", np.nan)))
+            fmt(res.get("hi", np.nan)), ("  (%d version-sets with no passer in their cells left out of the lift)"
+                                         % res["lift_undefined"]) if res.get("lift_undefined") else "") + (
+            "  (interval on %d of %d draws: the others have a cell set with no passer)" % (res["draws_used"], NBOOT)
+            if res.get("draws_used", NBOOT) < NBOOT else "")
 
     def per_set(res):
         return "; ".join("%s: n %d, recall %s, base %s, lift %s" % (r["set"], r["n"], fmt(r["recall"], True),

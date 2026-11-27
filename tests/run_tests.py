@@ -1049,6 +1049,13 @@ _r = subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "ls
                     capture_output=True, text=True)
 check("lseg_rules smoke", _r.returncode == 0 and "ALL LSEG RULES CHECKS PASSED" in _r.stdout, _r.stdout[-200:])
 
+# Recall test (tools/equity/wrds/eq_recall.py, seal-exempt job 9 `recall`; RECALL_SPEC_v1): hand-computed recall /
+# lift, pull() with a mock sql (reuse, fallback, FRB discovery, stop), run() end to end on invented data
+print("\nRecall test (eq_recall 1.0.0, invented data)")
+_r = subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "eq_recall_smoke.py")],
+                    capture_output=True, text=True)
+check("eq_recall smoke", _r.returncode == 0 and "RECALL SMOKE OK" in _r.stdout, (_r.stdout + _r.stderr)[-300:])
+
 shutil.rmtree(TMP, ignore_errors=True)
 print(f"\n{'ALL TESTS PASSED' if not failures else str(len(failures)) + ' FAILED: ' + ', '.join(failures)}")
 sys.exit(1 if failures else 0)

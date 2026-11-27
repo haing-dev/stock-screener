@@ -84,3 +84,4 @@ conviction holdings job (R2) will be the fourth, with its code hash entered befo
 - 2026-11-27: A13 item 10: scorer reads number words (fixed after seeing Nygren 6/10; rescored all: Nygren 9/10). No price, return or 13F read.
 - 2026-11-27: A13 item 11: compound number words (after seeing Druckenmiller 8/10); all files rescored, all pass planted. No price, return or 13F read.
 - 2026-11-27: A13 item 13: recall spec v1 written before any recall number; job 9 'recall' to be registered with its code hash. No price, return or 13F read.
+- 2026-11-27: A13 item 16: recall job 9 registered (eq_recall-1.0.0, code 20d8ca89..., lock 004bef34...). Jobs eq_recall_pull_v1 then eq_recall_v1. No result yet.

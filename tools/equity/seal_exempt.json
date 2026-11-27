@@ -1,5 +1,5 @@
 {
- "note": "Seal-exempt jobs (plan v0.3 section 5.4; SEAL_LOG.md). Registered jobs: the scorecard, the holdings job (not built) the hedge fund leaderboard the universe check (plan v0.4 step 3a), the conviction holdings job, the reference book (plan v0.4 step 5) the construction profile (plan v0.5) and the record check (roster rule v3) (user request 2026-11-18, HF_LEADERBOARD_REGISTRATION.md). code_sha256 = SHA-256 of the module with its FROZEN INPUT block left out (tools/equity/seal_check.py code_hash). Each job name pattern lists the module functions its template steps may call, each with its exact argument list (a regular expression that the whole argument text must match, in order). code_history lists earlier registered hashes (record only; the checker uses code_sha256).",
+ "note": "Seal-exempt jobs (plan v0.3 section 5.4; SEAL_LOG.md). Registered jobs: the scorecard, the holdings job (not built) the hedge fund leaderboard the universe check (plan v0.4 step 3a), the conviction holdings job, the reference book (plan v0.4 step 5) the construction profile (plan v0.5), the record check (roster rule v3) and the recall test (RECALL_SPEC_v1) (user request 2026-11-18, HF_LEADERBOARD_REGISTRATION.md). code_sha256 = SHA-256 of the module with its FROZEN INPUT block left out (tools/equity/seal_check.py code_hash). Each job name pattern lists the module functions its template steps may call, each with its exact argument list (a regular expression that the whole argument text must match, in order). code_history lists earlier registered hashes (record only; the checker uses code_sha256).",
  "jobs": [
   {
    "registered_job": "scorecard",
@@ -214,6 +214,28 @@
      "note": "ran as eq_rec_v2 (decisive report, eq_rec_v2_report.txt)"
     }
    ]
+  },
+  {
+   "registered_job": "recall",
+   "module": "eq_recall",
+   "code_sha256": "20d8ca89bbd09a3ff73f5557a05d7e2fec0ab7ae9e67959efa4572065d6a19d5",
+   "registration": "docs/research/equity/pilot/RECALL_SPEC_v1.md; V04_REGISTRATION A13 item 13",
+   "output": "eq_recall.run: counts, coverage shares, recall, base rate, lift, 90% bootstrap intervals, gate result, per-criterion rejection shares and a masked cross table of lifts; no company, no identifier, no row; reads no forward return. Pass panel (rc_pass_panel) and summary (rc_recall_summary) stay on WRDS",
+   "names": [
+    {
+     "pattern": "eq_recall_pull_v\\d+[a-z]?",
+     "functions": {
+      "pull": "sql, save, load, out, budget=\\d+"
+     }
+    },
+    {
+     "pattern": "eq_recall_v\\d+[a-z]?",
+     "functions": {
+      "run": "load, save, out"
+     }
+    }
+   ],
+   "code_history": []
   }
  ]
 }
