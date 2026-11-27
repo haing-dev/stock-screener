@@ -1043,6 +1043,13 @@ print("\nCore book v1 (core_v1 1.0.0, synthetic panels, stub rebuild)")
 import core_v1_smoke  # noqa: E402
 core_v1_smoke.run(check)
 
+# Pre-B diagnostics (tools/bbgq/lib/diag_preb.py, job gm_diag_preb_v1; gm/CHANGES.md "Pre-B diagnostics"): synthetic
+# panels and a mock LSEG store (R1 strip identity, gap by brute force, stale screen; card rule signals by hand; C1-D1,
+# C1-D2, C2-D1, C3-D1, C5-D1, C5-D2, F0; LsegView on a mini lsegdata store; seal; printing; job stops)
+print("\nPre-B diagnostics (diag_preb 1.0.0, synthetic panels, mock LSEG store)")
+import diag_preb_smoke  # noqa: E402
+diag_preb_smoke.run(check)
+
 # LSEG source (tools/lseg): exchange-rule contract dates and registered listing models, no market data
 print("\nLSEG rules (lseg_rules 1.1.0)")
 _r = subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "lseg_rules_smoke.py")],
