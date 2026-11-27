@@ -47,6 +47,10 @@ from gm import stats as ST  # noqa: E402
 NPL = 20      # placebos in the smoke test (the job uses the registered 1,000)
 
 
+# the trial log as shipped to gm_diag_v1 / gm_core_v1 (before the Core book v1 row was appended, c69083e): the
+# jobs pin its book / pod rows (676b7b0f..., N 40); later appended rows would break the pin in these record tests
+TRIALS_SHIPPED = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "trials_core_v1_shipped.csv")
+
 def diag_text(d2="closed", done=True):
     L = ["=== gm_diag_v1 ===",
          "DIAG SUMMARY | D1: candidate half blocked; structural half reported | D2: %s | D3: closed | D4: Trend closed"
@@ -262,7 +266,7 @@ def _run(check, tmp):
                                                                      ("carry_energy", "carry_energy"))}
     lines = []
     res = CV.report(R, D, S, gspc, free, rbe, out=lines.append, n_placebo=NPL,
-                    trials_path=os.path.join(REPO, "gm", "trials.csv"), rb_version="engine-copy")
+                    trials_path=TRIALS_SHIPPED, rb_version="engine-copy")
     txt = "\n".join(lines)
     check("S4 with a rebuild equal to the engine: PASS for all three parts", all(res["parts"][p]["S4"] for p in CV.CORE))
     check("the synthetic run has a non-empty Core book and at least one candidate that is not Core (both branches)",
@@ -322,7 +326,7 @@ def _run(check, tmp):
     Rl, Dl, Sl, gl, _rawl = scenario(late=True)
     lines_l = []
     CV.report(Rl, Dl, Sl, gl, {"R": Rl, "S": Sl}, rbe, out=lines_l.append, n_placebo=NPL,
-              trials_path=os.path.join(REPO, "gm", "trials.csv"), rb_version="engine-copy")
+              trials_path=TRIALS_SHIPPED, rb_version="engine-copy")
     check("seal: planted values after 2010-12 change no printed line", lines_l == lines,
           [(a, b) for a, b in zip(lines, lines_l) if a != b][:2])
 
@@ -344,6 +348,7 @@ def _run(check, tmp):
     os.makedirs(lib)
     shutil.copytree(os.path.join(REPO, "gm"), os.path.join(lib, "gm"),
                     ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
+    shutil.copy(TRIALS_SHIPPED, os.path.join(lib, "gm", "trials.csv"))   # the trial log as shipped to the job
     bq = os.path.join(REPO, "tools", "bbgq")
     for rel in ("lib/gm_engine.py", "lib/bbg_panel.py", "lib/bbgdata.py", "lib/a1_panel.py", "lib/a2_batch.py",
                 "lib/diag_a2.py", "lib/core_v1.py", "live_sources.csv", "untouched_markets.csv", "engine_ref.json"):

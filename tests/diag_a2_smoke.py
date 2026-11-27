@@ -42,6 +42,10 @@ from gm import stats as ST  # noqa: E402
 THEMES = ("inflation", "trade", "monetary", "risk")
 
 
+# the trial log as shipped to gm_diag_v1 / gm_core_v1 (before the Core book v1 row was appended, c69083e): the
+# jobs pin its book / pod rows (676b7b0f..., N 40); later appended rows would break the pin in these record tests
+TRIALS_SHIPPED = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "trials_core_v1_shipped.csv")
+
 def themes_for(S, seed=4):
     """Synthetic theme scores whose mean is the econ score E (E replaced by that mean, as econ_versions defines it)."""
     rng = np.random.default_rng(seed)
@@ -403,15 +407,15 @@ def _run(check, tmp):
         raised = True
     check("as-run: a mismatch raises before any diagnostic is printed (one FAIL line)",
           raised and len(bad_lines) == 1 and bad_lines[0].startswith("FAIL A2-final book as run"), bad_lines)
-    sha_, n_, _l = DG.trial_rows_digest(os.path.join(REPO, "gm", "trials.csv"))
+    sha_, n_, _l = DG.trial_rows_digest(TRIALS_SHIPPED)
     check("trial log pin (C7): the repo trial log's book / pod rows have the registered digest (N 40)",
           sha_ == DG.TRIAL_ROWS_SHA and n_ == DG.TRIAL_ROWS_N, (sha_, n_))
     tl = os.path.join(tmp, "trials.csv")
-    shutil.copy(os.path.join(REPO, "gm", "trials.csv"), tl)
+    shutil.copy(TRIALS_SHIPPED, tl)
     with open(tl, "a", encoding="utf-8") as f:
         f.write('2026-11-28 10:00,D1 diagnostic (A2-final book),diag,abcdef1234,,,,,,"note","{}"\n')
     check("trial log pin (C7): an appended diag row does not change the digest", DG.trial_rows_digest(tl)[0] == sha_)
-    t2 = open(os.path.join(REPO, "gm", "trials.csv"), encoding="utf-8").read().replace("1faa343535,1.526",
+    t2 = open(TRIALS_SHIPPED, encoding="utf-8").read().replace("1faa343535,1.526",
                                                                                         "1faa343535,1.527")
     open(tl, "w", encoding="utf-8").write(t2)
     check("trial log pin (C7): a changed book row changes the digest", DG.trial_rows_digest(tl)[0] != sha_)
@@ -429,6 +433,7 @@ def _run(check, tmp):
     os.makedirs(lib)
     shutil.copytree(os.path.join(REPO, "gm"), os.path.join(lib, "gm"),
                     ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
+    shutil.copy(TRIALS_SHIPPED, os.path.join(lib, "gm", "trials.csv"))   # the trial log as shipped to the job
     bq = os.path.join(REPO, "tools", "bbgq")
     for rel in ("lib/gm_engine.py", "lib/bbg_panel.py", "lib/bbgdata.py", "lib/a1_panel.py", "lib/a2_batch.py",
                 "lib/diag_a2.py", "live_sources.csv", "untouched_markets.csv", "engine_ref.json"):

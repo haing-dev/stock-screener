@@ -215,6 +215,21 @@ prices, and lsegdata hides them unless Panel(allow_untouched=True), which no reg
 (the A1 rule likewise excludes held-back markets). The job opens the LSEG store with allow_untouched=False and prints
 the line as "not computed (held-back instruments)". The gate (copper against wheat, corn, soybeans) is unchanged; no
 gate input is held back (HG, CL, W, C, S, ED, the S&P 500 forward EPS are not on the list).
+Code and cloud gates (2026-11-27; entry 6497db6 and corrections bd6e3f5 before the code fd760ae; no diagnostic
+statistic computed in the cloud): tools/bbgq/lib/diag_preb.py 1.0.0 (sha256
+072b3dbe075353cc2ad6a3b2a95e0c50e97221ec05a8fddcf20b813493d11c77), PC job tools/bbgq/jobs/gm_diag_preb_v1.py (sha256
+in docs/research/batches/PREB_BUILD_2026-11-27.md), tests/diag_preb_smoke.py (52 checks, in tests/run_tests.py),
+build_engine ships diag_preb, the job and the LSEG reader files (lsegdata 0d1b500d... = LOCK_LSEG_v5's code hash,
+lseg_rules 56869991..., the config CSVs = the lock's config hashes). gm/ unchanged, so engine_ref.json is unchanged.
+Gates: k = 0 reproduction 24 of 24, difference 0 (tools/bbgq/results/engine_repro_cloud_2026-11-27g_gm-2.2.1.txt);
+truncation PASS at all 8 cut dates, 21 k = 0 and 37 feature stages (results/engine_trunc_cloud_2026-11-27g_gm-2.2.1.txt);
+run_tests ALL TESTS PASSED (results/run_tests_gm_2026-11-27i_gm-2.2.1.txt). Test-only fix in the same round: the
+diag_a2 and core_v1 smoke tests read the trial log as shipped to their jobs (tests/data/trials_core_v1_shipped.csv,
+book / pod digest 676b7b0f..., N 40), because the Core book v1 row appended at c69083e broke their record pin (6
+failures in run_tests before the fix; no job or lib changed). Closed while coding (no rule change): the job opens the
+LSEG store with allow_untouched=False after reading its lock id from the manifest; card 4's day windows that run past
+2010-12-31 are laid on US business days by lsegdata's calendar and cut there; a C5-D2 break without a 24-month value
+counts as not higher (counted and printed). NOT RUN: queue in PREB_BUILD_2026-11-27.md.
 
 ## Core book v1 (registered 2026-11-27, BEFORE the Core book v1 code and run): TESTING_PROTOCOL 7.6 step 6
 Registered run entry (no rule, weight, threshold, gate, cost or market change; no gm/ code change; no statistic of S1-S4,
