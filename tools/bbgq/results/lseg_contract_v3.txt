@@ -1,0 +1,78 @@
+=== lseg_contract_v3 === 2026-11-26 22:21
+lsegdata lsegdata-1.0.0 | lseg_rules-1.0.1 | LOCK 90322681b9f989cc24393ae7de4fe24bf5af2f32074ffa6400b1cbed09c4074c
+--- FILES
+FILES L14a | blocks 30 | contract series 360 | invalid 5, ok 355
+FILES L14b | blocks 30 | contract series 360 | invalid 191, ok 169
+FILES L14c | blocks 51 | contract series 360 | invalid 55, ok 305
+FILES L14d | blocks 60 | contract series 358 | invalid 15, ok 343
+FILES L14e | blocks 73 | contract series 360 | ok 360
+FILES L14f | blocks 55 | contract series 360 | ok 360
+FILES L14g | blocks 74 | contract series 360 | invalid 46, ok 314
+FILES L14h | blocks 31 | contract series 186 | ok 186
+FILES L14i | blocks 15 | contract series 60 | invalid 4, ok 56
+FILES L14j | blocks 15 | contract series 60 | ok 60
+FILES L14k | blocks 15 | contract series 60 | invalid 20, ok 40
+FILES L14l | blocks 6 | contract series 24 | ok 24
+FILES L16a | blocks 60 | contract series 60 | empty 8, ok 52
+FILES L16b | blocks 60 | contract series 60 | ok 60
+FILES L16c | blocks 60 | contract series 60 | ok 60
+FILES L16d | blocks 60 | contract series 60 | ok 60
+FILES L16e | blocks 60 | contract series 60 | ok 60
+FILES L16f | blocks 16 | contract series 16 | empty 16
+--- ROOT
+ROOT C M | contracts with data 190 of 190 | deliveries 1975-03 .. 2012-12 | design months with data 441 (1974-04 .. 2010-12)
+ROOT CL M | contracts with data 355 of 360 | deliveries 1983-06 .. 2012-12 | design months with data 334 (1983-03 .. 2010-12)
+ROOT CT M | contracts with data 170 of 194 | deliveries 1979-03 .. 2012-12 | design months with data 399 (1977-10 .. 2010-12)
+ROOT ED D | contracts with data 124 of 128 | deliveries 1982-03 .. 2012-12 | design months with data 349 (1981-12 .. 2010-12)
+ROOT FEI D | contracts with data 56 of 76 | deliveries 1999-03 .. 2012-12 | design months with data 145 (1998-12 .. 2010-12)
+ROOT HG M | contracts with data 211 of 289 | deliveries 1989-03 .. 2012-12 | design months with data 270 (1988-07 .. 2010-12)
+ROOT LC M | contracts with data 200 of 232 | deliveries 1979-02 .. 2012-04 | design months with data 383 (1979-01 .. 2010-12)
+ROOT LCO M | contracts with data 292 of 600 | deliveries 1988-09 .. 2012-12 | design months with data 271 (1988-06 .. 2010-12)
+ROOT PL M | contracts with data 149 of 152 | deliveries 1975-01 .. 2012-01 | design months with data 443 (1974-02 .. 2010-12)
+ROOT RB M | contracts with data 84 of 84 | deliveries 2006-01 .. 2012-12 | design months with data 63 (2005-10 .. 2010-12)
+ROOT S M | contracts with data 266 of 266 | deliveries 1975-01 .. 2012-11 | design months with data 443 (1974-02 .. 2010-12)
+ROOT SB M | contracts with data 180 of 182 | deliveries 1975-01 .. 2012-10 | design months with data 442 (1974-03 .. 2010-12)
+ROOT SI M | contracts with data 270 of 281 | deliveries 1975-03 .. 2012-12 | design months with data 441 (1974-04 .. 2010-12)
+ROOT W M | contracts with data 190 of 190 | deliveries 1975-03 .. 2012-12 | design months with data 441 (1974-04 .. 2010-12)
+--- LEGS (Curve carry, design months)
+LEGS C | design months from 1975-01: 432 | both legs priced 343 (79%) | stale 2 | gaps: no far (front H) 20, no far (front U) 19, no far (front Z) 18, no far (front K) 16
+LEGS CL | design months from 1983-03: 334 | both legs priced 268 (80%) | stale 2 | gaps: no far (front N) 7, no far (front Q) 7, no far (front M) 6, no far (front V) 6
+LEGS CT | design months from 1977-10: 399 | both legs priced 382 (96%) | stale 3 | gaps: no far (front H) 15, no far (front V) 2
+LEGS HG | design months from 1988-07: 270 | both legs priced 270 (100%) | stale 2 | gaps: none
+LEGS LC | design months from 1979-01: 384 | both legs priced 51 (13%) | stale 1 | gaps: no far (front V) 58, no far (front M) 56, no far (front Q) 55, no far (front Z) 55
+LEGS LCO | design months from 1988-06: 271 | both legs priced 100 (37%) | stale 0 | gaps: no far (front V) 17, no far (front X) 17, no far (front F) 17, no far (front G) 17
+LEGS PL | design months from 1975-01: 432 | both legs priced 82 (19%) | stale 0 | gaps: no far (front J) 90, no far (front N) 90, no far (front V) 87, no far (front F) 83
+LEGS RB | design months from 2005-10: 63 | both legs priced 48 (76%) | stale 0 | gaps: no far (front G) 2, no far (front H) 2, no far (front J) 2, no far (front K) 1
+LEGS S | design months from 1975-01: 432 | both legs priced 278 (64%) | stale 8 | gaps: no far (front K) 28, no far (front F) 28, no far (front H) 25, no far (front U) 23
+LEGS SB | design months from 1975-01: 432 | both legs priced 370 (86%) | stale 5 | gaps: no far (front F) 21, no far (front H) 15, no far (front N) 8, no far (front U) 8
+LEGS SI | design months from 1975-01: 432 | both legs priced 335 (78%) | stale 1 | gaps: no far (front G) 11, no far (front M) 11, no far (front Q) 11, no far (front J) 10
+LEGS W | design months from 1975-01: 432 | both legs priced 174 (40%) | stale 2 | gaps: no far (front H) 67, no far (front K) 58, no far (front U) 54, no far (front Z) 45
+--- VALID (continuous c1/c2 month-ends matched to contracts; vs TR.ExpiryDate identity)
+VALID C c1 | month-ends 456 | one contract 418 | none 29 | several 9 | vs expiry series: agree 417 disagree 0 no expiry 1
+VALID C c2 | month-ends 456 | one contract 419 | none 26 | several 11 | vs expiry series: agree 415 disagree 0 no expiry 4
+VALID CL c1 | month-ends 334 | one contract 301 | none 21 | several 12 | vs expiry series: agree 300 disagree 1 no expiry 0
+VALID CL c2 | month-ends 334 | one contract 300 | none 18 | several 16 | vs expiry series: agree 297 disagree 3 no expiry 0
+VALID CT c1 | month-ends 372 | one contract 322 | none 47 | several 3 | vs expiry series: agree 322 disagree 0 no expiry 0
+VALID CT c2 | month-ends 372 | one contract 320 | none 48 | several 4 | vs expiry series: agree 320 disagree 0 no expiry 0
+VALID HG c1 | month-ends 270 | one contract 176 | none 82 | several 12 | vs expiry series: agree 173 disagree 3 no expiry 0
+VALID HG c2 | month-ends 270 | one contract 171 | none 82 | several 17 | vs expiry series: agree 170 disagree 1 no expiry 0
+VALID LC c1 | month-ends 372 | one contract 345 | none 18 | several 9 | vs expiry series: agree 345 disagree 0 no expiry 0
+VALID LC c2 | month-ends 372 | one contract 340 | none 21 | several 11 | vs expiry series: agree 340 disagree 0 no expiry 0
+VALID LCO c1 | month-ends 271 | one contract 251 | none 0 | several 20 | vs expiry series: agree 251 disagree 0 no expiry 0
+VALID LCO c2 | month-ends 271 | one contract 254 | none 0 | several 17 | vs expiry series: agree 254 disagree 0 no expiry 0
+VALID PL c1 | month-ends 446 | one contract 305 | none 133 | several 8 | vs expiry series: agree 0 disagree 0 no expiry 305
+VALID PL c2 | month-ends 446 | one contract 344 | none 86 | several 16 | vs expiry series: agree 0 disagree 0 no expiry 344
+VALID RB c1 | month-ends 63 | one contract 61 | none 1 | several 1 | vs expiry series: agree 46 disagree 0 no expiry 15
+VALID RB c2 | month-ends 63 | one contract 61 | none 0 | several 2 | vs expiry series: agree 61 disagree 0 no expiry 0
+VALID S c1 | month-ends 456 | one contract 422 | none 21 | several 13 | vs expiry series: agree 419 disagree 0 no expiry 3
+VALID S c2 | month-ends 456 | one contract 424 | none 20 | several 12 | vs expiry series: agree 420 disagree 0 no expiry 4
+VALID SB c1 | month-ends 456 | one contract 394 | none 45 | several 17 | vs expiry series: agree 373 disagree 19 no expiry 2
+VALID SB c2 | month-ends 456 | one contract 388 | none 49 | several 19 | vs expiry series: agree 369 disagree 16 no expiry 3
+VALID SI c1 | month-ends 456 | one contract 254 | none 201 | several 1 | vs expiry series: agree 225 disagree 5 no expiry 24
+VALID SI c2 | month-ends 456 | one contract 249 | none 203 | several 4 | vs expiry series: agree 224 disagree 2 no expiry 23
+VALID W c1 | month-ends 456 | one contract 428 | none 24 | several 4 | vs expiry series: agree 427 disagree 0 no expiry 1
+VALID W c2 | month-ends 456 | one contract 428 | none 20 | several 8 | vs expiry series: agree 424 disagree 0 no expiry 4
+--- STRIP (first eight quarterly contracts priced, trading days 1990-2010)
+STRIP ED | trading days 5480 | all eight priced 5475 (100%) | fewer: 7 priced x5
+STRIP FEI | trading days 3149 | all eight priced 3149 (100%) | fewer: none
+=== END === 8s

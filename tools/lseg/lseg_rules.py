@@ -21,7 +21,7 @@ import pandas as pd
 
 import lsegdata as LD
 
-VERSION = "lseg_rules-1.0.1"
+VERSION = "lseg_rules-1.1.0"
 CYCLE = {
     "CL": "FGHJKMNQUVXZ", "LCO": "FGHJKMNQUVXZ", "NG": "FGHJKMNQUVXZ", "HO": "FGHJKMNQUVXZ", "RB": "FGHJKMNQUVXZ",
     "GC": "GJMQVZ", "SI": "HKNUZ", "HG": "HKNUZ", "PL": "FJNV",
@@ -178,3 +178,41 @@ class RuleCalendar(LD.Calendar):
         ahead = (dm - p).map(lambda x: x.n)
         keep = (~live["serial"]) | (ahead < (self.near or SERIAL_NEAR[root]))
         return live[keep].reset_index(drop=True), col
+
+
+# =====================================================================================================================
+# 1.1.0: registered listing models (fitted by lseg_ident_v4 on 2026-11-25, design evidence; identity facts, not
+# performance). Used ONLY for roots whose continuous positions are identified from the continuous series (no
+# contract-level pull): NG, HO, GC, KC (agreement 99.5-100% at every observed depth). Each: cycle months listed while
+# fewer than H calendar months ahead (999 = always), serial (non-cycle) months while fewer than `serial` months ahead;
+# a contract is held through its expiry day; expiry = the observed TR.ExpiryDate of the contract where LSEG shows one
+# (c1 / c2 series), else the exchange rule (dates()).
+LISTING = {"NG": ("FGHJKMNQUVXZ", 999, 0), "HO": ("FGHJKMNQUVXZ", 999, 0), "GC": ("GJMQVZ", 24, 4),
+           "KC": ("HKNUZ", 999, 0)}
+
+
+def held_contract(root, n, day, observed=None):
+    """Delivery (year, month) of continuous position n of root on trading day `day` under the registered listing model;
+    observed = {(year, month): expiry date} from the TR.ExpiryDate series (optional). None if root has no model."""
+    if root not in LISTING:
+        return None
+    cyc, H, serial = LISTING[root]
+    observed = observed or {}
+    if isinstance(day, dt.datetime):
+        day = day.date()
+    t = day.year * 12 + day.month - 1
+    k_found = 0
+    for k in range(t - 2, t + 12 * 8):
+        y, m0 = divmod(k, 12)
+        m = m0 + 1
+        exp = observed.get((y, m)) or dates(root, y, m)[0]
+        if exp < day:
+            continue
+        code = LD.MONTH_CODES[m0]
+        ahead = k - t
+        ok = (ahead < H) if code in cyc else (ahead < serial)
+        if ok:
+            k_found += 1
+            if k_found == n:
+                return (y, m)
+    return None

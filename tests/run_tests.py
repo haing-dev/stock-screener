@@ -5,6 +5,7 @@
 import gzip
 import json
 import os
+import subprocess
 import shutil
 import sys
 import tempfile
@@ -1006,6 +1007,12 @@ gm_seal_smoke.run(check)
 print("\nGlobal Macro Book (gm-2.1.0 features)")
 import gm_feature_smoke  # noqa: E402
 gm_feature_smoke.run(check)
+
+# LSEG source (tools/lseg): exchange-rule contract dates and registered listing models, no market data
+print("\nLSEG rules (lseg_rules 1.1.0)")
+_r = subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "lseg_rules_smoke.py")],
+                    capture_output=True, text=True)
+check("lseg_rules smoke", _r.returncode == 0 and "ALL LSEG RULES CHECKS PASSED" in _r.stdout, _r.stdout[-200:])
 
 shutil.rmtree(TMP, ignore_errors=True)
 print(f"\n{'ALL TESTS PASSED' if not failures else str(len(failures)) + ' FAILED: ' + ', '.join(failures)}")

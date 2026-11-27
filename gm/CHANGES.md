@@ -4,6 +4,48 @@ Every rule change gets a new VERSION in gm/run.py and a line here. Every variant
 (1990-2010; extra check 1975-89) is logged so the deflated Sharpe can count the trials. The holdout (2011-2026) is run
 once, after the rules are frozen, by gm/holdout.py.
 
+## data: LSEG registered as a source for history (registered 2026-11-27, BEFORE first use): TESTING_PROTOCOL 7.10 item 3
+Registered data entry (no rule change; no performance statistic of any LSEG-sourced path has been computed). LSEG
+Workspace / Datastream workbooks L1a-L16f saved on the user's PC become a registered HISTORY source. Steps of 7.10 item 3:
+(1) reader with as-of access: lsegdata-1.0.0 (tools/lseg/lsegdata.py, sha256 0d1b500d...16198de) + config CSVs (hashes
+in the lock); (2) data check and contract identity: jobs lseg_check_v3, lseg_ident_v1-v4, lseg_contract_v3 (reports in
+tools/bbgq/results), status docs/research/lseg/IDENTITY_STATUS.md; (3) lock: docs/research/lseg/LOCK_LSEG_v5.json, lock
+id 90322681b9f989cc24393ae7de4fe24bf5af2f32074ffa6400b1cbed09c4074c (job lseg_build_v5, 2026-11-26), 2011+ sealed;
+(4) weekly refresh job: lseg_weekly_v1 (continuous series; see item 6 for contracts); (5) licence statement:
+docs/research/lseg/LICENCE_STATEMENT.md (user, 2026-11-24).
+1. History and seal: observations dated <= 2010-12-31 are the design part; later ones are sealed (holdout key or live
+   flag only; every attempt logged). As-of: an observation is known at its date plus the delay of lseg_live_sources.csv
+   (market closes and settlements 0 days; economic series 45 / 60 / 90 days).
+2. Contract identity (closed here: LSEG returns no contract calendar on this licence, L11; the calendar is not pulled):
+   a. Contract-level prices carry their identity in their code. Pulled for the roots that need contracts beyond position
+      2: CL, LCO, RB, SI, HG, PL, C, W, S, SB, CT, LC (monthly month-end settlements, Datastream "<RIC>" form; Brent in
+      the HistoricalPricing form) and the strips ED (1982-2012), FEI (1999-2012), daily. Check (lseg_contract_v3):
+      continuous c1/c2 month-ends match one contract whose delivery agrees with LSEG's TR.ExpiryDate identity in 99-100%
+      of matched months (sugar 95%). Design deliveries only (to 2012); contracts delivering 2013 and later are pulled in
+      the same forms after the freeze, for the holdout and live record.
+   b. Positions 1-2 of every HistoricalPricing root: identified per month-end by the TR.ExpiryDate dated series of c1 /
+      c2 (L11/L12), except platinum (no series).
+   c. Continuous positions of NG, HO, GC, KC (not pulled as contracts): lseg_rules-1.1.0 (tools/lseg/lseg_rules.py,
+      sha256 56869991...cc42da9) LISTING models, fitted by lseg_ident_v4 on design evidence (agreement 100 / 99.5 /
+      100 / 100% at every observed depth); a contract is held through its expiry day; expiry = observed TR.ExpiryDate
+      where shown, else the exchange rule. The fit is an identity fact read from prices and expiry dates, not a
+      performance choice; no return was computed.
+   d. Not identified (hold nothing where a spec needs identity, SPEC_Curve_carry s3, 7.6 step 8): short sterling and
+      Euroswiss strips (no expired-contract codes on LSEG), gasoline before 2006 (HU), copper before 1988, cotton and
+      cattle contracts of the 1970s (L16f probe: none in either form), Euribor before 1999 (did not exist).
+3. Coverage facts (data availability, not results): Curve carry design months with both legs priced (front >= 3 months
+   out and the same month a year later): HG 100% (from 1988-07), CT 96%, SB 86%, CL 80%, C 79%, SI 78%, RB 76%, S 64%,
+   W 40%, LCO 37%, PL 19%, LC 13% (the far leg is mostly not yet listed); strips: all eight quarterly contracts priced
+   on 5,475 of 5,480 Eurodollar days 1990-2010 and 3,149 of 3,149 Euribor days 1999-2010.
+4. Scope: LSEG serves the inputs the specs list as LSEG (Curve carry legs, Strip reversion strips, T10 strip markets if
+   admitted, card 3 R4 forward EPS, card 5 R1 fronts, card 3 R1 deposit-rate cross-check). It never replaces a free-data
+   series the engine already uses, except by the A1-style rule of 7.6 step 2 (same instrument, extend backwards only,
+   overlap correlation >= 0.95 up to 2010-12), applied per series and listed in the run that uses it.
+5. Excluded series: lseg_exclusions.csv (wrong series CEDCS00, LSSCS00, MBACS00, LESCS00, GSPTTOT; Moody's after 2019).
+6. Live (not yet open): LIVE_START is set in a later data entry, after the weekly file adds the current contract codes of
+   every LSEG-sourced leg (lseg_weekly v2) and its first ingest; until then no LSEG-sourced pod runs live.
+Usage: Opus (this session) ~1.2M tokens for steps 2-3 across the L11-L16 pulls and jobs.
+
 ## gm-2.1.0 feature version (registered 2026-11-24, BEFORE the code): E6-E11, E14
 Feature version (no change to BASE or CANDIDATE at k = 0). Registered in docs/research/global_macro/TESTING_PROTOCOL.md
 section 7.4 rows E6-E11 and E14 with 7.3 items 1-3, 5, 6 and 7.7 (step 3.4, 2026-11-23); this is entry 2 of
