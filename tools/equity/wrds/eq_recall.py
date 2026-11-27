@@ -401,7 +401,7 @@ def annual_table(fa):
     """one row per gvkey-fiscal year with the recipe's history measures (lags require consecutive fiscal years)"""
     a = fa.copy()
     a["gvkey"] = keynorm(a.gvkey)
-    a["datadate"] = pd.to_datetime(a.datadate)
+    a["datadate"] = pd.to_datetime(a.datadate).astype("datetime64[ns]")
     a["fyear"] = pd.to_numeric(a.fyear, errors="coerce")
     for c in FUNDA_COLS:
         a[c] = pd.to_numeric(a[c], errors="coerce") if c in a.columns else np.nan
@@ -631,11 +631,11 @@ def price_measures(msf, u, s):
 def treasury_at(t10, ts):
     """last 10-year yield on or before each date (decimal); at most T10_TOL_DAYS old"""
     y = t10.copy()
-    y["date"] = pd.to_datetime(y.date)
+    y["date"] = pd.to_datetime(y.date).astype("datetime64[ns]")
     y["y10"] = pd.to_numeric(y.y10, errors="coerce")
     y = y.dropna(subset=["date", "y10"]).sort_values("date")
     scale = 100.0 if y.y10.median() > 0.5 else 1.0
-    k = pd.DataFrame({"date": pd.to_datetime(ts)}).sort_values("date")
+    k = pd.DataFrame({"date": pd.to_datetime(ts).astype("datetime64[ns]")}).sort_values("date")
     r = pd.merge_asof(k, y[["date", "y10"]], on="date", direction="backward", tolerance=pd.Timedelta(days=T10_TOL_DAYS))
     return dict(zip(r.date, r.y10 / scale)), scale
 
@@ -651,6 +651,7 @@ def recall_panel(D, u, msf, s, out):
     A = annual_table(D["funda"])
     A = A.sort_values("avail")
     left = E[["permno", "yyyymm", "t_end", "gvkey"]].dropna(subset=["gvkey"]).rename(columns={"t_end": "avail"})
+    left["avail"] = left.avail.astype("datetime64[ns]")
     left = left.sort_values("avail")
     left["gvkey"] = left.gvkey.astype(str)
     A["gvkey"] = A.gvkey.astype(str)
