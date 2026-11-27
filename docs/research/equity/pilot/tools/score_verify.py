@@ -11,8 +11,17 @@ import re
 import sys
 
 
+WORDS = {"one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6, "seven": 7, "eight": 8, "nine": 9, "ten": 10,
+         "eleven": 11, "twelve": 12, "fifteen": 15, "twenty": 20, "thirty": 30, "forty": 40, "fifty": 50, "sixty": 60,
+         "seventy": 70, "eighty": 80, "ninety": 90, "hundred": 100, "half": 0.5, "third": 0.333, "quarter": 0.25}
+
+
 def nums(v):
-    return sorted(float(x) for x in re.findall(r"\d+(?:\.\d+)?", v or ""))
+    """digits and (v1.2, A13 item 10) number words; a verifier copies numbers as stated, often in words"""
+    v = v or ""
+    out = [float(x) for x in re.findall(r"\d+(?:\.\d+)?", v)]
+    out += [float(WORDS[w]) for w in re.findall(r"[a-z]+", v.lower()) if w in WORDS]
+    return sorted(out)
 
 
 def main():

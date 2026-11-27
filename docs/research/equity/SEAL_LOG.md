@@ -81,3 +81,4 @@ conviction holdings job (R2) will be the fourth, with its code hash entered befo
 - 2026-11-27: A13 item 6 (user): agreement bars reported, not stops; agreed rules + third reading of 41 disputes.
 - 2026-11-27: Kantesaria card v1 + held-out test: 6/8 matched, 3 open buy-part contradictions -> FAIL (file not complete). No price, return or 13F read.
 - 2026-11-27: A13 item 8 (user: don't stop): Kantesaria continues labelled held-out failed; batch 2 reading of 8 roster investors (22 documents), thin files labelled. No price, return or 13F read.
+- 2026-11-27: A13 item 10: scorer reads number words (fixed after seeing Nygren 6/10; rescored all: Nygren 9/10). No price, return or 13F read.

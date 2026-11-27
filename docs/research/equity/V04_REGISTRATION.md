@@ -514,3 +514,10 @@ as such. Replaces R1.1 (record); R1.2 (material) and R1.3 (screenability) stay.
 9. **Planted items when a file is short (2026-11-27, before any batch-2 verifier tags were read).** If a file has fewer
    than 5 anecdotes outside the sample (or fewer than 5 thresholds with a stated value), as many as exist are planted;
    the bar "9 of 10" becomes "all but one". Hohn's set has 6 plants (1 anecdote + 5 thresholds).
+10. **Scorer fix after seeing the Nygren result (2026-11-27, logged as such).** The altered-threshold check read only
+    digits, so a verifier who copied the true number in words ("seven year", "about four", "about half") counted as a
+    miss. Nygren scored 6 of 10 (FAIL); three of the four misses were this defect (the verifier gave the true value in
+    words). score_verify now reads number words too. Rescored with the fixed scorer (files SCORE_scorer1.2.md, the
+    first scores kept): Zlatev 10/10, Pilecki 10/10, Hohn 6/6 (was 5/6), Stahl 6/7, Li Lu 5/5, Nygren 9/10 (pass),
+    Kantesaria v1.1 10/10. No file moves from pass to fail. Nygren's remaining miss (V101, an anecdote read as a rule)
+    stands.
