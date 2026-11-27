@@ -215,6 +215,28 @@ reproduce E exactly; 62 Trend book markets, 61 without cm_aqr_ew). Closed while 
 counts in the scores-held share under the same exclusion as in item 4 D2 c; the cost drag's per-market costs must sum to
 the book's cost (printed check); the A2 facts parser reads only the incumbent's BOOK (costs x1, 1975-2010), POD and P4
 lines of gm_a2_v1.txt. NOT RUN: queue in docs/research/batches/DIAG_A2_BUILD_2026-11-27.md.
+Corrections after the independent check (CHECK_DIAG, APPROVED WITH CORRECTIONS; registered 2026-11-27 BEFORE the
+diag_a2-1.0.1 code and BEFORE any run; the items above are not rewritten; none chosen from a result):
+- M1 (item 5, printing): a D3 split whose named state or other group has fewer than 60 months prints its difference and
+  its one-sided 90% bound as sign only (with the other group's mean printed, the difference would give the small
+  group's mean); the gate still uses full precision.
+- M2 (item 4 D2 a): if the rebuild fails, the gate line reads "D2 GATE | not gated (rebuild FAIL) | no A3 buffer item
+  decision" and the recorded outcome is "not gated (rebuild FAIL)", never "closed".
+- W1 (item 4 D2 d, closed while coding): the decision month 2010-12 is left out of D2's trade months (its trade is never
+  made: holding cut of 7.3 item 5), so the eras are trade months 1975-01..1989-12 and 1990-01..2010-11.
+- W2 (item 4 D2 e, closed while coding): the cost drag charges a decision month's cost in the next month, as book.py
+  charges it against the net return (tc.shift(1)); means over the months 1975-01..2010-12 whose held position (the one
+  decided the month before) is non-zero, so the 2010-12 decision's cost falls outside the window.
+- W5: diag_a2.rebuild refuses a panel with alternative-commodity columns (their 30% cap depends on vol(t), which the
+  held forms of item 4 D2 b assume away); E1 keeps them off today.
+- W6: D3 prints how many bootstrap resamples held no state month or no other month (left out of the bound).
+- W7 (item 4 M1 b): each M1 era's three Sharpe ratios are over the common months of the book return and both specific
+  returns, and that count is printed.
+Left for the outcomes paragraph (CHECK_DIAG can-wait, unchanged): W3 the job and the build note say "nothing is written
+to work\", but the free-input check refreshes work\free\inputs_manifest.json (free-data metadata; nothing derived from
+Bloomberg is written); W4 diag_plumbing computes the D2 shares on the free panel in memory without printing them; W8
+the lib modules are imported before their sha256 check (the A2 pattern); W9 the trial-row config also hashes timing and
+window; W10 D3 split (b) reads Trend's book markets including cm_aqr_ew, D1 excludes it.
 
 ## gm-2.2.1 fix: cm_aqr_ew a Trend market in CM only (registered 2026-11-27, BEFORE the code change; found while building A2)
 Registered fix of the existing engine (TESTING_PROTOCOL 7.4: a found defect gets a registered engine version, as C1-C4,
