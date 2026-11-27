@@ -357,6 +357,8 @@ def _run(check, tmp):
     job_src = open(os.path.join(bq, "jobs", "gm_core_v1.py"), encoding="utf-8").read()
     core_sha = hashlib.sha256(open(os.path.join(bq, "lib", "core_v1.py"), "rb").read()).hexdigest()
     job_src = re.sub(r'"core_v1.py": "[^"]*"', '"core_v1.py": "%s"' % core_sha, job_src)   # the build note pins it
+    # the job now registers the accepted rebuild (CHANGES Core book v1 item 4e); the variants below start from 'unset'
+    job_src = re.sub(r'^REBUILD_SHA = .*$', 'REBUILD_SHA = None', job_src, count=1, flags=re.M)
     job0 = os.path.join(tmp, "gm_core_v1_unset.py")
     open(job0, "w", encoding="utf-8").write(job_src)
     stub_sha = hashlib.sha256(open(stub, "rb").read()).hexdigest()

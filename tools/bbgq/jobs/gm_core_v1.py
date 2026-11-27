@@ -50,7 +50,7 @@ LIB_SHA = {"core_v1.py": "ee01320501fd1ec1f1fcc8b89dca91000e7644f728ed67cbb9e4ac
            "bbgdata.py": "0b26bb21b50671dca7c2153d3d66a2a09f7f33eeaa7c96ca536b69bbca8e6351"}
 # the independent rebuild (gm/CHANGES.md "Core book v1" item 4e): set by a dated line under the entry, after the
 # rebuild is delivered and accepted, BEFORE the job is queued. None = not registered yet: the job STOPs.
-REBUILD_SHA = None
+REBUILD_SHA = "4f191fea1dfac0ae4f67ddd3974c92dd79969f6fa5414ef107de70d5315ed17d"
 
 
 def frames(e):

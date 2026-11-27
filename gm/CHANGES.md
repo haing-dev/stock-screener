@@ -176,6 +176,13 @@ decision on M2 is option A):
   the spec text, together with interface v2. The core_v1 builder does not touch rebuild_s4.py.
 - M3: REBUILD_SHA is set only after the corrected rebuild (M1 and interface v2) is accepted, by the dated item-4e line
   under this entry in the same commit; rebuild_s4 1.0.0 (3febdce7...) is not registered.
+- Item 4e REGISTERED (2026-11-27, coordinator, before the Core book v1 run): rebuild_s4 1.1.0 (commit 4a5d5b6, written
+  by the separate rebuild agent from the specs alone; readings N1-N25 in docs/research/batches/S4_REBUILD_NOTES.md)
+  ACCEPTED after the independent re-check (CHECK_CORE 'Re-check': APPROVED; synthetic self-test 85/85; core_plumbing
+  --rebuild PASS, no statistic). REBUILD_SHA = 4f191fea1dfac0ae4f67ddd3974c92dd79969f6fa5414ef107de70d5315ed17d.
+  Re-check note R1: two readings in S4_INTERFACE v2 were written by the core_v1 builder with sight of the engine,
+  like N2: "the 12-month sums need all 12 months (US too)" and "the model uses D's values as given" (bond and note
+  price returns as the daily vol input); S4 does not test these two points independently (effect tiny).
 - S1 / N2 gap rule, a dated clarification of SPEC_Trend s3 (2026-11-27, mirrored there as an amendment): "Gap rule (N2),
   clarifying "gaps as 0 where data exist" and step 2's "no value if lvl(t-h) is missing": the level lvl of a market
   exists at every month-end from its first month with a monthly excess return onward, including later months without

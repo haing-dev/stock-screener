@@ -119,11 +119,11 @@ truncation results below stand. 1.0.0 gates as below.
 
 | File (PC destination under local\) | Status | sha256 |
 |---|---|---|
-| jobs\gm_core_v1.py (core_v1 1.1.0 pinned; REBUILD_SHA unset; this hash changes when the coordinator sets it) | new | 80ff15f25f2ce1a6de33057208b66dc608b03a9cd0feb2f9df23e9a20127220d |
+| jobs\gm_core_v1.py (core_v1 1.1.0 pinned; REBUILD_SHA = 4f191fea... set 2026-11-27, CHANGES item 4e) | new | d89862a0266415c589ce40f768c983dc47dfb4ded088a2a5ccabb9c6d30fe67a |
 | lib\core_v1.py (1.1.0) | new | ee01320501fd1ec1f1fcc8b89dca91000e7644f728ed67cbb9e4ac674b04549e |
-| lib\rebuild_s4.py (1.0.0, separate agent, commit 1204233; interface v1, M1 open: NOT accepted, NOT registered; replace with the corrected version) | new | 3febdce707c9706d43d189c64f0700705a3b5b1bd2ee912e8fe430be1dac8ebf |
+| lib\rebuild_s4.py (1.1.0, separate agent, commit 4a5d5b6; accepted and registered, CHANGES item 4e) | new | 4f191fea1dfac0ae4f67ddd3974c92dd79969f6fa5414ef107de70d5315ed17d |
 | lib\gm\trials.csv (61 rows; book / pod digest 676b7b0f..., N 40) | unchanged since the diagnostics run | e61e94a4906a932a1353de1edb916a0c2e12c640f09b8a1525ce5c60cba8cabe |
-| lib\gm\CHANGES.md (documentation, not checked) | changed | 2c250429e86c33f3d533dea52caf1739f142b4620bdb3864ba6b493720a44122 |
+| lib\gm\CHANGES.md (documentation, not checked) | changed | eaa5adf8e4f78327f9e5a2035342f0d3971c7050f6fdfb71dd0cfa671eeb17db |
 | lib\diag_a2.py (1.0.1) | unchanged | 3264a5381c13b124d2566d02f263e21905f4e901680c1af7c2134f0bd558be1b |
 | lib\a2_batch.py (1.1.1) | unchanged | 35339f673f351f43315ad3c7010ba733b6fb8990a6a41feb1ef20de324de58c6 |
 | lib\a1_panel.py (1.1.0) | unchanged | eb9ef3f7fbd12760e174f9ef1df8573890bed6ca8d36f7d4e5c63eadd822ebb5 |
