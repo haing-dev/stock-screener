@@ -158,6 +158,44 @@ S4 rebuild: written by the separate agent and committed by it (1204233, rebuild_
 edited it). REBUILD_SHA is NOT set: item 4e's dated registration line is the coordinator's after accepting the
 rebuild. NOT RUN: queue in docs/research/batches/CORE_V1_BUILD_2026-11-27.md.
 
+Corrections after the independent check (CHECK_CORE, APPROVED WITH CORRECTIONS, 2026-11-27; registered BEFORE the
+core_v1-1.1.0 code and BEFORE any run; the items above are not rewritten; none chosen from a result; the coordinator's
+decision on M2 is option A):
+- M2 (S4 scope = the full spec, option A). TESTING_PROTOCOL 7.6 step 6 asks for "an independent rebuild from the spec
+  alone" (WORKFLOW 4.5: "of each Core pod from its written spec alone"). Interface v1 handed the rebuild the engine's
+  carry measure C, value measure V and volatility estimate, which narrowed the registered test. That narrowing is
+  WITHDRAWN (so no 7.12 sub-section is needed): S4 also rebuilds the carry measure (SPEC_Carry s3 steps 2-3 and the X1 /
+  E13 text), the value measure (SPEC_Value s3 item 1 with E4) and the hybrid volatility model (SPEC_Trend s3 step 4)
+  from the spec text. The rebuild receives RAW month-end and daily inputs only, before any engine signal or volatility
+  code: docs/research/batches/S4_INTERFACE.md version 2 (v1 kept in the file's git history, commit 28f14a6). Item 4e is
+  amended accordingly; its decisive keys, statistic and 15% band are unchanged. The job checks, before any statistic,
+  that the raw inputs reproduce the engine's measures exactly (carry of the currencies and energy markets, the equity
+  dividend yields; a packaging check, max abs difference and missing pattern, nothing else printed) and STOPs if not,
+  or if A1 admitted a dividend-yield extension (interface v2 has no form for one; none was admitted).
+- M1 (the rank weights must not be clipped): fixed by the separate rebuild agent in rebuild_s4 (1.0.1 or later), from
+  the spec text, together with interface v2. The core_v1 builder does not touch rebuild_s4.py.
+- M3: REBUILD_SHA is set only after the corrected rebuild (M1 and interface v2) is accepted, by the dated item-4e line
+  under this entry in the same commit; rebuild_s4 1.0.0 (3febdce7...) is not registered.
+- S1 / N2 gap rule, a dated clarification of SPEC_Trend s3 (2026-11-27, mirrored there as an amendment): "Gap rule (N2),
+  clarifying "gaps as 0 where data exist" and step 2's "no value if lvl(t-h) is missing": the level lvl of a market
+  exists at every month-end from its first month with a monthly excess return onward, including later months without
+  a return (interior gaps); a gap month adds a return of 0, so lvl(t) = lvl(t-1) there, and the score at and after a gap
+  month is computed from that level like any other month; lvl is missing only before the market's first return." It
+  states the rule as the engine's registered design implements it (for the record only: gm/book.py:71 trend_signal,
+  `lvl = (1 + X.fillna(0)).cumprod().where(X.notna().cummax())`, and book.py:165 _trend_version, sign shape). It was
+  written with sight of the engine code, so S4 does not test this one point independently. No engine behaviour
+  changes.
+- C1: every Core candidate that is not Core goes to the Incubator rule, including one with "insufficient data"; such a
+  part prints "insufficient data" there (its common months with Core book v1 are also fewer than 120), the same outcome
+  as before, now as item 4i writes it.
+- C2: the k = 1 flagged share by year (item 4k) is coverage metadata, not a return statistic; it is printed by year as
+  item 4k registers, outside item 5's 60-month rule (which governs return statistics).
+- C4: the job sets sys.dont_write_bytecode, so importing the lib modules writes no __pycache__ (nothing is written to
+  lib\ or work\).
+- Not applied here (can wait, CHECK_CORE): C3 (the import scan reads import statements; the sha pin covers the rest),
+  C5 (agent and run ids go into the notes of later steps), C6 (the rebuild notes' check count, the rebuild agent's
+  file), C7 (Core book v1's two test-5 margins against the candidate book, for the outcomes paragraph), C8 (stated).
+
 ## A3: empty (registered 2026-11-27, after the diagnostics run and BEFORE Core book v1): TESTING_PROTOCOL 7.6 step 5
 Record entry (no rule, weight, threshold, cost, market or code change; nothing is run; no trial row).
 1. The registered text. 7.6 step 5: "Batch A3, items opened by diagnostics only (charter s5; register B9): breadth (D1,

@@ -70,6 +70,12 @@ Registered change (charter s4): one version per cell of the grid in section 6. V
    form runs only in the 1990-2010 weekly check.
 The SIGN is fixed: long when the trailing excess return is positive. It cannot be flipped after results.
 
+> **Amendment (2026-11-27, gm/CHANGES.md "Core book v1", dated clarification registered before the Core book v1 run;
+> no engine change).** Gap rule (N2), clarifying "gaps as 0 where data exist" and step 2's "no value if lvl(t-h) is missing": the level lvl of a market exists at every month-end from its first month with a monthly excess return onward, including later months without a return (interior gaps); a gap month adds a return of 0, so lvl(t) = lvl(t-1) there, and the score at and after a gap month is computed from that level like any other month; lvl is missing only before the market's first return. This is the rule the engine's registered design implements (for the record only:
+> gm/book.py:71 trend_signal and book.py:165 _trend_version, sign shape). It was written with sight of the engine code
+> (after the independent check CHECK_CORE, item S1 / rebuild reading N2), so the S4 rebuild of Core book v1 does not test
+> this one point independently.
+
 ## 4. Markets
 61 ids, all distinct (panel.py EQUITY 18, BONDS 9, SHORT 5, FXM 13, COMMOD 16; st_us_2y removed in gm-1.2.2), plus
 cm_aqr_ew (trend only, to 2000-12, book.py:121-122). First return month below = 2010-12 minus the design months on record
