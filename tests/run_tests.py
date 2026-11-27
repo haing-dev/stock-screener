@@ -1036,6 +1036,13 @@ print("\nDiagnostics after A2 (diag_a2 1.0.1, synthetic panels)")
 import diag_a2_smoke  # noqa: E402
 diag_a2_smoke.run(check)
 
+# Core book v1 (tools/bbgq/lib/core_v1.py, job gm_core_v1; gm/CHANGES.md "Core book v1"): synthetic panels, mock stores
+# and the STUB rebuild tests/data/rebuild_s4_stub.py (S1-S4 against direct computations, live check, verdicts, empty
+# branch, Incubator rule, seal, printing, job stops incl. REBUILD_SHA and the rebuild import scan)
+print("\nCore book v1 (core_v1 1.0.0, synthetic panels, stub rebuild)")
+import core_v1_smoke  # noqa: E402
+core_v1_smoke.run(check)
+
 # LSEG source (tools/lseg): exchange-rule contract dates and registered listing models, no market data
 print("\nLSEG rules (lseg_rules 1.1.0)")
 _r = subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "lseg_rules_smoke.py")],

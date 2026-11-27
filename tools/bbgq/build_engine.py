@@ -12,8 +12,11 @@ engine_pkg/
   lib/a1_panel.py            Batch A1 data swap (gm-2.2.1, gm/CHANGES.md data entry A1)
   lib/a2_batch.py            Batch A2 grids / hygiene (gm-2.2.1, gm/CHANGES.md "A2"; 1.1.1)
   lib/diag_a2.py             diagnostics after A2 (gm-2.2.1, gm/CHANGES.md "Diagnostics after A2")
+  lib/core_v1.py             Core book v1 (gm-2.2.1, gm/CHANGES.md "Core book v1")
+  lib/rebuild_s4.py          the independent S4 rebuild (separate agent; docs/research/batches/S4_INTERFACE.md), copied
+                             unchanged and only if present (OPTIONAL_LIBS); never opened by this script beyond the copy
   jobs/gm_repro_v1.py, gm_trunc_v1.py, gm_bbg_map_v1.py, bbg_build_v2.py, bbg_check_v2.py, gm_a1_v1.py, gm_a1_v2.py,
-  gm_a2_v1.py, gm_diag_v1.py
+  gm_a2_v1.py, gm_diag_v1.py, gm_core_v1.py
   work/free/gm_free_inputs.zip   the free input files the engine opens (research/..., raw/...) + inputs_manifest.json
 
 The engine finds its inputs through gm_engine.setup(free_dir): gm.panel.RD and RAW are set to work\\free\\research and
@@ -40,10 +43,11 @@ REPO = os.path.dirname(os.path.dirname(HERE))
 PKG = os.path.join(HERE, "engine_pkg")
 REF = os.path.join(HERE, "engine_ref.json")
 JOBS = ["gm_repro_v1", "gm_trunc_v1", "gm_bbg_map_v1", "bbg_build_v2", "bbg_check_v2", "gm_a1_v1", "gm_a1_v2", "gm_a2_v1",
-        "gm_diag_v1"]
+        "gm_diag_v1", "gm_core_v1"]
 LIBS = ["lib/gm_engine.py", "lib/bbg_panel.py", "lib/bbgdata.py", "lib/a1_panel.py", "lib/a2_batch.py", "lib/diag_a2.py",
-        "live_sources.csv",
+        "lib/core_v1.py", "live_sources.csv",
         "untouched_markets.csv", "engine_ref.json"]
+OPTIONAL_LIBS = ["lib/rebuild_s4.py"]       # copied if present (written by a separate agent; not opened here)
 SRC_DIRS = {"research": os.path.join(REPO, "cache", "macro", "raw", "research"),
             "raw": os.path.join(REPO, "cache", "macro", "raw")}
 # every pd.read_excel call gm makes on an .xls input (file name prefix -> list of keyword sets)
@@ -127,6 +131,13 @@ def main():
             os.rmdir(d)
     for rel in LIBS:
         shutil.copy(os.path.join(HERE, rel), os.path.join(PKG, "lib", os.path.basename(rel)))
+    for rel in OPTIONAL_LIBS:
+        src = os.path.join(HERE, rel)
+        if os.path.exists(src):
+            shutil.copy(src, os.path.join(PKG, "lib", os.path.basename(rel)))
+            print("optional %s: copied" % rel)
+        else:
+            print("optional %s: absent (not packaged)" % rel)
     for j in JOBS:
         shutil.copy(os.path.join(HERE, "jobs", j + ".py"), os.path.join(PKG, "jobs", j + ".py"))
     # check: the copied gm files are the ones the reference ran

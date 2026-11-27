@@ -171,3 +171,16 @@ E3 metadata: `cpi_freq_meta.py` -> results/cpi_freq_meta_2026-11-24.txt.
   How to queue: docs/research/batches/DIAG_A2_BUILD_2026-11-27.md.
 - `diag_plumbing.py` (cloud): identity checks on the free panel only (no statistic).
 - Tests: `python3 tests/diag_a2_smoke.py` (synthetic panels, mock stores; also in tests/run_tests.py).
+
+## Core book v1 (gm-2.2.1, 2026-11-27; gm/CHANGES.md "Core book v1"; TESTING_PROTOCOL 7.6 step 6)
+- `lib/core_v1.py` 1.0.0: per Core candidate (trend; carry FX v2 + energy; value EQ) on the A2-final book at k = 1:
+  S1 placebo (1,000), S2 net mean at 2x costs, S3 tail test with / without the part, S4 the independent rebuild within
+  15%, the free live-source check; leave-one-out alpha (reported); Core book v1 at equal risk; the Incubator rule for
+  the shadow parts and any failed candidate; one TRIAL ROW (family book). Cells under 60 months: count and sign only.
+- `lib/rebuild_s4.py`: the independent rebuild, written by a separate agent to docs/research/batches/S4_INTERFACE.md
+  (not by the core_v1 builder); its sha256 is set in the job (REBUILD_SHA) before queuing.
+- `jobs/gm_core_v1.py`: the diagnostics job's checks plus core_v1 / rebuild sha256, the rebuild import scan and the
+  diagnostics report (A3 empty); runs and validates the rebuild before any statistic. How to queue:
+  docs/research/batches/CORE_V1_BUILD_2026-11-27.md.
+- `core_plumbing.py` (cloud): identity checks on the free panel only (no statistic).
+- Tests: `python3 tests/core_v1_smoke.py` (synthetic panels, mock stores, stub rebuild; also in tests/run_tests.py).
