@@ -141,6 +141,14 @@ code and BEFORE any A1 run; appended, the items above are not rewritten):
   (well-correlated SPGSICP rejected, BCOMHG admitted, HU months unused, MXUS and MSCI-vs-French rejected, free-arm check,
   scrub, report lines). Reruns: k = 0 reproduction 24/24 difference 0, truncation PASS 8/8 (21 + 37 stages), run_tests
   ALL TESTS PASSED, smoke tests passed, free arm vs engine_ref difference 0 (cloud). gm/ unchanged in this round.
+A1 RUN (2026-11-27, PC job gm_a1_v1, report tools/bbgq/results/gm_a1_v1.txt; every hash, lock and free-arm check PASS):
+A1 PANEL ID e7f98d4439fccf91f3451bc4b9e78079e3bc2cc2452931363b28520460b6cb43 (LOCK_v2 d85a46cb2853646b, free inputs
+378d65b09c23d234, a1_panel-1.1.0). Admitted 4 of 54 candidates; panel changed by 3: corn return 1971-12..2000-07
+(SPGSCNP, corr 0.958), gold return 1980-01..2000-08 (SPGSGCP, 0.996), WTI contract 2 1984-11..12 (CL2). NG1 admitted
+but adds nothing (NG2 is a first-pull copy). Most first-pull commodity indexes are copies (unusable); copper rejected
+(SPGSICP = LME). Block 3 admits nothing. Report (CANDIDATE-x1, net, 1975-2010, k = 1): free SR 1.427, A1 panel 1.439
+(dSR +0.012, lb95 -0.028); k = 0 1.469 -> 1.480; one-month delay 1.043 -> 1.052. k = 1 flagged share 0.21 (free) /
+0.23 (A1). A1 is a data step, not a test (7.6): the A1 panel is the panel of every later design run from here on.
 
 ## X1 outcome (registered 2026-11-27, after the X1 run and BEFORE the E13 code and A1's design run): E13 for natgas, gasoline
 Entry 4 of docs/research/registration/REGISTRATION_3.4.md part (c): "X1 outcome (after X1, before A1's design run): for
