@@ -1,0 +1,221 @@
+=== gm_a2_v1 ===
+a2_batch-1.1.0 | a1_panel-1.1.0 | bbgdata-1.2.0 | bbg_panel-1.0.0 | gm_engine-1.3.0 | engine gm-2.2.1 | python 3.15.0, numpy 2.5.4, pandas 3.1.1, scipy 1.18.1, openpyxl 3.1.5, xlrd missing
+PASS gm code vs reference | 21 files | differing or missing: none
+PASS lib a1_panel.py | sha256 eb9ef3f7fbd12760 | registered eb9ef3f7fbd12760
+PASS lib a2_batch.py | sha256 87b24d8f558da20f | registered 87b24d8f558da20f
+PASS lib bbg_panel.py | sha256 e0b67a42793e67c1 | registered e0b67a42793e67c1
+PASS lib bbgdata.py | sha256 0b26bb21b50671dc | registered 0b26bb21b50671dc
+PASS lib gm_engine.py | sha256 ac43a33cd8943719 | registered ac43a33cd8943719
+PASS lib gm\trials.csv | sha256 2b80e2f9b255b05e | registered 2b80e2f9b255b05e
+PASS A1 report gm_a1_v2.txt: ok | as run d1 1.064, k0 1.481, k1 1.439
+PASS Bloomberg store lock id d85a46cb2853646b24796f294f3ccab1d1507188c402e978fd59f5196ea41fc9 | registered LOCK_v2 d85a46cb2853646b24796f294f3ccab1d1507188c402e978fd59f5196ea41fc9
+PASS free inputs | 239 files | not matching the manifest 0 | file list and sizes match the reference | digest 378d65b09c23d234
+PASS free arm vs reference | signal E (per-market sum of |signal|) | n 62 | missing 0 | max abs diff 0.0e+00
+PASS free arm vs reference | signal C (per-market sum of |signal|) | n 39 | missing 0 | max abs diff 0.0e+00
+PASS free arm vs reference | signal V (per-market sum of |signal|) | n 31 | missing 0 | max abs diff 0.0e+00
+PASS free arm vs reference | market months with a return | n 65 | missing 0 | max abs diff 0.0e+00
+EXTENSION-ONLY CHECK PASS | admitted series 4 | 354s
+PASS A1 PANEL ID e7f98d4439fccf91f3451bc4b9e78079e3bc2cc2452931363b28520460b6cb43 | registered e7f98d4439fccf91f3451bc4b9e78079e3bc2cc2452931363b28520460b6cb43
+PASS A1 panel file work\a1\a1_panel_e7f98d4439fc.pkl: same
+EXTENDED C cm_wti | 1984-11..1984-12 | 2 months
+EXTENDED R cm_corn | 1971-12..2000-07 | 344 months
+EXTENDED R cm_gold | 1980-01..2000-08 | 248 months
+PASS incumbent as run (A1 report, net Sharpe 1975-2010): d1 1.064, k0 1.481, k1 1.439 | registered d1 1.064, k0 1.481, k1 1.439
+--- A2 (TESTING_PROTOCOL 7.6 step 3; gm/CHANGES.md A2): incumbent gm-2.0.4-candidate-x1 (77374d7bef) as run vs challenger gm-2.2.1-a2-challenger (1faa343535), A1 panel, design months only, net of costs
+--- DECISIVE (7.7 H1, H3; k = 1; pooled window 1975-01..2010-12, common months; paired stationary bootstrap 10,000, block 6, seed 20261101; margin -0.10; no Holm)
+HYGIENE | k1 | n 432 | dSR -0.104 | lb95 -0.165 | se 0.037 | H1 FAIL | H2 dSR at 2x costs -0.094 (reported) | H3 PASS (max fall -0.1 pts, worst month -0.1 pts; max drawdown incumbent -19.0%, challenger -19.1%) | FAIL
+--- reported beside (not decisive): the same lines at k = 0 and at the one-month delay
+HYGIENE | k0 | n 432 | dSR -0.113 | lb95 -0.174 | se 0.038 | H1 FAIL | H2 dSR at 2x costs -0.103 (reported) | H3 PASS (max fall -0.5 pts, worst month -0.1 pts; max drawdown incumbent -18.4%, challenger -19.0%) | FAIL
+HYGIENE | d1 | n 432 | dSR -0.079 | lb95 -0.151 | se 0.043 | H1 FAIL | H2 dSR at 2x costs -0.069 (reported) | H3 FAIL (max fall -3.7 pts, worst month +0.3 pts; max drawdown incumbent -19.9%, challenger -23.6%) | FAIL
+--- eras (7.1 F2: reported, not decisive): dSR | lb95 | se per era and timing
+ERA | k1 | 1975-89 | n 180 | dSR -0.140 | lb95 -0.227 | se 0.059 | H3 margins max fall -0.1 pts, worst month -0.1 pts
+ERA | k1 | 1990-2010 | n 252 | dSR -0.071 | lb95 -0.156 | se 0.052 | H3 margins max fall +2.0 pts, worst month +0.3 pts
+ERA | k0 | 1975-89 | n 180 | dSR -0.157 | lb95 -0.241 | se 0.058 | H3 margins max fall -0.5 pts, worst month -0.1 pts
+ERA | k0 | 1990-2010 | n 252 | dSR -0.071 | lb95 -0.160 | se 0.056 | H3 margins max fall +1.9 pts, worst month +0.4 pts
+ERA | d1 | 1975-89 | n 180 | dSR -0.099 | lb95 -0.240 | se 0.087 | H3 margins max fall -3.7 pts, worst month +0.3 pts
+ERA | d1 | 1990-2010 | n 252 | dSR -0.063 | lb95 -0.144 | se 0.047 | H3 margins max fall -1.7 pts, worst month -0.3 pts
+selection inflation (7.8 item 2; printed beside, not subtracted, 7.1 F9): 39 logged book / pod rows (book 39), mean 1990-2010 Sharpe 1.481, sd 0.118, z 2.18 -> expected best Sharpe from luck alone about +0.26
+tuned knobs (7.8 item 4, as registered): Trend 4, Economic trend 3, Carry 3, Value 3 + 1 seen leg (Value version 2's bond leg = batch-1 V1, 7.8 item 3); book level 3 (pod share vector, no risk scaler, no scenario limit)
+--- books: months | net Sharpe | mean %/yr | vol %/yr | max drawdown % | skew | Lo-adjusted Sharpe
+BOOK | incumbent | k1 | costs x1 | 1975-2010 | 432 | 1.439 | 15.07 | 10.47 | -19.0 | -0.42 | 1.37
+BOOK | incumbent | k1 | costs x1 | 1975-89 | 180 | 1.224 | 13.00 | 10.62 | -19.0 | -1.39 | 1.30
+BOOK | incumbent | k1 | costs x1 | 1990-2010 | 252 | 1.597 | 16.55 | 10.36 | -16.8 | 0.32 | 1.45
+BOOK | incumbent | k1 | costs x2 | 1975-2010 | 432 | 1.329 | 13.89 | 10.45 | -19.1 | -0.44 | 1.29
+BOOK | incumbent | k1 | costs x2 | 1975-89 | 180 | 1.137 | 12.08 | 10.63 | -19.1 | -1.41 | 1.20
+BOOK | incumbent | k1 | costs x2 | 1990-2010 | 252 | 1.470 | 15.19 | 10.33 | -17.3 | 0.31 | 1.36
+BOOK | incumbent | k0 | costs x1 | 1975-2010 | 432 | 1.481 | 15.41 | 10.41 | -18.4 | -0.39 | 1.40
+BOOK | incumbent | k0 | costs x1 | 1975-89 | 180 | 1.240 | 13.12 | 10.58 | -18.4 | -1.21 | 1.30
+BOOK | incumbent | k0 | costs x1 | 1990-2010 | 252 | 1.659 | 17.05 | 10.27 | -17.5 | 0.25 | 1.50
+BOOK | incumbent | k0 | costs x2 | 1975-2010 | 432 | 1.370 | 14.23 | 10.39 | -18.7 | -0.40 | 1.32
+BOOK | incumbent | k0 | costs x2 | 1975-89 | 180 | 1.152 | 12.20 | 10.59 | -18.7 | -1.22 | 1.21
+BOOK | incumbent | k0 | costs x2 | 1990-2010 | 252 | 1.531 | 15.68 | 10.25 | -17.9 | 0.25 | 1.41
+BOOK | incumbent | d1 | costs x1 | 1975-2010 | 432 | 1.064 | 10.93 | 10.27 | -19.9 | -0.17 | 1.02
+BOOK | incumbent | d1 | costs x1 | 1975-89 | 180 | 0.964 | 9.09 | 9.44 | -19.9 | -0.94 | 0.90
+BOOK | incumbent | d1 | costs x1 | 1990-2010 | 252 | 1.130 | 12.24 | 10.83 | -13.6 | 0.16 | 1.12
+BOOK | incumbent | d1 | costs x2 | 1975-2010 | 432 | 0.951 | 9.75 | 10.25 | -20.3 | -0.19 | 0.92
+BOOK | incumbent | d1 | costs x2 | 1975-89 | 180 | 0.866 | 8.17 | 9.44 | -20.3 | -0.94 | 0.81
+BOOK | incumbent | d1 | costs x2 | 1990-2010 | 252 | 1.007 | 10.88 | 10.80 | -14.5 | 0.15 | 1.01
+BOOK | challenger | k1 | costs x1 | 1975-2010 | 432 | 1.335 | 14.08 | 10.55 | -19.1 | -0.42 | 1.29
+BOOK | challenger | k1 | costs x1 | 1975-89 | 180 | 1.084 | 11.79 | 10.88 | -19.1 | -1.14 | 1.10
+BOOK | challenger | k1 | costs x1 | 1990-2010 | 252 | 1.526 | 15.72 | 10.30 | -14.9 | 0.19 | 1.45
+BOOK | challenger | k1 | costs x2 | 1975-2010 | 432 | 1.235 | 13.01 | 10.53 | -19.4 | -0.43 | 1.21
+BOOK | challenger | k1 | costs x2 | 1975-89 | 180 | 1.008 | 10.96 | 10.88 | -19.4 | -1.15 | 1.02
+BOOK | challenger | k1 | costs x2 | 1990-2010 | 252 | 1.408 | 14.47 | 10.27 | -15.3 | 0.18 | 1.37
+BOOK | challenger | k0 | costs x1 | 1975-2010 | 432 | 1.368 | 14.29 | 10.45 | -19.0 | -0.36 | 1.31
+BOOK | challenger | k0 | costs x1 | 1975-89 | 180 | 1.083 | 11.75 | 10.85 | -19.0 | -0.98 | 1.10
+BOOK | challenger | k0 | costs x1 | 1990-2010 | 252 | 1.588 | 16.11 | 10.14 | -15.5 | 0.20 | 1.49
+BOOK | challenger | k0 | costs x2 | 1975-2010 | 432 | 1.267 | 13.22 | 10.43 | -19.3 | -0.37 | 1.23
+BOOK | challenger | k0 | costs x2 | 1975-89 | 180 | 1.006 | 10.92 | 10.86 | -19.3 | -0.99 | 1.02
+BOOK | challenger | k0 | costs x2 | 1990-2010 | 252 | 1.469 | 14.85 | 10.11 | -15.9 | 0.19 | 1.41
+BOOK | challenger | d1 | costs x1 | 1975-2010 | 432 | 0.986 | 10.07 | 10.22 | -23.6 | -0.20 | 0.97
+BOOK | challenger | d1 | costs x1 | 1975-89 | 180 | 0.865 | 8.50 | 9.83 | -23.6 | -0.69 | 0.79
+BOOK | challenger | d1 | costs x1 | 1990-2010 | 252 | 1.067 | 11.19 | 10.49 | -15.4 | 0.07 | 1.11
+BOOK | challenger | d1 | costs x2 | 1975-2010 | 432 | 0.882 | 8.99 | 10.20 | -24.2 | -0.21 | 0.88
+BOOK | challenger | d1 | costs x2 | 1975-89 | 180 | 0.781 | 7.68 | 9.83 | -24.2 | -0.69 | 0.72
+BOOK | challenger | d1 | costs x2 | 1990-2010 | 252 | 0.949 | 9.94 | 10.47 | -15.8 | 0.06 | 1.01
+--- by version (challenger): each version as a complete pod alone (one-part equal-risk book, k = 1, 10%, caps, costs): net Sharpe (months) 1975-2010 | 1975-89 | 1990-2010
+VERSION | trend v1 (1 m, sign, hybrid) | 0.94 (432) | 1.10 (180) | 0.82 (252)
+VERSION | trend v2 (3 m, sign, hybrid) | 0.82 (432) | 0.71 (180) | 0.91 (252)
+VERSION | trend v3 (6 m, sign, hybrid) | 0.79 (432) | 0.90 (180) | 0.72 (252)
+VERSION | trend v4 (12 m, sign, hybrid) | 1.01 (432) | 1.23 (180) | 0.88 (252)
+VERSION | trend v5 (1 m, sign, m36) | 0.90 (432) | 0.98 (180) | 0.84 (252)
+VERSION | trend v6 (3 m, sign, m36) | 0.76 (432) | 0.62 (180) | 0.87 (252)
+VERSION | trend v7 (6 m, sign, m36) | 0.77 (432) | 0.84 (180) | 0.72 (252)
+VERSION | trend v8 (12 m, sign, m36) | 0.96 (432) | 1.10 (180) | 0.88 (252)
+VERSION | trend v9 (1 m, graded, hybrid) | 0.81 (432) | 0.80 (180) | 0.82 (252)
+VERSION | trend v10 (3 m, graded, hybrid) | 0.84 (432) | 0.64 (180) | 0.98 (252)
+VERSION | trend v11 (6 m, graded, hybrid) | 0.67 (432) | 0.82 (180) | 0.58 (252)
+VERSION | trend v12 (12 m, graded, hybrid) | 0.91 (432) | 1.14 (180) | 0.78 (252)
+VERSION | trend v13 (1 m, graded, m36) | 0.73 (432) | 0.58 (180) | 0.82 (252)
+VERSION | trend v14 (3 m, graded, m36) | 0.74 (432) | 0.50 (180) | 0.90 (252)
+VERSION | trend v15 (6 m, graded, m36) | 0.61 (432) | 0.69 (180) | 0.55 (252)
+VERSION | trend v16 (12 m, graded, m36) | 0.86 (432) | 0.93 (180) | 0.81 (252)
+VERSION | econ v1 (tanh(z/2)) | 0.54 (432) | 0.29 (180) | 0.71 (252)
+VERSION | econ v2 (sign(z)) | 0.53 (432) | 0.39 (180) | 0.62 (252)
+VERSION | carry v1 (sign of carry) | 0.88 (432) | 0.76 (180) | 0.96 (252)
+VERSION | carry v2 (rank in class) | 0.73 (403) | 0.58 (151) | 0.84 (252)
+VERSION | value v1 | 0.15 (345) | -0.46 (93) | 0.39 (252)
+VERSION | value v2 | -0.04 (346) | -0.47 (94) | 0.12 (252)
+share of versions with net Sharpe > 0 (1975-2010): trend 16 of 16, econ 2 of 2, carry 2 of 2, value 1 of 2; all 21 of 22
+--- each pod alone (k = 1): net Sharpe (months) 1975-2010 | 1975-89 | 1990-2010
+POD | incumbent | trend | 1.19 (432) | 1.26 (180) | 1.14 (252)
+POD | incumbent | econ | 0.53 (432) | 0.26 (180) | 0.71 (252)
+POD | incumbent | carry | 1.07 (432) | 0.76 (180) | 1.30 (252)
+POD | incumbent | value | 0.15 (345) | -0.46 (93) | 0.39 (252)
+POD | challenger | trend | 1.09 (432) | 1.07 (180) | 1.10 (252)
+POD | challenger | econ | 0.54 (432) | 0.38 (180) | 0.65 (252)
+POD | challenger | carry | 1.07 (432) | 0.76 (180) | 1.30 (252)
+POD | challenger | value | 0.11 (346) | -0.34 (94) | 0.29 (252)
+POD | incumbent | carry v1 | 0.88 (432) | 0.76 (180) | 0.96 (252)
+POD | incumbent | carry v2 | 0.73 (403) | 0.58 (151) | 0.84 (252)
+--- by class and era (k = 1 contributions, held family positions x k = 1 returns, before costs): Sharpe (months) 1975-2010 | 1975-89 | 1990-2010
+CLASS | incumbent | carry/CM | 0.80 (282) | n<60 | 0.74 (250)
+CLASS | incumbent | carry/FI | 0.78 (432) | 0.81 (180) | 0.76 (252)
+CLASS | incumbent | carry/FX | 0.73 (432) | 0.21 (180) | 1.04 (252)
+CLASS | incumbent | econ/CM | -0.01 (432) | -0.01 (180) | -0.02 (252)
+CLASS | incumbent | econ/EQ | 0.45 (432) | 0.18 (180) | 0.67 (252)
+CLASS | incumbent | econ/FI | 0.41 (432) | 0.61 (180) | 0.24 (252)
+CLASS | incumbent | econ/FX | 0.24 (432) | -0.17 (180) | 0.49 (252)
+CLASS | incumbent | trend/CM | 0.47 (432) | 0.48 (180) | 0.46 (252)
+CLASS | incumbent | trend/EQ | 0.43 (432) | 0.30 (180) | 0.58 (252)
+CLASS | incumbent | trend/FI | 0.95 (432) | 1.25 (180) | 0.72 (252)
+CLASS | incumbent | trend/FX | 0.99 (432) | 0.93 (180) | 1.03 (252)
+CLASS | incumbent | value/EQ | 0.14 (383) | -0.41 (131) | 0.52 (252)
+CLASS | incumbent | value/FI | 0.18 (381) | 0.39 (129) | 0.05 (252)
+CLASS | incumbent | value/FX | 0.24 (394) | -0.06 (142) | 0.44 (252)
+CLASS | incumbent | carry/all | 1.21 (432) | 0.85 (180) | 1.43 (252)
+CLASS | incumbent | econ/all | 0.51 (432) | 0.28 (180) | 0.74 (252)
+CLASS | incumbent | trend/all | 1.23 (432) | 1.29 (180) | 1.19 (252)
+CLASS | incumbent | value/all | 0.32 (394) | -0.06 (142) | 0.60 (252)
+CLASS | incumbent | all/EQ | 0.52 (432) | 0.23 (180) | 0.79 (252)
+CLASS | incumbent | all/FI | 1.03 (432) | 1.22 (180) | 0.88 (252)
+CLASS | incumbent | all/FX | 1.27 (432) | 0.95 (180) | 1.47 (252)
+CLASS | incumbent | all/CM | 0.60 (432) | 0.56 (180) | 0.63 (252)
+CLASS | challenger | carry/CM | 0.79 (282) | n<60 | 0.74 (250)
+CLASS | challenger | carry/FI | 0.78 (432) | 0.81 (180) | 0.76 (252)
+CLASS | challenger | carry/FX | 0.74 (432) | 0.17 (180) | 1.08 (252)
+CLASS | challenger | econ/CM | -0.13 (432) | -0.03 (180) | -0.21 (252)
+CLASS | challenger | econ/EQ | 0.59 (432) | 0.38 (180) | 0.74 (252)
+CLASS | challenger | econ/FI | 0.38 (432) | 0.70 (180) | 0.12 (252)
+CLASS | challenger | econ/FX | 0.25 (432) | -0.20 (180) | 0.55 (252)
+CLASS | challenger | trend/CM | 0.48 (432) | 0.43 (180) | 0.51 (252)
+CLASS | challenger | trend/EQ | 0.36 (432) | 0.18 (180) | 0.56 (252)
+CLASS | challenger | trend/FI | 0.79 (432) | 1.08 (180) | 0.56 (252)
+CLASS | challenger | trend/FX | 0.98 (432) | 0.85 (180) | 1.06 (252)
+CLASS | challenger | value/EQ | 0.15 (383) | -0.41 (131) | 0.51 (252)
+CLASS | challenger | value/FI | 0.08 (375) | 0.06 (123) | 0.09 (252)
+CLASS | challenger | value/FX | 0.13 (395) | -0.09 (143) | 0.27 (252)
+CLASS | challenger | carry/all | 1.21 (432) | 0.83 (180) | 1.44 (252)
+CLASS | challenger | econ/all | 0.49 (432) | 0.35 (180) | 0.62 (252)
+CLASS | challenger | trend/all | 1.11 (432) | 1.09 (180) | 1.13 (252)
+CLASS | challenger | value/all | 0.20 (395) | -0.23 (143) | 0.48 (252)
+CLASS | challenger | all/EQ | 0.49 (432) | 0.18 (180) | 0.76 (252)
+CLASS | challenger | all/FI | 0.92 (432) | 1.11 (180) | 0.77 (252)
+CLASS | challenger | all/FX | 1.23 (432) | 0.87 (180) | 1.46 (252)
+CLASS | challenger | all/CM | 0.57 (432) | 0.47 (180) | 0.63 (252)
+--- by tranche (weekly check, 7.3 item 6, 1990-01..2010-12): net Sharpe (months) per tranche and of the tranche form; flagged share of gross position
+TRANCHE | incumbent | j 0 | 1.60 (252) | flagged share 0.168
+TRANCHE | incumbent | j 1 | 1.44 (251) | flagged share 0.101
+TRANCHE | incumbent | j 2 | 1.41 (251) | flagged share 0.095
+TRANCHE | incumbent | j 3 | 1.44 (251) | flagged share 0.094
+TRANCHE | incumbent | form | 1.77 (252)
+TRANCHE | challenger | j 0 | 1.53 (252) | flagged share 0.167
+TRANCHE | challenger | j 1 | 1.36 (251) | flagged share 0.096
+TRANCHE | challenger | j 2 | 1.33 (251) | flagged share 0.090
+TRANCHE | challenger | j 3 | 1.34 (251) | flagged share 0.088
+TRANCHE | challenger | form | 1.66 (252)
+TRANCHE | tranche form challenger - incumbent | n 252 | dSR -0.116 | lb95 -0.211 (reported)
+--- Trend split (SPEC_Trend s14; register B12, T12): class-average and relative parts, k = 1, before costs: Sharpe (months) 1975-2010 | 1975-89 | 1990-2010
+SPLIT | incumbent | check: parts add to the held Trend position (max diff 1.3e-15; rebuild of the held position 1.1e-15; months without a scale 0) PASS
+SPLIT | incumbent | class-average | all | 1.04 (432) | 0.97 (180) | 1.09 (252)
+SPLIT | incumbent | class-average | EQ | 0.43 (428) | 0.30 (177) | 0.56 (251)
+SPLIT | incumbent | class-average | FI | 0.88 (427) | 1.04 (176) | 0.76 (251)
+SPLIT | incumbent | class-average | FX | 0.73 (425) | 0.61 (174) | 0.82 (251)
+SPLIT | incumbent | class-average | CM | 0.38 (403) | 0.31 (166) | 0.46 (237)
+SPLIT | incumbent | relative | all | 0.87 (432) | 1.15 (180) | 0.70 (252)
+SPLIT | incumbent | relative | EQ | 0.11 (404) | 0.10 (162) | 0.15 (242)
+SPLIT | incumbent | relative | FI | 0.52 (392) | 1.00 (152) | 0.07 (240)
+SPLIT | incumbent | relative | FX | 0.82 (423) | 0.90 (172) | 0.80 (251)
+SPLIT | incumbent | relative | CM | 0.36 (381) | 0.63 (134) | 0.26 (247)
+SPLIT | challenger | check: parts add to the held Trend position (max diff 1.8e-15; rebuild of the held position 1.8e-15; months without a scale 0) PASS
+SPLIT | challenger | class-average | all | 0.90 (432) | 0.81 (180) | 0.98 (252)
+SPLIT | challenger | class-average | EQ | 0.36 (432) | 0.20 (180) | 0.52 (252)
+SPLIT | challenger | class-average | FI | 0.73 (432) | 0.90 (180) | 0.59 (252)
+SPLIT | challenger | class-average | FX | 0.67 (432) | 0.55 (180) | 0.77 (252)
+SPLIT | challenger | class-average | CM | 0.34 (432) | 0.18 (180) | 0.47 (252)
+SPLIT | challenger | relative | all | 0.90 (432) | 1.08 (180) | 0.79 (252)
+SPLIT | challenger | relative | EQ | 0.09 (431) | -0.01 (179) | 0.22 (252)
+SPLIT | challenger | relative | FI | 0.44 (432) | 0.80 (180) | 0.05 (252)
+SPLIT | challenger | relative | FX | 0.87 (432) | 0.84 (180) | 0.90 (252)
+SPLIT | challenger | relative | CM | 0.42 (432) | 0.68 (180) | 0.30 (252)
+--- Trend carry and price parts (SPEC_Trend s10; bonds and currencies, k = 1, before costs; market-months with a held position and a carry value): Sharpe (months) | mean %/yr, 1975-2010 | 1975-89 | 1990-2010
+CARRYPRICE | incumbent | covered share of Trend's FX + FI gross position 1.000
+CARRYPRICE | incumbent | total | 1.33 (432) | 7.11 | 1.55 (180) | 7.90 | 1.18 (252) | 6.55
+CARRYPRICE | incumbent | carry part | 2.13 (432) | 1.88 | 1.96 (180) | 1.28 | 2.31 (252) | 2.31
+CARRYPRICE | incumbent | price part | 0.99 (432) | 5.22 | 1.34 (180) | 6.62 | 0.77 (252) | 4.23
+CARRYPRICE | challenger | covered share of Trend's FX + FI gross position 1.000
+CARRYPRICE | challenger | total | 1.21 (432) | 6.54 | 1.38 (180) | 7.34 | 1.10 (252) | 5.96
+CARRYPRICE | challenger | carry part | 2.18 (432) | 1.93 | 1.63 (180) | 1.08 | 2.59 (252) | 2.54
+CARRYPRICE | challenger | price part | 0.88 (432) | 4.61 | 1.21 (180) | 6.27 | 0.65 (252) | 3.43
+--- Value next to Trend (SPEC_Value s14; k = 1 contributions before costs, 1975-2010): correlation | NW t of Value's intercept on Trend | correlation with Trend's relative part
+VALUE | incumbent Value (v1) / incumbent Trend (1/3/12) | n 394 | corr -0.02 | NW t 1.71 | corr with relative part -0.13
+VALUE | challenger Value (v1 + v2) / incumbent Trend (old grid) | n 395 | corr -0.01 | NW t 1.02 | corr with relative part -0.13
+VALUE | challenger Value (v1 + v2) / challenger Trend (16 versions) | n 395 | corr -0.02 | NW t 1.04 | corr with relative part -0.16
+ECON-TREND | incumbent | held equity positions, both non-zero, 1975-2010 | n 4532 | corr 0.23
+ECON-TREND | challenger | held equity positions, both non-zero, 1975-2010 | n 4666 | corr 0.27
+--- k = 1 flagged share (7.3 item 2): share of gross position earning the k = 0 return for lack of a daily price
+FLAGGED | incumbent | 1975-2010 0.220 | by year: 1975 0.49, 1976 0.31, 1977 0.29, 1978 0.31, 1979 0.22, 1980 0.31, 1981 0.26, 1982 0.34, 1983 0.33, 1984 0.29, 1985 0.27, 1986 0.33, 1987 0.29, 1988 0.28, 1989 0.27, 1990 0.23, 1991 0.28, 1992 0.26, 1993 0.25, 1994 0.24, 1995 0.22, 1996 0.23, 1997 0.22, 1998 0.12, 1999 0.17, 2000 0.18, 2001 0.10, 2002 0.13, 2003 0.08, 2004 0.13, 2005 0.11, 2006 0.14, 2007 0.05, 2008 0.09, 2009 0.09, 2010 0.14
+FLAGGED | challenger | 1975-2010 0.222 | by year: 1975 0.47, 1976 0.30, 1977 0.30, 1978 0.30, 1979 0.26, 1980 0.31, 1981 0.27, 1982 0.30, 1983 0.32, 1984 0.30, 1985 0.30, 1986 0.35, 1987 0.30, 1988 0.32, 1989 0.29, 1990 0.21, 1991 0.26, 1992 0.23, 1993 0.24, 1994 0.23, 1995 0.22, 1996 0.23, 1997 0.21, 1998 0.11, 1999 0.17, 2000 0.17, 2001 0.09, 2002 0.12, 2003 0.10, 2004 0.14, 2005 0.12, 2006 0.16, 2007 0.07, 2008 0.11, 2009 0.09, 2010 0.12
+--- P4 (7.7; S&P alone until M1 has run): Sharpe of the book and of its specific return w = r - b x S&P, 1978-01..2010-12, k = 1 net
+P4 | incumbent | book 1.39 (396) | specific 1.34 (396)
+P4 | challenger | book 1.29 (396) | specific 1.24 (396)
+--- fragility (7.7; pooled k = 1 dSR -0.104): largest loss when one item is removed
+FRAGILITY | year | 1999 | loss of dSR +0.012
+FRAGILITY | market | fx_krw | loss of dSR +0.012
+FRAGILITY | class | CM | loss of dSR +0.003
+FRAGILITY | markets tried 65 | best year 1993 gives n/a of the summed monthly difference (sum -35.60%) | flag n/a (sum not positive)
+A2 VERDICT FAIL | H1 lb95 -0.165 <= -0.10 | H3 pass | A2-final book = gm-2.0.4-candidate-x1 (77374d7bef) | the incumbent stays without averaging; no cell of a grid is picked
+report 457s
+TRIAL ROW {"config": "{\"block_vol_months\": 36, \"book_vol\": 0.1, \"delay_months\": 0, \"econ_themes\": [\"inflation\", \"trade\", \"monetary\", \"risk\"], \"family_w\": {\"carry\": 0.25, \"econ\": 0.15, \"trend\": 0.45, \"value\": 0.15, \"xsmom\": 0.0}, \"grid\": {\"carry\": [\"dir\", \"cs\"], \"econ\": [\"tanh\", \"sign\"], \"trend\": [[1, \"sign\", \"hybrid\"], [3, \"sign\", \"hybrid\"], [6, \"sign\", \"hybrid\"], [12, \"sign\", \"hybrid\"], [1, \"sign\", \"m36\"], [3, \"sign\", \"m36\"], [6, \"sign\", \"m36\"], [12, \"sign\", \"m36\"], [1, \"graded\", \"hybrid\"], [3, \"graded\", \"hybrid\"], [6, \"graded\", \"hybrid\"], [12, \"graded\", \"hybrid\"], [1, \"graded\", \"m36\"], [3, \"graded\", \"m36\"], [6, \"graded\", \"m36\"], [12, \"graded\", \"m36\"]], \"value\": [1, 2]}, \"gross_cap\": 5.0, \"market_risk_cap\": 0.1, \"name\": \"gm-2.2.1-a2-challenger\", \"scenario_limit\": null, \"trend\": {\"cap\": 2.0, \"horizons\": [1, 3, 12], \"kind\": \"sign\", \"spot\": false}, \"vol\": {\"fast_w\": 0.7, \"floor\": 0.75, \"hl_days\": 35, \"hl_months\": 6, \"model\": \"hybrid\"}, \"within_class\": \"equal\", \"x1_seasonal\": [\"cm_natgas\", \"cm_gasoline\"]}", "family": "book", "hash": "1faa343535", "maxdd_9010": -0.149, "note": "TESTING_PROTOCOL 7.6 step 3 A2 challenger; engine gm-2.2.1; A1 panel e7f98d4439fccf91; LOCK_v2 d85a46cb2853646b; incumbent A1_INCUMBENT 77374d7bef as run; verdict FAIL (H1 lb95 -0.165, H3 pass)", "sr_7589": 1.084, "sr_9010": 1.526, "t_9010": 6.99, "trial": "A2 grids (challenger, k = 1, A1 panel)", "turnover": 22.5}
+A2 JOB DONE
+=== END === 814s

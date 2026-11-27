@@ -211,6 +211,17 @@ Closed while coding (2026-11-27, before any A2 run; simplest reading, none from 
     1)"). It is the same in both A2 arms, in BASE and CANDIDATE and in engine_ref.json; a2_batch's Trend split
     replicates it (its parts add to the held position). Not fixed here: A2 is built on the registered engine gm-2.2.0.
 
+A2 RUN (2026-11-27, PC job gm_a2_v1, report tools/bbgq/results/gm_a2_v1.txt; every hash, lock, A1 panel id and
+as-run check PASS; check CHECK_A2 APPROVED WITH CORRECTIONS, none before the run): A2 VERDICT FAIL. Decisive (k = 1,
+1975-2010, 432 months): dSR -0.104, lb95 -0.165 (H1 margin -0.10: FAIL), H3 PASS (max fall -0.1 pt, worst month -0.1 pt).
+Incumbent gm-2.0.4-candidate-x1 (77374d7bef) net SR 1.439 vs challenger gm-2.2.1-a2-challenger (1faa343535) 1.335. Same
+sign at k = 0 (-0.113) and at the one-month delay (-0.079, H3 FAIL there); both eras negative (1975-89 -0.140, 1990-2010
+-0.071). 21 of 22 versions alone have net SR > 0 (Value v2 does not). A2-final book = the incumbent, unchanged: no
+averaging, no grid cell picked (7.6 step 3). Fragility (C5 of the check): market and class removals keep the signals as
+built, so Economic trend themes that read a removed market still see it. Trial rows appended after the run: the A1
+rerun gm_a1_v2 (its job's 'when' is the run time; the earlier A1 row's 'when' 2026-11-27 23:55 was a PC-local stamp
+written later than its commit, kept as written, C3) and the A2 challenger.
+
 ## data: A1 data rule (registered 2026-11-27, BEFORE the A1 code and the A1 run): TESTING_PROTOCOL 7.6 step 2, 7.4 E15
 Entry 3 of docs/research/registration/REGISTRATION_3.4.md part (c): "Data entry A1 (before the A1 run): the
 extension-only rule of 7.6 step 2 with LOCK_v2 id d85a46cb2853646b24796f294f3ccab1d1507188c402e978fd59f5196ea41fc9; the

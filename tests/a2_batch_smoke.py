@@ -97,7 +97,8 @@ def run(check):
 
 def _run(check, tmp):
     R, D, S, gspc = scenario()
-    trials = os.path.join(REPO, "gm", "trials.csv")
+    # the trial log as shipped to the A2 run (gm/trials.csv grows after it; A2 pins this version)
+    trials = os.path.join(REPO, "tests", "data", "trials_a2_shipped.csv")
     lines = []
     res = A2.report(R, D, S, gspc, out=lines.append, trials_path=trials, frag_markets=["eq_us_spx", "fx_jpy"])
     txt = "\n".join(lines)
@@ -302,6 +303,7 @@ def _run(check, tmp):
     os.makedirs(lib)
     shutil.copytree(os.path.join(REPO, "gm"), os.path.join(lib, "gm"),
                     ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
+    shutil.copy(os.path.join(REPO, "tests", "data", "trials_a2_shipped.csv"), os.path.join(lib, "gm", "trials.csv"))
     bq = os.path.join(REPO, "tools", "bbgq")
     for rel in ("lib/gm_engine.py", "lib/bbg_panel.py", "lib/bbgdata.py", "lib/a1_panel.py", "lib/a2_batch.py",
                 "live_sources.csv", "untouched_markets.csv", "engine_ref.json"):

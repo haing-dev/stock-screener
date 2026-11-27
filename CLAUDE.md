@@ -557,6 +557,12 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   (gm_a1_v1): A1 PANEL ID e7f98d44 (PC only, local\work\a1); 4 of 54 admitted (corn, gold returns, WTI c2 2 months); most
   first-pull commodity indexes are copies; dSR +0.012 at k = 1 (SR 1.427 -> 1.439); one-month delay SR ~1.05. NEXT: A2
   (builder agent running), then 7.5 diagnostics, A3, Core book v1.
+  2026-11-27 ENGINE FIX gm-2.2.1 (cm_aqr_ew was a Trend market in all 4 class blocks; now CM only; registered first;
+  configs renamed gm-1.2.4 / gm-2.0.4-candidate(-x1) / gm-2.2.1-a2-challenger); A1 rerun gm_a1_v2 same panel id.
+  A2 RAN (gm_a2_v1, check APPROVED WITH CORRECTIONS): VERDICT FAIL (dSR -0.104, lb95 -0.165 < -0.10 at k = 1; SR 1.439
+  vs 1.335; both eras negative) -> A2-final book = incumbent gm-2.0.4-candidate-x1 (77374d7bef), no grids. Trial log
+  as shipped to A2 frozen in tests/data/trials_a2_shipped.csv. Can-wait check items C1, C2, C4, C6, C7 open
+  (CHECK_A2 in scratch, summarised in the A2 RUN paragraph). NEXT: 7.6 step 4 diagnostics (7.5 order item 2), A3, Core v1.
   User 2026-11-22: NO MORE FABLE UNITS for now.
 - MT228 (2026-11-10): raw X posts of John Galt @AtlasShrug1 (1,359 posts, Jul 2025 - 8 Nov 2026) extracted like a transcript
   with dates: 733 claims (185 rules/tells, 188 dated forecasts), Sonnet single read, quotes script-checked, cross-check
