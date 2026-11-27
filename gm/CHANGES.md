@@ -4,6 +4,87 @@ Every rule change gets a new VERSION in gm/run.py and a line here. Every variant
 (1990-2010; extra check 1975-89) is logged so the deflated Sharpe can count the trials. The holdout (2011-2026) is run
 once, after the rules are frozen, by gm/holdout.py.
 
+## data: card inputs (FRED / ALFRED first release, macro-data branch) (registered 2026-11-27, BEFORE first use): 7.4 E15
+Registered data entry (no rule change; no statistic of any card rule has been computed on these files; the builder
+read only file metadata: first / last dates, row counts, the fetch mode in the branch manifests, and the size of month-
+to-month jumps in the first-release levels for item 5). It is the "card inputs (FRED / ALFRED)" entry that "Pre-B
+diagnostics" item 4 asks for; with it the pre-B job gm_diag_preb_v1 (not yet run) is extended in place (diag_preb
+1.1.0, "Pre-B diagnostics" addendum below), not replaced by a v2.
+1. Source: branch origin/macro-data, commit 264d0a2cc2f74d02264b30a52d5e8f0950db9cca ("macro data 2026-11-01T01:08Z"),
+   written by the Macro Compass fetch (macro/fetch.py for the root files: registry.FRED, FRED API with the user's key,
+   "first release" = ALFRED output_type 4 where registry.FRED has fr=True; macro/fetch_research.py for research/:
+   public FRED csv = latest values, and research/<id>_FR.csv = ALFRED first release). Files (raw bytes as in the commit):
+   | File | Mode (branch manifest "how") | sha256 | Serves |
+   |---|---|---|---|
+   | GS1.csv | api | 3ab25da1ce76f092ada31ea7ea83c89b98c7facbb7523049d5c504564c4ee7df | card 3 R3 (measure 2) |
+   | GS2.csv | api | c92b08197af1084e93f09a06bd0fd5620e2a9eacb2f9e1956bd71fe250063dc9 | card 1 R2, card 3 R2 / R3, card 4 R5 |
+   | GS5.csv | api | 4097a254739c4a69ae6b564f063ec1800986d40c56b3b5647264fd481ecb89b7 | card 1 R2 warning (a) |
+   | GS10.csv | api | 14101ef859fbbacf0f0be00bc7a7ad70eea56b640a7a33b41a19982519639c60 | card 1 R1 / R2 / R3, card 2 R1 / R2, card 3 R2, card 4 R5 |
+   | FEDFUNDS.csv | api | 1febfbfd22ef4d1e354d412ab224009f9df4214fd880e60e3b1d3d6f22798573 | card 1 R1-R4, card 3 R1 gate / R3, C3-D2, card 4 R5 v2 |
+   | BAA.csv | api | a19a4e7230f5dbf42ad2b056b7b13a8cee53307f1ae893fb073d829a6e0f8f1c | card 1 R2 warning (b), R3 |
+   | TWEXMMTH.csv | api | a5c1ea123197ae46207e489052debaf4cc1309d734a356eeff3900717dc7d33e | card 1 R1 dollar (to its last month) |
+   | DTWEXBGS.csv | api (daily) | d1c0528a9e337567a70a576a2721829446551d1d6e00a1e7d6197723dfb1e33d | card 1 R1 dollar (after TWEXMMTH) |
+   | WTISPLC.csv | api | 0f917359164123db1598402e455c1694e8c639fe58b9cc8e66ba03bcc3d5f4ef | card 1 R1 oil |
+   | VIXCLS.csv | api (daily) | 1c4696be0611e16d07d696bced9182b5dada3fc0e0850ea7b63bb25941efaaf4 | C4-D1 |
+   | M2SL.csv | first release | 871ca3301a05ad1b462fb26edc408a8eeeb9d14a6e6f3b9a564c0825a80074bf | card 1 R2 warning (c), first published |
+   | PCEPILFE.csv | first release | 2580087dc66e991d6e4275d7602ebd3bd8c96963eb87d157ceb9bca4e0590a18 | card 3 R3, first published |
+   | research/CPILFESL_FR.csv | first release | 32f8c0ab27789d3cafac39644cfd239ca62846cb67c440eaf50fb02b7edc75a8 | CPILFESL first published (cards 1, 2, 4, 5) |
+   | research/UNRATE_FR.csv | first release | 32a5962ede84fe0a42e7b1dac474dc91ba326432881878d7470a3777328295b0 | UNRATE first published (card 2 R2) |
+   | research/CPILFESL.csv | latest | 90d152a56c2be24e3a595308feff963d22c8431dda24cc9f948c12c420a19a50 | CPILFESL in months without a first vintage (flagged) |
+   | research/UNRATE.csv | latest | 65fb73bccaa4086aaaf3d19fbae5802daa62401ea3383322c1c5046468757c45 | UNRATE in months without a first vintage (flagged) |
+   | research/M2SL.csv | latest | c745c8995d819bbee56d32156cd1e3c514db199df23606886ad7aef0cc0b4a9d | M2SL in months without a first vintage (flagged) |
+   | research/PCEPILFE.csv | latest | cdf87be0d6669f8346c08b853b3b78bf669f84f9a6f028208b24587a641271f3 | PCEPILFE in months without a first vintage (flagged) |
+   | manifest.json (root) | - | 2d0213bd625eb5b71d8aa8249971b225b002d32e3410defff22cdb1fb4025561 | provenance only: the "how" of every root file |
+   TB3MS and the OECD IR3TIB01 rates stay on the free inputs (they are engine inputs already); not in this lock.
+2. Which file serves which input, and why:
+   - Rates, spreads, the dollar, oil, VIX (lag-0 / market or unrevised series): the ROOT files. They are the Macro Compass
+     live fetch (macro/fetch.py, registry.FRED): the same series, from the same fetch code, serve history and live
+     (item 7). research/ copies of GS1, GS2, GS5, GS10, FEDFUNDS exist but come from another fetch path; not used.
+   - First published (the specs: card 1 s3 step 2 "each month's first-published value from ALFRED where a vintage
+     exists"; card 2 s3 "CPILFESL and UNRATE as first published where vintages exist, else latest, flagged"; card 3 s3
+     "PCEPILFE as first published where vintages exist, else latest, flagged"; card 4 s3 R5 and card 5 s3 R1 step 4
+     "first published ... as card 1"): CPILFESL and UNRATE from research/*_FR.csv (the named first-release files);
+     M2SL and PCEPILFE from the ROOT files, whose branch manifest records how = "first release" (macro/fetch.py with
+     fr=True and the FRED key: ALFRED output_type 4). So first vintages of M2SL and PCEPILFE DO exist on the branch
+     (the coordinator's note listed them as missing; corrected here from the manifest). Check (builder, metadata):
+     the root CPILFESL.csv and UNRATE.csv hold the same dates and values as their _FR files (the root files are not
+     used). First-vintage coverage: CPILFESL from 1996-12, UNRATE from 1960-03, M2SL from 1980-01, PCEPILFE from 2000-07.
+   - Months without a first vintage (before those starts): the research/ latest file of the same series, each such
+     month flagged, as every spec writes ("Months with no vintage use the latest value and carry a flag; the share of
+     flagged months is reported", card 1 s3 step 2; cards 2-5 "else latest, flagged"). No row stays blocked for want of
+     a vintage.
+3. Cut and seal: the reader (tools/bbgq/lib/card_inputs.py) drops every observation dated after 2010-12-31 before it
+   computes anything; its outputs are checked by gm/seal.py like every design input. The zip holds the raw files
+   whole (so their hashes are the source's); no function returns a later value.
+4. As-of (release lag, the specs' own wording; "A lag of 1 means the last value used at t is month t-1", card 1 s3 step
+   1): FEDFUNDS 0, GS1 0, GS2 0, GS5 0, GS10 0, BAA 0, TWEXMMTH 0, DTWEXBGS 0 (card 1 s3 step 1; card 3 s3 R2 / R3
+   "Lags 0"; card 4 s8 "FRED, lag 1 / 0"); WTISPLC 1, CPILFESL 1, M2SL 1 (card 1 s3 step 1); UNRATE 1 (card 2 s3);
+   PCEPILFE 2 (card 3 s3 R3 step 2); VIXCLS 0 (card 4 s8 "FRED, lag 0"; C4-D1 reads the month's average). Daily series
+   (DTWEXBGS, VIXCLS) enter as the mean of the month's daily values (card 1 s3 R1 step 1: "monthly average of daily
+   values, the same averaging as TWEXMMTH"; C4-D1: "the month's average VIXCLS"). The monthly averages of lag-0 series
+   carry 7.3 item 4's registered one-day tolerance; nothing else is shifted.
+5. First-published changes (card 1 s3 step 2: "a change (12-month growth) is computed from two first-published
+   values"): a change over months m - k .. m uses the two first-release values when both exist and are comparable, else
+   the latest values of both months, flagged. Comparable: no first-release level break inside m - k + 1 .. m, a break
+   being a month whose first-release month-to-month change differs from the latest series' change of the same month by
+   more than 2 percentage points (an index rebase or a unit change moves the level by the base ratio, 6-8% for the two
+   PCEPILFE rebases inside the design years and about 1000x for a unit switch; one month's revision moves it by far
+   less). Reason: two first-published values from vintages with different base years are not a change of the series
+   (the Macro Compass reader corrects the unit case the same way, macro/engine.py _unit_breaks). The reader prints the
+   break months found (metadata) and every report prints the flagged share per input. Levels used as levels (UNRATE
+   against its own prior 240 values) use the first-release value where it exists, else latest, flagged.
+6. Lock: docs/research/card_inputs/LOCK_CARD_v1.json (commit, seal date, the file table of item 1), lock id =
+   sha256(json.dumps({"source": "origin/macro-data", "commit": ..., "seal_date": "2010-12-31", "files": {path:
+   sha256}}, sort_keys=True)) = 6c154f7d736cefd141fac2252a71536811e7440724d8e3cb4d4eacfecb8e3110. Packaging: a
+   separate small zip work\free\gm_card_inputs.zip built from git at that commit (tools/bbgq/build_card_inputs.py),
+   checked file by file against the lock by the reader; the free inputs zip, its digest, engine_ref.json and the k = 0
+   reproduction are untouched (the card inputs are not engine inputs).
+7. Live: the same FRED series by the same fetch (macro/fetch.py, FRED API; first release where registry.FRED has fr
+   = True), same lags; registered as a live source for the card rule layers under 7.10 item 1 ("Free public data
+   qualify"). The live cycle needs no LSEG or Bloomberg input for these rows.
+8. Inputs still not available: none of the rows of "Pre-B diagnostics" item 4 needs anything beyond this entry, the
+   free inputs and LOCK_LSEG_v5.
+
 ## Pre-B diagnostics (registered 2026-11-27, BEFORE the diagnostics code and run): TESTING_PROTOCOL 7.6 step 7, 7.5 order item 3
 Registered run entry (no rule, weight, threshold, gate, cost or market change; no gm/ code change; no statistic of any
 diagnostic below has been computed on real data, cloud or PC). The A1 panel (Bloomberg values) and the LSEG store exist
