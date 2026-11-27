@@ -527,3 +527,7 @@ as such. Replaces R1.1 (record); R1.2 (material) and R1.3 (screenability) stay.
     Pilecki 10/10, Hohn 6/6, Stahl 6/7, Li Lu 5/5, Nygren 9/10, Druckenmiller 9/10, Sosin 6/6, Kantesaria 10/10: every
     file passes the planted test. The remaining misses are anecdotes read as rules (Stahl 1, Nygren V101,
     Druckenmiller V120 "I'm just not playing anything as aggressively as I used to", arguably a sizing rule).
+12. **Stahl held-out test (2026-11-27).** `pilot/batch2/STA/heldout/heldout_result.json`: 4 of 13 STA2 rules matched
+    (31%, bar 70%), 0 open contradictions -> FAIL ("file not complete"). The card (2 documents) had no size rule, no
+    general sell trigger and no private-company rule; STA2 states all three. Per item 8 the card continues as v1.1 with
+    STA2 merged, labelled "held-out failed"; the file is also thin (no written source).

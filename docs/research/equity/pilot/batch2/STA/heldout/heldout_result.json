@@ -1,0 +1,22 @@
+{
+ "matches": [
+  {"id": "STA2-C009", "match": "yes", "card_rule": "Rbuy3", "why": "Buy part, neglect idea: less scrutinized firms ~ outside indexes, few owners, unanalysed (card section 1); measure differs (coverage vs index)."},
+  {"id": "STA2-C014", "match": "no", "card_rule": "", "why": "Size part: card states no size rule; starting position under 5% is new."},
+  {"id": "STA2-C016", "match": "no", "card_rule": "", "why": "Size part (let winners become biggest position); card has no size rule. Rsell1 is close but sell part."},
+  {"id": "STA2-C021", "match": "no", "card_rule": "", "why": "General sell trigger (found something better); card says no general sell trigger exists."},
+  {"id": "STA2-C022", "match": "no", "card_rule": "", "why": "Switch from inferior to superior prospective return; no such sell rule on the card."},
+  {"id": "STA2-C023", "match": "no", "card_rule": "", "why": "Sell when a big position lost appreciation potential; card has no such trigger."},
+  {"id": "STA2-C025", "match": "yes", "card_rule": "Rsell1", "why": "Sell part, same direction: do not sell absent a strong reason/replacement. Card's rule is TPL-scoped, weaker form."},
+  {"id": "STA2-C043", "match": "no", "card_rule": "", "why": "Buying private companies meeting valuation hurdles; card has no private-company or valuation-hurdle rule."},
+  {"id": "STA2-C044", "match": "no", "card_rule": "", "why": "Price part for emerging private firms without cash flow; Rprice1 is about dividend cuts."},
+  {"id": "STA2-C045", "match": "no", "card_rule": "", "why": "No/limited competition or proprietary product; Rbuy2 scarcity concerns hard assets and capital-market access, different idea."},
+  {"id": "STA2-C046", "match": "no", "card_rule": "", "why": "Few private companies qualify; no card rule on private companies."},
+  {"id": "STA2-C047", "match": "yes", "card_rule": "Rsell1", "why": "Sell part: hold while business executes despite market neglect = no compelling reason to sell."},
+  {"id": "STA2-C052", "match": "yes", "card_rule": "Rprocess3", "why": "Same process: reading old newspapers in the library years later; card gives no number, same direction."}
+ ],
+ "contradictions": [
+  {"id": "STA2-C024", "card_rule": "Rsell1", "status": "closed", "why": "Weak tension: gradually selling even an extraordinary company vs not selling TPL without compelling reason. Card records Rsell1 as TPL-only scope and no general sell trigger (sections 3, 4 item 5)."},
+  {"id": "STA2-C023", "card_rule": "Rsell1", "status": "closed", "why": "Weak tension: selling a big position that lost upside vs high bar to sell. Not an opposite (lost upside can be the compelling reason); card scopes Rsell1 to TPL."}
+ ],
+ "notes": "No held-out claim states the opposite of Rbuy1-Rbuy3 or Rprice1. C048/C049 (math against swapping holdings) support Rsell1 and sit in tension with C021/C022 inside STA2 itself, not with the card. Open contradictions: 0."
+}
