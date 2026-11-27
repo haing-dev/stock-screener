@@ -196,7 +196,8 @@ def _run(check, tmp):
     check("A2 selection inflation: book + pod rows only, the stats_audit formula", si["n"] == 25 and
           abs(si["inflation"] - z * np.std(srs, ddof=1)) < 1e-3, (si, z * np.std(srs, ddof=1)))
     sr = A2.selection_inflation(trials)
-    check("A2 selection inflation on the shipped trial log: N 39, inflation 0.26 (registered, CHANGES A2 item 4l)",
+    check("A2 selection inflation on the shipped trial log: N 39, inflation 0.26 (registered, CHANGES A2 item 4l; the "
+          "gm-2.2.1 fix rows are not counted)",
           sr["n"] == 39 and round(sr["inflation"], 2) == 0.26 and A2.file_sha(trials) == A2.TRIALS_SHA, sr)
 
     # ---- fragility
@@ -262,11 +263,37 @@ def _run(check, tmp):
     long_dec = re.findall(r"\d\.\d{5,}", txt)
     check("A2 printing: no number with 5 or more decimals", not long_dec, long_dec[:5])
     tr = A2.trial_row(res, A2.A1_PANEL_ID, CF.ENGINE_VERSION)
-    check("A2 trial row: family book, challenger hash a5b83bdf45, note names panel, parent and verdict",
-          tr["family"] == "book" and tr["hash"] == A2.CHA_HASH == CF.cfg_hash(CF.A2_CHALLENGER) and
-          "e7f98d4439fccf91" in tr["note"] and "465b5ecd4f" in tr["note"] and res["verdict"] in tr["note"], tr)
-    check("A2 registered constants: incumbent hash, AS_RUN = the A1 report's k1 / k0 / d1",
-          CF.cfg_hash(CF.A1_INCUMBENT) == A2.INC_HASH and A2.AS_RUN == {"k1": 1.439, "k0": 1.480, "d1": 1.052})
+    check("A2 trial row: family book, challenger hash 1faa343535 (gm-2.2.1), note names panel, parent and verdict",
+          tr["family"] == "book" and tr["hash"] == A2.CHA_HASH == CF.cfg_hash(CF.A2_CHALLENGER) == "1faa343535" and
+          "e7f98d4439fccf91" in tr["note"] and A2.INC_HASH in tr["note"] and res["verdict"] in tr["note"], tr)
+    check("A2 registered constants: incumbent hash 77374d7bef = A1_INCUMBENT under gm-2.2.1",
+          CF.cfg_hash(CF.A1_INCUMBENT) == A2.INC_HASH == "77374d7bef")
+
+    # ---- as-run values from the gm_a1_v2 report (gm-2.2.1 item 4c)
+    def a1rep(path, pid=A2.A1_PANEL_ID, done=True, drop=None):
+        L = ["=== gm_a1_v2 ===", "A1 PANEL ID %s | admitted series 4 | blocks 1,2,3" % pid,
+             "free | k1 | 1975-2010 | 432 | 1.111 | 1 | 1 | -1"]
+        for tm, v in (("k1", "1.234"), ("k0", "1.345"), ("d1", "0.987")):
+            if tm != drop:
+                L.append("all blocks (A1 panel) | %s | 1975-2010 | 432 | %s | 14.67 | 10.19 | -16.7 | +0.012 | -0.03 | 0.02"
+                         % (tm, v))
+            L.append("all blocks (A1 panel) | %s | 1990-2010 | 252 | 9.999 | 1 | 1 | -1" % tm)
+        L += ["A1 JOB DONE"] if done else []
+        with open(path, "w", encoding="utf-8") as f:
+            f.write("\n".join(L) + "\n")
+        return path
+    rp = os.path.join(tmp, "gm_a1_v2.txt")
+    v, why = A2.as_run_from_a1(rp)
+    check("A2 as-run source: a missing gm_a1_v2 report gives no values", v is None and why.startswith("missing"), why)
+    v, why = A2.as_run_from_a1(a1rep(rp))
+    check("A2 as-run source: the three 1975-2010 lines of the all-blocks arm are read (not the free arm, not 1990-2010)",
+          v == {"k1": 1.234, "k0": 1.345, "d1": 0.987} and why == "ok", (v, why))
+    v, why = A2.as_run_from_a1(a1rep(rp, pid="f" * 64))
+    check("A2 as-run source: another A1 PANEL ID is refused", v is None and "A1 PANEL ID" in why, why)
+    v, why = A2.as_run_from_a1(a1rep(rp, done=False))
+    check("A2 as-run source: a report without 'A1 JOB DONE' is refused", v is None and "JOB DONE" in why, why)
+    v, why = A2.as_run_from_a1(a1rep(rp, drop="d1"))
+    check("A2 as-run source: a missing timing line is refused", v is None and "d1" in why, why)
 
     # ---- the job in the PC layout
     import a1_panel_smoke as A1S
@@ -287,11 +314,25 @@ def _run(check, tmp):
     def go():
         q = subprocess.run([sys.executable, job], cwd=loc, env=env, capture_output=True, text=True, timeout=600)
         return q.stdout, q.returncode, q.stderr
+    o0, rc0, err0 = go()
+    check("A2 job (PC layout): no gm_a1_v2 report -> STOP before the store is opened",
+          o0.count("PASS lib ") == 6 and "FAIL A1 report gm_a1_v2.txt: missing" in o0 and
+          "STOP: the gm_a1_v2 report is not usable" in o0 and "lock id" not in o0, (o0 + err0)[-600:])
+    os.makedirs(os.path.join(loc, "results"))
+    a1rep(os.path.join(loc, "results", "gm_a1_v2.txt"))
     o, rc, err = go()
-    check("A2 job (PC layout): gm code, 5 lib files and the trial log PASS; a non-LOCK_v2 store -> STOP before any "
-          "value is read", "PASS gm code vs reference" in o and o.count("PASS lib ") == 6 and
+    check("A2 job (PC layout): gm code, 5 lib files, the trial log and the gm_a1_v2 report PASS; a non-LOCK_v2 store -> "
+          "STOP before any value is read", "PASS gm code vs reference" in o and o.count("PASS lib ") == 6 and
+          "PASS A1 report gm_a1_v2.txt: ok | as run d1 0.987, k0 1.345, k1 1.234" in o and
           "FAIL Bloomberg store lock id" in o and "STOP: the Bloomberg store is not LOCK_v2 (nothing read)" in o and
           rc == 0, (o + err)[-800:])
+    q = subprocess.run([sys.executable, os.path.join(bq, "jobs", "gm_a1_v2.py")], cwd=loc, env=env,
+                       capture_output=True, text=True, timeout=600)
+    check("A1 rerun job gm_a1_v2 (PC layout): gm code, 4 lib files and the gm-2.2.1 engine_ref.json PASS; a "
+          "non-LOCK_v2 store -> STOP before any value is read",
+          "=== gm_a1_v2 ===" in q.stdout and "PASS gm code vs reference" in q.stdout and
+          q.stdout.count("PASS lib ") == 5 and "PASS lib engine_ref.json" in q.stdout and
+          "STOP: the Bloomberg store is not LOCK_v2 (nothing read)" in q.stdout, (q.stdout + q.stderr)[-800:])
     with open(os.path.join(lib, "a2_batch.py"), "a") as f:
         f.write("\n# changed\n")
     o2, rc2, err2 = go()

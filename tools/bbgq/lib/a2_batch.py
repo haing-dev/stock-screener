@@ -2,9 +2,9 @@
 "A2: Batch A2, version grids, hygiene H1-H4" (2026-11-27, before this code). Runs where the A1 panel can be built (the
 user's PC: the A1 panel holds Bloomberg values); tested in the cloud on synthetic panels only.
 
-Arms: incumbent = config.A1_INCUMBENT (465b5ecd4f) as run (old code path, no grid); challenger = config.A2_CHALLENGER
-(a5b83bdf45, grids: Trend 16, Economic trend 2, Carry 2, Value 2). Both on the A1 panel (id e7f98d44...), engine
-gm-2.2.0, design months only.
+Arms: incumbent = config.A1_INCUMBENT (77374d7bef) as run (old code path, no grid); challenger = config.A2_CHALLENGER
+(1faa343535, grids: Trend 16, Economic trend 2, Carry 2, Value 2). Both on the A1 panel (id e7f98d44...), engine
+gm-2.2.1, design months only.
 Decisive (CHANGES A2 item 3): at k = 1 on the pooled window 1975-01..2010-12, H1 = one-sided 95% lower bound of dSR
 (gm.stats.paired_sr_test) > -0.10 and H3 = test 5 (gm.stats.tail_test). PASS = H1 and H3 -> A2-final = challenger;
 FAIL -> A2-final = A1_INCUMBENT (no averaging, no cell picked). H2 (double costs) reported; no Holm.
@@ -12,7 +12,7 @@ Reported (CHANGES A2 item 4 a-m): see report(). Nothing here prints a data value
 60 months, pass / fail, counts and ids only (tools/bbgq/README.md export whitelist).
 
 API
-  A1_PANEL_ID, AS_RUN                       registered ids / the incumbent as run in the A1 report
+  A1_PANEL_ID, as_run_from_a1(path)       registered id / the incumbent as run, read from the gm_a1_v2 report
   check_panel_id(a1), compare_saved(work, a1)   the A1 panel checks of the job
   selection_inflation(path)                 7.8 item 2 from a trial log
   books(R, D, S, days, cfg)                 one config at k = 1 / k = 0 / one-month delay, single and double costs
@@ -31,12 +31,12 @@ import os
 import numpy as np
 import pandas as pd
 
-VERSION = "a2_batch-1.0.0"
+VERSION = "a2_batch-1.1.0"   # 1.1.0 (gm-2.2.1 fix): as-run values read from the gm_a1_v2 report; CM-only cm_aqr_ew
 A1_PANEL_ID = "e7f98d4439fccf91f3451bc4b9e78079e3bc2cc2452931363b28520460b6cb43"   # gm/CHANGES.md A1 RUN
 LOCK_V2 = "d85a46cb2853646b24796f294f3ccab1d1507188c402e978fd59f5196ea41fc9"
-INC_HASH, CHA_HASH = "465b5ecd4f", "a5b83bdf45"
-AS_RUN = {"k1": 1.439, "k0": 1.480, "d1": 1.052}     # A1 report, all-blocks arm, net Sharpe 1975-2010 (CHANGES A2 item 7)
-TRIALS_SHA = "dd10359e3c1cec49640f3df054df8c2da28baf81ec887d2db258c72b2ea81198"   # CHANGES A2 item 4l
+INC_HASH, CHA_HASH = "77374d7bef", "1faa343535"     # gm-2.2.1 names (gm/CHANGES.md gm-2.2.1 item 3)
+A1_REPORT = "gm_a1_v2.txt"   # the A1 rerun under gm-2.2.1: source of the incumbent's as-run values (gm-2.2.1 item 4c)
+TRIALS_SHA = "2b80e2f9b255b05e839f6a6edcafa844aa67c161423d4966d99a141e4e178a36"   # A2 item 4l, with the gm-2.2.1 fix rows
 DESIGN_END = pd.Period("2010-12", "M")
 WIN = ("1975-01", "2010-12")
 ERAS = (("1975-2010", "1975-01", "2010-12"), ("1975-89", "1975-01", "1989-12"), ("1990-2010", "1990-01", "2010-12"))
@@ -91,6 +91,30 @@ def _same_frame(a, b):
         return False
     x, y = a.values.astype(float), b.values.astype(float)
     return bool(np.array_equal(np.isnan(x), np.isnan(y)) and np.array_equal(x[~np.isnan(x)], y[~np.isnan(y)]))
+
+
+def as_run_from_a1(path, want_id=A1_PANEL_ID):
+    """gm-2.2.1 item 4c: the incumbent's as-run net Sharpe ratios 1975-2010 (k1, k0, d1) from the A1 report (job
+    gm_a1_v2), lines "all blocks (A1 panel)... | k1 | 1975-2010 | n | SR | ...". -> (dict or None, reason). None when the
+    file is missing, has no "A1 JOB DONE", names another A1 PANEL ID than the registered one, or lacks a line."""
+    if not os.path.exists(path):
+        return None, "missing (%s)" % os.path.basename(path)
+    with open(path, encoding="utf-8", errors="replace") as f:
+        lines = f.read().splitlines()
+    if not any(x.strip() == "A1 JOB DONE" for x in lines):
+        return None, "no 'A1 JOB DONE' line"
+    ids = [x.split()[3] for x in lines if x.startswith("A1 PANEL ID ") and len(x.split()) > 3]
+    if len(ids) != 1 or ids[0] != want_id:
+        return None, "A1 PANEL ID %s, registered %s" % (",".join(i[:16] for i in ids) or "none", want_id[:16])
+    out = {}
+    for x in lines:
+        p = [q.strip() for q in x.split("|")]
+        if len(p) >= 5 and p[0].startswith("all blocks (A1 panel)") and p[1] in ("k1", "k0", "d1") and \
+                p[2] == "1975-2010":
+            out[p[1]] = float(p[4])
+    if set(out) != {"k1", "k0", "d1"}:
+        return None, "lines missing: %s" % ", ".join(sorted({"k1", "k0", "d1"} - set(out)))
+    return out, "ok"
 
 
 def file_sha(path):
@@ -257,8 +281,8 @@ def trend_raw_parts(R, cfg, D, S):
         raw, avg, rel = [], [], []
         for X, kind, vol_v in vers:
             X = X.reindex(index=R.index)
-            cols = [k for k in X.columns if k.startswith(pre) and k in R and k != "cm_aqr_ew" or
-                    (k == "cm_aqr_ew" and k in X.columns)]
+            cols = [k for k in X.columns if (k.startswith(pre) and k in R and k != "cm_aqr_ew") or
+                    (k == "cm_aqr_ew" and c == "CM" and k in X.columns)]        # gm-2.2.1: CM block only
             cols = [k for k in cols if k in R.columns]
             if not cols:
                 continue

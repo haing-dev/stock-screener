@@ -9,14 +9,17 @@ on the PC.
    build, all blocks), extension-only asserted, its id checked against the registered A1 PANEL ID
    e7f98d4439fccf91f3451bc4b9e78079e3bc2cc2452931363b28520460b6cb43 and compared with work\\a1\\a1_panel_e7f98d4439fc.pkl
    when that file exists (STOP on any difference).
-3. The registered A2 report (a2_batch.report): the incumbent as run is checked against the A1 report first (STOP on a
+   The incumbent's as-run values come from local\\results\\gm_a1_v2.txt (the A1 rerun under gm-2.2.1; gm/CHANGES.md
+   gm-2.2.1 item 4c): STOP if the file is missing, has no "A1 JOB DONE", names another A1 PANEL ID or lacks one of the
+   three "all blocks (A1 panel) | k1 / k0 / d1 | 1975-2010" lines.
+3. The registered A2 report (a2_batch.report): the incumbent as run is checked against those values first (STOP on a
    difference); decisive H1 / H3 at k = 1 on 1975-01..2010-12; the reported lines (k = 0, one-month delay, eras, books,
    versions, pods, classes, tranches, Trend split, carry / price, Value and Economic trend next to Trend, flagged share,
    P4, fragility, selection inflation, knobs); the A2 VERDICT line. Summary statistics over >= 60 months only.
 4. TRIAL ROW (gm/trials.csv family "book") for the coordinator to log.
-Needs: lib\\gm\\ (gm-2.2.0), lib\\gm_engine.py, lib\\bbgdata.py, lib\\bbg_panel.py, lib\\a1_panel.py, lib\\a2_batch.py,
+Needs: lib\\gm\\ (gm-2.2.1), lib\\gm_engine.py, lib\\bbgdata.py, lib\\bbg_panel.py, lib\\a1_panel.py, lib\\a2_batch.py,
 lib\\engine_ref.json, lib\\live_sources.csv, lib\\untouched_markets.csv, work\\bbg\\ (LOCK_v2 store),
-work\\free\\gm_free_inputs.zip; work\\a1\\ (optional: the A1 panel file)."""
+work\\free\\gm_free_inputs.zip; results\\gm_a1_v2.txt; work\\a1\\ (optional: the A1 panel file)."""
 import os
 import sys
 
@@ -34,7 +37,7 @@ LIB = os.path.join(os.getcwd(), "lib")
 print("=== gm_a2_v1 ===")
 
 # the registered build of the lib files (A2_BUILD hash table; gm/CHANGES.md A2 item 7)
-LIB_SHA = {"a2_batch.py": "39b7f10cc9dce5b12e0687bd52e0b9d94c864be2e0846f81dc71f2fbf7dd1a1d",
+LIB_SHA = {"a2_batch.py": "87b24d8f558da20f6b5403d67006629b87edf45cea2d7e36cfa71605b014797b",
            "a1_panel.py": "eb9ef3f7fbd12760e174f9ef1df8573890bed6ca8d36f7d4e5c63eadd822ebb5",
            "gm_engine.py": "ac43a33cd8943719ba0efb9bb246473c7bbf59018a6d3b7398f64520eeebd721",
            "bbg_panel.py": "e0b67a42793e67c129ec8a6c3ed2082390933ea9317898b59b8854387ecf1dcd",
@@ -100,6 +103,12 @@ try:
                                                                 A2.TRIALS_SHA[:16]))
     if got != A2.TRIALS_SHA:
         stop("the trial log differs from the registered one (selection inflation, CHANGES A2 item 4l)")
+    a1rep = os.environ.get("A1_REPORT", os.path.join(os.getcwd(), "results", A2.A1_REPORT))
+    as_run, why = A2.as_run_from_a1(a1rep)
+    print("%s A1 report %s: %s%s" % ("PASS" if as_run else "FAIL", A2.A1_REPORT, why, "" if not as_run else
+                                     " | as run " + ", ".join("%s %.3f" % kv for kv in sorted(as_run.items()))))
+    if not as_run:
+        stop("the gm_a1_v2 report is not usable (%s): queue gm_a1_v2 first" % why)
     lock = bbgdata.Panel(WORK)
     print("%s Bloomberg store lock id %s | registered LOCK_v2 %s" % ("PASS" if lock.lock_id == A1.LOCK_V2 else "FAIL",
                                                                      lock.lock_id, A1.LOCK_V2))
@@ -158,7 +167,7 @@ except Exception as e:  # noqa: BLE001
 # ---- 3. the registered A2 report
 try:
     t = time.time()
-    res = A2.report(a1["R"], free["D"], a1["S"], free["gspc"], out=print, as_run=A2.AS_RUN,
+    res = A2.report(a1["R"], free["D"], a1["S"], free["gspc"], out=print, as_run=as_run,
                     trials_path=os.path.join(gm_dir, "trials.csv"))
     print("report %.0fs" % (time.time() - t))
 except A2.AsRunMismatch:
