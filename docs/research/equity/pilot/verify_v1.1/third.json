@@ -1,0 +1,207 @@
+[
+ {
+  "tid": "T01",
+  "answer": "not_rule",
+  "why": "Definition of margin of safety; names no decision"
+ },
+ {
+  "tid": "T02",
+  "answer": "rule",
+  "why": "His answer: in volatility, switch lower quality into higher quality"
+ },
+ {
+  "tid": "T03",
+  "answer": "not_rule",
+  "why": "General advice on attitude, no decision named"
+ },
+ {
+  "tid": "T04",
+  "answer": "not_rule",
+  "why": "General belief that market timing fails"
+ },
+ {
+  "tid": "T05",
+  "answer": "rule",
+  "why": "What he buys: dominant natural monopolies or oligopolies"
+ },
+ {
+  "tid": "T06",
+  "answer": "not_rule",
+  "why": "Observation on idea fall-off; the limit is only in context"
+ },
+ {
+  "tid": "T07",
+  "answer": "not_rule",
+  "why": "Self-description of culture, no decision"
+ },
+ {
+  "tid": "T08",
+  "answer": "not_rule",
+  "why": "Current cash level, a dated state not a practice"
+ },
+ {
+  "tid": "T09",
+  "answer": "not_rule",
+  "why": "Team size self-description, no investment decision"
+ },
+ {
+  "tid": "T10",
+  "answer": "not_rule",
+  "why": "General belief about pricing power"
+ },
+ {
+  "tid": "T11",
+  "answer": "not_rule",
+  "why": "Belief about SPACs and IPOs"
+ },
+ {
+  "tid": "T12",
+  "answer": "not_rule",
+  "why": "Criticism of others plus general advice"
+ },
+ {
+  "tid": "T13",
+  "answer": "not_rule",
+  "why": "Belief about team size, no investment decision"
+ },
+ {
+  "tid": "T14",
+  "answer": "rule",
+  "why": "Firm invests only in natural monopolies or oligopolies"
+ },
+ {
+  "tid": "T15",
+  "answer": "not_rule",
+  "why": "Ideal he says is not reality, not his practice"
+ },
+ {
+  "tid": "T16",
+  "answer": "not_rule",
+  "why": "General advice about intrinsic value"
+ },
+ {
+  "tid": "T17",
+  "answer": "not_rule",
+  "why": "Vague principle, no concrete decision named"
+ },
+ {
+  "tid": "T18",
+  "answer": "not_rule",
+  "why": "Self-description, no decision named"
+ },
+ {
+  "tid": "T19",
+  "answer": "rule",
+  "why": "Confirms poor capital allocation (acquisitions) as a sell signal"
+ },
+ {
+  "tid": "T20",
+  "answer": "not_rule",
+  "why": "General lesson and advice for most people"
+ },
+ {
+  "tid": "T21",
+  "answer": "not_rule",
+  "why": "Belief about inflation protection, phrased generally"
+ },
+ {
+  "tid": "T22",
+  "answer": "not_rule",
+  "why": "Definition of a quality business"
+ },
+ {
+  "tid": "T23",
+  "answer": "not_rule",
+  "why": "View on AI industry, no explicit decision"
+ },
+ {
+  "tid": "T24",
+  "answer": "rule",
+  "why": "Their test: earnings-release worry means do not own"
+ },
+ {
+  "tid": "T25",
+  "answer": "not_rule",
+  "why": "General belief about waiting for pitches"
+ },
+ {
+  "tid": "T26",
+  "answer": "rule",
+  "why": "Research practice: follow companies for years before buying"
+ },
+ {
+  "tid": "T27",
+  "answer": "not_rule",
+  "why": "Self-description of edge, no decision"
+ },
+ {
+  "tid": "T28",
+  "answer": "not_rule",
+  "why": "Self-description, no decision named"
+ },
+ {
+  "tid": "T29",
+  "answer": "not_rule",
+  "why": "General remark on management meetings"
+ },
+ {
+  "tid": "T30",
+  "answer": "rule",
+  "why": "Research practice: screens not used to find companies"
+ },
+ {
+  "tid": "T31",
+  "answer": "not_rule",
+  "why": "Self-description of interests"
+ },
+ {
+  "tid": "T32",
+  "answer": "rule",
+  "why": "Serial acquirers are uninvestable for them"
+ },
+ {
+  "tid": "T33",
+  "answer": "not_rule",
+  "why": "Stated priority, names no decision"
+ },
+ {
+  "tid": "T34",
+  "answer": "not_rule",
+  "why": "Advice to others about market timing"
+ },
+ {
+  "tid": "T35",
+  "answer": "not_rule",
+  "why": "General belief about concentration and drawdowns"
+ },
+ {
+  "tid": "T36",
+  "answer": "not_rule",
+  "why": "Case-specific Amazon thesis"
+ },
+ {
+  "tid": "T37",
+  "answer": "not_rule",
+  "why": "Definition of quality, no decision"
+ },
+ {
+  "tid": "T38",
+  "answer": "rule",
+  "why": "Buy criterion: faster growth plus predictability"
+ },
+ {
+  "tid": "T39",
+  "answer": "rule",
+  "why": "He keeps fixed buy/sell price lines"
+ },
+ {
+  "tid": "T40",
+  "answer": "not_rule",
+  "why": "Objective self-description, no decision"
+ },
+ {
+  "tid": "T41",
+  "answer": "not_rule",
+  "why": "Belief about buybacks as capital use"
+ }
+]

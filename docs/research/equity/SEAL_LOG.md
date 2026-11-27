@@ -78,3 +78,4 @@ conviction holdings job (R2) will be the fourth, with its code hash entered befo
 - 2026-11-23: eq_rec_v2 decisive (eq_rec_v2_report.txt). A12 item 8 (1-point margin; user picks Hohn, Sosin, Pilecki). eq_rec 1.1.0 (code 6681e2b8...) adds scan(); job eq_rec_scan_v1 queued (no new pull). Lock 97493cf7...
 - 2026-11-27: A13: Kantesaria pilot reading; blind check v1 FAIL (pilot/verify/SCORE_v1.md); spec v1.1 after seeing the disagreements; re-extraction. No price, return or 13F read.
 - 2026-11-27: blind check v1.1 FAIL (pilot/verify_v1.1/SCORE_v1.1.md); Kantesaria reading stopped per A13 item 4 pending the user. No price, return or 13F read.
+- 2026-11-27: A13 item 6 (user): agreement bars reported, not stops; agreed rules + third reading of 41 disputes.

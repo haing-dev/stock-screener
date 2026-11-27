@@ -487,3 +487,8 @@ as such. Replaces R1.1 (record); R1.2 (material) and R1.3 (screenability) stay.
    are first reader "rule" vs verifier "principle" (advice phrased "you should" or a self-description with no named
    decision); computable splits are mostly no/yes vs proxy. Per item 4 the reading of this file stops here; the
    next step is the user's choice. Nothing downstream (card, recipe, recall) has been built.
+6. **User decision after v1.1 (2026-11-27).** The user chose to keep agreed rules: the 90% / 85% agreement bars are
+   reported, not stops, for this file (the planted test, 10 of 10, stays decisive). A claim is a rule only if both
+   readers call it rule-like, or a third reader on the quote alone does where they split (the A10 rule). Where the two
+   readers split on computable, the weaker tag is used (no < proxy < yes). Claims the first reader did not tag
+   rule-like cannot become rules. Logged as a change of the A10 gate, made after seeing both results.
