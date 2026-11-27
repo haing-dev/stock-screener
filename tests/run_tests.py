@@ -1013,6 +1013,11 @@ print("\nGlobal Macro Book (gm-2.2.0 X1 / E13)")
 import gm_x1_smoke  # noqa: E402
 gm_x1_smoke.run(check)
 
+# Global Macro Book (gm/): gm-2.2.1 fix, cm_aqr_ew a Trend market of the CM block only (gm/CHANGES.md), synthetic data
+print("\nGlobal Macro Book (gm-2.2.1 class blocks)")
+import gm_class_smoke  # noqa: E402
+gm_class_smoke.run(check)
+
 # Batch A1 data swap (tools/bbgq/lib/a1_panel.py, job gm_a1_v1; gm/CHANGES.md data entry A1): mock Bloomberg stores,
 # synthetic free inputs (extension only, correlation gate, copy / cut / held back, seal, panel id, no raw value printed)
 print("\nBatch A1 data swap (a1_panel 1.0.0, mock stores)")

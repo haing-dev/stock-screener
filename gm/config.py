@@ -3,9 +3,9 @@
 A config is a plain dict. `book.run(R, cfg=...)` reads only these keys, so a variant is a changed copy of a config
 (`variant(BASE, trend={"kind": "cont"})`) and every trial is reproducible from its config (gm/trials.py logs it).
 
-BASE = gm-1.2.3 (the live paper book; gm-1.2.0 with the registered input-layer look-ahead fixes C1-C4, gm/CHANGES.md
+BASE = gm-1.2.4 (the live paper book; gm-1.2.0 with the registered input-layer look-ahead fixes C1-C4, gm/CHANGES.md
 2026-11-11, without the doubled US 2-year market, 2026-11-22, and with the fix version E1-E5, 2026-11-24).
-CANDIDATE = the gm-2.0.3 candidate (gm-2.0 + the same changes), frozen only after the Bloomberg data
+CANDIDATE = the gm-2.0.4 candidate (gm-2.0 + the same changes; gm-2.2.1 fix: cm_aqr_ew in the CM Trend block only), frozen only after the Bloomberg data
 and the decisions in docs/research/global_macro/gap_review_crosscheck_2026-10-31.md.
 """
 import copy
@@ -13,7 +13,7 @@ import hashlib
 import json
 
 BASE = {
-    "name": "gm-1.2.3",
+    "name": "gm-1.2.4",
     # family risk shares (sum 1)
     "family_w": {"trend": 0.30, "econ": 0.30, "carry": 0.20, "value": 0.15, "xsmom": 0.05},
     # price trend: 'sign' = mean of sign(n-month excess return); 'cont' = mean of clip(z_n, -cap, cap) / cap, where
@@ -60,7 +60,7 @@ def cfg_hash(cfg):
     return hashlib.sha1(json.dumps(cfg, sort_keys=True, default=list).encode()).hexdigest()[:10]
 
 
-CANDIDATE = variant(BASE, name="gm-2.0.3-candidate",
+CANDIDATE = variant(BASE, name="gm-2.0.4-candidate",
                     family_w={"trend": 0.45, "econ": 0.15, "carry": 0.25, "value": 0.15, "xsmom": 0.0},
                     vol={"model": "hybrid"})
 
@@ -100,7 +100,8 @@ SEAL_END = "2010-12-31"
 # ---------------------------------------------------------------------------------------------------------------------
 # gm-2.1.0 feature version (registered 2026-11-24, gm/CHANGES.md; TESTING_PROTOCOL 7.3, 7.4 E6-E11 and E14, 7.7).
 # Nothing here changes BASE or CANDIDATE at k = 0: every new key below is absent from them.
-ENGINE_VERSION = "gm-2.2.0"       # gm-2.2.0 (2026-11-27): E13 X1 seasonal adjustment flag; A1 data path (E15)
+ENGINE_VERSION = "gm-2.2.1"       # gm-2.2.0 (2026-11-27): E13 X1 seasonal adjustment flag; A1 data path (E15);
+#                                   gm-2.2.1 (2026-11-27): fix, cm_aqr_ew a Trend market of the CM block only
 
 # E13 (gm-2.2.0, gm/CHANGES.md "X1 outcome", 2026-11-27): X1's gate opened for these energy markets (X1 run
 # docs/research/batches/X1_2026-11-27.txt), so their carry is seasonally adjusted in both Carry versions
@@ -109,7 +110,7 @@ ENGINE_VERSION = "gm-2.2.0"       # gm-2.2.0 (2026-11-27): E13 X1 seasonal adjus
 # programme use A1_INCUMBENT = CANDIDATE + the adjustment (TESTING_PROTOCOL 7.5 X1: "seasonally adjusted (E13)
 # before A1").
 X1_MARKETS = ("cm_natgas", "cm_gasoline")
-A1_INCUMBENT = variant(CANDIDATE, name="gm-2.0.3-candidate-x1", x1_seasonal=X1_MARKETS)
+A1_INCUMBENT = variant(CANDIDATE, name="gm-2.0.4-candidate-x1", x1_seasonal=X1_MARKETS)
 
 # E7 version grids (approved specs, section 6). Trend versions: (lookback months, shape, volatility model).
 TREND_GRID = tuple((h, shape, vm) for shape, vm in (("sign", "hybrid"), ("sign", "m36"), ("graded", "hybrid"),
@@ -118,7 +119,7 @@ ECON_GRID = ("tanh", "sign")       # SPEC_Economic_trend s6: v1 f(z) = tanh(z / 
 CARRY_GRID = ("dir", "cs")         # SPEC_Carry s6: v1 sign of carry, v2 rank in class
 VALUE_GRID = (1, 2)                # SPEC_Value s6: v1 as coded, v2 (bonds 60-month yield change, FX real-rate deviation)
 # gm-2.2.0: the A2 challenger is built on A1_INCUMBENT (SPEC_Carry s6: "X1 changes a market's signal in both versions")
-A2_CHALLENGER = variant(A1_INCUMBENT, name="gm-2.2.0-a2-challenger",
+A2_CHALLENGER = variant(A1_INCUMBENT, name="gm-2.2.1-a2-challenger",
                         grid={"trend": TREND_GRID, "econ": ECON_GRID, "carry": CARRY_GRID, "value": VALUE_GRID})
 
 # E9 component masks: (pod, class, version); "*" = every class or every version. Versions are numbered as the grids

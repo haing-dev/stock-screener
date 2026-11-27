@@ -124,8 +124,9 @@ def family_positions(R, cfg=None, daily=None, S=None, vol_days=None, components=
         X = X.reindex(index=R.index)
         pos = {}
         for c, pre in G.CLASSES.items():
-            cols = [k for k in X.columns if k.startswith(pre) and k in R and k != "cm_aqr_ew" or
-                    (k == "cm_aqr_ew" and f in ("trend",) and k in X.columns)]
+            # gm-2.2.1 fix (gm/CHANGES.md): cm_aqr_ew is a Trend market of the CM block only (SPEC_Trend s4)
+            cols = [k for k in X.columns if (k.startswith(pre) and k in R and k != "cm_aqr_ew") or
+                    (k == "cm_aqr_ew" and c == "CM" and f == "trend" and k in X.columns)]
             cols = [k for k in cols if k in R.columns]
             if not cols:
                 continue
@@ -254,8 +255,9 @@ def family_positions_v(R, cfg, daily, S, vol_days=None, score_perm=None):
             terms = []
             for X, kind, vol_v in versions:
                 X = X.reindex(index=R.index)
-                cols = [k for k in X.columns if k.startswith(pre) and k in R and k != "cm_aqr_ew" or
-                        (k == "cm_aqr_ew" and f in ("trend",) and k in X.columns)]
+                # gm-2.2.1 fix (gm/CHANGES.md): cm_aqr_ew is a Trend market of the CM block only (SPEC_Trend s4)
+                cols = [k for k in X.columns if (k.startswith(pre) and k in R and k != "cm_aqr_ew") or
+                        (k == "cm_aqr_ew" and c == "CM" and f == "trend" and k in X.columns)]
                 cols = [k for k in cols if k in R.columns]
                 if not cols:
                     continue
