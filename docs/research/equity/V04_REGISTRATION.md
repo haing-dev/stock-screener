@@ -521,3 +521,9 @@ as such. Replaces R1.1 (record); R1.2 (material) and R1.3 (screenability) stay.
     first scores kept): Zlatev 10/10, Pilecki 10/10, Hohn 6/6 (was 5/6), Stahl 6/7, Li Lu 5/5, Nygren 9/10 (pass),
     Kantesaria v1.1 10/10. No file moves from pass to fail. Nygren's remaining miss (V101, an anecdote read as a rule)
     stands.
+11. **Second scorer fix after seeing Druckenmiller (2026-11-27, logged as such).** The number-word reader of item 10
+    read "two or three hundred" as 2, 3 and 100, and 100 was one of the altered numbers, so a true value counted as a
+    miss (Druckenmiller 8 of 10). It now reads "three hundred" as 300. Rescored all (SCORE_scorer1.3.md): Zlatev 10/10,
+    Pilecki 10/10, Hohn 6/6, Stahl 6/7, Li Lu 5/5, Nygren 9/10, Druckenmiller 9/10, Sosin 6/6, Kantesaria 10/10: every
+    file passes the planted test. The remaining misses are anecdotes read as rules (Stahl 1, Nygren V101,
+    Druckenmiller V120 "I'm just not playing anything as aggressively as I used to", arguably a sizing rule).

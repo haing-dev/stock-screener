@@ -1,0 +1,17 @@
+[
+ {"tid": "T01", "answer": "not_rule", "why": "Fact about one current holding, no stated practice"},
+ {"tid": "T02", "answer": "rule", "why": "Firm does not market-time; does not sell on news"},
+ {"tid": "T03", "answer": "not_rule", "why": "Describes value range for one stock, no decision"},
+ {"tid": "T04", "answer": "not_rule", "why": "Comfort about one case; scenario practice not stated generally"},
+ {"tid": "T05", "answer": "rule", "why": "Research practice: get management off pitch book in meetings"},
+ {"tid": "T06", "answer": "not_rule", "why": "General concern about management mistakes, no decision named"},
+ {"tid": "T07", "answer": "rule", "why": "Standard devil's-advocate review process for underperforming names"},
+ {"tid": "T08", "answer": "rule", "why": "Trim positions once weighting doubles"},
+ {"tid": "T09", "answer": "rule", "why": "Sell names that held up, recycle into attractive ones"},
+ {"tid": "T10", "answer": "rule", "why": "Buys traditional businesses with hidden disruptor optionality"},
+ {"tid": "T11", "answer": "not_rule", "why": "Framing of the fund's purpose, no decision named"},
+ {"tid": "T12", "answer": "rule", "why": "Requires both undervaluation and exceptional management"},
+ {"tid": "T13", "answer": "rule", "why": "Tax management: harvests losses to lower tax basis"},
+ {"tid": "T14", "answer": "rule", "why": "Sells at value target, recycles into cheaper stocks"},
+ {"tid": "T15", "answer": "rule", "why": "Buys only at significant discount to business value"}
+]

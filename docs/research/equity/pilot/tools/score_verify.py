@@ -20,7 +20,18 @@ def nums(v):
     """digits and (v1.2, A13 item 10) number words; a verifier copies numbers as stated, often in words"""
     v = v or ""
     out = [float(x) for x in re.findall(r"\d+(?:\.\d+)?", v)]
-    out += [float(WORDS[w]) for w in re.findall(r"[a-z]+", v.lower()) if w in WORDS]
+    words = re.findall(r"[a-z]+", v.lower())
+    i = 0
+    while i < len(words):  # v1.3 (A13 item 11): "three hundred" = 300, not 3 and 100
+        w = words[i]
+        if w in WORDS and w not in ("hundred", "half", "third", "quarter"):
+            x = WORDS[w]
+            if i + 1 < len(words) and words[i + 1] == "hundred":
+                x, i = x * 100, i + 1
+            out.append(float(x))
+        elif w in ("half", "third", "quarter"):
+            out.append(float(WORDS[w]))
+        i += 1
     return sorted(out)
 
 
