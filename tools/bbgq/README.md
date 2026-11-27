@@ -160,7 +160,7 @@ E3 metadata: `cpi_freq_meta.py` -> results/cpi_freq_meta_2026-11-24.txt.
 - Tests: `python3 tests/a2_batch_smoke.py` (synthetic panels, mock stores; also in tests/run_tests.py).
 
 ## Diagnostics after A2 (gm-2.2.1, 2026-11-27; gm/CHANGES.md "Diagnostics after A2"; TESTING_PROTOCOL 7.6 step 4)
-- `lib/diag_a2.py` 1.0.0: the 7.5 order item 2 diagnostics on the A2-final book (A1_INCUMBENT 77374d7bef, A1 panel,
+- `lib/diag_a2.py` 1.0.1 (CHECK_DIAG corrections): the 7.5 order item 2 diagnostics on the A2-final book (A1_INCUMBENT 77374d7bef, A1 panel,
   k = 1): D1 structural half (PCA of Trend P&L per market), D2 non-signal turnover and cost drag, D3 forward volatility
   by state (to 2009-12), D4 / S1 five-state equity tables and the crisis table, D5 Economic trend by delay, D6 trend
   Sharpe per unit of market move by era, X2 Value income / price split, M1 the P4 market set; the specs' falsifier

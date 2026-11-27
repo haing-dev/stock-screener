@@ -162,6 +162,46 @@ def _run(check, tmp):
     check("D2 gate: open only if both eras >= 0.20", r2["open"] == all(v["share"] >= 0.20 for v in r2["eras"].values()))
     cd, cdd = DG.cost_drag(bk)
     check("D2 cost drag: per-market costs sum to the book's cost", cdd < 1e-12, cdd)
+    k = "fx_jpy"
+    pos_ = bk["pos"]
+    c_ = (pos_[k].diff().abs() * B.cost_bp(k)[0] / 1e4).fillna(0) + \
+        (pos_[k].abs() * B.cost_bp(k)[0] / 1e4 * 2 * B.cost_bp(k)[1] / 12).fillna(0)
+    held_ = ((pos_[k].abs() > 0) & pos_[k].notna()).shift(1, fill_value=False)
+    xx_ = c_.shift(1)[held_.values].loc["1975-01":"2010-12"]
+    check("D2 cost drag (W2): a decision month's cost is charged in the next month, months 1975-01..2010-12 with a held "
+          "position", abs(cd[k][0] - xx_.mean() * 12 * 1e4) < 1e-9 and cd[k][1] == len(xx_), (cd[k], len(xx_)))
+    p2 = rb["pos"].copy()
+    p2.loc[pd.Period("2010-12", "M")] = p2.loc[pd.Period("2010-12", "M")] * 3.0
+    rb2 = dict(rb, pos=p2)
+    c2_ = DG.d2(rb2, p2)
+    check("D2 (W1): the 2010-12 decision is not a trade month (tripling its positions changes no era share)",
+          DG.D2_ERAS[-1][2] == "2010-11" and all(abs(c2_["eras"][e]["share"] - r2["eras"][e]["share"]) < 1e-12
+                                                 for e in r2["eras"]), (c2_["eras"], r2["eras"]))
+    Ralt = R.copy()
+    Ralt["cm_cocoa"] = R["cm_gold"]
+    try:
+        DG.rebuild(Ralt, D, S, cfg)
+        refused = False
+    except ValueError:
+        refused = True
+    check("D2 (W5): the rebuild refuses a panel with an alternative-commodity column", refused)
+    orig_rebuild = DG.rebuild
+
+    def broken(*a, **kw):
+        out = orig_rebuild(*a, **kw)
+        out["pos"] = out["pos"] * 1.001
+        return out
+    DG.rebuild = broken
+    try:
+        fl = []
+        rf = DG.report(R, D, S, gspc, out=fl.append, ET=ET)
+    finally:
+        DG.rebuild = orig_rebuild
+    gl = [x for x in fl if x.startswith("D2 GATE")]
+    check("D2 (M2): a failed rebuild prints FAIL and 'not gated', and the recorded outcome is not gated (not closed)",
+          any(x.startswith("D2 | rebuild") and x.endswith("FAIL") for x in fl) and
+          gl == ["D2 GATE | not gated (rebuild FAIL) | no A3 buffer item decision"] and
+          rf["gates"]["D2"] == "not gated (rebuild FAIL)" and "D2: not gated" in fl[-1], (gl, rf["gates"]["D2"]))
 
     # ---- D3
     rng = np.random.default_rng(3)
@@ -173,6 +213,19 @@ def _run(check, tmp):
     check("D3: a planted +4 points in the named state opens the split; no difference keeps it closed",
           hi["open"] and abs(hi["diff"] - 0.04) < 0.005 and not lo["open"], (hi, lo))
     r3 = res["D3"]
+    d3l = [x for x in lines if x.startswith("D3 | (")]
+    sa_, sb_ = r3["corr"], r3["trend"]
+    small_b = min(sb_["n_state"], sb_["n"] - sb_["n_state"]) < 60
+    check("D3 (M1): a split with a group under 60 months prints its difference and bound as sign only; a split with "
+          "both groups >= 60 prints them in points; empty resamples printed",
+          small_b and "difference sign " in d3l[1] and "bound sign " in d3l[1] and "pts" not in d3l[1] and
+          min(sa_["n_state"], sa_["n"] - sa_["n_state"]) >= 60 and d3l[0].count(" pts") == 2 and
+          all("resamples without a state or other month" in x for x in d3l), d3l)
+    tiny = pd.Series(False, index=ix)
+    tiny.iloc[::20] = True
+    sm = DG.d3_split(fv + 0.04 * tiny.astype(float), tiny)
+    check("D3 (W6): a 21-month state is gated on full precision and counts its empty resamples",
+          sm["n_state"] == 21 and sm["open"] and sm["empty"] >= 0, sm)
     check("D3: state months end at 2009-12", r3["last"] is not None and r3["last"] <= "2009-12", r3["last"])
     fvb = DG.forward_vol(bk["net"])
     t = pd.Period("1990-03", "M")
@@ -263,6 +316,12 @@ def _run(check, tmp):
     check("M1: the two-market form removes both betas (correlations near 0)",
           abs(wc.corr(m1_)) < 0.1 and abs(wc.corr(m2_)) < 0.1 and abs(r.corr(m2_)) > 0.3)
     rm = res["M1"]
+    wb1 = A2.p4(bk["net"], R["eq_us_spx"])
+    wb2 = DG.p4_multi(bk["net"], R[["eq_us_spx", "bd_us_10y"]])
+    jm = pd.concat([ST.cut(x_, "1990-01", "2010-12") for x_ in (bk["net"], wb1, wb2)], axis=1).dropna()
+    check("M1 (W7): each era's Sharpe ratios are over the common months of the three series (count printed)",
+          res["M1"]["eras"]["1990-2010"]["n"] == len(jm) and
+          abs(res["M1"]["eras"]["1990-2010"]["both"] - ST.sharpe(jm.iloc[:, 2])) < 1e-12)
     check("M1 gate: both iff in either era Sharpe(both) <= Sharpe(S&P) - 0.05",
           rm["both"] == any(rm["eras"][e]["both"] <= rm["eras"][e]["spx"] - 0.05 for e in ("1978-89", "1990-2010")))
 

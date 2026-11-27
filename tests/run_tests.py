@@ -1032,7 +1032,7 @@ a2_batch_smoke.run(check)
 
 # Diagnostics after A2 (tools/bbgq/lib/diag_a2.py, job gm_diag_v1; gm/CHANGES.md "Diagnostics after A2"): synthetic
 # panels and mock stores (each diagnostic against a direct computation, gates, seal, printing whitelist, job stops)
-print("\nDiagnostics after A2 (diag_a2 1.0.0, synthetic panels)")
+print("\nDiagnostics after A2 (diag_a2 1.0.1, synthetic panels)")
 import diag_a2_smoke  # noqa: E402
 diag_a2_smoke.run(check)
 

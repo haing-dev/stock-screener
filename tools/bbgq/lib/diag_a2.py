@@ -24,7 +24,8 @@ import os
 import numpy as np
 import pandas as pd
 
-VERSION = "diag_a2-1.0.0"
+VERSION = "diag_a2-1.0.1"   # 1.0.1 (CHECK_DIAG): M1 D3 sign-only under 60 months, M2 D2 not gated on
+#                              a rebuild failure, W1 D2 trade months to 2010-11, W2 cost drag next month, W5, W6, W7
 A1_PANEL_ID = "e7f98d4439fccf91f3451bc4b9e78079e3bc2cc2452931363b28520460b6cb43"
 LOCK_V2 = "d85a46cb2853646b24796f294f3ccab1d1507188c402e978fd59f5196ea41fc9"
 ENGINE = "gm-2.2.1"
@@ -38,6 +39,7 @@ A2_REPORT = "gm_a2_v1.txt"
 WIN = ("1975-01", "2010-12")
 ERAS = (("1975-89", "1975-01", "1989-12"), ("1990-2010", "1990-01", "2010-12"))
 M1_ERAS = (("1978-89", "1978-01", "1989-12"), ("1990-2010", "1990-01", "2010-12"))
+D2_ERAS = (("1975-89", "1975-01", "1989-12"), ("1990-2010", "1990-01", "2010-11"))   # W1: the 2010-12 trade is never made
 P4_FROM = "1978-01"
 D3_END = "2009-12"
 MIN_PRINT = 60
@@ -147,6 +149,13 @@ def cell(v, n, fmt="%.2f"):
     if n >= MIN_PRINT:
         return (fmt % v) + " (%d)" % n
     return "n %d, sign %s" % (n, "+" if v > 0 else ("-" if v < 0 else "0"))
+
+
+def sign_of(v):
+    """Sign only (entry item 5 for groups under 60 months)."""
+    if v is None or v != v:
+        return "n/a"
+    return "sign " + ("+" if v > 0 else ("-" if v < 0 else "0"))
 
 
 def era_sr(r, eras=ERAS):
@@ -298,6 +307,9 @@ def rebuild(R, D, S, cfg):
     if cfg.get("grid") or cfg.get("scenario_limit") or cfg.get("cap_groups") or \
             cfg.get("within_class", "equal") != "equal":
         raise ValueError("diag_a2.rebuild: the A2-final book's form only (no grid, scenario limit, cap groups)")
+    from gm.bloomberg import ALT_COMMOD
+    if any(k in ALT_COMMOD for k in R.columns):                    # W5: their 30% cap depends on vol(t)
+        raise ValueError("diag_a2.rebuild: alternative-commodity columns present (E1 keeps them off)")
     fam, vol = B.family_positions(R, cfg, D, S)
     bw = cfg.get("block_vol_months", 36)
     terms, blocks = [], {}
@@ -359,7 +371,7 @@ def d2(rb, book_pos):
     out = {"rebuild_diff": diff, "rebuild_missing": miss, "eras": {}}
     ph, bh = held_positions(rb, "vol_scalers")
     ps, bs = held_positions(rb, "scores")
-    for lab, a_, b_ in ERAS:
+    for lab, a_, b_ in D2_ERAS:
         sel = (pos.index >= pd.Period(a_, "M")) & (pos.index <= pd.Period(b_, "M"))
         vh = (~bh & ph.notna() & pos.notna() & prev.notna())[sel]
         vs = (~bs & ps.notna() & pos.notna() & prev.notna())[sel]
@@ -385,8 +397,9 @@ def cost_drag(bk):
     em = [k for k in B.EM_EQ if k in pos.columns]
     c[em] = c[em] + (pos[em].clip(upper=0).abs() * 0.01 / 12).fillna(0)
     tot_diff = float((c.sum(axis=1) - bk["cost"]).abs().max())
+    c = c.shift(1)                       # W2: charged against the next month's return, as book.py (tc.shift(1))
     sel = (pos.index >= pd.Period(WIN[0], "M")) & (pos.index <= pd.Period(WIN[1], "M"))
-    held = (pos.abs() > 0) & pos.notna()
+    held = ((pos.abs() > 0) & pos.notna()).shift(1, fill_value=False)
     out = {}
     for k in pos.columns:
         x = c[k][sel & held[k].values]
@@ -414,7 +427,8 @@ def d3_split(fv, state):
     j = pd.concat([fv, state.astype(float)], axis=1).dropna()
     f, s = j.iloc[:, 0].values, j.iloc[:, 1].values.astype(bool)
     if s.sum() == 0 or (~s).sum() == 0:
-        return {"n": len(j), "n_state": int(s.sum()), "diff": float("nan"), "lb90": float("nan"), "open": False}
+        return {"n": len(j), "n_state": int(s.sum()), "diff": float("nan"), "lb90": float("nan"), "open": False,
+                "empty": 0}
     d = float(f[s].mean() - f[~s].mean())
     idx = boot_idx(len(j), 12)
     F, Sx = f[idx], s[idx]
@@ -422,10 +436,11 @@ def d3_split(fv, state):
     ms = np.where(ns > 0, (F * Sx).sum(axis=1) / np.where(ns > 0, ns, 1), np.nan)
     mo = np.where(no > 0, (F * ~Sx).sum(axis=1) / np.where(no > 0, no, 1), np.nan)
     db = ms - mo
+    empty = int(np.isnan(db).sum())
     db = db[~np.isnan(db)]
     lb = float(d - np.percentile(db - d, 90))
     return {"n": len(j), "n_state": int(s.sum()), "mean_state": float(f[s].mean()), "mean_other": float(f[~s].mean()),
-            "diff": d, "lb90": lb, "open": bool(d >= 0.02 and lb > 0)}
+            "diff": d, "lb90": lb, "open": bool(d >= 0.02 and lb > 0), "empty": empty}
 
 
 def d3(r, R, score_abs):
@@ -670,8 +685,8 @@ def m1(r, R):
     w2 = p4_multi(r, R[["eq_us_spx", "bd_us_10y"]])
     out = {"eras": {}}
     for lab, a, b in (("1978-2010", P4_FROM, WIN[1]),) + M1_ERAS:
-        x = [_cut(s, a, b) for s in (r, w1, w2)]
-        out["eras"][lab] = {"n": len(x[1]), "book": _sr(x[0]), "spx": _sr(x[1]), "both": _sr(x[2])}
+        j = pd.concat([_cut(s, a, b) for s in (r, w1, w2)], axis=1).dropna()     # W7: common months
+        out["eras"][lab] = {"n": len(j), "book": _sr(j.iloc[:, 0]), "spx": _sr(j.iloc[:, 1]), "both": _sr(j.iloc[:, 2])}
     out["both"] = any(out["eras"][lab]["both"] <= out["eras"][lab]["spx"] - 0.05 for lab, _a, _b in M1_ERAS)
     return out
 
@@ -825,8 +840,13 @@ def report(R, D, S, gspc, out=print, cfg=None, ET=None, facts=None):
                 lab, v["months"], cell(v["share"], v["months"], "%.3f"), cell(v["scores_share"], v["months"], "%.3f"),
                 v["left_out"]))
     r2["open"] = bool(okr and r2["open"])
-    out("D2 GATE | non-signal share >= 0.20 in both eras | %s | %s" % (
-        "OPEN" if r2["open"] else "closed", "-> A3 no-trade buffer item" if r2["open"] else "-> buffer item dropped"))
+    r2["gated"] = okr
+    if okr:
+        out("D2 GATE | non-signal share >= 0.20 in both eras (trade months to 2010-11) | %s | %s" % (
+            "OPEN" if r2["open"] else "closed", "-> A3 no-trade buffer item" if r2["open"] else
+            "-> buffer item dropped"))
+    else:
+        out("D2 GATE | not gated (rebuild FAIL) | no A3 buffer item decision")
     cd, cdd = cost_drag(bk)
     out("D2 | cost drag per market (bp of capital per year, months with a position; costs x1) | check: market costs sum "
         "to the book's cost (max diff %.1e)" % cdd)
@@ -841,9 +861,12 @@ def report(R, D, S, gspc, out=print, cfg=None, ET=None, facts=None):
         v = r3[key]
         ms = cell(v.get("mean_state", float("nan")) * 100, v["n_state"], "%.1f")
         mo = cell(v.get("mean_other", float("nan")) * 100, v["n"] - v["n_state"], "%.1f")
-        out("D3 | %s | months %d, in state %d | forward vol %%/yr: state %s, other %s | difference %+.2f pts | one-sided "
-            "90%% bound %+.2f pts | %s" % (lab, v["n"], v["n_state"], ms, mo, v["diff"] * 100, v["lb90"] * 100,
-                                           "OPEN" if v["open"] else "closed"))
+        small = min(v["n_state"], v["n"] - v["n_state"]) < MIN_PRINT      # M1: a small group's mean not recoverable
+        dd = sign_of(v["diff"]) if small else "%+.2f pts" % (v["diff"] * 100)
+        lb = sign_of(v["lb90"]) if small else "%+.2f pts" % (v["lb90"] * 100)
+        out("D3 | %s | months %d, in state %d | forward vol %%/yr: state %s, other %s | difference %s | one-sided "
+            "90%% bound %s | resamples without a state or other month %d | %s" % (
+                lab, v["n"], v["n_state"], ms, mo, dd, lb, v["empty"], "OPEN" if v["open"] else "closed"))
     out("D3 GATE | difference >= 2 points and bound > 0 in either split | %s | %s" % (
         "OPEN" if r3["open"] else "closed",
         "-> A3 faster book scaler item" if r3["open"] else "-> scaler item dropped"))
@@ -960,7 +983,8 @@ def report(R, D, S, gspc, out=print, cfg=None, ET=None, facts=None):
                 "%s %s" % (lab, cell(m * 100, n)) for lab, (m, n) in v.items())))
         out("FALSIFIER | Economic trend 3 | inflation <= 0 in both eras while the other three earn | %s" % hl(fz["E3"][1]))
     out("FALSIFIER | loss-event lines (P3) | text only; nothing computed")
-    gates = {"D1": "candidate half blocked; structural half reported", "D2": "OPEN" if r2["open"] else "closed",
+    gates = {"D1": "candidate half blocked; structural half reported",
+             "D2": ("OPEN" if r2["open"] else "closed") if r2["gated"] else "not gated (rebuild FAIL)",
              "D3": "OPEN" if r3["open"] else "closed", "D4": "Trend %s, Carry %s" % (
                  "OPEN" if r4["trend_open"] else "closed", "OPEN" if r4["carry_open"] else "closed"),
              "S1": "reported", "D5": "slow reaction" if r5["slow"] else "lasting macro state",

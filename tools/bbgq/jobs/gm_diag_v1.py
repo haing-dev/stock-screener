@@ -37,7 +37,7 @@ LIB = os.path.join(os.getcwd(), "lib")
 print("=== gm_diag_v1 ===")
 
 # the registered build of the lib files (DIAG_A2_BUILD hash table; gm/CHANGES.md "Diagnostics after A2" item 9)
-LIB_SHA = {"diag_a2.py": "b811df2b4a9ad009668856bb0a2fdd84cc03334aa5d4213e473e4165a99e9caa",
+LIB_SHA = {"diag_a2.py": "3264a5381c13b124d2566d02f263e21905f4e901680c1af7c2134f0bd558be1b",
            "a2_batch.py": "35339f673f351f43315ad3c7010ba733b6fb8990a6a41feb1ef20de324de58c6",
            "a1_panel.py": "eb9ef3f7fbd12760e174f9ef1df8573890bed6ca8d36f7d4e5c63eadd822ebb5",
            "gm_engine.py": "ac43a33cd8943719ba0efb9bb246473c7bbf59018a6d3b7398f64520eeebd721",
