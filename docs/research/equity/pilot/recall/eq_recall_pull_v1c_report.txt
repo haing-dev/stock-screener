@@ -1,0 +1,27 @@
+﻿=== WRDSQ REPORT v1.0.7 | job eq_recall_pull_v1c | 2026-11-27 15:59 | metadata and results only ===
+Trying 'wrds-pgdata.wharton.upenn.edu'...
+Loading library list...
+Done
+
+## 1. python
+eq_recall-1.0.3 pull
+reused eq_ref data sets: 24 (ref_msf, ref_dv_2008, ref_dv_2009, ref_dv_2010, ref_dv_2011, ref_dv_2012, ref_dv_2013, ref_dv_2014 ...)
+FRB table seen: frb.fx_daily (49 columns; 10-year-like: none)
+FRB table seen: frb.fx_monthly (48 columns; 10-year-like: none)
+FRB table seen: frb.rates_daily (83 columns; 10-year-like: dfii10, dgs10, dswp10, t10y2y, t10y3m, t10yie)
+FRB table seen: frb.rates_monthly (77 columns; 10-year-like: fii10, gs10, h1riflgfy10pnm, mswp10, reaintratrearat10y)
+FRB table seen: frb_all.fx_daily (49 columns; 10-year-like: none)
+FRB table seen: frb_all.fx_monthly (48 columns; 10-year-like: none)
+FRB table seen: frb_all.rates_daily (83 columns; 10-year-like: dfii10, dgs10, dswp10, t10y2y, t10y3m, t10yie)
+FRB table seen: frb_all.rates_monthly (77 columns; 10-year-like: fii10, gs10, h1riflgfy10pnm, mswp10, reaintratrearat10y)
+FRB table seen: frb_all_old.fx_daily (46 columns; 10-year-like: none)
+FRB table seen: frb_all_old.fx_monthly (45 columns; 10-year-like: none)
+FRB table seen: frb_all_old.rates_daily (64 columns; 10-year-like: d_comp_y10p, ltavg_y10p, swaps_y10, tcmii_y10, tcmnom_y10)
+FRB table seen: frb_all_old.rates_monthly (66 columns; 10-year-like: d_comp_y10p, ltavg_y10p, swaps_y10, tcmii_y10, tcmnom_y10)
+10-year Treasury: frb_all_old.rates_daily not readable ((psycopg2.errors.InsufficientPrivilege) permission denied for schema frb_all_old)
+10-year Treasury: frb_all_old.rates_monthly not readable ((psycopg2.errors.InsufficientPrivilege) permission denied for schema frb_all_old)
+10-year Treasury: no WRDS FRB table readable among 2 candidates; using the public H.15 series (FRED DGS10, embedded month-end values)
+rc_t10         rows       211  cols  3      5 s
+ALL PULLS COMPLETE
+
+=== END (11 s) ===
