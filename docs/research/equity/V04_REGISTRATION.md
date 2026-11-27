@@ -578,3 +578,9 @@ as such. Replaces R1.1 (record); R1.2 (material) and R1.3 (screenability) stay.
     research/DGS10.csv, 2026-11-01 download; 211 month-ends, none missing). Public data, not WRDS data. The pull also
     prints the FRB tables it saw (names and 10-year-like column names, metadata only). run() unchanged. Rerun as
     eq_recall_pull_v1c (only rc_t10 is pulled).
+20. **Recall result Kantesaria v1 (2026-11-27).** eq_recall_v1 (eq_recall 1.0.3; report pilot/recall/
+    eq_recall_v1_report.txt; note pilot/recall/RECALL_KANTESARIA_v1.md): RECALL GATE FAIL. Decisive form = version b
+    only (version a 18 purchases, not measurable): recall 10.3% (3 of 29), base 1.2%, lift 8.30, 90% interval 0.00 to
+    17.57; control baseline 0.56, reference-book baseline 0.55. Largest rejector: the price trigger P2|P3 (59% of
+    purchases; P2 alone 100%). No rule changed. Next as registered: one revision round (writer sees recall, base rate,
+    lift and per-criterion rejection shares only; every change cites a quote); both results logged.

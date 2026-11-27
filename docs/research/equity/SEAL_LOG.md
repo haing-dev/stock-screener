@@ -89,3 +89,4 @@ conviction holdings job (R2) will be the fourth, with its code hash entered befo
 - 2026-11-27: eq_recall_pull_v1: rc_funda, rc_fqx stored; rc_t10 failed (permission). A13 item 18: eq_recall 1.0.2 (pull fix); eq_recall_pull_v1b queued. No result yet.
 - 2026-11-27: eq_recall_pull_v1b: rc_t10 failed again (no readable FRB table). A13 item 19: eq_recall 1.0.3 (code 146a05e7..., public H.15 DGS10 fallback); eq_recall_pull_v1c queued. No result yet.
 - 2026-11-27: eq_recall_pull_v1c ALL PULLS COMPLETE (rc_t10 = public H.15 DGS10; frb.rates_daily also lists dgs10, the same series, not tried by 1.0.3's column rule). eq_recall_v1 queued (run, eq_recall 1.0.3).
+- 2026-11-27: eq_recall_v1 RAN (A13 item 20): Kantesaria recipe v1 recall gate FAIL (recall 10.3%, lift 8.30, 90% [0.00, 17.57]). First recall number seen; revision round next.
