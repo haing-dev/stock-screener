@@ -1,0 +1,806 @@
+=== metadata listing, free inputs (meta_first_dates-1.0.0, 2026-11-27 06:02 UTC) ===
+TESTING_PROTOCOL 7.6 step 2. First date with a value (month or day) and count of values up to 2010-12-31; every loader cut at 2010-12-31; inputs = the repo cache (the gm-1.2.3 reference inputs). No values.
+kind | series | first | count
+file monthly (FRED / OECD csv) | AUSLOLITONOSTSAM.csv | 1966-02 | 539
+file monthly (FRED / OECD csv) | BAA10YM.csv | 1960-01 | 612
+file monthly (FRED / OECD csv) | BRALOLITONOSTSAM.csv | 1989-01 | 264
+file monthly (FRED / OECD csv) | CANLOLITONOSTSAM.csv | 1960-01 | 612
+file monthly (FRED / OECD csv) | CHELOLITONOSTSAM.csv | 1967-02 | 527
+file monthly (FRED / OECD csv) | CHNLOLITONOSTSAM.csv | 1992-05 | 224
+file monthly (FRED / OECD csv) | CPALTT01BRM659N.csv | 1980-12 | 361
+file monthly (FRED / OECD csv) | CPALTT01CAM659N.csv | 1960-01 | 612
+file monthly (FRED / OECD csv) | CPALTT01CHM659N.csv | 1960-01 | 612
+file monthly (FRED / OECD csv) | CPALTT01CNM659N.csv | 1987-01 | 288
+file monthly (FRED / OECD csv) | CPALTT01DEM659N.csv | 1960-01 | 612
+file monthly (FRED / OECD csv) | CPALTT01FRM659N.csv | 1960-01 | 612
+file monthly (FRED / OECD csv) | CPALTT01GBM659N.csv | 1960-01 | 612
+file monthly (FRED / OECD csv) | CPALTT01INM659N.csv | 1960-01 | 612
+file monthly (FRED / OECD csv) | CPALTT01JPM659N.csv | 1960-01 | 612
+file monthly (FRED / OECD csv) | CPALTT01KRM659N.csv | 1960-01 | 612
+file monthly (FRED / OECD csv) | CPALTT01MXM659N.csv | 1969-01 | 504
+file monthly (FRED / OECD csv) | CPALTT01NOM659N.csv | 1960-01 | 612
+file monthly (FRED / OECD csv) | CPALTT01SEM659N.csv | 1960-01 | 612
+file monthly (FRED / OECD csv) | CPALTT01USM659N.csv | 1960-01 | 612
+file monthly (FRED / OECD csv) | CPALTT01ZAM659N.csv | 1960-01 | 612
+file monthly (FRED / OECD csv) | DEULOLITONOSTSAM.csv | 1961-01 | 600
+file monthly (FRED / OECD csv) | DEXBZUS.csv | 1995-01 | 192
+file daily (FRED) | DEXBZUS.csv | 1995-01-02 | 4023
+file monthly (FRED / OECD csv) | DEXCAUS.csv | 1971-01 | 480
+file daily (FRED) | DEXCAUS.csv | 1971-01-04 | 10046
+file monthly (FRED / OECD csv) | DEXCHUS.csv | 1981-01 | 360
+file daily (FRED) | DEXCHUS.csv | 1981-01-02 | 7480
+file monthly (FRED / OECD csv) | DEXHKUS.csv | 1981-01 | 360
+file daily (FRED) | DEXHKUS.csv | 1981-01-02 | 7540
+file monthly (FRED / OECD csv) | DEXINUS.csv | 1973-01 | 456
+file daily (FRED) | DEXINUS.csv | 1973-01-02 | 9532
+file monthly (FRED / OECD csv) | DEXJPUS.csv | 1971-01 | 480
+file daily (FRED) | DEXJPUS.csv | 1971-01-04 | 10034
+file monthly (FRED / OECD csv) | DEXKOUS.csv | 1981-04 | 357
+file daily (FRED) | DEXKOUS.csv | 1981-04-13 | 7426
+file monthly (FRED / OECD csv) | DEXMXUS.csv | 1993-11 | 206
+file daily (FRED) | DEXMXUS.csv | 1993-11-08 | 4308
+file monthly (FRED / OECD csv) | DEXNOUS.csv | 1971-01 | 480
+file daily (FRED) | DEXNOUS.csv | 1971-01-04 | 10039
+file monthly (FRED / OECD csv) | DEXSDUS.csv | 1971-01 | 480
+file daily (FRED) | DEXSDUS.csv | 1971-01-04 | 10039
+file monthly (FRED / OECD csv) | DEXSFUS.csv | 1980-01 | 372
+file daily (FRED) | DEXSFUS.csv | 1980-01-02 | 7783
+file monthly (FRED / OECD csv) | DEXSZUS.csv | 1971-01 | 480
+file daily (FRED) | DEXSZUS.csv | 1971-01-04 | 10040
+file monthly (FRED / OECD csv) | DEXTAUS.csv | 1983-10 | 327
+file daily (FRED) | DEXTAUS.csv | 1983-10-03 | 6553
+file monthly (FRED / OECD csv) | DEXUSAL.csv | 1971-01 | 480
+file daily (FRED) | DEXUSAL.csv | 1971-01-04 | 10033
+file monthly (FRED / OECD csv) | DEXUSEU.csv | 1999-01 | 144
+file daily (FRED) | DEXUSEU.csv | 1999-01-04 | 3019
+file monthly (FRED / OECD csv) | DEXUSNZ.csv | 1971-01 | 480
+file daily (FRED) | DEXUSNZ.csv | 1971-01-04 | 10024
+file monthly (FRED / OECD csv) | DEXUSUK.csv | 1971-01 | 480
+file daily (FRED) | DEXUSUK.csv | 1971-01-04 | 10040
+file monthly (FRED / OECD csv) | DFII10.csv | 2003-01 | 96
+file daily (FRED) | DFII10.csv | 2003-01-02 | 2003
+file monthly (FRED / OECD csv) | DGS10.csv | 1962-01 | 588
+file daily (FRED) | DGS10.csv | 1962-01-02 | 12234
+file monthly (FRED / OECD csv) | DGS2.csv | 1976-06 | 415
+file daily (FRED) | DGS2.csv | 1976-06-01 | 8642
+file monthly (FRED / OECD csv) | DGS30.csv | 1977-02 | 407
+file daily (FRED) | DGS30.csv | 1977-02-15 | 8464
+file monthly (FRED / OECD csv) | DGS5.csv | 1962-01 | 588
+file daily (FRED) | DGS5.csv | 1962-01-02 | 12234
+file daily (Yahoo) | D_000001_SS.csv | 1997-07-02 | 3265
+file daily (Yahoo) | D_BZ_F.csv | 2007-07-30 | 842
+file daily (Yahoo) | D_CT_F.csv | 2000-01-03 | 2748
+file daily (Yahoo) | D_EZA.csv | 2003-02-07 | 1990
+file daily (Yahoo) | D_GC_F.csv | 2000-08-30 | 2587
+file daily (Yahoo) | D_HG_F.csv | 2000-08-30 | 2591
+file daily (Yahoo) | D_KC_F.csv | 2000-01-03 | 2747
+file daily (Yahoo) | D_LE_F.csv | 2001-03-01 | 2456
+file daily (Yahoo) | D_PL_F.csv | 1997-10-29 | 2616
+file daily (Yahoo) | D_SB_F.csv | 2000-03-01 | 2709
+file daily (Yahoo) | D_SI_F.csv | 2000-08-30 | 2589
+file daily (Yahoo) | D_ZC_F.csv | 2000-07-17 | 2601
+file daily (Yahoo) | D_ZS_F.csv | 2000-09-15 | 2591
+file daily (Yahoo) | D_ZW_F.csv | 2000-07-17 | 2611
+file daily (Yahoo) | D__AXJO.csv | 1992-11-22 | 4584
+file daily (Yahoo) | D__BSESN.csv | 1997-07-01 | 3338
+file daily (Yahoo) | D__BVSP.csv | 1993-04-27 | 4376
+file daily (Yahoo) | D__FCHI.csv | 1990-03-01 | 5266
+file daily (Yahoo) | D__FTSE.csv | 1984-01-03 | 6823
+file daily (Yahoo) | D__GDAXI.csv | 1987-12-30 | 5806
+file daily (Yahoo) | D__GSPC.csv | 1970-01-02 | 10349
+file daily (Yahoo) | D__GSPTSE.csv | 1979-06-29 | 7914
+file daily (Yahoo) | D__HSI.csv | 1986-12-31 | 5937
+file daily (Yahoo) | D__IXIC.csv | 1971-02-05 | 10071
+file daily (Yahoo) | D__KS11.csv | 1996-12-11 | 3470
+file daily (Yahoo) | D__MXX.csv | 1991-11-08 | 4788
+file daily (Yahoo) | D__N225.csv | 1970-01-05 | 10101
+file daily (Yahoo) | D__RUT.csv | 1987-09-10 | 5879
+file daily (Yahoo) | D__STOXX50E.csv | 2007-03-30 | 943
+file daily (Yahoo) | D__TWII.csv | 1997-07-02 | 3330
+file monthly (FRED / OECD csv) | FRALOLITONOSTSAM.csv | 1966-11 | 530
+file monthly (FRED / OECD csv) | GBRLOLITONOSTSAM.csv | 1960-01 | 612
+file monthly (FRED / OECD csv) | INDLOLITONOSTSAM.csv | 1994-04 | 201
+file monthly (FRED / OECD csv) | INTDSRINM193N.csv | 1968-01 | 516
+file monthly (FRED / OECD csv) | IR3TIB01AUM156N.csv | 1968-01 | 516
+file monthly (FRED / OECD csv) | IR3TIB01CNM156N.csv | 1997-06 | 162
+file monthly (FRED / OECD csv) | IR3TIB01FRM156N.csv | 1970-01 | 492
+file monthly (FRED / OECD csv) | IR3TIB01KRM156N.csv | 1991-01 | 240
+file monthly (FRED / OECD csv) | IR3TIB01MXM156N.csv | 1997-01 | 168
+file monthly (FRED / OECD csv) | IR3TIB01NOM156N.csv | 1979-01 | 384
+file monthly (FRED / OECD csv) | IR3TIB01NZM156N.csv | 1973-12 | 445
+file monthly (FRED / OECD csv) | IR3TIB01USM156N.csv | 1964-06 | 559
+file monthly (FRED / OECD csv) | IR3TIB01ZAM156N.csv | 1980-12 | 361
+file monthly (FRED / OECD csv) | IRSTCB01JPM156N.csv | 1960-01 | 612
+file monthly (FRED / OECD csv) | IRSTCI01BRM156N.csv | 1996-10 | 171
+file monthly (FRED / OECD csv) | IRSTCI01KRM156N.csv | 1991-01 | 240
+file monthly (FRED / OECD csv) | IRSTCI01ZAM156N.csv | 1960-01 | 612
+file monthly (FRED / OECD csv) | JPNLOLITONOSTSAM.csv | 1960-01 | 612
+file monthly (FRED / OECD csv) | KORLOLITONOSTSAM.csv | 1990-01 | 252
+file monthly (FRED / OECD csv) | MEXLOLITONOSTSAM.csv | 1982-01 | 348
+file monthly (FRED / OECD csv) | NBAUBIS.csv | 1994-01 | 204
+file monthly (FRED / OECD csv) | NBBRBIS.csv | 1994-01 | 204
+file monthly (FRED / OECD csv) | NBCABIS.csv | 1994-01 | 204
+file monthly (FRED / OECD csv) | NBCHBIS.csv | 1994-01 | 204
+file monthly (FRED / OECD csv) | NBCNBIS.csv | 1994-01 | 204
+file monthly (FRED / OECD csv) | NBGBBIS.csv | 1994-01 | 204
+file monthly (FRED / OECD csv) | NBINBIS.csv | 1994-01 | 204
+file monthly (FRED / OECD csv) | NBJPBIS.csv | 1994-01 | 204
+file monthly (FRED / OECD csv) | NBKRBIS.csv | 1994-01 | 204
+file monthly (FRED / OECD csv) | NBMXBIS.csv | 1994-01 | 204
+file monthly (FRED / OECD csv) | NBNOBIS.csv | 1994-01 | 204
+file monthly (FRED / OECD csv) | NBNZBIS.csv | 1994-01 | 204
+file monthly (FRED / OECD csv) | NBSEBIS.csv | 1994-01 | 204
+file monthly (FRED / OECD csv) | NBUSBIS.csv | 1994-01 | 204
+file monthly (FRED / OECD csv) | NBZABIS.csv | 1994-01 | 204
+file monthly (FRED / OECD csv) | NORLOLITONOSTSAM.csv | 1973-11 | 446
+file monthly (FRED / OECD csv) | NZLLOLITONOSTSAM.csv | 1985-11 | 302
+file monthly (FRED / OECD csv) | RBI_CALLMONEY_M.csv | 1991-04 | 237
+file monthly (FRED / OECD csv) | SWELOLITONOSTSAM.csv | 1970-01 | 492
+file monthly (FRED / OECD csv) | T10YIE.csv | 2003-01 | 96
+file daily (FRED) | T10YIE.csv | 2003-01-02 | 2003
+file monthly (FRED / OECD csv) | TB3MS.csv | 1960-01 | 612
+file monthly (FRED / OECD csv) | USALOLITONOSTSAM.csv | 1960-01 | 612
+file monthly (Yahoo) | Y_000001_SS.csv | 1997-07 | 162
+file monthly (Yahoo) | Y_AUDUSD_X.csv | 2006-06 | 55
+file monthly (Yahoo) | Y_BNO.csv | 2010-06 | 7
+file monthly (Yahoo) | Y_BRL_X.csv | 2003-12 | 67
+file monthly (Yahoo) | Y_BZ_F.csv | 2007-08 | 36
+file monthly (Yahoo) | Y_CAD_X.csv | 2003-10 | 87
+file monthly (Yahoo) | Y_CHF_X.csv | 2003-10 | 87
+file monthly (Yahoo) | Y_CL_F.csv | 2000-08 | 107
+file monthly (Yahoo) | Y_CNY_X.csv | 2001-07 | 107
+file monthly (Yahoo) | Y_CORN.csv | 2010-06 | 7
+file monthly (Yahoo) | Y_CPER.csv | - | 0
+file monthly (Yahoo) | Y_CT_F.csv | 2000-01 | 132
+file monthly (Yahoo) | Y_EURUSD_X.csv | 2003-12 | 85
+file monthly (Yahoo) | Y_EWA.csv | 1996-03 | 178
+file monthly (Yahoo) | Y_EWC.csv | 1996-03 | 178
+file monthly (Yahoo) | Y_EWG.csv | 1996-03 | 178
+file monthly (Yahoo) | Y_EWH.csv | 1996-03 | 178
+file monthly (Yahoo) | Y_EWJ.csv | 1996-03 | 178
+file monthly (Yahoo) | Y_EWQ.csv | 1996-03 | 178
+file monthly (Yahoo) | Y_EWT.csv | 2000-06 | 127
+file monthly (Yahoo) | Y_EWU.csv | 1996-03 | 178
+file monthly (Yahoo) | Y_EWW.csv | 1996-03 | 178
+file monthly (Yahoo) | Y_EWY.csv | 2000-05 | 128
+file monthly (Yahoo) | Y_EWZ.csv | 2000-07 | 126
+file monthly (Yahoo) | Y_EZA.csv | 2003-02 | 95
+file monthly (Yahoo) | Y_EZU.csv | 2000-07 | 126
+file monthly (Yahoo) | Y_FXI.csv | 2004-10 | 75
+file monthly (Yahoo) | Y_GBPUSD_X.csv | 2003-12 | 85
+file monthly (Yahoo) | Y_GC_F.csv | 2000-08 | 107
+file monthly (Yahoo) | Y_GLD.csv | 2004-11 | 74
+file monthly (Yahoo) | Y_HG_F.csv | 2000-08 | 107
+file monthly (Yahoo) | Y_HO_F.csv | 2000-09 | 106
+file monthly (Yahoo) | Y_INDA.csv | - | 0
+file monthly (Yahoo) | Y_INR_X.csv | 2003-12 | 85
+file monthly (Yahoo) | Y_IWM.csv | 2000-05 | 128
+file monthly (Yahoo) | Y_JPY_X.csv | 1996-10 | 171
+file monthly (Yahoo) | Y_KC_F.csv | 2000-01 | 114
+file monthly (Yahoo) | Y_KRW_X.csv | 2003-12 | 85
+file monthly (Yahoo) | Y_LE_F.csv | 2001-03 | 101
+file monthly (Yahoo) | Y_MCHI.csv | - | 0
+file monthly (Yahoo) | Y_MXN_X.csv | 2003-12 | 85
+file monthly (Yahoo) | Y_NG_F.csv | 2000-08 | 107
+file monthly (Yahoo) | Y_NOKUSD_X.csv | 2001-08 | 107
+file monthly (Yahoo) | Y_NZDUSD_X.csv | 2003-12 | 85
+file monthly (Yahoo) | Y_PL_F.csv | 1997-10 | 124
+file monthly (Yahoo) | Y_PPLT.csv | 2010-01 | 12
+file monthly (Yahoo) | Y_QQQ.csv | 1999-03 | 142
+file monthly (Yahoo) | Y_RB_F.csv | 2000-11 | 105
+file monthly (Yahoo) | Y_SB_F.csv | 2000-03 | 112
+file monthly (Yahoo) | Y_SEKUSD_X.csv | 2001-08 | 107
+file monthly (Yahoo) | Y_SI_F.csv | 2000-08 | 107
+file monthly (Yahoo) | Y_SLV.csv | 2006-04 | 57
+file monthly (Yahoo) | Y_UNG.csv | 2007-04 | 45
+file monthly (Yahoo) | Y_USO.csv | 2006-04 | 57
+file monthly (Yahoo) | Y_WEAT.csv | - | 0
+file monthly (Yahoo) | Y_ZAR_X.csv | 2003-12 | 85
+file monthly (Yahoo) | Y_ZC_F.csv | 2000-07 | 108
+file monthly (Yahoo) | Y_ZS_F.csv | 2000-09 | 106
+file monthly (Yahoo) | Y_ZW_F.csv | 2000-07 | 108
+file monthly (Yahoo) | Y__AXJO.csv | 1992-12 | 217
+file monthly (Yahoo) | Y__BSESN.csv | 1997-07 | 162
+file monthly (Yahoo) | Y__BVSP.csv | 1993-04 | 213
+file monthly (Yahoo) | Y__FCHI.csv | 1990-03 | 250
+file monthly (Yahoo) | Y__FTSE.csv | 1985-01 | 312
+file monthly (Yahoo) | Y__GDAXI.csv | 1987-12 | 277
+file monthly (Yahoo) | Y__GSPC.csv | 1985-01 | 312
+file monthly (Yahoo) | Y__GSPTSE.csv | 1985-01 | 312
+file monthly (Yahoo) | Y__HSI.csv | 1986-12 | 289
+file monthly (Yahoo) | Y__IXIC.csv | 1985-01 | 312
+file monthly (Yahoo) | Y__JN0U_JO.csv | - | 0
+file monthly (Yahoo) | Y__KS11.csv | 1996-12 | 169
+file monthly (Yahoo) | Y__MXX.csv | 1991-11 | 230
+file monthly (Yahoo) | Y__N225.csv | 1985-01 | 312
+file monthly (Yahoo) | Y__NSEI.csv | 2007-09 | 40
+file monthly (Yahoo) | Y__RUT.csv | 1987-09 | 280
+file monthly (Yahoo) | Y__STOXX50E.csv | 2007-03 | 46
+file monthly (Yahoo) | Y__TWII.csv | 1997-07 | 162
+file monthly (FRED / OECD csv) | ZAFLOLITONOSTSAM.csv | 1975-01 | 432
+EIA NYMEX contract | cl1 | 1983-04 | 333
+EIA NYMEX contract | cl2 | 1985-01 | 312
+EIA NYMEX contract | cl3 | 1983-03 | 334
+EIA NYMEX contract | cl4 | 1985-01 | 312
+EIA NYMEX contract | ng1 | 1994-01 | 204
+EIA NYMEX contract | ng2 | 1994-01 | 204
+EIA NYMEX contract | ng3 | 1994-01 | 204
+EIA NYMEX contract | ng4 | 1993-12 | 205
+EIA NYMEX contract | ho1 | 1980-01 | 372
+EIA NYMEX contract | ho2 | 1994-02 | 203
+EIA NYMEX contract | ho3 | 1980-01 | 372
+EIA NYMEX contract | ho4 | 1994-01 | 204
+EIA NYMEX contract | rb1 | 2005-10 | 63
+EIA NYMEX contract | rb2 | 2005-10 | 63
+EIA NYMEX contract | rb3 | 2005-10 | 63
+EIA NYMEX contract | rb4 | 2005-10 | 63
+central-bank month-end yield | DE 2y | 1972-09 | 460
+central-bank month-end yield | DE 10y | 1972-09 | 460
+central-bank month-end yield | GB 5y | 1993-12 | 205
+central-bank month-end yield | GB 10y | 1993-11 | 206
+central-bank month-end yield | JP 2y | 1974-09 | 422
+central-bank month-end yield | JP 10y | 1986-07 | 294
+central-bank month-end yield | CA 2y | 2001-01 | 120
+central-bank month-end yield | CA 10y | 2001-01 | 120
+central-bank month-end yield | AU 2y | 1995-01 | 192
+central-bank month-end yield | AU 10y | 1995-01 | 192
+MSCI manual gross local | GERMANY (eq_de_dax) | 2000-12 | 121
+MSCI manual gross local | UNITED KINGDOM (eq_gb_ftse) | 2000-12 | 121
+MSCI manual gross local | FRANCE (eq_fr_cac) | 2000-12 | 121
+MSCI manual gross local | JAPAN (eq_jp_nikkei) | 2000-12 | 121
+MSCI manual gross local | CANADA (eq_ca_tsx) | 2000-12 | 121
+MSCI manual gross local | AUSTRALIA (eq_au_asx) | 2000-12 | 121
+MSCI manual gross local | HONG KONG (eq_hk_hsi) | 2000-12 | 121
+MSCI manual gross local | CHINA (eq_cn) | 2000-12 | 121
+MSCI manual gross local | KOREA (eq_kr_kospi) | 2000-12 | 121
+MSCI manual gross local | TAIWAN (eq_tw) | 2000-12 | 121
+MSCI manual gross local | INDIA (eq_in) | 2000-12 | 121
+MSCI manual gross local | BRAZIL (eq_br_ibov) | 2000-12 | 121
+MSCI manual gross local | MEXICO (eq_mx_ipc) | 2000-12 | 121
+MSCI manual gross local | SOUTH AFRICA (eq_za) | 2000-12 | 121
+12-month dividend yield (lag 0) | eq_de_dax | 1975-12 | 421
+12-month dividend yield (lag 0) | eq_gb_ftse | 1975-12 | 421
+12-month dividend yield (lag 0) | eq_fr_cac | 1975-12 | 421
+12-month dividend yield (lag 0) | eq_jp_nikkei | 1975-12 | 421
+12-month dividend yield (lag 0) | eq_ca_tsx | 1977-12 | 397
+12-month dividend yield (lag 0) | eq_au_asx | 1975-12 | 421
+12-month dividend yield (lag 0) | eq_hk_hsi | 1975-12 | 421
+12-month dividend yield (lag 0) | eq_us_spx | 1994-01 | 204
+3-month rate (panel.rate3m) | AU | 1968-01 | 516
+3-month rate (panel.rate3m) | BR | 1996-10 | 171
+3-month rate (panel.rate3m) | CA | 1960-01 | 612
+3-month rate (panel.rate3m) | CH | 1972-01 | 468
+3-month rate (panel.rate3m) | DE | 1960-01 | 612
+3-month rate (panel.rate3m) | EZ | 1960-01 | 612
+3-month rate (panel.rate3m) | GB | 1960-01 | 612
+3-month rate (panel.rate3m) | JP | 1960-01 | 612
+3-month rate (panel.rate3m) | KR | 1991-01 | 240
+3-month rate (panel.rate3m) | MX | 1997-01 | 168
+3-month rate (panel.rate3m) | NO | 1979-01 | 384
+3-month rate (panel.rate3m) | NZ | 1973-12 | 445
+3-month rate (panel.rate3m) | SE | 1982-01 | 348
+3-month rate (panel.rate3m) | US | 1960-01 | 612
+3-month rate (panel.rate3m) | ZA | 1960-01 | 612
+CPI y/y (signals.cpi_yoy) | US | 1960-01 | 612
+CPI y/y (signals.cpi_yoy) | DE | 1960-01 | 612
+CPI y/y (signals.cpi_yoy) | GB | 1960-01 | 612
+CPI y/y (signals.cpi_yoy) | FR | 1960-01 | 612
+CPI y/y (signals.cpi_yoy) | JP | 1960-01 | 612
+CPI y/y (signals.cpi_yoy) | CA | 1960-01 | 612
+CPI y/y (signals.cpi_yoy) | AU | - | 0
+CPI y/y (signals.cpi_yoy) | CH | 1960-01 | 612
+CPI y/y (signals.cpi_yoy) | SE | 1960-01 | 612
+CPI y/y (signals.cpi_yoy) | NO | 1960-01 | 612
+CPI y/y (signals.cpi_yoy) | NZ | - | 0
+CPI y/y (signals.cpi_yoy) | KR | 1960-01 | 612
+CPI y/y (signals.cpi_yoy) | MX | 1969-01 | 504
+CPI y/y (signals.cpi_yoy) | BR | 1980-12 | 361
+CPI y/y (signals.cpi_yoy) | ZA | 1960-01 | 612
+CPI y/y (signals.cpi_yoy) | CN | 1987-01 | 288
+CPI y/y (signals.cpi_yoy) | IN | 1960-01 | 612
+named in a spec | GS1 | NOT IN THE FREE INPUTS | 0
+named in a spec | GS2 | NOT IN THE FREE INPUTS | 0
+named in a spec | GS5 | NOT IN THE FREE INPUTS | 0
+named in a spec | GS10 | NOT IN THE FREE INPUTS | 0
+named in a spec | FEDFUNDS | NOT IN THE FREE INPUTS | 0
+named in a spec | BAA | NOT IN THE FREE INPUTS | 0
+named in a spec | TB3MS | 1960-01 | 612
+named in a spec | TWEXMMTH | NOT IN THE FREE INPUTS | 0
+named in a spec | DTWEXBGS | NOT IN THE FREE INPUTS | 0
+named in a spec | WALCL | NOT IN THE FREE INPUTS | 0
+ALFRED first vintage (named in 7.6 step 2) | CPILFESL | NOT IN THE FREE INPUTS | 0
+ALFRED first vintage (named in 7.6 step 2) | M2SL | NOT IN THE FREE INPUTS | 0
+ALFRED first vintage (named in 7.6 step 2) | PCEPILFE | NOT IN THE FREE INPUTS | 0
+ALFRED first vintage (named in 7.6 step 2) | UNRATE | NOT IN THE FREE INPUTS | 0
+named in a spec | T10YIE | 2003-01 | 96
+named in a spec | DFII10 | 2003-01 | 96
+named in a spec | BAA10YM | 1960-01 | 612
+named in 7.6 step 2 | ^GSPC monthly (Y__GSPC.csv) | 1985-01 | 312
+panel return R | eq_us_spx | 1963-07 | 570
+panel return R | eq_us_ndx | 1985-02 | 311
+panel return R | eq_us_r2k | 1987-10 | 279
+panel return R | eq_eu_stoxx50 | 2000-08 | 125
+panel return R | eq_de_dax | 1988-01 | 276
+panel return R | eq_gb_ftse | 1975-01 | 432
+panel return R | eq_fr_cac | 1990-04 | 249
+panel return R | eq_jp_nikkei | 1975-01 | 432
+panel return R | eq_ca_tsx | 1977-01 | 408
+panel return R | eq_au_asx | 1975-01 | 432
+panel return R | eq_hk_hsi | 1981-02 | 359
+panel return R | eq_cn | 1997-08 | 161
+panel return R | eq_kr_kospi | 1997-01 | 168
+panel return R | eq_tw | 1997-08 | 161
+panel return R | eq_in | 1997-08 | 161
+panel return R | eq_br_ibov | 1996-11 | 170
+panel return R | eq_mx_ipc | 1997-02 | 167
+panel return R | eq_za | 2001-01 | 120
+panel return R | bd_us_2y | 1976-07 | 414
+panel return R | bd_us_5y | 1962-02 | 587
+panel return R | bd_us_10y | 1962-02 | 587
+panel return R | bd_us_30y | 1977-03 | 406
+panel return R | bd_de_10y | 1972-10 | 459
+panel return R | bd_gb_10y | 1993-12 | 205
+panel return R | bd_jp_10y | 1986-08 | 293
+panel return R | bd_ca_10y | 2001-02 | 119
+panel return R | bd_au_10y | 1995-02 | 191
+panel return R | st_de_2y | 1972-10 | 459
+panel return R | st_gb_5y | 1994-01 | 204
+panel return R | st_ca_2y | 2001-02 | 119
+panel return R | st_au_2y | 1995-02 | 191
+panel return R | st_jp_2y | 1974-10 | 420
+panel return R | fx_eur | 1999-02 | 143
+panel return R | fx_jpy | 1971-02 | 479
+panel return R | fx_gbp | 1971-02 | 479
+panel return R | fx_chf | 1972-02 | 467
+panel return R | fx_aud | 1971-02 | 479
+panel return R | fx_nzd | 1974-01 | 444
+panel return R | fx_cad | 1971-02 | 479
+panel return R | fx_sek | 1982-02 | 347
+panel return R | fx_nok | 1979-02 | 383
+panel return R | fx_mxn | 1997-02 | 167
+panel return R | fx_brl | 1996-11 | 170
+panel return R | fx_krw | 1991-02 | 239
+panel return R | fx_zar | 1980-02 | 371
+panel return R | cm_wti | 1985-02 | 311
+panel return R | cm_brent | 2007-09 | 33
+panel return R | cm_natgas | 1994-02 | 203
+panel return R | cm_heatoil | 1994-03 | 202
+panel return R | cm_gasoline | 2000-12 | 105
+panel return R | cm_gold | 2000-09 | 108
+panel return R | cm_silver | 2000-09 | 104
+panel return R | cm_copper | 2000-09 | 89
+panel return R | cm_platinum | 1997-11 | 96
+panel return R | cm_corn | 2000-08 | 92
+panel return R | cm_wheat | 2000-08 | 90
+panel return R | cm_soybeans | 2000-12 | 88
+panel return R | cm_sugar | 2000-04 | 94
+panel return R | cm_coffee | 2000-02 | 96
+panel return R | cm_cotton | 2000-02 | 131
+panel return R | cm_cattle | 2001-06 | 84
+panel return R | cm_aqr_ew | 1960-01 | 492
+panel return R | sp_us_2s10s | 1976-07 | 414
+panel return R | sp_us_breakeven10 | 2003-02 | 95
+panel return R | sp_de_2s10s | 1972-10 | 459
+daily return D | fx_eur | 1999-01-05 | 3018
+daily return D | fx_jpy | 1971-01-05 | 10033
+daily return D | fx_gbp | 1971-01-05 | 10039
+daily return D | fx_chf | 1971-01-05 | 10039
+daily return D | fx_aud | 1971-01-05 | 10032
+daily return D | fx_nzd | 1971-01-05 | 10023
+daily return D | fx_cad | 1971-01-05 | 10045
+daily return D | fx_sek | 1971-01-05 | 10038
+daily return D | fx_nok | 1971-01-05 | 10038
+daily return D | fx_mxn | 1993-11-09 | 4307
+daily return D | fx_brl | 1995-01-03 | 4022
+daily return D | fx_krw | 1981-04-14 | 7425
+daily return D | fx_zar | 1980-01-03 | 7782
+daily return D | bd_us_2y | 1976-06-02 | 8641
+daily return D | bd_us_5y | 1962-01-03 | 12233
+daily return D | bd_us_10y | 1962-01-03 | 12233
+daily return D | bd_us_30y | 1977-02-16 | 8463
+daily return D | bd_de_10y | 1997-08-08 | 3401
+daily return D | bd_gb_10y | 1993-11-02 | 4339
+daily return D | bd_jp_10y | 1986-07-07 | 6028
+daily return D | bd_ca_10y | 2001-01-03 | 2507
+daily return D | bd_au_10y | 1995-01-04 | 4041
+daily return D | st_de_2y | 1997-08-08 | 3401
+daily return D | st_gb_5y | 1993-12-02 | 4317
+daily return D | st_ca_2y | 2001-01-03 | 2506
+daily return D | st_au_2y | 1995-01-04 | 4041
+daily return D | st_jp_2y | 1974-09-25 | 8625
+daily return D | eq_us_spx | 1970-01-05 | 10348
+daily return D | eq_us_ndx | 1971-02-08 | 10070
+daily return D | eq_us_r2k | 1987-09-11 | 5878
+daily return D | eq_eu_stoxx50 | 2007-04-02 | 942
+daily return D | eq_de_dax | 1988-01-04 | 5805
+daily return D | eq_gb_ftse | 1984-01-04 | 6822
+daily return D | eq_fr_cac | 1990-03-02 | 5265
+daily return D | eq_jp_nikkei | 1970-01-06 | 10100
+daily return D | eq_ca_tsx | 1979-07-03 | 7913
+daily return D | eq_au_asx | 1992-11-23 | 4203
+daily return D | eq_hk_hsi | 1987-01-02 | 5935
+daily return D | eq_cn | 1997-07-03 | 3264
+daily return D | eq_kr_kospi | 1996-12-12 | 3469
+daily return D | eq_tw | 1997-07-03 | 3329
+daily return D | eq_in | 1997-07-02 | 3337
+daily return D | eq_br_ibov | 1993-04-28 | 4374
+daily return D | eq_mx_ipc | 1991-11-11 | 4787
+daily return D | eq_za | 2003-02-10 | 1989
+daily return D | cm_wti | 1985-01-03 | 6254
+daily return D | cm_natgas | 1994-01-13 | 4250
+daily return D | cm_heatoil | 1994-02-08 | 3423
+daily return D | cm_gasoline | 2005-10-04 | 1290
+daily return D | cm_brent | 2007-07-31 | 841
+daily return D | cm_gold | 2000-08-31 | 2586
+daily return D | cm_silver | 2000-08-31 | 2588
+daily return D | cm_copper | 2000-08-31 | 2590
+daily return D | cm_platinum | 1997-10-30 | 2612
+daily return D | cm_corn | 2000-07-18 | 2600
+daily return D | cm_wheat | 2000-07-18 | 2610
+daily return D | cm_soybeans | 2000-09-18 | 2590
+daily return D | cm_sugar | 2000-03-02 | 2708
+daily return D | cm_coffee | 2000-01-04 | 2746
+daily return D | cm_cotton | 2000-01-04 | 2747
+daily return D | cm_cattle | 2001-03-02 | 2455
+signal E (Economic trend v1) | eq_us_spx | 1964-01 | 564
+signal E (Economic trend v1) | eq_us_ndx | 1964-01 | 564
+signal E (Economic trend v1) | eq_us_r2k | 1964-01 | 564
+signal E (Economic trend v1) | eq_eu_stoxx50 | 1964-01 | 564
+signal E (Economic trend v1) | eq_de_dax | 1964-01 | 564
+signal E (Economic trend v1) | eq_gb_ftse | 1964-01 | 564
+signal E (Economic trend v1) | eq_fr_cac | 1964-01 | 564
+signal E (Economic trend v1) | eq_jp_nikkei | 1964-01 | 564
+signal E (Economic trend v1) | eq_ca_tsx | 1964-01 | 564
+signal E (Economic trend v1) | eq_au_asx | 1972-01 | 468
+signal E (Economic trend v1) | eq_hk_hsi | 1991-01 | 240
+signal E (Economic trend v1) | eq_cn | 1991-01 | 240
+signal E (Economic trend v1) | eq_kr_kospi | 1964-01 | 564
+signal E (Economic trend v1) | eq_tw | 1964-01 | 564
+signal E (Economic trend v1) | eq_in | 1964-01 | 564
+signal E (Economic trend v1) | eq_br_ibov | 1984-12 | 313
+signal E (Economic trend v1) | eq_mx_ipc | 1973-01 | 456
+signal E (Economic trend v1) | eq_za | 1964-01 | 564
+signal E (Economic trend v1) | bd_us_2y | 1964-01 | 564
+signal E (Economic trend v1) | bd_us_5y | 1964-01 | 564
+signal E (Economic trend v1) | bd_us_10y | 1964-01 | 564
+signal E (Economic trend v1) | bd_us_30y | 1964-01 | 564
+signal E (Economic trend v1) | bd_de_10y | 1964-01 | 564
+signal E (Economic trend v1) | bd_gb_10y | 1964-01 | 564
+signal E (Economic trend v1) | bd_jp_10y | 1964-01 | 564
+signal E (Economic trend v1) | bd_ca_10y | 1964-01 | 564
+signal E (Economic trend v1) | bd_au_10y | 1972-01 | 468
+signal E (Economic trend v1) | st_de_2y | 1964-01 | 564
+signal E (Economic trend v1) | st_gb_5y | 1964-01 | 564
+signal E (Economic trend v1) | st_ca_2y | 1964-01 | 564
+signal E (Economic trend v1) | st_au_2y | 1972-01 | 468
+signal E (Economic trend v1) | st_jp_2y | 1964-01 | 564
+signal E (Economic trend v1) | fx_eur | 1964-01 | 564
+signal E (Economic trend v1) | fx_jpy | 1964-01 | 564
+signal E (Economic trend v1) | fx_gbp | 1964-01 | 564
+signal E (Economic trend v1) | fx_chf | 1964-01 | 564
+signal E (Economic trend v1) | fx_aud | 1972-01 | 468
+signal E (Economic trend v1) | fx_nzd | 1977-12 | 397
+signal E (Economic trend v1) | fx_cad | 1964-01 | 564
+signal E (Economic trend v1) | fx_sek | 1964-01 | 564
+signal E (Economic trend v1) | fx_nok | 1964-01 | 564
+signal E (Economic trend v1) | fx_mxn | 1973-01 | 456
+signal E (Economic trend v1) | fx_brl | 1984-12 | 313
+signal E (Economic trend v1) | fx_krw | 1964-01 | 564
+signal E (Economic trend v1) | fx_zar | 1964-01 | 564
+signal E (Economic trend v1) | cm_wti | 1964-01 | 564
+signal E (Economic trend v1) | cm_brent | 1964-01 | 564
+signal E (Economic trend v1) | cm_natgas | 1964-01 | 564
+signal E (Economic trend v1) | cm_heatoil | 1964-01 | 564
+signal E (Economic trend v1) | cm_gasoline | 1964-01 | 564
+signal E (Economic trend v1) | cm_gold | 1964-01 | 564
+signal E (Economic trend v1) | cm_silver | 1964-01 | 564
+signal E (Economic trend v1) | cm_copper | 1964-01 | 564
+signal E (Economic trend v1) | cm_platinum | 1964-01 | 564
+signal E (Economic trend v1) | cm_corn | 1964-01 | 564
+signal E (Economic trend v1) | cm_wheat | 1964-01 | 564
+signal E (Economic trend v1) | cm_soybeans | 1964-01 | 564
+signal E (Economic trend v1) | cm_sugar | 1964-01 | 564
+signal E (Economic trend v1) | cm_coffee | 1964-01 | 564
+signal E (Economic trend v1) | cm_cotton | 1964-01 | 564
+signal E (Economic trend v1) | cm_cattle | 1964-01 | 564
+signal E (Economic trend v1) | cm_aqr_ew | 1964-01 | 564
+signal E_sign (Economic trend v2) | eq_us_spx | 1964-01 | 564
+signal E_sign (Economic trend v2) | eq_us_ndx | 1964-01 | 564
+signal E_sign (Economic trend v2) | eq_us_r2k | 1964-01 | 564
+signal E_sign (Economic trend v2) | eq_eu_stoxx50 | 1964-01 | 564
+signal E_sign (Economic trend v2) | eq_de_dax | 1964-01 | 564
+signal E_sign (Economic trend v2) | eq_gb_ftse | 1964-01 | 564
+signal E_sign (Economic trend v2) | eq_fr_cac | 1964-01 | 564
+signal E_sign (Economic trend v2) | eq_jp_nikkei | 1964-01 | 564
+signal E_sign (Economic trend v2) | eq_ca_tsx | 1964-01 | 564
+signal E_sign (Economic trend v2) | eq_au_asx | 1972-01 | 468
+signal E_sign (Economic trend v2) | eq_hk_hsi | 1991-01 | 240
+signal E_sign (Economic trend v2) | eq_cn | 1991-01 | 240
+signal E_sign (Economic trend v2) | eq_kr_kospi | 1964-01 | 564
+signal E_sign (Economic trend v2) | eq_tw | 1964-01 | 564
+signal E_sign (Economic trend v2) | eq_in | 1964-01 | 564
+signal E_sign (Economic trend v2) | eq_br_ibov | 1984-12 | 313
+signal E_sign (Economic trend v2) | eq_mx_ipc | 1973-01 | 456
+signal E_sign (Economic trend v2) | eq_za | 1964-01 | 564
+signal E_sign (Economic trend v2) | bd_us_2y | 1964-01 | 564
+signal E_sign (Economic trend v2) | bd_us_5y | 1964-01 | 564
+signal E_sign (Economic trend v2) | bd_us_10y | 1964-01 | 564
+signal E_sign (Economic trend v2) | bd_us_30y | 1964-01 | 564
+signal E_sign (Economic trend v2) | bd_de_10y | 1964-01 | 564
+signal E_sign (Economic trend v2) | bd_gb_10y | 1964-01 | 564
+signal E_sign (Economic trend v2) | bd_jp_10y | 1964-01 | 564
+signal E_sign (Economic trend v2) | bd_ca_10y | 1964-01 | 564
+signal E_sign (Economic trend v2) | bd_au_10y | 1972-01 | 468
+signal E_sign (Economic trend v2) | st_de_2y | 1964-01 | 564
+signal E_sign (Economic trend v2) | st_gb_5y | 1964-01 | 564
+signal E_sign (Economic trend v2) | st_ca_2y | 1964-01 | 564
+signal E_sign (Economic trend v2) | st_au_2y | 1972-01 | 468
+signal E_sign (Economic trend v2) | st_jp_2y | 1964-01 | 564
+signal E_sign (Economic trend v2) | fx_eur | 1964-01 | 564
+signal E_sign (Economic trend v2) | fx_jpy | 1964-01 | 564
+signal E_sign (Economic trend v2) | fx_gbp | 1964-01 | 564
+signal E_sign (Economic trend v2) | fx_chf | 1964-01 | 564
+signal E_sign (Economic trend v2) | fx_aud | 1972-01 | 468
+signal E_sign (Economic trend v2) | fx_nzd | 1977-12 | 397
+signal E_sign (Economic trend v2) | fx_cad | 1964-01 | 564
+signal E_sign (Economic trend v2) | fx_sek | 1964-01 | 564
+signal E_sign (Economic trend v2) | fx_nok | 1964-01 | 564
+signal E_sign (Economic trend v2) | fx_mxn | 1973-01 | 456
+signal E_sign (Economic trend v2) | fx_brl | 1984-12 | 313
+signal E_sign (Economic trend v2) | fx_krw | 1964-01 | 564
+signal E_sign (Economic trend v2) | fx_zar | 1964-01 | 564
+signal E_sign (Economic trend v2) | cm_wti | 1964-01 | 564
+signal E_sign (Economic trend v2) | cm_brent | 1964-01 | 564
+signal E_sign (Economic trend v2) | cm_natgas | 1964-01 | 564
+signal E_sign (Economic trend v2) | cm_heatoil | 1964-01 | 564
+signal E_sign (Economic trend v2) | cm_gasoline | 1964-01 | 564
+signal E_sign (Economic trend v2) | cm_gold | 1964-01 | 564
+signal E_sign (Economic trend v2) | cm_silver | 1964-01 | 564
+signal E_sign (Economic trend v2) | cm_copper | 1964-01 | 564
+signal E_sign (Economic trend v2) | cm_platinum | 1964-01 | 564
+signal E_sign (Economic trend v2) | cm_corn | 1964-01 | 564
+signal E_sign (Economic trend v2) | cm_wheat | 1964-01 | 564
+signal E_sign (Economic trend v2) | cm_soybeans | 1964-01 | 564
+signal E_sign (Economic trend v2) | cm_sugar | 1964-01 | 564
+signal E_sign (Economic trend v2) | cm_coffee | 1964-01 | 564
+signal E_sign (Economic trend v2) | cm_cotton | 1964-01 | 564
+signal E_sign (Economic trend v2) | cm_cattle | 1964-01 | 564
+signal E_sign (Economic trend v2) | cm_aqr_ew | 1964-01 | 564
+signal C (Carry) | bd_us_2y | 1976-06 | 415
+signal C (Carry) | bd_us_5y | 1962-01 | 588
+signal C (Carry) | bd_us_10y | 1962-01 | 588
+signal C (Carry) | bd_us_30y | 1977-02 | 407
+signal C (Carry) | bd_de_10y | 1972-09 | 460
+signal C (Carry) | bd_gb_10y | 1993-11 | 206
+signal C (Carry) | bd_jp_10y | 1986-07 | 294
+signal C (Carry) | bd_ca_10y | 2001-01 | 120
+signal C (Carry) | bd_au_10y | 1995-01 | 192
+signal C (Carry) | st_de_2y | 1972-09 | 460
+signal C (Carry) | st_gb_5y | 1993-12 | 205
+signal C (Carry) | st_ca_2y | 2001-01 | 120
+signal C (Carry) | st_au_2y | 1995-01 | 192
+signal C (Carry) | st_jp_2y | 1974-09 | 422
+signal C (Carry) | fx_eur | 1960-02 | 611
+signal C (Carry) | fx_jpy | 1960-02 | 611
+signal C (Carry) | fx_gbp | 1960-02 | 611
+signal C (Carry) | fx_chf | 1972-02 | 467
+signal C (Carry) | fx_aud | 1968-02 | 515
+signal C (Carry) | fx_nzd | 1974-01 | 444
+signal C (Carry) | fx_cad | 1960-02 | 611
+signal C (Carry) | fx_sek | 1982-02 | 347
+signal C (Carry) | fx_nok | 1979-02 | 383
+signal C (Carry) | fx_mxn | 1997-02 | 167
+signal C (Carry) | fx_brl | 1996-11 | 170
+signal C (Carry) | fx_krw | 1991-02 | 239
+signal C (Carry) | fx_zar | 1960-02 | 611
+signal C (Carry) | cm_wti | 1985-01 | 312
+signal C (Carry) | cm_natgas | 1994-01 | 204
+signal C (Carry) | cm_heatoil | 1994-02 | 203
+signal C (Carry) | cm_gasoline | 2005-10 | 63
+signal C (Carry) | eq_de_dax | 1975-12 | 421
+signal C (Carry) | eq_gb_ftse | 1975-12 | 421
+signal C (Carry) | eq_fr_cac | 1975-12 | 421
+signal C (Carry) | eq_jp_nikkei | 1975-12 | 421
+signal C (Carry) | eq_ca_tsx | 1977-12 | 397
+signal C (Carry) | eq_au_asx | 1975-12 | 421
+signal C (Carry) | eq_hk_hsi | 1975-12 | 421
+signal C (Carry) | eq_us_spx | 1994-01 | 204
+signal V (Value v1) | cm_wti | 1990-01 | 252
+signal V (Value v1) | cm_natgas | 1999-01 | 144
+signal V (Value v1) | cm_heatoil | 1999-02 | 143
+signal V (Value v1) | cm_gasoline | 2010-06 | 7
+signal V (Value v1) | cm_gold | 2009-09 | 16
+signal V (Value v1) | cm_cotton | 2005-01 | 72
+signal V (Value v1) | eq_de_dax | 1976-12 | 409
+signal V (Value v1) | eq_gb_ftse | 1976-12 | 409
+signal V (Value v1) | eq_fr_cac | 1976-12 | 409
+signal V (Value v1) | eq_jp_nikkei | 1976-12 | 409
+signal V (Value v1) | eq_ca_tsx | 1978-12 | 385
+signal V (Value v1) | eq_au_asx | 1976-12 | 409
+signal V (Value v1) | eq_hk_hsi | 1976-12 | 409
+signal V (Value v1) | eq_us_spx | 1994-01 | 204
+signal V (Value v1) | bd_us_10y | 1962-01 | 588
+signal V (Value v1) | bd_us_30y | 1977-02 | 407
+signal V (Value v1) | bd_de_10y | 1972-09 | 460
+signal V (Value v1) | bd_gb_10y | 1993-11 | 206
+signal V (Value v1) | bd_jp_10y | 1986-07 | 294
+signal V (Value v1) | bd_ca_10y | 2001-01 | 120
+signal V (Value v1) | fx_eur | 2004-01 | 84
+signal V (Value v1) | fx_jpy | 1976-01 | 420
+signal V (Value v1) | fx_gbp | 1976-01 | 420
+signal V (Value v1) | fx_chf | 1976-01 | 420
+signal V (Value v1) | fx_cad | 1976-01 | 420
+signal V (Value v1) | fx_sek | 1976-01 | 420
+signal V (Value v1) | fx_nok | 1976-01 | 420
+signal V (Value v1) | fx_mxn | 1998-11 | 146
+signal V (Value v1) | fx_brl | 2000-01 | 132
+signal V (Value v1) | fx_krw | 1986-04 | 297
+signal V (Value v1) | fx_zar | 1985-01 | 312
+signal V2 (Value v2) | eq_de_dax | 1976-12 | 409
+signal V2 (Value v2) | eq_gb_ftse | 1976-12 | 409
+signal V2 (Value v2) | eq_fr_cac | 1976-12 | 409
+signal V2 (Value v2) | eq_jp_nikkei | 1976-12 | 409
+signal V2 (Value v2) | eq_ca_tsx | 1978-12 | 385
+signal V2 (Value v2) | eq_au_asx | 1976-12 | 409
+signal V2 (Value v2) | eq_hk_hsi | 1976-12 | 409
+signal V2 (Value v2) | eq_us_spx | 1994-01 | 204
+signal V2 (Value v2) | bd_us_10y | 1967-01 | 528
+signal V2 (Value v2) | bd_us_30y | 1982-02 | 347
+signal V2 (Value v2) | bd_de_10y | 1977-09 | 400
+signal V2 (Value v2) | bd_gb_10y | 1998-11 | 146
+signal V2 (Value v2) | bd_jp_10y | 1991-07 | 234
+signal V2 (Value v2) | bd_ca_10y | 2006-01 | 60
+signal V2 (Value v2) | bd_au_10y | 2000-01 | 132
+signal V2 (Value v2) | fx_eur | 2003-12 | 85
+signal V2 (Value v2) | fx_jpy | 1975-12 | 421
+signal V2 (Value v2) | fx_gbp | 1975-12 | 421
+signal V2 (Value v2) | fx_chf | 1975-12 | 421
+signal V2 (Value v2) | fx_cad | 1975-12 | 421
+signal V2 (Value v2) | fx_sek | 1975-12 | 421
+signal V2 (Value v2) | fx_nok | 1975-12 | 421
+signal V2 (Value v2) | fx_mxn | 1998-10 | 147
+signal V2 (Value v2) | fx_brl | 1999-12 | 133
+signal V2 (Value v2) | fx_krw | 1986-03 | 298
+signal V2 (Value v2) | fx_zar | 1984-12 | 313
+NOT IN THE FREE INPUTS (13): GS1, GS2, GS5, GS10, FEDFUNDS, BAA, TWEXMMTH, DTWEXBGS, WALCL, CPILFESL, M2SL, PCEPILFE, UNRATE
+
+=== metadata listing, LSEG lock lseg-v1 (LOCK_LSEG_v5.json, lock id 90322681b9f989cc24393ae7de4fe24bf5af2f32074ffa6400b1cbed09c4074c) ===
+From the lock's own metadata (lock.json 'series': first design date, last design date, design count); sealed counts are not listed. Full list: docs/research/batches/META_lseg_v5_2026-11-27.csv
+continuous positions (HistoricalPricing c1..cN): per | root | deepest position with design data | first date of c1 | first date of the deepest
+D | BO | c2 | 1990-01-02 | 1990-01-02
+D | C | c2 | 1990-01-02 | 1990-01-02
+D | CC | c2 | 1990-01-02 | 1990-01-02
+D | CGB | c2 | 1990-01-02 | 1990-01-02
+D | CL | c2 | 1990-01-02 | 1990-01-02
+D | CT | c2 | 1990-01-02 | 1990-01-02
+D | ES | c1 | 1997-09-09 | 1997-09-09
+D | FDX | c1 | 1990-11-23 | 1990-11-23
+D | FEI | c8 | 1994-03-15 | 1995-12-19
+D | FF | c2 | 2000-01-03 | 2000-01-03
+D | FFI | c1 | 1990-01-02 | 1990-01-02
+D | FGBL | c2 | 1990-11-23 | 1990-12-07
+D | FGBM | c2 | 1991-10-11 | 1991-10-11
+D | FGBS | c2 | 1997-03-07 | 1997-03-07
+D | FLG | c2 | 1990-01-02 | 1990-01-02
+D | FV | c2 | 1990-01-02 | 1990-01-02
+D | GC | c2 | 1990-01-02 | 1990-01-02
+D | HG | c2 | 1990-01-02 | 1990-01-02
+D | HO | c2 | 1990-01-02 | 1990-01-02
+D | HSI | c1 | 1990-01-02 | 1990-01-02
+D | JEY | c2 | 1990-01-04 | 1990-01-04
+D | JGB | c2 | 1990-01-04 | 1990-01-04
+D | JNI | c1 | 1990-01-04 | 1990-01-04
+D | KC | c2 | 1990-01-02 | 1990-01-02
+D | KW | c2 | 1990-01-02 | 1990-01-02
+D | LC | c2 | 1990-01-02 | 1990-01-02
+D | LCO | c2 | 1990-01-02 | 1990-01-02
+D | LGO | c2 | 1990-01-02 | 1990-01-02
+D | LH | c2 | 1990-01-02 | 1990-01-02
+D | NG | c2 | 1990-04-03 | 1990-04-03
+D | NQ | c1 | 1999-06-22 | 1999-06-22
+D | PA | c2 | 1990-01-02 | 1990-01-02
+D | PL | c2 | 1990-01-02 | 1990-01-02
+D | RB | c2 | 2005-10-03 | 2005-10-03
+D | S | c2 | 1990-01-02 | 1990-01-02
+D | SB | c2 | 1990-01-02 | 1990-01-02
+D | SI | c2 | 1990-01-02 | 1990-01-02
+D | SM | c2 | 1990-01-02 | 1990-01-02
+D | STXE | c1 | 1998-06-26 | 1998-06-26
+D | SXF | c1 | 1999-09-07 | 1999-09-07
+D | TU | c2 | 1990-06-22 | 1990-06-22
+D | TY | c2 | 1990-01-02 | 1990-01-02
+D | US | c2 | 1990-01-02 | 1990-01-02
+D | W | c2 | 1990-01-02 | 1990-01-02
+D | YAP | c1 | 2000-05-02 | 2000-05-02
+D | YTC | c2 | 1992-01-02 | 1992-01-02
+M | BO | c9 | 1973-01-31 | 1977-11-30
+M | C | c9 | 1973-01-31 | 1993-01-31
+M | CC | c6 | 1973-01-31 | 1978-10-31
+M | CGB | c2 | 1989-09-30 | 1989-09-30
+M | CGF | c1 | 2001-03-31 | 2001-03-31
+M | CGZ | c1 | 2004-05-31 | 2004-05-31
+M | CL | c36 | 1983-03-31 | 2006-02-28
+M | COM | c3 | 1994-11-30 | 1994-11-30
+M | CONF | c1 | 1992-06-30 | 1992-06-30
+M | CT | c9 | 1980-01-31 | 1981-04-30
+M | DCS | c3 | 1998-02-28 | 1998-02-28
+M | ES | c2 | 1997-09-30 | 1997-09-30
+M | FBTP | c2 | 2009-09-30 | 2009-09-30
+M | FBTS | c1 | 2010-10-31 | 2010-10-31
+M | FC | c6 | 1978-07-31 | 1978-07-31
+M | FCPO | c3 | 1980-10-31 | 1980-10-31
+M | FDX | c2 | 1990-11-30 | 1990-11-30
+M | FEI | c12 | 1994-03-31 | 1998-02-28
+M | FF | c12 | 2000-01-31 | 2000-07-31
+M | FFI | c2 | 1984-05-31 | 1984-05-31
+M | FGBL | c3 | 1990-11-30 | 1991-03-31
+M | FGBM | c2 | 1991-10-31 | 1991-10-31
+M | FGBS | c2 | 1997-03-31 | 1997-03-31
+M | FGBX | c2 | 1998-10-31 | 1998-10-31
+M | FLG | c2 | 1982-11-30 | 1982-11-30
+M | FV | c2 | 1988-05-31 | 1988-05-31
+M | GC | c14 | 1978-01-31 | 1982-11-30
+M | HG | c18 | 1988-07-31 | 1989-07-31
+M | HO | c18 | 1978-11-30 | 1991-06-30
+M | HSI | c2 | 1986-05-31 | 1986-05-31
+M | JEY | c6 | 1989-06-30 | 1989-06-30
+M | JGB | c2 | 1987-09-30 | 1987-09-30
+M | JNI | c2 | 1988-09-30 | 1988-09-30
+M | JRU | c3 | 1990-01-31 | 1990-01-31
+M | KC | c9 | 1979-11-30 | 2002-07-31
+M | KTB | c1 | 1999-09-30 | 1999-09-30
+M | KW | c9 | 1980-01-31 | 1997-03-31
+M | LC | c9 | 1980-01-31 | 2003-03-31
+M | LCC | c3 | 1974-04-30 | 1974-04-30
+M | LCO | c24 | 1988-06-30 | 2005-02-28
+M | LGO | c12 | 1981-04-30 | 1993-03-31
+M | LH | c6 | 1973-01-31 | 1973-01-31
+M | LRC | c3 | 2008-01-31 | 2008-01-31
+M | LSU | c3 | 1983-07-31 | 1983-07-31
+M | NCFM | c3 | 2008-12-31 | 2008-12-31
+M | NG | c24 | 1990-04-30 | 1996-04-30
+M | NGLNM | c3 | 1997-01-31 | 1997-01-31
+M | NQ | c2 | 1999-06-30 | 1999-06-30
+M | O | c5 | 1973-01-31 | 1973-07-31
+M | OJ | c6 | 1973-01-31 | 1973-01-31
+M | PA | c6 | 1980-01-31 | 1980-01-31
+M | PL | c8 | 1973-01-31 | 1979-03-31
+M | RB | c18 | 2005-10-31 | 2007-02-28
+M | RR | c6 | 1981-04-30 | 1981-04-30
+M | RS | c3 | 1980-01-31 | 1980-01-31
+M | S | c11 | 1973-01-31 | 1988-06-30
+M | SB | c8 | 1973-01-31 | 1978-10-31
+M | SI | c14 | 1973-01-31 | 1978-08-31
+M | SM | c9 | 1973-01-31 | 1976-12-31
+M | STXE | c2 | 1998-06-30 | 1998-06-30
+M | SXF | c2 | 1999-09-30 | 1999-11-30
+M | TFMBM | c13 | 2010-03-31 | 2010-08-31
+M | TU | c2 | 1990-06-30 | 1990-06-30
+M | TY | c2 | 1982-05-31 | 1982-05-31
+M | UB | c2 | 2009-11-30 | 2009-11-30
+M | US | c2 | 1977-08-31 | 1977-08-31
+M | UX | c3 | 2005-01-31 | 2005-01-31
+M | VX | c8 | 2004-03-31 | 2006-10-31
+M | W | c9 | 1973-01-31 | 1996-03-31
+M | YAP | c2 | 2000-05-31 | 2000-05-31
+M | YBA | c8 | 1992-01-31 | 1992-01-31
+M | YM | c2 | 2002-04-30 | 2002-04-30
+M | YTC | c2 | 1992-01-31 | 1992-01-31
+M | YTT | c2 | 1992-01-31 | 1992-01-31
+contract-level series (Datastream <ROOT MONTH YEAR ^ DECADE>): per | root | contracts with design data | earliest first date
+D | ED | 130 | 1981-12-09
+D | FEI | 56 | 1998-12-08
+M | C | 190 | 1974-04-30
+M | CL | 356 | 1983-03-31
+M | CT | 170 | 1977-10-31
+M | ED | 4 | 1987-12-31
+M | HG | 211 | 1988-07-29
+M | LC | 200 | 1979-01-31
+M | LCO | 109 | 2003-09-30
+M | PL | 149 | 1974-02-28
+M | RB | 84 | 2005-10-31
+M | S | 266 | 1974-02-28
+M | SB | 180 | 1974-03-29
+M | SI | 270 | 1974-04-30
+M | W | 190 | 1974-04-30
+LSEG series with design data: 4502 of 4608

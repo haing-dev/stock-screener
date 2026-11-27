@@ -4,6 +4,95 @@ Every rule change gets a new VERSION in gm/run.py and a line here. Every variant
 (1990-2010; extra check 1975-89) is logged so the deflated Sharpe can count the trials. The holdout (2011-2026) is run
 once, after the rules are frozen, by gm/holdout.py.
 
+## data: A1 data rule (registered 2026-11-27, BEFORE the A1 code and the A1 run): TESTING_PROTOCOL 7.6 step 2, 7.4 E15
+Entry 3 of docs/research/registration/REGISTRATION_3.4.md part (c): "Data entry A1 (before the A1 run): the
+extension-only rule of 7.6 step 2 with LOCK_v2 id d85a46cb2853646b24796f294f3ccab1d1507188c402e978fd59f5196ea41fc9; the
+A1 panel id recorded after the run." Registered data entry (no rule change; no statistic of any A1 path has been
+computed; Bloomberg values stay on the user's PC, rule 7).
+1. The rule, word for word (TESTING_PROTOCOL 7.6 step 2): "Rule for each Bloomberg series (LOCK_v2, lock id
+   d85a46cb2853646b24796f294f3ccab1d1507188c402e978fd59f5196ea41fc9): it may only extend a market's free history
+   backwards, never replace an overlapping free month (live runs on the free source, rule 7); it must be the same
+   instrument (same index family or contract root) with status ok in LOCK_v2 (not a copy, not cut); and its monthly
+   returns must correlate at least 0.95 with the free series over the overlap months up to 2010-12 (just below the
+   lowest agreement our own bond returns showed against CRSP, 0.965, gm/CHANGES.md gm-2.0). A series failing a
+   condition is not used and is listed. The A1 panel (its id recorded) is the panel of every later run, B2 included
+   (CHECK_3.2_C s4 item 1); cm_aqr_ew is not a stand-in for card 1 R4-B's basket."
+2. Lock: LOCK_v2, lock id d85a46cb2853646b24796f294f3ccab1d1507188c402e978fd59f5196ea41fc9 (docs/research/bbg/LOCK_v2.json;
+   store on the PC in local\work\bbg, read only through tools/bbgq/lib/bbgdata.py 1.2.0 and bbg_panel 1.0.0). The A1
+   job stops before reading any value if the store's lock id differs.
+3. The A1 panel id is recorded after the run (appended to this entry and, at the freeze, in the 7.9 item 1 record).
+4. Candidate series (registered here, from the specs' own A1 lines and the engine's Bloomberg map with E1 off and E2
+   applied; nothing chosen from data):
+   Block 1, commodity returns (SPEC_Trend s16 "Bloomberg only as the registered A1 data swap of the same series";
+   gm-1.2.3 closed here item 1: "The Bloomberg excess-return indexes of the 16 panel commodities ... are the A1 data
+   swap (7.6 A1, E15)"): for each of the 16 panel commodities, the excess-return indexes of gm/bloomberg.py COMMOD_ER
+   (S&P GSCI, then BCOM), sheet Returns, field PX_LAST. Instrument: the index rolls the futures root whose front
+   contract or ETF the free series holds (same contract root). Market history extended: the panel return R.
+   Block 2, energy carry inputs (SPEC_Carry s3 "Allowed at A1: Bloomberg or LSEG contracts 1 and 2 of the same four
+   markets as a data swap of the same formula"): the generic contracts 1 and 2 of CL, NG, HO, XB (gm/bloomberg.py
+   CURVE_ROOT; cm_wti, cm_natgas, cm_heatoil, cm_gasoline), field PX_LAST, any sheet of LOCK_v2 (the primary series
+   id). Instrument: same contract root and position as the EIA NYMEX contract 1 / 2. History extended: the EIA
+   contract-n month-end price, used by the Carry signal 12 x (F1 / F2 - 1) only (the panel return keeps its free
+   sources; block 1 is the return route).
+   Block 3, Value's equity dividend yield (SPEC_Value s3 "Allowed at A1: the same 12-month dividend yield from Bloomberg
+   or LSEG as a data swap"; 7.4 E2: "every remaining mapping (a local index to the MSCI index of the same country) is
+   used only if the A1 rule of 7.6 step 2 admits the series"): EQY_DVD_YLD_12M of the gm/bloomberg.py EQ_INDEX MSCI
+   index of the market's country, sheet EquityValuation. History extended: the market's 12-month dividend yield
+   before the lag of E4 (both Value versions read it).
+   Report line R (TESTING_PROTOCOL 7.1 F7: "bond futures against yield-built returns = an A1 report line"): the 1st
+   generic bond futures of sheet BondFutures (TU, FV, TY, US, DU, RX, G, JB, CN, YM, XM) against the yield-built bond
+   returns of the same market: overlap months and correlation of monthly returns up to 2010-12. Reported only, never
+   used (a bond future is not the same instrument as the par bond the free series prices).
+   Not candidates: no registered spec reads them and the engine has no Bloomberg route for them (a new route would be
+   its own data entry): EquityTR total-return indexes, generic government yields and 3-month rates, FX spot and
+   forwards (U07-T4's block 4 would replace overlapping months), first-release economics (U07-T4 block 3; overlapping
+   months cannot be replaced, and register T37 dropped first-release growth), every non-panel commodity (E1 keeps
+   the alternative commodities off), curve points beyond contract 2 (E1 curve carry off), valuation fields other than
+   the dividend yield (E1 composite off).
+5. How each condition is applied (closed here, the simplest reading):
+   a. "status ok in LOCK_v2 (not a copy, not cut)": the (ticker, field) has a primary series id in the lock's catalog
+      (status ok; a copy block has no series id), its file name has no _CUT tag, and it is not a held-back (untouched)
+      market (invisible in the design panel). The catalog status of a failing row is listed.
+   b. "same instrument": by the candidate map of item 4 (contract root and position; index family; for block 3 the
+      same-country MSCI index named by E2).
+   c. "only extend a market's free history backwards, never replace an overlapping free month": the extension fills
+      only months strictly before the free series' first month with a value; interior gaps of the free series are not
+      filled; a market or input with no free history at all has nothing to extend (and no overlap), so it fails.
+   d. "monthly returns must correlate at least 0.95 with the free series over the overlap months up to 2010-12":
+      Pearson correlation over the months where both have a monthly return, up to 2010-12; at least 24 overlap months
+      (gm's C4 convention for a Bloomberg series), else the series fails ("too few overlap months"). Monthly return:
+      block 1 the index's month-on-month change as gm/bloomberg.py commodity_return serves it (the engine's own route,
+      with its C4 gate of more than 24 levels up to each month) against the panel return; block 2 the month-end price
+      change of contract n against EIA contract n; block 3 (a yield, no return) the monthly change of the yield
+      against the monthly change of the free 12-month dividend yield (lag-0 form). Correlation values are printed only
+      over at least 60 months (export whitelist); with fewer the pass / fail is printed.
+   e. As of: every Bloomberg series is read through bbg_panel.Source(asof="2010-12-31") (bbgdata as-of guard; market
+      data carry a one-day live delay, so their last usable month-end is 2010-11); the sealed tables are never opened;
+      every free input is cut at 2010-12-31 (gm_engine.Cut); outputs are checked by gm/seal.py.
+   f. Which admitted series fills a month: block 1 month by month the first index in the registered preference order
+      (config.BBG_ER_PREFERENCE: GSCI, then BCOM; gm-1.2.1 C4) that is admitted and has a return; block 2 contract n
+      from its admitted Bloomberg series; carry recomputed where the free carry has no value and both (extended)
+      contracts exist; block 3 the admitted yield / 100, lagged as E4 (12 months for the 7 non-US markets, 0 for the US).
+6. Report (7.6 step 2, "report, no adoption test ... differences explained"): A1_INCUMBENT (CANDIDATE gm-2.0.3 + E13,
+   gm/CHANGES.md "X1 outcome") at k = 1 on the A1 data against the same config at k = 1 on free data, one block at a
+   time (free + block b alone, for each block with an admitted series), then all blocks together (= the A1 panel);
+   design window 1975-01 .. 2010-12; eras 1975-89 and 1990-2010 and the whole window. Per arm: net Sharpe, mean,
+   volatility, worst drawdown; difference to the free arm and dSR with its one-sided 95% lower bound (gm.stats
+   paired_sr_test, section 2 bootstrap); Sharpe of each family x class block (unit-volatility blocks); market-months
+   added by market; share of k = 1 market-months flagged; k = 0 beside (7.3 item 1). The A1 panel is the panel of
+   every later run whatever the sign (U07-T4: "a correction enters the incumbent whatever its sign").
+7. Trial count (7.8 item 1, family "data"): one gm/trials.csv row for A1 (the all-blocks arm, k = 1), written by the
+   coordinator from the job's TRIAL ROW line, with the config hash, engine version, LOCK_v2 id and the A1 panel id.
+8. Metadata listing (7.6 step 2, "A metadata job at each lock (free inputs, LOCK_v2, any LSEG lock) lists the first
+   date of every series a spec reads"): free inputs and LSEG lock v5 now, from file metadata only
+   (tools/bbgq/meta_first_dates.py -> docs/research/batches/META_first_dates_2026-11-27.txt and
+   META_lseg_v5_2026-11-27.csv); 13 named series are not in the free inputs (GS1, GS2, GS5, GS10, FEDFUNDS, BAA,
+   TWEXMMTH, DTWEXBGS, WALCL and the ALFRED first vintages of CPILFESL, M2SL, PCEPILFE, UNRATE: card inputs, fetched
+   before B2). LOCK_v2: the first design date, status and design count of every candidate series and report-line
+   series, printed by the A1 job on the PC.
+9. Writes: the A1 panel values only to local\work\a1 on the PC (never to the repo or chat); the job prints metadata
+   and the registered summary statistics only (tools/bbgq/README.md export whitelist).
+
 ## X1 outcome (registered 2026-11-27, after the X1 run and BEFORE the E13 code and A1's design run): E13 for natgas, gasoline
 Entry 4 of docs/research/registration/REGISTRATION_3.4.md part (c): "X1 outcome (after X1, before A1's design run): for
 each energy market whose gate opens, E13 seasonal adjustment; if none opens, an entry saying so." TESTING_PROTOCOL 7.5
