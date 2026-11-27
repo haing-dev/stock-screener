@@ -34,8 +34,9 @@ import time
 import numpy as np
 import pandas as pd
 
-VERSION = "gm_engine-1.2.0"   # 1.1.0 (gm-1.2.3, E5): design runs sealed at config.SEAL_END; 1.2.0 (gm-2.1.0): the
-                              # feature paths (k = 1, grid, Core / shadow, tranches, card 4 daily) for the truncation test
+VERSION = "gm_engine-1.3.0"   # 1.1.0 (gm-1.2.3, E5): design runs sealed at config.SEAL_END; 1.2.0 (gm-2.1.0): the
+                              # feature paths (k = 1, grid, Core / shadow, tranches, card 4 daily) for the truncation test;
+                              # 1.3.0 (gm-2.2.0): E13 (A1_INCUMBENT k = 1 book, positions, adjusted carry) in those paths
 DESIGN_END = pd.Period("2010-12", "M")
 ERAS = {"1975-2010": ("1975-01", "2010-12"), "1990-2010": ("1990-01", "2010-12")}
 CONFIGS = ("BASE", "CANDIDATE")
@@ -248,7 +249,7 @@ def run(free_dir=None, cut=None, M=None, bbg=None, seal=True, features=False):
     return out
 
 
-FEATURE_CFGS = ("BASE", "CANDIDATE", "A2_CHALLENGER")
+FEATURE_CFGS = ("BASE", "CANDIDATE", "A2_CHALLENGER", "A1_INCUMBENT")
 
 
 def feature_paths(R, S, D, gspc, M):
@@ -473,6 +474,10 @@ def feature_stages(res):
           "k1 returns per market (R1)": (f["R1"], "T-1"), "k1 flags": (f["flags"].astype(float), "T-1")}
     for name, bk in f["books"].items():
         st["k1 book net %s" % name] = (bk["net"], "T-1")
+    from gm import config as CF_
+    from gm import signals as G_
+    st["signal carry E13 adjusted (X1_MARKETS)"] = (G_.x1_seasonal(S2["C"], CF_.X1_MARKETS), "T")
+    st["positions A1_INCUMBENT (E13)"] = (f["books"]["A1_INCUMBENT"]["pos"], "T")
     g = f["books"]["A2_CHALLENGER"]
     st["positions A2_CHALLENGER (grid)"] = (g["pos"], "T")
     st["volatility A2_CHALLENGER"] = (g["vol"], "T")
