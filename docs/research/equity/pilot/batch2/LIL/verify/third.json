@@ -1,0 +1,42 @@
+[
+ {
+  "tid": "T01",
+  "answer": "rule",
+  "why": "Research step: check 10-15 years of history in Value Line"
+ },
+ {
+  "tid": "T02",
+  "answer": "not_rule",
+  "why": "Story of one mistake, bought before finishing work"
+ },
+ {
+  "tid": "T03",
+  "answer": "not_rule",
+  "why": "General attitude on macro vs micro, no specific decision"
+ },
+ {
+  "tid": "T04",
+  "answer": "rule",
+  "why": "Buy with margin of safety; smaller bets when knowledge incomplete"
+ },
+ {
+  "tid": "T05",
+  "answer": "not_rule",
+  "why": "Self-description: ideas come irregularly, names no decision"
+ },
+ {
+  "tid": "T06",
+  "answer": "rule",
+  "why": "When opportunity comes, research intensively and act fast; else wait"
+ },
+ {
+  "tid": "T07",
+  "answer": "rule",
+  "why": "Invests when he has insight into an inflection point"
+ },
+ {
+  "tid": "T08",
+  "answer": "rule",
+  "why": "Holding: buy a good business, then sit on it"
+ }
+]
