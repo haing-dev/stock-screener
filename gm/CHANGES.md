@@ -4,6 +4,119 @@ Every rule change gets a new VERSION in gm/run.py and a line here. Every variant
 (1990-2010; extra check 1975-89) is logged so the deflated Sharpe can count the trials. The holdout (2011-2026) is run
 once, after the rules are frozen, by gm/holdout.py.
 
+## A2: Batch A2, version grids, hygiene H1-H4 (registered 2026-11-27, BEFORE the A2 code and the A2 run): TESTING_PROTOCOL 7.6 step 3, 7.7
+Registered batch entry (no rule, weight, threshold or cost changes; no gm/ code changes; no statistic of the A2
+challenger, of any grid version or of any A2 report line has been computed on real data, cloud or PC). Nothing has to
+be built between A1 and A2: REGISTRATION_3.4 part (c) entries 1-4 are done (gm-1.2.3, gm-2.1.0, data entry A1 with its
+panel id, X1 outcome / E13); entry 5 is due before A3, entry 6 before B1 / B2; the E3 metadata listing ran 2026-11-24;
+the diagnostics of 7.5 order item 2 run AFTER A2 on the A2-final book (step 4). The A1 panel holds Bloomberg values, so
+every A2 statistic is computed by one PC job (tools/bbgq/jobs/gm_a2_v1.py, library tools/bbgq/lib/a2_batch.py).
+1. The registered text, word for word. 7.6 step 3: "Batch A2, grids (hygiene, 7.7 H1-H4). Challenger = CANDIDATE with
+   Trend 16 versions, Economic trend 2, Carry 2, Value 2 (version counts: SPEC_Trend s6, SPEC_Economic_trend s6,
+   SPEC_Carry s6, SPEC_Value s6; Carry's two versions reproduce today's half-and-half exactly, so A2 tests averaging,
+   not a new Carry rule). Incumbent = CANDIDATE gm-2.0.3, k = 1, A1 data. Value version 2's bond leg is already seen
+   (batch-1 V1, protocol_batch1.md; SPEC_Value s12): it is counted as a seen leg (7.8). Reported with A2: Sharpe by
+   version, by tranche (weekly check), by class and era; Trend's split into class-average and relative parts (register
+   B12, T12); Trend's carry and price parts; Value next to Trend. If A2 fails, the incumbent stays without averaging; no
+   cell of a grid is picked." 7.7: "Hygiene items (A2, A3): H1 one-sided 95% lower bound of dSR (paired stationary
+   bootstrap of section 2, pooled design window) > -0.10; H2 dSR at twice the costs, reported; H3 tail test 5 between
+   the two books; H4 (A3 only) ... Pass = H1, H3 and, in A3, H4. No Holm across hygiene items (a margin test, not an
+   adoption claim; error at the margin measured 0.06-0.09, power s3.7)." 7.1 F9: "A2 and A3: incumbent = CANDIDATE
+   gm-2.0.3 (7.4) as run at k = 1 on the A1 data; the 0.23 is printed beside the result, not subtracted." 7.1 F2: eras
+   "Reported, not decisive, for pods, rule layers and hygiene items"; F4: "'improves its own target' decisive only for
+   items with a written target (A3), reported for A1 and A2"; F5: "Hygiene: dSR at twice the costs reported". 7.3 item 1:
+   "Decisive timing is k = 1 ... Reported beside it: k = 0 ... and the one-period (one-month) delay of WORKFLOW s5."
+2. Arms (closed by the A1 and X1 entries, which say every later run uses A1_INCUMBENT and the A1 panel): incumbent =
+   A1_INCUMBENT (gm-2.0.3-candidate-x1, config hash 465b5ecd4f = CANDIDATE a9466df18b + E13) as run, on the old code path
+   (no grid); challenger = A2_CHALLENGER (gm-2.2.0-a2-challenger, config hash a5b83bdf45 = A1_INCUMBENT + config key
+   "grid" = Trend 16 (config.TREND_GRID), Economic trend tanh / sign, Carry dir / cs, Value 1 / 2), version path of
+   gm-2.1.0 E7. Both on the A1 panel, A1 PANEL ID e7f98d4439fccf91f3451bc4b9e78079e3bc2cc2452931363b28520460b6cb43
+   (rebuilt on the PC by a1_panel-1.1.0 from LOCK_v2 and the free inputs, its id checked; the saved panel file, if
+   present, must equal the rebuild), engine gm-2.2.0, CANDIDATE shares 45 / 15 / 25 / 15 (7.1 F8), the same costs,
+   design months only (every loader cut at 2010-12-31, holding cut of 7.3 item 5).
+3. Decisive (the verdict): at k = 1, on the pooled design window = the months 1975-01 .. 2010-12 in which both books
+   have a net return (gm.stats.noninferiority, gm-2.1.0 E10): H1 = the one-sided 95% lower bound of dSR (challenger
+   minus incumbent net Sharpe) from gm.stats.paired_sr_test (10,000 resamples, mean block 6, seed 20261101) > -0.10
+   (identical books pass); H3 = gm.stats.tail_test (challenger's maximum fall not worse by more than 2 points, worst
+   month not worse by more than 1 point). PASS = H1 and H3: the A2-final book is the A2 challenger (grids averaged).
+   FAIL: the A2-final book is A1_INCUMBENT, without averaging; no cell of any grid is picked. H2 (dSR with every cost
+   doubled, both books at cost multiple 2) is printed, not decisive. H4 does not apply (A2 has no written target).
+   No Holm. The selection inflation of 7.8 item 2 is printed beside, never subtracted.
+4. Reported (not decisive), the 7.6 step 3 list plus the lines 7.3, 7.7 and 7.8 require on every book result:
+   a. each book at k = 1, k = 0 and the one-month delay (config key delay_months = 1 on the k = 0 path, as the A1
+      report), each at single and double costs: months, net Sharpe, mean, volatility, maximum drawdown, skew, Lo-adjusted
+      Sharpe (gm.stats.lo_sharpe), for 1975-2010, 1975-89 and 1990-2010; H1 / H2 / H3 at k = 0 and the one-month delay
+      beside (reported); per era (1975-89, 1990-2010) dSR with its lower bound and standard error (7.1 F2);
+   b. by version: each challenger version of each pod as a complete pod alone = a one-part equal-risk book of gm-2.1.0
+      E9 (parts = {version: [(pod, "*", v)]}: class blocks, part scaler, 10% book scaler, caps, costs) at k = 1;
+      net Sharpe 1975-2010 and by era; share of versions with net Sharpe > 0 (1975-2010) per pod and over all 22; each
+      pod alone (mask (pod, "*", "*")) for both books, and the incumbent's Carry versions 1 and 2;
+   c. by class and era: family x class contributions at k = 1 (held family positions x k = 1 returns, before costs:
+      a1_panel.contrib_k1, the A1 report's convention), family totals and class totals, both books, 1975-2010 and eras;
+   d. by tranche (weekly check, 7.3 item 6, 1990-01 .. 2010-12 only): gm.execution.tranches for both books; net Sharpe
+      of each tranche j = 0..3 and of the tranche form; dSR of the tranche form with its lower bound (reported);
+      coverage = share of gross position held in market-months flagged for lack of daily data, per tranche;
+   e. Trend's split (SPEC_Trend s14, closed there): per version and class, the score w (clipped to [-1, 1]) is split
+      into its class mean over the markets of the class with a position that month and w minus that mean; each part x
+      0.40 / vol_v / n_v / V gives a class-average and a relative position; summed over versions; each is scaled to the
+      book by the same factor that turns Trend's unscaled class position into its held family position (block scaler x
+      family share x book scaler x cap shrink, book.run), so the two parts add up to Trend's contribution exactly;
+      return = held part x k = 1 return, before costs; Sharpe 1975-2010, by era and by class; both books;
+   f. Trend's carry and price parts (SPEC_Trend s10): carry part = held Trend position x carry / 12 at the prior month
+      end (the Carry pod's carry values, gm.signals.carry_values of the A1 panel, bonds and currencies only); price part =
+      Trend's bond and currency contribution minus the carry part; k = 1, before costs; Sharpe and mean, 1975-2010 and
+      eras; both books;
+   g. Value next to Trend (SPEC_Value s14 "A2 reads version 2 with Trend's old and new grids"): correlation of Value's
+      and Trend's contributions (k = 1, before costs), Newey-West (6 lags) t of Value's intercept on Trend's
+      contribution (gm.stats.nw_alpha_t), correlation of Value with Trend's relative part (SPEC_Value s10, 1.3b (iii));
+      for incumbent Value v1 / incumbent Trend, challenger Value v1 + v2 / incumbent Trend (old grid) and challenger
+      Value / challenger Trend (new grid); 1975-2010;
+   h. Economic trend next to Trend (SPEC_Trend s14, SPEC_Economic_trend s14 "A2 report"): Pearson correlation of the two
+      pods' held equity positions, pooled over equity market-months 1975-2010 where both are non-zero; both books;
+   i. k = 1 flagged share (7.3 item 2): share of gross position in flagged market-months, 1975-2010 and by year, both
+      books;
+   j. P4 (7.7): w = r - b x m, m = the A1 panel's eq_us_spx monthly excess return, b by least squares with intercept
+      over all months from 1975-01 to the month before, first value in month 37 (1978-01); annualised Sharpe of w beside
+      r, 1978-01 .. 2010-12, both books at k = 1. S&P alone: M1 (which may add the US 10-year) runs after A2 (7.5 order
+      item 2), so until it has run the line uses its "S&P alone" form;
+   k. fragility (7.7): the largest loss of the pooled k = 1 dSR when one calendar year (its months dropped from both
+      return series), one market or one asset class (removed from the A1 panel, both books re-run) is removed, and
+      which; flagged when one calendar year gives more than 40% of the summed monthly net-return difference (challenger
+      minus incumbent), if that sum is positive;
+   l. trial count and selection inflation (7.8 item 2): rows of gm/trials.csv with family "book" or "pod" and a 1990-2010
+      Sharpe, by the stats_audit method of gm/audit.py s2: N rows, z = (1 - g) x Phi^-1(1 - 1/N) + g x Phi^-1(1 - 1/(N e)),
+      g = 0.5772156649, inflation = z x sd(ddof 1). On the trial log shipped with this entry (gm/trials.csv sha256
+      dd10359e3c1cec49640f3df054df8c2da28baf81ec887d2db258c72b2ea81198; 39 book rows, 0 pod rows): N = 39, mean 1.481,
+      sd 0.118, z 2.18, inflation 0.26 (computed now from the logged rows only; 32 variants gave 0.23 in stats_audit,
+      which left out the batch rows); the job recomputes it from the shipped file and stops if the file differs;
+   m. tuned-knob counts (7.8 item 4), as registered: Trend 4, Economic trend 3, Carry 3, Value 3 + 1 seen leg (Value
+      version 2's bond leg, 7.8 item 3), book level 3 (pod share vector, no risk scaler, no scenario limit).
+5. Not reported at A2 (closed here, with the reason): untouched markets (the held-back markets are sealed and not in
+   the A1 panel; WORKFLOW 0.4 "untouched markets named and sealed"); the specs' falsifier lines other than the splits
+   named in 7.6 step 3 (they are read on the A2-final book, which exists only after the A2 verdict, with the 7.5 order
+   item 2 diagnostics, family "diag"; X2 and D4 supply their inputs); the combined-book lambda line (pods only); the
+   martingale test and the deflated Sharpe (dropped, 7.1). Worst-month levels are not printed (export whitelist names
+   drawdowns, not single months): H3 is printed as its two margins (challenger minus incumbent, points) and pass / fail.
+6. Trial count (7.8 item 1, family "book": "a change that could alter the book: A2"): one gm/trials.csv row for the
+   challenger at k = 1 on the A1 panel (columns as gm/trials.py; note: panel id, LOCK_v2, engine, parent A1_INCUMBENT
+   465b5ecd4f, verdict and the H1 bound), written by the coordinator from the job's TRIAL ROW line. The incumbent's run
+   is the A1 row already logged (same config hash, same panel): not logged again. The by-version, pod-alone, tranche
+   and fragility runs are report lines of this one trial, not trials (none can be adopted).
+7. Job (tools/bbgq/jobs/gm_a2_v1.py on the PC; the A1 pattern): stops (prints STOP, reads no Bloomberg value) unless
+   the gm .py files equal engine_ref.json's code block; a2_batch.py, a1_panel.py, gm_engine.py, bbg_panel.py and
+   bbgdata.py have the sha256 registered in the job; lib\gm\trials.csv has the sha256 of item 4l; the store's lock id is
+   LOCK_v2 d85a46cb2853646b24796f294f3ccab1d1507188c402e978fd59f5196ea41fc9; the free inputs match the reference; the
+   free arm matches engine_ref.json (E, C, V signal sums 1e-6, market months exact). Then it rebuilds the A1 panel
+   (a1_panel evaluate + build, all blocks), asserts extension-only and the registered A1 PANEL ID, compares the rebuild
+   with work\a1\a1_panel_e7f98d4439fc.pkl when that file exists (stop on any difference), and checks the incumbent as
+   run against the A1 report (net Sharpe 1975-2010 at 3 decimals: k = 1 1.439, k = 0 1.480, one-month delay 1.052;
+   stop on a difference). Prints summary statistics over at least 60 months only, pass / fail, ids; exception text as
+   type and code frames, numbers scrubbed. Writes nothing to work\ (A2 saves no panel).
+8. Cloud: no A2 statistic is computed on the free or the A1 panel. Cloud work = the code, synthetic-data tests (mock
+   stores, synthetic panels with known answers: tests/a2_batch_smoke.py in tests/run_tests.py), the gates of the engine
+   (k = 0 reproduction 24 of 24, truncation 8 of 8; gm/ is unchanged, so engine_ref.json is unchanged), and
+   positions-only plumbing on free data (the Trend split parts add up to the Trend held positions; no return).
+
 ## data: A1 data rule (registered 2026-11-27, BEFORE the A1 code and the A1 run): TESTING_PROTOCOL 7.6 step 2, 7.4 E15
 Entry 3 of docs/research/registration/REGISTRATION_3.4.md part (c): "Data entry A1 (before the A1 run): the
 extension-only rule of 7.6 step 2 with LOCK_v2 id d85a46cb2853646b24796f294f3ccab1d1507188c402e978fd59f5196ea41fc9; the
