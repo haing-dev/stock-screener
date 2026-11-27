@@ -102,6 +102,41 @@ free start is "rejected: nothing to extend" (it is not used); the job stops (pri
 code differs from engine_ref.json, the lock id is not LOCK_v2 or the free inputs differ; when no series is admitted
 the report has the free arm only and the A1 panel equals the free panel. NOT RUN: the A1 report needs the Bloomberg
 store on the PC (queue: docs/research/batches/A1_BUILD_2026-11-27.md). A1 panel id: to be recorded here after the run.
+Corrections after the independent check (docs: CHECK_A1, APPROVED WITH CORRECTIONS; registered 2026-11-27 BEFORE their
+code and BEFORE any A1 run; appended, the items above are not rewritten):
+- Item 5b, correction ("same instrument" decided per series, not by one template; a registered table in
+  a1_panel.py NOT_SAME / NOT_SAME_BEFORE; a listed series stays in the output as REJECTED with the reason):
+  | Market | Series | Decision | Reason |
+  |---|---|---|---|
+  | cm_copper | SPGSICP Index | rejected | S&P GSCI copper rolls LME copper (GSCI contract IC); the free series is COMEX HG (HG=F, CPER) |
+  | cm_copper | BCOMHG Index | candidate | BCOM copper rolls COMEX HG, the free series' contract |
+  | cm_gasoline | SPGSRBP Index, BCOMRB Index | months before 2006-01 not the same instrument | before 2006 both rolled NYMEX HU (unleaded), not RBOB (RB); the LSEG entry treats gasoline before 2006 as another contract identity (HU). Every month they could add lies before the free start (2000-12), so neither can extend anything |
+  | cm_gasoline | XB1 Comdty, XB2 Comdty (block 2) | months before 2006-01 not the same instrument | same reason, applied to the generic RBOB contracts for consistency (closed here; EIA rb starts 2005-10, so this changes nothing in practice) |
+  | cm_brent | SPGSBRP Index, BCOMCO Index | candidate (same instrument) | both roll ICE Brent futures (CO); the free series (BNO ETF, NYMEX BZ=F, stooq co.f) holds or settles on the same ICE Brent futures, so it is the same reference contract |
+  | eq_us_spx | MXUS Index (dividend yield) | rejected | MSCI USA is not the S&P 500, whose dividend yield the free series is (SPY minus ^GSPC) |
+  | eq_de_dax, eq_gb_ftse, eq_fr_cac, eq_jp_nikkei, eq_ca_tsx, eq_au_asx, eq_hk_hsi | MSCI country index (dividend yield) | rejected | the free yield is the Ken French country 'Mkt' portfolio (value-weighted, with minus without dividends; gm/panel.py french_country_usd, gm/signals.py equity_dy); neither the repo, its source notes (macro/fetch_research.py) nor the file header states that this portfolio is an MSCI index, so the same index family is not established and the series are rejected (checked 2026-11-27) |
+  Every other block-1 and block-2 candidate: the index or generic contract on the same exchange contract as the free
+  series (per-market instrument text in a1_panel.py INSTRUMENT). Block-3 candidates for the 10 equity markets with
+  no free dividend yield stay rejected for "no free history to extend". Consequence: block 3 admits nothing.
+- Item 4, "Not candidates", addition (LSEG): the source of A1 is LOCK_v2. TESTING_PROTOCOL 7.6 step 2 writes the rule
+  "for each Bloomberg series (LOCK_v2, lock id d85a46cb...)", REGISTRATION_3.4 part (c) item 3 registers "the
+  extension-only rule of 7.6 step 2 with LOCK_v2 id ...", and 7.4 E15 names "the A1 data rule (7.6 A1) and the LOCK_v2
+  reader path; later, the LSEG source (7.10 item 3) ... as data entries" as separate items; LSEG was not a registered
+  source when A1 was registered. So LSEG series (LOCK_LSEG_v5), including LSEG contracts 1-2 and dividend yields that
+  SPEC_Carry s3 and SPEC_Value s3 allow "from Bloomberg or LSEG", are not A1 candidates. No later run adds an LSEG
+  backward extension to the existing pods' A1 panel (it would be a data change made with sight of A1); the A1-style
+  exception in the LSEG data entry's item 4 applies only to the inputs that entry names (Curve carry legs, Strip
+  reversion strips, T10 strip markets if admitted, card 3 R4, card 5 R1, card 3 R1 cross-check): LSEG enters only
+  where its own registered data entry names it, i.e. the new pods and markets.
+- Item 6, addition (report lines of TESTING_PROTOCOL 7.3 items 1-2): beside k = 1 and k = 0, the one-month delay
+  (config key delay_months = 1, book.py) for every arm and era; the k = 1 flagged share by year 1975-2010 per arm;
+  the family x class block table from the k = 1 books (decisive timing) as well as the k = 0 books, each labelled.
+- Job hardening (no rule change): the job stops (prints STOP, reads no Bloomberg value) unless a1_panel.py,
+  gm_engine.py, bbg_panel.py and bbgdata.py have the sha256 registered in the job (the values in A1_BUILD); it asserts
+  the Store's lock id = LOCK_v2; before the Bloomberg candidates it compares the free arm with engine_ref.json
+  (per-market sums of |signal| for E, C, V within the reproduction tolerance 1e-6, market months exact) and stops on a
+  difference; exception messages are printed with the type and code frames only, numbers with 3 or more decimals
+  replaced by <num>. The trial row's note names its parent (CANDIDATE a9466df18b; A1_INCUMBENT 465b5ecd4f).
 
 ## X1 outcome (registered 2026-11-27, after the X1 run and BEFORE the E13 code and A1's design run): E13 for natgas, gasoline
 Entry 4 of docs/research/registration/REGISTRATION_3.4.md part (c): "X1 outcome (after X1, before A1's design run): for
