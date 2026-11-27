@@ -555,3 +555,11 @@ as such. Replaces R1.1 (record); R1.2 (material) and R1.3 (screenability) stay.
     averaged, version-sets with no passer in their cells left out (count printed); B12 not implemented (portfolio
     check, not an entry rule); reference-book score recomputed with eq_ref code; the job stops without GICS history or
     the Treasury series. The per-criterion universe column is withheld from the recipe writer (A10 item 9 feedback).
+17. **Independent code review and eq_recall 1.0.1 (2026-11-27, before run() was ever executed).** A fresh Opus review
+    found no blocker (pull() and run() both safe as written) and 1 should-fix + 7 notes. Fixed in 1.0.1 (code
+    710545c3...; pull() identical, so the queued eq_recall_pull_v1 runs with 1.0.0): stop when the 10-year Treasury
+    is missing at any evaluation quarter-end (it would have failed P1 for every stock silently); last CRSP split
+    factor from the untruncated price file for the revision measure (as eq_ref); the AAPL check prints only the
+    direction; a decisive result resting on one R2 version is flagged. The 20-purchase floor applies per R2 version.
+    Not changed (notes): full-form bootstrap draw dropping, per-criterion shares under decisive missing-data rules,
+    pull connection rollback. Review: pilot/RECALL_CODE_REVIEW_2026-11-27.md.

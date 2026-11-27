@@ -25,7 +25,10 @@ Recipes: the criteria of a recipe live in ONE function (kantesaria_v1) that retu
 decisive entry and the full-form versions are compositions of those flags (kantesaria_v1_entry, kantesaria_v1_full),
 registered in RECIPES so later recipes are added beside it.
 
-1.0.0 (2026-11-27): first version.
+1.0.0 (2026-11-27): first version. 1.0.1 (same day, after an independent review, before run() was ever executed;
+pull() unchanged): stop when the 10-year Treasury is missing at any evaluation quarter-end; the reference-book revision
+measure takes the last CRSP split factor from the untruncated price file (as eq_ref); the AAPL direction check prints
+only the direction; a single-version decisive result is flagged.
 """
 import json
 import time
@@ -39,7 +42,7 @@ INVESTORS = json.loads("[{\"name\": \"Joel Greenblatt\", \"group\": \"roster\", 
 TARGET = json.loads("{\"name\": \"Dev Kantesaria\", \"mgrnos\": [\"14460\"], \"recipe\": \"kantesaria_v1\"}")
 # <<< FROZEN INPUT
 
-VERSION = "eq_recall-1.0.0"
+VERSION = "eq_recall-1.0.1"
 COM = ("securitytype = 'EQTY' and securitysubtype = 'COM' and sharetype = 'NS' and primaryexch in ('N','A','Q')")
 MEASURES = ["ey", "bp", "mom", "roe", "acc", "pio", "rev"]
 GROUPS = {"value": ["ey", "bp"], "momentum": ["mom"], "quality": ["roe", "acc", "pio"], "expectations": ["rev"]}
@@ -458,7 +461,7 @@ def price_direction(msf, out):
     s = 1.0
     if len(a) == 2 and a.loc[202007] > 0:
         s = 1.0 if a.loc[202009] / a.loc[202007] > 1 else -1.0
-        out("CRSP price factor 2020-09 / 2020-07 for AAPL: %.3f -> direction %+d" % (a.loc[202009] / a.loc[202007], s))
+        out("CRSP price factor direction check: %+d" % s)  # 1.0.1: no company or value printed
     else:
         out("AAPL factor check not available; direction +1 assumed")
     return s
@@ -569,7 +572,7 @@ def ibes_revision(D, u, msf, s):
 
     e_now = at(pd.to_datetime([ym_end(v) for v in u.yyyymm]).values)
     e_l3 = at(pd.to_datetime([ym_end(ym_add(v, -3)) for v in u.yyyymm]).values)
-    last = msf.sort_values("yyyymm").groupby("permno").cfpr.last()
+    last = D["cf_last"] if "cf_last" in D else msf.sort_values("yyyymm").groupby("permno").cfpr.last()
     cf_last = u.permno.map(last).to_numpy(float)
     cf_t = pd.merge(u[["permno", "yyyymm"]], msf[["permno", "yyyymm", "cfpr"]], on=["permno", "yyyymm"], how="left").cfpr.to_numpy(float)
     padj = u.prc.to_numpy(float) * np.power(cf_t / cf_last, s)
@@ -675,6 +678,9 @@ def recall_panel(D, u, msf, s, out):
     out("10-year Treasury source %s (scale /%g); quarter-ends with a value: %d of %d" % (
         str(D["t10"].src.iloc[0]) if "src" in D["t10"] and len(D["t10"]) else "?", scale,
         sum(1 for t in qe if np.isfinite(yt.get(ym_end(t), np.nan))), len(qe)))
+    gap = [t for t in qe if not np.isfinite(yt.get(ym_end(t), np.nan))]
+    if gap:  # 1.0.1: a quarter-end without a Treasury value would fail P1 for every stock: stop instead
+        raise RuntimeError("STOP: 10-year Treasury missing at %d evaluation quarter-end(s) (first %s)" % (len(gap), gap[0]))
     # quarterly measures at t
     E["c01"] = (E.rq_capx_ttm / E.rq_sale_ttm).where(E.rq_sale_ttm > 0)
     sbc_q = E.rq_sbc_ttm
@@ -929,6 +935,7 @@ def load_inputs(load):
     D["dv"] = pd.concat(parts, ignore_index=True)
     D["funda"], D["fqx"], D["t10"] = load("rc_funda"), load("rc_fqx"), load("rc_t10")
     # no monthly data after the last evaluation quarter-end is read (no forward return)
+    D["cf_last"] = D["msf"].sort_values("yyyymm").groupby("permno").cfpr.last()  # 1.0.1: split factor only, no return
     D["msf"] = D["msf"][pd.to_numeric(D["msf"].yyyymm) <= T1].copy()
     D["dv"] = D["dv"][pd.to_numeric(D["dv"].yyyymm) <= T1].copy()
     fq = D["fq"].copy()
@@ -1042,6 +1049,9 @@ def run(load, save, out):
     dec = summarize(ab, ["dec"])
     ref = summarize(ab, ["ref"])
     out(line("DECISIVE (average of versions a and b)", dec))
+    only = [r["set"] for r in dec["per"] if not r["measurable"]]
+    if only and dec["measurable"]:
+        out("   NOTE: decisive = one version only (%s not measurable: fewer than 20 purchases)" % ", ".join(only))
     out("   per version: " + per_set(dec))
     eit = summarize({"either": S["either"]}, ["dec"])
     out(line("decisive on 'either version' (reported)", eit))
