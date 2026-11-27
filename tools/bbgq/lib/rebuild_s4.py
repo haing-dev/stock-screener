@@ -9,16 +9,23 @@ gm/seal.py, tools/bbgq/lib/a1_panel.py) for data formats only; the interface doc
 Every reading the written rules leave open is listed in docs/research/batches/S4_REBUILD_NOTES.md as N1, N2, ...
 (cited in the code below).
 
-API (S4_INTERFACE s1):  part_returns(inputs, cut="2010-12-31") -> {"trend", "carry", "value_eq", "carry_fx_v2",
+API (S4_INTERFACE v2 s1):  part_returns(inputs, cut="2010-12-31") -> {"trend", "carry", "value_eq", "carry_fx_v2",
 "carry_energy": monthly NET return Series at k = 1, PeriodIndex "M", each part held alone at the 10% target}.
-build(inputs, cut) returns the same plus positions and intermediate pieces (for the self-test).
+inputs = the RAW inputs of interface v2 s2 (R, D, days, rate3m, fx_rate_country, eia, french_with, french_without,
+us_total, us_price, cost, em_borrow, classes, meta); the carry measure, the value measure and the hybrid volatility
+are derived here from the spec text (interface v2 s2a). build(inputs, cut) returns the same plus positions, measures
+and intermediate pieces (for the self-test).
+
+1.1.0 (2026-11-27): M1 of the independent check (rank and sign weights are no longer clipped; only Trend's score is,
+N16); interface v2 (raw inputs: measures C, V and vol derived here, N17-N23); registered gap rule of SPEC_Trend s3
+(N2 amended, N24).
 
 Only the standard library, numpy and pandas. No file, network or environment access; no randomness; no printing.
 """
 import numpy as np
 import pandas as pd
 
-VERSION = "rebuild_s4-1.0.0"
+VERSION = "rebuild_s4-1.1.0"
 SEAL = "2010-12-31"
 SQ12 = np.sqrt(12.0)
 
@@ -37,6 +44,11 @@ VALUE_EQ = ("eq_us_spx", "eq_gb_ftse", "eq_jp_nikkei", "eq_au_asx", "eq_ca_tsx",
             "eq_fr_cac")           # SPEC_Value s4 (the other 10 indexes have no dividend yield)
 DEFAULT_CLASSES = {"EQ": ("eq_",), "FI": ("bd_", "st_"), "FX": ("fx_",), "CM": ("cm_",)}
 KEYS = ("trend", "carry", "value_eq", "carry_fx_v2", "carry_energy")
+X1_MARKETS = ("cm_natgas", "cm_gasoline")   # E13: the X1 gate opened for these two (gm/CHANGES.md "X1 outcome")
+X1_MIN = 5                         # at least five earlier same-calendar values (SPEC_Carry s3)
+FRENCH7 = ("eq_de_dax", "eq_gb_ftse", "eq_fr_cac", "eq_jp_nikkei", "eq_ca_tsx", "eq_au_asx", "eq_hk_hsi")
+DY_LAG = 12                        # E4: non-US dividend yield ending at t - 12
+DAILY_DAYS = 252                   # trading days a year for the daily EWMA (N21)
 
 
 # =================================================================================================== seal (7.3 item 5)
@@ -94,21 +106,28 @@ def sign0(x):
     return np.sign(x)
 
 
-def size_in_class(w, vol, cols):
-    """p = clip(w, -1, 1) x 0.40 / vol, divided by the count of markets in the class with a position that month
-    (SPEC_Trend s3 step 5; SPEC_Carry s3; SPEC_Value s3). A market without a vol has no position (N7)."""
+def size_in_class(w, vol, cols, clip=False):
+    """p = w x 0.40 / vol (SPEC_Carry s3 lines 50-52, SPEC_Value s3 line 58: ranks and signs are NOT clipped), or
+    clip(w, -1, 1) x 0.40 / vol for Trend's score only (clip=True; SPEC_Trend s3 lines 49, 62; N16); divided by the
+    count of markets in the class with a position that month (a zero position counts, N25). A market without a vol
+    has no position (N7)."""
     cols = [c for c in cols if c in w.columns]
     if not cols:
         return None
     v = vol.reindex(index=w.index, columns=cols)
-    p = w[cols].clip(-1, 1) * SIZE / v.where(v > 0)
+    x = w[cols].clip(-1, 1) if clip else w[cols]
+    p = x * SIZE / v.where(v > 0)
     n = p.notna().sum(axis=1)
     return p.div(n.where(n > 0), axis=0)
 
 
 def trend_level(R):
-    """Compounded level: cumulative product of (1 + R, gaps as 0), defined where data exist (SPEC_Trend s3)."""
-    return (1 + R.fillna(0.0)).cumprod().where(R.notna())
+    """Compounded level (SPEC_Trend s3 with its 2026-11-27 amendment, the registered gap rule N2): cumulative product of
+    (1 + R) with a month without a return adding 0, existing at every month from the market's first return onward
+    (interior gaps and, read literally, months after its last return too: N24); missing only before the first
+    return."""
+    started = R.notna().cummax()
+    return (1 + R.fillna(0.0)).cumprod().where(started)
 
 
 def trend_score(R, lookbacks=TREND_LOOKBACKS):
@@ -251,14 +270,126 @@ def hold_alone(blocks, R, RE, vol, table, em_borrow, cost_mult=1.0):
             "k_book": k_book}
 
 
+# =================================================================================================== measures (S4_INTERFACE v2 s2a)
+def carry_fx(rate3m, fx_rate_country):
+    """SPEC_Carry s3 step 2: (local 3-month rate - US 3-month rate) / 100, lagged 1 month: the value at month-end t uses
+    the monthly-average rates of month t - 1 (rates in percent a year -> decimal a year). Missing if either is missing."""
+    us = rate3m["US"]
+    out = {}
+    for m, cc in fx_rate_country.items():
+        if cc in rate3m.columns:
+            out[m] = ((rate3m[cc] - us) / 100.0).shift(1)
+    return pd.DataFrame(out, index=rate3m.index)
+
+
+def _contract(f, n):
+    for key in (n, str(n)):
+        if key in f.columns:
+            return f[key].astype(float)
+    return pd.Series(np.nan, index=f.index)
+
+
+def x1_adjust(c):
+    """E13 (SPEC_Carry s3; CHANGES "X1 outcome" closed item 3): d(t) = carry(t) minus the mean of the 12 month-ends up
+    to and including t (all 12 present); adjusted carry(t) = carry(t) minus the mean of d over all EARLIER month-ends of
+    the same calendar month (strictly before t; at least five values of d); missing where carry or that mean is
+    missing (N19)."""
+    d = c - c.rolling(12, min_periods=12).mean()
+    out = pd.Series(np.nan, index=c.index)
+    cal = np.array([p.month for p in c.index])
+    for mo in range(1, 13):
+        sel = cal == mo
+        ds = d[sel]
+        prior_sum = ds.fillna(0.0).cumsum().shift(1)
+        prior_n = ds.notna().astype(int).cumsum().shift(1)
+        seas = prior_sum / prior_n.where(prior_n >= X1_MIN)
+        out[sel] = (c[sel] - seas).values
+    return out
+
+
+def carry_energy(eia):
+    """SPEC_Carry s3 step 3: 12 x (F1 / F2 - 1) from NYMEX contracts 1 and 2 at month-end t (positive =
+    backwardation); E13 for cm_natgas and cm_gasoline only (CHANGES "X1 outcome"). Missing where F2 is not positive."""
+    out = {}
+    for m in ENERGY:
+        if m not in eia:
+            continue
+        f1, f2 = _contract(eia[m], 1), _contract(eia[m], 2)
+        c = 12.0 * (f1 / f2.where(f2 > 0) - 1.0)
+        out[m] = x1_adjust(c) if m in X1_MARKETS else c
+    return pd.DataFrame(out)
+
+
+def dividend_yield(french_with, french_without, us_total, us_price):
+    """SPEC_Value s3 item 1 with E4 (TESTING_PROTOCOL 7.4; CHANGES gm-1.2.3 closed item 3): seven countries = 12-month
+    sum of (Ken French return with minus without dividends), all 12 months needed, the sum ENDING AT t - 12 used at t
+    (no carry-forward, not clipped: N20); US = 12-month sum of (SPY total return - ^GSPC price return), all 12 needed,
+    clipped to [0, 0.10], at t (no lag). Higher = cheaper."""
+    out = {}
+    for m in FRENCH7:
+        if m in french_with.columns and m in french_without.columns:
+            dsum = (french_with[m] - french_without[m]).rolling(12, min_periods=12).sum()
+            out[m] = dsum.shift(DY_LAG)
+    us = (us_total - us_price).rolling(12, min_periods=12).sum().clip(lower=0.0, upper=0.10)
+    out["eq_us_spx"] = us
+    return pd.DataFrame(out, index=french_with.index)
+
+
+def vol_m36(R):
+    """SPEC_Trend s3 step 4: 36-month standard deviation of monthly R, at least 12 months, x sqrt(12)."""
+    return R.rolling(36, min_periods=12).std() * SQ12
+
+
+def _month_end_rows(daily, months):
+    """The row of a daily frame at the last day at or before each month's last calendar day (N22)."""
+    ends = months.to_timestamp(how="end").normalize()
+    return daily.reindex(pd.DatetimeIndex(ends), method="ffill").set_axis(months)
+
+
+def vol_hybrid(R, D):
+    """SPEC_Trend s3 step 4 ("hybrid", the A2-final model for every pod and the cap), annualised:
+    fast = sqrt(252 x EWMA of daily squared returns, half-life 35 days, at least 40 daily values) where the market has
+    such an estimate at month-end t (D's values as given: log returns, price returns for bd_/st_), else
+    sqrt(12 x EWMA of monthly squared R, half-life 6 months, at least 12); slow = 120-month standard deviation of R,
+    at least 36, x sqrt(12); hybrid = max(0.7 fast + 0.3 slow, 0.75 slow); fast alone until slow exists; m36 where
+    neither exists. EWMAs: no mean removed, half-lives on the input's own time axis (daily rows of D, months of R),
+    pandas ewm defaults (adjust=True, a missing value keeps the last estimate) (N21-N23)."""
+    months = R.index
+    fast_m = np.sqrt((R ** 2).ewm(halflife=6, min_periods=12).mean() * 12.0)
+    fast = fast_m.copy()
+    if D is not None and len(D):
+        cols = [c for c in D.columns if c in R.columns]
+        if cols:
+            Dd = D[cols].sort_index()
+            Dd = Dd[~Dd.index.duplicated(keep="last")]
+            dv = (Dd ** 2).ewm(halflife=35, min_periods=40).mean()
+            fd = np.sqrt(_month_end_rows(dv, months) * DAILY_DAYS)
+            fast[cols] = fd.combine_first(fast_m[cols])
+    slow = R.rolling(120, min_periods=36).std() * SQ12
+    hyb = np.maximum(0.7 * fast + 0.3 * slow, 0.75 * slow)
+    hyb = hyb.where(slow.notna() & fast.notna(), fast)
+    hyb = hyb.where(hyb.notna(), vol_m36(R))
+    return hyb.where(hyb > 0)
+
+
 # =================================================================================================== the parts
 def _prepare(inputs, cut):
+    """Every raw input cut at the seal BEFORE any measure is computed (7.3 item 5; N15); then the measures."""
     R = _cut(inputs["R"], cut).astype(float)
-    D = _cut(inputs["D"], cut) if inputs.get("D") is not None else None
+    D = _cut(inputs["D"], cut).astype(float) if inputs.get("D") is not None else None
     days = _cut(pd.DatetimeIndex(inputs["days"]).normalize(), cut)
-    C = _cut(inputs["C"], cut).reindex(R.index).astype(float)
-    V = _cut(inputs["V"], cut).reindex(R.index).astype(float)
-    vol = _cut(inputs["vol"], cut).reindex(R.index).astype(float)
+    idx = R.index
+    rate = _cut(inputs["rate3m"], cut).reindex(idx).astype(float)
+    eia = {m: _cut(f, cut).reindex(idx) for m, f in inputs["eia"].items()}
+    fw = _cut(inputs["french_with"], cut).reindex(idx).astype(float)
+    fwo = _cut(inputs["french_without"], cut).reindex(idx).astype(float)
+    ust = _cut(inputs["us_total"], cut).reindex(idx).astype(float)
+    usp = _cut(inputs["us_price"], cut).reindex(idx).astype(float)
+    C = pd.concat([carry_fx(rate, inputs["fx_rate_country"]), carry_energy(eia)], axis=1).reindex(idx)
+    V = dividend_yield(fw, fwo, ust, usp).reindex(idx)
+    C = C[[c for c in C.columns if c in R.columns]]         # a measure counts only for a market of the panel (N11)
+    V = V[[c for c in V.columns if c in R.columns]]
+    vol = vol_hybrid(R, D)
     classes = inputs.get("classes") or DEFAULT_CLASSES
     table = inputs["cost"]
     em = tuple(inputs.get("em_borrow", ()))
@@ -271,13 +402,13 @@ def trend_blocks(R, vol, classes):
     out = {}
     for cls in ("EQ", "FI", "FX", "CM"):
         cols = class_members(R.columns, classes, cls)
-        out[cls] = size_in_class(s, vol, cols)
+        out[cls] = size_in_class(s, vol, cols, clip=True)
     return out
 
 
 def carry_blocks(C, vol, classes):
     """SPEC_Carry s3: FX version 2 (rank) as the Core component (its term p_v2 / 2 of the pod average; 7.2 item 5);
-    CM = (version 1 sign + version 2 rank) / 2, missing version = 0. C already holds E13 for natgas, gasoline."""
+    CM = (version 1 sign + version 2 rank) / 2, missing version = 0. C holds E13 for natgas and gasoline."""
     fx = [c for c in class_members(C.columns, classes, "FX")]
     cm = [c for c in ENERGY if c in C.columns]
     out = {}
@@ -292,7 +423,7 @@ def carry_blocks(C, vol, classes):
 
 
 def value_eq_block(V, vol):
-    """SPEC_Value s3 / s4: equities, dividend yield (E4 already in V), rank in class, long cheap. Version 2's equity
+    """SPEC_Value s3 / s4: equities, dividend yield (with E4), rank in class, long cheap. Version 2's equity
     leg equals version 1, so the pod average of the two equals one version (the A2-final book has version 1 only)."""
     eq = [c for c in VALUE_EQ if c in V.columns]
     return {"EQ": size_in_class(cs_rank(V[eq]), vol, eq)}
@@ -311,6 +442,7 @@ def build(inputs, cut=SEAL, cost_mult=1.0):
         out[k] = res
     out["_k1_flags"] = FL
     out["_R_earn"] = RE
+    out["_C"], out["_V"], out["_vol"] = C, V, vol
     return out
 
 
