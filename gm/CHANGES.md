@@ -212,6 +212,24 @@ reproduction (24 of 24) and truncation (8 of 8) results stand. Closed while codi
 compares on the design grid with tolerance 1e-12 and the missing pattern; the A1 block-2 contract extension is applied
 to the raw EIA contracts by the same steps as a1_panel.build (its result is what the raw check compares). NOT RUN.
 
+CORE BOOK V1 RUN (2026-11-27, PC job gm_core_v1, 4476 s; report tools/bbgq/results/gm_core_v1.txt; every pin, raw check,
+A1 panel id and as-run check PASS): CORE BOOK V1 EMPTY. Per candidate (k = 1, 1975-2010, net):
+- trend: S1 PASS (placebo share 0.000), S2 PASS (10.37 %/yr at 2x costs), S3 FAIL (with vs without: max fall 12.1 pts
+  BETTER, -21.2% vs -33.3%, but worst month 1.2 pts worse > the 1-pt margin), S4 PASS (rebuild Sharpe 1.21 vs 1.19,
+  relative 0.016 / 0.005, corr 0.99), live PASS -> NOT CORE.
+- carry (FX v2 + energy): S1 PASS, S2 PASS (5.19), S3 FAIL (max fall 4.0 pts worse, worst month 3.3 pts worse), S4 PASS
+  (0.008 / 0.012, corr 1.00), live PASS -> NOT CORE.
+- value (EQ): S1 FAIL (placebo share 0.462), S2 FAIL (-0.13), S3 FAIL, S4 FAIL (relative 2.36: both Sharpes ~0, 0.01 vs
+  -0.01; corr 1.00), live PASS -> NOT CORE.
+The S3 'with' book is the equal-risk book of all three candidates (closed choice: judged together, the checker found it
+faithful to the text, which gives no order); value, which fails S1/S2/S4, is in every 'with' book. This reading was
+registered before the run and is not changed after it.
+Consequences, as registered (7.6 step 6): B tests read alpha against a zero book (the pod's own mean); there is NO
+holdout run; BASE continues, labelled "no Core book". Incubator rule (against the empty book; T4 not applicable):
+INCUBATOR trend, carry, econ, carry_shadow (FX v1 + bonds), value_shadow (bonds + currencies, T1 raw p 0.26 -> PASS by the
+registered 'alpha > 0' reading); SHELVED value (EQ; T3 placebo share 0.462). S4 note: the independent rebuild matched
+the engine within 2% on trend and carry and within 5% on the reported legs, so the existing book's rules are
+reproducible from the specs. Trial row (book, core_parts []) appended.
 ## A3: empty (registered 2026-11-27, after the diagnostics run and BEFORE Core book v1): TESTING_PROTOCOL 7.6 step 5
 Record entry (no rule, weight, threshold, cost, market or code change; nothing is run; no trial row).
 1. The registered text. 7.6 step 5: "Batch A3, items opened by diagnostics only (charter s5; register B9): breadth (D1,

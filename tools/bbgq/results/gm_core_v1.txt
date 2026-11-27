@@ -1,0 +1,85 @@
+=== gm_core_v1 ===
+core_v1-1.1.0 | diag_a2-1.0.1 | a2_batch-1.1.1 | a1_panel-1.1.0 | bbgdata-1.2.0 | bbg_panel-1.0.0 | gm_engine-1.3.0 | engine gm-2.2.1 | python 3.15.0, numpy 2.5.4, pandas 3.1.1, scipy 1.18.1, openpyxl 3.1.5, xlrd missing
+PASS gm code vs reference | 21 files | differing or missing: none
+PASS lib engine_ref.json | sha256 cebd4932e8643f14 | registered cebd4932e8643f14
+PASS engine gm-2.2.1 and config hashes A1_INCUMBENT 77374d7bef, A2_CHALLENGER 1faa343535, BASE f1d682c384, CANDIDATE 438a092b53 | registered gm-2.2.1, A1_INCUMBENT 77374d7bef, A2_CHALLENGER 1faa343535, BASE f1d682c384, CANDIDATE 438a092b53
+PASS lib a1_panel.py | sha256 eb9ef3f7fbd12760 | registered eb9ef3f7fbd12760
+PASS lib a2_batch.py | sha256 35339f673f351f43 | registered 35339f673f351f43
+PASS lib bbg_panel.py | sha256 e0b67a42793e67c1 | registered e0b67a42793e67c1
+PASS lib bbgdata.py | sha256 0b26bb21b50671dc | registered 0b26bb21b50671dc
+PASS lib core_v1.py | sha256 ee01320501fd1ec1 | registered ee01320501fd1ec1
+PASS lib diag_a2.py | sha256 3264a5381c13b124 | registered 3264a5381c13b124
+PASS lib gm_engine.py | sha256 ac43a33cd8943719 | registered ac43a33cd8943719
+PASS lib rebuild_s4.py | sha256 4f191fea1dfac0ae | registered 4f191fea1dfac0ae
+PASS rebuild_s4.py imports none of gm, gm_engine, a1_panel, a2_batch, diag_a2, core_v1, bbgdata, bbg_panel | found: none
+PASS lib gm\trials.csv book / pod rows | 40 rows | digest 676b7b0f157cc6cc | registered 40 rows, 676b7b0f157cc6cc
+PASS A2 report gm_a2_v1.txt: ok | A2 VERDICT FAIL, A2-final book gm-2.0.4-candidate-x1 (77374d7bef)
+PASS diagnostics report gm_diag_v1.txt: ok | A3 empty (D1: candidate half blocked; D2: closed; D3: closed)
+PASS Bloomberg store lock id d85a46cb2853646b24796f294f3ccab1d1507188c402e978fd59f5196ea41fc9 | registered LOCK_v2 d85a46cb2853646b24796f294f3ccab1d1507188c402e978fd59f5196ea41fc9
+PASS free inputs | 239 files | not matching the manifest 0 | file list and sizes match the reference | digest 378d65b09c23d234
+PASS free arm vs reference | signal E (per-market sum of |signal|) | n 62 | missing 0 | max abs diff 0.0e+00
+PASS free arm vs reference | signal C (per-market sum of |signal|) | n 39 | missing 0 | max abs diff 0.0e+00
+PASS free arm vs reference | signal V (per-market sum of |signal|) | n 31 | missing 0 | max abs diff 0.0e+00
+PASS free arm vs reference | market months with a return | n 65 | missing 0 | max abs diff 0.0e+00
+EXTENSION-ONLY CHECK PASS | admitted series 4 | 343s
+PASS A1 PANEL ID e7f98d4439fccf91f3451bc4b9e78079e3bc2cc2452931363b28520460b6cb43 | registered e7f98d4439fccf91f3451bc4b9e78079e3bc2cc2452931363b28520460b6cb43
+PASS A1 panel file work\a1\a1_panel_e7f98d4439fc.pkl: same
+EXTENDED C cm_wti | 1984-11..1984-12 | 2 months
+EXTENDED R cm_corn | 1971-12..2000-07 | 344 months
+EXTENDED R cm_gold | 1980-01..2000-08 | 248 months
+PASS raw inputs reproduce the engine's measure | carry currencies | markets 13 | max abs diff 0.0e+00 | missing pattern 0
+PASS raw inputs reproduce the engine's measure | carry energy (before E13) | markets 4 | max abs diff 0.0e+00 | missing pattern 0
+PASS raw inputs reproduce the engine's measure | value equities (E4) | markets 8 | max abs diff 0.0e+00 | missing pattern 0
+rebuild inputs | R (612, 65) | D (12668, 61) | days (10349,) | rate3m (612, 14) | fx_rate_country 13 | eia 4 | french_with (612, 7) | french_without (612, 7) | us_total (612,) | us_price (612,) | cost 65 | em_borrow 7 | classes 4 | meta 4
+PASS rebuild rebuild_s4-1.1.0 | ok | months in 1975-01..2010-12: trend 432, carry 405, value_eq 336, carry_fx_v2 405, carry_energy 235 | 1s
+PASS A2-final book as run (A2 report): book d1 1.064, k0 1.481, k1 1.439 | pods trend 1.19 (432), econ 0.53 (432), carry 1.07 (432), value 0.15 (345) | P4 book 1.39 specific 1.34 (396) | registered book d1 1.064, k0 1.481, k1 1.439 | pods trend 1.19 (432), econ 0.53 (432), carry 1.07 (432), value 0.15 (345) | P4 1.39 / 1.34 (396)
+--- CORE BOOK V1 (TESTING_PROTOCOL 7.6 step 6; gm/CHANGES.md "Core book v1"): final Batch A book gm-2.0.4-candidate-x1 (77374d7bef), A1 panel, k = 1, design months 1975-01..2010-12; values over fewer than 60 months are printed as count and sign
+PARTS | Core candidates: trend = Trend (all classes) [('trend', '*', '*')] ; carry = Carry currencies v2 + energy [('carry', 'FX', 2), ('carry', 'CM', 1), ('carry', 'CM', 2)] ; value = Value equities [('value', 'EQ', '*')] | shadow parts: econ = Economic trend [('econ', '*', '*')] ; carry_shadow = Carry currencies v1 + bonds [('carry', 'FX', 1), ('carry', 'FI', '*')] ; value_shadow = Value bonds + currencies [('value', 'FI', '*'), ('value', 'FX', '*')]
+--- each part alone (one-part equal-risk book, k = 1, 10%, caps, costs x1): net Sharpe (months) and mean %/yr
+PART | trend | Trend (all classes) | Sharpe 1975-2010 1.19 (432) | 1975-89 1.26 (180) | 1990-2010 1.14 (252) | mean %/yr 1975-2010 11.41 (432) | 1975-89 11.22 (180) | 1990-2010 11.54 (252)
+PART | carry | Carry currencies v2 + energy | Sharpe 1975-2010 0.75 (403) | 1975-89 0.47 (151) | 1990-2010 0.88 (252) | mean %/yr 1975-2010 6.07 (403) | 1975-89 3.19 (151) | 1990-2010 7.79 (252)
+PART | value | Value equities | Sharpe 1975-2010 0.01 (334) | 1975-89 -0.51 (82) | 1990-2010 0.24 (252) | mean %/yr 1975-2010 0.04 (334) | 1975-89 -3.27 (82) | 1990-2010 1.12 (252)
+PART | econ | Economic trend | Sharpe 1975-2010 0.53 (432) | 1975-89 0.26 (180) | 1990-2010 0.71 (252) | mean %/yr 1975-2010 5.08 (432) | 1975-89 2.42 (180) | 1990-2010 6.98 (252)
+PART | carry_shadow | Carry currencies v1 + bonds | Sharpe 1975-2010 0.79 (432) | 1975-89 0.61 (180) | 1990-2010 0.94 (252) | mean %/yr 1975-2010 6.67 (432) | 1975-89 5.54 (180) | 1990-2010 7.47 (252)
+PART | value_shadow | Value bonds + currencies | Sharpe 1975-2010 0.13 (345) | 1975-89 -0.13 (93) | 1990-2010 0.22 (252) | mean %/yr 1975-2010 0.90 (345) | 1975-89 -0.93 (93) | 1990-2010 1.58 (252)
+PART | carry_fx_v2 | Carry currencies v2 alone | Sharpe 1975-2010 0.43 (403) | 1975-89 0.34 (151) | 1990-2010 0.48 (252) | mean %/yr 1975-2010 4.10 (403) | 1975-89 2.28 (151) | 1990-2010 5.20 (252)
+PART | carry_energy | Carry energy v1 + v2 alone | Sharpe 1975-2010 0.82 (235) | 1975-89 n 0, n/a | 1990-2010 0.82 (235) | mean %/yr 1975-2010 3.09 (235) | 1975-89 n 0, n/a | 1990-2010 3.09 (235)
+--- S1-S4 and the live-source check per Core candidate (decisive); leave-one-out alpha (reported only)
+S1 | trend | window 1975-01..2010-12 (432 months) | part net Sharpe 1.19 | placebos 1000 | share with Sharpe >= the part's 0.000 | PASS
+S2 | trend | net mean at twice the costs 10.37 (432) %/yr | PASS
+S3 | trend | Core book with vs without the part (both as run), n 403 | max fall +12.1 pts, worst month -1.2 pts | max drawdown without -33.3%, with -21.2% | FAIL
+S4 | trend (rebuild key trend, rebuild_s4-1.1.0) | engine Sharpe 1.19 (432), mean 11.41 (432) %/yr | rebuild Sharpe 1.21 (432), mean 11.47 (432) %/yr | relative difference Sharpe 0.016, mean 0.005 (limit 0.15) | common months 432, correlation 0.99 (432) | PASS
+LIVE | trend | markets held at 2010-12: 61 (eq_us_spx, eq_us_ndx, eq_us_r2k, eq_eu_stoxx50, eq_de_dax, eq_gb_ftse, eq_fr_cac, eq_jp_nikkei, eq_ca_tsx, eq_au_asx, eq_hk_hsi, eq_cn, eq_kr_kospi, eq_tw, eq_in, eq_br_ibov, eq_mx_ipc, eq_za, bd_us_2y, bd_us_5y, bd_us_10y, bd_us_30y, bd_de_10y, bd_gb_10y, bd_jp_10y, bd_ca_10y, bd_au_10y, st_de_2y, st_gb_5y, st_ca_2y, st_au_2y, st_jp_2y, fx_eur, fx_jpy, fx_gbp, fx_chf, fx_aud, fx_nzd, fx_cad, fx_sek, fx_nok, fx_mxn, fx_brl, fx_krw, fx_zar, cm_wti, cm_brent, cm_natgas, cm_heatoil, cm_gasoline, cm_gold, cm_silver, cm_copper, cm_platinum, cm_corn, cm_wheat, cm_soybeans, cm_sugar, cm_coffee, cm_cotton, cm_cattle) | missing free inputs: none | PASS
+LOO | trend | alpha on the other two candidates' equal-risk book 10.71 (403) %/yr | beta 0.12 (403) | bootstrap p 0.0000 (403) (reported only, not decisive: 7.6 step 6)
+VERDICT | trend | S1 PASS, S2 PASS, S3 FAIL, S4 PASS, live PASS | NOT CORE
+S1 | carry | window 1977-06..2010-12 (403 months) | part net Sharpe 0.75 | placebos 1000 | share with Sharpe >= the part's 0.000 | PASS
+S2 | carry | net mean at twice the costs 5.19 (403) %/yr | PASS
+S3 | carry | Core book with vs without the part (both as run), n 432 | max fall -4.0 pts, worst month -3.3 pts | max drawdown without -17.2%, with -21.2% | FAIL
+S4 | carry (rebuild key carry, rebuild_s4-1.1.0) | engine Sharpe 0.75 (403), mean 6.07 (403) %/yr | rebuild Sharpe 0.75 (405), mean 6.14 (405) %/yr | relative difference Sharpe 0.008, mean 0.012 (limit 0.15) | common months 403, correlation 1.00 (403) | PASS
+LIVE | carry | markets held at 2010-12: 15 (fx_eur, fx_jpy, fx_gbp, fx_chf, fx_aud, fx_nzd, fx_cad, fx_sek, fx_mxn, fx_brl, fx_krw, fx_zar, cm_wti, cm_natgas, cm_heatoil) | missing free inputs: none | PASS
+LOO | carry | alpha on the other two candidates' equal-risk book 5.51 (403) %/yr | beta 0.06 (403) | bootstrap p 0.0011 (403) (reported only, not decisive: 7.6 step 6)
+VERDICT | carry | S1 PASS, S2 PASS, S3 FAIL, S4 PASS, live PASS | NOT CORE
+S1 | value | window 1983-03..2010-12 (334 months) | part net Sharpe 0.01 | placebos 1000 | share with Sharpe >= the part's 0.462 | FAIL
+S2 | value | net mean at twice the costs -0.13 (334) %/yr | FAIL
+S3 | value | Core book with vs without the part (both as run), n 432 | max fall -1.7 pts, worst month -3.4 pts | max drawdown without -19.5%, with -21.2% | FAIL
+S4 | value (rebuild key value_eq, rebuild_s4-1.1.0) | engine Sharpe 0.01 (334), mean 0.04 (334) %/yr | rebuild Sharpe -0.01 (336), mean -0.06 (336) %/yr | relative difference Sharpe 2.359, mean 2.361 (limit 0.15) | common months 334, correlation 1.00 (334) | FAIL
+LIVE | value | markets held at 2010-12: 8 (eq_us_spx, eq_de_dax, eq_gb_ftse, eq_fr_cac, eq_jp_nikkei, eq_ca_tsx, eq_au_asx, eq_hk_hsi) | missing free inputs: none | PASS
+LOO | value | alpha on the other two candidates' equal-risk book -0.65 (334) %/yr | beta 0.06 (334) | bootstrap p 0.7180 (334) (reported only, not decisive: 7.6 step 6)
+VERDICT | value | S1 FAIL, S2 FAIL, S3 FAIL, S4 FAIL, live PASS | NOT CORE
+S4 REPORTED | carry_fx_v2 | engine Sharpe 0.43 (403), mean 4.10 (403) %/yr | rebuild Sharpe 0.45 (405), mean 4.30 (405) %/yr | relative difference Sharpe 0.040, mean 0.047 | common months 403, correlation 1.00 (403) (not decisive)
+S4 REPORTED | carry_energy | engine Sharpe 0.82 (235), mean 3.09 (235) %/yr | rebuild Sharpe 0.83 (235), mean 3.14 (235) %/yr | relative difference Sharpe 0.014, mean 0.018 | common months 233, correlation 1.00 (233) (not decisive)
+CORE BOOK V1 EMPTY | no Core candidate passed S1-S4 and the live-source check | B tests read alpha against a zero book (the pod's own mean); there is no holdout run; BASE continues, labelled "no Core book"
+selection inflation (7.8 item 2; printed beside, not subtracted): 40 logged book / pod rows, mean 1990-2010 Sharpe 1.482, sd 0.117, z 2.19 -> expected best Sharpe from luck alone about +0.26
+tuned knobs (7.8 item 4, as registered): Trend 4, Economic trend 3, Carry 3, Value 3 + 1 seen leg (Value version 2's bond leg = batch-1 V1, 7.8 item 3); book level 3 (pod share vector, no risk scaler, no scenario limit)
+--- Incubator rule (7.7) against Core book v1 (EMPTY: alpha against a zero book, T4 not applicable): T1 alpha > 0 at single costs (raw p reported, no Holm), T3 placebo, T4 tail at lambda 0.5; T2 alpha at twice the costs reported
+INCUBATOR | trend | Trend (all classes) | T1 alpha 11.41 (432) %/yr, beta 0.00 (432), raw p 0.0000 (432) -> PASS | T2 alpha at 2x costs 10.37 (432) %/yr | T3 placebo share 0.000 PASS | T4 not applicable (empty Core book) | INCUBATOR
+INCUBATOR | carry | Carry currencies v2 + energy | T1 alpha 6.07 (403) %/yr, beta 0.00 (403), raw p 0.0002 (403) -> PASS | T2 alpha at 2x costs 5.19 (403) %/yr | T3 placebo share 0.000 PASS | T4 not applicable (empty Core book) | INCUBATOR
+INCUBATOR | value | Value equities | T1 alpha 0.04 (334) %/yr, beta 0.00 (334), raw p 0.4809 (334) -> PASS | T2 alpha at 2x costs -0.13 (334) %/yr | T3 placebo share 0.462 FAIL | T4 not applicable (empty Core book) | SHELVED
+INCUBATOR | econ | Economic trend | T1 alpha 5.08 (432) %/yr, beta 0.00 (432), raw p 0.0012 (432) -> PASS | T2 alpha at 2x costs 4.09 (432) %/yr | T3 placebo share 0.001 PASS | T4 not applicable (empty Core book) | INCUBATOR
+INCUBATOR | carry_shadow | Carry currencies v1 + bonds | T1 alpha 6.67 (432) %/yr, beta 0.00 (432), raw p 0.0000 (432) -> PASS | T2 alpha at 2x costs 5.95 (432) %/yr | T3 placebo share 0.000 PASS | T4 not applicable (empty Core book) | INCUBATOR
+INCUBATOR | value_shadow | Value bonds + currencies | T1 alpha 0.90 (345) %/yr, beta 0.00 (345), raw p 0.2603 (345) -> PASS | T2 alpha at 2x costs -0.27 (345) %/yr | T3 placebo share 0.045 PASS | T4 not applicable (empty Core book) | INCUBATOR
+CORE V1 VERDICT | Core: none (EMPTY) | not Core: trend, carry, value | Incubator: trend, carry, econ, carry_shadow, value_shadow | Shelved: value | insufficient data: none
+report 4130s
+TRIAL ROW {"config": "{\"block_vol_months\": 36, \"book_vol\": 0.1, \"core_parts\": [], \"delay_months\": 0, \"econ_themes\": [\"inflation\", \"trade\", \"monetary\", \"risk\"], \"family_w\": {\"carry\": 0.25, \"econ\": 0.15, \"trend\": 0.45, \"value\": 0.15, \"xsmom\": 0.0}, \"gross_cap\": 5.0, \"market_risk_cap\": 0.1, \"name\": \"gm-2.0.4-candidate-x1\", \"scenario_limit\": null, \"trend\": {\"cap\": 2.0, \"horizons\": [1, 3, 12], \"kind\": \"sign\", \"spot\": false}, \"vol\": {\"fast_w\": 0.7, \"floor\": 0.75, \"hl_days\": 35, \"hl_months\": 6, \"model\": \"hybrid\"}, \"within_class\": \"equal\", \"x1_seasonal\": [\"cm_natgas\", \"cm_gasoline\"]}", "family": "book", "hash": "e0b9f6aaee", "note": "TESTING_PROTOCOL 7.6 step 6 Core book v1; engine gm-2.2.1; A1 panel e7f98d4439fccf91; LOCK_v2 d85a46cb2853646b; parent gm-2.0.4-candidate-x1 (77374d7bef); EMPTY; trend not Core, carry not Core, value not Core; trend Incubator, carry Incubator, value Shelved, econ Incubator, carry_shadow Incubator, value_shadow Incubator", "trial": "Core book v1 (k = 1, A1 panel)"}
+CORE V1 JOB DONE
+=== END === 4476s

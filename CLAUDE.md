@@ -567,6 +567,11 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   part > 0; M1 -> P4 = S&P alone; D5 YES (Economic trend 'slow reaction'); all falsifiers do not hold; D1 candidate half +
   S1 Fung-Hsieh BLOCKED -> NO A3 item opened (A3 empty). NEXT: 7.6 step 6 Core book v1 (S1 placebo, S2 double costs,
   S3 tail, S4 independent rebuild from spec by a SEPARATE agent), then step 7 pre-B diagnostics, B1/B2.
+  2026-11-27 CORE BOOK V1 RAN (gm_core_v1; checks APPROVED after rebuild 1.1.0): EMPTY. trend and carry pass S1, S2, S4
+  (independent rebuild within 2%) and live but FAIL S3 tail (trend: worst month 1.2 pts worse though max fall 12 pts
+  better; carry: 4 pts deeper fall) against the joint 3-candidate book that includes value; value fails all. As
+  registered: no holdout run, BASE continues 'no Core book', B tests read alpha vs a zero book. Incubator: trend,
+  carry, econ, carry v1+bonds, value bonds+FX; Shelved: value equities. NEXT: step 7 pre-B diagnostics, B1/B2.
   User 2026-11-22: NO MORE FABLE UNITS for now.
 - MT228 (2026-11-10): raw X posts of John Galt @AtlasShrug1 (1,359 posts, Jul 2025 - 8 Nov 2026) extracted like a transcript
   with dates: 733 claims (185 rules/tells, 188 dated forecasts), Sonnet single read, quotes script-checked, cross-check
