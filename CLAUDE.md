@@ -552,6 +552,11 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   contracts, HU, copper <1988, cotton/cattle 1970s. Holdout contracts (deliveries 2013+) pulled after the freeze.
   LIVE_START NOT SET: needs lseg_weekly v2 with current contract codes. Status note docs/research/lseg/IDENTITY_STATUS.md.
   NEXT: pod builds (Curve carry, Strip reversion), card rule-layer engine, diagnostics (7.5), then Batch A.
+  2026-11-27 X1 + A1 DONE: X1 gate open natgas 0.403 / gasoline 0.564 -> E13 seasonal carry (config key x1_seasonal;
+  A1_INCUMBENT = CANDIDATE + key, engine gm-2.2.0). A1 (data entry + check APPROVED WITH CORRECTIONS, applied) ran on the PC
+  (gm_a1_v1): A1 PANEL ID e7f98d44 (PC only, local\work\a1); 4 of 54 admitted (corn, gold returns, WTI c2 2 months); most
+  first-pull commodity indexes are copies; dSR +0.012 at k = 1 (SR 1.427 -> 1.439); one-month delay SR ~1.05. NEXT: A2
+  (builder agent running), then 7.5 diagnostics, A3, Core book v1.
   User 2026-11-22: NO MORE FABLE UNITS for now.
 - MT228 (2026-11-10): raw X posts of John Galt @AtlasShrug1 (1,359 posts, Jul 2025 - 8 Nov 2026) extracted like a transcript
   with dates: 733 claims (185 rules/tells, 188 dated forecasts), Sonnet single read, quotes script-checked, cross-check
