@@ -1,0 +1,18 @@
+{
+ "matches": [
+  {"id": "SOS1-C006", "match": "yes", "card_rule": "Rprocess7", "why": "Growing a circle of competence outward = studying adjacent businesses one after another."},
+  {"id": "SOS1-C013", "match": "yes", "card_rule": "Rprocess6", "why": "Outside/alternative data used to check the thesis on a holding; same tool, same purpose."},
+  {"id": "SOS1-C016", "match": "no", "card_rule": "", "why": "Adding when the stock falls but data say the business is fine: no card size rule on adding."},
+  {"id": "SOS1-C047", "match": "no", "card_rule": "", "why": "Open-ended interview technique; card has no call-technique rule (Rprocess5 is about evidence sources)."},
+  {"id": "SOS1-C049", "match": "no", "card_rule": "", "why": "Write follow-ups down, ask after: interview technique absent from the card."},
+  {"id": "SOS1-C051", "match": "no", "card_rule": "", "why": "Technique applied to management meetings; Rprocess5 says meetings tell little, a different idea."},
+  {"id": "SOS1-C052", "match": "no", "card_rule": "", "why": "Reads expert-call transcripts, rates them mixed; no card rule on this source."},
+  {"id": "SOS1-C055", "match": "yes", "card_rule": "Rprocess1", "why": "Unstructured top of funnel = no quantitative screen, ideas come organically."},
+  {"id": "SOS1-C056", "match": "yes", "card_rule": "Rprocess7", "why": "Learning incrementally every day while waiting = read broadly, study companies while waiting."}
+ ],
+ "contradictions": [
+  {"id": "SOS1-C039", "card_rule": "Rsell1", "status": "open", "why": "Sold Herbalife when a named thesis-breaker (GLP-1 results) appeared: neither an upgrade nor a misunderstanding, against Rsell1's 'only'. Rsell2 (model vs outcomes) could be stretched to cover it, but the card records no such scope. Supported by SOS1-C040 (risk named in advance)."},
+  {"id": "SOS1-C043", "card_rule": "Rsell1", "status": "open", "why": "Sold Celanese and Ashland on valuation in his early days; card says no price/valuation sell trigger and sell only to upgrade. Self-dated as early career (later wins would close it), but the card does not record this change of view."},
+  {"id": "SOS1-C036", "card_rule": "Rsell1", "status": "closed", "why": "Cut Herbalife as growth proved elusive (re-based on 2014-21, SOS1-C038): fits Rsell2 (outcomes vs model, update model) and Rsell1's 'misunderstood the business'; not a true opposite."}
+ ]
+}

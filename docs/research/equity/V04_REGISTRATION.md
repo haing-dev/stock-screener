@@ -536,3 +536,6 @@ as such. Replaces R1.1 (record); R1.2 (material) and R1.3 (screenability) stay.
     seed 20261127), pass rule and baselines as A10 item 9; 10-year Treasury from the WRDS FRB tables; a fiscal year is
     known 90 days after its datadate (Compustat as restated, A8 difference). Code to be registered in
     tools/equity/seal_exempt.json before the job is queued.
+14. **Sosin held-out test (2026-11-27).** 4 of 9 SOS1 rules matched (44%, bar 70%) and 2 open contradictions in the
+    sell part -> FAIL. Per item 8 the card continues as v1.1 with SOS1 merged, labelled "held-out failed"; also thin
+    (no written source, A13 item 1).
