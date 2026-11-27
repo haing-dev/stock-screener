@@ -1,0 +1,37 @@
+[
+ {
+  "tid": "T01",
+  "answer": "rule",
+  "why": "Buying preference: unindexed, few owners, buybacks - the way we like"
+ },
+ {
+  "tid": "T02",
+  "answer": "not_rule",
+  "why": "Admits not knowing currencies; no decision named"
+ },
+ {
+  "tid": "T03",
+  "answer": "not_rule",
+  "why": "Anecdote about one idea in progress"
+ },
+ {
+  "tid": "T04",
+  "answer": "not_rule",
+  "why": "Story about one idea; not stated as standing practice"
+ },
+ {
+  "tid": "T05",
+  "answer": "not_rule",
+  "why": "Self-description as long-term investor; no decision named"
+ },
+ {
+  "tid": "T06",
+  "answer": "rule",
+  "why": "Sell decision: holds forever assets absent compelling reason"
+ },
+ {
+  "tid": "T07",
+  "answer": "rule",
+  "why": "Buys royalty trusts after dividend cuts depress price"
+ }
+]

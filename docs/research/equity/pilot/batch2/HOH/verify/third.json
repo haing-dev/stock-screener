@@ -1,0 +1,102 @@
+[
+ {
+  "tid": "T01",
+  "answer": "not_rule",
+  "why": "General advice to cut noise; names no decision"
+ },
+ {
+  "tid": "T02",
+  "answer": "not_rule",
+  "why": "Vague success factor; no specific decision named"
+ },
+ {
+  "tid": "T03",
+  "answer": "rule",
+  "why": "Hold good long-term companies: holding practice"
+ },
+ {
+  "tid": "T04",
+  "answer": "rule",
+  "why": "Requires multiple barriers to entry and no alternative"
+ },
+ {
+  "tid": "T05",
+  "answer": "rule",
+  "why": "Hold great companies once found: holding practice"
+ },
+ {
+  "tid": "T06",
+  "answer": "rule",
+  "why": "Requires conviction at all times; sell when it lapses"
+ },
+ {
+  "tid": "T07",
+  "answer": "not_rule",
+  "why": "Ranks concepts as secondary; names no decision"
+ },
+ {
+  "tid": "T08",
+  "answer": "rule",
+  "why": "Requires sustainable, ideally multiple, moats when buying"
+ },
+ {
+  "tid": "T09",
+  "answer": "not_rule",
+  "why": "Belief about pricing power as moat test; general"
+ },
+ {
+  "tid": "T10",
+  "answer": "not_rule",
+  "why": "Team size description; no decision"
+ },
+ {
+  "tid": "T11",
+  "answer": "not_rule",
+  "why": "Belief about value to long-term holders"
+ },
+ {
+  "tid": "T12",
+  "answer": "rule",
+  "why": "Stick with good companies long term: holding practice"
+ },
+ {
+  "tid": "T13",
+  "answer": "rule",
+  "why": "Does not short significantly: avoids shorting"
+ },
+ {
+  "tid": "T14",
+  "answer": "rule",
+  "why": "Avoids cheap average businesses: unpredictable earnings"
+ },
+ {
+  "tid": "T15",
+  "answer": "not_rule",
+  "why": "General belief about activism in bad businesses"
+ },
+ {
+  "tid": "T16",
+  "answer": "not_rule",
+  "why": "Self-description of risk focus; no decision named"
+ },
+ {
+  "tid": "T17",
+  "answer": "rule",
+  "why": "Prefers businesses with weak, rational competition"
+ },
+ {
+  "tid": "T18",
+  "answer": "not_rule",
+  "why": "Generic circle-of-competence advice quoting Buffett"
+ },
+ {
+  "tid": "T19",
+  "answer": "not_rule",
+  "why": "Belief about edge from long-termism"
+ },
+ {
+  "tid": "T20",
+  "answer": "rule",
+  "why": "Names a sector he buys: aircraft engines"
+ }
+]
