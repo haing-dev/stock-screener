@@ -1,0 +1,505 @@
+BLOOMBERG INPUTS: NONE (free data only; gm.bloomberg serves nothing, so its paths are not exercised)
+full run 36s; cut dates: 1980-06-30, 1984-12-31, 1989-06-30, 1993-12-31, 1998-06-30, 2002-12-31, 2007-06-30, 2010-12-31
+columns: stage | end-to-end PASS/FAIL, differing market-months / compared, max abs diff, months first..last | stage alone PASS/FAIL, differing | markets (most differing first)
+CUT 1980-06-30 | inputs after T seen by the engine: none | stages failing end-to-end 0 of 21 | 49s
+  panel returns                      | PASS 0/2254 max 0.0e+00  | alone n/a (loader stage) | 
+  daily returns                      | PASS 0/39124 max 0.0e+00  | alone n/a (loader stage) | 
+  signal econ                        | PASS 0/10717 max 0.0e+00  | alone PASS 0 | 
+  signal carry                       | PASS 0/2709 max 0.0e+00  | alone PASS 0 | 
+  signal value                       | PASS 0/958 max 0.0e+00  | alone PASS 0 | 
+  signal trend (sign 1/3/12)         | PASS 0/2000 max 0.0e+00  | alone PASS 0 | 
+  volatility BASE                    | PASS 0/2022 max 0.0e+00  | alone PASS 0 | 
+  volatility CANDIDATE               | PASS 0/2583 max 0.0e+00  | alone PASS 0 | 
+  family position trend BASE         | PASS 0/12025 max 0.0e+00  | alone PASS 0 | 
+  family position econ BASE          | PASS 0/12025 max 0.0e+00  | alone PASS 0 | 
+  family position carry BASE         | PASS 0/12025 max 0.0e+00  | alone PASS 0 | 
+  family position value BASE         | PASS 0/12025 max 0.0e+00  | alone PASS 0 | 
+  family position xsmom BASE         | PASS 0/12025 max 0.0e+00  | alone PASS 0 | 
+  positions BASE                     | PASS 0/12025 max 0.0e+00  | alone PASS 0 | 
+  book net return BASE               | PASS 0/184 max 0.0e+00  | alone PASS 0 | 
+  family position trend CANDIDATE    | PASS 0/12025 max 0.0e+00  | alone PASS 0 | 
+  family position econ CANDIDATE     | PASS 0/12025 max 0.0e+00  | alone PASS 0 | 
+  family position carry CANDIDATE    | PASS 0/12025 max 0.0e+00  | alone PASS 0 | 
+  family position value CANDIDATE    | PASS 0/12025 max 0.0e+00  | alone PASS 0 | 
+  positions CANDIDATE                | PASS 0/12025 max 0.0e+00  | alone PASS 0 | 
+  book net return CANDIDATE          | PASS 0/184 max 0.0e+00  | alone PASS 0 | 
+CUT 1984-12-31 | inputs after T seen by the engine: none | stages failing end-to-end 0 of 21 | 49s
+  panel returns                      | PASS 0/3578 max 0.0e+00  | alone n/a (loader stage) | 
+  daily returns                      | PASS 0/60577 max 0.0e+00  | alone n/a (loader stage) | 
+  signal econ                        | PASS 0/13851 max 0.0e+00  | alone PASS 0 | 
+  signal carry                       | PASS 0/3986 max 0.0e+00  | alone PASS 0 | 
+  signal value                       | PASS 0/1822 max 0.0e+00  | alone PASS 0 | 
+  signal trend (sign 1/3/12)         | PASS 0/3293 max 0.0e+00  | alone PASS 0 | 
+  volatility BASE                    | PASS 0/3318 max 0.0e+00  | alone PASS 0 | 
+  volatility CANDIDATE               | PASS 0/4012 max 0.0e+00  | alone PASS 0 | 
+  family position trend BASE         | PASS 0/15535 max 0.0e+00  | alone PASS 0 | 
+  family position econ BASE          | PASS 0/15535 max 0.0e+00  | alone PASS 0 | 
+  family position carry BASE         | PASS 0/15535 max 0.0e+00  | alone PASS 0 | 
+  family position value BASE         | PASS 0/15535 max 0.0e+00  | alone PASS 0 | 
+  family position xsmom BASE         | PASS 0/15535 max 0.0e+00  | alone PASS 0 | 
+  positions BASE                     | PASS 0/15535 max 0.0e+00  | alone PASS 0 | 
+  book net return BASE               | PASS 0/238 max 0.0e+00  | alone PASS 0 | 
+  family position trend CANDIDATE    | PASS 0/15535 max 0.0e+00  | alone PASS 0 | 
+  family position econ CANDIDATE     | PASS 0/15535 max 0.0e+00  | alone PASS 0 | 
+  family position carry CANDIDATE    | PASS 0/15535 max 0.0e+00  | alone PASS 0 | 
+  family position value CANDIDATE    | PASS 0/15535 max 0.0e+00  | alone PASS 0 | 
+  positions CANDIDATE                | PASS 0/15535 max 0.0e+00  | alone PASS 0 | 
+  book net return CANDIDATE          | PASS 0/238 max 0.0e+00  | alone PASS 0 | 
+CUT 1989-06-30 | inputs after T seen by the engine: none | stages failing end-to-end 0 of 21 | 48s
+  panel returns                      | PASS 0/5108 max 0.0e+00  | alone n/a (loader stage) | 
+  daily returns                      | PASS 0/86397 max 0.0e+00  | alone n/a (loader stage) | 
+  signal econ                        | PASS 0/17091 max 0.0e+00  | alone PASS 0 | 
+  signal carry                       | PASS 0/5372 max 0.0e+00  | alone PASS 0 | 
+  signal value                       | PASS 0/2815 max 0.0e+00  | alone PASS 0 | 
+  signal trend (sign 1/3/12)         | PASS 0/4763 max 0.0e+00  | alone PASS 0 | 
+  volatility BASE                    | PASS 0/4793 max 0.0e+00  | alone PASS 0 | 
+  volatility CANDIDATE               | PASS 0/5594 max 0.0e+00  | alone PASS 0 | 
+  family position trend BASE         | PASS 0/19045 max 0.0e+00  | alone PASS 0 | 
+  family position econ BASE          | PASS 0/19045 max 0.0e+00  | alone PASS 0 | 
+  family position carry BASE         | PASS 0/19045 max 0.0e+00  | alone PASS 0 | 
+  family position value BASE         | PASS 0/19045 max 0.0e+00  | alone PASS 0 | 
+  family position xsmom BASE         | PASS 0/19045 max 0.0e+00  | alone PASS 0 | 
+  positions BASE                     | PASS 0/19045 max 0.0e+00  | alone PASS 0 | 
+  book net return BASE               | PASS 0/292 max 0.0e+00  | alone PASS 0 | 
+  family position trend CANDIDATE    | PASS 0/19045 max 0.0e+00  | alone PASS 0 | 
+  family position econ CANDIDATE     | PASS 0/19045 max 0.0e+00  | alone PASS 0 | 
+  family position carry CANDIDATE    | PASS 0/19045 max 0.0e+00  | alone PASS 0 | 
+  family position value CANDIDATE    | PASS 0/19045 max 0.0e+00  | alone PASS 0 | 
+  positions CANDIDATE                | PASS 0/19045 max 0.0e+00  | alone PASS 0 | 
+  book net return CANDIDATE          | PASS 0/292 max 0.0e+00  | alone PASS 0 | 
+CUT 1993-12-31 | inputs after T seen by the engine: none | stages failing end-to-end 0 of 21 | 49s
+  panel returns                      | PASS 0/6809 max 0.0e+00  | alone n/a (loader stage) | 
+  daily returns                      | PASS 0/116568 max 0.0e+00  | alone n/a (loader stage) | 
+  signal econ                        | PASS 0/20403 max 0.0e+00  | alone PASS 0 | 
+  signal carry                       | PASS 0/6814 max 0.0e+00  | alone PASS 0 | 
+  signal value                       | PASS 0/3891 max 0.0e+00  | alone PASS 0 | 
+  signal trend (sign 1/3/12)         | PASS 0/6439 max 0.0e+00  | alone PASS 0 | 
+  volatility BASE                    | PASS 0/6471 max 0.0e+00  | alone PASS 0 | 
+  volatility CANDIDATE               | PASS 0/7345 max 0.0e+00  | alone PASS 0 | 
+  family position trend BASE         | PASS 0/22555 max 0.0e+00  | alone PASS 0 | 
+  family position econ BASE          | PASS 0/22555 max 0.0e+00  | alone PASS 0 | 
+  family position carry BASE         | PASS 0/22555 max 0.0e+00  | alone PASS 0 | 
+  family position value BASE         | PASS 0/22555 max 0.0e+00  | alone PASS 0 | 
+  family position xsmom BASE         | PASS 0/22555 max 0.0e+00  | alone PASS 0 | 
+  positions BASE                     | PASS 0/22555 max 0.0e+00  | alone PASS 0 | 
+  book net return BASE               | PASS 0/346 max 0.0e+00  | alone PASS 0 | 
+  family position trend CANDIDATE    | PASS 0/22555 max 0.0e+00  | alone PASS 0 | 
+  family position econ CANDIDATE     | PASS 0/22555 max 0.0e+00  | alone PASS 0 | 
+  family position carry CANDIDATE    | PASS 0/22555 max 0.0e+00  | alone PASS 0 | 
+  family position value CANDIDATE    | PASS 0/22555 max 0.0e+00  | alone PASS 0 | 
+  positions CANDIDATE                | PASS 0/22555 max 0.0e+00  | alone PASS 0 | 
+  book net return CANDIDATE          | PASS 0/346 max 0.0e+00  | alone PASS 0 | 
+CUT 1998-06-30 | inputs after T seen by the engine: none | stages failing end-to-end 0 of 21 | 51s
+  panel returns                      | PASS 0/8962 max 0.0e+00  | alone n/a (loader stage) | 
+  daily returns                      | PASS 0/158655 max 0.0e+00  | alone n/a (loader stage) | 
+  signal econ                        | PASS 0/23751 max 0.0e+00  | alone PASS 0 | 
+  signal carry                       | PASS 0/8662 max 0.0e+00  | alone PASS 0 | 
+  signal value                       | PASS 0/5079 max 0.0e+00  | alone PASS 0 | 
+  signal trend (sign 1/3/12)         | PASS 0/8423 max 0.0e+00  | alone PASS 0 | 
+  volatility BASE                    | PASS 0/8466 max 0.0e+00  | alone PASS 0 | 
+  volatility CANDIDATE               | PASS 0/9623 max 0.0e+00  | alone PASS 0 | 
+  family position trend BASE         | PASS 0/26065 max 0.0e+00  | alone PASS 0 | 
+  family position econ BASE          | PASS 0/26065 max 0.0e+00  | alone PASS 0 | 
+  family position carry BASE         | PASS 0/26065 max 0.0e+00  | alone PASS 0 | 
+  family position value BASE         | PASS 0/26065 max 0.0e+00  | alone PASS 0 | 
+  family position xsmom BASE         | PASS 0/26065 max 0.0e+00  | alone PASS 0 | 
+  positions BASE                     | PASS 0/26065 max 0.0e+00  | alone PASS 0 | 
+  book net return BASE               | PASS 0/400 max 0.0e+00  | alone PASS 0 | 
+  family position trend CANDIDATE    | PASS 0/26065 max 0.0e+00  | alone PASS 0 | 
+  family position econ CANDIDATE     | PASS 0/26065 max 0.0e+00  | alone PASS 0 | 
+  family position carry CANDIDATE    | PASS 0/26065 max 0.0e+00  | alone PASS 0 | 
+  family position value CANDIDATE    | PASS 0/26065 max 0.0e+00  | alone PASS 0 | 
+  positions CANDIDATE                | PASS 0/26065 max 0.0e+00  | alone PASS 0 | 
+  book net return CANDIDATE          | PASS 0/400 max 0.0e+00  | alone PASS 0 | 
+CUT 2002-12-31 | inputs after T seen by the engine: none | stages failing end-to-end 0 of 21 | 52s
+  panel returns                      | PASS 0/11839 max 0.0e+00  | alone n/a (loader stage) | 
+  daily returns                      | PASS 0/215899 max 0.0e+00  | alone n/a (loader stage) | 
+  signal econ                        | PASS 0/27099 max 0.0e+00  | alone PASS 0 | 
+  signal carry                       | PASS 0/10654 max 0.0e+00  | alone PASS 0 | 
+  signal value                       | PASS 0/6472 max 0.0e+00  | alone PASS 0 | 
+  signal trend (sign 1/3/12)         | PASS 0/11222 max 0.0e+00  | alone PASS 0 | 
+  volatility BASE                    | PASS 0/11232 max 0.0e+00  | alone PASS 0 | 
+  volatility CANDIDATE               | PASS 0/12579 max 0.0e+00  | alone PASS 0 | 
+  family position trend BASE         | PASS 0/29575 max 0.0e+00  | alone PASS 0 | 
+  family position econ BASE          | PASS 0/29575 max 0.0e+00  | alone PASS 0 | 
+  family position carry BASE         | PASS 0/29575 max 0.0e+00  | alone PASS 0 | 
+  family position value BASE         | PASS 0/29575 max 0.0e+00  | alone PASS 0 | 
+  family position xsmom BASE         | PASS 0/29575 max 0.0e+00  | alone PASS 0 | 
+  positions BASE                     | PASS 0/29575 max 0.0e+00  | alone PASS 0 | 
+  book net return BASE               | PASS 0/454 max 0.0e+00  | alone PASS 0 | 
+  family position trend CANDIDATE    | PASS 0/29575 max 0.0e+00  | alone PASS 0 | 
+  family position econ CANDIDATE     | PASS 0/29575 max 0.0e+00  | alone PASS 0 | 
+  family position carry CANDIDATE    | PASS 0/29575 max 0.0e+00  | alone PASS 0 | 
+  family position value CANDIDATE    | PASS 0/29575 max 0.0e+00  | alone PASS 0 | 
+  positions CANDIDATE                | PASS 0/29575 max 0.0e+00  | alone PASS 0 | 
+  book net return CANDIDATE          | PASS 0/454 max 0.0e+00  | alone PASS 0 | 
+CUT 2007-06-30 | inputs after T seen by the engine: none | stages failing end-to-end 0 of 21 | 49s
+  panel returns                      | PASS 0/15084 max 0.0e+00  | alone n/a (loader stage) | 
+  daily returns                      | PASS 0/281105 max 0.0e+00  | alone n/a (loader stage) | 
+  signal econ                        | PASS 0/30447 max 0.0e+00  | alone PASS 0 | 
+  signal carry                       | PASS 0/12727 max 0.0e+00  | alone PASS 0 | 
+  signal value                       | PASS 0/8002 max 0.0e+00  | alone PASS 0 | 
+  signal trend (sign 1/3/12)         | PASS 0/14665 max 0.0e+00  | alone PASS 0 | 
+  volatility BASE                    | PASS 0/14622 max 0.0e+00  | alone PASS 0 | 
+  volatility CANDIDATE               | PASS 0/16023 max 0.0e+00  | alone PASS 0 | 
+  family position trend BASE         | PASS 0/33085 max 0.0e+00  | alone PASS 0 | 
+  family position econ BASE          | PASS 0/33085 max 0.0e+00  | alone PASS 0 | 
+  family position carry BASE         | PASS 0/33085 max 0.0e+00  | alone PASS 0 | 
+  family position value BASE         | PASS 0/33085 max 0.0e+00  | alone PASS 0 | 
+  family position xsmom BASE         | PASS 0/33085 max 0.0e+00  | alone PASS 0 | 
+  positions BASE                     | PASS 0/33085 max 0.0e+00  | alone PASS 0 | 
+  book net return BASE               | PASS 0/508 max 0.0e+00  | alone PASS 0 | 
+  family position trend CANDIDATE    | PASS 0/33085 max 0.0e+00  | alone PASS 0 | 
+  family position econ CANDIDATE     | PASS 0/33085 max 0.0e+00  | alone PASS 0 | 
+  family position carry CANDIDATE    | PASS 0/33085 max 0.0e+00  | alone PASS 0 | 
+  family position value CANDIDATE    | PASS 0/33085 max 0.0e+00  | alone PASS 0 | 
+  positions CANDIDATE                | PASS 0/33085 max 0.0e+00  | alone PASS 0 | 
+  book net return CANDIDATE          | PASS 0/508 max 0.0e+00  | alone PASS 0 | 
+CUT 2010-12-31 | inputs after T seen by the engine: none | stages failing end-to-end 0 of 21 | 52s
+  panel returns                      | PASS 0/17668 max 0.0e+00  | alone n/a (loader stage) | 
+  daily returns                      | PASS 0/334337 max 0.0e+00  | alone n/a (loader stage) | 
+  signal econ                        | PASS 0/33051 max 0.0e+00  | alone PASS 0 | 
+  signal carry                       | PASS 0/14365 max 0.0e+00  | alone PASS 0 | 
+  signal value                       | PASS 0/9243 max 0.0e+00  | alone PASS 0 | 
+  signal trend (sign 1/3/12)         | PASS 0/17381 max 0.0e+00  | alone PASS 0 | 
+  volatility BASE                    | PASS 0/17295 max 0.0e+00  | alone PASS 0 | 
+  volatility CANDIDATE               | PASS 0/18751 max 0.0e+00  | alone PASS 0 | 
+  family position trend BASE         | PASS 0/35815 max 0.0e+00  | alone PASS 0 | 
+  family position econ BASE          | PASS 0/35815 max 0.0e+00  | alone PASS 0 | 
+  family position carry BASE         | PASS 0/35815 max 0.0e+00  | alone PASS 0 | 
+  family position value BASE         | PASS 0/35815 max 0.0e+00  | alone PASS 0 | 
+  family position xsmom BASE         | PASS 0/35815 max 0.0e+00  | alone PASS 0 | 
+  positions BASE                     | PASS 0/35815 max 0.0e+00  | alone PASS 0 | 
+  book net return BASE               | PASS 0/550 max 0.0e+00  | alone PASS 0 | 
+  family position trend CANDIDATE    | PASS 0/35815 max 0.0e+00  | alone PASS 0 | 
+  family position econ CANDIDATE     | PASS 0/35815 max 0.0e+00  | alone PASS 0 | 
+  family position carry CANDIDATE    | PASS 0/35815 max 0.0e+00  | alone PASS 0 | 
+  family position value CANDIDATE    | PASS 0/35815 max 0.0e+00  | alone PASS 0 | 
+  positions CANDIDATE                | PASS 0/35815 max 0.0e+00  | alone PASS 0 | 
+  book net return CANDIDATE          | PASS 0/550 max 0.0e+00  | alone PASS 0 | 
+--- causes found
+--- summary
+TRUNC 1980-06-30 | PASS | end-to-end failing stages 0 of 21 | stages failing alone 0
+TRUNC 1984-12-31 | PASS | end-to-end failing stages 0 of 21 | stages failing alone 0
+TRUNC 1989-06-30 | PASS | end-to-end failing stages 0 of 21 | stages failing alone 0
+TRUNC 1993-12-31 | PASS | end-to-end failing stages 0 of 21 | stages failing alone 0
+TRUNC 1998-06-30 | PASS | end-to-end failing stages 0 of 21 | stages failing alone 0
+TRUNC 2002-12-31 | PASS | end-to-end failing stages 0 of 21 | stages failing alone 0
+TRUNC 2007-06-30 | PASS | end-to-end failing stages 0 of 21 | stages failing alone 0
+TRUNC 2010-12-31 | PASS | end-to-end failing stages 0 of 21 | stages failing alone 0
+TRUNCATION TEST PASS | Bloomberg inputs NONE (free data only)
+FEATURE PATHS (gm-2.1.0) | full run 49s | Carry v1 + v2 averaged vs half-and-half family position (CANDIDATE, design months): max abs diff 1.4e-14, missing-pattern mismatches 0
+CUT 1980-06-30 | inputs after T seen by the engine: none | feature stages failing end-to-end 0 of 37, alone 0 | 50s
+  NYSE days (from ^GSPC dates)                 | day  | PASS 0/2652 max 0.0e+00  | alone PASS 0
+  signal econ sign shape (E_sign)              | T    | PASS 0/10717 max 0.0e+00  | alone PASS 0
+  signal value version 2 (V2)                  | T    | PASS 0/803 max 0.0e+00  | alone PASS 0
+  k1 returns per market (R1)                   | T-1  | PASS 0/2231 max 0.0e+00  | alone PASS 0 | month T itself: 15 cells cut (holding cut, expected)
+  k1 flags                                     | T-1  | PASS 0/15925 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  k1 book net BASE                             | T-1  | PASS 0/183 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  k1 book net CANDIDATE                        | T-1  | PASS 0/183 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  k1 book net A2_CHALLENGER                    | T-1  | PASS 0/184 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  k1 book net A1_INCUMBENT                     | T-1  | PASS 0/183 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  signal carry E13 adjusted (X1_MARKETS)       | T    | PASS 0/2709 max 0.0e+00  | alone PASS 0
+  positions A1_INCUMBENT (E13)                 | T    | PASS 0/12025 max 0.0e+00  | alone PASS 0
+  positions A2_CHALLENGER (grid)               | T    | PASS 0/12090 max 0.0e+00  | alone PASS 0
+  volatility A2_CHALLENGER                     | T    | PASS 0/2583 max 0.0e+00  | alone PASS 0
+  family position trend A2_CHALLENGER          | T    | PASS 0/12090 max 0.0e+00  | alone PASS 0
+  family position econ A2_CHALLENGER           | T    | PASS 0/12090 max 0.0e+00  | alone PASS 0
+  family position carry A2_CHALLENGER          | T    | PASS 0/12090 max 0.0e+00  | alone PASS 0
+  family position value A2_CHALLENGER          | T    | PASS 0/12090 max 0.0e+00  | alone PASS 0
+  positions Core book (A2, equal risk)         | T    | PASS 0/10465 max 0.0e+00  | alone PASS 0
+  part returns Core book                       | T    | PASS 0/312 max 0.0e+00  | alone PASS 0
+  k1 book net Core book                        | T-1  | PASS 0/159 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  positions shadow book (A2, equal risk)       | T    | PASS 0/9490 max 0.0e+00  | alone PASS 0
+  part returns shadow book                     | T    | PASS 0/395 max 0.0e+00  | alone PASS 0
+  k1 book net shadow book                      | T-1  | PASS 0/144 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  tranche 1 panel X (A2)                       | T-1  | PASS 0/2231 max 0.0e+00  | alone PASS 0 | month T itself: 23 cells cut (holding cut, expected)
+  tranche 1 holding returns (A2)               | T-1  | PASS 0/2231 max 0.0e+00  | alone PASS 0 | month T itself: 16 cells cut (holding cut, expected)
+  tranche 1 positions (A2)                     | T-1  | PASS 0/8125 max 0.0e+00  | alone PASS 0 | month T itself: 65 cells cut (holding cut, expected)
+  tranche 1 flags (A2)                         | T-1  | PASS 0/15925 max 0.0e+00  | alone PASS 0 | month T itself: 0 cells cut (holding cut, expected)
+  tranche 2 panel X (A2)                       | T-1  | PASS 0/2231 max 0.0e+00  | alone PASS 0 | month T itself: 23 cells cut (holding cut, expected)
+  tranche 2 holding returns (A2)               | T-1  | PASS 0/2231 max 0.0e+00  | alone PASS 0 | month T itself: 15 cells cut (holding cut, expected)
+  tranche 2 positions (A2)                     | T-1  | PASS 0/8125 max 0.0e+00  | alone PASS 0 | month T itself: 65 cells cut (holding cut, expected)
+  tranche 2 flags (A2)                         | T-1  | PASS 0/15925 max 0.0e+00  | alone PASS 0 | month T itself: 0 cells cut (holding cut, expected)
+  tranche 3 panel X (A2)                       | T-1  | PASS 0/2231 max 0.0e+00  | alone PASS 0 | month T itself: 23 cells cut (holding cut, expected)
+  tranche 3 holding returns (A2)               | T-1  | PASS 0/2231 max 0.0e+00  | alone PASS 0 | month T itself: 16 cells cut (holding cut, expected)
+  tranche 3 positions (A2)                     | T-1  | PASS 0/8125 max 0.0e+00  | alone PASS 0 | month T itself: 65 cells cut (holding cut, expected)
+  tranche 3 flags (A2)                         | T-1  | PASS 0/15925 max 0.0e+00  | alone PASS 0 | month T itself: 0 cells cut (holding cut, expected)
+  tranche form net (A2)                        | T-1  | PASS 0/184 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  card 4 daily excess e(d)                     | day  | PASS 0/2631 max 0.0e+00  | alone PASS 0
+CUT 1984-12-31 | inputs after T seen by the engine: none | feature stages failing end-to-end 0 of 37, alone 0 | 49s
+  NYSE days (from ^GSPC dates)                 | day  | PASS 0/3791 max 0.0e+00  | alone PASS 0
+  signal econ sign shape (E_sign)              | T    | PASS 0/13851 max 0.0e+00  | alone PASS 0
+  signal value version 2 (V2)                  | T    | PASS 0/1649 max 0.0e+00  | alone PASS 0
+  k1 returns per market (R1)                   | T-1  | PASS 0/3553 max 0.0e+00  | alone PASS 0 | month T itself: 18 cells cut (holding cut, expected)
+  k1 flags                                     | T-1  | PASS 0/19435 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  k1 book net BASE                             | T-1  | PASS 0/237 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  k1 book net CANDIDATE                        | T-1  | PASS 0/237 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  k1 book net A2_CHALLENGER                    | T-1  | PASS 0/238 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  k1 book net A1_INCUMBENT                     | T-1  | PASS 0/237 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  signal carry E13 adjusted (X1_MARKETS)       | T    | PASS 0/3986 max 0.0e+00  | alone PASS 0
+  positions A1_INCUMBENT (E13)                 | T    | PASS 0/15535 max 0.0e+00  | alone PASS 0
+  positions A2_CHALLENGER (grid)               | T    | PASS 0/15600 max 0.0e+00  | alone PASS 0
+  volatility A2_CHALLENGER                     | T    | PASS 0/4012 max 0.0e+00  | alone PASS 0
+  family position trend A2_CHALLENGER          | T    | PASS 0/15600 max 0.0e+00  | alone PASS 0
+  family position econ A2_CHALLENGER           | T    | PASS 0/15600 max 0.0e+00  | alone PASS 0
+  family position carry A2_CHALLENGER          | T    | PASS 0/15600 max 0.0e+00  | alone PASS 0
+  family position value A2_CHALLENGER          | T    | PASS 0/15600 max 0.0e+00  | alone PASS 0
+  positions Core book (A2, equal risk)         | T    | PASS 0/13975 max 0.0e+00  | alone PASS 0
+  part returns Core book                       | T    | PASS 0/474 max 0.0e+00  | alone PASS 0
+  k1 book net Core book                        | T-1  | PASS 0/213 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  positions shadow book (A2, equal risk)       | T    | PASS 0/13000 max 0.0e+00  | alone PASS 0
+  part returns shadow book                     | T    | PASS 0/557 max 0.0e+00  | alone PASS 0
+  k1 book net shadow book                      | T-1  | PASS 0/198 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  tranche 1 panel X (A2)                       | T-1  | PASS 0/3553 max 0.0e+00  | alone PASS 0 | month T itself: 25 cells cut (holding cut, expected)
+  tranche 1 holding returns (A2)               | T-1  | PASS 0/3553 max 0.0e+00  | alone PASS 0 | month T itself: 18 cells cut (holding cut, expected)
+  tranche 1 positions (A2)                     | T-1  | PASS 0/11635 max 0.0e+00  | alone PASS 0 | month T itself: 65 cells cut (holding cut, expected)
+  tranche 1 flags (A2)                         | T-1  | PASS 0/19435 max 0.0e+00  | alone PASS 0 | month T itself: 0 cells cut (holding cut, expected)
+  tranche 2 panel X (A2)                       | T-1  | PASS 0/3553 max 0.0e+00  | alone PASS 0 | month T itself: 25 cells cut (holding cut, expected)
+  tranche 2 holding returns (A2)               | T-1  | PASS 0/3553 max 0.0e+00  | alone PASS 0 | month T itself: 18 cells cut (holding cut, expected)
+  tranche 2 positions (A2)                     | T-1  | PASS 0/11635 max 0.0e+00  | alone PASS 0 | month T itself: 65 cells cut (holding cut, expected)
+  tranche 2 flags (A2)                         | T-1  | PASS 0/19435 max 0.0e+00  | alone PASS 0 | month T itself: 0 cells cut (holding cut, expected)
+  tranche 3 panel X (A2)                       | T-1  | PASS 0/3553 max 0.0e+00  | alone PASS 0 | month T itself: 25 cells cut (holding cut, expected)
+  tranche 3 holding returns (A2)               | T-1  | PASS 0/3553 max 0.0e+00  | alone PASS 0 | month T itself: 18 cells cut (holding cut, expected)
+  tranche 3 positions (A2)                     | T-1  | PASS 0/11635 max 0.0e+00  | alone PASS 0 | month T itself: 65 cells cut (holding cut, expected)
+  tranche 3 flags (A2)                         | T-1  | PASS 0/19435 max 0.0e+00  | alone PASS 0 | month T itself: 0 cells cut (holding cut, expected)
+  tranche form net (A2)                        | T-1  | PASS 0/238 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  card 4 daily excess e(d)                     | day  | PASS 0/3770 max 0.0e+00  | alone PASS 0
+CUT 1989-06-30 | inputs after T seen by the engine: none | feature stages failing end-to-end 0 of 37, alone 0 | 53s
+  NYSE days (from ^GSPC dates)                 | day  | PASS 0/4928 max 0.0e+00  | alone PASS 0
+  signal econ sign shape (E_sign)              | T    | PASS 0/17091 max 0.0e+00  | alone PASS 0
+  signal value version 2 (V2)                  | T    | PASS 0/2607 max 0.0e+00  | alone PASS 0
+  k1 returns per market (R1)                   | T-1  | PASS 0/5078 max 0.0e+00  | alone PASS 0 | month T itself: 23 cells cut (holding cut, expected)
+  k1 flags                                     | T-1  | PASS 0/22945 max 0.0e+00  | alone PASS 0 | month T itself: 2 cells cut (holding cut, expected)
+  k1 book net BASE                             | T-1  | PASS 0/291 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  k1 book net CANDIDATE                        | T-1  | PASS 0/291 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  k1 book net A2_CHALLENGER                    | T-1  | PASS 0/292 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  k1 book net A1_INCUMBENT                     | T-1  | PASS 0/291 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  signal carry E13 adjusted (X1_MARKETS)       | T    | PASS 0/5372 max 0.0e+00  | alone PASS 0
+  positions A1_INCUMBENT (E13)                 | T    | PASS 0/19045 max 0.0e+00  | alone PASS 0
+  positions A2_CHALLENGER (grid)               | T    | PASS 0/19110 max 0.0e+00  | alone PASS 0
+  volatility A2_CHALLENGER                     | T    | PASS 0/5594 max 0.0e+00  | alone PASS 0
+  family position trend A2_CHALLENGER          | T    | PASS 0/19110 max 0.0e+00  | alone PASS 0
+  family position econ A2_CHALLENGER           | T    | PASS 0/19110 max 0.0e+00  | alone PASS 0
+  family position carry A2_CHALLENGER          | T    | PASS 0/19110 max 0.0e+00  | alone PASS 0
+  family position value A2_CHALLENGER          | T    | PASS 0/19110 max 0.0e+00  | alone PASS 0
+  positions Core book (A2, equal risk)         | T    | PASS 0/17485 max 0.0e+00  | alone PASS 0
+  part returns Core book                       | T    | PASS 0/636 max 0.0e+00  | alone PASS 0
+  k1 book net Core book                        | T-1  | PASS 0/267 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  positions shadow book (A2, equal risk)       | T    | PASS 0/16510 max 0.0e+00  | alone PASS 0
+  part returns shadow book                     | T    | PASS 0/719 max 0.0e+00  | alone PASS 0
+  k1 book net shadow book                      | T-1  | PASS 0/252 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  tranche 1 panel X (A2)                       | T-1  | PASS 0/5078 max 0.0e+00  | alone PASS 0 | month T itself: 30 cells cut (holding cut, expected)
+  tranche 1 holding returns (A2)               | T-1  | PASS 0/5078 max 0.0e+00  | alone PASS 0 | month T itself: 24 cells cut (holding cut, expected)
+  tranche 1 positions (A2)                     | T-1  | PASS 0/15145 max 0.0e+00  | alone PASS 0 | month T itself: 65 cells cut (holding cut, expected)
+  tranche 1 flags (A2)                         | T-1  | PASS 0/22945 max 0.0e+00  | alone PASS 0 | month T itself: 0 cells cut (holding cut, expected)
+  tranche 2 panel X (A2)                       | T-1  | PASS 0/5078 max 0.0e+00  | alone PASS 0 | month T itself: 30 cells cut (holding cut, expected)
+  tranche 2 holding returns (A2)               | T-1  | PASS 0/5078 max 0.0e+00  | alone PASS 0 | month T itself: 24 cells cut (holding cut, expected)
+  tranche 2 positions (A2)                     | T-1  | PASS 0/15145 max 0.0e+00  | alone PASS 0 | month T itself: 65 cells cut (holding cut, expected)
+  tranche 2 flags (A2)                         | T-1  | PASS 0/22945 max 0.0e+00  | alone PASS 0 | month T itself: 0 cells cut (holding cut, expected)
+  tranche 3 panel X (A2)                       | T-1  | PASS 0/5078 max 0.0e+00  | alone PASS 0 | month T itself: 30 cells cut (holding cut, expected)
+  tranche 3 holding returns (A2)               | T-1  | PASS 0/5078 max 0.0e+00  | alone PASS 0 | month T itself: 24 cells cut (holding cut, expected)
+  tranche 3 positions (A2)                     | T-1  | PASS 0/15145 max 0.0e+00  | alone PASS 0 | month T itself: 65 cells cut (holding cut, expected)
+  tranche 3 flags (A2)                         | T-1  | PASS 0/22945 max 0.0e+00  | alone PASS 0 | month T itself: 0 cells cut (holding cut, expected)
+  tranche form net (A2)                        | T-1  | PASS 0/292 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  card 4 daily excess e(d)                     | day  | PASS 0/4907 max 0.0e+00  | alone PASS 0
+CUT 1993-12-31 | inputs after T seen by the engine: none | feature stages failing end-to-end 0 of 37, alone 0 | 55s
+  NYSE days (from ^GSPC dates)                 | day  | PASS 0/6067 max 0.0e+00  | alone PASS 0
+  signal econ sign shape (E_sign)              | T    | PASS 0/20403 max 0.0e+00  | alone PASS 0
+  signal value version 2 (V2)                  | T    | PASS 0/3609 max 0.0e+00  | alone PASS 0
+  k1 returns per market (R1)                   | T-1  | PASS 0/6776 max 0.0e+00  | alone PASS 0 | month T itself: 27 cells cut (holding cut, expected)
+  k1 flags                                     | T-1  | PASS 0/26455 max 0.0e+00  | alone PASS 0 | month T itself: 6 cells cut (holding cut, expected)
+  k1 book net BASE                             | T-1  | PASS 0/345 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  k1 book net CANDIDATE                        | T-1  | PASS 0/345 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  k1 book net A2_CHALLENGER                    | T-1  | PASS 0/346 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  k1 book net A1_INCUMBENT                     | T-1  | PASS 0/345 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  signal carry E13 adjusted (X1_MARKETS)       | T    | PASS 0/6814 max 0.0e+00  | alone PASS 0
+  positions A1_INCUMBENT (E13)                 | T    | PASS 0/22555 max 0.0e+00  | alone PASS 0
+  positions A2_CHALLENGER (grid)               | T    | PASS 0/22620 max 0.0e+00  | alone PASS 0
+  volatility A2_CHALLENGER                     | T    | PASS 0/7345 max 0.0e+00  | alone PASS 0
+  family position trend A2_CHALLENGER          | T    | PASS 0/22620 max 0.0e+00  | alone PASS 0
+  family position econ A2_CHALLENGER           | T    | PASS 0/22620 max 0.0e+00  | alone PASS 0
+  family position carry A2_CHALLENGER          | T    | PASS 0/22620 max 0.0e+00  | alone PASS 0
+  family position value A2_CHALLENGER          | T    | PASS 0/22620 max 0.0e+00  | alone PASS 0
+  positions Core book (A2, equal risk)         | T    | PASS 0/20995 max 0.0e+00  | alone PASS 0
+  part returns Core book                       | T    | PASS 0/798 max 0.0e+00  | alone PASS 0
+  k1 book net Core book                        | T-1  | PASS 0/321 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  positions shadow book (A2, equal risk)       | T    | PASS 0/20020 max 0.0e+00  | alone PASS 0
+  part returns shadow book                     | T    | PASS 0/881 max 0.0e+00  | alone PASS 0
+  k1 book net shadow book                      | T-1  | PASS 0/306 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  tranche 1 panel X (A2)                       | T-1  | PASS 0/6776 max 0.0e+00  | alone PASS 0 | month T itself: 33 cells cut (holding cut, expected)
+  tranche 1 holding returns (A2)               | T-1  | PASS 0/6776 max 0.0e+00  | alone PASS 0 | month T itself: 28 cells cut (holding cut, expected)
+  tranche 1 positions (A2)                     | T-1  | PASS 0/18655 max 0.0e+00  | alone PASS 0 | month T itself: 65 cells cut (holding cut, expected)
+  tranche 1 flags (A2)                         | T-1  | PASS 0/26455 max 0.0e+00  | alone PASS 0 | month T itself: 0 cells cut (holding cut, expected)
+  tranche 2 panel X (A2)                       | T-1  | PASS 0/6776 max 0.0e+00  | alone PASS 0 | month T itself: 33 cells cut (holding cut, expected)
+  tranche 2 holding returns (A2)               | T-1  | PASS 0/6776 max 0.0e+00  | alone PASS 0 | month T itself: 28 cells cut (holding cut, expected)
+  tranche 2 positions (A2)                     | T-1  | PASS 0/18655 max 0.0e+00  | alone PASS 0 | month T itself: 65 cells cut (holding cut, expected)
+  tranche 2 flags (A2)                         | T-1  | PASS 0/26455 max 0.0e+00  | alone PASS 0 | month T itself: 0 cells cut (holding cut, expected)
+  tranche 3 panel X (A2)                       | T-1  | PASS 0/6776 max 0.0e+00  | alone PASS 0 | month T itself: 33 cells cut (holding cut, expected)
+  tranche 3 holding returns (A2)               | T-1  | PASS 0/6776 max 0.0e+00  | alone PASS 0 | month T itself: 28 cells cut (holding cut, expected)
+  tranche 3 positions (A2)                     | T-1  | PASS 0/18655 max 0.0e+00  | alone PASS 0 | month T itself: 65 cells cut (holding cut, expected)
+  tranche 3 flags (A2)                         | T-1  | PASS 0/26455 max 0.0e+00  | alone PASS 0 | month T itself: 0 cells cut (holding cut, expected)
+  tranche form net (A2)                        | T-1  | PASS 0/346 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  card 4 daily excess e(d)                     | day  | PASS 0/6046 max 0.0e+00  | alone PASS 0
+CUT 1998-06-30 | inputs after T seen by the engine: none | feature stages failing end-to-end 0 of 37, alone 0 | 51s
+  NYSE days (from ^GSPC dates)                 | day  | PASS 0/7202 max 0.0e+00  | alone PASS 0
+  signal econ sign shape (E_sign)              | T    | PASS 0/23751 max 0.0e+00  | alone PASS 0
+  signal value version 2 (V2)                  | T    | PASS 0/4689 max 0.0e+00  | alone PASS 0
+  k1 returns per market (R1)                   | T-1  | PASS 0/8915 max 0.0e+00  | alone PASS 0 | month T itself: 38 cells cut (holding cut, expected)
+  k1 flags                                     | T-1  | PASS 0/29965 max 0.0e+00  | alone PASS 0 | month T itself: 3 cells cut (holding cut, expected)
+  k1 book net BASE                             | T-1  | PASS 0/399 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  k1 book net CANDIDATE                        | T-1  | PASS 0/399 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  k1 book net A2_CHALLENGER                    | T-1  | PASS 0/400 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  k1 book net A1_INCUMBENT                     | T-1  | PASS 0/399 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  signal carry E13 adjusted (X1_MARKETS)       | T    | PASS 0/8608 max 0.0e+00  | alone PASS 0
+  positions A1_INCUMBENT (E13)                 | T    | PASS 0/26065 max 0.0e+00  | alone PASS 0
+  positions A2_CHALLENGER (grid)               | T    | PASS 0/26130 max 0.0e+00  | alone PASS 0
+  volatility A2_CHALLENGER                     | T    | PASS 0/9623 max 0.0e+00  | alone PASS 0
+  family position trend A2_CHALLENGER          | T    | PASS 0/26130 max 0.0e+00  | alone PASS 0
+  family position econ A2_CHALLENGER           | T    | PASS 0/26130 max 0.0e+00  | alone PASS 0
+  family position carry A2_CHALLENGER          | T    | PASS 0/26130 max 0.0e+00  | alone PASS 0
+  family position value A2_CHALLENGER          | T    | PASS 0/26130 max 0.0e+00  | alone PASS 0
+  positions Core book (A2, equal risk)         | T    | PASS 0/24505 max 0.0e+00  | alone PASS 0
+  part returns Core book                       | T    | PASS 0/960 max 0.0e+00  | alone PASS 0
+  k1 book net Core book                        | T-1  | PASS 0/375 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  positions shadow book (A2, equal risk)       | T    | PASS 0/23530 max 0.0e+00  | alone PASS 0
+  part returns shadow book                     | T    | PASS 0/1043 max 0.0e+00  | alone PASS 0
+  k1 book net shadow book                      | T-1  | PASS 0/360 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  tranche 1 panel X (A2)                       | T-1  | PASS 0/8915 max 0.0e+00  | alone PASS 0 | month T itself: 47 cells cut (holding cut, expected)
+  tranche 1 holding returns (A2)               | T-1  | PASS 0/8915 max 0.0e+00  | alone PASS 0 | month T itself: 44 cells cut (holding cut, expected)
+  tranche 1 positions (A2)                     | T-1  | PASS 0/22165 max 0.0e+00  | alone PASS 0 | month T itself: 65 cells cut (holding cut, expected)
+  tranche 1 flags (A2)                         | T-1  | PASS 0/29965 max 0.0e+00  | alone PASS 0 | month T itself: 0 cells cut (holding cut, expected)
+  tranche 2 panel X (A2)                       | T-1  | PASS 0/8915 max 0.0e+00  | alone PASS 0 | month T itself: 47 cells cut (holding cut, expected)
+  tranche 2 holding returns (A2)               | T-1  | PASS 0/8915 max 0.0e+00  | alone PASS 0 | month T itself: 44 cells cut (holding cut, expected)
+  tranche 2 positions (A2)                     | T-1  | PASS 0/22165 max 0.0e+00  | alone PASS 0 | month T itself: 65 cells cut (holding cut, expected)
+  tranche 2 flags (A2)                         | T-1  | PASS 0/29965 max 0.0e+00  | alone PASS 0 | month T itself: 0 cells cut (holding cut, expected)
+  tranche 3 panel X (A2)                       | T-1  | PASS 0/8915 max 0.0e+00  | alone PASS 0 | month T itself: 47 cells cut (holding cut, expected)
+  tranche 3 holding returns (A2)               | T-1  | PASS 0/8915 max 0.0e+00  | alone PASS 0 | month T itself: 44 cells cut (holding cut, expected)
+  tranche 3 positions (A2)                     | T-1  | PASS 0/22165 max 0.0e+00  | alone PASS 0 | month T itself: 65 cells cut (holding cut, expected)
+  tranche 3 flags (A2)                         | T-1  | PASS 0/29965 max 0.0e+00  | alone PASS 0 | month T itself: 0 cells cut (holding cut, expected)
+  tranche form net (A2)                        | T-1  | PASS 0/400 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  card 4 daily excess e(d)                     | day  | PASS 0/7181 max 0.0e+00  | alone PASS 0
+CUT 2002-12-31 | inputs after T seen by the engine: none | feature stages failing end-to-end 0 of 37, alone 0 | 59s
+  NYSE days (from ^GSPC dates)                 | day  | PASS 0/8334 max 0.0e+00  | alone PASS 0
+  signal econ sign shape (E_sign)              | T    | PASS 0/27099 max 0.0e+00  | alone PASS 0
+  signal value version 2 (V2)                  | T    | PASS 0/5943 max 0.0e+00  | alone PASS 0
+  k1 returns per market (R1)                   | T-1  | PASS 0/11788 max 0.0e+00  | alone PASS 0 | month T itself: 45 cells cut (holding cut, expected)
+  k1 flags                                     | T-1  | PASS 0/33475 max 0.0e+00  | alone PASS 0 | month T itself: 3 cells cut (holding cut, expected)
+  k1 book net BASE                             | T-1  | PASS 0/453 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  k1 book net CANDIDATE                        | T-1  | PASS 0/453 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  k1 book net A2_CHALLENGER                    | T-1  | PASS 0/454 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  k1 book net A1_INCUMBENT                     | T-1  | PASS 0/453 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  signal carry E13 adjusted (X1_MARKETS)       | T    | PASS 0/10583 max 0.0e+00  | alone PASS 0
+  positions A1_INCUMBENT (E13)                 | T    | PASS 0/29575 max 0.0e+00  | alone PASS 0
+  positions A2_CHALLENGER (grid)               | T    | PASS 0/29640 max 0.0e+00  | alone PASS 0
+  volatility A2_CHALLENGER                     | T    | PASS 0/12579 max 0.0e+00  | alone PASS 0
+  family position trend A2_CHALLENGER          | T    | PASS 0/29640 max 0.0e+00  | alone PASS 0
+  family position econ A2_CHALLENGER           | T    | PASS 0/29640 max 0.0e+00  | alone PASS 0
+  family position carry A2_CHALLENGER          | T    | PASS 0/29640 max 0.0e+00  | alone PASS 0
+  family position value A2_CHALLENGER          | T    | PASS 0/29640 max 0.0e+00  | alone PASS 0
+  positions Core book (A2, equal risk)         | T    | PASS 0/28015 max 0.0e+00  | alone PASS 0
+  part returns Core book                       | T    | PASS 0/1122 max 0.0e+00  | alone PASS 0
+  k1 book net Core book                        | T-1  | PASS 0/429 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  positions shadow book (A2, equal risk)       | T    | PASS 0/27040 max 0.0e+00  | alone PASS 0
+  part returns shadow book                     | T    | PASS 0/1205 max 0.0e+00  | alone PASS 0
+  k1 book net shadow book                      | T-1  | PASS 0/414 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  tranche 1 panel X (A2)                       | T-1  | PASS 0/11788 max 0.0e+00  | alone PASS 0 | month T itself: 51 cells cut (holding cut, expected)
+  tranche 1 holding returns (A2)               | T-1  | PASS 0/11788 max 0.0e+00  | alone PASS 0 | month T itself: 46 cells cut (holding cut, expected)
+  tranche 1 positions (A2)                     | T-1  | PASS 0/25675 max 0.0e+00  | alone PASS 0 | month T itself: 65 cells cut (holding cut, expected)
+  tranche 1 flags (A2)                         | T-1  | PASS 0/33475 max 0.0e+00  | alone PASS 0 | month T itself: 0 cells cut (holding cut, expected)
+  tranche 2 panel X (A2)                       | T-1  | PASS 0/11788 max 0.0e+00  | alone PASS 0 | month T itself: 51 cells cut (holding cut, expected)
+  tranche 2 holding returns (A2)               | T-1  | PASS 0/11788 max 0.0e+00  | alone PASS 0 | month T itself: 46 cells cut (holding cut, expected)
+  tranche 2 positions (A2)                     | T-1  | PASS 0/25675 max 0.0e+00  | alone PASS 0 | month T itself: 65 cells cut (holding cut, expected)
+  tranche 2 flags (A2)                         | T-1  | PASS 0/33475 max 0.0e+00  | alone PASS 0 | month T itself: 0 cells cut (holding cut, expected)
+  tranche 3 panel X (A2)                       | T-1  | PASS 0/11788 max 0.0e+00  | alone PASS 0 | month T itself: 51 cells cut (holding cut, expected)
+  tranche 3 holding returns (A2)               | T-1  | PASS 0/11788 max 0.0e+00  | alone PASS 0 | month T itself: 47 cells cut (holding cut, expected)
+  tranche 3 positions (A2)                     | T-1  | PASS 0/25675 max 0.0e+00  | alone PASS 0 | month T itself: 65 cells cut (holding cut, expected)
+  tranche 3 flags (A2)                         | T-1  | PASS 0/33475 max 0.0e+00  | alone PASS 0 | month T itself: 0 cells cut (holding cut, expected)
+  tranche form net (A2)                        | T-1  | PASS 0/454 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  card 4 daily excess e(d)                     | day  | PASS 0/8313 max 0.0e+00  | alone PASS 0
+CUT 2007-06-30 | inputs after T seen by the engine: none | feature stages failing end-to-end 0 of 37, alone 0 | 56s
+  NYSE days (from ^GSPC dates)                 | day  | PASS 0/9465 max 0.0e+00  | alone PASS 0
+  signal econ sign shape (E_sign)              | T    | PASS 0/30447 max 0.0e+00  | alone PASS 0
+  signal value version 2 (V2)                  | T    | PASS 0/7300 max 0.0e+00  | alone PASS 0
+  k1 returns per market (R1)                   | T-1  | PASS 0/15022 max 0.0e+00  | alone PASS 0 | month T itself: 59 cells cut (holding cut, expected)
+  k1 flags                                     | T-1  | PASS 0/36985 max 0.0e+00  | alone PASS 0 | month T itself: 4 cells cut (holding cut, expected)
+  k1 book net BASE                             | T-1  | PASS 0/507 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  k1 book net CANDIDATE                        | T-1  | PASS 0/507 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  k1 book net A2_CHALLENGER                    | T-1  | PASS 0/508 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  k1 book net A1_INCUMBENT                     | T-1  | PASS 0/507 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  signal carry E13 adjusted (X1_MARKETS)       | T    | PASS 0/12635 max 0.0e+00  | alone PASS 0
+  positions A1_INCUMBENT (E13)                 | T    | PASS 0/33085 max 0.0e+00  | alone PASS 0
+  positions A2_CHALLENGER (grid)               | T    | PASS 0/33150 max 0.0e+00  | alone PASS 0
+  volatility A2_CHALLENGER                     | T    | PASS 0/16023 max 0.0e+00  | alone PASS 0
+  family position trend A2_CHALLENGER          | T    | PASS 0/33150 max 0.0e+00  | alone PASS 0
+  family position econ A2_CHALLENGER           | T    | PASS 0/33150 max 0.0e+00  | alone PASS 0
+  family position carry A2_CHALLENGER          | T    | PASS 0/33150 max 0.0e+00  | alone PASS 0
+  family position value A2_CHALLENGER          | T    | PASS 0/33150 max 0.0e+00  | alone PASS 0
+  positions Core book (A2, equal risk)         | T    | PASS 0/31525 max 0.0e+00  | alone PASS 0
+  part returns Core book                       | T    | PASS 0/1284 max 0.0e+00  | alone PASS 0
+  k1 book net Core book                        | T-1  | PASS 0/483 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  positions shadow book (A2, equal risk)       | T    | PASS 0/30550 max 0.0e+00  | alone PASS 0
+  part returns shadow book                     | T    | PASS 0/1367 max 0.0e+00  | alone PASS 0
+  k1 book net shadow book                      | T-1  | PASS 0/468 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  tranche 1 panel X (A2)                       | T-1  | PASS 0/15022 max 0.0e+00  | alone PASS 0 | month T itself: 62 cells cut (holding cut, expected)
+  tranche 1 holding returns (A2)               | T-1  | PASS 0/15022 max 0.0e+00  | alone PASS 0 | month T itself: 59 cells cut (holding cut, expected)
+  tranche 1 positions (A2)                     | T-1  | PASS 0/29185 max 0.0e+00  | alone PASS 0 | month T itself: 65 cells cut (holding cut, expected)
+  tranche 1 flags (A2)                         | T-1  | PASS 0/36985 max 0.0e+00  | alone PASS 0 | month T itself: 0 cells cut (holding cut, expected)
+  tranche 2 panel X (A2)                       | T-1  | PASS 0/15022 max 0.0e+00  | alone PASS 0 | month T itself: 62 cells cut (holding cut, expected)
+  tranche 2 holding returns (A2)               | T-1  | PASS 0/15022 max 0.0e+00  | alone PASS 0 | month T itself: 59 cells cut (holding cut, expected)
+  tranche 2 positions (A2)                     | T-1  | PASS 0/29185 max 0.0e+00  | alone PASS 0 | month T itself: 65 cells cut (holding cut, expected)
+  tranche 2 flags (A2)                         | T-1  | PASS 0/36985 max 0.0e+00  | alone PASS 0 | month T itself: 0 cells cut (holding cut, expected)
+  tranche 3 panel X (A2)                       | T-1  | PASS 0/15022 max 0.0e+00  | alone PASS 0 | month T itself: 62 cells cut (holding cut, expected)
+  tranche 3 holding returns (A2)               | T-1  | PASS 0/15022 max 0.0e+00  | alone PASS 0 | month T itself: 59 cells cut (holding cut, expected)
+  tranche 3 positions (A2)                     | T-1  | PASS 0/29185 max 0.0e+00  | alone PASS 0 | month T itself: 65 cells cut (holding cut, expected)
+  tranche 3 flags (A2)                         | T-1  | PASS 0/36985 max 0.0e+00  | alone PASS 0 | month T itself: 0 cells cut (holding cut, expected)
+  tranche form net (A2)                        | T-1  | PASS 0/508 max 0.0e+00  | alone PASS 0 | month T itself: 1 cells cut (holding cut, expected)
+  card 4 daily excess e(d)                     | day  | PASS 0/9444 max 0.0e+00  | alone PASS 0
+CUT 2010-12-31 | inputs after T seen by the engine: none | feature stages failing end-to-end 0 of 37, alone 0 | 61s
+  NYSE days (from ^GSPC dates)                 | day  | PASS 0/10349 max 0.0e+00  | alone PASS 0
+  signal econ sign shape (E_sign)              | T    | PASS 0/33051 max 0.0e+00  | alone PASS 0
+  signal value version 2 (V2)                  | T    | PASS 0/8392 max 0.0e+00  | alone PASS 0
+  k1 returns per market (R1)                   | T-1  | PASS 0/17668 max 0.0e+00  | alone PASS 0
+  k1 flags                                     | T-1  | PASS 0/39780 max 0.0e+00  | alone PASS 0
+  k1 book net BASE                             | T-1  | PASS 0/550 max 0.0e+00  | alone PASS 0
+  k1 book net CANDIDATE                        | T-1  | PASS 0/550 max 0.0e+00  | alone PASS 0
+  k1 book net A2_CHALLENGER                    | T-1  | PASS 0/551 max 0.0e+00  | alone PASS 0
+  k1 book net A1_INCUMBENT                     | T-1  | PASS 0/550 max 0.0e+00  | alone PASS 0
+  signal carry E13 adjusted (X1_MARKETS)       | T    | PASS 0/14231 max 0.0e+00  | alone PASS 0
+  positions A1_INCUMBENT (E13)                 | T    | PASS 0/35815 max 0.0e+00  | alone PASS 0
+  positions A2_CHALLENGER (grid)               | T    | PASS 0/35880 max 0.0e+00  | alone PASS 0
+  volatility A2_CHALLENGER                     | T    | PASS 0/18751 max 0.0e+00  | alone PASS 0
+  family position trend A2_CHALLENGER          | T    | PASS 0/35880 max 0.0e+00  | alone PASS 0
+  family position econ A2_CHALLENGER           | T    | PASS 0/35880 max 0.0e+00  | alone PASS 0
+  family position carry A2_CHALLENGER          | T    | PASS 0/35880 max 0.0e+00  | alone PASS 0
+  family position value A2_CHALLENGER          | T    | PASS 0/35880 max 0.0e+00  | alone PASS 0
+  positions Core book (A2, equal risk)         | T    | PASS 0/34255 max 0.0e+00  | alone PASS 0
+  part returns Core book                       | T    | PASS 0/1410 max 0.0e+00  | alone PASS 0
+  k1 book net Core book                        | T-1  | PASS 0/526 max 0.0e+00  | alone PASS 0
+  positions shadow book (A2, equal risk)       | T    | PASS 0/33280 max 0.0e+00  | alone PASS 0
+  part returns shadow book                     | T    | PASS 0/1493 max 0.0e+00  | alone PASS 0
+  k1 book net shadow book                      | T-1  | PASS 0/511 max 0.0e+00  | alone PASS 0
+  tranche 1 panel X (A2)                       | T-1  | PASS 0/17604 max 0.0e+00  | alone PASS 0
+  tranche 1 holding returns (A2)               | T-1  | PASS 0/17668 max 0.0e+00  | alone PASS 0
+  tranche 1 positions (A2)                     | T-1  | PASS 0/31915 max 0.0e+00  | alone PASS 0
+  tranche 1 flags (A2)                         | T-1  | PASS 0/39780 max 0.0e+00  | alone PASS 0
+  tranche 2 panel X (A2)                       | T-1  | PASS 0/17604 max 0.0e+00  | alone PASS 0
+  tranche 2 holding returns (A2)               | T-1  | PASS 0/17668 max 0.0e+00  | alone PASS 0
+  tranche 2 positions (A2)                     | T-1  | PASS 0/31915 max 0.0e+00  | alone PASS 0
+  tranche 2 flags (A2)                         | T-1  | PASS 0/39780 max 0.0e+00  | alone PASS 0
+  tranche 3 panel X (A2)                       | T-1  | PASS 0/17604 max 0.0e+00  | alone PASS 0
+  tranche 3 holding returns (A2)               | T-1  | PASS 0/17668 max 0.0e+00  | alone PASS 0
+  tranche 3 positions (A2)                     | T-1  | PASS 0/31915 max 0.0e+00  | alone PASS 0
+  tranche 3 flags (A2)                         | T-1  | PASS 0/39780 max 0.0e+00  | alone PASS 0
+  tranche form net (A2)                        | T-1  | PASS 0/551 max 0.0e+00  | alone PASS 0
+  card 4 daily excess e(d)                     | day  | PASS 0/10328 max 0.0e+00  | alone PASS 0
+--- feature summary
+FEATURE TRUNC 1980-06-30 | PASS | end-to-end failing stages 0 of 37 | stages failing alone 0
+FEATURE TRUNC 1984-12-31 | PASS | end-to-end failing stages 0 of 37 | stages failing alone 0
+FEATURE TRUNC 1989-06-30 | PASS | end-to-end failing stages 0 of 37 | stages failing alone 0
+FEATURE TRUNC 1993-12-31 | PASS | end-to-end failing stages 0 of 37 | stages failing alone 0
+FEATURE TRUNC 1998-06-30 | PASS | end-to-end failing stages 0 of 37 | stages failing alone 0
+FEATURE TRUNC 2002-12-31 | PASS | end-to-end failing stages 0 of 37 | stages failing alone 0
+FEATURE TRUNC 2007-06-30 | PASS | end-to-end failing stages 0 of 37 | stages failing alone 0
+FEATURE TRUNC 2010-12-31 | PASS | end-to-end failing stages 0 of 37 | stages failing alone 0
+FEATURE TRUNCATION TEST PASS

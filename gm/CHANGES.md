@@ -139,6 +139,25 @@ below reads them: each is closed from the registered text, with the reason given
    hash (the B1 / B2 test-1 book, 7.1 F9, and the book of step 11); each shadow part's status (Incubator or Shelved).
    Nothing in the specs, the register or 7.x changes from this run except those status words.
 
+Code and cloud gates (2026-11-27; entry 28f14a6 before the code 9aa8527; no statistic of S1-S4, of an Incubator test or
+of Core book v1 computed in the cloud): tools/bbgq/lib/core_v1.py 1.0.0 (sha256
+817380e8e9e7ed49f4f2a4ec2495b3e4ec154c186104dd99b07eab06738f1423), PC job tools/bbgq/jobs/gm_core_v1.py (sha256 in
+docs/research/batches/CORE_V1_BUILD_2026-11-27.md; it changes once REBUILD_SHA is set), stub tests/data/rebuild_s4_stub.py
+(tests only), tests/core_v1_smoke.py (70 checks, in tests/run_tests.py), cloud script tools/bbgq/core_plumbing.py. gm/
+unchanged, so engine_ref.json is unchanged. Gates: k = 0 reproduction 24 of 24, difference 0
+(tools/bbgq/results/engine_repro_cloud_2026-11-27f_gm-2.2.1.txt); truncation PASS at all 8 cut dates, 21 k = 0 and 37
+feature stages (results/engine_trunc_cloud_2026-11-27f_gm-2.2.1.txt); run_tests ALL TESTS PASSED
+(results/run_tests_gm_2026-11-27g_gm-2.2.1.txt); free-panel identities PASS (results/core_plumbing_cloud_2026-11-27.txt:
+masks partition each pod, identity date map = each part alone, interface inputs as documented, live check runs).
+Closed while coding (no rule change): the job runs the rebuild on the interface inputs (A1 panel, cut at 2010-12-31)
+and validates it before the as-run check and any statistic; the S3 "without" books and the candidate Core book are run
+once and reused by S3 and the leave-one-out alpha; a candidate with fewer than 120 window months is "insufficient data"
+and is not sent to the Incubator rule (7.7 Window: "not tested").
+S4 rebuild: written by the separate agent and committed by it (1204233, rebuild_s4 1.0.0, sha256
+3febdce707c9706d43d189c64f0700705a3b5b1bd2ee912e8fe430be1dac8ebf as committed; the core_v1 builder neither read nor
+edited it). REBUILD_SHA is NOT set: item 4e's dated registration line is the coordinator's after accepting the
+rebuild. NOT RUN: queue in docs/research/batches/CORE_V1_BUILD_2026-11-27.md.
+
 ## A3: empty (registered 2026-11-27, after the diagnostics run and BEFORE Core book v1): TESTING_PROTOCOL 7.6 step 5
 Record entry (no rule, weight, threshold, cost, market or code change; nothing is run; no trial row).
 1. The registered text. 7.6 step 5: "Batch A3, items opened by diagnostics only (charter s5; register B9): breadth (D1,

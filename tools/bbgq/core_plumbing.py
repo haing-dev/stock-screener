@@ -2,7 +2,10 @@
 v1" item 8). Prints differences, ids, counts and PASS / FAIL only: no Sharpe, mean, alpha, p-value, placebo share,
 drawdown or verdict of any part or book (those are computed on the A1 panel by the PC job gm_core_v1 only).
 
-python3 tools/bbgq/core_plumbing.py
+python3 tools/bbgq/core_plumbing.py [--rebuild]
+--rebuild: also run tools/bbgq/lib/rebuild_s4.py (the independent rebuild) on the free-panel interface inputs and print
+only whether its output passes the interface checks (keys, index, cut, months); for the coordinator before REBUILD_SHA
+is registered. No statistic of the rebuild or the engine is printed.
 Checks (A2-final config A1_INCUMBENT, free panel, design months, every loader cut at 2010-12-31):
   1. the Core and shadow masks partition each pod's components (positions add up exactly)
   2. the identity date map of the placebo engine reproduces each part alone exactly (S1 / T3 plumbing)
@@ -84,6 +87,17 @@ def main():
         print("%s live-source check runs | %s | held at %s: %d markets | missing free inputs: %s" % (
             "PASS" if held else "FAIL", p, CV.LAST_DECISION, len(held), ", ".join("%s (%s)" % m for m in ms) or "none"))
         ok &= bool(held)
+    if "--rebuild" in sys.argv:
+        import rebuild_s4 as RB
+        fb = CV.forbidden_imports(os.path.join(HERE, "lib", "rebuild_s4.py"))
+        with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
+            out = RB.part_returns(CV.rebuild_inputs(R, D, S, days, cfg, {"config": cfg["name"]}), cut="2010-12-31")
+        okr, why, nm = CV.validate_rebuild(out)
+        p5 = okr and not fb
+        ok &= p5
+        print("%s real rebuild %s on the free-panel inputs: forbidden imports %s | interface %s | months per key: %s" % (
+            "PASS" if p5 else "FAIL", getattr(RB, "VERSION", "?"), ", ".join(fb) or "none", why,
+            ", ".join("%s %d" % kv for kv in nm.items())))
     print("CORE PLUMBING %s | %.0fs | no statistic of any part or book computed or printed" % (
         "PASS" if ok else "FAIL", time.time() - t0))
     return ok
