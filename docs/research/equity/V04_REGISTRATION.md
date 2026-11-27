@@ -500,3 +500,14 @@ as such. Replaces R1.1 (record); R1.2 (material) and R1.3 (screenability) stay.
    ("not a sudden change", "not a predicted step change"). Result: FAIL = "file not complete" (A10): more material,
    then a new held-out draw. K174 is not merged yet. The finding itself is kept: the card overstates "long record";
    he also buys an inflection in pricing or growth at a business that already dominates.
+8. **User direction 2026-11-27: "keep going with the investors with readily available materials, don't stop".**
+   Read as: (a) Kantesaria continues past the held-out FAIL to card v1.1 (K174 merged; the FICO cases recorded as a
+   scope rule: an inflection in pricing or growth at an already dominant business) and on to recipe and recall; every
+   later result carries the label "held-out failed". (b) Every roster investor with own-words documents of 5,000+
+   words in the library is read now through the same gates, without waiting for the material bar; a file below the
+   bar carries the label "thin" and cannot be classed above Incubator until it reaches the bar. Batch 2 (sources in
+   `pilot/batch2/docs.json`): Hohn 2 documents (one file was a duplicate of the same talk and is dropped), Stahl 3,
+   Druckenmiller 6, Sosin 3 (the 2026 unnamed-guest file stays out), Zlatev 2, Pilecki 2, Nygren/Fitch 2 (TIP524 only
+   quotes Nygren and is dropped), Li Lu 2. Held-out documents by the A10 hash rule (name + batch id) where there are 3
+   or more: Stahl STA2, Druckenmiller DRU2, Sosin SOS1. Gate G3 per A13 item 6 (agreement reported; planted decisive;
+   agreed rules + third reading). Spec v1.1 wording made investor-neutral ("his fund does X"; no change of meaning).

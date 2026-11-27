@@ -37,7 +37,7 @@ passage's speaker is unclear, leave it out.
 
 ## Definitions that decide tags
 - **rule**: a practice he says he (or his fund) follows: "we buy / we require / we sell when / we never / we hold /
-  we look for". Test: it can be rewritten as "Valley Forge does X" or "...never does X" and names a decision.
+  we look for". Test: it can be rewritten as "his (or her) fund does X" or "...never does X" and names a decision.
 - **principle**: a belief about businesses, markets or investors that is not phrased as his own practice ("monopolies
   have pricing power", "the error many people make is...", "sometimes the best thing is to do nothing"). A lesson
   he draws for himself in general words is a principle unless he states what he now does.

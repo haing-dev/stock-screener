@@ -80,3 +80,4 @@ conviction holdings job (R2) will be the fourth, with its code hash entered befo
 - 2026-11-27: blind check v1.1 FAIL (pilot/verify_v1.1/SCORE_v1.1.md); Kantesaria reading stopped per A13 item 4 pending the user. No price, return or 13F read.
 - 2026-11-27: A13 item 6 (user): agreement bars reported, not stops; agreed rules + third reading of 41 disputes.
 - 2026-11-27: Kantesaria card v1 + held-out test: 6/8 matched, 3 open buy-part contradictions -> FAIL (file not complete). No price, return or 13F read.
+- 2026-11-27: A13 item 8 (user: don't stop): Kantesaria continues labelled held-out failed; batch 2 reading of 8 roster investors (22 documents), thin files labelled. No price, return or 13F read.
