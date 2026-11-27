@@ -572,6 +572,7 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   better; carry: 4 pts deeper fall) against the joint 3-candidate book that includes value; value fails all. As
   registered: no holdout run, BASE continues 'no Core book', B tests read alpha vs a zero book. Incubator: trend,
   carry, econ, carry v1+bonds, value bonds+FX; Shelved: value equities. NEXT: step 7 pre-B diagnostics, B1/B2.
+  USER RULE 2026-11-27: every result report ENDS with a short summary in simple, plain terms (what it means, no jargon).
   User 2026-11-22: NO MORE FABLE UNITS for now.
 - MT228 (2026-11-10): raw X posts of John Galt @AtlasShrug1 (1,359 posts, Jul 2025 - 8 Nov 2026) extracted like a transcript
   with dates: 733 claims (185 rules/tells, 188 dated forecasts), Sonnet single read, quotes script-checked, cross-check
