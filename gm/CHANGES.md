@@ -137,6 +137,10 @@ code and BEFORE any A1 run; appended, the items above are not rewritten):
   (per-market sums of |signal| for E, C, V within the reproduction tolerance 1e-6, market months exact) and stops on a
   difference; exception messages are printed with the type and code frames only, numbers with 3 or more decimals
   replaced by <num>. The trial row's note names its parent (CANDIDATE a9466df18b; A1_INCUMBENT 465b5ecd4f).
+  Code: c61e6dd (a1_panel 1.1.0 sha256 eb9ef3f7...22ebb5; job gm_a1_v1.py 8955c4e6...14e54ed), smoke cases added
+  (well-correlated SPGSICP rejected, BCOMHG admitted, HU months unused, MXUS and MSCI-vs-French rejected, free-arm check,
+  scrub, report lines). Reruns: k = 0 reproduction 24/24 difference 0, truncation PASS 8/8 (21 + 37 stages), run_tests
+  ALL TESTS PASSED, smoke tests passed, free arm vs engine_ref difference 0 (cloud). gm/ unchanged in this round.
 
 ## X1 outcome (registered 2026-11-27, after the X1 run and BEFORE the E13 code and A1's design run): E13 for natgas, gasoline
 Entry 4 of docs/research/registration/REGISTRATION_3.4.md part (c): "X1 outcome (after X1, before A1's design run): for
