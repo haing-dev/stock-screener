@@ -305,7 +305,7 @@ prices, and lsegdata hides them unless Panel(allow_untouched=True), which no reg
 (the A1 rule likewise excludes held-back markets). The job opens the LSEG store with allow_untouched=False and prints
 the line as "not computed (held-back instruments)". The gate (copper against wheat, corn, soybeans) is unchanged; no
 gate input is held back (HG, CL, W, C, S, ED, the S&P 500 forward EPS are not on the list).
-Code and cloud gates (2026-11-27; entry 6497db6 and corrections bd6e3f5 before the code fd760ae; no diagnostic
+Code and cloud gates (2026-11-27; entry 97c3e2f and corrections 29d1986 before the code 2e25e47; no diagnostic
 statistic computed in the cloud): tools/bbgq/lib/diag_preb.py 1.0.0 (sha256
 072b3dbe075353cc2ad6a3b2a95e0c50e97221ec05a8fddcf20b813493d11c77), PC job tools/bbgq/jobs/gm_diag_preb_v1.py (sha256
 in docs/research/batches/PREB_BUILD_2026-11-27.md), tests/diag_preb_smoke.py (52 checks, in tests/run_tests.py),
