@@ -4,6 +4,203 @@ Every rule change gets a new VERSION in gm/run.py and a line here. Every variant
 (1990-2010; extra check 1975-89) is logged so the deflated Sharpe can count the trials. The holdout (2011-2026) is run
 once, after the rules are frozen, by gm/holdout.py.
 
+## Pre-B diagnostics (registered 2026-11-27, BEFORE the diagnostics code and run): TESTING_PROTOCOL 7.6 step 7, 7.5 order item 3
+Registered run entry (no rule, weight, threshold, gate, cost or market change; no gm/ code change; no statistic of any
+diagnostic below has been computed on real data, cloud or PC). The A1 panel (Bloomberg values) and the LSEG store exist
+only on the PC, so every diagnostic is computed by one PC job (tools/bbgq/jobs/gm_diag_preb_v1.py, library
+tools/bbgq/lib/diag_preb.py). The builder has read the reports the job pins (gm_a2_v1, gm_diag_v1, gm_core_v1); no
+choice below reads a result: each is closed from the registered text, with the reason given.
+1. The registered text. 7.6 step 7: "The pre-B diagnostics of 7.5 order item 3." 7.5 order item 3: "After Core book v1
+   (7.6 step 6), before B2 is run: R1 (needs daily dollar contracts 1-8 locked), C1-D1, C1-D2, C2-D1, C2-D2, C3-D1,
+   C3-D2, C4-D1, C4-D2, C5-D1, C5-D2, F0." 7.5: "No diagnostic adopts anything or uses a Holm slot (charter s5). Each
+   is logged as a design-data run (7.8)"; "Every diagnostic reads positions, signals or its registered outcome only;
+   none reads a sealed day after its fix." Gates: the 7.5 table rows R1, F0, C1-D1 .. C5-D2 with their 3.4 fixes, the
+   paragraph on the "already held" thresholds, and the specs' section 13 (SPEC_Strip_reversion, SPEC_Card1-5).
+   Consequences: 7.6 step 9 (B2 = Strip reversion "only if R1 passes and daily settlements of dollar contracts 1-8 are
+   locked (else dropped unbuilt, logged); Curve carry if moved; and every card rule that survives its gates").
+2. Book and data. "The registered systematic book" (7.5: "the four existing pods in their final Batch A form at the
+   CANDIDATE shares, all parts (Core and Incubator), sign of its net position per market (book.run "pos")") = the
+   A2-final book A1_INCUMBENT gm-2.0.4-candidate-x1 (config 77374d7bef), engine gm-2.2.1, no grid, on the A1 panel
+   e7f98d4439fccf91f3451bc4b9e78079e3bc2cc2452931363b28520460b6cb43, every loader cut at 2010-12-31; its positions are
+   book.run's "pos" (identical at k = 0 and k = 1, "Diagnostics after A2" item 2), checked as run against the A2 report
+   (diag_a2.as_run) before any diagnostic line. Free inputs: the shipped zip (TB3MS, the OECD IR3TIB01 3-month rates,
+   ^GSPC daily closes, panel.fx_usd_value). LSEG: LOCK_LSEG_v5 90322681b9f989cc24393ae7de4fe24bf5af2f32074ffa6400b1cbed09c4074c
+   (data entry "LSEG registered as a source for history"), lsegdata-1.0.0, lseg_rules-1.1.0, design part only, as of
+   2010-12-31; its item 4 names the inputs read here: "Strip reversion strips", "card 3 R4 forward EPS", "card 5 R1
+   fronts" (and SPEC_Card5 s8 lists "for D2 also cocoa, LME cash, grains" as LSEG). Volatility of every card position:
+   the engine hybrid estimate with the CANDIDATE vol config (the card specs s5), on the A1 panel and the free daily
+   returns; no volatility, no position.
+3. The empty Core book (CORE BOOK V1 RUN: "CORE BOOK V1 EMPTY"). How each diagnostic reads:
+   - C3-D1 (the only row that names the "Core book"): 7.5 fix "'Core book' read as the registered systematic book
+     (below), because the question is content, not trading status (Core book v1 exists by then but holds Core parts
+     only)"; and "Core or Incubator is a trading status, not a content question". So C3-D1 compares with the registered
+     systematic book of item 2, which an empty Core book v1 does not change.
+   - C1-D2: "> 80% of held months same sign as the registered systematic book": the same reference, unchanged.
+   - C5-D1 and C4-D2 name Trend: ">= 75% of held months with the 12-month Trend versions long" (C5-D1), "R5 overlap
+     with card 3 R2 and Trend" (C4-D2). Trend is a pod of the registered systematic book (Incubator since Core book v1);
+     the reference is content, so the empty Core book changes nothing.
+   - R1, C1-D1, C2-D1, C2-D2, C3-D2, C4-D1, C5-D2, F0 name no book. F0's pass reads "judged in B2", where B tests "read
+     alpha against a zero book (the pod's own mean)" (7.6 step 6): a B2 matter, not this step's.
+4. What runs now and what is blocked (inputs checked against the free inputs (docs/research/batches/
+   META_first_dates_2026-11-27.txt), the A1 panel and LOCK_LSEG_v5; "blocked" = an input not in any registered source):
+   | Id | Runs | Inputs | Blocked by |
+   |---|---|---|---|
+   | R1 | yes, PC | LSEG ED quarterly contracts, daily (deliveries 1982-2012, L14), NYSE days | - |
+   | C1-D1 | R5 only | R5: panel.fx_usd_value | R1-R4: FEDFUNDS, GS2, GS5, GS10, BAA, TWEXMMTH / DTWEXBGS, WTISPLC, CPILFESL, M2SL (ALFRED) not in the free inputs |
+   | C1-D2 | R5 legs only | R5 + the book | R1-R4 legs: as C1-D1 |
+   | C2-D1 | yes, PC | TB3MS, IR3TIB01 JP / DE then EZ / GB / CA, panel bonds and indexes | - |
+   | C2-D2 | no | - | card 2 R1, R2 (GS10, CPILFESL, UNRATE) and card 1 R4's state (CPILFESL, FEDFUNDS) |
+   | C3-D1 | R4 only | LSEG S&P 500 forward EPS, ^GSPC month-end, TB3MS, the book | R1 (FEDFUNDS gate versions), R2 (GS2, GS10), R3 (FEDFUNDS, GS1, GS2, PCEPILFE) |
+   | C3-D2 | no | - | FEDFUNDS |
+   | C4-D1 | no | - | VIXCLS |
+   | C4-D2 | no | - | card 4 R5 (CPILFESL, FEDFUNDS, GS2, GS10), card 3 R2 (GS2, GS10) |
+   | C5-D1 | yes, PC | LSEG HG c1, CL c1 (monthly), the A1 panel (Trend 12-month versions, volatility) | - |
+   | C5-D2 | yes, PC | LSEG c1 of HG, CL, W, C, S; LCC c1, LME cash (reported line) | - |
+   | F0 | card 1 R5, card 3 R4, card 4 R1-R4, card 5 R1 | as their rows / ^GSPC daily | card 1 R1-R4, card 2 R1-R2, card 3 R1-R3, card 4 R5: as above |
+   No input needs a new LSEG pull. The blocked rows need ONE registered data entry before their run: "card inputs (FRED /
+   ALFRED)" = GS1, GS2, GS5, GS10, FEDFUNDS, BAA, TWEXMMTH, DTWEXBGS, WTISPLC, VIXCLS, UNRATE and the
+   ALFRED first vintages of CPILFESL, M2SL, PCEPILFE, UNRATE (A1 entry item 8 already lists them as "card inputs,
+   fetched before B2"), fetched once, cut at 2010-12-31, locked (file hashes) apart from the free inputs zip, with the
+   metadata listing of 7.6 step 2; then a job gm_diag_preb_v2 (its own dated entry) runs the blocked rows with the
+   rule signals of their specs. The rows that run now are not re-run then. B2 cannot start before the blocked rows run
+   (7.5: each card rule is "judged in B2" only after its gates).
+   R1's precondition "daily dollar contracts 1-8 locked" (7.5, 7.6 step 9): met by LOCK_LSEG_v5 (contract-level
+   Datastream daily, identity in the code; IDENTITY_STATUS item 11: "Eurodollar 1990-2010 all eight quarterly contracts
+   priced on 5,475 of 5,480 trading days"); the 7.11 blocker ("contracts 3, 5, 6, 7 not pulled, monthly start dates of
+   5-8 unknown") is closed by the L14 pulls and the lock. The job re-counts this coverage before R1 (printed, no gate).
+5. Closed here (the simplest reading of the registered text; none chosen from results):
+   R1 a. Contracts: catalog rows of the LSEG store with per D, status ok, no duplicate_of, function DS, code
+      "<ED" + H / M / U / Z + year digit + "^" + decade digit + ">" (lsegdata RIC_RE; decade digit >= 5 -> 19xx, as
+      lseg_contract_v3); serial months are not used (spec s3 step 1); one source (Datastream daily), so no strip mixes
+      settlement conventions. Settlement on a day = an observation dated that day (no carry-forward).
+      b. Last trading day: lseg_rules.dates("ED", y, m) (registered rule, matches the observed last priced day).
+      c. Trading days = NYSE days (gm.execution.nyse_days on the free ^GSPC closes, cut at 2010-12-31; 7.3 item 6).
+      Decision day d of month m = its last NYSE day; next trading day d1 = the next NYSE day; month-end of the normal =
+      the last NYSE day of each month from 1981-12.
+      d. Holding end h(d) = the first US business day of month m + 2 by lsegdata's US holiday calendar (calendar
+      arithmetic: for d = 2010-11-30 it lies in January 2011, and no 2011 price or NYSE date is read). The strip
+      depends on h only through "last trading day after h", and every ED last trading day falls on or after the 13th of
+      its month, so any day in the first week of month m + 2 gives the same strip.
+      e. Strip at d: contracts 1-8 = the first eight quarterly ED contracts by delivery whose last trading day is after
+      h(d). A month-end d is in R1 only if all eight have a settlement on d and on d1 (spec s3 step 1; d1 is where the
+      second gap is read).
+      f. r_k = (100 - settlement) x 100 bp; y_n = mean of r_1..r_n; K_n = 2 y_n - y_(n-1) - y_(n+1), n = 2..7.
+      g. Normal of K_n at d: the mean of K_n over the earlier month-ends e < d (from 1981-12) whose contract n (on e's
+      own strip, h(e)) expires in the same calendar month as contract n at d, using e only where contracts 1..n+1 each
+      have a settlement on e's last NYSE day (7.5 fix: "replaced by the last trading day's settlement, else left out of
+      the normal"); "screened or not" (spec s3 step 5): no stale screen inside the normal. It exists at d if the
+      measure's first month-end value (any group) is at least 60 calendar months before d and the group has at least
+      one earlier value. G(d) = K_n(d) - normal; G(d1) = K_n on d1's settlements of d's strip - the same normal.
+      h. Stale screen at d: each contract 1..n+1 (every contract with a non-zero weight in K_n) must have changed on at
+      least 15 of the 20 NYSE days before d (d excluded); a change on day t = settlements on t and on the NYSE day before
+      t that differ (a missing settlement is no change). A triple-month with a failing contract is left out of
+      numerator and denominator (7.5 fix) and counted.
+      i. Cost of K_n = 2 x 0.5 x (2n + 4) / (n (n + 1)) bp. A triple-month qualifies when |G(d)| > cost, |G(d1)| >
+      cost and sign G(d) = sign G(d1).
+      j. Month-ends: from the later of 1990-01 and the spec s7 start (the first month-end at which the strip exists and
+      every measure of at least one version, S_2..S_8 or K_2..K_7, has its normal by g; S_n = y_n - y_(n-1) on contracts
+      1..n, grouped by contract n) to 2010-11 (7.5 fix); a triple-month enters where its normal exists ("where a normal
+      exists", spec s13).
+      k. Gate (7.5): qualifying / eligible >= 0.5 -> R1 PASS: Strip reversion enters B2 with both versions; else
+      dropped unbuilt and logged. Printed: eligible and qualifying counts and the share, by n; left out by reason (no
+      normal, strip missing on d or d1, stale); the first normal month per measure; NYSE days 1990-2010 with all eight
+      contracts priced. No return is computed.
+   F0 a. Held month: monthly rules: a decision month t (position decided at month-end t, held over t + 1) from the
+      rule's start (its spec s7) to 2010-11 (7.3 item 5: "the decision at month-end 2010-12 is never traded"); card 4's
+      daily date rules: a design month 1975-01..2010-12 with at least one NYSE day whose return the averaged rule earns
+      with a non-zero position (held days: entry < day <= exit; a window running into 2011 ends at the last NYSE day of
+      2010, SPEC_Card4 s7).
+      b. Averaged rule position = the mean over the rule's registered versions, an off version counting 0; non-zero =
+      not exactly 0 (versions that share one volatility are summed as integer directions, so a cancellation is exact).
+      c. Episodes: a new episode starts at a held month whose previous held month is 12 or more months earlier (month
+      index difference >= 12). d. Judgeable = at least 48 held months and at least 3 episodes; else "not judgeable"
+      (analyst watch condition).
+      e. Entry versions (card 1 E1 / E3), sizing versions (card 3 max(vol, expanding median), card 5 50% cap) and C4-D1's
+      half-size version multiply a position by a positive factor over the same months (E3 holds one third or full, of the
+      same sign, from the same first month): they change neither sign nor held months, so positions for every count here
+      are built from the versions without them.
+      f. Card 5 R1's real-ceiling versions need CPILFESL (blocked), but a ceiling version holds a subset of its
+      non-ceiling twin's months (runs start only at trigger months; the ceiling only ends a run early) and every R1
+      position is long; so the averaged rule's non-zero months are those of the four non-ceiling versions (H 24 / 36 x
+      crude out / in). F0 and C5-D1 for card 5 R1 use them on this reading of the rule text.
+      g. Known from the rule text before any data: card 4 R1 form A holds every year from late October or mid-December
+      to mid-January (gaps of 10 or 11 months), R2 holds a window before every monthly expiry and R4 one around every
+      month end; so under F0 c each has one episode whatever the data and is "not judgeable" when F0 is computed. This
+      entry changes nothing about it (7 intro: a change needs a numbered sub-section 7.12, dated and committed before the
+      run it affects); the job computes F0 as registered.
+   C1-D1 / C1-D2 / F0 card 1 R5 a. m_i(t) = 100 x (v_i(t) / v_i(t - 6) - 1), v = panel.fx_usd_value at month-end, for
+      the universe EUR, JPY, GBP, AUD, CAD (spec s3 R5 step 1); trigger of currency i at t (version G): at least three
+      universe currencies have m(t), and m_i(t) <= their median - G, G = 15 or 10.
+      b. A currency's legs are held at t when it triggered in t - 12 .. t (the 12-month tail, "to 12 months after the last
+      one", inclusive); stock leg = its index (both versions), bond leg = its 10-year bond (version "stocks and bond");
+      a leg holds a position only where its market has a volatility at t.
+      c. C1-D1: condition months = months with a trigger of any universe currency at G = 10 (which contains every G =
+      15 trigger: "any version"); tail months not counted (spec s13); episodes as F0 c; gate: fewer than 6 -> analyst
+      watch condition (and 7.5: "kept with F0 (both must hold)").
+      d. C1-D2: a leg = one leg of the rule text (R5: the stock-index leg, the bond leg), counted over the market-months
+      in which the averaged rule holds that leg (any version, tails included) pooled across its markets; same sign = the
+      book's pos of that market at t has the leg's sign (a zero or missing book position is not the same sign); gate:
+      share > 0.80 -> the leg is dropped.
+   C2-D1 a. Countries and rates as SPEC_Card2 s13: US TB3MS; JP IR3TIB01JPM156N; DE IR3TIB01DEM156N, then
+      IR3TIB01EZM156N where DE has no value; GB IR3TIB01GBM156N; CA IR3TIB01CAM156N (the named series only: no call-rate
+      fill for Japan); stock index and 10-year bond = panel monthly excess returns of eq_us_spx / bd_us_10y,
+      eq_jp_nikkei / bd_jp_10y, eq_de_dax / bd_de_10y, eq_gb_ftse / bd_gb_10y, eq_ca_tsx / bd_ca_10y; design months
+      1975-01..2010-12.
+      b. Worst fifth: the months in which the stock index's return is at or below its 20th percentile (numpy linear)
+      over its design months with a return. Short rate = the rate of the same month (the state the month was in); low =
+      below 1.0, other = 1.0 or above; a month needs the bond return and the rate.
+      c. Pooled over the five countries (Japan also reported apart; Japan alone may make up the pooled count, spec s13).
+      Gate: at least 30 pooled low-rate months, the other mean above 0 and the low-rate mean below half of it -> PASS:
+      floor versions (TB3MS at least 1.0) on card 1 R1 and R2 (+16, +32 with entry) and a stop line in card 2; else no
+      change.
+   C3-D1 card 3 R4 a. E(t) = 100 x EPS(t) / X(t), EPS = LSEG DS:@:USSP500|A12FE at month-end t (delay 0, lag 0, spec s3
+      R4 step 3), X(t) = the last ^GSPC daily close of month t; on while E(t) - TB3MS(t) < B, B = 1.0 or 0.0; short
+      eq_us_spx; decision months from the first EPS month to 2010-11.
+      b. Share of held months (any version) in which the book's eq_us_spx pos is negative. Gate: >= 0.80 -> R4 dropped
+      before B2; 0.50 to 0.80 kept and flagged. The spec's reported lines (cards 1 and 2 in shared markets; R1 against
+      Economic trend's monetary theme; R3 against Carry's directional bonds) need blocked rules: not printed.
+   C5-D1 / C5-D2 / F0 card 5 R1 a. P = the LSEG continuous front c1 month-end close as served (HP:HGc1|CLOSE copper,
+      HP:CLc1|CLOSE WTI; monthly; spec s3 R1 step 1). Trigger at t: P(t) above every earlier month-end P of the series,
+      with at least 120 earlier values. Long from a trigger month to H months after the last trigger month (inclusive),
+      H = 24 or 36; copper always, WTI in the crude versions; a position only where the market has a volatility on the
+      A1 panel.
+      b. C5-D1: over R1's held market-months (any version), the share in which the 12-month Trend versions (config
+      TREND_GRID with h = 12: sign and graded, hybrid and 36-month volatility; book._trend_version on the A1 panel; each
+      version's position sign where it and its volatility exist, a missing version counting 0) are long by average sign
+      (mean of the four signs > 0). Gate: >= 0.75 -> R1 not registered. This row names its own reference ("12-month
+      Trend versions"), so the book's net sign is not used for the gate; it is printed beside as a reported line. The
+      R2 part is not computed (R2 held back).
+      c. C5-D2: a break = a trigger month (a) with no trigger in the 12 months before it, up to 2008-12; higher = P(t + 24)
+      > P(t). Slow class = copper (the markets R1 can trade; crude reported apart); grains = W, C, S c1 pooled. Gate:
+      slow share at least 0.15 above the grains share and at least 10 breaks in each class; fewer breaks = not passed
+      -> R1 dropped unbuilt. Reported line: London cocoa (HP:LCCc1|CLOSE) and the LME cash prices (DS:LCPCASH, LAHCASH,
+      LZZCASH, LNICASH, LEDCASH, LTICASH) pooled.
+6. What each outcome triggers (an "outcomes" paragraph under this entry after the run; nothing is adopted here): R1 ->
+   Strip reversion in B2 or dropped; C1-D1 -> card 1 R5 stays or becomes an analyst watch condition; C1-D2 -> each R5
+   leg stays or is dropped; C2-D1 -> floor versions and a card 2 stop line, or no change; C3-D1 -> card 3 R4 kept,
+   flagged or dropped; C5-D1 / C5-D2 -> card 5 R1 registered and built, or not; F0 -> each computed rule "judged in B2"
+   or "not judgeable". Spec edits are text changes after the run, each citing this entry.
+7. Printing (tools/bbgq/README.md export whitelist): shares, means and gaps only over at least 60 months; a smaller
+   group prints its count and the sign of its value; gates PASS / FAIL; counts, months and ids. C5-D2's break shares
+   are printed as counts only when a class has fewer than 60 breaks. No LSEG or Bloomberg value is printed.
+8. Trial count (7.8 item 1, family "diag"): one gm/trials.csv row per diagnostic run: R1, C1-D1, C1-D2, C2-D1, C3-D1,
+   C5-D1, C5-D2, F0 (8 rows, no Sharpe columns; hash = config hash of the id, diag_preb version, book hash, A1 panel id
+   and LSEG lock id), written by the coordinator from the job's TRIAL ROW lines; the blocked rows get none.
+9. Job (tools/bbgq/jobs/gm_diag_preb_v1.py on the PC; the gm_core_v1 pattern): STOP before any Bloomberg or LSEG value
+   is read unless the gm .py files equal engine_ref.json's code block; sha256(lib\engine_ref.json) = cebd4932...c955e39;
+   config.ENGINE_VERSION gm-2.2.1 and the four config hashes; the lib files (diag_preb, diag_a2, a2_batch, a1_panel,
+   gm_engine, bbg_panel, bbgdata, lsegdata, lseg_rules) have the sha256 registered in the job; the book / pod rows of
+   lib\gm\trials.csv have the digest f200d02ce574f002753c0d9ad54ae7a082c8e7f3d2ad120a14905fcf498e268a, N = 41 (40 + the
+   Core book v1 row); results\gm_a2_v1.txt gives the A2 facts; results\gm_diag_v1.txt has the A3-empty summary;
+   results\gm_core_v1.txt has "CORE V1 JOB DONE" and "CORE BOOK V1 EMPTY"; the Bloomberg store is LOCK_v2; the LSEG
+   store's lock id is LOCK_LSEG_v5; the free inputs match the reference; the free arm matches engine_ref.json. Then it
+   rebuilds the A1 panel, asserts extension-only and the registered id, compares it with the saved file when present
+   (STOP on a difference), writes nothing, checks the A2-final book as run, and prints the diagnostics and the TRIAL
+   ROW lines.
+10. Cloud: no diagnostic statistic is computed on the free, A1 or LSEG data. Cloud work = the code, tests on synthetic
+   panels and a mock LSEG store (tests/diag_preb_smoke.py in tests/run_tests.py), the engine gates (k = 0 reproduction
+   24 of 24, truncation 8 of 8; gm/ is unchanged, so engine_ref.json is unchanged).
+
 ## Core book v1 (registered 2026-11-27, BEFORE the Core book v1 code and run): TESTING_PROTOCOL 7.6 step 6
 Registered run entry (no rule, weight, threshold, gate, cost or market change; no gm/ code change; no statistic of S1-S4,
 of any Incubator test or of Core book v1 has been computed on real data, cloud or PC). The A1 panel holds Bloomberg
