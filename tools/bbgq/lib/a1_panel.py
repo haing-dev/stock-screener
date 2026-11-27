@@ -33,7 +33,7 @@ import re
 import numpy as np
 import pandas as pd
 
-VERSION = "a1_panel-1.0.0"
+VERSION = "a1_panel-1.1.0"   # 1.1.0 (2026-11-27, after CHECK_A1): same-instrument table, 7.3 report lines
 LOCK_V2 = "d85a46cb2853646b24796f294f3ccab1d1507188c402e978fd59f5196ea41fc9"
 SEAL = "2010-12-31"
 DESIGN_END = pd.Period("2010-12", "M")
@@ -47,6 +47,49 @@ PANEL_COMMOD = ("cm_wti", "cm_brent", "cm_natgas", "cm_heatoil", "cm_gasoline", 
 BOND_FUT = {"bd_us_2y": "TU1 Comdty", "bd_us_5y": "FV1 Comdty", "bd_us_10y": "TY1 Comdty", "bd_us_30y": "US1 Comdty",
             "st_de_2y": "DU1 Comdty", "bd_de_10y": "RX1 Comdty", "bd_gb_10y": "G 1 Comdty", "bd_jp_10y": "JB1 Comdty",
             "bd_ca_10y": "CN1 Comdty", "st_au_2y": "YM1 Comdty", "bd_au_10y": "XM1 Comdty"}
+# gm/CHANGES.md A1 entry, item 5b correction (registered before this code): same instrument decided per series
+INSTRUMENT = {  # market -> the exchange contract of its free series and of the candidate index / generic contract
+    "cm_wti": "NYMEX WTI (CL): free EIA CL roll / USO / CL=F; GSCI and BCOM roll CL",
+    "cm_brent": "ICE Brent (CO): free BNO / NYMEX BZ=F / co.f hold or settle on ICE Brent futures; GSCI and BCOM roll CO",
+    "cm_natgas": "NYMEX Henry Hub (NG): free EIA NG roll / UNG / NG=F; GSCI and BCOM roll NG",
+    "cm_heatoil": "NYMEX heating oil (HO): free EIA HO roll / HO=F; GSCI and BCOM roll HO",
+    "cm_gasoline": "NYMEX RBOB (RB, XB) from 2006; NYMEX unleaded (HU) before: free EIA RB / RB=F",
+    "cm_gold": "COMEX gold (GC): free GLD / GC=F; GSCI and BCOM roll GC",
+    "cm_silver": "COMEX silver (SI): free SLV / SI=F; GSCI and BCOM roll SI",
+    "cm_copper": "COMEX copper (HG): free CPER / HG=F; BCOM rolls HG, S&P GSCI rolls LME copper (IC)",
+    "cm_platinum": "NYMEX platinum (PL): free PPLT / PL=F; GSCI rolls PL",
+    "cm_corn": "CBOT corn (C): free CORN / ZC=F; GSCI and BCOM roll C",
+    "cm_wheat": "CBOT wheat (W): free WEAT / ZW=F; GSCI and BCOM roll W",
+    "cm_soybeans": "CBOT soybeans (S): free ZS=F; GSCI and BCOM roll S",
+    "cm_sugar": "ICE sugar No. 11 (SB): free SB=F; GSCI and BCOM roll SB",
+    "cm_coffee": "ICE coffee C (KC): free KC=F; GSCI and BCOM roll KC",
+    "cm_cotton": "ICE cotton No. 2 (CT): free CT=F; GSCI and BCOM roll CT",
+    "cm_cattle": "CME live cattle (LC / LE): free LE=F; GSCI and BCOM roll LC"}
+NOT_SAME = {  # (market, ticker) -> reason: rejected as not the same instrument
+    ("cm_copper", "SPGSICP Index"): "not the same instrument: S&P GSCI copper rolls LME copper (IC), the free series "
+                                    "is COMEX HG",
+    ("eq_us_spx", "MXUS Index"): "not the same instrument: MSCI USA, the free yield is the S&P 500's (SPY - ^GSPC)"}
+for _m in ("eq_de_dax", "eq_gb_ftse", "eq_fr_cac", "eq_jp_nikkei", "eq_ca_tsx", "eq_au_asx", "eq_hk_hsi"):
+    NOT_SAME[(_m, "MSCI")] = ("not the same instrument: the free yield is the Ken French country Mkt portfolio; that "
+                              "it is an MSCI index is not established (CHANGES A1 item 5b)")
+NOT_SAME_KEYS_FRENCH = ("eq_de_dax", "eq_gb_ftse", "eq_fr_cac", "eq_jp_nikkei", "eq_ca_tsx", "eq_au_asx", "eq_hk_hsi")
+NOT_SAME_BEFORE = {  # (market, ticker) -> (first month that is the same instrument, reason for the months before)
+    ("cm_gasoline", "SPGSRBP Index"): ("2006-01", "before 2006-01 the index rolled NYMEX HU (unleaded), not RBOB"),
+    ("cm_gasoline", "BCOMRB Index"): ("2006-01", "before 2006-01 the index rolled NYMEX HU (unleaded), not RBOB"),
+    ("cm_gasoline", "XB1 Comdty"): ("2006-01", "before 2006-01 the generic contract is HU (unleaded), not RBOB"),
+    ("cm_gasoline", "XB2 Comdty"): ("2006-01", "before 2006-01 the generic contract is HU (unleaded), not RBOB")}
+
+
+def not_same(c):
+    """Registered not-same-instrument reason for a candidate, or None."""
+    k = (c["market"], c["ticker"])
+    if k in NOT_SAME:
+        return NOT_SAME[k]
+    if c["kind"] == "dy" and (c["market"], "MSCI") in NOT_SAME:
+        return NOT_SAME[(c["market"], "MSCI")]
+    return None
+
+
 BLOCK_NAMES = {1: "commodity excess-return indexes -> panel return", 2: "energy contracts 1-2 -> Carry signal",
                3: "MSCI 12-month dividend yield -> Value"}
 
@@ -66,21 +109,22 @@ def candidates():
         for tk in sorted(BBG.COMMOD_ER.get(m, ()), key=pref):
             rows.append({"block": 1, "kind": "er", "market": m, "ticker": tk, "field": "PX_LAST", "sheet": "Returns",
                          "target": "panel return %s" % m,
-                         "instrument": "excess-return index on the %s futures root (same contract root)" %
-                                       BBG.CURVE_ROOT.get(m, "?").strip()})
+                         "instrument": INSTRUMENT[m]})
     for m, eia in EIA_OF.items():
         root = BBG.CURVE_ROOT[m]
         for n in (1, 2):
             rows.append({"block": 2, "kind": "contract", "market": m, "ticker": "%s%d Comdty" % (root, n),
                          "field": "PX_LAST", "sheet": "Curves", "n": n, "eia": eia,
                          "target": "EIA %s%d month-end (Carry signal of %s)" % (eia, n, m),
-                         "instrument": "generic contract %d of root %s (same root and position as EIA %s%d)" % (
-                             n, root, eia, n)})
+                         "instrument": "generic contract %d of root %s = position %d of %s" % (
+                             n, root.strip(), n, INSTRUMENT[m])})
     for m, tk in BBG.EQ_INDEX.items():
         rows.append({"block": 3, "kind": "dy", "market": m, "ticker": tk, "field": "EQY_DVD_YLD_12M",
                      "sheet": "EquityValuation", "lag": (0 if m not in G.FRENCH_DY else CF.VALUE_DY_LAG),
                      "target": "12-month dividend yield of %s (Value)" % m,
-                     "instrument": "MSCI index of the same country (7.4 E2 mapping)"})
+                     "instrument": "MSCI index of the same country (7.4 E2 mapping); free yield: %s" % (
+                         "S&P 500 (SPY - ^GSPC)" if m == "eq_us_spx" else "Ken French country Mkt portfolio"
+                         if m in G.FRENCH_DY else "none")})
     return rows
 
 
@@ -165,6 +209,33 @@ def free_inputs(M, R=None):
     return {"R": R, "D": D, "S": S, "eia": eia, "dy0": dy0, "gspc": gspc}
 
 
+def check_free_vs_ref(free, ref, tol=1e-6):
+    """C4 (CHECK_A1): the free arm against engine_ref.json: per-market sums of |signal| for E, C, V (tolerance of the
+    reproduction, 1e-6) and market months with a return (exact). -> rows (item, n, missing, maxdiff, pass)."""
+    import gm_engine as GE
+    rows = []
+    for k in ("E", "C", "V"):
+        a, b = GE._col_sums(free["S"][k], 8), ref["signal_abs_sum"].get(k, {})
+        keys = set(a) | set(b)
+        miss = sum(1 for x in keys if (x in a) != (x in b))
+        mx = max([abs(a[x] - b[x]) for x in keys if x in a and x in b] or [0.0])
+        rows.append({"item": "signal %s (per-market sum of |signal|)" % k, "n": len(keys), "missing": miss,
+                     "maxdiff": mx, "pass": miss == 0 and mx <= tol})
+    a = {str(k): int(v) for k, v in _design(free["R"]).notna().sum().items()}
+    b = ref["market_months"]
+    keys = set(a) | set(b)
+    miss = sum(1 for x in keys if (x in a) != (x in b))
+    mx = max([abs(a[x] - b[x]) for x in keys if x in a and x in b] or [0])
+    rows.append({"item": "market months with a return", "n": len(keys), "missing": miss, "maxdiff": float(mx),
+                 "pass": miss == 0 and mx == 0})
+    return rows
+
+
+def scrub(txt):
+    """C3: exception text without numbers that could be data values."""
+    return re.sub(r"-?\d+\.\d{3,}", "<num>", str(txt))
+
+
 def signals(M, R):
     """The engine's signals on panel R (as gm_engine.run + feature paths compute them)."""
     G = M["G"]
@@ -179,12 +250,21 @@ def _design(s):
     return s[s.index <= DESIGN_END]
 
 
+def _same_from(market, ticker, s):
+    """Drop the months before the registered same-instrument start (NOT_SAME_BEFORE); None stays None."""
+    nb = NOT_SAME_BEFORE.get((market, ticker))
+    if s is None or nb is None:
+        return s
+    s = s[s.index >= pd.Period(nb[0], "M")]
+    return s if len(s) else None
+
+
 def _bbg_er(market, tickers, store):
     """gm.bloomberg.commodity_return(market) served with only `tickers` (the engine's own route and C4 gate)."""
     from gm import bloomberg as BBG
     wb = {"Returns": {}}
     for tk in tickers:
-        s = store.series(tk, "PX_LAST", "Returns")
+        s = _same_from(market, tk, store.series(tk, "PX_LAST", "Returns"))
         if s is not None and len(s):
             wb["Returns"][tk] = pd.DataFrame({"PX_LAST": s.astype(float)})
     had, prev = "wb" in BBG._CACHE, BBG._CACHE.get("wb")
@@ -230,6 +310,10 @@ def evaluate_one(c, store, free):
     row = dict(c, status=info["status"], file_name=info.get("file_name", ""), reasons=[], n_overlap=0, corr=None,
                first_lock="-", n_lock=0, first_bbg="-", first_free="-", ext_first="-", ext_last="-", n_ext=0,
                verdict="rejected")
+    ns = not_same(c)
+    if ns:
+        row["reasons"].append(ns)
+    nb = NOT_SAME_BEFORE.get((c["market"], c["ticker"]))
     ok_status = info["status"] == "ok"
     cut = bool(CUT_NAME.search(str(info.get("file_name", "") or "")))
     if not ok_status:
@@ -243,6 +327,11 @@ def evaluate_one(c, store, free):
     if raw is not None and raw.notna().any():
         row["first_lock"], row["n_lock"] = str(raw.first_valid_index()), int(raw.notna().sum())
     bb, bbr, fr, frr = _pair(c, store, free)
+    if nb is not None:                                    # months before the same-instrument start are not used
+        row["reasons_info"] = "%s (those months are not used)" % nb[1]
+        if bb is not None:
+            keep = bb.index >= pd.Period(nb[0], "M")
+            bb, bbr = bb.where(keep), (bbr.where(keep) if bbr is not None else None)
     if bb is None or not bb.notna().any():
         row["reasons"].append("no design values served as of 2010-12-31")
         return row
@@ -330,7 +419,7 @@ def build(store, free, blocks=(1, 2, 3), rows=None, M=None, free_digest="", reco
             base = cv[n].reindex(R.index)
             rr = [r for r in adm if r["kind"] == "contract" and r["market"] == m and r["n"] == n]
             if rr:
-                bb = store.series(rr[0]["ticker"], "PX_LAST", "Curves")
+                bb = _same_from(m, rr[0]["ticker"], store.series(rr[0]["ticker"], "PX_LAST", "Curves"))
                 bb = _design(bb.reindex(R.index)) if bb is not None else None
                 if bb is not None:
                     base = base.combine_first(_before(bb, base.first_valid_index()).reindex(R.index))
@@ -392,7 +481,7 @@ def fmt_row(r):
                 r["verdict"].upper(), r["block"], r["market"], r["ticker"], r["field"], r["status"], r["first_lock"],
                 r["n_lock"], r["first_bbg"], r["first_free"], r["n_overlap"], corr, r["ext_first"], r["ext_last"], r["n_ext"], r["instrument"]
                 if "instrument" in r else r["target"], (" | reasons: " + "; ".join(r["reasons"])) if r["reasons"]
-                else ""))
+                else "") + (" | note: " + r["reasons_info"] if r.get("reasons_info") else ""))
 
 
 def _stats(r, a, b):
@@ -414,7 +503,43 @@ def run_arm(R, D, S, days, cfg):
     with contextlib.redirect_stdout(sink):
         k1 = EX.run_k1(R, cfg, D, S, days)
         k0 = B.run(R, cfg=cfg, daily=D, S=S)
-    return {"k1": k1, "k0": k0}
+        d1 = B.run(R, cfg=dict(cfg, delay_months=1), daily=D, S=S)      # 7.3 item 1: the one-month delay, reported
+    return {"k1": k1, "k0": k0, "d1": d1}
+
+
+TIMINGS = (("k1", "k = 1"), ("k0", "k = 0"), ("d1", "one-month delay"))
+
+
+def contrib_k1(bk):
+    """Family x class contribution at k = 1: held family positions (book's fam_pos, after scalers and caps) x the
+    k = 1 returns, before costs; months with a held position only. {(family, class): Series}."""
+    from gm import signals as G
+    RE = bk["R_earn"]
+    out = {}
+    for f, pos in bk["fam_pos"].items():
+        for cls, pre in G.CLASSES.items():
+            cols = [k for k in pos.columns if k.startswith(pre) and k in RE.columns]
+            if not cols:
+                continue
+            held = pos[cols].shift(1)
+            r = (held * RE[cols]).sum(axis=1, min_count=1).where(held.abs().sum(axis=1) > 0)
+            if r.notna().any():
+                out[(f, cls)] = r
+    return out
+
+
+def _block_diff(t0, t1):
+    from gm import stats as ST
+    parts = []
+    for col in sorted(set(t0) | set(t1), key=str):
+        x0 = ST.cut(t0[col], "1975-01", "2010-12") if col in t0 else pd.Series(dtype=float)
+        x1 = ST.cut(t1[col], "1975-01", "2010-12") if col in t1 else pd.Series(dtype=float)
+        if len(x0) == len(x1) and np.allclose(x0.values, x1.values, rtol=0, atol=1e-12):
+            continue
+        s0 = "%.2f (%d)" % (ST.sharpe(x0), len(x0)) if len(x0) >= MIN_PRINT else "n<%d" % MIN_PRINT
+        s1 = "%.2f (%d)" % (ST.sharpe(x1), len(x1)) if len(x1) >= MIN_PRINT else "n<%d" % MIN_PRINT
+        parts.append("%s/%s %s -> %s" % (col[0], col[1], s0, s1))
+    return parts
 
 
 def report(free, arms, cfg, out=print):
@@ -429,14 +554,15 @@ def report(free, arms, cfg, out=print):
         R = free["R"] if a1 is None else a1["R"]
         S = free["S"] if a1 is None else a1["S"]
         res[name] = run_arm(R, free["D"], S, days, cfg)
-        SL.check_output({"k1": res[name]["k1"]["net"], "k0": res[name]["k0"]["net"]}, SL.resolve(SL.DESIGN),
+        SL.check_output({t: res[name][t]["net"] for t, _ in TIMINGS}, SL.resolve(SL.DESIGN),
                         "a1_panel.report")
     base = arms[0][0]
     out("--- A1 report (7.6 step 2): %s, k = 1 decisive timing, k = 0 beside; net of costs; design months only" %
         cfg["name"])
+    out("timing: k1 = k = 1 (decisive), k0 = k = 0 (same close), d1 = one-month delay (7.3 item 1, reported)")
     out("arm | timing | era | months | net Sharpe | mean %/yr | vol %/yr | worst drawdown % | dSR vs free | lb95 | se")
     for name, _ in arms:
-        for tm in ("k1", "k0"):
+        for tm, _lab in TIMINGS:
             for era, a, b in ERAS:
                 s = _stats(res[name][tm]["net"], a, b)
                 if s is None:
@@ -452,21 +578,17 @@ def report(free, arms, cfg, out=print):
                     else:
                         txt += " | %+.3f | %+.3f | %.3f" % (t["dsr"], t["lb95"], t.get("se", float("nan")))
                 out(txt)
-    out("--- differences explained: family x class block Sharpe (unit-volatility blocks, k = 0 book's blocks table), "
-        "1975-2010, blocks with at least %d months; '=' when identical to the free arm" % MIN_PRINT)
+    out("--- differences explained, 1975-2010, Sharpe (months) where at least %d months; only what differs from the "
+        "free arm. [k = 0] the k = 0 book's unit-volatility family x class blocks; [k = 1] family x class contributions "
+        "at k = 1 (held family positions x k = 1 returns, before costs; the decisive timing)" % MIN_PRINT)
     bl0 = res[base]["k0"]["blocks"]
+    c0 = contrib_k1(res[base]["k1"])
     for name, a1 in arms[1:]:
         bl = res[name]["k0"]["blocks"]
-        parts = []
-        for col in sorted(set(bl0.columns) | set(bl.columns), key=str):
-            x0 = ST.cut(bl0[col], "1975-01", "2010-12") if col in bl0 else pd.Series(dtype=float)
-            x1 = ST.cut(bl[col], "1975-01", "2010-12") if col in bl else pd.Series(dtype=float)
-            if len(x0) == len(x1) and np.allclose(x0.values, x1.values, rtol=0, atol=1e-12):
-                continue
-            s0 = "%.2f (%d)" % (ST.sharpe(x0), len(x0)) if len(x0) >= MIN_PRINT else "n<%d" % MIN_PRINT
-            s1 = "%.2f (%d)" % (ST.sharpe(x1), len(x1)) if len(x1) >= MIN_PRINT else "n<%d" % MIN_PRINT
-            parts.append("%s/%s %s -> %s" % (col[0], col[1], s0, s1))
-        out("%s | blocks that differ: %s" % (name, "; ".join(parts) if parts else "none"))
+        p0 = _block_diff({c: bl0[c] for c in bl0.columns}, {c: bl[c] for c in bl.columns})
+        p1 = _block_diff(c0, contrib_k1(res[name]["k1"]))
+        out("%s | [k = 0] blocks that differ: %s" % (name, "; ".join(p0) if p0 else "none"))
+        out("%s | [k = 1] contributions that differ: %s" % (name, "; ".join(p1) if p1 else "none"))
         out("%s | series extended: %s" % (name, "; ".join("%s %s %s..%s (%d months)" % (k[0], k[1], v[0], v[1], v[2])
                                                              for k, v in sorted(a1["added"].items())) or "none"))
     out("--- k = 1 flagged share (market-months earning the k = 0 return for lack of a daily price), share of gross "
@@ -480,6 +602,9 @@ def report(free, arms, cfg, out=print):
         tot = float(held[sel].sum().sum())
         share = float(held[sel].where(f[sel], 0.0).sum().sum()) / tot if tot > 0 else float("nan")
         out("%s | flagged share %.3f | years with any flag %d" % (name, share, int((fs.loc[1975:2010] > 0).sum())))
+        yrs = fs.loc[1975:2010].dropna()
+        out("%s | flagged share by year (7.3 item 2): %s" % (name, ", ".join("%d %.2f" % (int(y), v)
+                                                                          for y, v in yrs.items())))
     return res
 
 
@@ -493,8 +618,9 @@ def trial_row(cfg, res_all, panel_id_, engine_version, lock_id):
             "sr_9010": round(d["sr"], 3), "t_9010": round(d["t"], 2), "maxdd_9010": round(d["maxdd"], 3),
             "sr_7589": round(e["sr"], 3),
             "turnover": round(float(ST.cut(res_all["k1"]["turnover"], *ST.DESIGN).mean() * 12), 1),
-            "note": "TESTING_PROTOCOL 7.6 step 2 A1 report arm; engine %s; LOCK_v2 %s; A1 panel %s" % (
-                engine_version, lock_id[:16], panel_id_[:16])}
+            "note": "TESTING_PROTOCOL 7.6 step 2 A1 report arm; engine %s; LOCK_v2 %s; A1 panel %s; parent CANDIDATE "
+                    "%s (A1_INCUMBENT %s)" % (engine_version, lock_id[:16], panel_id_[:16], CF.cfg_hash(CF.CANDIDATE),
+                                             CF.cfg_hash(cfg))}
 
 
 def save_panel(work, a1):

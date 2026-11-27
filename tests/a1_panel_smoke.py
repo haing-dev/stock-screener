@@ -124,6 +124,8 @@ def scenario(seed=3):
     ng1 = pd.Series(levels(rng, n, PLANT + 1000, 0.08), index=ME).where(ME >= "1990-04-30")
     ng2 = ng1 * pd.Series(np.exp(rng.normal(0, 0.01, n)), index=ME)
     ty = pd.Series(levels(rng, n, PLANT + 2000, 0.01), index=ME)
+    lv_ic = pd.Series(levels(rng, n), index=ME)                    # SPGSICP (LME): agrees with free COMEX copper
+    lv_rb = pd.Series(levels(rng, n), index=ME)                    # SPGSRBP: HU before 2006
     blocks = [
         {"ticker": "SPGSCLP Index", "field": "PX_LAST", "sheet": "Returns", "status": "ok", "values": lv_cl,
          "sealed": pd.Series(1e9, index=ME_SEALED)},
@@ -144,10 +146,15 @@ def scenario(seed=3):
         {"ticker": "MXCN Index", "field": "EQY_DVD_YLD_12M", "sheet": "EquityValuation", "status": "ok",
          "values": pd.Series(2.0 + rng.normal(0, 0.1, n), index=ME).where(ME >= "1995-01-31")},
         {"ticker": "TY1 Comdty", "field": "PX_LAST", "sheet": "BondFutures", "status": "ok", "values": ty},
+        {"ticker": "SPGSICP Index", "field": "PX_LAST", "sheet": "Returns", "status": "ok", "values": lv_ic},
+        {"ticker": "BCOMHG Index", "field": "PX_LAST", "sheet": "Returns", "status": "ok", "values": lv_ic * 1.0},
+        {"ticker": "SPGSRBP Index", "field": "PX_LAST", "sheet": "Returns", "status": "ok", "values": lv_rb},
+        {"ticker": "MXUS Index", "field": "EQY_DVD_YLD_12M", "sheet": "EquityValuation", "status": "ok",
+         "values": pd.Series(2.0 + rng.normal(0, 0.1, n), index=ME)},
     ]
     # free side (synthetic, design months only, on GRID like free_inputs)
     mk = ["eq_us_spx", "eq_jp_nikkei", "eq_gb_ftse", "bd_us_10y", "bd_de_10y", "fx_eur", "fx_jpy", "fx_gbp",
-          "cm_wti", "cm_natgas", "cm_heatoil", "cm_gold", "cm_silver"]
+          "cm_wti", "cm_natgas", "cm_heatoil", "cm_gold", "cm_silver", "cm_copper", "cm_gasoline"]
     R = pd.DataFrame(rng.normal(0.003, 0.035, (len(GRID), len(mk))), index=GRID, columns=mk)
     gsci = per(lv_cl).pct_change(fill_method=None)
     R["cm_wti"] = (gsci + rng.normal(0, 0.004, len(GRID))).where(GRID >= pd.Period("1985-02", "M"))
@@ -156,6 +163,10 @@ def scenario(seed=3):
     R["cm_gold"] = R["cm_gold"].where(gcr.isna(), gcr + rng.normal(0, 0.003, len(GRID)))   # agrees where both exist
     R.loc[R.index < pd.Period("2000-09", "M"), "cm_gold"] = np.nan
     R.loc[R.index < pd.Period("2000-09", "M"), "cm_silver"] = np.nan
+    icr = per(lv_ic).pct_change(fill_method=None)
+    R["cm_copper"] = (icr + rng.normal(0, 0.002, len(GRID))).where(GRID >= pd.Period("2000-09", "M"))
+    rbr = per(lv_rb).pct_change(fill_method=None)
+    R["cm_gasoline"] = (rbr + rng.normal(0, 0.002, len(GRID))).where(GRID >= pd.Period("2000-12", "M"))
     R.loc[R.index < pd.Period("1975-01", "M")] = np.nan
     R.loc[GRID >= pd.Period("1975-01", "M"), "bd_us_10y"] = per(ty).pct_change(fill_method=None).reindex(GRID).loc[
         "1975-01":] * 1.0 + rng.normal(0, 0.002, (GRID >= pd.Period("1975-01", "M")).sum())
@@ -171,7 +182,9 @@ def scenario(seed=3):
         S[key]["eq_jp_nikkei"] = S[key]["eq_jp_nikkei"].where(GRID >= pd.Period("1976-01", "M"))
     eia = {"ng": eia_ng, "cl": pd.DataFrame({1: pd.Series(np.nan, index=GRID), 2: pd.Series(np.nan, index=GRID)})}
     dy0 = pd.DataFrame({"eq_jp_nikkei": pd.Series(0.02 + rng.normal(0, 0.001, len(GRID)), index=GRID)
-                        .where(GRID >= pd.Period("1975-01", "M"))})
+                        .where(GRID >= pd.Period("1975-01", "M")),
+                        "eq_us_spx": pd.Series(0.02 + rng.normal(0, 0.001, len(GRID)), index=GRID)
+                        .where(GRID >= pd.Period("1994-01", "M"))})
     days = pd.bdate_range("1970-01-02", "2010-12-31")
     D = pd.DataFrame(rng.normal(0, 0.008, (len(days), 4)), index=days, columns=["eq_us_spx", "bd_us_10y", "fx_eur",
                                                                                "cm_wti"])
@@ -228,6 +241,32 @@ def _run(check, tmp):
     check("A1 block 3: a dividend yield starting after the free one adds nothing; a market without a free yield has "
           "nothing to extend", r_jp["verdict"] == "rejected" and r_cnd["verdict"] == "rejected" and
           any("no free history" in x for x in r_cnd["reasons"]), A1.fmt_row(r_jp) + " / " + A1.fmt_row(r_cnd))
+    r_ic, r_hg = by[("er", "cm_copper", "SPGSICP Index")], by[("er", "cm_copper", "BCOMHG Index")]
+    check("A1 same instrument (item 5b): a well-correlated SPGSICP (LME copper) is rejected; BCOMHG (HG) admitted",
+          r_ic["verdict"] == "rejected" and r_ic["corr"] is not None and r_ic["corr"] >= 0.95 and
+          any("LME" in x for x in r_ic["reasons"]) and r_hg["verdict"] == "admitted",
+          A1.fmt_row(r_ic) + " / " + A1.fmt_row(r_hg))
+    r_rb = by[("er", "cm_gasoline", "SPGSRBP Index")]
+    check("A1 same instrument: gasoline index months before 2006 (HU) are not used, so nothing is extended",
+          r_rb["verdict"] == "rejected" and r_rb["n_ext"] == 0 and "HU" in r_rb.get("reasons_info", "") and
+          r_rb["first_bbg"] >= "2006-01", A1.fmt_row(r_rb))
+    r_us = by[("dy", "eq_us_spx", "MXUS Index")]
+    check("A1 same instrument: MXUS (MSCI USA) rejected for the S&P 500 dividend yield, although it could extend",
+          r_us["verdict"] == "rejected" and r_us["n_ext"] > 0 and any("MSCI USA" in x for x in r_us["reasons"]),
+          A1.fmt_row(r_us))
+    check("A1 same instrument: every non-US MSCI dividend yield with a Ken French free yield is rejected",
+          all(any("Ken French" in x for x in by[("dy", m, t)]["reasons"]) for (k, m, t) in by
+              if k == "dy" and m in A1.NOT_SAME_KEYS_FRENCH))
+    check("A1 Brent indexes are candidates (same ICE Brent contract), not in the not-same table",
+          ("cm_brent", "SPGSBRP Index") not in A1.NOT_SAME and ("cm_brent", "BCOMCO Index") not in A1.NOT_SAME)
+    ref = {"signal_abs_sum": {k: __import__("gm_engine")._col_sums(free["S"][k], 8) for k in ("E", "C", "V")},
+           "market_months": {str(k): int(v) for k, v in free["R"].notna().sum().items()}}
+    ok_ref = all(r["pass"] for r in A1.check_free_vs_ref(free, ref))
+    bad = dict(free, S=dict(free["S"], C=free["S"]["C"] * 1.001))
+    check("A1 free-arm check (C4): passes on the reference path, fails when a signal drifts",
+          ok_ref and not all(r["pass"] for r in A1.check_free_vs_ref(bad, ref)))
+    check("A1 scrub (C3): numbers with 3+ decimals are removed from exception text",
+          A1.scrub("value 4321.98765 at x") == "value <num> at x")
     miss = by[("er", "cm_cattle", "SPGSLCP Index")]
     check("A1 a ticker not in the lock is rejected with that status", miss["status"].startswith("not in the lock"))
     ty = [r for r in rep if r["market"] == "bd_us_10y"][0]
@@ -334,11 +373,16 @@ def _run(check, tmp):
     long_dec = re.findall(r"\d\.\d{5,}", txt)
     check("A1 printing: no number with 5 or more decimals in the output", not long_dec, str(long_dec[:5]))
     check("A1 report: k = 1 and k = 0 lines for every arm and era, dSR beside each non-free arm",
-          sum(1 for l in lines if re.match(r"^(free|block 1 alone|all blocks \(A1 panel\)) \| k[01] \| ", l)) == 18 and
+          sum(1 for l in lines if re.match(r"^(free|block 1 alone|all blocks \(A1 panel\)) \| (k[01]|d1) \| ", l)) == 27 and
           any(l.startswith("all blocks (A1 panel) | k1 | 1975-2010") and l.count("|") >= 10 for l in lines),
           "\n".join(l for l in lines if " | k" in l)[:600])
     check("A1 report: differences explained (blocks that differ, series extended)",
-          any("series extended: R cm_wti" in l for l in lines))
+          any("series extended:" in l and "R cm_wti" in l for l in lines))
+    check("A1 report (C1, C2): one-month delay lines, flagged share by year, k = 1 contributions table",
+          any(" | d1 | 1975-2010 | " in l for l in lines) and any("flagged share by year" in l and "1990 " in l
+                                                                    for l in lines) and
+          any("[k = 1] contributions that differ: CM" in l or "[k = 1] contributions that differ: " in l and
+              "trend/CM" in l for l in lines), "\n".join(l for l in lines if "[k =" in l)[:800])
 
     # ---- the PC job itself, laid out as on the PC (cwd = local, lib\, work\): a store that is not LOCK_v2 stops it
     # before any value is read (the registered lock id cannot be forged; the code paths after the checks are the
@@ -359,7 +403,7 @@ def _run(check, tmp):
                        capture_output=True, text=True, timeout=600)
     o = p.stdout
     check("A1 job (PC layout): gm code = the reference, a non-LOCK_v2 store -> STOP before any value is read",
-          "PASS gm code vs reference" in o and "FAIL Bloomberg store lock id" in o and
+          "PASS gm code vs reference" in o and o.count("PASS lib ") == 4 and "FAIL Bloomberg store lock id" in o and
           "STOP: the Bloomberg store is not LOCK_v2 (nothing read)" in o and p.returncode == 0, (o + p.stderr)[-600:])
     check("A1 job output: no planted value, no number with 5+ decimals",
           not [x for x in planted if x in o] and not re.findall(r"\d\.\d{5,}", o))

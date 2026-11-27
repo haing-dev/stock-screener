@@ -1,6 +1,7 @@
 """gm_a1_v1: Batch A1, data swap (TESTING_PROTOCOL 7.6 step 2; gm/CHANGES.md "data: A1 data rule", 2026-11-27) on the PC.
 
-1. Checks: gm code = the reference's (lib\\engine_ref.json); Bloomberg store lock id = LOCK_v2
+1. Checks: gm code = the reference's (lib\\engine_ref.json); lib files a1_panel.py, gm_engine.py, bbg_panel.py, bbgdata.py
+   = the registered sha256 (LIB_SHA below); Bloomberg store lock id = LOCK_v2
    d85a46cb2853646b24796f294f3ccab1d1507188c402e978fd59f5196ea41fc9 (else STOP before any value is read); free inputs
    = the shipped zip (work\\free).
 2. Every registered candidate series (blocks 1-3) and report-line series (bond futures): ADMITTED / REJECTED with the
@@ -30,6 +31,22 @@ LIB = os.path.join(os.getcwd(), "lib")
 print("=== gm_a1_v1 ===")
 
 
+# M2 (CHECK_A1; gm/CHANGES.md A1 corrections): the registered build of the lib files the A1 rule runs on
+LIB_SHA = {"a1_panel.py": "eb9ef3f7fbd12760e174f9ef1df8573890bed6ca8d36f7d4e5c63eadd822ebb5",
+           "gm_engine.py": "ac43a33cd8943719ba0efb9bb246473c7bbf59018a6d3b7398f64520eeebd721",
+           "bbg_panel.py": "e0b67a42793e67c129ec8a6c3ed2082390933ea9317898b59b8854387ecf1dcd",
+           "bbgdata.py": "0b26bb21b50671dca7c2153d3d66a2a09f7f33eeaa7c96ca536b69bbca8e6351"}
+
+
+def frames(e):
+    """C3: exception type and code frames only (no message text); numbers with 3+ decimals scrubbed anyway."""
+    tb = traceback.extract_tb(e.__traceback__)[-6:]
+    txt = "%s at %s" % (type(e).__name__, " <- ".join("%s:%d %s" % (os.path.basename(f.filename), f.lineno, f.name)
+                                                       for f in reversed(tb)))
+    import re as _re
+    return _re.sub(r"-?\d+\.\d{3,}", "<num>", txt)
+
+
 def stop(msg):
     print("STOP: " + msg)
     print("=== END === %.0fs" % (time.time() - T0))
@@ -47,7 +64,7 @@ try:
                                                                                GE.lib_versions().items())))
     ref = json.load(open(os.path.join(LIB, "engine_ref.json"), encoding="utf-8"))
 except Exception as e:  # noqa: BLE001
-    stop("setup failed: %s %s" % (type(e).__name__, str(e)[:300]))
+    stop("setup failed: %s" % frames(e))
 
 # ---- 1. checks
 try:
@@ -59,6 +76,16 @@ try:
                                                                             ", ".join(bad) or "none"))
     if bad:
         stop("the gm code on the PC is not the registered engine")
+    import hashlib
+    badl = []
+    for n, want_sha in sorted(LIB_SHA.items()):
+        with open(os.path.join(LIB, n), "rb") as f:
+            got = hashlib.sha256(f.read()).hexdigest()
+        print("%s lib %s | sha256 %s | registered %s" % ("PASS" if got == want_sha else "FAIL", n, got[:16],
+                                                       want_sha[:16]))
+        badl += [n] if got != want_sha else []
+    if badl:
+        stop("lib file differs from the registered build: %s" % ", ".join(badl))
     lock = bbgdata.Panel(WORK)
     print("%s Bloomberg store lock id %s | registered LOCK_v2 %s" % ("PASS" if lock.lock_id == A1.LOCK_V2 else "FAIL",
                                                                      lock.lock_id, A1.LOCK_V2))
@@ -78,15 +105,21 @@ try:
 except SystemExit:
     raise
 except Exception as e:  # noqa: BLE001
-    print("".join(traceback.format_exc().splitlines(True)[-6:]))
-    stop("checks failed: %s %s" % (type(e).__name__, str(e)[:300]))
+    stop("checks failed: %s" % frames(e))
 
 # ---- 2. candidates
 try:
     t = time.time()
     M = GE.setup(FREE)
     free = A1.free_inputs(M)
+    fr = A1.check_free_vs_ref(free, ref)
+    for r in fr:
+        print("%s free arm vs reference | %s | n %d | missing %d | max abs diff %.1e" % (
+            "PASS" if r["pass"] else "FAIL", r["item"], r["n"], r["missing"], r["maxdiff"]))
+    if not all(r["pass"] for r in fr):
+        stop("the free arm differs from the reference engine path (no Bloomberg value read)")
     store = A1.Store(WORK)
+    assert store.lock_id == A1.LOCK_V2, "store lock id is not LOCK_v2"
     rows, rep = A1.evaluate(store, free)
     print("--- candidate series (A1 rule, 7.6 step 2; LOCK_v2 as of 2010-12-31; %.0fs)" % (time.time() - t))
     print("verdict | block | market | ticker field | status | first in lock | first used | free first | overlap | "
@@ -102,8 +135,7 @@ try:
             b, A1.BLOCK_NAMES[b], len(rb), sum(r["verdict"] == "admitted" for r in rb),
             sum(r["verdict"] != "admitted" for r in rb)))
 except Exception as e:  # noqa: BLE001
-    print("".join(traceback.format_exc().splitlines(True)[-8:]))
-    stop("candidate evaluation failed: %s %s" % (type(e).__name__, str(e)[:300]))
+    stop("candidate evaluation failed: %s" % frames(e))
 
 # ---- 3. A1 panel, one block at a time, then all
 try:
@@ -128,8 +160,7 @@ try:
     p = A1.save_panel(WORK, a_all)
     print("A1 panel values written to work\\a1\\%s (PC only)" % os.path.basename(p))
 except Exception as e:  # noqa: BLE001
-    print("".join(traceback.format_exc().splitlines(True)[-8:]))
-    stop("A1 panel failed: %s %s" % (type(e).__name__, str(e)[:300]))
+    stop("A1 panel failed: %s" % frames(e))
 
 # ---- 4. the registered report
 try:
@@ -143,7 +174,6 @@ try:
     row["config"] = json.dumps(CF.A1_INCUMBENT, sort_keys=True, default=list)
     print("TRIAL ROW " + json.dumps(row, sort_keys=True))
 except Exception as e:  # noqa: BLE001
-    print("".join(traceback.format_exc().splitlines(True)[-8:]))
-    stop("report failed: %s %s" % (type(e).__name__, str(e)[:300]))
+    stop("report failed: %s" % frames(e))
 print("A1 JOB DONE")
 print("=== END === %.0fs" % (time.time() - T0))
