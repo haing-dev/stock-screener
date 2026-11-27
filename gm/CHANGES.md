@@ -4,6 +4,41 @@ Every rule change gets a new VERSION in gm/run.py and a line here. Every variant
 (1990-2010; extra check 1975-89) is logged so the deflated Sharpe can count the trials. The holdout (2011-2026) is run
 once, after the rules are frozen, by gm/holdout.py.
 
+## A3: empty (registered 2026-11-27, after the diagnostics run and BEFORE Core book v1): TESTING_PROTOCOL 7.6 step 5
+Record entry (no rule, weight, threshold, cost, market or code change; nothing is run; no trial row).
+1. The registered text. 7.6 step 5: "Batch A3, items opened by diagnostics only (charter s5; register B9): breadth (D1,
+   alternative commodities and T10 strip markets that qualify), no-trade buffer (D2), faster book scaler (D3). Each is
+   tested alone against the A2-final book by 7.7 H1-H4 with its own target decisive (H4). An item whose preconditions
+   (locked history with the 2011+ seal; a registered live source for T09/T10 markets) are not met when A3 starts is not
+   run; it may be registered with B1 or B2 before that batch starts, else it waits for the live path (WORKFLOW s6)."
+   REGISTRATION_3.4 part (c) item 5: "Before A3, one entry per opened item: the D2 buffer, the D3 scaler, the D1 breadth
+   markets (with E12 for any T10 strip market)".
+2. What the diagnostics opened (the "DIAGNOSTICS RUN" paragraph of "Diagnostics after A2", job gm_diag_v1, report
+   tools/bbgq/results/gm_diag_v1.txt): D2 closed -> no no-trade buffer item; D3 closed -> no faster book scaler item; D1
+   candidate half not run (blocked, that entry's item 6a) -> no breadth item. So no A3 item is opened and no part (c)
+   item 5 entry exists. A3 is empty: nothing is tested, no Holm or hygiene slot is used, no gm/trials.csv row is written,
+   and the A2-final book (A1_INCUMBENT gm-2.0.4-candidate-x1, config 77374d7bef, engine gm-2.2.1, A1 panel e7f98d44...)
+   is the final Batch A book that 7.6 step 6 reads ("on the final Batch A design run").
+3. The D1 breadth item is not run because its preconditions are unmet when A3 starts (7.6 step 5, quoted above):
+   T09 (alternative commodities): no registered data entry names a T09 series, E1 keeps the Bloomberg alternative
+   columns off, and no T09 market has a registered live source; T10 (strip markets other than the dollar): 7.5 D1's
+   extension admits a strip "only with eight contracts locked and a registered live source", LSEG lock v5 has
+   eight-contract strips only for ED (the dollar, excluded) and FEI (euro, 1999-2010), and LSEG LIVE_START is not set
+   (data entry "LSEG registered as a source for history" item 6), so no T10 market has a registered live source.
+4. How it may come back (the registered text, nothing added): "it may be registered with B1 or B2 before that batch
+   starts, else it waits for the live path (WORKFLOW s6)". Read exactly, a breadth market can return only if, before
+   B1 (or B2) starts, in this order: (a) its preconditions are met (T09: a data entry naming the series, a locked history
+   with the 2011+ seal and a registered live source; T10: eight contracts locked with the seal, a registered live source,
+   i.e. LSEG LIVE_START set by its own data entry, and E12 coded for that market under its own entry); (b) D1's candidate
+   half runs for it as registered in "Diagnostics after A2" item 6a and 7.5 D1 (zero slot, design months, gate "both
+   averaged shares < 1/2, >= 120 months before 2011, costed at 8 bp"), logged as a "diag" row; (c) a market that passes
+   the gate gets its own entry (REGISTRATION_3.4 part (c) item 5) registered with B1 or B2 before that batch starts,
+   tested by 7.6 step 5's rule (alone against the A2-final book, 7.7 H1-H4, H4 = breadth target "lower first-factor share
+   of Trend's variance", baseline 0.20 from the D1 structural half). Because Trend is a Core part, that entry must also
+   say, before its run, how an admitted market enters Core book v1. If (a)-(c) are not all done before B2 starts, the
+   item waits for the live path. Nothing here opens, schedules or prefers any of this; B1 / B2 do not wait for it.
+5. Trial count: none (no run). The book / pod rows of gm/trials.csv are unchanged (digest 676b7b0f..., 40 rows).
+
 ## Diagnostics after A2 (registered 2026-11-27, BEFORE the diagnostics code and run): TESTING_PROTOCOL 7.6 step 4, 7.5 order item 2
 Registered run entry (no rule, weight, threshold, gate, cost or market changes; no gm/ code change; no statistic of any
 diagnostic below has been computed on real data, cloud or PC). The A1 panel holds Bloomberg values and exists only on
