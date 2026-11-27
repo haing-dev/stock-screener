@@ -44,7 +44,7 @@ docs/research/lseg/LICENCE_STATEMENT.md (user, 2026-11-24).
 5. Excluded series: lseg_exclusions.csv (wrong series CEDCS00, LSSCS00, MBACS00, LESCS00, GSPTTOT; Moody's after 2019).
 6. Live (not yet open): LIVE_START is set in a later data entry, after the weekly file adds the current contract codes of
    every LSEG-sourced leg (lseg_weekly v2) and its first ingest; until then no LSEG-sourced pod runs live.
-Usage: Opus (this session) ~1.2M tokens for steps 2-3 across the L11-L16 pulls and jobs.
+Usage: not separately measured (done in the coordinator session, no subagent).
 
 ## gm-2.1.0 feature version (registered 2026-11-24, BEFORE the code): E6-E11, E14
 Feature version (no change to BASE or CANDIDATE at k = 0). Registered in docs/research/global_macro/TESTING_PROTOCOL.md

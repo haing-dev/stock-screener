@@ -543,10 +543,16 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   disagree (listing horizons, serial months); none registrable yet. Status: docs/research/lseg/IDENTITY_STATUS.md.
   USER REFRESHES L12 (G:\...\LSEG\09_contract_identity\L12_identity_evidence.xlsx, 188 formulas), then re-run build
   (v3) + ident (v2: also read the TR.ExpiryDate series format; v1 found them 'not comparable').
-  NEXT: engine feature version gm-2.1.0 (REGISTRATION_3.4 part (c) item 2: E6 k=1, E7 version grids, E8 weekly
-  tranches, E9 component masks + equal-risk Core book, E10 test code, E11 spread caps, E14 card 4 daily) -> then the
-  diagnostics (7.5) and Batch A. In parallel: LSEG reader + lock + seal + licence statement. User 2026-11-22: NO MORE
-  FABLE UNITS for now.
+  2026-11-25/27 IDENTITY DONE + LSEG REGISTERED FOR HISTORY (gm/CHANGES.md data entry 2026-11-27; lock v5 90322681,
+  docs/research/lseg/LOCK_LSEG_v5.json): L12 = TR.ExpiryDate dated series on c1/c2 (exact identity positions 1-2);
+  listing fit lseg_ident_v4 -> lseg_rules 1.1.0 LISTING models for NG/HO/GC/KC (99.5-100%); contract-level pulls
+  L14a-l (Datastream, small files) + L16a-e (Brent, HistoricalPricing) for CL LCO RB SI HG PL C W S SB CT LC + ED/FEI
+  daily strips (job lseg_contract_v3: codes right 99-100%; strips 100% of days; Curve carry both legs priced HG 100%,
+  CT 96, SB 86, CL 80, C 79, SI 78, RB 76, S 64, W 40, LCO 37, PL 19, LC 13%). Not on LSEG: short sterling/Euroswiss
+  contracts, HU, copper <1988, cotton/cattle 1970s. Holdout contracts (deliveries 2013+) pulled after the freeze.
+  LIVE_START NOT SET: needs lseg_weekly v2 with current contract codes. Status note docs/research/lseg/IDENTITY_STATUS.md.
+  NEXT: pod builds (Curve carry, Strip reversion), card rule-layer engine, diagnostics (7.5), then Batch A.
+  User 2026-11-22: NO MORE FABLE UNITS for now.
 - MT228 (2026-11-10): raw X posts of John Galt @AtlasShrug1 (1,359 posts, Jul 2025 - 8 Nov 2026) extracted like a transcript
   with dates: 733 claims (185 rules/tells, 188 dated forecasts), Sonnet single read, quotes script-checked, cross-check
   pending; macro-vault raw/sonnet/MT228.json, brief pipeline/X_EXTRACT_BRIEF.md. Use: forecast ledger (step 2), rule
