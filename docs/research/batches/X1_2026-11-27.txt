@@ -1,0 +1,11 @@
+=== X1 diagnostic (diag_x1-1.0.0, 2026-11-27 05:51 UTC) ===
+Question: is energy carry a calendar pattern? (TESTING_PROTOCOL 7.5 X1; SPEC_Carry s3, s13). SIGNALS ONLY.
+Signal: gm.signals.carry_values energy = 12 x (F1 / F2 - 1), EIA NYMEX contracts 1-2, month end (input of both Carry versions). Window: month-ends 1975-01..2010-12 from the first signal month; loaders cut at 2010-12-31.
+Statistic: share of signal variance explained by the 12 calendar-month means (1 - SS_within / SS_total). Gate: share >= 0.25, every calendar month >= 5 observations.
+market | first | last | months | smallest calendar-month count | share | gate
+cm_wti | 1985-01 | 2010-12 | 312 | 26 | 0.012 | CLOSED
+cm_natgas | 1994-01 | 2010-12 | 204 | 17 | 0.403 | OPEN
+cm_heatoil | 1994-02 | 2010-12 | 203 | 16 | 0.178 | CLOSED
+cm_gasoline | 2005-10 | 2010-12 | 63 | 5 | 0.564 | OPEN
+X1 OUTCOME | gate open for: cm_natgas, cm_gasoline | closed for: cm_wti, cm_heatoil
+Nothing else computed: no return, no Sharpe, no month after 2010-12.

@@ -4,6 +4,52 @@ Every rule change gets a new VERSION in gm/run.py and a line here. Every variant
 (1990-2010; extra check 1975-89) is logged so the deflated Sharpe can count the trials. The holdout (2011-2026) is run
 once, after the rules are frozen, by gm/holdout.py.
 
+## X1 outcome (registered 2026-11-27, after the X1 run and BEFORE the E13 code and A1's design run): E13 for natgas, gasoline
+Entry 4 of docs/research/registration/REGISTRATION_3.4.md part (c): "X1 outcome (after X1, before A1's design run): for
+each energy market whose gate opens, E13 seasonal adjustment; if none opens, an entry saying so." TESTING_PROTOCOL 7.5
+row X1 (order of running item 1: "X1 (signals only), before the A1 design run"); 7.4 row E13 "X1 seasonal adjustment of
+a market's energy carry, coded only if X1's gate opens for that market (SPEC_Carry s3)".
+Run: gm/diag_x1.py (diag_x1-1.0.0), free data (repo cache = the gm-1.2.3 reference inputs), every loader cut at
+2010-12-31; output docs/research/batches/X1_2026-11-27.txt. SIGNALS ONLY: no return, no Sharpe, no month after 2010-12.
+Signal = the Carry pod's input for each energy market, gm.signals.carry_values = 12 x (F1 / F2 - 1) from the EIA NYMEX
+contracts 1 and 2 at month end (the input of both Carry versions: v1 its sign, v2 its rank in class). Window: design
+month-ends 1975-01 .. 2010-12 from the first month the signal exists. Gate (registered, 1.3b s5, SPEC_Carry s13): share
+of the signal's variance explained by its 12 calendar-month means >= 0.25.
+| Market | Signal months | Smallest calendar-month count | Share | Gate |
+|---|---|---|---|---|
+| cm_wti | 1985-01..2010-12, 312 | 26 | 0.012 | closed |
+| cm_natgas | 1994-01..2010-12, 204 | 17 | 0.403 | OPEN |
+| cm_heatoil | 1994-02..2010-12, 203 | 16 | 0.178 | closed |
+| cm_gasoline | 2005-10..2010-12, 63 | 5 | 0.564 | OPEN |
+Rule from now on (E13, registered text of SPEC_Carry s3): for cm_natgas and cm_gasoline, "that market's carry in both
+versions becomes carry minus the mean, over all earlier same-calendar month-ends (at least five; no signal before), of
+(carry minus its trailing 12-month mean, the 12 month-ends up to and including that month-end)." cm_wti and cm_heatoil:
+no change.
+Where it applies: E13 sits in the 7.4 feature group (gate: "BASE and CANDIDATE at k = 0 reproduce the fix version's
+reference exactly"), so it is a registered config key, "x1_seasonal" = (cm_natgas, cm_gasoline) (gm/config.py
+X1_MARKETS), held by A1_INCUMBENT = CANDIDATE + the key (name gm-2.0.3-candidate-x1) and by the A2 challenger (built on
+A1_INCUMBENT). BASE (the live paper book, 7.1 item 6) and CANDIDATE (the gm-2.0.3 reference) do not hold it and are
+unchanged at k = 0. Both arms of the A1 report (7.6 step 2, CANDIDATE on A1 data against CANDIDATE on free data) and
+every later run of the programme (A2 incumbent and challenger, Core book v1, B batches) use A1_INCUMBENT. Engine
+version gm-2.2.0 (gm/config.py ENGINE_VERSION).
+Closed here (details the registered text leaves open; simplest reading, none chosen from results):
+1. The share is the plain (unadjusted) share, 1 - SS_within / SS_total over the window's months, i.e. the R^2 of a
+   regression on 12 calendar-month dummies. The "five" of the spec's knob line ("X1 gate 0.25, five months") belongs to
+   the adjustment (at least five earlier same-calendar values); the gate statistic is also computed only when every
+   calendar month has at least 5 observations (else 'insufficient', gate closed). All four markets meet it (gasoline
+   exactly 5).
+2. Window from the first month the signal exists (cm_gasoline: EIA contract 2 from 2005-10) to 2010-12; months
+   without a signal inside it are skipped, not filled.
+3. E13: the trailing 12-month mean needs all 12 month-ends present; "earlier" = strictly before t (s(t) reads only
+   months before t, so the rule is point in time); no adjusted value (missing, no position) where the carry or the
+   seasonal mean is missing.
+4. Consequences (signal facts, stated before the code from the rule itself; confirmed below): an adjusted value needs
+   12 months for the first d plus five earlier same-calendar values of d, so cm_natgas's adjusted carry starts about
+   six years after its raw start (1994-01) and cm_gasoline's (raw start 2005-10) lies after 2010-12: in design runs
+   cm_gasoline holds no Carry position and the CM class has fewer markets with carry (version 2 needs 3).
+5. Trial count: X1 is one gm/trials.csv row, family "diag" (7.5: "Each is logged as a design-data run (7.8)"), with
+   no Sharpe (signals only).
+
 ## data: LSEG registered as a source for history (registered 2026-11-27, BEFORE first use): TESTING_PROTOCOL 7.10 item 3
 Registered data entry (no rule change; no performance statistic of any LSEG-sourced path has been computed). LSEG
 Workspace / Datastream workbooks L1a-L16f saved on the user's PC become a registered HISTORY source. Steps of 7.10 item 3:
