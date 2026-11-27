@@ -311,6 +311,58 @@ failures in run_tests before the fix; no job or lib changed). Closed while codin
 LSEG store with allow_untouched=False after reading its lock id from the manifest; card 4's day windows that run past
 2010-12-31 are laid on US business days by lsegdata's calendar and cut there; a C5-D2 break without a 24-month value
 counts as not higher (counted and printed). NOT RUN: queue in PREB_BUILD_2026-11-27.md.
+Addendum 1.1.0 (registered 2026-11-27, after the data entry "card inputs" and BEFORE the diag_preb 1.1.0 code; the
+job has not run, so it is extended in place, as the coordinator asked; items above stand where not named here; nothing
+chosen from a result):
+A1. Scope: with the card inputs locked, every row of item 4 runs: C1-D1, C1-D2 and F0 for card 1 R1-R5; C2-D2 and F0
+   for card 2 R1, R2; C3-D1, C3-D2 and F0 for card 3 R1-R4; C4-D1, C4-D2 and F0 for card 4 R1-R5; R1, C2-D1, C5-D1,
+   C5-D2 and F0 card 5 R1 as before. The BLOCKED lines go. Trial rows (item 8): 12 (R1, C1-D1, C1-D2, C2-D1, C2-D2,
+   C3-D1, C3-D2, C4-D1, C4-D2, C5-D1, C5-D2, F0). The job also pins card_inputs.py and checks work\free\
+   gm_card_inputs.zip file by file against LOCK_CARD_v1 (id 6c154f7d...) before reading a value; every report prints
+   each first-published input's flagged share (data entry item 2).
+A2. Order and F0 basis: each card's own gates first (C3-D2 before C3-D1; C2-D2's version prune; C1-D2's leg drop), then
+   F0 on the rule as it would enter B2 (versions left out, legs dropped and a dropped gate removed); a rule that a gate
+   removes (C1-D1 watch condition, C3-D1 dropped, C4-D2 not registered, C5-D1 / C5-D2) still gets its F0 line, marked
+   with that gate. Versions that only add a condition to a rule whose versions all hold the same sign per market
+   (C2-D1's floor versions on card 1 R1, R2) or only scale a position by a positive factor (card 1 E3, card 4 C4-D1
+   half size, card 5 50% cap) change neither sign nor held months and are not built. Card 3's sizing version is built
+   (card 3 R1's versions hold opposite signs in one market, so magnitudes decide the averaged sign).
+A3. Card 1 (SPEC_Card1 s3; closed here where the spec is silent): the dollar's L-month change is taken in TWEXMMTH when
+   both ends have a TWEXMMTH value, else in DTWEXBGS (monthly mean); WTISPLC lag 1 compares t-1 with t-1-L; R2
+   warning (c) compares the 12-month growth of M2SL at t with the same growth at t-24, each by data entry item 5;
+   R3's spread percentiles are numpy linear over the expanding window from the first month both BAA and GS10 exist,
+   the S&P level is the last ^GSPC daily close of the month, gold's level is the cumulated A1-panel cm_gold excess
+   return (book.trend_signal's construction); R4's core inflation c(t) is CPILFESL's 12-month change by data entry
+   item 5 at lag 1, state on while c > H and FEDFUNDS(t) < c(t); R4-B's basket = the spec's 16 panel commodities with
+   a volatility at t, each 1/n of the leg. C1-D2 legs: R1, R2 the 2-year and 10-year legs; R3 the 10-year and S&P legs;
+   R4 the 2-year and 10-year legs (both actions) and the S&P and basket legs (action B); R5 as item 5. Starts: R2 at
+   GS2's first month; the others 1975-01.
+A4. Card 2 (SPEC_Card2 s3, s13): R1 y(t) = GS10(t) - c(t) (c as A3); bar b = at or below the numpy-linear 33.3rd
+   percentile of y from its first month to t, once 120 values exist; hedge gate = Pearson correlation of the 12 panel
+   excess returns t-11..t of eq_us_spx and bd_us_10y above 0 (all 12 present). R2 d(t) = GS10(t) - GS10(t-12); on when
+   d >= X and the ^GSPC 12-month % change (month-end closes) >= -10 x d; labour gate = UNRATE at t (lag 1, first
+   published else latest) at or below the lowest of its 240 prior lagged values (all present). C2-D2 per version over
+   decision months 1975-01..2010-11: on-months = condition months; left out if fewer than 24 on-months, fewer than 3
+   episodes, or more than 2/3 of on-months in card 1 R4's state at H 4.5.
+A5. Card 3 (SPEC_Card3 s3, s5, s13): R1 reads the named FRED / OECD series only, each currency from its own start (7.11:
+   "R1 runs on FRED alone, each currency from its own start"; the LSEG entry names only a deposit-rate cross-check), all
+   at lag 1; equal changes: shape A flat, shape B ties go to the first in the order US, JP, CH, EZ, GB, CA, SE; a leg's
+   notional is fixed at the first month of a run with the same sign and role (A: the currency; B: long leg, short leg,
+   basket) and kept for the run; the sizing version uses max(vol, expanding median of vol). R2's pair: 10-year notional
+   = 2-year notional x D2 / D10 at that month's GS2, GS10 (par, semiannual), the pair's volatility from its own monthly
+   return R2y(t) - h(t-1) R10y(t). R3 as the spec (PCEPILFE change at lag 2 by data entry item 5). C3-D2: design months
+   1975-01..2010-12 with FEDFUNDS's 12-month range (t-11..t) below 0.50; C3-D1 then on the averaged rule (any version),
+   market-months pooled over the rule's markets, sign equal to the book's pos.
+A6. Card 4 (SPEC_Card4 s3, s13): R5 c(t) as A3; v1 on while c(t) < c(t-6), v2 also FEDFUNDS(t) <= FEDFUNDS(t-6) - 0.25;
+   pair as A5; start GS2's first month. C4-D2 per R5 version: share of on-months with card 3 R2 on (either version), and
+   share with Trend long bd_us_2y and short or flat bd_us_10y, Trend = the A2-final book's single Trend form (A2 FAIL:
+   one version, so "the average of Trend's registered versions" is that form's score, book.trend_signal on the A1 panel),
+   long = score > 0; gate: either share >= 0.80 in both versions. C4-D1: month-ends 1990-01..2010-06 (7.5 fix); up-month
+   = ^GSPC month-end close above its close 6 months earlier; state on = the month's mean VIXCLS above that of 6 months
+   earlier; outcome = the largest fall of ^GSPC daily closes from the last close of t to the last close of t + 6, over
+   sqrt(252) x the standard deviation (ddof 1) of daily returns in months t-2..t; gate = median(state-on up-months) /
+   median(other up-months) >= 1.25 over 1990-01..2010-06, 1990-01..1999-12 and 2000-01..2010-06; printed as the two
+   counts and yes / no per window (the ratio over >= 60 months each).
 
 ## Core book v1 (registered 2026-11-27, BEFORE the Core book v1 code and run): TESTING_PROTOCOL 7.6 step 6
 Registered run entry (no rule, weight, threshold, gate, cost or market change; no gm/ code change; no statistic of S1-S4,
