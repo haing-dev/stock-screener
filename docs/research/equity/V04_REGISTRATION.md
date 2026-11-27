@@ -539,3 +539,7 @@ as such. Replaces R1.1 (record); R1.2 (material) and R1.3 (screenability) stay.
 14. **Sosin held-out test (2026-11-27).** 4 of 9 SOS1 rules matched (44%, bar 70%) and 2 open contradictions in the
     sell part -> FAIL. Per item 8 the card continues as v1.1 with SOS1 merged, labelled "held-out failed"; also thin
     (no written source, A13 item 1).
+15. **Druckenmiller held-out test (2026-11-27).** 17 of 26 DRU2 rules matched (65%, bar 70%) and 3 open contradictions
+    in the buy part (countercyclical buying of loss-making cyclicals; bonds not owned in a recession when inflation is
+    above 5%; shorting a post-bubble rally) -> FAIL. Card v1.1 with DRU2 merged, labelled "held-out failed"; thin (no
+    written source). His record is mostly currencies and bonds (DRU6-C002): the 13F covers only his equity longs.

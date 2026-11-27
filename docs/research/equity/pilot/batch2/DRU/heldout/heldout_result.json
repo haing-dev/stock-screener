@@ -1,0 +1,42 @@
+{
+ "matches": [
+  {"id": "DRU2-C007", "match": "yes", "card_rule": "Rproc1", "why": "Macro built bottom-up from companies, not top-down economic statistics."},
+  {"id": "DRU2-C010", "match": "yes", "card_rule": "Rproc1", "why": "Same: macro from listening to companies, bottom-up."},
+  {"id": "DRU2-C011", "match": "yes", "card_rule": "Rproc4", "why": "Leading industry groups turning up/down predict the economy; same idea as inside-of-market signal."},
+  {"id": "DRU2-C014", "match": "yes", "card_rule": "Rproc4", "why": "Which industries lead or lag, used to read the economy: Rproc4 group relative strength."},
+  {"id": "DRU2-C015", "match": "yes", "card_rule": "Rproc4", "why": "Home builder stocks as leading group; Rproc4 cyclical groups (building, DRU5-C001)."},
+  {"id": "DRU2-C022", "match": "yes", "card_rule": "Rbuy1", "why": "Bear market: drop equities, buy Treasuries; same playbook (also Rproc10)."},
+  {"id": "DRU2-C026", "match": "yes", "card_rule": "Rsize2", "why": "Waiting for a fat pitch = Rsize2; claim labelled process, card files it under size."},
+  {"id": "DRU2-C034", "match": "no", "card_rule": "", "why": "No card rule on Bitcoin or gold by inflation and market phase."},
+  {"id": "DRU2-C036", "match": "yes", "card_rule": "Rproc11", "why": "Forecast 12-18 months ahead vs prices; same number, but card limits it to shorts."},
+  {"id": "DRU2-C039", "match": "yes", "card_rule": "Rsize1", "why": "Concentrated big positions, larger in macro (Rsize4); card has no number, same direction."},
+  {"id": "DRU2-C040", "match": "no", "card_rule": "", "why": "Constant daily re-evaluation and paranoia not on card; Rproc14 is a routine market check only."},
+  {"id": "DRU2-C043", "match": "yes", "card_rule": "Rsize9", "why": "Track whether hot or cold."},
+  {"id": "DRU2-C044", "match": "yes", "card_rule": "Rsize9", "why": "Hot -> size up is the other side of Rsize9; same measure, same direction."},
+  {"id": "DRU2-C045", "match": "yes", "card_rule": "Rsize9", "why": "Cold -> tone down, small bets."},
+  {"id": "DRU2-C046", "match": "yes", "card_rule": "Rsize9", "why": "Needs good trading rhythm to concentrate; Rsize9 small bets until rhythm returns."},
+  {"id": "DRU2-C048", "match": "no", "card_rule": "", "why": "Sizing up analysts on hot streaks not on card; Rsize9 covers only his own streaks."},
+  {"id": "DRU2-C050", "match": "no", "card_rule": "", "why": "No buy rule: idea fitting the macro matrix triggers a quick large position (closest Rproc8, Rsize7 exception)."},
+  {"id": "DRU2-C052", "match": "yes", "card_rule": "Rproc8", "why": "Invest then investigate, add or drop (Rsell2); 2-3 weeks is homework time, not Rproc8's delay."},
+  {"id": "DRU2-C054", "match": "yes", "card_rule": "Rproc8", "why": "Buy on intuition, analyse after, exit if it fails."},
+  {"id": "DRU2-C063", "match": "yes", "card_rule": "Rsize9", "why": "Do not trade much when down = small bets when cold or down."},
+  {"id": "DRU2-C073", "match": "yes", "card_rule": "Rbuy3", "why": "Bias toward growth stocks, set aside lately; Rbuy3 growers, conditional on slow growth."},
+  {"id": "DRU2-C074", "match": "no", "card_rule": "", "why": "Horizon 3-5 years vs Rbuy2's 18-24 months; numbers far beyond 20%."},
+  {"id": "DRU2-C075", "match": "no", "card_rule": "", "why": "Countercyclical buy of loss-making cyclicals as capacity shuts: no such card rule."},
+  {"id": "DRU2-C076", "match": "no", "card_rule": "", "why": "Countercyclical buying not on card; Rproc9 'play the turn' is undefined (card section 4 item 8)."},
+  {"id": "DRU2-C082", "match": "no", "card_rule": "", "why": "Crowding is not a sell reason: consistent with Rsell1 but not stated on the card."},
+  {"id": "DRU2-C088", "match": "no", "card_rule": "", "why": "Own bearish bias to manage: no card rule."}
+ ],
+ "contradictions": [
+  {"id": "DRU2-C075", "card_rule": "Rbuy5", "status": "open", "why": "Buy cyclicals while they lose money, before the turn (also DRU2-C069 margin mean reversion, DRU2-C076 'a lot of countercyclical stuff'). Rbuy5 buys once trends start up, and Rbuy6 says not in the zero inning. The card records no countercyclical scope. Item 8 (play the turn vs trend) is open and does not cover it."},
+  {"id": "DRU2-C024", "card_rule": "Rbuy1", "status": "open", "why": "Expects a 2023 recession (DRU2-C006) yet is short fixed income; DRU2-C022's note says the own-Treasuries playbook did not work in 2022 because inflation was above 5% (DRU2-C004/C005). Card item 11 limits Rbuy1 only by the fat-pitch test and gives no inflation condition."},
+  {"id": "DRU2-C066", "card_rule": "Rbuy5", "status": "open", "why": "A 15-20% index rally in a post-bubble bear market is a trigger to go short. Rbuy5 buys a rising trend. Likely a different scope (index short in a bear market) but the card does not record it."},
+  {"id": "DRU2-C057", "card_rule": "Rbuy7", "status": "closed", "why": "Bought tech near the 2000 top against his own view, a mistake; card section 4 item 7 already treats the 2000 re-buy as emotion, a different scope from reasoned re-entry."}
+ ],
+ "notes": [
+  "Not buy/price/sell, so outside the contradiction check, but worth fixing on the card: DRU2-C049 says waiting two or three WEEKS loses 60-70% of the move, while Rproc8 (DRU4-C032) says two or three MONTHS. Same measure, number differs far beyond 20%; check the DRU4 quote.",
+  "DRU2-C036 gives 12-18 months as his general horizon, not only for shorts. That weakens card section 4 item 3 ('different scope': shorts 12-18 vs investing 18-24). DRU2-C070 says 18 or 24 months.",
+  "DRU2-C050/C052/C064 put on very large positions at once. Card Rsize6 says start with a third; card section 4 item 5 records 'in big right away' only as a 'sometimes' exception (size part, outside the check).",
+  "Price part: still no rule. DRU2-C083 (cheap against the outlook one or two years out) and DRU2-C001 (de-rated 60-70%) are views only."
+ ]
+}
