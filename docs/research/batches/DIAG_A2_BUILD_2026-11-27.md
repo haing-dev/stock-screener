@@ -1,5 +1,15 @@
 # Diagnostics after A2 build (2026-11-27): TESTING_PROTOCOL 7.6 step 4, the PC job
 
+**UPDATED for diag_a2 1.0.1** after the independent check (CHECK_DIAG, APPROVED WITH CORRECTIONS; corrections
+registered in gm/CHANGES.md 5510e4e before the code aa96955): M1 D3 prints its difference and bound as sign only when
+a group has fewer than 60 months (split (b), the top tenth, has about 43); M2 a failed D2 rebuild prints and records
+"not gated (rebuild FAIL)"; W1 D2 trade months end 2010-11; W2 the cost drag is charged in the next month; W5 the
+rebuild refuses alternative-commodity columns; W6 D3 prints its empty resamples; W7 M1 uses the common months of its
+three series. tests/diag_a2_smoke.py now has 55 checks; run_tests ALL TESTS PASSED
+(results/run_tests_gm_2026-11-27f_gm-2.2.1.txt); free-panel identities PASS (results/diag_plumbing_cloud_2026-11-27b.txt).
+gm/ unchanged, so the reproduction and truncation results below stand. The hash table at the end is the one to use.
+Can-wait items W3, W4, W8-W10 go to the outcomes paragraph.
+
 Registered step built here: 7.6 step 4, "The diagnostic pass of 7.5 order item 2 on the A2-final book". Entry in
 gm/CHANGES.md: "Diagnostics after A2" (commit 3fdd3f9), written and committed BEFORE the code (3fd5d1b) and before any
 run. The A2 verdict was FAIL (gm_a2_v1), so the A2-final book is A1_INCUMBENT gm-2.0.4-candidate-x1 (77374d7bef), old
@@ -52,7 +62,8 @@ month 2010-06 and R1 month-ends to 2010-11 (later pass).
 5. The registered pass: `BLOCKED | ...` (2 lines); `D1 | ...` (markets, windows, first-factor share, class loadings,
    pod / mean market Sharpe ratio, candidate half not run); `D2 | ...` (rebuild check, non-signal and scores-held
    shares per era), `D2 GATE`, `COSTDRAG | market | bp/yr (months)` per market; `D3 | ...` (state window, both splits:
-   months, state means, difference, one-sided 90% bound), `D3 GATE`; `D4 | ...` (Trend and Carry by state, S&P base;
+   months, state means, difference, one-sided 90% bound; the last two as sign only when a group has < 60 months; empty
+   resamples), `D3 GATE`; `D4 | ...` (Trend and Carry by state, S&P base;
    each stress window as month count and sign), two `D4 GATE` lines; `CRISIS | ...` (bad-state set, each pod and Carry
    leg in bad / other months); `S1 | ...` (five states x four pods x two bases); `D5 | ...` (delays 0 / 1 / 3 / 6 / 12 at
    k = 1 and on the k = 0 path, the JP8 caution), `D5 GATE`; `D6 | ...` (slope and NW s.e. per era), `D6 GATE`;
@@ -67,7 +78,7 @@ sign only. Expected run time about 8-10 minutes (A1 rebuild about 4 minutes; abo
 - k = 0 reproduction 24 of 24, difference 0 (tools/bbgq/results/engine_repro_cloud_2026-11-27e_gm-2.2.1.txt).
 - Truncation PASS at all 8 cut dates, 21 k = 0 and 37 feature stages (results/engine_trunc_cloud_2026-11-27e_gm-2.2.1.txt).
 - tests/run_tests.py ALL TESTS PASSED (results/run_tests_gm_2026-11-27e_gm-2.2.1.txt), incl. tests/diag_a2_smoke.py
-  (48 checks: each diagnostic against a direct computation, gates, seal, printing whitelist, facts parser, as-run, the
+  (55 checks in 1.0.1: each diagnostic against a direct computation, gates, seal, printing whitelist, facts parser, as-run, the
   C7 digest, the job's STOP paths) and tests/a2_batch_smoke.py (44 checks; gm_a2_v1 tested on the frozen 1.1.0 copy).
 - Identity plumbing on the free panel (results/diag_plumbing_cloud_2026-11-27.txt): D2 rebuild = book.run positions
   (difference 0), income + price = total (6.9e-18), theme parts = held Economic trend position (2.2e-16), theme scores
@@ -92,11 +103,11 @@ and local\results\gm_a2_v1.txt (from the A2 run) in place.
 
 | File (PC destination under local\) | Status | sha256 |
 |---|---|---|
-| jobs\gm_diag_v1.py | new | 8d50d30e651bd702640ec3df90879ba6bf01641d016b9295afb7c5ce774c9c9a |
-| lib\diag_a2.py (1.0.0) | new | b811df2b4a9ad009668856bb0a2fdd84cc03334aa5d4213e473e4165a99e9caa |
+| jobs\gm_diag_v1.py | new | 15b42eef009ee9e9181eae22791a558a87472f2bfd544a37704881267a890054 |
+| lib\diag_a2.py (1.0.1) | new | 3264a5381c13b124d2566d02f263e21905f4e901680c1af7c2134f0bd558be1b |
 | lib\a2_batch.py (1.1.1) | changed | 35339f673f351f43315ad3c7010ba733b6fb8990a6a41feb1ef20de324de58c6 |
 | lib\gm\trials.csv (51 rows; book / pod digest 676b7b0f..., N 40) | changed | b7f8a0a7d976af8a65ca715ae14a5d32fc169a9cf9c5220887d349463f985ac6 |
-| lib\gm\CHANGES.md (documentation, not checked) | changed | 94c3fd02e8512ab7a8fcab25d35d4d86d8c3ac9344863475fd0025c45c3b1852 |
+| lib\gm\CHANGES.md (documentation, not checked) | changed | c33daa81ede13aa689c8a3a8272bf518750b1c148af7f516775e4f07fd82b995 |
 | lib\engine_ref.json (gm-2.2.1 reference) | unchanged | cebd4932e8643f14c541258abe68809a4e3c119f0c384beaa3d656b44c955e39 |
 | lib\a1_panel.py (1.1.0) | unchanged | eb9ef3f7fbd12760e174f9ef1df8573890bed6ca8d36f7d4e5c63eadd822ebb5 |
 | lib\gm_engine.py (1.3.0) | unchanged | ac43a33cd8943719ba0efb9bb246473c7bbf59018a6d3b7398f64520eeebd721 |

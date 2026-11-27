@@ -237,6 +237,13 @@ to work\", but the free-input check refreshes work\free\inputs_manifest.json (fr
 Bloomberg is written); W4 diag_plumbing computes the D2 shares on the free panel in memory without printing them; W8
 the lib modules are imported before their sha256 check (the A2 pattern); W9 the trial-row config also hashes timing and
 window; W10 D3 split (b) reads Trend's book markets including cm_aqr_ew, D1 excludes it.
+Code 1.0.1 (2026-11-27, commit aa96955; corrections 5510e4e before it): tools/bbgq/lib/diag_a2.py 1.0.1 (sha256 3264a5381c13b124d2566d02f263e21905f4e901680c1af7c2134f0bd558be1b;
+replaces 1.0.0 b811df2b... in the paragraph above), job tools/bbgq/jobs/gm_diag_v1.py (sha256 15b42eef009ee9e9181eae22791a558a87472f2bfd544a37704881267a890054;
+replaces 8d50d30e...), a2_batch-1.1.1 unchanged; smoke cases for M1, M2, W1, W2, W5, W6, W7 (tests/diag_a2_smoke.py 55
+checks). Gates rerun: run_tests ALL TESTS PASSED (tools/bbgq/results/run_tests_gm_2026-11-27f_gm-2.2.1.txt); free-panel
+identities PASS (results/diag_plumbing_cloud_2026-11-27b.txt); gm/ unchanged, so the k = 0 reproduction (24 of 24) and
+truncation (8 of 8) results of the paragraph above stand. NOT RUN: queue and hashes in
+docs/research/batches/DIAG_A2_BUILD_2026-11-27.md.
 
 ## gm-2.2.1 fix: cm_aqr_ew a Trend market in CM only (registered 2026-11-27, BEFORE the code change; found while building A2)
 Registered fix of the existing engine (TESTING_PROTOCOL 7.4: a found defect gets a registered engine version, as C1-C4,
