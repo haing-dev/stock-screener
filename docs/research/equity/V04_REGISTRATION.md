@@ -482,3 +482,8 @@ as such. Replaces R1.1 (record); R1.2 (material) and R1.3 (screenability) stay.
    v1.1, no sight of the v1 claims; a fresh Opus verifier with a new seed (20261128) and no sight of v1 tags. If
    v1.1 fails too, the reading of this file stops and the result is reported; no third spec version for this file
    without the user.
+5. **Result v1.1 (2026-11-27): FAIL** (`pilot/verify_v1.1/SCORE_v1.1.md`; key 1e2ad468... committed 088aca3 before
+   the tags). Rule-like 85.5% (bar 90), part 87.9%, computable 82.6% (bar 85), planted 10 of 10. 38 of 41 disputes
+   are first reader "rule" vs verifier "principle" (advice phrased "you should" or a self-description with no named
+   decision); computable splits are mostly no/yes vs proxy. Per item 4 the reading of this file stops here; the
+   next step is the user's choice. Nothing downstream (card, recipe, recall) has been built.
