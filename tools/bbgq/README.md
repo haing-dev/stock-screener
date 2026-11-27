@@ -129,3 +129,17 @@ Cut), gm.book.run drops inputs after the seal, and the result ends at 2010-12; s
 sealed too and its 2010-12-31 cut passes by construction. `run(seal=False)` (unsealed engine) is a diagnostic only.
 E3 metadata: `cpi_freq_meta.py` -> results/cpi_freq_meta_2026-11-24.txt.
 
+
+## Batch A1, data swap (gm-2.2.0, 2026-11-27; gm/CHANGES.md "data: A1 data rule" and "X1 outcome")
+- `lib/a1_panel.py` 1.0.0: the A1 panel of TESTING_PROTOCOL 7.6 step 2 = the free panel + the LOCK_v2 series the
+  registered rule admits as BACKWARD extensions only (status ok, not copy / _CUT / held back; same root or index
+  family; overlap correlation of monthly returns >= 0.95 over >= 24 months to 2010-12). Blocks: 1 commodity
+  excess-return indexes -> panel return; 2 CL / NG / HO / XB contracts 1-2 -> Carry's EIA inputs; 3 MSCI dividend
+  yield -> Value; report line: bond futures vs yield-built returns. Panel id = sha256 of the admitted list, LOCK_v2 id,
+  free-inputs digest, rule constants and version.
+- `jobs/gm_a1_v1.py`: checks (gm code = reference, lock id = LOCK_v2, free inputs), one line per candidate, the A1
+  panel id, the registered report (A1_INCUMBENT = CANDIDATE + E13 at k = 1, k = 0 beside, free vs each block vs all),
+  a TRIAL ROW for gm/trials.csv; panel values only to `work\a1\`. How to queue: docs/research/batches/A1_BUILD_2026-11-27.md.
+- `meta_first_dates.py` (cloud): the 7.6 step 2 metadata listing for the free inputs and the LSEG lock (first dates).
+- Reference: `engine_ref.json` code block rehashed for gm-2.2.0 (numbers unchanged; old `engine_ref_gm-2.1.0.json`).
+- Tests: `python3 tests/a1_panel_smoke.py` (mock bbgdata stores; also in tests/run_tests.py), `tests/gm_x1_smoke.py`.

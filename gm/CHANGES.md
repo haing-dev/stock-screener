@@ -92,6 +92,16 @@ computed; Bloomberg values stay on the user's PC, rule 7).
    series, printed by the A1 job on the PC.
 9. Writes: the A1 panel values only to local\work\a1 on the PC (never to the repo or chat); the job prints metadata
    and the registered summary statistics only (tools/bbgq/README.md export whitelist).
+Code (2026-11-27, commit 854b724; entry 56729b0 before it): tools/bbgq/lib/a1_panel.py 1.0.0 (candidates, Store over
+bbg_panel.Source, free_inputs under gm_engine.Cut, evaluate, build, assert_extension_only, report, trial_row,
+save_panel), PC job tools/bbgq/jobs/gm_a1_v1.py, packaged by tools/bbgq/build_engine.py; tests on mock bbgdata stores
+and synthetic free inputs (tests/a1_panel_smoke.py, in tests/run_tests.py: extension only, correlation gate, copy /
+cut / held back / missing, seal, panel id, no raw value printed, the job in the PC layout stops on a non-LOCK_v2
+store before reading a value). Closed while coding: a series that passes every condition but has no month before the
+free start is "rejected: nothing to extend" (it is not used); the job stops (prints STOP, reads no value) if the gm
+code differs from engine_ref.json, the lock id is not LOCK_v2 or the free inputs differ; when no series is admitted
+the report has the free arm only and the A1 panel equals the free panel. NOT RUN: the A1 report needs the Bloomberg
+store on the PC (queue: docs/research/batches/A1_BUILD_2026-11-27.md). A1 panel id: to be recorded here after the run.
 
 ## X1 outcome (registered 2026-11-27, after the X1 run and BEFORE the E13 code and A1's design run): E13 for natgas, gasoline
 Entry 4 of docs/research/registration/REGISTRATION_3.4.md part (c): "X1 outcome (after X1, before A1's design run): for
@@ -138,6 +148,18 @@ Closed here (details the registered text leaves open; simplest reading, none cho
    cm_gasoline holds no Carry position and the CM class has fewer markets with carry (version 2 needs 3).
 5. Trial count: X1 is one gm/trials.csv row, family "diag" (7.5: "Each is logged as a design-data run (7.8)"), with
    no Sharpe (signals only).
+Code and result (2026-11-27; X1 run and entry c5e8b60, E13 code d8253b2; no performance statistic computed): gm/signals.py
+x1_adjust / x1_seasonal (SPEC_Carry s3 formula; synthetic test tests/gm_x1_smoke.py: equals the formula by hand, point
+in time, removes a pure calendar pattern, only the keyed markets change); gm/book.py applies it in both the old and the
+version path when the config holds "x1_seasonal"; gm/config.py X1_MARKETS, A1_INCUMBENT (config hash 465b5ecd4f, name
+gm-2.0.3-candidate-x1), A2 challenger now built on A1_INCUMBENT (name gm-2.2.0-a2-challenger); ENGINE_VERSION gm-2.2.0.
+Signal facts (signals only, design months): cm_natgas adjusted carry from 1999-12 (133 months; raw from 1994-01);
+cm_gasoline none before 2011 (raw from 2005-10), as item 4 says. Gates: k = 0 reproduction of the reference 24 of 24,
+difference 0 (tools/bbgq/results/engine_repro_cloud_2026-11-27_gm-2.2.0.txt; BASE 7651ea6ebc and CANDIDATE a9466df18b
+unchanged); truncation test PASS at all 8 cut dates, 21 k = 0 stages and 37 feature stages including the E13 stages
+(adjusted carry, A1_INCUMBENT positions and k = 1 book) (results/engine_trunc_cloud_2026-11-27_gm-2.2.0.txt);
+tests/run_tests.py ALL TESTS PASSED (results/run_tests_gm_2026-11-27_gm-2.2.0.txt), tests/gm_bloomberg_smoke.py PASSED, tests/bbgq_engine_smoke.py OK. Reference: engine_ref.json numbers unchanged, code block rehashed (old file
+engine_ref_gm-2.1.0.json).
 
 ## data: LSEG registered as a source for history (registered 2026-11-27, BEFORE first use): TESTING_PROTOCOL 7.10 item 3
 Registered data entry (no rule change; no performance statistic of any LSEG-sourced path has been computed). LSEG
