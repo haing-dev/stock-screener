@@ -14,6 +14,7 @@ engine_pkg/
   lib/diag_a2.py             diagnostics after A2 (gm-2.2.1, gm/CHANGES.md "Diagnostics after A2")
   lib/core_v1.py             Core book v1 (gm-2.2.1, gm/CHANGES.md "Core book v1")
   lib/diag_preb.py           pre-B diagnostics (gm-2.2.1, gm/CHANGES.md "Pre-B diagnostics")
+  lib/card_inputs.py         reader of the locked card inputs (gm/CHANGES.md data entry "card inputs")
   lib/lsegdata.py, lseg_rules.py, lseg_*.csv   the LSEG reader (= LOCK_LSEG_v5 code hash), its rules and config lists,
                              copied unchanged from tools/lseg (already on the PC; shipped so the job's pins can be checked)
   lib/rebuild_s4.py          the independent S4 rebuild (separate agent; docs/research/batches/S4_INTERFACE.md), copied
@@ -21,6 +22,8 @@ engine_pkg/
   jobs/gm_repro_v1.py, gm_trunc_v1.py, gm_bbg_map_v1.py, bbg_build_v2.py, bbg_check_v2.py, gm_a1_v1.py, gm_a1_v2.py,
   gm_a2_v1.py, gm_diag_v1.py, gm_core_v1.py, gm_diag_preb_v1.py
   work/free/gm_free_inputs.zip   the free input files the engine opens (research/..., raw/...) + inputs_manifest.json
+  work/free/gm_card_inputs.zip   the card inputs (FRED / ALFRED, macro-data 264d0a2), LOCK_CARD_v1
+                                 (tools/bbgq/build_card_inputs.py; not an engine input)
 
 The engine finds its inputs through gm_engine.setup(free_dir): gm.panel.RD and RAW are set to work\\free\\research and
 work\\free\\raw (module variables that every gm loader reads at call time; no gm file is edited). The jobs unpack the
@@ -48,7 +51,7 @@ REF = os.path.join(HERE, "engine_ref.json")
 JOBS = ["gm_repro_v1", "gm_trunc_v1", "gm_bbg_map_v1", "bbg_build_v2", "bbg_check_v2", "gm_a1_v1", "gm_a1_v2", "gm_a2_v1",
         "gm_diag_v1", "gm_core_v1", "gm_diag_preb_v1"]
 LIBS = ["lib/gm_engine.py", "lib/bbg_panel.py", "lib/bbgdata.py", "lib/a1_panel.py", "lib/a2_batch.py", "lib/diag_a2.py",
-        "lib/core_v1.py", "lib/diag_preb.py", "live_sources.csv",
+        "lib/core_v1.py", "lib/diag_preb.py", "lib/card_inputs.py", "live_sources.csv",
         "untouched_markets.csv", "engine_ref.json"]
 OPTIONAL_LIBS = ["lib/rebuild_s4.py"]       # copied if present (written by a separate agent; not opened here)
 SRC_DIRS = {"research": os.path.join(REPO, "cache", "macro", "raw", "research"),
@@ -141,6 +144,9 @@ def main():
             print("optional %s: copied" % rel)
         else:
             print("optional %s: absent (not packaged)" % rel)
+    import build_card_inputs as BCI                      # the card inputs zip (LOCK_CARD_v1), from git at its commit
+    _f, zsha = BCI.build(os.path.join(PKG, "work", "free", "gm_card_inputs.zip"))
+    print("card inputs zip: %d files, sha256 %s (lock %s)" % (len(_f), zsha, BCI.CI.LOCK_ID[:16]))
     lseg_dir = os.path.join(REPO, "tools", "lseg")       # the LSEG reader and its lists, copied unchanged
     for f in sorted(os.listdir(lseg_dir)):
         if f in ("lsegdata.py", "lseg_rules.py") or (f.startswith("lseg_") and f.endswith(".csv")):

@@ -2,10 +2,10 @@
 "Pre-B diagnostics" (2026-11-27, before this code). Runs where the A1 panel and the LSEG store exist (the user's PC);
 tested in the cloud on synthetic panels and a mock LSEG store only.
 
-Run now (entry item 4): R1 (Strip reversion's gate, LSEG Eurodollar contracts), C1-D1 / C1-D2 (card 1 R5 only), C2-D1,
-C3-D1 (card 3 R4 only), C5-D1, C5-D2, F0 (card 1 R5, card 3 R4, card 4 R1-R4, card 5 R1). Blocked (inputs not in any
-registered source; listed by the job): C2-D2, C3-D2, C4-D1, C4-D2 and the parts of C1-D1, C1-D2, C3-D1, F0 that need
-card 1 R1-R4, card 2, card 3 R1-R3, card 4 R5.
+Run (entry item 4 and addendum 1.1.0 A1): R1 (Strip reversion's gate, LSEG Eurodollar contracts), C1-D1 / C1-D2 (card 1
+R1-R5), C2-D1, C2-D2 (card 2 R1, R2), C3-D2 then C3-D1 (card 3 R1-R4), C4-D1, C4-D2 (card 4 R5), C5-D1, C5-D2 and F0
+on every card rule as it would enter B2. Card inputs: card_inputs.Inputs (LOCK_CARD_v1, FRED / ALFRED first release
+from the macro-data branch). Nothing is blocked in 1.1.0.
 The reference book: the A2-final book config.A1_INCUMBENT (77374d7bef), engine gm-2.2.1, A1 panel e7f98d44..., its
 book.run "pos". Card rule positions are minimal signals from the specs (positions only, no returns of the rules).
 Printing (entry item 7): shares, means and gaps over at least 60 months only, else count and sign.
@@ -16,8 +16,10 @@ API
   r1(contracts, days)                    R1 (entry item 5 R1 a-k)
   card1_r5(fxv, vol), card3_r4(eps, spx_me, tb3, vol_spx), card4_days(gspc, days, vol_spx),
   card5_r1(P, vol)                       minimal rule positions (entry item 5)
+  card1_rules, card2_rules, card3_rules, card3_r1, card4_r5           1.1.0 rule positions (addendum A3-A6)
+  c2d2(...), c4d1(...), c4d2(...)        1.1.0 gates
   f0(...), c1d1(...), c1d2(...), c2d1(...), c3d1(...), c5d1(...), c5d2(...)
-  report(R, D, S, gspc, fxv, rates, lseg, out, ...)   the registered pass; returns the result dict
+  report(R, D, S, gspc, fxv, rates, lseg, ci, out, ...)   the registered pass; returns the result dict
   trial_rows(res, panel_id, engine_version)          gm/trials.csv rows of family 'diag'
 """
 import datetime as dt
@@ -28,7 +30,7 @@ import re
 import numpy as np
 import pandas as pd
 
-VERSION = "diag_preb-1.0.0"
+VERSION = "diag_preb-1.1.0"   # 1.1.0 (addendum): every row on the card inputs (card_inputs-1.0.0)
 A1_PANEL_ID = "e7f98d4439fccf91f3451bc4b9e78079e3bc2cc2452931363b28520460b6cb43"
 LOCK_V2 = "d85a46cb2853646b24796f294f3ccab1d1507188c402e978fd59f5196ea41fc9"
 LSEG_LOCK = "90322681b9f989cc24393ae7de4fe24bf5af2f32074ffa6400b1cbed09c4074c"          # LOCK_LSEG_v5
@@ -44,18 +46,9 @@ CORE_NEEDS = ("CORE V1 JOB DONE", "CORE BOOK V1 EMPTY")
 SEAL = pd.Timestamp("2010-12-31")
 DEC = (pd.Period("1975-01", "M"), pd.Period("2010-11", "M"))        # decision months (7.3 item 5)
 MIN_PRINT = 60
-DIAG_IDS = ("R1", "C1-D1", "C1-D2", "C2-D1", "C3-D1", "C5-D1", "C5-D2", "F0")
-BLOCKED = (
-    "C2-D2: card 2 R1, R2 need GS10, CPILFESL, UNRATE (first vintages) and card 1 R4's state CPILFESL, FEDFUNDS: not in "
-    "the free inputs",
-    "C3-D2: FEDFUNDS not in the free inputs",
-    "C4-D1: VIXCLS not in the free inputs",
-    "C4-D2: card 4 R5 needs CPILFESL, FEDFUNDS, GS2, GS10 and card 3 R2 needs GS2, GS10: not in the free inputs",
-    "C1-D1, C1-D2, F0 for card 1 R1-R4: FEDFUNDS, GS2, GS5, GS10, BAA, TWEXMMTH / DTWEXBGS, WTISPLC, CPILFESL, M2SL",
-    "C3-D1, F0 for card 3 R1 (FEDFUNDS gate versions), R2 (GS2, GS10), R3 (FEDFUNDS, GS1, GS2, PCEPILFE)",
-    "F0 for card 2 R1, R2 (GS10, CPILFESL, UNRATE) and card 4 R5 (CPILFESL, FEDFUNDS, GS2, GS10)",
-    "unblocked by ONE data entry 'card inputs (FRED / ALFRED)' (gm/CHANGES.md 'Pre-B diagnostics' item 4), then "
-    "gm_diag_preb_v2; no LSEG pull is needed")
+DIAG_IDS = ("R1", "C1-D1", "C1-D2", "C2-D1", "C2-D2", "C3-D1", "C3-D2", "C4-D1", "C4-D2", "C5-D1", "C5-D2", "F0")
+BLOCKED = ()          # 1.1.0: none (data entry "card inputs"; addendum A1)
+CARD_LOCK = "6c154f7d736cefd141fac2252a71536811e7440724d8e3cb4d4eacfecb8e3110"           # LOCK_CARD_v1
 
 # --------------------------------------------------------------------------------------------------- card markets
 R5_CUR = ("EUR", "JPY", "GBP", "AUD", "CAD")
@@ -64,7 +57,8 @@ R5_LEGS = {"EUR": ("eq_de_dax", "bd_de_10y"), "JPY": ("eq_jp_nikkei", "bd_jp_10y
 C2_COUNTRIES = (("US", "eq_us_spx", "bd_us_10y"), ("JP", "eq_jp_nikkei", "bd_jp_10y"), ("DE", "eq_de_dax", "bd_de_10y"),
                 ("GB", "eq_gb_ftse", "bd_gb_10y"), ("CA", "eq_ca_tsx", "bd_ca_10y"))
 RATE_SERIES = {"US": ("TB3MS",), "JP": ("IR3TIB01JPM156N",), "DE": ("IR3TIB01DEM156N", "IR3TIB01EZM156N"),
-               "GB": ("IR3TIB01GBM156N",), "CA": ("IR3TIB01CAM156N",)}
+               "GB": ("IR3TIB01GBM156N",), "CA": ("IR3TIB01CAM156N",), "CH": ("IR3TIB01CHM156N",),
+               "SE": ("IR3TIB01SEM156N",)}
 EPS_SID = "DS:@:USSP500|A12FE"
 C5_P = {"cm_copper": "HP:HGc1|CLOSE", "cm_wti": "HP:CLc1|CLOSE"}
 C5_GRAINS = {"wheat": "HP:Wc1|CLOSE", "corn": "HP:Cc1|CLOSE", "soybeans": "HP:Sc1|CLOSE"}
@@ -757,12 +751,419 @@ def c5d2(Pslow, Pcrude, Pgrains, Prep=None):
 
 
 # =====================================================================================================================
+# 1.1.0: the card rules on the locked card inputs (gm/CHANGES.md "Pre-B diagnostics" addendum A1-A6)
+# =====================================================================================================================
+R4B_BASKET = ("cm_wti", "cm_brent", "cm_natgas", "cm_heatoil", "cm_gasoline", "cm_gold", "cm_silver", "cm_copper",
+              "cm_platinum", "cm_corn", "cm_wheat", "cm_soybeans", "cm_sugar", "cm_coffee", "cm_cotton", "cm_cattle")
+C3_CUR = (("US", None), ("JP", "fx_jpy"), ("CH", "fx_chf"), ("EZ", "fx_eur"), ("GB", "fx_gbp"), ("CA", "fx_cad"),
+          ("SE", "fx_sek"))
+
+
+def tail(cond, n):
+    """Held from a condition month to n months after the last one (inclusive); n = 0: the condition months."""
+    c = cond.fillna(False).astype(float)
+    return (c.rolling(n + 1, min_periods=1).max() > 0) if n else c > 0
+
+
+def leg(on, vol, sign, k, idx):
+    """direction x 0.40 / vol / k where on and a volatility exists, else 0 (no volatility, no position)."""
+    if vol is None:                                           # market not in the panel: no position
+        return pd.Series(0.0, index=idx)
+    v = vol.reindex(idx)
+    o = on.reindex(idx).fillna(False).astype(bool)
+    return (sign * 0.40 / v / k).where(o & v.notna(), 0.0).fillna(0.0)
+
+
+def months_of(cond, start=None):
+    c = cond.fillna(False).astype(bool)
+    c = c[in_dec(c.index)]
+    if start is not None:
+        c = c[c.index >= start]
+    return [p for p, v in c.items() if v]
+
+
+def rule(legs, cond_months, versions, start=None):
+    pos = pd.concat(list(legs.values()), axis=1)
+    pos = pos.T.groupby(level=0).sum().T                     # a market in two legs: summed
+    return {"pos": pos, "legs": legs, "cond_months": cond_months, "versions": versions, "start": start}
+
+
+def core_cpi(ci):
+    """A3: CPILFESL 12-month change by data entry item 5, lag 1 -> (value, flagged)."""
+    return ci.fr_change("CPILFESL", 12)
+
+
+def r4_state(ci, H):
+    c, _ = core_cpi(ci)
+    ff = ci.m("FEDFUNDS").reindex(c.index)
+    return (c > H) & (ff < c)
+
+
+def _idx(R):
+    return R.index
+
+
+def card1_rules(ci, R, vol, spx_me):
+    """Card 1 R1-R4 (SPEC_Card1 s3; addendum A3). -> {rule: rule dict}."""
+    idx = _idx(R)
+    g = lambda s: s.reindex(idx)  # noqa: E731
+    FF, GS2, GS5, GS10, BAA = (g(ci.m(x)) for x in ("FEDFUNDS", "GS2", "GS5", "GS10", "BAA"))
+    WTI, TW, DB = g(ci.m("WTISPLC")), g(ci.m("TWEXMMTH")), g(ci.m("DTWEXBGS"))
+    m2 = g(ci.fr_change("M2SL", 12)[0])
+    s5 = g(r4_state(ci, 5.0)).fillna(False).astype(bool)
+    out = {}
+    # R1 Squeeze
+    legs = {"2-year": pd.DataFrame(0.0, index=idx, columns=["bd_us_2y"]),
+            "10-year": pd.DataFrame(0.0, index=idx, columns=["bd_us_10y"])}
+    cond_any = pd.Series(False, index=idx)
+    vers = [(L, r, gate) for L in (6, 12) for r in ("FEDFUNDS", "GS10") for gate in (False, True)]
+    for L, rn, gate in vers:
+        rr = FF if rn == "FEDFUNDS" else GS10
+        both_tw = TW.notna() & TW.shift(L).notna()
+        dol = (TW > TW.shift(L)).where(both_tw, DB > DB.shift(L))
+        cond = (WTI > WTI.shift(L)) & dol.fillna(False).astype(bool) & (rr > rr.shift(L))
+        cond_any |= cond
+        held = tail(cond, 12) & (~s5 if gate else True)
+        for lg, mk in (("2-year", "bd_us_2y"), ("10-year", "bd_us_10y")):
+            legs[lg][mk] += leg(held, vol.get(mk), 1, 2, idx) / len(vers)
+    out["card 1 R1"] = rule(legs, months_of(cond_any), len(vers))
+    # R2 Tightening into warnings
+    legs = {"2-year": pd.DataFrame(0.0, index=idx, columns=["bd_us_2y"]),
+            "10-year": pd.DataFrame(0.0, index=idx, columns=["bd_us_10y"])}
+    cond_any = pd.Series(False, index=idx)
+    vers = [(T, k, gate) for T in (6, 12) for k in (2, 3) for gate in (False, True)]
+    sp = BAA - GS10
+    wa = (GS5 - GS2 < 0).where(GS2.notna(), False).fillna(False).astype(bool)
+    wb = (sp > sp.shift(6)).fillna(False)
+    wc = (m2 < m2.shift(24)).fillna(False)
+    nw = wa.astype(int) + wb.astype(int) + wc.astype(int)
+    start2 = GS2.first_valid_index()
+    for T, k, gate in vers:
+        cond = (FF >= FF.shift(T) + 0.25) & (nw >= k)
+        cond = cond & (idx >= start2)
+        cond_any |= cond
+        held = tail(cond, 12) & (~s5 if gate else True) & (idx >= start2)
+        for lg, mk in (("2-year", "bd_us_2y"), ("10-year", "bd_us_10y")):
+            legs[lg][mk] += leg(held, vol.get(mk), 1, 2, idx) / len(vers)
+    out["card 1 R2"] = rule(legs, months_of(cond_any, start2), len(vers), start2)
+    # R3 Easing into strength
+    legs = {"10-year": pd.DataFrame(0.0, index=idx, columns=["bd_us_10y"]),
+            "S&P": pd.DataFrame(0.0, index=idx, columns=["eq_us_spx"])}
+    cond_any = pd.Series(False, index=idx)
+    spx = spx_me.reindex(idx)
+    spx_ok = spx > spx.rolling(10, min_periods=10).mean()
+    spv = sp.dropna()
+    med = spv.expanding().quantile(0.5, interpolation="linear").reindex(idx)
+    low3 = spv.expanding().quantile(0.333, interpolation="linear").reindex(idx)
+    gold = R["cm_gold"] if "cm_gold" in R else pd.Series(np.nan, index=idx)
+    lvl = (1 + gold.fillna(0)).cumprod().where(gold.notna().cummax())
+    gold_hi = (lvl >= lvl.rolling(12, min_periods=12).max()) & lvl.notna()
+    vers = [(sv, gv) for sv in ("median", "third") for gv in (False, True)]
+    for sv, gv in vers:
+        sc = (sp < med) if sv == "median" else (sp <= low3)
+        cond = (FF <= FF.shift(3) - 0.25) & sc.fillna(False) & spx_ok.fillna(False)
+        if gv:
+            cond = cond & gold_hi.fillna(False)
+        cond_any |= cond
+        held = tail(cond, 12)
+        legs["10-year"]["bd_us_10y"] += leg(held, vol.get("bd_us_10y"), -1, 2, idx) / len(vers)
+        legs["S&P"]["eq_us_spx"] += leg(held, vol.get("eq_us_spx"), 1, 2, idx) / len(vers)
+    out["card 1 R3"] = rule(legs, months_of(cond_any), len(vers))
+    # R4 Behind on inflation (no tail)
+    bk = [m for m in R4B_BASKET if m in vol]
+    legs = {"2-year": pd.DataFrame(0.0, index=idx, columns=["bd_us_2y"]),
+            "10-year": pd.DataFrame(0.0, index=idx, columns=["bd_us_10y"]),
+            "S&P": pd.DataFrame(0.0, index=idx, columns=["eq_us_spx"]),
+            "basket": pd.DataFrame(0.0, index=idx, columns=bk)}
+    cond_any = pd.Series(False, index=idx)
+    vers = [(H, a) for H in (5.0, 4.5) for a in ("A", "B")]
+    vb = vol.reindex(idx)[bk] if bk else pd.DataFrame(index=idx)
+    nb = vb.notna().sum(axis=1).replace(0, np.nan)
+    for H, a in vers:
+        st = g(r4_state(ci, H)).fillna(False).astype(bool)
+        cond_any |= st
+        k = 2 if a == "A" else 4
+        legs["2-year"]["bd_us_2y"] += leg(st, vol.get("bd_us_2y"), -1, k, idx) / len(vers)
+        legs["10-year"]["bd_us_10y"] += leg(st, vol.get("bd_us_10y"), -1, k, idx) / len(vers)
+        if a == "B":
+            legs["S&P"]["eq_us_spx"] += leg(st, vol.get("eq_us_spx"), -1, k, idx) / len(vers)
+            for m in bk:
+                legs["basket"][m] += (leg(st, vb[m], 1, k, idx) / nb).fillna(0.0) / len(vers)
+    out["card 1 R4"] = rule(legs, months_of(cond_any), len(vers))
+    return out
+
+
+def card2_rules(ci, R, vol, spx_me):
+    """Card 2 R1, R2 by version (SPEC_Card2 s3; addendum A4). -> {rule: {version: (cond, held)}}, rule dicts."""
+    idx = _idx(R)
+    GS10 = ci.m("GS10").reindex(idx)
+    c = core_cpi(ci)[0].reindex(idx)
+    y = GS10 - c
+    yv = y.dropna()
+    y3 = yv.expanding(min_periods=120).quantile(0.333, interpolation="linear").reindex(idx)
+    hedge = R["eq_us_spx"].rolling(12, min_periods=12).corr(R["bd_us_10y"]) > 0
+    vers1 = {}
+    for bar in ("0.0", "third"):
+        for hg in (False, True):
+            on = (y < 0.0) if bar == "0.0" else (y <= y3)
+            on = on.fillna(False) & (hedge.fillna(False) if hg else True)
+            vers1[(bar, hg)] = (on, on)                       # no tail
+    spx = spx_me.reindex(idx)
+    d = GS10 - GS10.shift(12)
+    chg = 100.0 * (spx / spx.shift(12) - 1)
+    un = ci.fr_level("UNRATE")[0].reindex(idx)
+    low240 = un.shift(1).rolling(240, min_periods=240).min()
+    vers2 = {}
+    for X in (1.5, 1.0):
+        for lab in (False, True):
+            on = (d >= X) & (chg >= -10 * d)
+            if lab:
+                on = on & (un <= low240)
+            on = on.fillna(False)
+            vers2[(X, lab)] = (on, tail(on, 12))
+    return {"card 2 R1": vers1, "card 2 R2": vers2}
+
+
+def c2d2(vers, r4_45):
+    """Per version: on-months, episodes, share inside card 1 R4's 4.5 state; left out by the registered rule."""
+    st = r4_45.fillna(False).astype(bool)
+    out = {}
+    for v, (on, _held) in vers.items():
+        om = months_of(on)
+        n = len(om)
+        inside = sum(1 for p in om if bool(st.get(p, False)))
+        share = inside / n if n else float("nan")
+        ep = episodes(om)
+        keep = n >= 24 and ep >= 3 and not (n and share > 2.0 / 3.0)
+        out[v] = {"on": n, "episodes": ep, "inside": share, "keep": keep}
+    return out
+
+
+def card2_rule(vers, keep, mk, sign, vol, idx):
+    kept = [v for v in vers if keep[v]["keep"]]
+    lg = pd.DataFrame(0.0, index=idx, columns=[mk])
+    for v in kept:
+        lg[mk] += leg(vers[v][1], vol.get(mk), sign, 1, idx) / len(kept)
+    cond = pd.Series(False, index=idx)
+    for v in kept:
+        cond |= vers[v][0].reindex(idx).fillna(False)
+    return rule({"leg": lg}, months_of(cond), len(kept))
+
+
+def par_dur(y, n):
+    y = y / 100.0
+    return (1 - (1 + y / 2) ** (-2 * n)) / y
+
+
+def pair_vol(R, GS2, GS10):
+    """A5: the pair's own monthly return R2y(t) - h(t-1) R10y(t), h = D2 / D10, and its hybrid volatility."""
+    from gm import config as CF
+    from gm import vol as VM
+    h = par_dur(GS2, 2) / par_dur(GS10, 10)
+    r = R["bd_us_2y"] - h.shift(1) * R["bd_us_10y"]
+    return VM.estimate(pd.DataFrame({"pair": r}), CF.CANDIDATE, None)["pair"], h
+
+
+def pair_rule(on, vpair, h, idx, nver):
+    """Long 2-year at 0.40 / pair vol, short 10-year at that x h; -> (2-year, 10-year) contributions / nver."""
+    p2 = leg(on, vpair, 1, 1, idx)
+    return p2 / nver, (-p2 * h.reindex(idx)).fillna(0.0) / nver
+
+
+def fixed_runs(dirn, scale):
+    """A5: notional fixed at the first month of a run with the same direction (a change of direction or a zero ends it)."""
+    out = pd.Series(0.0, index=dirn.index)
+    cur, val = 0, 0.0
+    for t in dirn.index:
+        d = int(dirn[t]) if dirn[t] == dirn[t] else 0
+        s = scale[t]
+        if d == 0 or s != s:
+            cur, val = 0, 0.0
+            continue
+        if d != cur:
+            cur, val = d, d * s
+        out[t] = val
+    return out
+
+
+def card3_r1(rates, R, vol, FF, with_gate=True):
+    """Card 3 R1 (A5): versions L x shape x gate x sizing; -> rule dict (averaged positions on the six fx markets)."""
+    idx = _idx(R)
+    ch = {}
+    for cc, _mk in C3_CUR:
+        r = rates[{"EZ": "DE", "US": "TB3MS"}.get(cc, cc)].reindex(idx).shift(1)   # mark then euro; lag 1
+        ch[cc] = r
+    act = (FF.rolling(12, min_periods=12).max() - FF.rolling(12, min_periods=12).min()) >= 0.50
+    vsz = np.maximum(vol, vol.expanding(min_periods=1).median()).where(vol.notna())
+    mks = [mk for _c, mk in C3_CUR if mk]
+    gates = (False, True) if with_gate else (False,)
+    vers = [(L, sh, gt, sz) for L in (6, 12) for sh in ("A", "B") for gt in gates for sz in (False, True)]
+    pos = pd.DataFrame(0.0, index=idx, columns=mks)
+    cond_any = pd.Series(False, index=idx)
+    for L, sh, gt, sz in vers:
+        V = (vsz if sz else vol).reindex(idx)
+        c = pd.DataFrame({cc: ch[cc] - ch[cc].shift(L) for cc, _ in C3_CUR})
+        avail = pd.DataFrame({cc: (c[cc].notna() & (R[mk].notna() if mk in R else False) & V[mk].notna()
+                                   if mk else c[cc].notna()) for cc, mk in C3_CUR})
+        on_g = act.fillna(False) if gt else pd.Series(True, index=idx)
+        roles = {}                                            # (market, role) -> (direction frame, scale frame)
+        for t in idx:
+            if not on_g[t] or not avail.at[t, "US"]:
+                continue
+            av = [cc for cc, mk in C3_CUR if mk and avail.at[t, cc]]
+            if not av:
+                continue
+            cus = c.at[t, "US"]
+            if sh == "A":
+                for cc in av:
+                    d = np.sign(c.at[t, cc] - cus)
+                    if d:
+                        mk = dict(C3_CUR)[cc]
+                        roles.setdefault((mk, "A"), {})[t] = (d, 0.40 / V.at[t, mk] / 6)
+            else:
+                order = ["US"] + av
+                vals = np.array([c.at[t, x] for x in order])
+                hi, lo = order[int(np.argmax(vals))], order[int(np.argmin(vals))]
+                if hi == lo:
+                    continue
+                if hi == "US":
+                    for cc in av:
+                        mk = dict(C3_CUR)[cc]
+                        roles.setdefault((mk, "basket long"), {})[t] = (-1, 0.40 / V.at[t, mk] / 2 / len(av))
+                else:
+                    mk = dict(C3_CUR)[hi]
+                    roles.setdefault((mk, "long"), {})[t] = (1, 0.40 / V.at[t, mk] / 2)
+                if lo == "US":
+                    for cc in av:
+                        mk = dict(C3_CUR)[cc]
+                        roles.setdefault((mk, "basket short"), {})[t] = (1, 0.40 / V.at[t, mk] / 2 / len(av))
+                else:
+                    mk = dict(C3_CUR)[lo]
+                    roles.setdefault((mk, "short"), {})[t] = (-1, 0.40 / V.at[t, mk] / 2)
+        for (mk, _role), d in roles.items():
+            dirn = pd.Series({t: v[0] for t, v in d.items()}).reindex(idx).fillna(0)
+            scale = pd.Series({t: v[1] for t, v in d.items()}).reindex(idx)
+            pos[mk] += fixed_runs(dirn, scale) / len(vers)
+            cond_any |= dirn != 0
+    return rule({"fx": pos}, months_of(cond_any), len(vers))
+
+
+def card3_rules(ci, R, vol, rates):
+    """Card 3 R2, R3 (A5) and the C3-D2 count. -> (rules, c3d2 dict)."""
+    idx = _idx(R)
+    FF, GS1, GS2, GS10 = (ci.m(x).reindex(idx) for x in ("FEDFUNDS", "GS1", "GS2", "GS10"))
+    rng = FF.rolling(12, min_periods=12).max() - FF.rolling(12, min_periods=12).min()
+    w = (idx >= pd.Period("1975-01", "M")) & (idx <= pd.Period("2010-12", "M"))
+    quiet = int(((rng < 0.50) & rng.notna())[w].sum())
+    d2 = {"gate_off_months": quiet, "gate_kept": quiet >= 60}
+    out = {}
+    vpair, h = pair_vol(R, GS2, GS10)
+    S = GS10 - GS2
+    Smean = S.dropna().expanding(min_periods=120).mean().reindex(idx)
+    p2 = pd.DataFrame(0.0, index=idx, columns=["bd_us_2y"])
+    p10 = pd.DataFrame(0.0, index=idx, columns=["bd_us_10y"])
+    cond_any = pd.Series(False, index=idx)
+    vers = [(b, sz) for b in ("1.0", "mean") for sz in (False, True)]
+    vps = np.maximum(vpair, vpair.expanding(min_periods=1).median()).where(vpair.notna())
+    for b, sz in vers:
+        on = ((S < 1.0) if b == "1.0" else (S < Smean)).fillna(False)
+        cond_any |= on
+        a2, a10 = pair_rule(on, vps if sz else vpair, h, idx, len(vers))
+        p2["bd_us_2y"] += a2
+        p10["bd_us_10y"] += a10
+    out["card 3 R2"] = rule({"2-year": p2, "10-year": p10}, months_of(cond_any, GS2.first_valid_index()), len(vers),
+                            GS2.first_valid_index())
+    pc = ci.fr_change("PCEPILFE", 12)[0].reindex(idx)
+    v2 = vol.get("bd_us_2y")
+    v2s = np.maximum(v2, v2.expanding(min_periods=1).median()).where(v2.notna())
+    lg = pd.DataFrame(0.0, index=idx, columns=["bd_us_2y"])
+    cond_any = pd.Series(False, index=idx)
+    vers = [(m, B, sz) for m in (1, 2) for B in (3.0, 4.0) for sz in (False, True)]
+    for m, B, sz in vers:
+        meas = (FF - GS2) if m == 1 else 2 * (GS1 - GS2)
+        on = ((meas >= 0.50) & (pc > B)).fillna(False)
+        cond_any |= on
+        lg["bd_us_2y"] += leg(on, v2s if sz else v2, -1, 1, idx) / len(vers)
+    out["card 3 R3"] = rule({"leg": lg}, months_of(cond_any, GS2.first_valid_index()), len(vers),
+                            GS2.first_valid_index())
+    out["card 3 R1"] = card3_r1(rates, R, vol, FF, with_gate=d2["gate_kept"])
+    return out, d2, {"vpair": vpair, "h": h, "S": S, "Smean": Smean}
+
+
+def card4_r5(ci, R, aux):
+    """Card 4 R5 by version (A6) -> {version: (on, positions frame)}, start."""
+    idx = _idx(R)
+    FF = ci.m("FEDFUNDS").reindex(idx)
+    GS2 = ci.m("GS2").reindex(idx)
+    c = core_cpi(ci)[0].reindex(idx)
+    start = GS2.first_valid_index()
+    vers = {}
+    for v in (1, 2):
+        on = (c < c.shift(6))
+        if v == 2:
+            on = on & (FF <= FF.shift(6) - 0.25)
+        on = on.fillna(False) & (idx >= start)
+        a2, a10 = pair_rule(on, aux["vpair"], aux["h"], idx, 1)
+        vers[v] = (on, pd.DataFrame({"bd_us_2y": a2, "bd_us_10y": a10}))
+    return vers, start
+
+
+def c4d2(vers, r2_on, score):
+    """Per R5 version: share of on-months with card 3 R2 on, and with Trend long 2-year and short or flat 10-year."""
+    out = {}
+    for v, (on, _p) in vers.items():
+        om = months_of(on)
+        n = len(om)
+        a = sum(1 for p in om if bool(r2_on.get(p, False)))
+        tl = sum(1 for p in om if (score.at[p, "bd_us_2y"] > 0 if p in score.index else False) and
+                 (score.at[p, "bd_us_10y"] <= 0 if p in score.index else False))
+        out[v] = {"on": n, "r2": a / n if n else float("nan"), "trend": tl / n if n else float("nan")}
+    hit = any(all(out[v][k] == out[v][k] and out[v][k] >= 0.80 for v in out) for k in ("r2", "trend"))
+    return {"versions": out, "not_registered": bool(hit)}
+
+
+def c4d1(ci, gspc):
+    """C4-D1 (A6): month-ends 1990-01..2010-06."""
+    lv = gspc.dropna().copy()
+    lv.index = pd.DatetimeIndex(lv.index).normalize()
+    lv = lv[~lv.index.duplicated(keep="last")].sort_index()
+    lv = lv[lv.index <= SEAL]
+    me = lv.groupby(lv.index.to_period("M")).last()
+    vix = ci.m("VIXCLS")
+    ret = lv.pct_change()
+    rows = []
+    for t in pd.period_range("1990-01", "2010-06", freq="M"):
+        if t not in me.index or (t - 6) not in me.index or t not in vix.index or (t - 6) not in vix.index:
+            continue
+        up = me[t] > me[t - 6]
+        if not up:
+            continue
+        st = vix[t] > vix[t - 6]
+        path = lv[(lv.index.to_period("M") >= t) & (lv.index.to_period("M") <= t + 6)]
+        path = path[path.index >= lv[lv.index.to_period("M") == t].index[-1]]
+        dd = float((1 - path / path.cummax()).max())
+        r3 = ret[(ret.index.to_period("M") >= t - 2) & (ret.index.to_period("M") <= t)].dropna()
+        sd = float(r3.std(ddof=1)) * np.sqrt(252)
+        if not (sd > 0):
+            continue
+        rows.append((t, bool(st), dd / sd))
+    res = {}
+    for lab, a, b in (("1990-01..2010-06", "1990-01", "2010-06"), ("1990-99", "1990-01", "1999-12"),
+                      ("2000-01..2010-06", "2000-01", "2010-06")):
+        on = [x for t, s, x in rows if s and pd.Period(a, "M") <= t <= pd.Period(b, "M")]
+        off = [x for t, s, x in rows if not s and pd.Period(a, "M") <= t <= pd.Period(b, "M")]
+        ratio = (np.median(on) / np.median(off)) if (on and off and np.median(off) > 0) else float("nan")
+        res[lab] = {"on": len(on), "off": len(off), "ratio": ratio, "ok": bool(ratio == ratio and ratio >= 1.25)}
+    return {"windows": res, "pass": all(v["ok"] for v in res.values())}
+
+
+# =====================================================================================================================
 # the registered pass
 # =====================================================================================================================
-def report(R, D, S, gspc, fxv, rates, lseg, out=print, cfg=None, facts=None):
+def report(R, D, S, gspc, fxv, rates, lseg, ci, out=print, cfg=None, facts=None):
     """R, S: the A1 panel and signals; D, gspc: free daily inputs; fxv: panel.fx_usd_value frame (R5_CUR); rates
-    {country: Series} + 'TB3MS'; lseg: LsegView (or a mock with monthly / daily / ed_contracts); facts: the A2 report
-    facts (None = no as-run check, tests). Returns dict(gates, results)."""
+    {country: Series} + 'TB3MS'; lseg: LsegView (or a mock with monthly / daily / ed_contracts); ci: card_inputs.Inputs
+    (LOCK_CARD_v1); facts: the A2 report facts (None = no as-run check, tests). Returns dict(gates, results)."""
     import diag_a2 as DG
     from gm import config as CF
     from gm import execution as EX
@@ -786,6 +1187,8 @@ def report(R, D, S, gspc, fxv, rates, lseg, out=print, cfg=None, facts=None):
         "registered systematic book %s (%s), A1 panel, positions book.run pos; LSEG design part as of 2010-12-31; zero "
         "slots, nothing adopted; values over fewer than 60 months are printed as count and sign" % (
             cfg["name"], CF.cfg_hash(cfg)))
+    if getattr(ci, "lock_id", None) != CARD_LOCK:
+        raise RuntimeError("card inputs are not LOCK_CARD_v1")
     out("CORE BOOK READING | C3-D1 'Core book' = the registered systematic book (7.5 fix: content, not trading status); "
         "C1-D2 the same; C4-D2 and C5-D1 name Trend (a pod of that book); the others name no book: the empty Core book "
         "v1 changes no reference here")
@@ -811,26 +1214,27 @@ def report(R, D, S, gspc, fxv, rates, lseg, out=print, cfg=None, facts=None):
         r["qualifying"], r["eligible"], cell(r["share"], r["eligible"]),
         "PASS: Strip reversion enters B2 (both versions)" if r["pass"] else "FAIL: Strip reversion dropped unbuilt"))
     gates["R1"] = "PASS" if r["pass"] else "FAIL"
-    # ---- card 1 R5
-    r5 = card1_r5(fxv, vol)
-    d1 = c1d1(r5["cond_months"])
-    res["C1-D1"] = d1
-    out("C1-D1 | card 1 R5 | condition months (any version) %d | episodes %d | gate fewer than 6 | %s" % (
-        d1["condition_months"], d1["episodes"], "PASS: " + d1["outcome"] if d1["pass"] else "FAIL: " + d1["outcome"]))
-    gates["C1-D1"] = "R5 %s" % ("PASS" if d1["pass"] else "FAIL")
-    d2 = c1d2(r5, book_pos)
-    res["C1-D2"] = d2
-    for leg in ("stock", "bond"):
-        x = d2[leg]
-        out("C1-D2 | card 1 R5 %s leg | held market-months %d | same sign as the book %s | gate > 0.80 | %s" % (
-            leg, x["n"], cell(x["share"], x["n"]), "leg dropped" if x["drop"] else "leg stays"))
-    gates["C1-D2"] = "R5 stock %s, bond %s" % ("dropped" if d2["stock"]["drop"] else "stays",
-                                                "dropped" if d2["bond"]["drop"] else "stays")
+    # ---- first-published inputs (data entry items 2, 5)
+    for sid, k in (("CPILFESL", 12), ("M2SL", 12), ("PCEPILFE", 12), ("UNRATE", None)):
+        sh, n = ci.flagged_share(sid, k)
+        out("CARD INPUTS | %s %s | first published where a comparable vintage exists, else latest (flagged) | flagged "
+            "share 1975-2010 %s | breaks %s" % (sid, "%d-month change" % k if k else "level", cell(sh, n),
+                                                 "n/a (level)" if not k else (", ".join(str(x) for x in
+                                                                                     ci.breaks(sid)) or "none")))
+    lv = gspc.dropna().copy()
+    lv.index = pd.DatetimeIndex(lv.index).normalize()
+    spx_me = lv.groupby(lv.index.to_period("M")).last()
+    F0R = []                                                    # (rule, held months, note)
+
+    def f0line(name, held, note=""):
+        x = f0(held, name)
+        x["note"] = note
+        F0R.append(x)
     # ---- C2-D1
     c2 = c2d1(R, rates)
     res["C2-D1"] = c2
     out("C2-D1 | worst-fifth months by country (low-rate / other): %s" % ", ".join(
-        "%s %d / %d" % (k, a, b) for k, (a, b) in c2["countries"].items()))
+        "%s %d / %d" % (k, a_, b_) for k, (a_, b_) in c2["countries"].items()))
     for lab in ("pooled", "japan"):
         g = c2[lab]
         out("C2-D1 | %s | 10-year bond mean excess return: rate < 1.0 %s | rate >= 1.0 %s | %s" % (
@@ -839,20 +1243,115 @@ def report(R, D, S, gspc, fxv, rates, lseg, out=print, cfg=None, facts=None):
                  "%.2f %%/yr"),
             ("PASS" if g["pass"] else "FAIL") + (" (gate)" if lab == "pooled" else " (reported)")))
     gates["C2-D1"] = "PASS" if c2["pooled"]["pass"] else "FAIL"
-    out("C2-D1 GATE | %s" % ("PASS: floor versions on card 1 R1, R2 and a card 2 stop line" if c2["pooled"]["pass"]
-                             else "FAIL: no change"))
-    # ---- card 3 R4
+    out("C2-D1 GATE | %s" % ("PASS: floor versions on card 1 R1, R2 and a card 2 stop line (they change no count here, "
+                             "addendum A2)" if c2["pooled"]["pass"] else "FAIL: no change"))
+    # ---- card 1: C1-D1, C1-D2, F0
+    rules1 = card1_rules(ci, R, vol, spx_me)
+    r5 = card1_r5(fxv, vol)
+    rules1["card 1 R5"] = rule(r5["legs"], r5["cond_months"], 4)
+    g11, g12 = [], []
+    res["C1-D1"], res["C1-D2"] = {}, {}
+    for name in ("card 1 R1", "card 1 R2", "card 1 R3", "card 1 R4", "card 1 R5"):
+        ru = rules1[name]
+        d1 = c1d1(ru["cond_months"])
+        res["C1-D1"][name] = d1
+        out("C1-D1 | %s | condition months (any version) %d | episodes %d | gate fewer than 6 | %s" % (
+            name, d1["condition_months"], d1["episodes"], ("PASS: " if d1["pass"] else "FAIL: ") + d1["outcome"]))
+        g11.append("%s %s" % (name[7:], "PASS" if d1["pass"] else "FAIL"))
+        kept, dr = {}, []
+        res["C1-D2"][name] = {}
+        for lg_, frame in ru["legs"].items():
+            sh, n = same_sign_share(frame, book_pos, start=ru["start"])
+            drop = bool(n and sh > 0.80)
+            res["C1-D2"][name][lg_] = {"share": sh, "n": n, "drop": drop}
+            out("C1-D2 | %s %s leg | held market-months %d | same sign as the book %s | gate > 0.80 | %s" % (
+                name, lg_, n, cell(sh, n), "leg dropped" if drop else "leg stays"))
+            if drop:
+                dr.append(lg_)
+            else:
+                kept[lg_] = frame
+        g12.append("%s %s" % (name[7:], ("dropped " + "/".join(dr)) if dr else "all legs stay"))
+        pos = pd.concat(list(kept.values()), axis=1) if kept else pd.DataFrame(index=R.index)
+        f0line(name, nonzero_months(pos, start=ru["start"]) if kept else [],
+               "" if d1["pass"] else "rule not in B2: C1-D1 watch condition")
+    gates["C1-D1"] = ", ".join(g11)
+    gates["C1-D2"] = ", ".join(g12)
+    # ---- card 2: C2-D2, F0
+    r45 = r4_state(ci, 4.5).reindex(R.index)
+    v2 = card2_rules(ci, R, vol, spx_me)
+    res["C2-D2"] = {}
+    g22 = []
+    for name, mk in (("card 2 R1", "bd_us_10y"), ("card 2 R2", "eq_us_spx")):
+        kp = c2d2(v2[name], r45)
+        res["C2-D2"][name] = kp
+        for v, x in kp.items():
+            out("C2-D2 | %s version %s | on-months %d | episodes %d | share inside card 1 R4's 4.5 state %s | %s" % (
+                name, "/".join(str(z) for z in v), x["on"], x["episodes"], cell(x["inside"], x["on"]),
+                "kept" if x["keep"] else "left out"))
+        nk = sum(1 for x in kp.values() if x["keep"])
+        g22.append("%s %d of %d versions kept" % (name[7:], nk, len(kp)))
+        if nk:
+            ru = card2_rule(v2[name], kp, mk, -1, vol, R.index)
+            f0line(name, nonzero_months(ru["pos"]))
+        else:
+            out("C2-D2 | %s | no version left: the rule is not run" % name)
+            f0line(name, [], "rule not run: C2-D2 left every version out")
+    gates["C2-D2"] = ", ".join(g22)
+    # ---- card 3: C3-D2, C3-D1, F0
+    rules3, d32, aux = card3_rules(ci, R, vol, rates)
+    res["C3-D2"] = d32
+    out("C3-D2 | card 3 R1 activity gate | design months with the FEDFUNDS 12-month range below 0.50: %d | gate fewer "
+        "than 60 | %s" % (d32["gate_off_months"], "gate kept (R1 16 versions with sizing)" if d32["gate_kept"] else
+                          "gate dropped (R1 8 versions with sizing)"))
+    gates["C3-D2"] = "gate kept" if d32["gate_kept"] else "gate dropped"
     eps = lseg.monthly(EPS_SID)
-    lv = gspc.dropna()
-    lv.index = pd.DatetimeIndex(lv.index).normalize()
-    spx_me = lv.groupby(lv.index.to_period("M")).last()
     r4 = card3_r4(eps, spx_me, rates["TB3MS"], vol["eq_us_spx"])
-    c3 = c3d1(r4, book_pos)
-    res["C3-D1"] = c3
-    out("C3-D1 | card 3 R4 | from %s | held months %d | same sign as the book %s | gate >= 0.80 dropped, 0.50-0.80 "
-        "flagged | %s" % (r4["start"], c3["n"], cell(c3["share"], c3["n"]), c3["outcome"]))
-    gates["C3-D1"] = "R4 %s" % c3["outcome"]
-    # ---- card 5 R1
+    rules3["card 3 R4"] = rule({"leg": r4["pos"].to_frame("eq_us_spx")}, [], 4, r4["start"])
+    res["C3-D1"] = {}
+    g31 = []
+    for name in ("card 3 R1", "card 3 R2", "card 3 R3", "card 3 R4"):
+        ru = rules3[name]
+        sh, n = same_sign_share(ru["pos"], book_pos, start=ru["start"])
+        lab = "dropped before B2" if (n and sh >= 0.80) else ("kept, flagged" if (n and sh >= 0.50) else "kept")
+        res["C3-D1"][name] = {"share": sh, "n": n, "outcome": lab}
+        out("C3-D1 | %s | versions %d | held market-months %d | same sign as the book %s | gate >= 0.80 dropped, "
+            "0.50-0.80 flagged | %s" % (name, ru["versions"], n, cell(sh, n), lab))
+        g31.append("%s %s" % (name[7:], lab))
+        f0line(name, nonzero_months(ru["pos"], start=ru["start"]),
+               "rule not in B2: C3-D1 dropped" if lab.startswith("dropped") else "")
+    gates["C3-D1"] = ", ".join(g31)
+    out("C3-D1 | reported lines (cards 1 and 2 in shared markets; R1 against Economic trend's monetary theme; R3 against "
+        "Carry's directional bonds) are not gates and are not printed in this version")
+    # ---- card 4: C4-D1, C4-D2, F0
+    c41 = c4d1(ci, gspc)
+    res["C4-D1"] = c41
+    for lab, x in c41["windows"].items():
+        out("C4-D1 | %s | up-months state on %d / other %d | median ratio %s | at least 1.25: %s" % (
+            lab, x["on"], x["off"], ("%.2f" % x["ratio"]) if (x["on"] >= MIN_PRINT and x["off"] >= MIN_PRINT and
+                                                              x["ratio"] == x["ratio"]) else "count only",
+            "yes" if x["ok"] else "no"))
+    out("C4-D1 GATE | %s" % ("PASS: half-size sizing version on card 4 R1-R4 (it changes no held month)" if c41["pass"]
+                             else "FAIL: analyst question only"))
+    gates["C4-D1"] = "PASS" if c41["pass"] else "FAIL"
+    v45, st45 = card4_r5(ci, R, aux)
+    sp_, spm = aux["S"], aux["Smean"]
+    r2on = ((sp_ < 1.0) | (sp_ < spm)).fillna(False)            # card 3 R2 on, either version
+    score = DG.trend_parts(R, D, S, cfg)[2]                      # the A2-final book's Trend score (addendum A6)
+    c42 = c4d2(v45, r2on, score)
+    res["C4-D2"] = c42
+    for v, x in c42["versions"].items():
+        out("C4-D2 | card 4 R5 version %d | on-months %d | share with card 3 R2 on %s | share with Trend long 2-year and "
+            "short or flat 10-year %s" % (v, x["on"], cell(x["r2"], x["on"]), cell(x["trend"], x["on"])))
+    out("C4-D2 GATE | either share >= 0.80 in both versions: %s | %s" % (
+        "yes" if c42["not_registered"] else "no", "R5 not registered (note to card 3 R2)" if c42["not_registered"] else
+        "R5 stays"))
+    gates["C4-D2"] = "R5 not registered" if c42["not_registered"] else "R5 stays"
+    c4 = card4_days(gspc, days, vol["eq_us_spx"])
+    for name in ("card 4 R1", "card 4 R2", "card 4 R3", "card 4 R4"):
+        f0line(name, c4[name]["months"])
+    p5 = (v45[1][1] + v45[2][1]) / 2
+    f0line("card 4 R5", nonzero_months(p5, start=st45), "rule not in B2: C4-D2" if c42["not_registered"] else "")
+    # ---- card 5: C5-D1, C5-D2, F0
     P = {mk: lseg.monthly(sid) for mk, sid in C5_P.items()}
     r5c = card5_r1(P, vol)
     avg, nv = trend12_avg_sign(R, D)
@@ -863,7 +1362,7 @@ def report(R, D, S, gspc, fxv, rates, lseg, out=print, cfg=None, facts=None):
                           cell(c5["share"], c5["n"]), "R1 not registered" if c5["not_registered"] else "R1 stays"))
     out("C5-D1 | reported, not a gate: same sign as the book's net position %s" % cell(c5["book_share"], c5["book_n"]))
     gates["C5-D1"] = "R1 %s" % ("not registered" if c5["not_registered"] else "stays")
-    Pg = {k: lseg.monthly(s) for k, s in C5_GRAINS.items()}
+    Pg = {k: lseg.monthly(s_) for k, s_ in C5_GRAINS.items()}
     c52 = c5d2({"copper": P["cm_copper"]}, {"crude": P["cm_wti"]}, Pg)
     res["C5-D2"] = c52
     out("C5-D2 | reported line not computed: %s" % C5_REPORTED_NOT_RUN)
@@ -880,19 +1379,16 @@ def report(R, D, S, gspc, fxv, rates, lseg, out=print, cfg=None, facts=None):
         else "n/a", "yes" if (c52["slow"]["breaks"] >= 10 and c52["grains"]["breaks"] >= 10) else "no",
         "PASS: R1 built" if c52["pass"] else "FAIL: R1 dropped unbuilt"))
     gates["C5-D2"] = "PASS" if c52["pass"] else "FAIL"
+    note5 = "; ".join(x for x in ("rule not in B2: C5-D1" if c5["not_registered"] else "",
+                                  "rule not in B2: C5-D2" if not c52["pass"] else "") if x)
+    f0line("card 5 R1", nonzero_months(r5c["pos"]), note5)
     # ---- F0
-    f = []
-    f.append(f0(nonzero_months(r5["pos"]), "card 1 R5"))
-    f.append(f0(nonzero_months(r4["pos"], start=r4["start"]), "card 3 R4"))
-    c4 = card4_days(gspc, days, vol["eq_us_spx"])
-    for name in ("card 4 R1", "card 4 R2", "card 4 R3", "card 4 R4"):
-        f.append(f0(c4[name]["months"], name))
-    f.append(f0(nonzero_months(r5c["pos"]), "card 5 R1"))
-    res["F0"] = f
-    for x in f:
-        out("F0 | %s | held months %d | episodes %d | at least 48 and 3: %s | %s" % (
-            x["rule"], x["held"], x["episodes"], "yes" if x["judgeable"] else "no", x["outcome"]))
-    gates["F0"] = "; ".join("%s %s" % (x["rule"], "judged in B2" if x["judgeable"] else "not judgeable") for x in f)
+    res["F0"] = F0R
+    for x in F0R:
+        out("F0 | %s | held months %d | episodes %d | at least 48 and 3: %s | %s%s" % (
+            x["rule"], x["held"], x["episodes"], "yes" if x["judgeable"] else "no", x["outcome"],
+            (" | " + x["note"]) if x["note"] else ""))
+    gates["F0"] = "; ".join("%s %s" % (x["rule"], "judged in B2" if x["judgeable"] else "not judgeable") for x in F0R)
     out("PRE-B SUMMARY | " + " | ".join("%s: %s" % (k, gates[k]) for k in DIAG_IDS))
     return {"gates": gates, "res": res}
 

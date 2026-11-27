@@ -1,0 +1,31 @@
+{
+ "commit": "264d0a2cc2f74d02264b30a52d5e8f0950db9cca",
+ "entry": "gm/CHANGES.md data: card inputs (FRED / ALFRED first release, macro-data branch)",
+ "files": {
+  "BAA.csv": "a19a4e7230f5dbf42ad2b056b7b13a8cee53307f1ae893fb073d829a6e0f8f1c",
+  "DTWEXBGS.csv": "d1c0528a9e337567a70a576a2721829446551d1d6e00a1e7d6197723dfb1e33d",
+  "FEDFUNDS.csv": "1febfbfd22ef4d1e354d412ab224009f9df4214fd880e60e3b1d3d6f22798573",
+  "GS1.csv": "3ab25da1ce76f092ada31ea7ea83c89b98c7facbb7523049d5c504564c4ee7df",
+  "GS10.csv": "14101ef859fbbacf0f0be00bc7a7ad70eea56b640a7a33b41a19982519639c60",
+  "GS2.csv": "c92b08197af1084e93f09a06bd0fd5620e2a9eacb2f9e1956bd71fe250063dc9",
+  "GS5.csv": "4097a254739c4a69ae6b564f063ec1800986d40c56b3b5647264fd481ecb89b7",
+  "M2SL.csv": "871ca3301a05ad1b462fb26edc408a8eeeb9d14a6e6f3b9a564c0825a80074bf",
+  "PCEPILFE.csv": "2580087dc66e991d6e4275d7602ebd3bd8c96963eb87d157ceb9bca4e0590a18",
+  "TWEXMMTH.csv": "a5c1ea123197ae46207e489052debaf4cc1309d734a356eeff3900717dc7d33e",
+  "VIXCLS.csv": "1c4696be0611e16d07d696bced9182b5dada3fc0e0850ea7b63bb25941efaaf4",
+  "WTISPLC.csv": "0f917359164123db1598402e455c1694e8c639fe58b9cc8e66ba03bcc3d5f4ef",
+  "manifest.json": "2d0213bd625eb5b71d8aa8249971b225b002d32e3410defff22cdb1fb4025561",
+  "research/CPILFESL.csv": "90d152a56c2be24e3a595308feff963d22c8431dda24cc9f948c12c420a19a50",
+  "research/CPILFESL_FR.csv": "32f8c0ab27789d3cafac39644cfd239ca62846cb67c440eaf50fb02b7edc75a8",
+  "research/M2SL.csv": "c745c8995d819bbee56d32156cd1e3c514db199df23606886ad7aef0cc0b4a9d",
+  "research/PCEPILFE.csv": "cdf87be0d6669f8346c08b853b3b78bf669f84f9a6f028208b24587a641271f3",
+  "research/UNRATE.csv": "65fb73bccaa4086aaaf3d19fbae5802daa62401ea3383322c1c5046468757c45",
+  "research/UNRATE_FR.csv": "32a5962ede84fe0a42e7b1dac474dc91ba326432881878d7470a3777328295b0"
+ },
+ "lock_id": "6c154f7d736cefd141fac2252a71536811e7440724d8e3cb4d4eacfecb8e3110",
+ "reader": "card_inputs-1.0.0",
+ "seal_date": "2010-12-31",
+ "source": "origin/macro-data",
+ "version": "card-v1",
+ "zip_sha256": "4f84b01d07ad59da05ad7e8ca4e78b31b1ed687941c6852da804c685be1b068d"
+}

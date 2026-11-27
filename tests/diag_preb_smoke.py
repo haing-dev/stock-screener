@@ -14,6 +14,9 @@ Checks:
   card 4    R1 windows (form A / B / C, exact cancellation), R2 window length, R3 gate, R4 sign and window; F0 one
             episode for R1, R2, R4 (entry item 5 F0 g)
   card 5 R1 triggers (new high, 120 earlier values), H-month hold, versions; C5-D1 share; C5-D2 breaks and gate
+  1.1.0     card inputs reader (lags, daily means, first release vs latest with flags, planted rebase break, seal,
+            the lock on the real git files: hashes only); card 1 R1 / R4, C2-D2, C3-D2, card 3 R1 / R2, fixed size,
+            card 4 R5, C4-D2, C4-D1 by hand or by construction
   LsegView  on a mini lsegdata store written here: ED contract parse, monthly Period index, sealed as-of refused;
             lseg_lock_of reads the lock before any table
   report    end to end on a synthetic panel + mock LSEG: every diagnostic line, PRE-B SUMMARY, trial rows; printing
@@ -126,7 +129,7 @@ def brute_gap(contracts, days, d, n):
 
 
 # --------------------------------------------------------------------------------------------------- synthetic panel
-EXTRA = ["bd_jp_10y", "bd_gb_10y", "eq_ca_tsx", "bd_ca_10y", "eq_au_asx", "bd_au_10y"]
+EXTRA = ["bd_us_2y", "fx_chf", "fx_sek", "fx_eur", "bd_jp_10y", "bd_gb_10y", "eq_ca_tsx", "bd_ca_10y", "eq_au_asx", "bd_au_10y"]
 
 
 def panel(seed=11, late=False):
@@ -188,8 +191,88 @@ def fx_values(R, seed=2, crash=("GBP", "1992-10")):
 def rates_of(R):
     g = R.index
     r = {cc: pd.Series(np.where(np.arange(len(g)) % 97 < 40, 0.5, 5.0), index=g) for cc in ("US", "JP", "DE", "GB", "CA")}
+    rng = np.random.default_rng(9)
+    g0 = pd.period_range("1960-01", "2010-12", freq="M")
+    for cc in ("CH", "SE", "JP", "DE", "GB", "CA"):
+        x = pd.Series(5 + np.cumsum(rng.normal(0, 0.2, len(g0))), index=g0).reindex(g)
+        r[cc] = x if cc in ("CH", "SE") else r[cc]
+    r["CH"][r["CH"].index < P("1972-01")] = np.nan
     r["TB3MS"] = r["US"]
     return r
+
+
+# --------------------------------------------------------------------------------------------------- card inputs
+import card_inputs as CI  # noqa: E402
+
+
+def _csv(idx, vals):
+    return ("date,value\n" + "".join("%s,%.6f\n" % (d.strftime("%Y-%m-%d"), v) for d, v in zip(idx, vals)
+                                     if v == v)).encode()
+
+
+def synth_card_files(late=False, seed=7):
+    """Invented FRED-like files with the lock's names (no FRED data); a planted rebase in PCEPILFE's first release."""
+    rng = np.random.default_rng(seed)
+    end = "2012-12-01" if late else "2010-12-01"
+    m = pd.date_range("1946-01-01", "2010-12-01", freq="MS")
+    t = np.arange(len(m))
+    ext = pd.date_range("2011-01-01", "2012-12-01", freq="MS") if late else pd.DatetimeIndex([])
+
+    def mk(vals, start=None):
+        s = pd.Series(vals, index=m)
+        if start:
+            s[s.index < pd.Timestamp(start)] = np.nan
+        if late:
+            s = pd.concat([s, pd.Series(9.87654321, index=ext)])
+        return s
+    ff = np.clip(5 + 4 * np.sin(t / 30.0), 0.1, None)
+    gs2 = ff + 0.5 + np.sin(t / 17.0)
+    gs10 = gs2 + 1 + np.sin(t / 40.0)
+    infl = 4 + 3.5 * np.sin(t / 50.0)
+    cpi = np.exp(np.cumsum(infl / 1200.0)) * 30
+    pce = np.exp(np.cumsum((infl - 0.5) / 1200.0)) * 15
+    m2 = np.exp(np.cumsum((6 + 4 * np.sin(t / 35.0)) / 1200.0)) * 200
+    un = 6 + 2.5 * np.sin(t / 45.0)
+    f = {}
+    f["FEDFUNDS.csv"] = mk(ff, "1954-07-01")
+    f["GS1.csv"] = mk(ff + 0.3, "1953-04-01")
+    f["GS2.csv"] = mk(gs2, "1976-06-01")
+    f["GS5.csv"] = mk(gs2 + 0.4 + 0.6 * np.sin(t / 23.0), "1953-04-01")
+    f["GS10.csv"] = mk(gs10, "1953-04-01")
+    f["BAA.csv"] = mk(gs10 + 2 + 0.6 * np.sin(t / 11.0))
+    f["TWEXMMTH.csv"] = mk(100 * np.exp(np.cumsum(rng.normal(0, 0.02, len(t)))), "1973-01-01")
+    f["WTISPLC.csv"] = mk(20 * np.exp(np.cumsum(rng.normal(0.003, 0.06, len(t)))))
+    f["research/CPILFESL.csv"] = mk(cpi, "1957-01-01")
+    f["research/CPILFESL_FR.csv"] = mk(cpi * (1 + rng.normal(0, 0.0003, len(t))), "1996-12-01")
+    f["research/UNRATE.csv"] = mk(un, "1948-01-01")
+    f["research/UNRATE_FR.csv"] = mk(un + rng.normal(0, 0.1, len(t)), "1960-03-01")
+    f["research/M2SL.csv"] = mk(m2, "1959-01-01")
+    f["M2SL.csv"] = mk(m2 * (1 + rng.normal(0, 0.0005, len(t))), "1980-01-01")
+    f["research/PCEPILFE.csv"] = mk(pce, "1959-01-01")
+    base = np.where(m >= pd.Timestamp("2003-11-01"), 0.93, 1.0)
+    f["PCEPILFE.csv"] = mk(pce * base * (1 + rng.normal(0, 0.0003, len(t))), "2000-07-01")
+    out = {k: _csv(v.index, v.values) for k, v in f.items()}
+    days = pd.bdate_range("1990-01-02", "2012-12-31" if late else "2010-12-31")
+    vix = pd.Series(20 + 8 * np.sin(np.arange(len(days)) / 70.0) + rng.normal(0, 1, len(days)), index=days)
+    dtw = pd.Series(100 * np.exp(np.cumsum(rng.normal(0, 0.004, len(days)))), index=days)
+    if late:
+        vix[vix.index > pd.Timestamp("2010-12-31")] = 9.87654321
+        dtw[dtw.index > pd.Timestamp("2010-12-31")] = 9.87654321
+    dtw = dtw[dtw.index >= pd.Timestamp("2006-01-02")]
+    out["VIXCLS.csv"] = _csv(vix.index, vix.values)
+    out["DTWEXBGS.csv"] = _csv(dtw.index, dtw.values)
+    out["manifest.json"] = b"{}"
+    return out
+
+
+def synth_ci(late=False):
+    """An Inputs object on invented files (the lock check is bypassed: its own test uses the real lock)."""
+    files = synth_card_files(late=late)
+    ci = CI.Inputs.__new__(CI.Inputs)
+    ci.lock_id = PB.CARD_LOCK
+    ci._raw = {k: CI.parse_csv(v) for k, v in files.items() if k.endswith(".csv")}
+    ci._cache = {}
+    return ci, files
 
 
 def run(check):
@@ -429,6 +512,112 @@ def _run(check, tmp):
     c52 = PB.c5d2({"a": saw}, {"c": rising}, {"g": rising})
     check("C5-D2 gate: fewer than 10 breaks in a class -> FAIL whatever the shares", not c52["pass"] and
           c52["grains"]["breaks"] < 10, (c52["slow"], c52["grains"]))
+    # ---------------------------------------------------------------- 1.1.0: card inputs reader
+    ci, cfiles = synth_ci()
+    raw = CI.parse_csv(cfiles["WTISPLC.csv"])
+    w = CI.to_month(raw)
+    check("card inputs: WTISPLC at lag 1 (the value used at t is month t-1); FEDFUNDS lag 0",
+          abs(ci.m("WTISPLC")[P("1990-05")] - w[P("1990-04")]) < 1e-12 and
+          abs(ci.m("FEDFUNDS")[P("1990-05")] - CI.to_month(CI.parse_csv(cfiles["FEDFUNDS.csv"]))[P("1990-05")]) < 1e-12)
+    dv = CI.parse_csv(cfiles["VIXCLS.csv"])
+    check("card inputs: a daily series enters as the mean of the month's daily values (VIXCLS, lag 0)",
+          abs(ci.m("VIXCLS")[P("1995-03")] - dv[(dv.index >= "1995-03-01") & (dv.index <= "1995-03-31")].mean()) < 1e-9)
+    cl, fl = ci.fr_change("CPILFESL", 12)
+    lat = CI.to_month(CI.parse_csv(cfiles["research/CPILFESL.csv"]))
+    fr = CI.to_month(CI.parse_csv(cfiles["research/CPILFESL_FR.csv"]))
+    check("card inputs: CPILFESL 12-month change from two first-release values at lag 1 (2005-06 uses 2005-05 / 2004-05)",
+          abs(cl[P("2005-06")] - 100 * (fr[P("2005-05")] / fr[P("2004-05")] - 1)) < 1e-9 and not fl[P("2005-06")])
+    check("card inputs: before the first vintage (1996-12) the change uses latest values, flagged",
+          abs(cl[P("1990-06")] - 100 * (lat[P("1990-05")] / lat[P("1989-05")] - 1)) < 1e-9 and bool(fl[P("1990-06")]))
+    check("card inputs: the planted PCEPILFE rebase (2003-11) is the only break; changes whose window holds it use latest "
+          "values, flagged; later ones are first release again",
+          ci.breaks("PCEPILFE") == [P("2003-11")] and bool(ci.fr_change("PCEPILFE", 12)[1][P("2004-06")]) and
+          not ci.fr_change("PCEPILFE", 12)[1][P("2005-06")])
+    ul, uf = ci.fr_level("UNRATE")
+    check("card inputs: UNRATE level at lag 1, first release from 1960-03, latest (flagged) before",
+          bool(uf[P("1955-06")]) and not uf[P("1980-06")] and
+          abs(ul[P("1980-06")] - CI.to_month(CI.parse_csv(cfiles["research/UNRATE_FR.csv"]))[P("1980-05")]) < 1e-12)
+    late_ci, _lf = synth_ci(late=True)
+    check("card inputs seal: values dated after 2010-12-31 are dropped on parsing",
+          max(late_ci._raw["GS10.csv"].index) <= pd.Timestamp("2010-12-31") and
+          late_ci.m("VIXCLS").index.max() <= P("2010-12"))
+    try:
+        CI.Inputs.from_files(cfiles)
+        refused = False
+    except CI.CardInputsError:
+        refused = True
+    check("card inputs lock: files that differ from LOCK_CARD_v1 are refused before any value is parsed", refused)
+    try:
+        real = {pth: subprocess.check_output(["git", "-C", REPO, "show", "%s:%s" % (CI.COMMIT, pth)],
+                                             stderr=subprocess.DEVNULL) for pth in CI.FILES}
+    except Exception:  # noqa: BLE001
+        real = None
+    if real is None:
+        check("card inputs lock (real files): commit not fetched here, check skipped", True)
+    else:
+        okl = CI.Inputs.from_files(real).lock_id == PB.CARD_LOCK == CI.LOCK_ID
+        bad = dict(real)
+        bad["GS2.csv"] = bad["GS2.csv"] + b"\n"
+        try:
+            CI.Inputs.from_files(bad)
+            r2 = False
+        except CI.CardInputsError:
+            r2 = True
+        check("card inputs lock (real files from git, hashes only, no value used): the registered files pass with lock "
+              "id 6c154f7d...; one changed byte is refused", okl and r2)
+    # ---------------------------------------------------------------- 1.1.0: card rules by hand
+    ix = R.index
+    r1c = PB.card1_rules(ci, R, vol, spx_me)
+    WTI, TW, FFs, G10 = (ci.m(x).reindex(ix) for x in ("WTISPLC", "TWEXMMTH", "FEDFUNDS", "GS10"))
+    t0 = next(p for p in r1c["card 1 R1"]["cond_months"] if p >= P("1980-01"))
+    hand = any((WTI[t0] > WTI[t0 - L]) and (TW[t0] > TW[t0 - L]) and (rr[t0] > rr[t0 - L])
+               for L in (6, 12) for rr in (FFs, G10))
+    check("card 1 R1: a condition month satisfies oil, dollar and rate all above their level L months ago (by hand)",
+          hand, t0)
+    c45 = PB.r4_state(ci, 4.5)
+    cc, _f = ci.fr_change("CPILFESL", 12)
+    tt = next(p for p, v in c45.items() if v and p >= P("1975-01"))
+    check("card 1 R4: state at 4.5 = core CPI change > 4.5 and FEDFUNDS below it (by hand); R4 legs short bonds, "
+          "B adds short S&P and a long basket", cc[tt] > 4.5 and ci.m("FEDFUNDS")[tt] < cc[tt] and
+          (r1c["card 1 R4"]["legs"]["10-year"].loc[tt] < 0).all() and
+          (r1c["card 1 R4"]["legs"]["basket"].loc[tt].fillna(0) >= 0).all(), tt)
+    check("card 1 R4: no tail (held months = state months with a volatility)",
+          set(PB.nonzero_months(r1c["card 1 R4"]["legs"]["10-year"])) <= set(r1c["card 1 R4"]["cond_months"]))
+    v2c = PB.card2_rules(ci, R, vol, spx_me)
+    kp = PB.c2d2(v2c["card 2 R1"], c45.reindex(ix))
+    on, _h = v2c["card 2 R1"][("0.0", False)]
+    om = PB.months_of(on)
+    ins = sum(1 for p in om if bool(c45.reindex(ix).fillna(False)[p])) / max(1, len(om))
+    check("C2-D2: on-months, episodes and the share inside card 1 R4's 4.5 state by hand; kept = >= 24, >= 3 and <= 2/3",
+          kp[("0.0", False)]["on"] == len(om) and abs(kp[("0.0", False)]["inside"] - ins) < 1e-12 and
+          kp[("0.0", False)]["keep"] == (len(om) >= 24 and PB.episodes(om) >= 3 and ins <= 2 / 3))
+    rules3, d32, aux = PB.card3_rules(ci, R, vol, rates)
+    rngf = FFs.rolling(12, min_periods=12).max() - FFs.rolling(12, min_periods=12).min()
+    qh = int(((rngf < 0.5) & rngf.notna())[(ix >= P("1975-01")) & (ix <= P("2010-12"))].sum())
+    check("C3-D2: gate-off months (FEDFUNDS 12-month range < 0.50, 1975-2010) by hand; gate kept iff >= 60",
+          d32["gate_off_months"] == qh and d32["gate_kept"] == (qh >= 60))
+    check("card 3 R1: 16 versions with the gate (8 without); R2 long 2-year / short 10-year at D2 / D10",
+          rules3["card 3 R1"]["versions"] == (16 if d32["gate_kept"] else 8) and
+          PB.card3_r1(rates, R, vol, FFs, with_gate=False)["versions"] == 8 and
+          ((rules3["card 3 R2"]["legs"]["2-year"]["bd_us_2y"] >= 0) &
+           (rules3["card 3 R2"]["legs"]["10-year"]["bd_us_10y"] <= 0)).all())
+    fr_ = PB.fixed_runs(pd.Series([0, 1, 1, 1, -1, -1, 0, 1]), pd.Series([1., 2., 3., 4., 5., 6., 7., 8.]))
+    check("card 3 fixed size: a notional is fixed at the first month of a same-direction run",
+          list(fr_) == [0.0, 2.0, 2.0, 2.0, -5.0, -5.0, 0.0, 8.0], list(fr_))
+    v45, st45 = PB.card4_r5(ci, R, aux)
+    c5v = PB.core_cpi(ci)[0].reindex(ix)
+    on1 = v45[1][0]
+    tq = next(p for p, v in on1.items() if v and p >= P("1980-01"))
+    check("card 4 R5: version 1 on while core CPI's change is below its value 6 months earlier (by hand); version 2 "
+          "inside version 1", c5v[tq] < c5v[tq - 6] and bool((v45[2][0] <= v45[1][0]).all()))
+    sc = pd.DataFrame({"bd_us_2y": 1.0, "bd_us_10y": -1.0}, index=ix)
+    c42 = PB.c4d2(v45, pd.Series(True, index=ix), sc)
+    check("C4-D2: card 3 R2 always on and Trend always long 2-year / short 10-year -> both shares 1.0, R5 not "
+          "registered; never -> R5 stays", c42["not_registered"] and
+          not PB.c4d2(v45, pd.Series(False, index=ix), -sc)["not_registered"])
+    c41 = PB.c4d1(ci, gspc)
+    check("C4-D1: three windows; gate = all three median ratios >= 1.25",
+          len(c41["windows"]) == 3 and c41["pass"] == all(x["ok"] for x in c41["windows"].values()))
     # ---------------------------------------------------------------- LsegView on a mini lsegdata store
     wd = os.path.join(tmp, "work")
     root = os.path.join(wd, "lseg")
@@ -499,11 +688,13 @@ def _run(check, tmp):
     # ---------------------------------------------------------------- report end to end
     mock = MockLseg(bent, lm)
     lines = []
-    res = PB.report(R, D, S, gspc, fxv, rates, mock, out=lines.append)
+    ci0, _cf = synth_ci()
+    res = PB.report(R, D, S, gspc, fxv, rates, mock, ci0, out=lines.append)
     txt = "\n".join(lines)
     need = ["R1 GATE", "C1-D1 |", "C1-D2 | card 1 R5 stock leg", "C2-D1 GATE", "C3-D1 | card 3 R4", "C5-D1 | card 5 R1",
-            "C5-D2 GATE", "C5-D2 | reported line not computed", "F0 | card 4 R1", "F0 | card 5 R1", "PRE-B SUMMARY", "BLOCKED | C4-D1", "CORE BOOK READING"]
-    check("report: every registered line and the blocked list are printed", all(x in txt for x in need),
+            "C5-D2 GATE", "C5-D2 | reported line not computed", "F0 | card 4 R1", "F0 | card 5 R1", "PRE-B SUMMARY", "CORE BOOK READING"]
+    check("report: every registered line is printed and nothing is BLOCKED (1.1.0)", all(x in txt for x in need) and
+          "BLOCKED" not in txt,
           [x for x in need if x not in txt])
     check("report: the R1 gate equals r1() on the same inputs",
           res["res"]["R1"]["qualifying"] == PB.r1(bent, EX.nyse_days(gspc=gspc))["qualifying"])
@@ -513,8 +704,8 @@ def _run(check, tmp):
     check("report printing: values under 60 months appear as count and sign only",
           all(int(m) < 60 for x in small for m in re.findall(r"n (\d+), sign", x)))
     rows_ = PB.trial_rows(res, PB.A1_PANEL_ID, CF.ENGINE_VERSION)
-    check("trial rows: 8 diag rows, no Sharpe column, ids R1..F0, LSEG lock in the note",
-          len(rows_) == 8 and all(r["family"] == "diag" and "sr_9010" not in r for r in rows_) and
+    check("trial rows: 12 diag rows, no Sharpe column, ids R1..F0, LSEG lock in the note",
+          len(rows_) == 12 and all(r["family"] == "diag" and "sr_9010" not in r for r in rows_) and
           [json.loads(r["config"])["diag"] for r in rows_] == list(PB.DIAG_IDS) and PB.LSEG_LOCK[:16] in rows_[0]["note"])
     RL, DL_, SL_, gl = panel(late=True)
     lml = lseg_monthly(late=True)
@@ -527,9 +718,11 @@ def _run(check, tmp):
         ratl[k_] = ratl[k_].copy()
         ratl[k_][ratl[k_].index > P("2010-12")] = 9.87654321
     lines2 = []
-    PB.report(RL, DL_, SL_, gl, fxl, ratl, MockLseg(ed_contracts(bend=5.0, late=True), lml), out=lines2.append)
-    strip_t = lambda L: [x for x in L if not x.startswith("BLOCKED")]  # noqa: E731
-    check("report seal: values dated after 2010-12 (panel, FX, rates, LSEG monthly and daily) change no line",
+    PB.report(RL, DL_, SL_, gl, fxl, ratl, MockLseg(ed_contracts(bend=5.0, late=True), lml), synth_ci(late=True)[0],
+              out=lines2.append)
+    strip_t = lambda L: list(L)  # noqa: E731
+    check("report seal: values dated after 2010-12 (panel, FX, rates, LSEG monthly and daily, card inputs) change no "
+          "line",
           strip_t(lines) == strip_t(lines2), [(a_, b_) for a_, b_ in zip(lines, lines2) if a_ != b_][:2])
     # ---------------------------------------------------------------- the job in the PC layout
     import a1_panel_smoke as A1S
@@ -540,7 +733,8 @@ def _run(check, tmp):
                     ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
     bq = os.path.join(REPO, "tools", "bbgq")
     for rel in ("lib/gm_engine.py", "lib/bbg_panel.py", "lib/bbgdata.py", "lib/a1_panel.py", "lib/a2_batch.py",
-                "lib/diag_a2.py", "lib/diag_preb.py", "live_sources.csv", "untouched_markets.csv", "engine_ref.json"):
+                "lib/diag_a2.py", "lib/diag_preb.py", "lib/card_inputs.py", "live_sources.csv", "untouched_markets.csv",
+                "engine_ref.json"):
         shutil.copy(os.path.join(bq, rel), os.path.join(lib, os.path.basename(rel)))
     for f_ in os.listdir(os.path.join(REPO, "tools", "lseg")):
         if f_ in ("lsegdata.py", "lseg_rules.py") or f_.endswith(".csv"):
@@ -552,6 +746,8 @@ def _run(check, tmp):
     job_src = open(os.path.join(bq, "jobs", "gm_diag_preb_v1.py"), encoding="utf-8").read()
     pb_sha = hashlib.sha256(open(os.path.join(bq, "lib", "diag_preb.py"), "rb").read()).hexdigest()
     job_src = re.sub(r'"diag_preb.py": "[^"]*"', '"diag_preb.py": "%s"' % pb_sha, job_src)   # the build note pins it
+    ci_sha = hashlib.sha256(open(os.path.join(bq, "lib", "card_inputs.py"), "rb").read()).hexdigest()
+    job_src = re.sub(r'"card_inputs.py": "[^"]*"', '"card_inputs.py": "%s"' % ci_sha, job_src)
     job = os.path.join(tmp, "gm_diag_preb_v1.py")
     open(job, "w", encoding="utf-8").write(job_src)
 
@@ -559,8 +755,8 @@ def _run(check, tmp):
         q = subprocess.run([sys.executable, job], cwd=loc, env=env, capture_output=True, text=True, timeout=600)
         return q.stdout + q.stderr
     o0 = go()
-    check("job (PC layout): gm code, engine_ref, config hashes, 9 lib files and the trial-log digest PASS (11 'PASS lib' lines); no A2 "
-          "report -> STOP before any store", "PASS gm code vs reference" in o0 and o0.count("PASS lib ") == 11 and
+    check("job (PC layout): gm code, engine_ref, config hashes, 10 lib files and the trial-log digest PASS (12 'PASS lib' lines); no A2 "
+          "report -> STOP before any store", "PASS gm code vs reference" in o0 and o0.count("PASS lib ") == 12 and
           "FAIL A2 report gm_a2_v1.txt: missing" in o0 and "lock id" not in o0, o0[-1200:])
     os.makedirs(os.path.join(loc, "results"))
     open(os.path.join(loc, "results", "gm_a2_v1.txt"), "w").write(DS.a2_report_text())

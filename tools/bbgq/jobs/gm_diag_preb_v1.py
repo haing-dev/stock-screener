@@ -8,7 +8,8 @@ diagnostics", 2026-11-27) on the PC.
    pod rows of lib\\gm\\trials.csv = the registered digest (41 rows); results\\gm_a2_v1.txt = the A2 run (A2 facts);
    results\\gm_diag_v1.txt = the diagnostics run (A3 empty); results\\gm_core_v1.txt = Core book v1 (CORE V1 JOB DONE,
    CORE BOOK V1 EMPTY); Bloomberg store lock id = LOCK_v2; LSEG store lock id = LOCK_LSEG_v5 (read from its manifest
-   before any table is loaded); free inputs = the shipped zip.
+   before any table is loaded); work\\free\\gm_card_inputs.zip = LOCK_CARD_v1 file by file (card_inputs.py, before a
+   value is parsed); free inputs = the shipped zip.
 2. Free arm vs engine_ref.json; the A1 panel rebuilt (a1_panel-1.1.0), extension-only, its id = the registered A1 PANEL
    ID, compared with work\\a1\\a1_panel_e7f98d4439fc.pkl when present (STOP on a difference). Nothing is written to work\\.
 3. The free card inputs under the 2010-12-31 cut: panel.fx_usd_value (EUR, JPY, GBP, AUD, CAD), TB3MS and the OECD
@@ -18,9 +19,9 @@ diagnostics", 2026-11-27) on the PC.
    sign); no LSEG or Bloomberg value is printed.
 5. TRIAL ROW lines (gm/trials.csv family "diag", one per diagnostic run) for the coordinator.
 Needs: lib\\gm\\ (gm-2.2.1), lib\\gm_engine.py, lib\\bbgdata.py, lib\\bbg_panel.py, lib\\a1_panel.py, lib\\a2_batch.py,
-lib\\diag_a2.py, lib\\diag_preb.py, lib\\lsegdata.py, lib\\lseg_rules.py (+ the lsegdata config CSVs), lib\\engine_ref.json,
+lib\\diag_a2.py, lib\\diag_preb.py, lib\\card_inputs.py, lib\\lsegdata.py, lib\\lseg_rules.py (+ the lsegdata config CSVs), lib\\engine_ref.json,
 lib\\live_sources.csv, lib\\untouched_markets.csv, work\\bbg\\ (LOCK_v2 store), work\\lseg\\ (LOCK_LSEG_v5 store),
-work\\free\\gm_free_inputs.zip, results\\gm_a2_v1.txt, results\\gm_diag_v1.txt, results\\gm_core_v1.txt; work\\a1\\
+work\\free\\gm_free_inputs.zip, work\\free\\gm_card_inputs.zip, results\\gm_a2_v1.txt, results\\gm_diag_v1.txt, results\\gm_core_v1.txt; work\\a1\\
 (optional: the A1 panel file)."""
 import os
 import sys
@@ -42,7 +43,7 @@ LIB = os.path.join(os.getcwd(), "lib")
 print("=== gm_diag_preb_v1 ===")
 
 # the registered build of the lib files (PREB_BUILD hash table; gm/CHANGES.md "Pre-B diagnostics" item 9)
-LIB_SHA = {"diag_preb.py": "072b3dbe075353cc2ad6a3b2a95e0c50e97221ec05a8fddcf20b813493d11c77",
+LIB_SHA = {"diag_preb.py": "5273944bcb9811ccba83510da3359996e28def8eb8b89a4408ed3efad855c64e",
            "diag_a2.py": "3264a5381c13b124d2566d02f263e21905f4e901680c1af7c2134f0bd558be1b",
            "a2_batch.py": "35339f673f351f43315ad3c7010ba733b6fb8990a6a41feb1ef20de324de58c6",
            "a1_panel.py": "eb9ef3f7fbd12760e174f9ef1df8573890bed6ca8d36f7d4e5c63eadd822ebb5",
@@ -50,7 +51,9 @@ LIB_SHA = {"diag_preb.py": "072b3dbe075353cc2ad6a3b2a95e0c50e97221ec05a8fddcf20b
            "bbg_panel.py": "e0b67a42793e67c129ec8a6c3ed2082390933ea9317898b59b8854387ecf1dcd",
            "bbgdata.py": "0b26bb21b50671dca7c2153d3d66a2a09f7f33eeaa7c96ca536b69bbca8e6351",
            "lsegdata.py": "0d1b500ddb2e931ab4069ac8fd6fed0c16778da85b2665d3fcafadfae16198de",
-           "lseg_rules.py": "5686999172a22c76b7190f8df210c93ffc09a6737f32301df030080dccc42da9"}
+           "lseg_rules.py": "5686999172a22c76b7190f8df210c93ffc09a6737f32301df030080dccc42da9",
+           "card_inputs.py": "4091f84bcbb11f43061bcc0330520a4a5580cb775895148a38849c0fbcab7b80"}
+CARD_ZIP = os.path.join(FREE, "gm_card_inputs.zip")      # LOCK_CARD_v1 (gm/CHANGES.md data entry "card inputs")
 
 
 def frames(e):
@@ -83,10 +86,11 @@ try:
     import gm_engine as GE
     import lsegdata as LD
     import lseg_rules as LR
+    import card_inputs as CIN
     from gm import config as CF
     print("%s | %s | %s | %s | %s | %s | %s | %s | %s | engine %s | %s" % (
         PB.VERSION, DG.VERSION, A2.VERSION, A1.VERSION, bbgdata.VERSION, bbg_panel.VERSION, GE.VERSION, LD.VERSION,
-        LR.VERSION, CF.ENGINE_VERSION, ", ".join("%s %s" % kv for kv in GE.lib_versions().items())))
+        LR.VERSION + " | " + CIN.VERSION, CF.ENGINE_VERSION, ", ".join("%s %s" % kv for kv in GE.lib_versions().items())))
     ref = json.load(open(os.path.join(LIB, "engine_ref.json"), encoding="utf-8"))
 except Exception as e:  # noqa: BLE001
     stop("setup failed: %s" % frames(e))
@@ -154,6 +158,19 @@ try:
         "PASS" if lid == PB.LSEG_LOCK else "FAIL", lid, PB.LSEG_LOCK, why))
     if lid != PB.LSEG_LOCK:
         stop("the LSEG store is not LOCK_LSEG_v5 (nothing read)")
+    if not os.path.exists(CARD_ZIP):
+        stop("work\\free\\gm_card_inputs.zip not found (LOCK_CARD_v1)")
+    try:
+        CI_ = CIN.Inputs.from_zip(CARD_ZIP)
+    except CIN.CardInputsError as e:
+        print("FAIL card inputs: %s" % e)
+        stop("the card inputs zip is not LOCK_CARD_v1")
+    okci = CI_.lock_id == PB.CARD_LOCK == CIN.LOCK_ID
+    print("%s card inputs gm_card_inputs.zip | %d files, each = its LOCK_CARD_v1 sha256 | lock id %s | registered %s | "
+          "commit %s" % ("PASS" if okci else "FAIL", len(CIN.FILES), CI_.lock_id[:16], PB.CARD_LOCK[:16],
+                         CIN.COMMIT[:12]))
+    if not okci:
+        stop("the card inputs lock id is not LOCK_CARD_v1")
     st = GE.ensure_free_inputs(FREE)
     if st["manifest"] is None:
         stop("work\\free\\gm_free_inputs.zip not found")
@@ -223,7 +240,7 @@ try:
     lseg = PB.LsegView(LD.Panel(WORK))
     if lseg.panel.lock_id != PB.LSEG_LOCK:
         stop("the loaded LSEG store is not LOCK_LSEG_v5")
-    res = PB.report(a1["R"], free["D"], a1["S"], free["gspc"], fxv, rates, lseg, out=print, facts=facts)
+    res = PB.report(a1["R"], free["D"], a1["S"], free["gspc"], fxv, rates, lseg, CI_, out=print, facts=facts)
     print("report %.0fs" % (time.time() - t))
 except SystemExit:
     raise
