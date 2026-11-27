@@ -432,6 +432,40 @@ def carry_values(R):
     return pd.DataFrame(out).reindex(GRID)
 
 
+X1_MIN_EARLIER = 5      # E13: at least five earlier same-calendar month-ends (SPEC_Carry s3)
+
+
+def x1_adjust(c, min_earlier=X1_MIN_EARLIER):
+    """E13 (gm-2.2.0, registered in gm/CHANGES.md "X1 outcome", 2026-11-27; SPEC_Carry s3): seasonally adjusted carry
+    of one market: "carry minus the mean, over all earlier same-calendar month-ends (at least five; no signal before),
+    of (carry minus its trailing 12-month mean, the 12 month-ends up to and including that month-end)".
+    d(t) = c(t) - mean(c(t-11) .. c(t)) (all 12 month-ends present); s(t) = mean of d(u) over u < t in the same calendar
+    month (at least min_earlier values); adjusted c(t) - s(t); missing where c(t) or s(t) is missing. Point in time:
+    s(t) reads d of earlier months only. c: monthly Series on a regular month grid (PeriodIndex)."""
+    c = c.astype(float)
+    d = c - c.rolling(12, min_periods=12).mean()
+    s = pd.Series(np.nan, index=c.index)
+    months = c.index.month
+    for mo in range(1, 13):
+        sel = months == mo
+        dm = d[sel]
+        cnt = dm.notna().astype(int).cumsum().shift(1)
+        tot = dm.fillna(0).cumsum().shift(1)
+        s[sel] = (tot / cnt).where(cnt >= min_earlier).values
+    return (c - s).where(c.notna())
+
+
+def x1_seasonal(C, markets):
+    """E13: C with the carry of each market in `markets` replaced by x1_adjust (both Carry versions read C)."""
+    if not markets:
+        return C
+    C = C.copy()
+    for k in markets:
+        if k in C.columns:
+            C[k] = x1_adjust(C[k])
+    return C
+
+
 def value_values(R, eq_measure="dy", dy_lag=None):
     """eq_measure 'dy': equities by dividend yield (v1.1); 'rev': 5-year reversal (v1, failed).
     dy_lag: months by which the non-US dividend yield is lagged (None = config.VALUE_DY_LAG, the registered 12 of E4;

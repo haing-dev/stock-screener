@@ -1008,6 +1008,11 @@ print("\nGlobal Macro Book (gm-2.1.0 features)")
 import gm_feature_smoke  # noqa: E402
 gm_feature_smoke.run(check)
 
+# Global Macro Book (gm/): gm-2.2.0, X1 statistic and E13 seasonal adjustment (gm/CHANGES.md "X1 outcome"), synthetic
+print("\nGlobal Macro Book (gm-2.2.0 X1 / E13)")
+import gm_x1_smoke  # noqa: E402
+gm_x1_smoke.run(check)
+
 # LSEG source (tools/lseg): exchange-rule contract dates and registered listing models, no market data
 print("\nLSEG rules (lseg_rules 1.1.0)")
 _r = subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "lseg_rules_smoke.py")],

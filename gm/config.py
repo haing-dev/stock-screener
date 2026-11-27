@@ -100,7 +100,16 @@ SEAL_END = "2010-12-31"
 # ---------------------------------------------------------------------------------------------------------------------
 # gm-2.1.0 feature version (registered 2026-11-24, gm/CHANGES.md; TESTING_PROTOCOL 7.3, 7.4 E6-E11 and E14, 7.7).
 # Nothing here changes BASE or CANDIDATE at k = 0: every new key below is absent from them.
-ENGINE_VERSION = "gm-2.1.0"
+ENGINE_VERSION = "gm-2.2.0"       # gm-2.2.0 (2026-11-27): E13 X1 seasonal adjustment flag; A1 data path (E15)
+
+# E13 (gm-2.2.0, gm/CHANGES.md "X1 outcome", 2026-11-27): X1's gate opened for these energy markets (X1 run
+# docs/research/batches/X1_2026-11-27.txt), so their carry is seasonally adjusted in both Carry versions
+# (signals.x1_adjust) wherever a config holds the key "x1_seasonal". BASE (live paper book, 7.1 item 6) and CANDIDATE
+# (the gm-2.0.3 reference) do not hold it, so neither changes at k = 0. The A1 runs and every later run of the
+# programme use A1_INCUMBENT = CANDIDATE + the adjustment (TESTING_PROTOCOL 7.5 X1: "seasonally adjusted (E13)
+# before A1").
+X1_MARKETS = ("cm_natgas", "cm_gasoline")
+A1_INCUMBENT = variant(CANDIDATE, name="gm-2.0.3-candidate-x1", x1_seasonal=X1_MARKETS)
 
 # E7 version grids (approved specs, section 6). Trend versions: (lookback months, shape, volatility model).
 TREND_GRID = tuple((h, shape, vm) for shape, vm in (("sign", "hybrid"), ("sign", "m36"), ("graded", "hybrid"),
@@ -108,7 +117,8 @@ TREND_GRID = tuple((h, shape, vm) for shape, vm in (("sign", "hybrid"), ("sign",
 ECON_GRID = ("tanh", "sign")       # SPEC_Economic_trend s6: v1 f(z) = tanh(z / 2), v2 f(z) = sign(z)
 CARRY_GRID = ("dir", "cs")         # SPEC_Carry s6: v1 sign of carry, v2 rank in class
 VALUE_GRID = (1, 2)                # SPEC_Value s6: v1 as coded, v2 (bonds 60-month yield change, FX real-rate deviation)
-A2_CHALLENGER = variant(CANDIDATE, name="gm-2.1.0-a2-challenger",
+# gm-2.2.0: the A2 challenger is built on A1_INCUMBENT (SPEC_Carry s6: "X1 changes a market's signal in both versions")
+A2_CHALLENGER = variant(A1_INCUMBENT, name="gm-2.2.0-a2-challenger",
                         grid={"trend": TREND_GRID, "econ": ECON_GRID, "carry": CARRY_GRID, "value": VALUE_GRID})
 
 # E9 component masks: (pod, class, version); "*" = every class or every version. Versions are numbered as the grids

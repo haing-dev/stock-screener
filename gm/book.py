@@ -109,6 +109,7 @@ def family_positions(R, cfg=None, daily=None, S=None, vol_days=None, components=
     xsm = np.log1p(R).shift(1).rolling(11, min_periods=11).sum()
     V = S["V"][[c for c in S["V"].columns if c.startswith(("fx_", "bd_", "eq_"))]]  # commodity value: failed, out
     C = S["C"][[c for c in S["C"].columns if not c.startswith("eq_")]]       # equity carry: weak in design, out
+    C = G.x1_seasonal(C, cfg.get("x1_seasonal"))                           # E13 (gm-2.2.0): only with the config key
     fams = {"trend": (trend, "dir"), "econ": (S["E"], "dir"), "carry": (C, "half"), "value": (V, "cs"),
             "xsmom": (xsm, "cs")}
     if cfg.get("econ_structure", "score_avg") == "themes":        # one block per theme x asset class
@@ -202,6 +203,7 @@ def family_versions(R, cfg, daily, S, vol, vol_days=None):
     else:
         fams["econ"] = [(S["E"], "dir", vol)]
     C = S["C"][[c for c in S["C"].columns if not c.startswith("eq_")]]       # equity carry: weak in design, out
+    C = G.x1_seasonal(C, cfg.get("x1_seasonal"))                           # E13 (gm-2.2.0): only with the config key
     cv = grid.get("carry", ("dir", "cs"))
     fams["carry"] = [(np.sign(C) if k == "dir" else C, k, vol) for k in cv]
     V = S["V"][[c for c in S["V"].columns if c.startswith(("fx_", "bd_", "eq_"))]]  # commodity value: failed, out
