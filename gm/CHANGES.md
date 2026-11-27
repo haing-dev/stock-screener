@@ -116,6 +116,24 @@ every A2 statistic is computed by one PC job (tools/bbgq/jobs/gm_a2_v1.py, libra
    stores, synthetic panels with known answers: tests/a2_batch_smoke.py in tests/run_tests.py), the gates of the engine
    (k = 0 reproduction 24 of 24, truncation 8 of 8; gm/ is unchanged, so engine_ref.json is unchanged), and
    positions-only plumbing on free data (the Trend split parts add up to the Trend held positions; no return).
+Closed while coding (2026-11-27, before any A2 run; simplest reading, none from results):
+9. Carry / price (item 4f): both parts and the total are taken over the bond and currency market-months that have a
+   held Trend position and a carry value, so total = carry + price exactly; the covered share of Trend's FX + FI gross
+   position is printed. The incumbent's Carry versions and pod-alone runs use the version path (gm-2.1.0 E9), which
+   reproduces the old path's Carry (gm-2.1.0 result item 2).
+10. Weekly coverage (item 4d): tranche 0's flag is the k = 1 flag (no daily price on a first trading day), tranches 1-3
+    the no-daily-data flag of gm.execution.tranches.
+11. Fragility (item 4k): markets tried = every column of the A1 panel (cm_aqr_ew included); a class = the columns with
+    its prefix (gm.signals.CLASSES); the loss is of the dSR point estimate (no bootstrap); "largest loss" = full dSR
+    minus the smallest dSR after a removal.
+12. As-run check (item 7): equality at 3 decimals of the three registered values (tolerance 5e-4).
+13. Code fact found while coding, NOT changed (any change needs its own registered fix entry and a new reference):
+    book.py family_positions (lines 127-128) and the version path family_positions_v (257-258) build a class's market
+    list as `k.startswith(pre) and k in R and k != "cm_aqr_ew" or (k == "cm_aqr_ew" and f in ("trend",) ...)`; by
+    Python precedence the second clause holds in every class, so cm_aqr_ew (to 2000-12) sits in all four Trend class
+    blocks (EQ 19, FI 15, FX 14, CM 17 columns on the free panel), not only in CM as SPEC_Trend s4 lists it ("CM (16 +
+    1)"). It is the same in both A2 arms, in BASE and CANDIDATE and in engine_ref.json; a2_batch's Trend split
+    replicates it (its parts add to the held position). Not fixed here: A2 is built on the registered engine gm-2.2.0.
 
 ## data: A1 data rule (registered 2026-11-27, BEFORE the A1 code and the A1 run): TESTING_PROTOCOL 7.6 step 2, 7.4 E15
 Entry 3 of docs/research/registration/REGISTRATION_3.4.md part (c): "Data entry A1 (before the A1 run): the

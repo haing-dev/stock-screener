@@ -1019,6 +1019,12 @@ print("\nBatch A1 data swap (a1_panel 1.0.0, mock stores)")
 import a1_panel_smoke  # noqa: E402
 a1_panel_smoke.run(check)
 
+# Batch A2 grids / hygiene (tools/bbgq/lib/a2_batch.py, job gm_a2_v1; gm/CHANGES.md "A2"): synthetic panels and mock
+# stores (decisive H1 / H3, as-run check, Trend split, P4, selection inflation, fragility, seal, printing, job stops)
+print("\nBatch A2 grids / hygiene (a2_batch 1.0.0, synthetic panels)")
+import a2_batch_smoke  # noqa: E402
+a2_batch_smoke.run(check)
+
 # LSEG source (tools/lseg): exchange-rule contract dates and registered listing models, no market data
 print("\nLSEG rules (lseg_rules 1.1.0)")
 _r = subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "lseg_rules_smoke.py")],

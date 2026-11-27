@@ -143,3 +143,15 @@ E3 metadata: `cpi_freq_meta.py` -> results/cpi_freq_meta_2026-11-24.txt.
 - `meta_first_dates.py` (cloud): the 7.6 step 2 metadata listing for the free inputs and the LSEG lock (first dates).
 - Reference: `engine_ref.json` code block rehashed for gm-2.2.0 (numbers unchanged; old `engine_ref_gm-2.1.0.json`).
 - Tests: `python3 tests/a1_panel_smoke.py` (mock bbgdata stores; also in tests/run_tests.py), `tests/gm_x1_smoke.py`.
+
+## Batch A2, version grids and hygiene H1-H4 (gm-2.2.0, 2026-11-27; gm/CHANGES.md "A2")
+- `lib/a2_batch.py` 1.0.0: the registered A2 report. Incumbent A1_INCUMBENT (465b5ecd4f) as run vs challenger
+  A2_CHALLENGER (a5b83bdf45: Trend 16, Economic trend 2, Carry 2, Value 2 versions averaged), both on the A1 panel.
+  Decisive: H1 (one-sided 95% lower bound of dSR > -0.10) and H3 (test 5) at k = 1 on 1975-01..2010-12; reported: H2
+  (double costs), k = 0 and the one-month delay, eras, books, each version and pod alone, family x class, weekly
+  tranches, Trend's class-average / relative and carry / price parts, Value and Economic trend next to Trend, k = 1
+  flagged share, P4, fragility, selection inflation, tuned knobs; the A2 VERDICT line; a TRIAL ROW (family book).
+- `jobs/gm_a2_v1.py`: the A1 checks plus a2_batch / trial-log hashes; rebuilds the A1 panel and checks its id
+  (e7f98d44...) and the saved file; checks the incumbent against the A1 report; prints summary statistics only.
+  How to queue: docs/research/batches/A2_BUILD_2026-11-27.md.
+- Tests: `python3 tests/a2_batch_smoke.py` (synthetic panels, mock stores; also in tests/run_tests.py).
