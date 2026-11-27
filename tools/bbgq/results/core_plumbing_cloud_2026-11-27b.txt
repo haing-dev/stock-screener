@@ -1,0 +1,10 @@
+PASS masks: Core + shadow parts partition each pod's components | max abs diff 0.0e+00
+PASS S1 / T3: the identity date map reproduces each of the 6 parts alone | max abs diff 0.0e+00 | missing pattern diff 0
+PASS raw inputs (interface v2) reproduce the engine's measure | carry currencies | markets 13 | max abs diff 0.0e+00 | missing pattern 0
+PASS raw inputs (interface v2) reproduce the engine's measure | carry energy (before E13) | markets 4 | max abs diff 0.0e+00 | missing pattern 0
+PASS raw inputs (interface v2) reproduce the engine's measure | value equities (E4) | markets 8 | max abs diff 0.0e+00 | missing pattern 0
+PASS S4 interface v2 inputs: R (612, 65) | D (12668, 61) | days (10349,) | rate3m (612, 14) | fx_rate_country 13 | eia {cm_wti (612, 2), cm_natgas (612, 2), cm_heatoil (612, 2), cm_gasoline (612, 2)} | french_with (612, 7) | french_without (612, 7) | us_total (612,) | us_price (612,) | cost 65 | em_borrow 7 | classes 4 | meta 1 | stub output validates: ok (months per key in 1975-2010: 432, 432, 432, 432, 432)
+PASS live-source check runs | trend | held at 2010-12: 61 markets | missing free inputs: none
+PASS live-source check runs | carry | held at 2010-12: 15 markets | missing free inputs: none
+PASS live-source check runs | value | held at 2010-12: 8 markets | missing free inputs: none
+CORE PLUMBING PASS | 51s | no statistic of any part or book computed or printed

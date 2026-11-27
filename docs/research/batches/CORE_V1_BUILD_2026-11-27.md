@@ -1,5 +1,13 @@
 # Core book v1 build (2026-11-27): TESTING_PROTOCOL 7.6 steps 5 and 6, the PC job
 
+**UPDATED for core_v1 1.1.0** after the independent check (CHECK_CORE, APPROVED WITH CORRECTIONS; corrections
+registered in gm/CHANGES.md e18bc33 before the code 57cc241). M2 option A: S4 covers the full spec, so the rebuild gets
+RAW inputs (docs/research/batches/S4_INTERFACE.md v2) and derives the carry measure, the value measure and the
+volatility model itself; the job first checks the raw inputs reproduce the engine's measures exactly. N2 gap rule:
+dated clarification in CHANGES and SPEC_Trend s3 (written with sight of the engine). C1, C2, C4 applied. M1 (rank
+weights clipped) and the move to interface v2 are the rebuild agent's: rebuild_s4 1.0.0 (3febdce7...) reads the v1
+keys and is NOT accepted. The hash table at the end is the one to use.
+
 Registered steps built here:
 - 7.6 step 5, A3: gm/CHANGES.md "A3: empty" (commit 7038311): the diagnostics opened no A3 item (D2, D3 closed; D1
   candidate half blocked); the D1 breadth item is not run (preconditions unmet); how it may return with B1 / B2 is
@@ -37,8 +45,11 @@ unchanged).
 2. Free arm vs engine_ref.json; the A1 panel rebuilt (about 4-6 minutes), extension-only, `PASS A1 PANEL ID
    e7f98d44...`, compared with `work\a1\a1_panel_e7f98d4439fc.pkl` (STOP on a difference); nothing written; EXTENDED
    lines.
-3. `rebuild inputs | R (612, 65) | D (..., 61) | days ... | C (612, 31) | V (612, 28) | vol (612, 65) | cost 65 | ...`;
-   `PASS rebuild <VERSION> | ok | months in 1975-01..2010-12: ...` (else STOP: no S4 line, no statistic).
+3. `PASS raw inputs reproduce the engine's measure | carry currencies / carry energy (before E13) / value equities (E4)
+   | markets | max abs diff | missing pattern` (else STOP; also STOP if A1 admitted a dividend-yield extension);
+   `rebuild inputs | R (612, 65) | D (..., 61) | days ... | rate3m (612, 14) | fx_rate_country 13 | eia 4 | french_with
+   (612, 7) | french_without (612, 7) | us_total | us_price | cost 65 | ...`; `PASS rebuild <VERSION> | ok | months in
+   1975-01..2010-12: ...` (else STOP: no S4 line, no statistic).
 4. `PASS A2-final book as run (A2 report): ...` (book k1 / k0 / d1 1.439 / 1.481 / 1.064, pods alone, P4), else STOP.
 5. `PARTS | ...`; `PART | <part> | Sharpe ... | mean %/yr ...` for the 3 candidates, 3 shadow parts and 2 legs (k = 1,
    1975-2010 and eras); per candidate `S1 | ...` (window, part Sharpe, 1,000 placebos, share, PASS / FAIL), `S2 | ...`
@@ -58,6 +69,14 @@ Expected run time: the A1 rebuild plus about 6,000 book runs for the placebos (6
 cloud, so roughly 30-90 minutes on the PC).
 
 ## Cloud gates (free data, design months only; nothing computed on the A1 panel)
+
+core_v1 1.1.0 (2026-11-27): run_tests ALL TESTS PASSED (results/run_tests_gm_2026-11-27h_gm-2.2.1.txt; core_v1_smoke 75
+checks: interface v2 keys, no engine-built measure in the inputs, copies, raw_check pass / fail cases, the check
+formulas by hand, C4 no .pyc under lib\); free-panel identities PASS (results/core_plumbing_cloud_2026-11-27b.txt: the
+raw inputs reproduce the engine's currency carry (13 markets), energy carry before E13 (4) and equity value with E4
+(8) with max abs difference 0 and no missing-pattern difference; inputs rate3m (612, 14), eia 4 x (612, 2),
+french_with / french_without (612, 7), us_total / us_price (612)). gm/ unchanged, so the k = 0 reproduction and
+truncation results below stand. 1.0.0 gates as below.
 
 - k = 0 reproduction 24 of 24, difference 0 (tools/bbgq/results/engine_repro_cloud_2026-11-27f_gm-2.2.1.txt).
 - Truncation PASS at all 8 cut dates, 21 k = 0 and 37 feature stages, 0 failing end-to-end or alone
@@ -79,8 +98,9 @@ cloud, so roughly 30-90 minutes on the PC).
 
 ## How the coordinator queues it (in this order)
 
-1. BLOCKED until the S4 rebuild is accepted: the separate agent has committed tools/bbgq/lib/rebuild_s4.py 1.0.0
-   (1204233, sha256 3febdce7...; notes docs/research/batches/S4_REBUILD_NOTES.md). Accept it (its own self-test; an
+1. BLOCKED until the corrected S4 rebuild is accepted: rebuild_s4 1.0.0 (1204233, sha256 3febdce7...) reads interface
+   v1 and has the M1 clip; the separate agent delivers a version on interface v2 (raw inputs; carry, value and
+   volatility derived from the specs) with M1 fixed. Accept it (its own self-test; an
    independent read that it follows the specs and S4_INTERFACE.md, imports none of the forbidden modules, prints
    nothing; `python3 tools/bbgq/core_plumbing.py --rebuild` for the interface checks on free data). Then, in one commit
    BEFORE queuing: a dated line under the gm/CHANGES.md "Core book v1" entry giving rebuild_s4.py's version and sha256
@@ -99,11 +119,11 @@ cloud, so roughly 30-90 minutes on the PC).
 
 | File (PC destination under local\) | Status | sha256 |
 |---|---|---|
-| jobs\gm_core_v1.py (REBUILD_SHA unset; this hash changes when the coordinator sets it) | new | a74ee6b3eb741cf126bf26fa2f132556d6453138b6831ded1066e38d88e423ad |
-| lib\core_v1.py (1.0.0) | new | 817380e8e9e7ed49f4f2a4ec2495b3e4ec154c186104dd99b07eab06738f1423 |
-| lib\rebuild_s4.py (1.0.0, separate agent, commit 1204233; packaged as present, NOT registered) | new | 3febdce707c9706d43d189c64f0700705a3b5b1bd2ee912e8fe430be1dac8ebf |
+| jobs\gm_core_v1.py (core_v1 1.1.0 pinned; REBUILD_SHA unset; this hash changes when the coordinator sets it) | new | 80ff15f25f2ce1a6de33057208b66dc608b03a9cd0feb2f9df23e9a20127220d |
+| lib\core_v1.py (1.1.0) | new | ee01320501fd1ec1f1fcc8b89dca91000e7644f728ed67cbb9e4ac674b04549e |
+| lib\rebuild_s4.py (1.0.0, separate agent, commit 1204233; interface v1, M1 open: NOT accepted, NOT registered; replace with the corrected version) | new | 3febdce707c9706d43d189c64f0700705a3b5b1bd2ee912e8fe430be1dac8ebf |
 | lib\gm\trials.csv (61 rows; book / pod digest 676b7b0f..., N 40) | unchanged since the diagnostics run | e61e94a4906a932a1353de1edb916a0c2e12c640f09b8a1525ce5c60cba8cabe |
-| lib\gm\CHANGES.md (documentation, not checked) | changed | 8fb4bde51f3e4e65620027e673017815a635af8ac44540faf9032d3cb3f73223 |
+| lib\gm\CHANGES.md (documentation, not checked) | changed | 2c250429e86c33f3d533dea52caf1739f142b4620bdb3864ba6b493720a44122 |
 | lib\diag_a2.py (1.0.1) | unchanged | 3264a5381c13b124d2566d02f263e21905f4e901680c1af7c2134f0bd558be1b |
 | lib\a2_batch.py (1.1.1) | unchanged | 35339f673f351f43315ad3c7010ba733b6fb8990a6a41feb1ef20de324de58c6 |
 | lib\a1_panel.py (1.1.0) | unchanged | eb9ef3f7fbd12760e174f9ef1df8573890bed6ca8d36f7d4e5c63eadd822ebb5 |
@@ -112,7 +132,7 @@ cloud, so roughly 30-90 minutes on the PC).
 | lib\bbgdata.py (= LOCK_v2 code hash) | unchanged | 0b26bb21b50671dca7c2153d3d66a2a09f7f33eeaa7c96ca536b69bbca8e6351 |
 | lib\engine_ref.json (gm-2.2.1 reference) | unchanged | cebd4932e8643f14c541258abe68809a4e3c119f0c384beaa3d656b44c955e39 |
 | lib\gm\*.py | unchanged | engine_ref.json code.gm_files_sha256 |
-| tests\data\rebuild_s4_stub.py (cloud tests only; never ships) | - | 29fba779597182ec4363f9750ffb8ed93035f2a26d2abd39add66f4087ce722b |
+| tests\data\rebuild_s4_stub.py (0.0.2, interface v2; cloud tests only; never ships) | - | 4bf94e8f7ebe975061fe90cd76b1c4668c6a3c6b65b4e547dc96eef5cb6979b5 |
 
 ## Blocked / open
 

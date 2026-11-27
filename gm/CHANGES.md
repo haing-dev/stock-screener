@@ -195,6 +195,15 @@ decision on M2 is option A):
 - Not applied here (can wait, CHECK_CORE): C3 (the import scan reads import statements; the sha pin covers the rest),
   C5 (agent and run ids go into the notes of later steps), C6 (the rebuild notes' check count, the rebuild agent's
   file), C7 (Core book v1's two test-5 margins against the candidate book, for the outcomes paragraph), C8 (stated).
+Code 1.1.0 (2026-11-27, commit 57cc241; corrections e18bc33 before it): tools/bbgq/lib/core_v1.py 1.1.0 (sha256
+ee01320501fd1ec1f1fcc8b89dca91000e7644f728ed67cbb9e4ac674b04549e; replaces 1.0.0 817380e8...), job gm_core_v1.py
+(sha256 80ff15f25f2ce1a6de33057208b66dc608b03a9cd0feb2f9df23e9a20127220d with REBUILD_SHA unset), stub 0.0.2,
+tests/core_v1_smoke.py 75 checks. Gates: run_tests ALL TESTS PASSED (tools/bbgq/results/run_tests_gm_2026-11-27h_gm-2.2.1.txt);
+free-panel identities PASS (results/core_plumbing_cloud_2026-11-27b.txt: the raw inputs reproduce the engine's
+currency carry, energy carry before E13 and equity value with E4 exactly, difference 0); gm/ unchanged, so the k = 0
+reproduction (24 of 24) and truncation (8 of 8) results stand. Closed while coding (no rule change): the raw check
+compares on the design grid with tolerance 1e-12 and the missing pattern; the A1 block-2 contract extension is applied
+to the raw EIA contracts by the same steps as a1_panel.build (its result is what the raw check compares). NOT RUN.
 
 ## A3: empty (registered 2026-11-27, after the diagnostics run and BEFORE Core book v1): TESTING_PROTOCOL 7.6 step 5
 Record entry (no rule, weight, threshold, cost, market or code change; nothing is run; no trial row).
