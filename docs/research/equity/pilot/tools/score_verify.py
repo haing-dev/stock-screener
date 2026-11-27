@@ -37,7 +37,7 @@ def main():
     n_caught = sum(c[2] for c in caught)
     disputes = [v for v in real if rl(key[v]["kind"]) != rl(tag[v]["kind"])]
     spk = [v for v in tag if str(tag[v].get("speaker_ok", "yes")).lower() != "yes"]
-    ok = a_rule >= 0.90 and a_part >= 0.85 and a_comp >= 0.85 and n_caught >= 9 and not missing
+    ok = a_rule >= 0.90 and a_part >= 0.85 and a_comp >= 0.85 and n_caught >= len(caught) - 1 and not missing  # = 9 of 10; A13 item 9 when fewer plants exist
     L = ["# Blind verification score", "",
          "| Measure | Result | Bar |", "|---|---|---|",
          "| Items scored (not planted) | %d | |" % len(real),
@@ -45,7 +45,7 @@ def main():
          "| Rule-like agreement | %.1f%% | >= 90%% |" % (100 * a_rule),
          "| Part agreement | %.1f%% | >= 85%% |" % (100 * a_part),
          "| Computable agreement | %.1f%% | >= 85%% |" % (100 * a_comp),
-         "| Planted caught | %d of %d | >= 9 of 10 |" % (n_caught, len(caught)),
+         "| Planted caught | %d of %d | all but one |" % (n_caught, len(caught)),
          "", "**Result: %s**" % ("PASS" if ok else "FAIL"), "",
          "## Planted items", "| vid | type | caught | verifier kind | verifier value |", "|---|---|---|---|---|"]
     L += ["| %s | %s | %s | %s | %s |" % (v, p, "yes" if c else "NO", kd, val) for v, p, c, kd, val in caught]

@@ -511,3 +511,6 @@ as such. Replaces R1.1 (record); R1.2 (material) and R1.3 (screenability) stay.
    quotes Nygren and is dropped), Li Lu 2. Held-out documents by the A10 hash rule (name + batch id) where there are 3
    or more: Stahl STA2, Druckenmiller DRU2, Sosin SOS1. Gate G3 per A13 item 6 (agreement reported; planted decisive;
    agreed rules + third reading). Spec v1.1 wording made investor-neutral ("his fund does X"; no change of meaning).
+9. **Planted items when a file is short (2026-11-27, before any batch-2 verifier tags were read).** If a file has fewer
+   than 5 anecdotes outside the sample (or fewer than 5 thresholds with a stated value), as many as exist are planted;
+   the bar "9 of 10" becomes "all but one". Hohn's set has 6 plants (1 anecdote + 5 thresholds).
