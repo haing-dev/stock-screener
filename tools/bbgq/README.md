@@ -144,14 +144,30 @@ E3 metadata: `cpi_freq_meta.py` -> results/cpi_freq_meta_2026-11-24.txt.
 - Reference: `engine_ref.json` code block rehashed for gm-2.2.0 (numbers unchanged; old `engine_ref_gm-2.1.0.json`).
 - Tests: `python3 tests/a1_panel_smoke.py` (mock bbgdata stores; also in tests/run_tests.py), `tests/gm_x1_smoke.py`.
 
-## Batch A2, version grids and hygiene H1-H4 (gm-2.2.0, 2026-11-27; gm/CHANGES.md "A2")
-- `lib/a2_batch.py` 1.0.0: the registered A2 report. Incumbent A1_INCUMBENT (465b5ecd4f) as run vs challenger
-  A2_CHALLENGER (a5b83bdf45: Trend 16, Economic trend 2, Carry 2, Value 2 versions averaged), both on the A1 panel.
+## Batch A2, version grids and hygiene H1-H4 (gm-2.2.1, 2026-11-27; gm/CHANGES.md "A2")
+- `lib/a2_batch.py` 1.1.0 (the A2 run; 1.1.1 since then, CHECK_A2 C4: the SPLIT check line reads both differences): the
+  registered A2 report. Incumbent A1_INCUMBENT (77374d7bef) as run vs challenger
+  A2_CHALLENGER (1faa343535: Trend 16, Economic trend 2, Carry 2, Value 2 versions averaged), both on the A1 panel.
   Decisive: H1 (one-sided 95% lower bound of dSR > -0.10) and H3 (test 5) at k = 1 on 1975-01..2010-12; reported: H2
   (double costs), k = 0 and the one-month delay, eras, books, each version and pod alone, family x class, weekly
   tranches, Trend's class-average / relative and carry / price parts, Value and Economic trend next to Trend, k = 1
   flagged share, P4, fragility, selection inflation, tuned knobs; the A2 VERDICT line; a TRIAL ROW (family book).
 - `jobs/gm_a2_v1.py`: the A1 checks plus a2_batch / trial-log hashes; rebuilds the A1 panel and checks its id
   (e7f98d44...) and the saved file; checks the incumbent against the A1 report; prints summary statistics only.
+- `jobs/gm_a1_v2.py`: the A1 rerun under gm-2.2.1 (same rule and panel id); `gm_a2_v1` reads the incumbent's as-run
+  values from its report `local\results\gm_a1_v2.txt`. A2 RAN 2026-11-27: VERDICT FAIL (results/gm_a2_v1.txt).
   How to queue: docs/research/batches/A2_BUILD_2026-11-27.md.
 - Tests: `python3 tests/a2_batch_smoke.py` (synthetic panels, mock stores; also in tests/run_tests.py).
+
+## Diagnostics after A2 (gm-2.2.1, 2026-11-27; gm/CHANGES.md "Diagnostics after A2"; TESTING_PROTOCOL 7.6 step 4)
+- `lib/diag_a2.py` 1.0.0: the 7.5 order item 2 diagnostics on the A2-final book (A1_INCUMBENT 77374d7bef, A1 panel,
+  k = 1): D1 structural half (PCA of Trend P&L per market), D2 non-signal turnover and cost drag, D3 forward volatility
+  by state (to 2009-12), D4 / S1 five-state equity tables and the crisis table, D5 Economic trend by delay, D6 trend
+  Sharpe per unit of market move by era, X2 Value income / price split, M1 the P4 market set; the specs' falsifier
+  lines; a TRIAL ROW per diagnostic (family diag). Cells under 60 months are printed as count and sign only.
+- `jobs/gm_diag_v1.py`: the A2 job's checks plus engine_ref.json sha256, ENGINE_VERSION, the four config hashes, the
+  book / pod rows of the trial log (digest), the A2 report (VERDICT FAIL, A2-final book) and the as-run check against it
+  (book k1 / k0 / d1, pods alone, P4); rebuilds the A1 panel and compares it with the saved file (writes nothing).
+  How to queue: docs/research/batches/DIAG_A2_BUILD_2026-11-27.md.
+- `diag_plumbing.py` (cloud): identity checks on the free panel only (no statistic).
+- Tests: `python3 tests/diag_a2_smoke.py` (synthetic panels, mock stores; also in tests/run_tests.py).

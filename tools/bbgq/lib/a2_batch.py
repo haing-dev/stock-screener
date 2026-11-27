@@ -31,7 +31,9 @@ import os
 import numpy as np
 import pandas as pd
 
-VERSION = "a2_batch-1.1.0"   # 1.1.0 (gm-2.2.1 fix): as-run values read from the gm_a1_v2 report; CM-only cm_aqr_ew
+VERSION = "a2_batch-1.1.1"   # 1.1.0 (gm-2.2.1 fix): as-run values read from the gm_a1_v2 report; CM-only cm_aqr_ew
+#                               1.1.1 (CHECK_A2 C4, gm/CHANGES.md "Diagnostics after A2" item 10): the SPLIT check line
+#                               reads max(maxdiff_parts, maxdiff_held); the A2 run (gm_a2_v1) used 1.1.0
 A1_PANEL_ID = "e7f98d4439fccf91f3451bc4b9e78079e3bc2cc2452931363b28520460b6cb43"   # gm/CHANGES.md A1 RUN
 LOCK_V2 = "d85a46cb2853646b24796f294f3ccab1d1507188c402e978fd59f5196ea41fc9"
 INC_HASH, CHA_HASH = "77374d7bef", "1faa343535"     # gm-2.2.1 names (gm/CHANGES.md gm-2.2.1 item 3)
@@ -561,7 +563,7 @@ def report(R, D, S, gspc, out=print, inc_cfg=None, cha_cfg=None, as_run=None, tr
         RE = bk["R_earn"]
         out("SPLIT | %s | check: parts add to the held Trend position (max diff %.1e; rebuild of the held position %.1e;"
             " months without a scale %d) %s" % (nm, sp["maxdiff_parts"], sp["maxdiff_held"], sp["months_no_scale"],
-                                                "PASS" if sp["maxdiff_parts"] < 1e-9 else "FAIL"))
+                                                "PASS" if max(sp["maxdiff_parts"], sp["maxdiff_held"]) < 1e-9 else "FAIL"))
         for part in ("avg", "rel"):
             r = part_return(sp[part], RE)
             out("SPLIT | %s | %s | all | %s" % (nm, "class-average" if part == "avg" else "relative",

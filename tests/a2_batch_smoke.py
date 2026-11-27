@@ -252,6 +252,9 @@ def _run(check, tmp):
     cnt = {k: sum(1 for x in lines if x.startswith(k)) for k in need}
     check("A2 report: every registered line type is printed (counts)", cnt == need,
           {k: (cnt[k], need[k]) for k in need if cnt[k] != need[k]})
+    check("A2 frozen copy tests/data/a2_batch_1.1.0.py = the sha256 gm_a2_v1 registers (the A2 run's a2_batch)",
+          A2.file_sha(os.path.join(REPO, "tests", "data", "a2_batch_1.1.0.py")) ==
+          "87b24d8f558da20f6b5403d67006629b87edf45cea2d7e36cfa71605b014797b" and A2.VERSION == "a2_batch-1.1.1")
     check("A2 report: the split checks pass in the printed lines",
           sum(1 for x in lines if x.startswith("SPLIT") and "check:" in x and x.endswith("PASS")) == 2)
     planted = set()
@@ -305,9 +308,13 @@ def _run(check, tmp):
                     ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
     shutil.copy(os.path.join(REPO, "tests", "data", "trials_a2_shipped.csv"), os.path.join(lib, "gm", "trials.csv"))
     bq = os.path.join(REPO, "tools", "bbgq")
-    for rel in ("lib/gm_engine.py", "lib/bbg_panel.py", "lib/bbgdata.py", "lib/a1_panel.py", "lib/a2_batch.py",
+    for rel in ("lib/gm_engine.py", "lib/bbg_panel.py", "lib/bbgdata.py", "lib/a1_panel.py",
                 "live_sources.csv", "untouched_markets.csv", "engine_ref.json"):
         shutil.copy(os.path.join(bq, rel), os.path.join(lib, os.path.basename(rel)))
+    # gm_a2_v1 is the record of the A2 run: it pins a2_batch-1.1.0 (gm/CHANGES.md "Diagnostics after A2" item 10, C4);
+    # the repo's a2_batch.py is 1.1.1 since then, so the job is tested with the frozen 1.1.0 copy
+    A2_110 = os.path.join(REPO, "tests", "data", "a2_batch_1.1.0.py")
+    shutil.copy(A2_110, os.path.join(lib, "a2_batch.py"))
     blocks, _free = A1S.scenario()
     A1S.write_store(os.path.join(loc, "work"), blocks)
     env = dict(os.environ, BBG_WORK=os.path.join(loc, "work"), PYTHONPATH="")
@@ -341,7 +348,7 @@ def _run(check, tmp):
     check("A2 job: a changed a2_batch.py stops it at the hash check", "FAIL lib a2_batch.py" in o2 and
           "STOP: lib file differs from the registered build: a2_batch.py" in o2 and "lock id" not in o2,
           (o2 + err2)[-600:])
-    shutil.copy(os.path.join(bq, "lib", "a2_batch.py"), os.path.join(lib, "a2_batch.py"))
+    shutil.copy(A2_110, os.path.join(lib, "a2_batch.py"))
     with open(os.path.join(lib, "gm", "trials.csv"), "a") as f:
         f.write("2026-11-28,x,book,,1.0,,,,,,\n")
     o3, rc3, err3 = go()

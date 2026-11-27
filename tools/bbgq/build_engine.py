@@ -7,11 +7,13 @@ engine_pkg/
   lib/gm/                    the gm package, copied unchanged (all .py files, data/, trials.csv; no __pycache__)
   lib/gm_engine.py           engine runner: path shim, fingerprint, comparison, truncation test
   lib/bbg_panel.py           Bloomberg adapter (serves gm.bloomberg from the locked research tables)
-  lib/bbgdata.py, live_sources.csv, untouched_markets.csv     the Bloomberg reader (1.1.0) and its two lists
-  lib/engine_ref.json        the cloud reference (design period only)
-  lib/a1_panel.py            Batch A1 data swap (gm-2.2.0, gm/CHANGES.md data entry A1)
-  lib/a2_batch.py            Batch A2 grids / hygiene (gm-2.2.0, gm/CHANGES.md "A2")
-  jobs/gm_repro_v1.py, gm_trunc_v1.py, gm_bbg_map_v1.py, bbg_build_v2.py, bbg_check_v2.py, gm_a1_v1.py, gm_a1_v2.py, gm_a2_v1.py
+  lib/bbgdata.py, live_sources.csv, untouched_markets.csv     the Bloomberg reader (1.2.0) and its two lists
+  lib/engine_ref.json        the cloud reference (design period only; gm-2.2.1)
+  lib/a1_panel.py            Batch A1 data swap (gm-2.2.1, gm/CHANGES.md data entry A1)
+  lib/a2_batch.py            Batch A2 grids / hygiene (gm-2.2.1, gm/CHANGES.md "A2"; 1.1.1)
+  lib/diag_a2.py             diagnostics after A2 (gm-2.2.1, gm/CHANGES.md "Diagnostics after A2")
+  jobs/gm_repro_v1.py, gm_trunc_v1.py, gm_bbg_map_v1.py, bbg_build_v2.py, bbg_check_v2.py, gm_a1_v1.py, gm_a1_v2.py,
+  gm_a2_v1.py, gm_diag_v1.py
   work/free/gm_free_inputs.zip   the free input files the engine opens (research/..., raw/...) + inputs_manifest.json
 
 The engine finds its inputs through gm_engine.setup(free_dir): gm.panel.RD and RAW are set to work\\free\\research and
@@ -37,8 +39,9 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(os.path.dirname(HERE))
 PKG = os.path.join(HERE, "engine_pkg")
 REF = os.path.join(HERE, "engine_ref.json")
-JOBS = ["gm_repro_v1", "gm_trunc_v1", "gm_bbg_map_v1", "bbg_build_v2", "bbg_check_v2", "gm_a1_v1", "gm_a1_v2", "gm_a2_v1"]
-LIBS = ["lib/gm_engine.py", "lib/bbg_panel.py", "lib/bbgdata.py", "lib/a1_panel.py", "lib/a2_batch.py",
+JOBS = ["gm_repro_v1", "gm_trunc_v1", "gm_bbg_map_v1", "bbg_build_v2", "bbg_check_v2", "gm_a1_v1", "gm_a1_v2", "gm_a2_v1",
+        "gm_diag_v1"]
+LIBS = ["lib/gm_engine.py", "lib/bbg_panel.py", "lib/bbgdata.py", "lib/a1_panel.py", "lib/a2_batch.py", "lib/diag_a2.py",
         "live_sources.csv",
         "untouched_markets.csv", "engine_ref.json"]
 SRC_DIRS = {"research": os.path.join(REPO, "cache", "macro", "raw", "research"),

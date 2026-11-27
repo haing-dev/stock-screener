@@ -1020,15 +1020,21 @@ gm_class_smoke.run(check)
 
 # Batch A1 data swap (tools/bbgq/lib/a1_panel.py, job gm_a1_v1; gm/CHANGES.md data entry A1): mock Bloomberg stores,
 # synthetic free inputs (extension only, correlation gate, copy / cut / held back, seal, panel id, no raw value printed)
-print("\nBatch A1 data swap (a1_panel 1.0.0, mock stores)")
+print("\nBatch A1 data swap (a1_panel 1.1.0, mock stores)")
 import a1_panel_smoke  # noqa: E402
 a1_panel_smoke.run(check)
 
 # Batch A2 grids / hygiene (tools/bbgq/lib/a2_batch.py, job gm_a2_v1; gm/CHANGES.md "A2"): synthetic panels and mock
 # stores (decisive H1 / H3, as-run check, Trend split, P4, selection inflation, fragility, seal, printing, job stops)
-print("\nBatch A2 grids / hygiene (a2_batch 1.0.0, synthetic panels)")
+print("\nBatch A2 grids / hygiene (a2_batch 1.1.1; job gm_a2_v1 on the frozen 1.1.0, synthetic panels)")
 import a2_batch_smoke  # noqa: E402
 a2_batch_smoke.run(check)
+
+# Diagnostics after A2 (tools/bbgq/lib/diag_a2.py, job gm_diag_v1; gm/CHANGES.md "Diagnostics after A2"): synthetic
+# panels and mock stores (each diagnostic against a direct computation, gates, seal, printing whitelist, job stops)
+print("\nDiagnostics after A2 (diag_a2 1.0.0, synthetic panels)")
+import diag_a2_smoke  # noqa: E402
+diag_a2_smoke.run(check)
 
 # LSEG source (tools/lseg): exchange-rule contract dates and registered listing models, no market data
 print("\nLSEG rules (lseg_rules 1.1.0)")
