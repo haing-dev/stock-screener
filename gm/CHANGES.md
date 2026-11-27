@@ -84,6 +84,15 @@ diagnostics" item 4 asks for; with it the pre-B job gm_diag_preb_v1 (not yet run
    qualify"). The live cycle needs no LSEG or Bloomberg input for these rows.
 8. Inputs still not available: none of the rows of "Pre-B diagnostics" item 4 needs anything beyond this entry, the
    free inputs and LOCK_LSEG_v5.
+Code (2026-11-27; this entry 12e108c before the code 049ab75): reader tools/bbgq/lib/card_inputs.py 1.0.0 (sha256
+4091f84bcbb11f43061bcc0330520a4a5580cb775895148a38849c0fbcab7b80), builder tools/bbgq/build_card_inputs.py (from git at
+264d0a2, deterministic zip, sha256 4f84b01d07ad59da05ad7e8ca4e78b31b1ed687941c6852da804c685be1b068d), lock
+docs/research/card_inputs/LOCK_CARD_v1.json (lock id 6c154f7d...); build_engine ships the zip as
+work\free\gm_card_inputs.zip and lib\card_inputs.py. Metadata facts printed by the builder (no value): first vintages
+CPILFESL 1996-12, UNRATE 1960-03, M2SL 1980-01, PCEPILFE 2000-07; first-release breaks by item 5: PCEPILFE 2003-11 and
+2009-06 (the two rebases), M2SL 1983-01 and 1996-01 (first-release level shifts against the revised series); CPILFESL
+none; UNRATE is used as a level only (no break rule); the root CPILFESL.csv and UNRATE.csv equal their _FR files up to
+2010-12-31. The free inputs zip, engine_ref.json and the k = 0 reproduction are unchanged.
 
 ## Pre-B diagnostics (registered 2026-11-27, BEFORE the diagnostics code and run): TESTING_PROTOCOL 7.6 step 7, 7.5 order item 3
 Registered run entry (no rule, weight, threshold, gate, cost or market change; no gm/ code change; no statistic of any
@@ -363,6 +372,15 @@ A6. Card 4 (SPEC_Card4 s3, s13): R5 c(t) as A3; v1 on while c(t) < c(t-6), v2 al
    sqrt(252) x the standard deviation (ddof 1) of daily returns in months t-2..t; gate = median(state-on up-months) /
    median(other up-months) >= 1.25 over 1990-01..2010-06, 1990-01..1999-12 and 2000-01..2010-06; printed as the two
    counts and yes / no per window (the ratio over >= 60 months each).
+Code 1.1.0 and cloud gates (2026-11-27; addendum 6146c2c before the code 049ab75; NOT RUN; no diagnostic statistic
+computed in the cloud): tools/bbgq/lib/diag_preb.py 1.1.0 (sha256 5273944bcb9811ccba83510da3359996e28def8eb8b89a4408ed3efad855c64e),
+job tools/bbgq/jobs/gm_diag_preb_v1.py extended in place (sha256 in PREB_BUILD_2026-11-27.md: pins card_inputs.py,
+checks gm_card_inputs.zip against LOCK_CARD_v1 before any value), tests/diag_preb_smoke.py 71 checks. Gates: k = 0
+reproduction 24 of 24, difference 0 (tools/bbgq/results/engine_repro_cloud_2026-11-27h_gm-2.2.1.txt); truncation PASS
+at all 8 cut dates, 21 k = 0 and 37 feature stages (results/engine_trunc_cloud_2026-11-27h_gm-2.2.1.txt); run_tests ALL
+TESTS PASSED (results/run_tests_gm_2026-11-27j_gm-2.2.1.txt). Closed while coding (no rule change): a market the panel
+lacks holds no position; card 3 R1's euro rate is the DE-then-EZ series of C2-D1 and the dollar's is TB3MS; card 3's
+reported lines (spec s13) are not printed in this version (they are no gate). Trial rows: 12.
 
 ## Core book v1 (registered 2026-11-27, BEFORE the Core book v1 code and run): TESTING_PROTOCOL 7.6 step 6
 Registered run entry (no rule, weight, threshold, gate, cost or market change; no gm/ code change; no statistic of S1-S4,
