@@ -4,6 +4,203 @@ Every rule change gets a new VERSION in gm/run.py and a line here. Every variant
 (1990-2010; extra check 1975-89) is logged so the deflated Sharpe can count the trials. The holdout (2011-2026) is run
 once, after the rules are frozen, by gm/holdout.py.
 
+## Diagnostics after A2 (registered 2026-11-27, BEFORE the diagnostics code and run): TESTING_PROTOCOL 7.6 step 4, 7.5 order item 2
+Registered run entry (no rule, weight, threshold, gate, cost or market changes; no gm/ code change; no statistic of any
+diagnostic below has been computed on real data, cloud or PC). The A1 panel holds Bloomberg values and exists only on
+the PC, so every diagnostic is computed by one PC job (tools/bbgq/jobs/gm_diag_v1.py, library tools/bbgq/lib/diag_a2.py).
+1. The registered text. 7.6 step 4: "The diagnostic pass of 7.5 order item 2 on the A2-final book." 7.5 order item 2:
+   "After A2: D1 (its candidate half only where a locked history exists), D2, D3, D4, D5, D6, X2, M1, S1." 7.5: "No
+   diagnostic adopts anything or uses a Holm slot (charter s5). Each is logged as a design-data run (7.8)"; "Every
+   diagnostic reads positions, signals or its registered outcome only; none reads a sealed day after its fix." Gates:
+   the 7.5 table (rows D1-D6, X2, M1, S1, with the 3.4 fixes: D1 extension to T10, D3 state months end at 2009-12, D4 one
+   shared bad-state set and one crisis table, D5 overlap printed, X2 90% interval reported, M1 gate kept, S1 five-state
+   table, Fung-Hsieh part only with a locked factor file), CHARTER_1.2 s5 (computations), THESIS_1.3_xs s5 (X2),
+   THESIS_1.3_method s7 (M1). A2 entry item 5: the specs' falsifier lines other than the splits A2 reported "are read on
+   the A2-final book ... with the 7.5 order item 2 diagnostics, family 'diag'; X2 and D4 supply their inputs".
+2. Book (closed by the A2 RUN paragraph: "A2-final book = the incumbent, unchanged"): A1_INCUMBENT
+   gm-2.0.4-candidate-x1, config 77374d7bef, old code path, no grid, CANDIDATE shares 45 / 15 / 25 / 15, engine
+   gm-2.2.1, A1 PANEL ID e7f98d4439fccf91f3451bc4b9e78079e3bc2cc2452931363b28520460b6cb43, design months 1975-01..2010-12,
+   every loader cut at 2010-12-31 and the holding cut of 7.3 item 5. Timing: every return a diagnostic reads is the
+   k = 1 return (7.3 item 1, decisive timing; gm.execution.run_k1); positions are book.run's (identical at k = 0 and
+   k = 1). Only D5, whose subject is timing, also prints the k = 0 path beside.
+3. In this pass: D1 structural half, D2, D3, D4, D5, D6, X2, M1, S1 (equity-state part) and the falsifier lines of
+   SPEC_Trend, SPEC_Carry, SPEC_Value and SPEC_Economic_trend s10. Not in this pass: X1 (done, order item 1); R1,
+   C1-D1, C1-D2, C2-D1, C2-D2, C3-D1, C3-D2, C4-D1, C4-D2, C5-D1, C5-D2, F0 (order item 3: after Core book v1, before B2;
+   their registered cuts stay: R1 month-ends to 2010-11, C4-D1 last state month 2010-06, C5-D2 breaks to 2008-12);
+   blocked parts in item 6.
+4. Closed here (the simplest reading of the registered text; none chosen from results):
+   D1 a. Trend profit and loss of market m in month t at equal risk = clip(score(t-1), -1, 1) x 0.40 / vol(t-1) x R1(t)
+      (book.py trend_signal and the line w x 0.40 / vol), score = book.trend_signal of the A2-final config (sign,
+      1 / 3 / 12 months), vol = gm.vol.estimate (hybrid), R1 = the k = 1 return; before costs, class division and scalers.
+      b. Markets: the book's Trend class-block markets except cm_aqr_ew (7.1 item 3: "61 markets ... plus cm_aqr_ew"),
+      i.e. the 61 distinct markets.
+      c. Windows: every trailing 60-month window ending 1979-12 .. 2010-12 (373 windows inside 1975-01..2010-12); in each,
+      the markets with a P&L in all 60 months and non-zero variance; a window needs at least 3 markets.
+      d. Principal components = eigen-decomposition of the window's correlation matrix (equal risk: each stream
+      standardised); first-factor share = largest eigenvalue / number of markets; loading = eigenvector x
+      sqrt(eigenvalue) (the market's correlation with the factor), signed so the loadings sum to >= 0; class mean
+      loading = mean over the class's markets in the window. Each averaged over windows with equal weight (a class over
+      the windows in which it has a market).
+      e. Pod Sharpe over mean market Sharpe: per window, the Sharpe of the Trend pod alone (one-part equal-risk book of
+      gm-2.1.0 E9, mask (trend, *, *), k = 1) BEFORE costs (its gross return, since the market streams are before costs)
+      over the mean of the window's market Sharpe ratios; windows where that mean is <= 0 or the pod lacks a month are
+      skipped and counted; averaged over the rest.
+      f. This half has no gate (the registered gate is on candidates); reported only. Candidate half: item 6.
+   D2 a. The book's positions are rebuilt from their intermediates (unscaled family-class positions p, volatility vol,
+      block scalers k, book scaler s, per-market caps, gross cap; book.py run / _finish, old path); the rebuild must
+      equal book.run's "pos" (max absolute difference <= 1e-12, printed; if not, D2 prints FAIL and is not gated).
+      b. "Volatilities and all scalers held at last month's values": the position at t is built from the scores at t
+      (q = p x vol = w x 0.40 / n, the volatility-free part of each family-class term) with vol(t-1), k(t-1) and s(t-1);
+      the per-market cap, a function of vol, from vol(t-1); the gross cap is applied to the result (caps are rules,
+      not scalers). "Scores held" (reported): q(t-1) with vol(t), k(t), s(t) and the caps at t.
+      c. Turnover = sum over markets of |position(t) - actual position(t-1)| (book.py turnover). Market-months in which a
+      held input is missing (a market's first month with a volatility, a block scaler's warm-up, the book scaler's
+      warm-up) are left out of both the numerator and the denominator.
+      d. Gate statistic per era (trade months 1975-89, 1990-2010): 1 - (turnover with volatilities and scalers held) /
+      (actual turnover), sums over the era's market-months. Reported: the scores-held share = (turnover with scores
+      held) / (actual turnover).
+      e. Cost drag per market (reported): mean yearly cost in basis points of capital (trades x one-way cost + roll
+      charge + EM borrow, book.py at cost multiple 1) over the design months with a position.
+   D3 a. r = the A2-final book's net k = 1 return; forward volatility FV(t) = standard deviation (ddof 1) of r over
+      t+1..t+12 x sqrt(12), all 12 months present; state months from the first month with a state and an FV to 2009-12
+      (7.5 fix), so no forward window passes 2010-12.
+      b. Split (a), named state = trailing 12-month Pearson correlation of eq_us_spx and bd_us_10y monthly excess
+      returns (A1 panel, months t-11..t, all 12 present) above 0 (the premise MT194-C16-3, "positive correlation which
+      means ... you have more risk on", CHARTER_1.2_check table D3); other = the rest.
+      c. Split (b), named state = mean over Trend's book markets with a score at t of |trend score| (book.py:72,
+      score as D1) at or above its 90th percentile over the state months (numpy linear); other = the rest.
+      d. Difference = mean FV in the named state - mean FV in the other state months. One-sided 90% lower bound =
+      difference - 90th percentile of (bootstrap difference - difference); stationary bootstrap of the state months
+      (state and FV resampled together, gm.stats._stationary_idx), mean block 12, 10,000 resamples, seed 20261101.
+      Per split: open if difference >= 0.02 and bound > 0. Either split open -> the A3 faster book scaler item.
+   D4 a. State at month-end t, S&P base: compounded excess-return index of eq_us_spx (A1 panel R); fall = 1 - index(t) /
+      max(index over t-23..t); age = months since that maximum. Reported beside: the same states on the four-market
+      average of protocol.py:200 (equal-weight mean of the monthly returns of eq_us_spx, eq_eu_stoxx50, eq_jp_nikkei,
+      eq_gb_ftse that exist that month).
+      b. Five states (also S1's "five-state equity table"): fall < 5% (no age split); 5% <= fall <= 15% with age <= 2
+      ("young") and age > 2; fall > 15% with age <= 2 and age > 2.
+      c. Return of a pod in month t = its family contribution at k = 1 before costs (held family position x k = 1
+      return, a2_batch.contrib_fam, the A2 convention); mean per state; a state with fewer than 6 months is reported,
+      not used (it cannot open a gate).
+      d. Gates (S&P base): Trend's mean < 0 in the 5-15% young state and > 0 in the two > 15% states pooled -> SPEC_Trend
+      s10 line "young, shallow equity fall"; Carry's summed contribution < 0 in both the "1998 LTCM" (1998-08..10) and
+      the "2008 Lehman" (2008-09..12) windows -> SPEC_Carry s11 stop state "funding break".
+      e. Crisis table (one shared bad-state set, 7.5 fix): bad months = the six config.py STRESS_WINDOWS that end by
+      2010-12 together with the months whose eq_us_spx return is at or below its 20th percentile over 1975-01..2010-12
+      (numpy linear); per pod and per Carry leg (FX, FI, CM): mean contribution in bad and in other months; per stress
+      window and pod: the summed contribution.
+      f. S1: the five-state table for all four pods on both bases; reported only.
+   D5 a. Economic trend alone = one-part equal-risk book (E9, mask (econ, *, *)), net, at k = 1, with config key
+      delay_months d = 0, 1, 3, 6, 12 (book.py _finish: positions earn 1 + d months after the decision); each Sharpe over
+      its own months in 1975-01..2010-12 (A2's convention). Gate as written: Sharpe(d = 3) < 0.5 x Sharpe(d = 0) ->
+      claim "slow reaction" (falsifier "no fading with delay"); else "a lasting macro state". Reported beside: the same
+      five on the k = 0 path, and the caution of charter JP8 (at 3 months' delay 9 of the 12 months of the 12-month
+      inputs overlap).
+   D6 a. Per calendar year 1975-2010 and market of D1: the year's annualised Sharpe of D1's P&L and of the market's
+      k = 1 return R1 (12 monthly values each, both with non-zero variance; else that market-year is out).
+      b. Year level: y = mean over markets of the trend Sharpe, x = mean over markets of |market Sharpe|; years with at
+      least 3 markets.
+      c. Per era (1975-89, 1990-2010) least squares of y on x with intercept; Newey-West slope standard error, 2 lags,
+      Bartlett weights (as gm.stats.nw_alpha_t); z = (slope 1990-2010 - slope 1975-89) / sqrt(se1^2 + se2^2) (eras
+      independent). Gate: |z| < 2 -> "trend return per unit of market move, against the design slope" registered as
+      Trend's breakdown check (SPEC_Trend s11); else dropped.
+   X2 a. Legs EQ, FI, FX of Value as held in the A2-final book (fam_pos value; the book has version 1 only, so the
+      averaged position is version 1's).
+      b. Income of market m in month t = held position(t-1) x C_m(t-1) / 12, C = gm.signals.carry_values of the A1 panel,
+      raw (equities: 12-month dividend yield at lag 0 minus the local 3-month rate; bonds: yield minus 3-month rate;
+      currencies: rate gap to the dollar; E13 touches only natgas and gasoline); total = held position(t-1) x R1(t);
+      price = total - income; over market-months with a position, a carry value and a return; the covered share of the
+      leg's gross position is printed.
+      c. Gate per leg: mean over the months with a covered position of the monthly summed price part <= 0 -> the
+      register entry "paid by income" for that leg. Reported: mean income, price and total (%/yr) and the 90% interval of
+      the price part's mean (stationary bootstrap of the monthly price part, mean block 6, 10,000 resamples, seed
+      20261101, 5th and 95th percentiles).
+   M1 a. r = the A2-final book's net k = 1 return; m1 = eq_us_spx, m2 = bd_us_10y monthly excess returns of the A1 panel
+      (the P4 form of the A2 report); b(t) by least squares with intercept over all common months 1975-01..t-1, first
+      value in month 37 (1978-01); one-market w = a2_batch.p4; two-market w = r - b1 m1 - b2 m2 with joint slopes.
+      b. Sharpe of r, w (S&P) and w (both) over 1978-01..1989-12 and 1990-01..2010-12 (1978-2010 reported). Gate as
+      written: in either era Sharpe(w both) <= Sharpe(w S&P) - 0.05 -> P4 uses both markets; else the S&P alone.
+   Falsifier lines (A2 item 5; specs s10), each printed "holds" or "does not hold", reported only:
+      Trend (1) pod alone net Sharpe <= 0 in both eras; (2) the two > 15% S&P states pooled: mean Trend contribution
+      <= 0 (D4). Trend's carry / price split and class-average / relative split: already read on this same book by
+      gm_a2_v1 (CARRYPRICE and SPLIT lines, incumbent); not recomputed.
+      Carry (1) pod alone and each leg alone (one-part books with masks (carry, FX / FI / CM, *)) net Sharpe <= 0 in both
+      eras; (2) FX: the leg's mean contribution in the bad months (D4 e) not below its mean in the other months; (3) CM:
+      "high-carry positions" = the long side (version 1 is long where carry > 0, version 2 long the upper half of the
+      rank): mean monthly contribution of the CM market-months held long <= 0; (4) FI standing long: on the FI leg alone,
+      its mean net return <= the mean net return of a constant position in each bond equal to the leg's mean position in
+      it over the months it holds it (same months; cost = the roll charge of the constant position, which never trades);
+      (5) per leg (FX, FI, CM) the split of X2 b with income = carry / 12 at the prior month end: holds for a leg whose
+      income part <= 0 or whose price part > its income part.
+      Value (1) pod alone net Sharpe <= 0 in both eras; (2) = X2; (3) Value against Trend's relative part: read at A2
+      (VALUE lines, incumbent); not recomputed.
+      Economic trend (1) pod alone (= D5 d = 0) net Sharpe <= 0 in both eras; (3) theme split: the econ score E is the
+      mean of the theme parts present (gm.signals.econ_versions, at least 2 present), so theme t's part of the held
+      position = held Economic trend position x (theme score_t / number of themes present) / E, exact; market-months
+      with E = 0 hold nothing; the check sum of parts = held position is printed; contribution per theme at k = 1 before
+      costs by era; holds if the inflation part's mean <= 0 in both eras while the sum of the other three is > 0 in both.
+      Theme scores = gm.signals.econ_theme_scores of the A1 panel, computed on the PC under the 2010-12-31 cut.
+      Loss-event lines (P3): text only, nothing computed.
+5. Printing (tools/bbgq/README.md export whitelist): Sharpe ratios, means, slopes, correlations and shares only over
+   at least 60 months; a state, window or group with fewer months is printed with its month count and the sign of its
+   value only, never the value; gates as pass / fail; counts and ids. Gates are evaluated on full precision on the PC.
+6. Blocked (not run; listed by the job):
+   a. D1 candidate half. T09 (alternative commodities): no registered data entry names a T09 series (the LSEG data
+      entry item 4 lists the LSEG inputs it serves, and T09 is not among them; the A1 entry item 4 lists "every
+      non-panel commodity" as not a candidate; E1 keeps the Bloomberg alternative columns off), and no T09 market has a
+      registered live source. T10 (strip markets): LSEG lock v5 identifies eight-contract strips for ED (the dollar,
+      which T10 excludes) and FEI (euro, 1999-2010) only; 7.5 D1's extension admits a strip "only with eight contracts
+      locked and a registered live source", and LSEG LIVE_START is not set (LSEG data entry item 6), so no candidate can
+      be admitted whatever its statistics; E12's return form is coded only for an admitted market. Consequence: this
+      pass opens no A3 breadth item; 7.6 step 5 applies (an item whose preconditions are not met when A3 starts is not
+      run; it may be registered with B1 or B2 before that batch starts, else it waits for the live path).
+   b. S1's Fung-Hsieh part: the factor file is not obtained and locked (7.11).
+7. What each outcome triggers (recorded after the run as an "outcomes" paragraph under this entry; nothing is adopted
+   here): D2 open -> the A3 no-trade buffer item; D3 open (either split) -> the A3 faster book scaler item; each opened A3
+   item gets its own entry before A3 (REGISTRATION_3.4 part (c) item 5); D4 -> the SPEC_Trend s10 line and the
+   SPEC_Carry s11 stop state, or neither; D5 -> SPEC_Economic_trend's claim wording; D6 -> Trend's breakdown check line
+   or none; X2 -> a "paid by income" entry per leg in the thesis register, or none; M1 -> P4's form in every later
+   report; S1 and the falsifier lines are reported only. Spec and register edits are text changes made after the run,
+   each citing this entry.
+8. Trial count (7.8 item 1, family "diag"): one gm/trials.csv row per diagnostic run: D1, D2, D3, D4, S1, D5, D6, X2,
+   M1 and one row for the falsifier lines = 10 rows, no Sharpe columns (as the X1 row), hash = config hash of the
+   diagnostic's id, diag_a2 version, book hash and panel id; written by the coordinator from the job's TRIAL ROW
+   lines. Family "diag" rows do not enter the selection-inflation count (book and pod rows only, 7.8 item 2).
+9. Job (tools/bbgq/jobs/gm_diag_v1.py on the PC; the A2 pattern): STOP before any Bloomberg value is read unless the gm
+   .py files equal engine_ref.json's code block; sha256(lib\engine_ref.json) = cebd4932e8643f14c541258abe68809a4e3c119f0c384beaa3d656b44c955e39;
+   config.ENGINE_VERSION = gm-2.2.1 and the config hashes BASE f1d682c384, CANDIDATE 438a092b53, A1_INCUMBENT
+   77374d7bef, A2_CHALLENGER 1faa343535; diag_a2.py, a2_batch.py, a1_panel.py, gm_engine.py, bbg_panel.py, bbgdata.py
+   have the sha256 registered in the job; the book / pod rows of lib\gm\trials.csv (item 10, C7) have the registered
+   digest; local\results\gm_a2_v1.txt has "A2 JOB DONE", the registered A1 PANEL ID PASS line, "A2 VERDICT FAIL" and
+   "A2-final book = gm-2.0.4-candidate-x1 (77374d7bef)"; the store's lock id is LOCK_v2; the free inputs match the
+   reference; the free arm matches engine_ref.json. Then it rebuilds the A1 panel, asserts extension-only and the
+   registered id, compares the rebuild with work\a1\a1_panel_e7f98d4439fc.pkl when present (STOP on any difference) and
+   writes nothing. As-run check against the A2 report before any diagnostic line (STOP on a difference): the A2-final
+   book's net Sharpe 1975-2010 at k = 1 / k = 0 / one-month delay (3 decimals: 1.439 / 1.481 / 1.064, tolerance
+   5e-4), each pod alone at k = 1 1975-2010 (2 decimals, tolerance 5e-3) and the P4 book / specific line (2 decimals),
+   all read from gm_a2_v1.txt.
+10. A2 check items applied here (CHECK_A2 "can wait"):
+   C1 stale text corrected: tools/bbgq/README.md A2 lines (gm-2.2.1, a2_batch 1.1.0 for the run, hashes 77374d7bef /
+      1faa343535, gm_a1_v2 named as the A1 rerun whose report gm_a2_v1 reads), tests/run_tests.py label, build_engine.py
+      docstring.
+   C4 a2_batch-1.1.1: the SPLIT check line prints PASS only if max(maxdiff_parts, maxdiff_held) < 1e-9 (a reported line;
+      the verdict never read it). The A2 run used a2_batch-1.1.0 (sha256 87b24d8f558da20f6b5403d67006629b87edf45cea2d7e36cfa71605b014797b),
+      whose line read maxdiff_parts alone; its printed maxdiff_held values (1.1e-15, 1.8e-15) pass the 1.1.1 criterion.
+      gm_a2_v1.py keeps the 1.1.0 hash (it is the record of that run; a frozen copy tests/data/a2_batch_1.1.0.py serves
+      its smoke test). Future jobs pin 1.1.1.
+   C6 the diag job compares the rebuilt A1 panel with the saved file before anything else and never writes it; any
+      later job that writes the A1 panel prints that comparison before writing.
+   C2 pins of item 9 (engine_ref.json sha256, ENGINE_VERSION, the four config hashes).
+   C7 the job pins only what it relies on in the trial log: the sha256 of the sorted lines "trial|family|hash|sr_9010"
+      (raw CSV text) of the rows with family book or pod = 676b7b0f157cc6cc3e14f4e82754d5ad4c80bc61e3e9e5aa7c26596c6403e5ed,
+      N = 40 (39 + the A2 challenger 1faa343535, 1.526); appended diag, data or fix rows do not change it. A2 item 4l is
+      not amended (A2 has run).
+11. Cloud: no diagnostic statistic is computed on the free or the A1 panel. Cloud work = the code, synthetic-data and
+   mock-store tests (tests/diag_a2_smoke.py in tests/run_tests.py), the engine gates (k = 0 reproduction 24 of 24,
+   truncation 8 of 8; gm/ is unchanged, so engine_ref.json is unchanged) and identity plumbing on the free panel that
+   prints differences only (D2 rebuild = book.run positions; X2 income + price = total; theme parts sum to the held
+   Economic trend position).
+
 ## gm-2.2.1 fix: cm_aqr_ew a Trend market in CM only (registered 2026-11-27, BEFORE the code change; found while building A2)
 Registered fix of the existing engine (TESTING_PROTOCOL 7.4: a found defect gets a registered engine version, as C1-C4,
 gm-1.2.2 and E1-E5). Found while coding A2 (gm/CHANGES.md "A2" item 13, commit d0ecdc7), BEFORE any A2 statistic was
