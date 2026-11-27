@@ -568,3 +568,13 @@ as such. Replaces R1.1 (record); R1.2 (material) and R1.3 (screenability) stay.
     step: the first FRB table found, frb_all_old.rates_daily, is not readable by this account. 1.0.2 tries every
     candidate table in order (plus frb.rates_daily / rates_monthly) and uses the first readable one; run() unchanged.
     Rerun as eq_recall_pull_v1b (stored data sets are reused, only rc_t10 is pulled).
+19. **Treasury source eq_recall 1.0.3 (2026-11-27).** eq_recall_pull_v1b (ran with 1.0.2; report
+    pilot/recall/eq_recall_pull_v1b_report.txt) found only two candidate tables (frb_all_old.rates_daily /
+    rates_monthly), neither readable by this account; frb.rates_daily was not tried because the listing showed it
+    without a 10-year column. RECALL_SPEC_v1 said the job stops when WRDS has no such table. Changed (logged as a spec
+    change; no recall number exists yet): when no WRDS FRB table is readable, the job uses the same series from its
+    public source, the Federal Reserve H.15 10-year constant-maturity yield (FRED DGS10, identical to frb tcmnom_y10),
+    last daily value of each month 2008-06 .. 2025-12, embedded in the module (from branch macro-data
+    research/DGS10.csv, 2026-11-01 download; 211 month-ends, none missing). Public data, not WRDS data. The pull also
+    prints the FRB tables it saw (names and 10-year-like column names, metadata only). run() unchanged. Rerun as
+    eq_recall_pull_v1c (only rc_t10 is pulled).

@@ -31,6 +31,11 @@ measure takes the last CRSP split factor from the untruncated price file (as eq_
 only the direction; a single-version decisive result is flagged. 1.0.2 (after eq_recall_pull_v1, which stopped at the
 Treasury step: the first table found, frb_all_old.rates_daily, is not readable by this account): every candidate FRB
 table is tried in order, plus frb.rates_daily / rates_monthly, and the first readable one is used; run() unchanged.
+1.0.3 (after eq_recall_pull_v1b: no FRB table on WRDS is readable by this account; A13 item 19): the step prints the
+FRB tables it saw (names and their 10-year-like column names: metadata only) and, when no WRDS candidate is readable,
+uses the same series from its public source: the Federal Reserve H.15 10-year constant-maturity yield as published by
+FRED (DGS10), last daily value of each month 2008-06 .. 2025-12, embedded below (taken from branch macro-data
+research/DGS10.csv, 2026-11-01 download). src = "public.fred.dgs10"; run() unchanged.
 """
 import json
 import time
@@ -44,7 +49,7 @@ INVESTORS = json.loads("[{\"name\": \"Joel Greenblatt\", \"group\": \"roster\", 
 TARGET = json.loads("{\"name\": \"Dev Kantesaria\", \"mgrnos\": [\"14460\"], \"recipe\": \"kantesaria_v1\"}")
 # <<< FROZEN INPUT
 
-VERSION = "eq_recall-1.0.2"
+VERSION = "eq_recall-1.0.3"
 COM = ("securitytype = 'EQTY' and securitysubtype = 'COM' and sharetype = 'NS' and primaryexch in ('N','A','Q')")
 MEASURES = ["ey", "bp", "mom", "roe", "acc", "pio", "rev"]
 GROUPS = {"value": ["ey", "bp"], "momentum": ["mom"], "quality": ["roe", "acc", "pio"], "expectations": ["rev"]}
@@ -56,6 +61,8 @@ Q0, Q1 = 201003, 202512            # purchase quarters 2010-2025 (13F quarter-en
 ANN_LAG_DAYS = 90                  # a fiscal year is known 90 days after its datadate (A13 item 13)
 ANN_STALE_DAYS = 550               # latest known fiscal year older than this at t = annual accounts missing
 FUNDA0, FQX0, DATA_END = "1996-01-01", "2004-01-01", "2025-09-30"
+# 1.0.3: public fallback = FRED DGS10 (Federal Reserve H.15, same series as frb tcmnom_y10), last daily value per month
+DGS10_ME = ("20080630:3.99,20080731:3.99,20080829:3.83,20080930:3.85,20081031:4.01,20081128:2.93,20081231:2.25,20090130:2.87,20090227:3.02,20090331:2.71,20090430:3.16,20090529:3.47,20090630:3.53,20090731:3.52,20090831:3.4,20090930:3.31,20091030:3.41,20091130:3.21,20091231:3.85,20100129:3.63,20100226:3.61,20100331:3.84,20100430:3.69,20100528:3.31,20100630:2.97,20100730:2.94,20100831:2.47,20100930:2.53,20101029:2.63,20101130:2.81,20101231:3.3,20110131:3.42,20110228:3.42,20110331:3.47,20110429:3.32,20110531:3.05,20110630:3.18,20110729:2.82,20110831:2.23,20110930:1.92,20111031:2.17,20111130:2.08,20111230:1.89,20120131:1.83,20120229:1.98,20120330:2.23,20120430:1.95,20120531:1.59,20120629:1.67,20120731:1.51,20120831:1.57,20120928:1.65,20121031:1.72,20121130:1.62,20121231:1.78,20130131:2.02,20130228:1.89,20130328:1.87,20130430:1.7,20130531:2.16,20130628:2.52,20130731:2.6,20130830:2.78,20130930:2.64,20131031:2.57,20131129:2.75,20131231:3.04,20140131:2.67,20140228:2.66,20140331:2.73,20140430:2.67,20140530:2.48,20140630:2.53,20140731:2.58,20140829:2.35,20140930:2.52,20141031:2.35,20141128:2.18,20141231:2.17,20150130:1.68,20150227:2,20150331:1.94,20150430:2.05,20150529:2.12,20150630:2.35,20150731:2.2,20150831:2.21,20150930:2.06,20151030:2.16,20151130:2.21,20151231:2.27,20160129:1.94,20160229:1.74,20160331:1.78,20160429:1.83,20160531:1.84,20160630:1.49,20160729:1.46,20160831:1.58,20160930:1.6,20161031:1.84,20161130:2.37,20161230:2.45,20170131:2.45,20170228:2.36,20170331:2.4,20170428:2.29,20170531:2.21,20170630:2.31,20170731:2.3,20170831:2.12,20170929:2.33,20171031:2.38,20171130:2.42,20171229:2.4,20180131:2.72,20180228:2.87,20180329:2.74,20180430:2.95,20180531:2.83,20180629:2.85,20180731:2.96,20180831:2.86,20180928:3.05,20181031:3.15,20181130:3.01,20181231:2.69,20190131:2.63,20190228:2.73,20190329:2.41,20190430:2.51,20190531:2.14,20190628:2,20190731:2.02,20190830:1.5,20190930:1.68,20191031:1.69,20191129:1.78,20191231:1.92,20200131:1.51,20200228:1.13,20200331:0.7,20200430:0.64,20200529:0.65,20200630:0.66,20200731:0.55,20200831:0.72,20200930:0.69,20201030:0.88,20201130:0.84,20201231:0.93,20210129:1.11,20210226:1.44,20210331:1.74,20210430:1.65,20210528:1.58,20210630:1.45,20210730:1.24,20210831:1.3,20210930:1.52,20211029:1.55,20211130:1.43,20211231:1.52,20220131:1.79,20220228:1.83,20220331:2.32,20220429:2.89,20220531:2.85,20220630:2.98,20220729:2.67,20220831:3.15,20220930:3.83,20221031:4.1,20221130:3.68,20221230:3.88,20230131:3.52,20230228:3.92,20230331:3.48,20230428:3.44,20230531:3.64,20230630:3.81,20230731:3.97,20230831:4.09,20230929:4.59,20231031:4.88,20231130:4.37,20231229:3.88,20240131:3.99,20240229:4.25,20240328:4.2,20240430:4.69,20240531:4.51,20240628:4.36,20240731:4.09,20240830:3.91,20240930:3.81,20241031:4.28,20241129:4.18,20241231:4.58,20250131:4.58,20250228:4.24,20250331:4.23,20250430:4.17,20250530:4.41,20250630:4.24,20250731:4.37,20250829:4.23,20250930:4.16,20251031:4.11,20251128:4.02,20251231:4.18")
 T10_TOL_DAYS = 40                  # last Treasury value on or before t, at most this old
 NBOOT, SEED, MIN_N = 2000, 20261127, 20
 GATE = {"lift": 2.0, "lo": 1.25, "recall": 0.25}
@@ -167,6 +174,9 @@ def _t10(sql, out):
                 tabs[("frb", t)] = {str(x).lower() for x in sql("select * from frb.%s limit 1" % t).columns}
             except Exception:  # noqa: BLE001
                 pass
+    for (s_, t_), cols in sorted(tabs.items()):  # 1.0.3: metadata only (table and column names)
+        c10 = sorted(c for c in cols if "10" in c)
+        out("FRB table seen: %s.%s (%d columns; 10-year-like: %s)" % (s_, t_, len(cols), ", ".join(c10[:8]) or "none"))
     picks = _pick_t10(tabs)
     for k in (("frb", "rates_daily"), ("frb", "rates_monthly")):  # 1.0.2: always also try the standard tables
         if k not in tabs:
@@ -187,7 +197,18 @@ def _t10(sql, out):
         out("10-year Treasury: %s.%s column %s (date column %s)" % (s, t, v, d))
         df["src"] = "%s.%s.%s" % (s, t, v)
         return df
-    raise RuntimeError("STOP: no readable 10-year Treasury series among %d candidate tables" % len(picks))
+    out("10-year Treasury: no WRDS FRB table readable among %d candidates; using the public H.15 series (FRED DGS10, "
+        "embedded month-end values)" % len(picks))  # 1.0.3
+    df = public_t10()
+    df["src"] = "public.fred.dgs10"
+    return df
+
+
+def public_t10():
+    """FRED DGS10 last daily value of each month 2008-06 .. 2025-12 (1.0.3)"""
+    rows = [x.split(":") for x in DGS10_ME.split(",")]
+    return pd.DataFrame({"date": pd.to_datetime([d for d, _ in rows], format="%Y%m%d").strftime("%Y-%m-%d"),
+                         "y10": [float(v) for _, v in rows]})
 
 
 def pull(sql, save, load, out, budget=7000):

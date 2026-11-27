@@ -1,0 +1,14 @@
+﻿=== WRDSQ REPORT v1.0.7 | job eq_recall_pull_v1b | 2026-11-27 15:28 | metadata and results only ===
+Loading library list...
+Done
+
+## 1. python
+eq_recall-1.0.2 pull
+reused eq_ref data sets: 24 (ref_msf, ref_dv_2008, ref_dv_2009, ref_dv_2010, ref_dv_2011, ref_dv_2012, ref_dv_2013, ref_dv_2014 ...)
+10-year Treasury: frb_all_old.rates_daily not readable ((psycopg2.errors.InsufficientPrivilege) permission denied for schema frb_all_old)
+10-year Treasury: frb_all_old.rates_monthly not readable ((psycopg2.errors.InsufficientPrivilege) permission denied for schema frb_all_old)
+rc_t10         FAILED: STOP: no readable 10-year Treasury series among 2 candidate tables
+STOP: the 10-year Treasury yield is not available (RECALL_SPEC_v1: the job stops and says so)
+left for the next run: rc_t10
+
+=== END (11 s) ===

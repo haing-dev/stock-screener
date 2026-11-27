@@ -127,8 +127,12 @@ del store["rc_t10"]
 plines.clear()
 R.pull(mk_sql(False), save_mem, load_mem, pout, budget=100)
 ptxt = "\n".join(plines)
-assert "STOP" in ptxt and "ALL PULLS COMPLETE" not in ptxt and "rc_t10" not in store, ptxt
-print("pull(): reuse, fallback pull, empty column, FRB discovery and STOP: OK")
+assert "public H.15" in ptxt and "ALL PULLS COMPLETE" in ptxt and "rc_t10" in store, ptxt  # 1.0.3: public fallback
+pt = store["rc_t10"]
+assert pt.src.iloc[0] == "public.fred.dgs10" and len(pt) == 211 and pt.date.iloc[0] == "2008-06-30"
+assert pt.date.iloc[-1] == "2025-12-31" and abs(pt.y10.iloc[-1] - 4.18) < 1e-9
+assert "FRB table seen" not in ptxt  # no FRB table listed in this mock
+print("pull(): reuse, fallback pull, empty column, FRB discovery and public H.15 fallback: OK")
 
 # -------------------------------------------------------------------------------------------- 3. run() end to end
 rng = np.random.default_rng(11)
