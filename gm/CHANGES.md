@@ -4,6 +4,141 @@ Every rule change gets a new VERSION in gm/run.py and a line here. Every variant
 (1990-2010; extra check 1975-89) is logged so the deflated Sharpe can count the trials. The holdout (2011-2026) is run
 once, after the rules are frozen, by gm/holdout.py.
 
+## Core book v1 (registered 2026-11-27, BEFORE the Core book v1 code and run): TESTING_PROTOCOL 7.6 step 6
+Registered run entry (no rule, weight, threshold, gate, cost or market change; no gm/ code change; no statistic of S1-S4,
+of any Incubator test or of Core book v1 has been computed on real data, cloud or PC). The A1 panel holds Bloomberg
+values and exists only on the PC, so every statistic is computed by one PC job (tools/bbgq/jobs/gm_core_v1.py, library
+tools/bbgq/lib/core_v1.py). The builder has read the A2 and diagnostics reports (repo files the job pins); no choice
+below reads them: each is closed from the registered text, with the reason given.
+1. The registered text. 7.6 step 6: "Core book v1. For each Core part of an existing pod (7.2: Trend; Carry currencies
+   v2 + energy; Value equities), on the final Batch A design run (k = 1, 1975-01 to 2010-12): S1 placebo passes (7.7 T3);
+   S2 its net mean return at twice the costs is above 0; S3 tail test 5 on the Core book with and without the part
+   (both rescaled as 7.7 T4); S4 an independent rebuild from the spec alone matches within 15% (WORKFLOW 4.5: design net
+   Sharpe and annualised mean each within 15% relative). Departure from WORKFLOW s5 ("Decisive, all four"): test 1 is not
+   decisive for these parts. Reported, not decisive: leave-one-out alpha of the part on the other Core parts with its
+   bootstrap p. ... A part that passes S1-S4, with a free live source for every input, is Core. Core book v1 = the Core
+   parts at equal risk as defined in 7.4 E9, 10% target, the engine's caps. Every other part of an existing pod
+   (Economic trend; Carry currencies v1 and bonds; Value bonds and currencies) and any Core part that fails S1-S4 takes
+   the Incubator rule (7.7) against Core book v1: pass = Incubator (shadow), fail = Shelved. If no Core part passes, Core
+   book v1 is empty: B tests read alpha against a zero book (the pod's own mean), and there is no holdout run (BASE
+   continues, labelled "no Core book")." 7.7 T3, T4, Window, Held size, Incubator (quoted in gm-2.1.0 item 5 and 7.7);
+   test 5 (section 2): "Maximum drawdown and worst month on the window (both books at the same vol target) | max fall not
+   worse by more than 2 points and worst month not worse by more than 1 point"; 7.8 item 1: family "book" = "a change
+   that could alter the book: A2, A3, Core book v1".
+2. Book and data (closed by "A3: empty" item 2): the final Batch A book = the A2-final book A1_INCUMBENT
+   gm-2.0.4-candidate-x1 (config 77374d7bef), engine gm-2.2.1, A1 PANEL ID e7f98d4439fccf91f3451bc4b9e78079e3bc2cc2452931363b28520460b6cb43,
+   design months 1975-01..2010-12, every loader cut at 2010-12-31 and the holding cut of 7.3 item 5. Timing k = 1 for
+   every decisive line (gm.execution.run_k1); k = 0 and the one-month delay are reported for Core book v1 only (7.3
+   item 1).
+3. Parts and masks (7.2 item 5; 7.4 E9; gm-2.1.0 closed item 5; gm/config.py CORE_PARTS and SHADOW_PARTS, unchanged):
+   Core candidates (three parts): trend = [(trend, *, *)]; carry = [(carry, FX, 2), (carry, CM, 1), (carry, CM, 2)];
+   value = [(value, EQ, *)]. Shadow parts (three): econ = [(econ, *, *)]; carry shadow = [(carry, FX, 1), (carry, FI,
+   *)]; value shadow = [(value, FI, *), (value, FX, *)]. Readings: Carry's CM leg is energy only (the four EIA markets
+   cm_wti, cm_natgas, cm_heatoil, cm_gasoline are the only CM markets with a carry value on free data, SPEC_Carry s3 and
+   s4; E13 adjusts natgas and gasoline); Carry is always split into v1 (sign) and v2 (rank) for masks (gm-2.1.0 closed
+   item 5), so "currencies v2" exists without a grid; the A2-final book has no grid (A2 FAIL), so Trend and Value hold
+   one version each and "Value equities (both versions)" is version 1 as held (v2's equity leg is "equities as v1",
+   SPEC_Value s3). "Carry currencies v2 + energy" is ONE part, as 7.6 step 6 lists it and CORE_PARTS holds it (n = 3);
+   its two legs alone are reported only.
+4. Closed here (simplest reading of the registered text; none from results):
+   a. A part's test return ("Held size", 7.7: "its block at the book's 10% target with the engine's caps") = the part
+      alone as a one-part equal-risk book of E9 (its masked blocks, block scalers, part scaler, the 10% book scaler, the
+      per-market and gross caps, costs at cost multiple 1), at k = 1. Window (7.7): the months 1975-01..2010-12 with a
+      net return of the part alone; fewer than 120 = "insufficient data": not tested, not Core, status "insufficient
+      data" (7.7 Window: "not tested").
+   b. S1 = 7.7 T3 on the part alone: 1,000 date maps (gm.stats.placebo_perms: the window's months in 12-month blocks
+      from its first month, the last part-block kept, numpy default_rng(20261101)); for each, the score / rank arrays of
+      all markets moved jointly inside the window (gm.book.placebo_net_fn, runner gm.execution.run_k1 with the NYSE
+      days, the part's mask; only the part's components enter a one-part book), re-sized with each month's own
+      volatility, scalers and caps, same costs; Sharpe on the window; p = share of placebos with net Sharpe >= the
+      part's (gm.stats.placebo_runs); pass p < 0.05.
+   c. S2 = the mean monthly net return of the part alone at cost multiple 2 over its window > 0 (point estimate).
+   d. S3: "the Core book" = the candidate Core book of item 3 (all three Core candidates at equal risk, E9, n = 3);
+      "without the part" = the equal-risk E9 book of the other two candidates (n = 2). All three parts are judged on S1-S4
+      side by side against this one candidate book, not in sequence (no order exists in the registered text, and an
+      order would be a choice). "Both rescaled as 7.7 T4": each book as run, because its own book scaler is T4's
+      convention (10% target, trailing 36-month realised volatility, lagged one month; gm-2.1.0 closed item 6: "the
+      Core book is taken as run (its own book scaler is the same convention)"). Test 5 = gm.stats.tail_test(without,
+      with) on their common months in 1975-01..2010-12: the book with the part has a maximum fall not worse by more
+      than 2 points and a worst month not worse by more than 1 point.
+   e. S4: the rebuild is tools/bbgq/lib/rebuild_s4.py, written by a separate agent from the specs and the registered
+      texts alone, to the interface docs/research/batches/S4_INTERFACE.md (written before this entry; the builder of
+      core_v1 does not read that file). Decisive keys trend, carry, value_eq (the three parts of item 3); carry_fx_v2 and
+      carry_energy reported. Engine figure = item 4a's series. Statistic over 1975-01..2010-12, each series over its
+      own months with a net return (A2's convention): annualised net Sharpe (gm.stats.sharpe) and annualised mean (12 x
+      monthly mean). Pass = |rebuild - engine| / |engine| <= 0.15 for both. The rebuild's sha256 is registered in the
+      job (REBUILD_SHA) by a dated line under this entry before the job is queued; the job STOPs (before any statistic)
+      if the file is missing or differs, if its source imports gm, gm_engine, a1_panel, a2_batch, diag_a2, core_v1,
+      bbgdata or bbg_panel, if it raises, or if an output breaks the interface's section 3 (a broken rebuild is not a
+      failed part).
+   f. "A free live source for every input": live runs read the free panel (A1 rule, 7.6 step 2: a Bloomberg series
+      "may only extend a market's free history backwards ... (live runs on the free source, rule 7)"), so the inputs a
+      live run of a part reads are the free panel's. Check per part: every market the part alone holds at the last
+      design decision (month-end 2010-12, non-zero position) has, on the FREE panel, a monthly return at 2010-12 and,
+      for carry and value, its measure at 2010-12 (free C or V); and the A1 extension-only check passed (already a STOP
+      condition). Pass = no held market lacks one. The markets and any missing input are printed (ids only). Recorded
+      with it, not changing the check: the GB and euro-area 3-month rates end 2026-01 and are carried 12 months; 7.10
+      item 2 requires a registered free replacement before 2027-01 (else fx_gbp, fx_eur, bd_gb_10y, st_gb_5y, bd_de_10y,
+      st_de_2y lose their excess return live); the specs' rule 7 lines (SPEC_Trend s8, SPEC_Carry s8, SPEC_Value s8:
+      "every input has a free live source") govern sources (7.1 item 2); MSCI country indexes are a manual free
+      download (gm/panel.py:203).
+   g. Verdict of a Core candidate: Core = S1, S2, S3 and S4 pass and item 4f passes. Core book v1 = the parts that are
+      Core, at equal risk (E9 with n = their number), 10% target, the engine's caps and costs, k = 1; if all three are
+      Core it is the candidate book of item 4d.
+   h. Leave-one-out alpha (reported, never decisive): gm.stats.alpha_boot(part alone, the item 4d "without" book) on
+      their common window months (10,000 resamples, mean block 6, seed 20261101): alpha x 12 (%/yr) and p.
+   i. Incubator rule (7.7: "not Core, and alpha of T1 above 0 at single costs (point estimate), T3 and T4 pass") for
+      the three shadow parts and for every Core candidate that is not Core, against Core book v1: T1 = alpha_boot(part
+      alone, Core book v1 net) on common window months, alpha > 0 decides, raw p reported (outside any Holm count: no
+      Holm here); T3 = item 4b (a failed Core candidate reuses its S1 result); T4 = gm.stats.t4_tail(Core book v1 net,
+      part net) (Core book v1 + the part at lambda 0.5, rescaled to 10%, against Core book v1 alone). Pass = Incubator
+      (shadow), fail = Shelved; fewer than 120 common months = "insufficient data". T2 (alpha at twice the costs) is
+      printed, not decisive (it is not in the Incubator rule). F0 does not apply (parts, not rule layers).
+   j. Empty branch: no Core candidate is Core -> "CORE BOOK V1 EMPTY". Then T1 reads alpha against a zero book (the
+      part's own mean; gm.stats.alpha_boot with a zero series: beta 0, alpha = mean), as the registered text says for B
+      tests; T4 is printed "not applicable" and does not block (test 5 compares two books "at the same vol target", and a
+      zero book has no volatility to rescale; the registered text names only the alpha adaptation); the job prints that
+      there is no holdout run and that BASE continues labelled "no Core book".
+   k. Reported for Core book v1 (7.7 reported list, the lines that apply to a book; 7.3 item 2; 7.8): at k = 1, k = 0
+      and the one-month delay, cost multiples 1 and 2: months, net Sharpe, mean, volatility, maximum drawdown, skew,
+      Lo-adjusted Sharpe for 1975-2010, 1975-89 and 1990-2010; the k = 1 flagged share 1975-2010 and by year; P4 with
+      the S&P 500 alone (M1 outcome), 1978-01..2010-12; the selection inflation of 7.8 item 2 from the book / pod rows
+      of the trial log as shipped (printed beside, never subtracted); the tuned-knob counts of 7.8 item 4 as
+      registered. Each part alone (Core candidates and shadow parts): net Sharpe and mean, 1975-2010 and eras.
+5. Printing: Sharpe ratios, means, alphas, p-values, shares and drawdowns only over at least 60 months; a group with
+   fewer months is printed as its count and sign; worst-month levels are not printed (test 5 is printed as its two
+   margins in points and pass / fail; maximum drawdown levels are printed); gates as PASS / FAIL; ids and counts.
+6. Trial count (7.8 item 1): ONE gm/trials.csv row, family "book", for Core book v1 at k = 1 on the A1 panel (config
+   hash = cfg_hash of A1_INCUMBENT with the key "core_parts" = the sorted list of Core parts; sr_9010, t_9010,
+   maxdd_9010, sr_7589, turnover as gm/trials.py; note: panel id, LOCK_v2, engine, parent 77374d7bef, the verdict of
+   every part), written by the coordinator from the job's TRIAL ROW line. If Core book v1 is empty the row has no
+   Sharpe columns (as a diag row). S1-S4, the placebos, the Incubator tests and the part-alone runs are report lines of
+   this one trial, not trials (none can be adopted into the book except through this row).
+7. Job (tools/bbgq/jobs/gm_core_v1.py on the PC; the gm_diag_v1 pattern): STOP before any Bloomberg value is read
+   unless the gm .py files equal engine_ref.json's code block; sha256(lib\engine_ref.json) = cebd4932e8643f14c541258abe68809a4e3c119f0c384beaa3d656b44c955e39;
+   config.ENGINE_VERSION = gm-2.2.1 and the config hashes BASE f1d682c384, CANDIDATE 438a092b53, A1_INCUMBENT
+   77374d7bef, A2_CHALLENGER 1faa343535; core_v1.py, diag_a2.py, a2_batch.py, a1_panel.py, gm_engine.py, bbg_panel.py,
+   bbgdata.py have the sha256 registered in the job, and rebuild_s4.py REBUILD_SHA (item 4e); the book / pod rows of
+   lib\gm\trials.csv have the digest 676b7b0f157cc6cc3e14f4e82754d5ad4c80bc61e3e9e5aa7c26596c6403e5ed, N = 40;
+   local\results\gm_a2_v1.txt gives the A2 facts as in "Diagnostics after A2" item 9; local\results\gm_diag_v1.txt has
+   "DIAG JOB DONE" and a DIAG SUMMARY line with "D1: candidate half blocked", "D2: closed" and "D3: closed" (A3 empty);
+   the store's lock id is LOCK_v2; the free inputs match the reference; the free arm matches engine_ref.json. Then it
+   rebuilds the A1 panel, asserts extension-only and the registered id, compares the rebuild with
+   work\a1\a1_panel_e7f98d4439fc.pkl when present (STOP on any difference) and writes nothing to work\ (beyond the free
+   inputs manifest refresh noted at the diagnostics, W3). It runs and validates the rebuild before any statistic is
+   printed, then checks the A2-final book as run against the A2 report (diag_a2.as_run, STOP on a difference), then
+   prints S1-S4, the live-source check, the verdicts, Core book v1, the Incubator tests, the reported lines and the
+   TRIAL ROW.
+8. Cloud: no statistic of S1-S4, of an Incubator test or of Core book v1 is computed on the free or the A1 panel. Cloud
+   work = the code, mock-store and synthetic-panel tests (tests/core_v1_smoke.py in tests/run_tests.py, with the stub
+   rebuild tests/data/rebuild_s4_stub.py), the engine gates (k = 0 reproduction 24 of 24, truncation 8 of 8; gm/ is
+   unchanged, so engine_ref.json is unchanged) and identity plumbing on the free panel that prints differences, ids and
+   PASS / FAIL only (the Core and shadow masks partition each pod's components; the identity date map reproduces the
+   part-alone series exactly; the interface inputs build with the documented keys and shapes).
+9. After the run (an "outcomes" paragraph under this entry): the verdict of each part; Core book v1's parts and config
+   hash (the B1 / B2 test-1 book, 7.1 F9, and the book of step 11); each shadow part's status (Incubator or Shelved).
+   Nothing in the specs, the register or 7.x changes from this run except those status words.
+
 ## A3: empty (registered 2026-11-27, after the diagnostics run and BEFORE Core book v1): TESTING_PROTOCOL 7.6 step 5
 Record entry (no rule, weight, threshold, cost, market or code change; nothing is run; no trial row).
 1. The registered text. 7.6 step 5: "Batch A3, items opened by diagnostics only (charter s5; register B9): breadth (D1,
