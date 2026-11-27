@@ -4,7 +4,7 @@ python3 make_verify_set.py SRC_DIR SEED OUT_DIR CLAIMS.checked.json [...]
 Writes OUT_DIR/verify_items.json (what the verifier sees: id, doc, line, quote, context; no first-reader tags) and
 OUT_DIR/verify_key.json (first-reader tags incl. 10 planted items; kept away from the verifier).
 Selection: every claim tagged rule or threshold, a random 30% of the rest (seeded), and 10 planted items:
-5 anecdotes (or examples) re-tagged as rules and 5 thresholds with the number altered (+-40% or more).
+5 anecdotes re-tagged as rules and 5 thresholds with every number altered (v1.1: anecdotes and thresholds only).
 Items are shuffled and renumbered V001.. so the verifier cannot see the source id order.
 """
 import hashlib
@@ -20,15 +20,14 @@ def context(lines, line, before=6, after=6):
 
 
 def alter(v):
-    m = re.search(r"\d+(\.\d+)?", v)
-    if not m:
-        return None
-    x = float(m.group(0))
-    y = x * 1.6 if x < 50 else x * 0.5
-    y = int(round(y)) if "." not in m.group(0) else round(y, 1)
-    if y == x:
-        y = x + 3
-    return v[:m.start()] + str(y) + v[m.end():]
+    """scale every number in v (x1.6 below 50, else x0.5); None if v has no number"""
+    def f(m):
+        x = float(m.group(0))
+        y = x * 1.6 if x < 50 else x * 0.5
+        y = int(round(y)) if "." not in m.group(0) else round(y, 1)
+        return str(y if y != x else x + 3)
+    w = re.sub(r"\d+(?:\.\d+)?", f, v)
+    return w if w != v else None
 
 
 def main():
@@ -47,8 +46,7 @@ def main():
     sample = rule_like + rng.sample(rest, round(0.3 * len(rest)))
     chosen = {c["id"] for c in sample}
     # planted 1: anecdotes / examples from outside the sample, re-tagged as rules
-    pool_a = [c for c in rest if c["id"] not in chosen and c["kind"] == "anecdote"]
-    pool_a += [c for c in rest if c["id"] not in chosen and c["kind"] == "example"]
+    pool_a = [c for c in rest if c["id"] not in chosen and c["kind"] == "anecdote"]  # v1.1: anecdotes only
     plant_a = pool_a[:0]
     for c in rng.sample(pool_a, len(pool_a)):
         if len(plant_a) == 5:
@@ -57,8 +55,8 @@ def main():
     # planted 2: claims with a number in the quote, number altered; thresholds first
     def has_num(c):
         return re.search(r"\d", c.get("value") or "") or re.search(r"\b\d+(\.\d+)?\b", c["quote"])
-    pool_t = [c for c in claims if c["kind"] == "threshold" and has_num(c)]
-    pool_t += [c for c in rule_like if c["kind"] == "rule" and re.search(r"\b\d+(\.\d+)?\b", c["quote"])]
+    pool_t = [c for c in claims if c["kind"] == "threshold" and re.search(r"\d", c.get("value") or "")]
+    pool_t = rng.sample(pool_t, len(pool_t))  # v1.1: thresholds with a stated value only, random order
     plant_t, seen = [], {c["id"] for c in plant_a}
     for c in pool_t:
         if len(plant_t) == 5:

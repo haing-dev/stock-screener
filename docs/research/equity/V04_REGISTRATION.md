@@ -458,3 +458,27 @@ as such. Replaces R1.1 (record); R1.2 (material) and R1.3 (screenability) stay.
    rule with the margin is run over every 13F filer (eq_rec 1.1.0 `scan`, job eq_rec_scan_v1) to fill open places;
    listed are filers with 13F value at least $500m and 5-200 CRSP holdings at 2025-09. A listed filer still needs
    R1.2 (material) and R1.3 (screenability) before it joins.
+
+## Addendum A13 (2026-11-27): pilot reading of Kantesaria; first blind check failed; spec v1.1
+1. **Material (G1).** Record `pilot/G1_MATERIAL_2026-11-27.md`: Kantesaria passes M1 and M2 (5 documents, K065
+   explicit 3); held-out document K174 by the A10 hash rule. Sosin passes M1 but fails M2 (highest grade 2, no
+   written source; one 2026 document has an unnamed guest and is not counted). Only Kantesaria is ready; the kill
+   criterion still needs 3 pilot investors (replacements in the A10 order as files become ready).
+2. **Extraction v1 and the first blind check (G3).** Spec `pilot/CLAIM_SPEC_v1.md`; five Sonnet readers (one per
+   document, private folders) gave 423 claims, all quotes found verbatim by `pilot/tools/check_quotes.py`. Set by
+   `make_verify_set.py` (seed 20261127): 201 rule-like + 30% of the rest + 10 planted = 276 items; key committed
+   (ce25e60, sha256 af5505c6...) before the verifier (Opus) tagged blind. Result `pilot/verify/SCORE_v1.md`: FAIL
+   (rule-like 85.7% vs 90; part 87.2%; computable 76.7% vs 85; planted 8 of 10 vs 9). Cause read from the
+   disagreements: the first reader tagged general beliefs as rules (32 of 38 disputes go rule -> not rule) and
+   tagged process facts (team size, watch list) as computable; two planted "anecdotes" were an example with a
+   frequency and a research habit, which the verifier read as rules.
+3. **Changes made AFTER seeing the v1 disagreements (logged as such).** Spec v1.1 (`pilot/CLAIM_SPEC_v1.1.md`):
+   definitions of rule vs principle, threshold (a typical range counts; firmness goes to strength), anecdote,
+   computable (company or stock measures only; portfolio rules are `no`), and `value` = every number describing his
+   practice. Plants v1.1: anecdotes only, thresholds with a stated value only, every number altered. Scoring v1.1 is
+   stricter for altered thresholds (caught only if the verifier gives a value with none of the altered numbers);
+   the bars are unchanged. v1 rescored under the v1.1 rule: 5 of 10 (still FAIL; the v1 file keeps its v1 score).
+4. **Re-extraction (registered consequence "a file that fails is extracted again").** Fresh Sonnet readers with spec
+   v1.1, no sight of the v1 claims; a fresh Opus verifier with a new seed (20261128) and no sight of v1 tags. If
+   v1.1 fails too, the reading of this file stops and the result is reported; no third spec version for this file
+   without the user.

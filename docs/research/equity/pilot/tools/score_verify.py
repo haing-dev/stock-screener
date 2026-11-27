@@ -3,8 +3,8 @@
 python3 score_verify.py verify_key.json tags.json OUT.md
 Pass (all four): rule-like agreement >= 90%, part >= 85%, computable >= 85% (planted items excluded), and at least 9 of
 10 planted items caught. Rule-like = kind rule or threshold. A planted anecdote is caught when the verifier does not tag
-it rule or threshold; a planted altered threshold is caught when the numbers in the verifier's value (or, if empty,
-in nothing) differ from the altered numbers. Also lists the disputes (rule-like disagreements) for the third reading.
+it rule or threshold; a planted altered threshold is caught when the verifier gives a value and none of its numbers
+is an altered number (v1.1, stricter than v1, where an empty value also counted as caught). Also lists the disputes (rule-like disagreements) for the third reading.
 """
 import json
 import re
@@ -31,7 +31,8 @@ def main():
         if k["planted"] == "anecdote_as_rule":
             ok = not rl(tag[v]["kind"])
         else:
-            ok = nums(tag[v].get("value")) != nums(k["value"])
+            got = nums(tag[v].get("value"))
+            ok = bool(got) and not (set(got) & set(nums(k["value"])) - set(nums(k.get("true_value"))))  # v1.1 stricter
         caught.append((v, k["planted"], ok, tag[v]["kind"], tag[v].get("value", "")))
     n_caught = sum(c[2] for c in caught)
     disputes = [v for v in real if rl(key[v]["kind"]) != rl(tag[v]["kind"])]
