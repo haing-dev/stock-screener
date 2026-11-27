@@ -563,6 +563,10 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   vs 1.335; both eras negative) -> A2-final book = incumbent gm-2.0.4-candidate-x1 (77374d7bef), no grids. Trial log
   as shipped to A2 frozen in tests/data/trials_a2_shipped.csv. Can-wait check items C1, C2, C4, C6, C7 open
   (CHECK_A2 in scratch, summarised in the A2 RUN paragraph). NEXT: 7.6 step 4 diagnostics (7.5 order item 2), A3, Core v1.
+  2026-11-27 DIAGNOSTICS AFTER A2 RAN (gm_diag_v1, check APPROVED WITH CORRECTIONS): D2, D3, D4, D6 closed; X2 price
+  part > 0; M1 -> P4 = S&P alone; D5 YES (Economic trend 'slow reaction'); all falsifiers do not hold; D1 candidate half +
+  S1 Fung-Hsieh BLOCKED -> NO A3 item opened (A3 empty). NEXT: 7.6 step 6 Core book v1 (S1 placebo, S2 double costs,
+  S3 tail, S4 independent rebuild from spec by a SEPARATE agent), then step 7 pre-B diagnostics, B1/B2.
   User 2026-11-22: NO MORE FABLE UNITS for now.
 - MT228 (2026-11-10): raw X posts of John Galt @AtlasShrug1 (1,359 posts, Jul 2025 - 8 Nov 2026) extracted like a transcript
   with dates: 733 claims (185 rules/tells, 188 dated forecasts), Sonnet single read, quotes script-checked, cross-check

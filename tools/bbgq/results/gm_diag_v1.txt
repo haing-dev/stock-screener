@@ -1,0 +1,184 @@
+=== gm_diag_v1 ===
+diag_a2-1.0.1 | a2_batch-1.1.1 | a1_panel-1.1.0 | bbgdata-1.2.0 | bbg_panel-1.0.0 | gm_engine-1.3.0 | engine gm-2.2.1 | python 3.15.0, numpy 2.5.4, pandas 3.1.1, scipy 1.18.1, openpyxl 3.1.5, xlrd missing
+PASS gm code vs reference | 21 files | differing or missing: none
+PASS lib engine_ref.json | sha256 cebd4932e8643f14 | registered cebd4932e8643f14
+PASS engine gm-2.2.1 and config hashes A1_INCUMBENT 77374d7bef, A2_CHALLENGER 1faa343535, BASE f1d682c384, CANDIDATE 438a092b53 | registered gm-2.2.1, A1_INCUMBENT 77374d7bef, A2_CHALLENGER 1faa343535, BASE f1d682c384, CANDIDATE 438a092b53
+PASS lib a1_panel.py | sha256 eb9ef3f7fbd12760 | registered eb9ef3f7fbd12760
+PASS lib a2_batch.py | sha256 35339f673f351f43 | registered 35339f673f351f43
+PASS lib bbg_panel.py | sha256 e0b67a42793e67c1 | registered e0b67a42793e67c1
+PASS lib bbgdata.py | sha256 0b26bb21b50671dc | registered 0b26bb21b50671dc
+PASS lib diag_a2.py | sha256 3264a5381c13b124 | registered 3264a5381c13b124
+PASS lib gm_engine.py | sha256 ac43a33cd8943719 | registered ac43a33cd8943719
+PASS lib gm\trials.csv book / pod rows | 40 rows | digest 676b7b0f157cc6cc | registered 40 rows, 676b7b0f157cc6cc
+PASS A2 report gm_a2_v1.txt: ok | A2 VERDICT FAIL, A2-final book gm-2.0.4-candidate-x1 (77374d7bef) | book d1 1.064, k0 1.481, k1 1.439
+PASS Bloomberg store lock id d85a46cb2853646b24796f294f3ccab1d1507188c402e978fd59f5196ea41fc9 | registered LOCK_v2 d85a46cb2853646b24796f294f3ccab1d1507188c402e978fd59f5196ea41fc9
+PASS free inputs | 239 files | not matching the manifest 0 | file list and sizes match the reference | digest 378d65b09c23d234
+PASS free arm vs reference | signal E (per-market sum of |signal|) | n 62 | missing 0 | max abs diff 0.0e+00
+PASS free arm vs reference | signal C (per-market sum of |signal|) | n 39 | missing 0 | max abs diff 0.0e+00
+PASS free arm vs reference | signal V (per-market sum of |signal|) | n 31 | missing 0 | max abs diff 0.0e+00
+PASS free arm vs reference | market months with a return | n 65 | missing 0 | max abs diff 0.0e+00
+EXTENSION-ONLY CHECK PASS | admitted series 4 | 369s
+PASS A1 PANEL ID e7f98d4439fccf91f3451bc4b9e78079e3bc2cc2452931363b28520460b6cb43 | registered e7f98d4439fccf91f3451bc4b9e78079e3bc2cc2452931363b28520460b6cb43
+PASS A1 panel file work\a1\a1_panel_e7f98d4439fc.pkl: same
+EXTENDED C cm_wti | 1984-11..1984-12 | 2 months
+EXTENDED R cm_corn | 1971-12..2000-07 | 344 months
+EXTENDED R cm_gold | 1980-01..2000-08 | 248 months
+theme scores | inflation 62 markets, monetary 62 markets, risk 62 markets, trade 62 markets
+PASS A2-final book as run (A2 report): book d1 1.064, k0 1.481, k1 1.439 | pods trend 1.19 (432), econ 0.53 (432), carry 1.07 (432), value 0.15 (345) | P4 book 1.39 specific 1.34 (396) | registered book d1 1.064, k0 1.481, k1 1.439 | pods trend 1.19 (432), econ 0.53 (432), carry 1.07 (432), value 0.15 (345) | P4 1.39 / 1.34 (396)
+--- DIAGNOSTICS AFTER A2 (TESTING_PROTOCOL 7.6 step 4, 7.5 order item 2; gm/CHANGES.md "Diagnostics after A2"): A2-final book gm-2.0.4-candidate-x1 (77374d7bef), A1 panel, k = 1, design months 1975-01..2010-12; zero slots, nothing adopted; values over fewer than 60 months are printed as count and sign
+BLOCKED | D1 candidate half: not run (blocked, entry item 6a): T09 no registered data entry names a candidate series and none has a registered live source; T10 admission needs a registered live source (LSEG LIVE_START not set) and eight locked contracts (ED excluded as the dollar, FEI only); no A3 breadth item is opened by this pass
+BLOCKED | S1 Fung-Hsieh part: not run (blocked, entry item 6b): factor file not obtained and locked
+D1 | structural half | markets 61 (Trend's book markets without cm_aqr_ew) | windows 373 (60 months, ending 1979-12..2010-12) | markets per window mean 30.6, min 11, max 51
+D1 | first-factor share of variance (correlation PCA), averaged over windows | 0.201
+D1 | class mean loading on the first factor, averaged over windows | EQ 0.28 (373 windows) | FI 0.45 (373 windows) | FX 0.18 (373 windows) | CM 0.07 (373 windows)
+D1 | Trend pod alone (gross, k = 1) Sharpe over the mean market P&L Sharpe, averaged over windows | 2.86 (373 windows; 0 skipped: mean market Sharpe <= 0 or a pod month missing)
+D1 | candidate half | not run (BLOCKED above) | gate not evaluated; A3 breadth item not opened by this pass
+D2 | rebuild of the book's positions from their intermediates | max abs diff 0.0e+00 | missing pattern diff 0 | PASS
+D2 | 1975-89 | trade months 180 | non-signal share (1 - turnover with vols and scalers held / actual) 0.038 (180) | scores-held share 0.163 (180) | market-months left out 349
+D2 | 1990-2010 | trade months 251 | non-signal share (1 - turnover with vols and scalers held / actual) 0.031 (251) | scores-held share 0.122 (251) | market-months left out 31
+D2 GATE | non-signal share >= 0.20 in both eras (trade months to 2010-11) | closed | -> buffer item dropped
+D2 | cost drag per market (bp of capital per year, months with a position; costs x1) | check: market costs sum to the book's cost (max diff 8.7e-19)
+COSTDRAG | bd_au_10y | 0.9 (189)
+COSTDRAG | bd_ca_10y | 1.6 (118)
+COSTDRAG | bd_de_10y | 2.3 (432)
+COSTDRAG | bd_gb_10y | 1.6 (204)
+COSTDRAG | bd_jp_10y | 1.5 (292)
+COSTDRAG | bd_us_10y | 1.5 (432)
+COSTDRAG | bd_us_2y | 3.8 (413)
+COSTDRAG | bd_us_30y | 1.3 (404)
+COSTDRAG | bd_us_5y | 2.0 (432)
+COSTDRAG | cm_aqr_ew | 8.2 (323)
+COSTDRAG | cm_brent | n 39, sign +
+COSTDRAG | cm_cattle | 2.0 (116)
+COSTDRAG | cm_coffee | 1.1 (129)
+COSTDRAG | cm_copper | 1.3 (122)
+COSTDRAG | cm_corn | 3.8 (432)
+COSTDRAG | cm_cotton | 1.2 (129)
+COSTDRAG | cm_gasoline | 1.5 (105)
+COSTDRAG | cm_gold | 4.9 (360)
+COSTDRAG | cm_heatoil | 5.2 (199)
+COSTDRAG | cm_natgas | 4.5 (201)
+COSTDRAG | cm_platinum | 1.5 (156)
+COSTDRAG | cm_silver | 1.5 (122)
+COSTDRAG | cm_soybeans | 1.3 (121)
+COSTDRAG | cm_sugar | 0.9 (128)
+COSTDRAG | cm_wheat | 1.2 (123)
+COSTDRAG | cm_wti | 6.0 (309)
+COSTDRAG | eq_au_asx | 1.7 (420)
+COSTDRAG | eq_br_ibov | 0.5 (210)
+COSTDRAG | eq_ca_tsx | 1.5 (396)
+COSTDRAG | eq_cn | 0.8 (160)
+COSTDRAG | eq_de_dax | 0.7 (274)
+COSTDRAG | eq_eu_stoxx50 | 0.5 (113)
+COSTDRAG | eq_fr_cac | 0.9 (248)
+COSTDRAG | eq_gb_ftse | 1.5 (420)
+COSTDRAG | eq_hk_hsi | 0.8 (347)
+COSTDRAG | eq_in | 0.7 (160)
+COSTDRAG | eq_jp_nikkei | 1.7 (432)
+COSTDRAG | eq_kr_kospi | 0.5 (166)
+COSTDRAG | eq_mx_ipc | 0.7 (227)
+COSTDRAG | eq_tw | 0.8 (160)
+COSTDRAG | eq_us_ndx | 0.4 (432)
+COSTDRAG | eq_us_r2k | 0.4 (277)
+COSTDRAG | eq_us_spx | 0.9 (432)
+COSTDRAG | eq_za | 0.8 (108)
+COSTDRAG | fx_aud | 2.4 (432)
+COSTDRAG | fx_brl | 8.4 (190)
+COSTDRAG | fx_cad | 5.0 (432)
+COSTDRAG | fx_chf | 2.0 (432)
+COSTDRAG | fx_eur | 1.3 (141)
+COSTDRAG | fx_gbp | 2.4 (432)
+COSTDRAG | fx_jpy | 2.3 (432)
+COSTDRAG | fx_krw | 20.3 (354)
+COSTDRAG | fx_mxn | 7.7 (203)
+COSTDRAG | fx_nok | 1.9 (432)
+COSTDRAG | fx_nzd | 2.2 (432)
+COSTDRAG | fx_sek | 1.8 (432)
+COSTDRAG | fx_zar | 7.4 (370)
+COSTDRAG | st_au_2y | 3.3 (189)
+COSTDRAG | st_ca_2y | 3.7 (118)
+COSTDRAG | st_de_2y | 4.6 (432)
+COSTDRAG | st_gb_5y | 1.7 (203)
+COSTDRAG | st_jp_2y | 7.9 (432)
+D3 | state months 1975-01..2009-12 (forward 12-month windows end by 2010-12) | book net k = 1
+D3 | (a) stock-bond 12-month correlation > 0 | months 420, in state 298 | forward vol %/yr: state 9.6 (298), other 9.6 (122) | difference +0.06 pts | one-sided 90% bound -1.67 pts | resamples without a state or other month 0 | closed
+D3 | (b) top tenth of mean |trend score| | months 420, in state 42 | forward vol %/yr: state n 42, sign +, other 9.6 (378) | difference sign - | one-sided 90% bound sign - | resamples without a state or other month 0 | closed
+D3 GATE | difference >= 2 points and bound > 0 in either split | closed | -> scaler item dropped
+D4 | S&P base (eq_us_spx), fall from the 24-month high and age | mean monthly contribution %, k = 1, before costs, per state (months)
+D4 | trend | <5% 0.93 (231) | 5-15% young n 12, sign + | 5-15% old 0.74 (88) | >15% young n 2, sign - | >15% old 0.95 (99) | >15% pooled 0.88 (101)
+D4 | carry | <5% 0.48 (231) | 5-15% young n 12, sign + | 5-15% old 0.27 (88) | >15% young n 2, sign + | >15% old 0.10 (99) | >15% pooled 0.11 (101)
+D4 | stress window 1987 crash 1987-10..1987-11 | trend n 2 sign - | econ n 2 sign - | carry n 2 sign + | value n 2 sign -
+D4 | stress window 1990 oil spike 1990-08..1990-10 | trend n 3 sign + | econ n 3 sign - | carry n 3 sign + | value n 3 sign -
+D4 | stress window 1994 bond rout 1994-02..1994-11 | trend n 10 sign + | econ n 10 sign - | carry n 10 sign + | value n 10 sign +
+D4 | stress window 1998 LTCM 1998-08..1998-10 | trend n 3 sign + | econ n 3 sign + | carry n 3 sign + | value n 3 sign +
+D4 | stress window 2007 quant / credit 2007-07..2007-08 | trend n 2 sign - | econ n 2 sign - | carry n 2 sign + | value n 2 sign +
+D4 | stress window 2008 Lehman 2008-09..2008-12 | trend n 4 sign + | econ n 4 sign + | carry n 4 sign - | value n 4 sign +
+D4 GATE | Trend: mean < 0 in 5-15% young and > 0 in >15% (cells >= 6 months) | closed | -> no such line
+D4 GATE | Carry: loses in both 1998 LTCM and 2008 Lehman | closed | -> dropped
+CRISIS | one shared bad-state set: 6 design STRESS_WINDOWS + worst fifth of eq_us_spx months 1975-2010 = 97 of 432 months | mean monthly contribution % in bad | other
+CRISIS | trend | bad 0.65 (97) | other 0.92 (335)
+CRISIS | econ | bad 0.12 (97) | other 0.12 (335)
+CRISIS | carry | bad 0.13 (97) | other 0.40 (335)
+CRISIS | value | bad 0.07 (91) | other 0.05 (303)
+CRISIS | carry/FI | bad 0.12 (97) | other 0.13 (335)
+CRISIS | carry/FX | bad -0.06 (97) | other 0.19 (335)
+CRISIS | carry/CM | bad 0.10 (67) | other 0.12 (215)
+S1 | five-state equity tables (mean monthly contribution %, k = 1, before costs; reported only)
+S1 | S&P | trend | <5% 0.93 (231) | 5-15% young n 12, sign + | 5-15% old 0.74 (88) | >15% young n 2, sign - | >15% old 0.95 (99)
+S1 | S&P | econ | <5% 0.11 (231) | 5-15% young n 12, sign + | 5-15% old 0.07 (88) | >15% young n 2, sign - | >15% old 0.12 (99)
+S1 | S&P | carry | <5% 0.48 (231) | 5-15% young n 12, sign + | 5-15% old 0.27 (88) | >15% young n 2, sign + | >15% old 0.10 (99)
+S1 | S&P | value | <5% 0.07 (217) | 5-15% young n 11, sign + | 5-15% old -0.02 (74) | >15% young n 2, sign - | >15% old 0.09 (90)
+S1 | four-market average | trend | <5% 0.92 (227) | 5-15% young n 10, sign - | 5-15% old 1.03 (87) | >15% young n 2, sign - | >15% old 0.88 (106)
+S1 | four-market average | econ | <5% 0.13 (227) | 5-15% young n 10, sign + | 5-15% old 0.11 (87) | >15% young n 2, sign - | >15% old 0.14 (106)
+S1 | four-market average | carry | <5% 0.39 (227) | 5-15% young n 10, sign - | 5-15% old 0.36 (87) | >15% young n 2, sign + | >15% old 0.28 (106)
+S1 | four-market average | value | <5% 0.03 (204) | 5-15% young n 10, sign - | 5-15% old 0.15 (78) | >15% young n 2, sign - | >15% old 0.09 (100)
+D5 | Economic trend alone, net, k = 1 (gate) | delay 0: 0.53 (432) | delay 1: 0.42 (432) | delay 3: 0.23 (432) | delay 6: 0.24 (432) | delay 12: -0.09 (432)
+D5 | Economic trend alone, net, k = 0 path (reported) | delay 0: 0.52 (432) | delay 1: 0.43 (432) | delay 3: 0.22 (432) | delay 6: 0.25 (432) | delay 12: -0.11 (432)
+D5 | caution (charter JP8): at 3 months' delay 9 of the 12 months of the 12-month inputs overlap
+D5 GATE | Sharpe at 3 months' delay < half the no-delay Sharpe (k = 1) | YES | claim 'slow reaction' (falsifier: no fading with delay)
+D6 | 1975-89 | years 15 | slope of mean trend Sharpe on mean |market Sharpe| +0.760 | NW se (2 lags) 0.108
+D6 | 1990-2010 | years 21 | slope of mean trend Sharpe on mean |market Sharpe| +0.279 | NW se (2 lags) 0.213
+D6 GATE | |slope difference| < 2 standard errors | z -2.01 | closed | -> dropped
+X2 | Value EQ | covered share 1.000 | months 383 | %/yr total 0.17 (383), income 0.03 (383), price 0.13 (383) | price 90% interval -0.23..+0.48 | income + price = total (max diff 8.7e-19) | price part > 0
+X2 | Value FI | covered share 1.000 | months 381 | %/yr total 0.20 (381), income -0.13 (381), price 0.33 (381) | price 90% interval +0.03..+0.64 | income + price = total (max diff 1.7e-18) | price part > 0
+X2 | Value FX | covered share 0.998 | months 394 | %/yr total 0.28 (394), income -0.08 (394), price 0.35 (394) | price 90% interval -0.00..+0.71 | income + price = total (max diff 8.7e-19) | price part > 0
+X2 GATE | price part <= 0 on the leg's averaged position | EQ no entry, FI no entry, FX no entry
+M1 | 1978-2010 | months 396 | Sharpe book 1.39 | specific, S&P alone 1.34 | specific, S&P and US 10-year 1.35
+M1 | 1978-89 | months 144 | Sharpe book 1.07 | specific, S&P alone 1.05 | specific, S&P and US 10-year 1.10
+M1 | 1990-2010 | months 252 | Sharpe book 1.60 | specific, S&P alone 1.51 | specific, S&P and US 10-year 1.50
+M1 GATE | two-market Sharpe lower by >= 0.05 in either era (1978-89, 1990-2010) | no | P4 uses the S&P 500 alone
+--- falsifier lines (specs s10, A2 item 5; reported only): each 'holds' or 'does not hold'
+FALSIFIER | Trend 1 | pod alone net Sharpe <= 0 in both eras | 1975-2010 1.19 (432) | 1975-89 1.26 (180) | 1990-2010 1.14 (252) | does not hold
+FALSIFIER | Trend 2 | >15% S&P falls: mean Trend contribution <= 0 | 0.88 (101) % | does not hold
+FALSIFIER | Trend 3, 4 | carry / price and class-average / relative splits | read at A2 on this book (gm_a2_v1 CARRYPRICE and SPLIT lines, incumbent); not recomputed
+FALSIFIER | Carry 1 | pod or a leg alone net Sharpe <= 0 in both eras | pod: 1975-2010 1.07 (432) | 1975-89 0.76 (180) | 1990-2010 1.30 (252) || FX: 1975-2010 0.73 (403) | 1975-89 0.34 (151) | 1990-2010 0.93 (252) || FI: 1975-2010 0.73 (432) | 1975-89 0.78 (180) | 1990-2010 0.70 (252) || CM: 1975-2010 0.82 (235) | 1975-89 n 0, n/a | 1990-2010 0.82 (235) | does not hold
+FALSIFIER | Carry 2 | FX leg mean contribution in bad months not below other months | bad -0.06 (97) %, other 0.19 (335) % | does not hold
+FALSIFIER | Carry 3 | CM long side mean contribution <= 0 | 1.47 (232) %/yr | does not hold
+FALSIFIER | Carry 4 | FI leg alone net mean <= constant-position net mean | leg 5.22 (432), constant 1.90 (432) %/yr | does not hold
+FALSIFIER | Carry 5 | FX | covered share 1.000 | %/yr income 2.97 (432), price -1.33 (432) | income <= 0 or price > income | does not hold
+FALSIFIER | Carry 5 | FI | covered share 1.000 | %/yr income 1.14 (432), price 0.40 (432) | income <= 0 or price > income | does not hold
+FALSIFIER | Carry 5 | CM | covered share 1.000 | %/yr income 1.64 (282), price -0.22 (282) | income <= 0 or price > income | does not hold
+FALSIFIER | Value 1 | pod alone net Sharpe <= 0 in both eras | 1975-2010 0.15 (345) | 1975-89 -0.46 (93) | 1990-2010 0.39 (252) | does not hold
+FALSIFIER | Value 2 | = X2 above | Value 3 | Value against Trend's relative part: read at A2 (VALUE lines)
+FALSIFIER | Economic trend 1 | pod alone net Sharpe <= 0 in both eras | 1975-2010 0.53 (432) | 1975-89 0.26 (180) | 1990-2010 0.71 (252) | does not hold
+FALSIFIER | Economic trend 3 | theme split check: parts sum to the held position (max diff 4.4e-16); theme scores reproduce the score E (max diff 0.0e+00)
+FALSIFIER | Economic trend 3 | inflation part %/yr | 1975-89 0.67 (180) | 1990-2010 0.32 (252)
+FALSIFIER | Economic trend 3 | trade part %/yr | 1975-89 n 0, n/a | 1990-2010 -0.33 (155)
+FALSIFIER | Economic trend 3 | monetary part %/yr | 1975-89 0.98 (180) | 1990-2010 0.63 (252)
+FALSIFIER | Economic trend 3 | risk part %/yr | 1975-89 -0.73 (180) | 1990-2010 1.04 (252)
+FALSIFIER | Economic trend 3 | inflation <= 0 in both eras while the other three earn | does not hold
+FALSIFIER | loss-event lines (P3) | text only; nothing computed
+DIAG SUMMARY | D1: candidate half blocked; structural half reported | D2: closed | D3: closed | D4: Trend closed, Carry closed | S1: reported | D5: slow reaction | D6: closed | X2: EQ no entry, FI no entry, FX no entry | M1: S&P alone | FALSIFIERS: T1 does not hold, T2 does not hold, C1 does not hold, C2 does not hold, C3 does not hold, C4 does not hold, C5 does not hold, V1 does not hold, E1 does not hold, E3 does not hold
+report 47s
+TRIAL ROW {"config": "{\"book\": \"77374d7bef\", \"diag\": \"D1\", \"panel\": \"e7f98d4439fccf91\", \"timing\": \"k1\", \"version\": \"diag_a2-1.0.1\", \"window\": [\"1975-01\", \"2010-12\"]}", "family": "diag", "hash": "d6e06cc7f1", "note": "TESTING_PROTOCOL 7.5 D1, 7.6 step 4, gm/CHANGES.md 'Diagnostics after A2'; engine gm-2.2.1; A1 panel e7f98d4439fccf91; LOCK_v2 d85a46cb2853646b; book gm-2.0.4-candidate-x1 (77374d7bef); outcome: candidate half blocked; structural half reported", "trial": "D1 diagnostic (A2-final book)"}
+TRIAL ROW {"config": "{\"book\": \"77374d7bef\", \"diag\": \"D2\", \"panel\": \"e7f98d4439fccf91\", \"timing\": \"k1\", \"version\": \"diag_a2-1.0.1\", \"window\": [\"1975-01\", \"2010-12\"]}", "family": "diag", "hash": "7a6361798c", "note": "TESTING_PROTOCOL 7.5 D2, 7.6 step 4, gm/CHANGES.md 'Diagnostics after A2'; engine gm-2.2.1; A1 panel e7f98d4439fccf91; LOCK_v2 d85a46cb2853646b; book gm-2.0.4-candidate-x1 (77374d7bef); outcome: closed", "trial": "D2 diagnostic (A2-final book)"}
+TRIAL ROW {"config": "{\"book\": \"77374d7bef\", \"diag\": \"D3\", \"panel\": \"e7f98d4439fccf91\", \"timing\": \"k1\", \"version\": \"diag_a2-1.0.1\", \"window\": [\"1975-01\", \"2010-12\"]}", "family": "diag", "hash": "9a38b77fce", "note": "TESTING_PROTOCOL 7.5 D3, 7.6 step 4, gm/CHANGES.md 'Diagnostics after A2'; engine gm-2.2.1; A1 panel e7f98d4439fccf91; LOCK_v2 d85a46cb2853646b; book gm-2.0.4-candidate-x1 (77374d7bef); outcome: closed", "trial": "D3 diagnostic (A2-final book)"}
+TRIAL ROW {"config": "{\"book\": \"77374d7bef\", \"diag\": \"D4\", \"panel\": \"e7f98d4439fccf91\", \"timing\": \"k1\", \"version\": \"diag_a2-1.0.1\", \"window\": [\"1975-01\", \"2010-12\"]}", "family": "diag", "hash": "3268f81266", "note": "TESTING_PROTOCOL 7.5 D4, 7.6 step 4, gm/CHANGES.md 'Diagnostics after A2'; engine gm-2.2.1; A1 panel e7f98d4439fccf91; LOCK_v2 d85a46cb2853646b; book gm-2.0.4-candidate-x1 (77374d7bef); outcome: Trend closed, Carry closed", "trial": "D4 diagnostic (A2-final book)"}
+TRIAL ROW {"config": "{\"book\": \"77374d7bef\", \"diag\": \"S1\", \"panel\": \"e7f98d4439fccf91\", \"timing\": \"k1\", \"version\": \"diag_a2-1.0.1\", \"window\": [\"1975-01\", \"2010-12\"]}", "family": "diag", "hash": "b89bc8e468", "note": "TESTING_PROTOCOL 7.5 S1, 7.6 step 4, gm/CHANGES.md 'Diagnostics after A2'; engine gm-2.2.1; A1 panel e7f98d4439fccf91; LOCK_v2 d85a46cb2853646b; book gm-2.0.4-candidate-x1 (77374d7bef); outcome: reported", "trial": "S1 diagnostic (A2-final book)"}
+TRIAL ROW {"config": "{\"book\": \"77374d7bef\", \"diag\": \"D5\", \"panel\": \"e7f98d4439fccf91\", \"timing\": \"k1\", \"version\": \"diag_a2-1.0.1\", \"window\": [\"1975-01\", \"2010-12\"]}", "family": "diag", "hash": "61fe8bfac1", "note": "TESTING_PROTOCOL 7.5 D5, 7.6 step 4, gm/CHANGES.md 'Diagnostics after A2'; engine gm-2.2.1; A1 panel e7f98d4439fccf91; LOCK_v2 d85a46cb2853646b; book gm-2.0.4-candidate-x1 (77374d7bef); outcome: slow reaction", "trial": "D5 diagnostic (A2-final book)"}
+TRIAL ROW {"config": "{\"book\": \"77374d7bef\", \"diag\": \"D6\", \"panel\": \"e7f98d4439fccf91\", \"timing\": \"k1\", \"version\": \"diag_a2-1.0.1\", \"window\": [\"1975-01\", \"2010-12\"]}", "family": "diag", "hash": "367c1c6d03", "note": "TESTING_PROTOCOL 7.5 D6, 7.6 step 4, gm/CHANGES.md 'Diagnostics after A2'; engine gm-2.2.1; A1 panel e7f98d4439fccf91; LOCK_v2 d85a46cb2853646b; book gm-2.0.4-candidate-x1 (77374d7bef); outcome: closed", "trial": "D6 diagnostic (A2-final book)"}
+TRIAL ROW {"config": "{\"book\": \"77374d7bef\", \"diag\": \"X2\", \"panel\": \"e7f98d4439fccf91\", \"timing\": \"k1\", \"version\": \"diag_a2-1.0.1\", \"window\": [\"1975-01\", \"2010-12\"]}", "family": "diag", "hash": "63d90c16a8", "note": "TESTING_PROTOCOL 7.5 X2, 7.6 step 4, gm/CHANGES.md 'Diagnostics after A2'; engine gm-2.2.1; A1 panel e7f98d4439fccf91; LOCK_v2 d85a46cb2853646b; book gm-2.0.4-candidate-x1 (77374d7bef); outcome: EQ no entry, FI no entry, FX no entry", "trial": "X2 diagnostic (A2-final book)"}
+TRIAL ROW {"config": "{\"book\": \"77374d7bef\", \"diag\": \"M1\", \"panel\": \"e7f98d4439fccf91\", \"timing\": \"k1\", \"version\": \"diag_a2-1.0.1\", \"window\": [\"1975-01\", \"2010-12\"]}", "family": "diag", "hash": "3356102303", "note": "TESTING_PROTOCOL 7.5 M1, 7.6 step 4, gm/CHANGES.md 'Diagnostics after A2'; engine gm-2.2.1; A1 panel e7f98d4439fccf91; LOCK_v2 d85a46cb2853646b; book gm-2.0.4-candidate-x1 (77374d7bef); outcome: S&P alone", "trial": "M1 diagnostic (A2-final book)"}
+TRIAL ROW {"config": "{\"book\": \"77374d7bef\", \"diag\": \"FALSIFIERS\", \"panel\": \"e7f98d4439fccf91\", \"timing\": \"k1\", \"version\": \"diag_a2-1.0.1\", \"window\": [\"1975-01\", \"2010-12\"]}", "family": "diag", "hash": "7e0ed1d894", "note": "TESTING_PROTOCOL 7.5 FALSIFIERS, 7.6 step 4, gm/CHANGES.md 'Diagnostics after A2'; engine gm-2.2.1; A1 panel e7f98d4439fccf91; LOCK_v2 d85a46cb2853646b; book gm-2.0.4-candidate-x1 (77374d7bef); outcome: T1 does not hold, T2 does not hold, C1 does not hold, C2 does not hold, C3 does not hold, C4 does not hold, C5 does not hold, V1 does not hold, E1 does not hold, E3 does not hold", "trial": "FALSIFIERS diagnostic (A2-final book)"}
+DIAG JOB DONE
+=== END === 436s

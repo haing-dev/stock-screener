@@ -245,6 +245,15 @@ identities PASS (results/diag_plumbing_cloud_2026-11-27b.txt); gm/ unchanged, so
 truncation (8 of 8) results of the paragraph above stand. NOT RUN: queue and hashes in
 docs/research/batches/DIAG_A2_BUILD_2026-11-27.md.
 
+DIAGNOSTICS RUN (2026-11-27, PC job gm_diag_v1, report tools/bbgq/results/gm_diag_v1.txt; every hash, pin, A1 panel id and
+as-run check PASS; check CHECK_DIAG APPROVED WITH CORRECTIONS, must-fix applied in 1.0.1 before the run). OUTCOMES:
+D2 CLOSED (non-signal share 0.038 / 0.031, rebuild exact) -> no-trade buffer item dropped. D3 CLOSED -> faster book
+scaler item dropped. D4 CLOSED for Trend and Carry -> no SPEC_Trend line, no Carry stop state. D6 CLOSED (z -2.01). X2:
+price part > 0 in EQ, FI, FX -> no "paid by income" entry. M1: P4 uses the S&P 500 alone. D5 YES: Economic trend
+alone 0.53 at no delay, 0.23 at 3 months (< half) -> spec wording "slow reaction" (falsifier: no fading). D1
+structural: first factor 0.20 of variance, Trend pod / mean market Sharpe 2.86 (baseline for H4). D1 candidate half
+and S1 Fung-Hsieh part BLOCKED (entry item 6). Every falsifier line: does not hold (T1, T2, C1-C5, V1, E1, E3). So this
+pass opens NO A3 item (7.6 step 5). Ten diag trial rows appended.
 ## gm-2.2.1 fix: cm_aqr_ew a Trend market in CM only (registered 2026-11-27, BEFORE the code change; found while building A2)
 Registered fix of the existing engine (TESTING_PROTOCOL 7.4: a found defect gets a registered engine version, as C1-C4,
 gm-1.2.2 and E1-E5). Found while coding A2 (gm/CHANGES.md "A2" item 13, commit d0ecdc7), BEFORE any A2 statistic was
