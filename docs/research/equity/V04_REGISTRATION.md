@@ -492,3 +492,11 @@ as such. Replaces R1.1 (record); R1.2 (material) and R1.3 (screenability) stay.
    readers call it rule-like, or a third reader on the quote alone does where they split (the A10 rule). Where the two
    readers split on computable, the weaker tag is used (no < proxy < yes). Claims the first reader did not tag
    rule-like cannot become rules. Logged as a change of the A10 gate, made after seeing both results.
+7. **Card and held-out test (2026-11-27).** Card v1 (`pilot/card/CARD_v1.md`, Opus, four documents, 72 rules: buy 21,
+   price 9, avoid 14, sell 7, size 5, process 16; 4 open internal contradictions, C3 entry discount, C7 idea counts,
+   C9 sizing, C14 healthcare breadth). Held-out test (`pilot/heldout/heldout_result.json`, fresh Opus): 6 of 8 K174
+   rules matched (75%, bar 70%) but 3 OPEN contradictions in the buy part, all from the FICO case: he bought on a
+   2018 pricing change and on a growth change others had missed, while card rules RB10 and RB6 require a long record
+   ("not a sudden change", "not a predicted step change"). Result: FAIL = "file not complete" (A10): more material,
+   then a new held-out draw. K174 is not merged yet. The finding itself is kept: the card overstates "long record";
+   he also buys an inflection in pricing or growth at a business that already dominates.

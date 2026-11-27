@@ -1,0 +1,250 @@
+{
+ "rules": [
+  {
+   "id": "K174-C001",
+   "quote": "we try to look for the best business models in the world and we have been following Fair Isaac for many years",
+   "kind": "rule",
+   "part": "buy",
+   "measure": "business model quality",
+   "value": "",
+   "direction": "",
+   "strength": "usually",
+   "computable_final": "proxy",
+   "note": "",
+   "rule_status": "both"
+  },
+  {
+   "id": "K174-C007",
+   "quote": "that's an important part of businesses that we like at our firm is having businesses that still have a tremendous amount of operating leverage",
+   "kind": "rule",
+   "part": "buy",
+   "measure": "operating margin expansion potential",
+   "value": "",
+   "direction": "",
+   "strength": "usually",
+   "computable_final": "proxy",
+   "note": "Said of FICO's margins that could be a lot higher",
+   "rule_status": "both"
+  },
+  {
+   "id": "K174-C010",
+   "quote": "if you look at the capital allocation of the company what you'd like to see is a business that does not have to make defensive Acquisitions does not have to reinvest heavily in the business to keep it going",
+   "kind": "rule",
+   "part": "buy",
+   "measure": "reinvestment rate",
+   "value": "",
+   "direction": "",
+   "strength": "usually",
+   "computable_final": "proxy",
+   "note": "Wants low reinvestment need and no defensive acquisitions",
+   "rule_status": "both"
+  },
+  {
+   "id": "K174-C013",
+   "quote": "our firm we don't invest in businesses where you have to twist somebody's Farm to use the product or service",
+   "kind": "rule",
+   "part": "avoid",
+   "measure": "product necessity",
+   "value": "",
+   "direction": "",
+   "strength": "always",
+   "computable_final": "proxy",
+   "note": "Avoids businesses where users are forced to buy",
+   "rule_status": "both"
+  },
+  {
+   "id": "K174-C014",
+   "quote": "we believe in what we call Natural monopolies or oligopolies",
+   "kind": "rule",
+   "part": "buy",
+   "measure": "market structure",
+   "value": "",
+   "direction": "",
+   "strength": "always",
+   "computable_final": "proxy",
+   "note": "Prefers natural monopolies or oligopolies",
+   "rule_status": "third"
+  },
+  {
+   "id": "K174-C019",
+   "quote": "arguably today based on its growth profile we don't really believe in some of the parts at our firm",
+   "kind": "rule",
+   "part": "price",
+   "measure": "",
+   "value": "",
+   "direction": "",
+   "strength": "usually",
+   "computable_final": "no",
+   "note": "Does not value companies by sum of the parts",
+   "rule_status": "both"
+  },
+  {
+   "id": "K174-C023",
+   "quote": "we like to be great historians of companies we were following this company for a long time knew of its dominant position",
+   "kind": "rule",
+   "part": "process",
+   "measure": "",
+   "value": "",
+   "direction": "",
+   "strength": "usually",
+   "computable_final": "no",
+   "note": "Studies companies for years before acting",
+   "rule_status": "third"
+  },
+  {
+   "id": "K174-C026",
+   "quote": "near-term share price volatility doesn't bother us at all it actually gives us the opportunity to buy into great businesses like Vera Isaac",
+   "kind": "rule",
+   "part": "price",
+   "measure": "",
+   "value": "",
+   "direction": "",
+   "strength": "always",
+   "computable_final": "no",
+   "note": "Uses volatility to buy great businesses",
+   "rule_status": "both"
+  }
+ ],
+ "other_claims": [
+  {
+   "id": "K174-C002",
+   "quote": "there wasn't a lot of organic growth during the early years of the company its growth was completely related to volume",
+   "kind": "anecdote",
+   "part": "other",
+   "note": "FICO growth before 2018"
+  },
+  {
+   "id": "K174-C003",
+   "quote": "but that changed in 2018 which got us interested in the company",
+   "kind": "example",
+   "part": "buy",
+   "note": "FICO: pricing change in 2018 triggered interest; growth inflection on a dominant franchise"
+  },
+  {
+   "id": "K174-C004",
+   "quote": "it's worth mentioning that scores are extremely cheap relative to the loan sizes",
+   "kind": "view",
+   "part": "other",
+   "note": "FICO score price vs loan size; basis of pricing power"
+  },
+  {
+   "id": "K174-C005",
+   "quote": "prior to 2016 FICO had not increased the prices of its scores for 25 years",
+   "kind": "anecdote",
+   "part": "other",
+   "note": "FICO pricing history"
+  },
+  {
+   "id": "K174-C006",
+   "quote": "software business has margins uh far lower than the scores business",
+   "kind": "view",
+   "part": "other",
+   "note": "FICO software vs scores margins"
+  },
+  {
+   "id": "K174-C008",
+   "quote": "importantly the business model is extremely Capital light they've gone through the capital intensive years of the software business",
+   "kind": "principle",
+   "part": "buy",
+   "note": "FICO capital light"
+  },
+  {
+   "id": "K174-C009",
+   "quote": "but if you look at the last two fiscal years the company has had less than 10 million dollars in capex to support a company whose market cap is approaching 20 billion dollars",
+   "kind": "example",
+   "part": "buy",
+   "note": "FICO capex under 10m on 20bn market cap; capital-light lesson"
+  },
+  {
+   "id": "K174-C011",
+   "quote": "over the last five years they've been able to use all of their free cash flow essentially to buy back a tremendous amount of stock",
+   "kind": "example",
+   "part": "buy",
+   "note": "FICO: free cash flow used for buybacks; shows no need to invest to keep dominance"
+  },
+  {
+   "id": "K174-C012",
+   "quote": "the company has required 20 of its outstanding shares over the last five years and 25 over the last 10 years",
+   "kind": "example",
+   "part": "buy",
+   "note": "FICO share count down 20% in five years, 25% in ten (as transcribed)"
+  },
+  {
+   "id": "K174-C015",
+   "quote": "this is a case where the end users of FICO scores derive a lot of benefit from this course",
+   "kind": "example",
+   "part": "buy",
+   "note": "FICO: users benefit, so not forced; natural monopoly lesson"
+  },
+  {
+   "id": "K174-C016",
+   "quote": "because the score is so cheap relative to the loan decisions being made there is just a tremendous runway for pricing power that still delivers exceeding value to the end users",
+   "kind": "principle",
+   "part": "buy",
+   "note": "Low price relative to value gives pricing runway"
+  },
+  {
+   "id": "K174-C017",
+   "quote": "what I like about this business is you're not forcing anybody to use the score everyone can go out tomorrow and use Vantage score",
+   "kind": "example",
+   "part": "buy",
+   "note": "FICO: used by choice because of network effect"
+  },
+  {
+   "id": "K174-C018",
+   "quote": "I've always said that two kids in a dorm room at MIT could come up with an equivalent mathematical model for credit scoring but that's not what matters what matters is the networking effect",
+   "kind": "principle",
+   "part": "buy",
+   "note": "The network effect, not the model, protects FICO"
+  },
+  {
+   "id": "K174-C020",
+   "quote": "if you had to design an ideal business from scratch FICO has most of the elements that you would be looking for",
+   "kind": "principle",
+   "part": "buy",
+   "note": "Elements listed next: dominant position, pricing power, value for price, runway, operating leverage, low reinvestment, network effect"
+  },
+  {
+   "id": "K174-C021",
+   "quote": "it's in a dominant Market position tremendous pricing power provides great value for the price of its product long runway for pricing power operating leverage not a lot in the way of reinvestment a natural networking effect",
+   "kind": "principle",
+   "part": "buy",
+   "note": "Ideal business elements as listed for FICO"
+  },
+  {
+   "id": "K174-C022",
+   "quote": "if I look at the crop of IPOs and specs there's almost a thousand of them that came to Market over the last few years we have not been able to identify a single one whose business model is as compelling",
+   "kind": "view",
+   "part": "buy",
+   "note": "Found no IPO or SPAC as compelling as FICO"
+  },
+  {
+   "id": "K174-C024",
+   "quote": "we were worried about its organic growth profile and then we realized that there was a change happening that many others in the marketplace may not have realized",
+   "kind": "example",
+   "part": "buy",
+   "note": "FICO 2018: waited on a quality franchise until pricing change showed growth; lesson: watch for unnoticed change"
+  },
+  {
+   "id": "K174-C025",
+   "quote": "the investment business is about looking forward in assessing future risk and future growth",
+   "kind": "principle",
+   "part": "process",
+   "note": ""
+  },
+  {
+   "id": "K174-C027",
+   "quote": "the more volatility that these companies have the better for long-term investors like us",
+   "kind": "principle",
+   "part": "price",
+   "note": "Volatility helps long-term investors"
+  },
+  {
+   "id": "K174-C028",
+   "quote": "there's been many opportunities to buy the company at depressed levels over the last five years because of some of the items like the fhfa decision or what was happening with synchrony",
+   "kind": "example",
+   "part": "price",
+   "note": "FICO: fears (FHFA, Synchrony) created low prices"
+  }
+ ]
+}

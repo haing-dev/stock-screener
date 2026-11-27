@@ -1,0 +1,17 @@
+{
+ "matches": [
+  {"id": "K174-C001", "match": "yes", "card_rule": "RB1", "why": "Buy only the best, highest-quality business models; same idea as RB1."},
+  {"id": "K174-C007", "match": "yes", "card_rule": "RB13", "why": "Operating leverage, margins can go much higher; RB13 is operating leverage with margins rising."},
+  {"id": "K174-C010", "match": "yes", "card_rule": "RB14", "why": "Buy part, low reinvestment need; RB14 capital light, reinvestment preferably zero (defensive deals also RA11)."},
+  {"id": "K174-C013", "match": "no", "card_rule": "", "why": "Avoid part; no avoid rule on coerced use. Same idea appears only in buy form (RB8)."},
+  {"id": "K174-C014", "match": "yes", "card_rule": "RB7", "why": "Natural monopolies or oligopolies; RB7 dominance by monopoly/oligopoly, RB8 'natural'."},
+  {"id": "K174-C019", "match": "no", "card_rule": "", "why": "No card price rule on rejecting sum-of-the-parts; RP1 (DCF) is a different idea."},
+  {"id": "K174-C023", "match": "yes", "card_rule": "RO4", "why": "Process: study and follow a company for many years before acting; RO4."},
+  {"id": "K174-C026", "match": "yes", "card_rule": "RP8", "why": "Price drops/volatility used as entry into great businesses; RP8 entry on a scare-driven drop."}
+ ],
+ "contradictions": [
+  {"id": "K174-C003", "card_rule": "RB10", "status": "open", "why": "Interest was triggered by FICO's 2018 pricing change, a sudden change; RB10 requires pricing power as a long-running pattern, 'not a sudden change', a decade plus. Card lists FICO as a fit without recording this exception."},
+  {"id": "K174-C005", "card_rule": "RB10", "status": "open", "why": "FICO had not raised prices for 25 years before 2016, so it had no decade-plus record of above-inflation price rises when bought; opposite of RB10's number. Not recorded on the card (section 5 mentions the mortgage score +100% only under C13)."},
+  {"id": "K174-C024", "card_rule": "RB6", "status": "open", "why": "He bought on a change in the growth profile 'others ... may not have realized'; RB6 says extrapolate a long record, 'not a predicted step change'. Card C15 closes only record length ('not every company'), not acting on a change."}
+ ]
+}
