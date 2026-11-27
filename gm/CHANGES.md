@@ -4,6 +4,53 @@ Every rule change gets a new VERSION in gm/run.py and a line here. Every variant
 (1990-2010; extra check 1975-89) is logged so the deflated Sharpe can count the trials. The holdout (2011-2026) is run
 once, after the rules are frozen, by gm/holdout.py.
 
+## gm-2.2.1 fix: cm_aqr_ew a Trend market in CM only (registered 2026-11-27, BEFORE the code change; found while building A2)
+Registered fix of the existing engine (TESTING_PROTOCOL 7.4: a found defect gets a registered engine version, as C1-C4,
+gm-1.2.2 and E1-E5). Found while coding A2 (gm/CHANGES.md "A2" item 13, commit d0ecdc7), BEFORE any A2 statistic was
+computed anywhere (the A2 job has not run on the PC; the cloud computed positions only). Decision by the coordinator
+(2026-11-27): fix now, before A2 runs; not a decision for the user.
+1. Defect. gm/book.py family_positions (lines 127-128, old path) and family_positions_v (257-258, version path) build a
+   class block's market list as
+   `[k for k in X.columns if k.startswith(pre) and k in R and k != "cm_aqr_ew" or (k == "cm_aqr_ew" and f in ("trend",) and k in X.columns)]`.
+   `and` binds tighter than `or`, so the second clause holds in EVERY class: cm_aqr_ew (AQR Commodities for the Long
+   Run, equal weight, to 2000-12, gm/panel.py:550) is a Trend market in all four class blocks (EQ 19, FI 15, FX 14, CM
+   17 columns on the free panel), where SPEC_Trend s4 lists it in CM only ("CM (16 + 1) ... cm_aqr_ew 1970-01 to
+   2000-12") and book.py's own comment says "trend only". Its Trend position entered the EQ, FI and FX blocks too (and
+   the count n of each), so the class blocks before 2001 were not what the spec says. No other family is affected (the
+   second clause needs f = trend); gm/signals.py:476 has the same shape but its `or` is the intended reading.
+2. Fix (the spec's reading, nothing else): cm_aqr_ew is in a class block only when the class is CM and the family is
+   Trend: `(k.startswith(pre) and k in R and k != "cm_aqr_ew") or (k == "cm_aqr_ew" and c == "CM" and f == "trend" and
+   k in X.columns)`, in both places. No other rule, weight, threshold, cost, market or date changes.
+3. Scope: every config alike (BASE, CANDIDATE, A1_INCUMBENT, A2_CHALLENGER, and every parts / Core / shadow / tranche /
+   placebo path, which all read these two functions). Version names (the convention of every number-changing fix,
+   gm-1.2.2 and gm-1.2.3): engine gm-2.2.1 (config.ENGINE_VERSION); BASE gm-1.2.3 -> gm-1.2.4 (gm/run.py VERSION too);
+   CANDIDATE gm-2.0.3-candidate -> gm-2.0.4-candidate; A1_INCUMBENT -> gm-2.0.4-candidate-x1; A2_CHALLENGER ->
+   gm-2.2.1-a2-challenger. The config hashes change with the names (each printed in the result paragraph); the
+   hashes 465b5ecd4f / a5b83bdf45 of the A2 entry are superseded by them (the A2 entry's rules are unchanged).
+4. Consequences, stated before the code:
+   a. Design numbers move for BASE and CANDIDATE (Trend before 2001). Gate (7.4 "Gate for E1-E5", a fix): truncation
+      test at 8 dates; tests pass; design statistics before / after reported once (BASE and CANDIDATE, 1975-2010 and
+      1990-2010, net Sharpe, mean, volatility, worst drawdown; free data, cloud, as for E4); one gm/trials.csv row per
+      config, family "fix". New reference tools/bbgq/engine_ref.json made by tools/bbgq/engine_ref.py (the old file kept
+      as engine_ref_gm-2.2.0.json); then the k = 0 reproduction 24 of 24 against the NEW reference.
+   b. A1 is rerun as PC job tools/bbgq/jobs/gm_a1_v2.py: identical to gm_a1_v1 apart from its name and the registered
+      sha256 of the engine files (gm code checked against the new engine_ref.json, whose free arm is the new
+      reference). Same A1 rule, same LOCK_v2, same candidates and a1_panel-1.1.0 (unchanged): the A1 panel id is
+      computed from the a1_panel version, LOCK_v2, the free-inputs digest, the blocks and the admitted list only, so it
+      stays e7f98d4439fccf91f3451bc4b9e78079e3bc2cc2452931363b28520460b6cb43 unless the admission changes (the
+      admission reads the free panel return, the EIA contracts and the dividend yields, none of which this fix touches;
+      if gm_a1_v2 printed another id, that is a finding and A2 stops). The A1 report numbers change (the book changes);
+      gm_a1_v2's TRIAL ROW (family "data") is logged as the A1 row of gm-2.2.1, the gm_a1_v1 row stays as history.
+   c. A2 (amending its entry item 7, registered here before the job change): the incumbent's as-run values are no
+      longer the hard-coded A1-report numbers; gm_a2_v1 reads them from local\results\gm_a1_v2.txt, the three lines
+      "all blocks (A1 panel) | k1 / k0 / d1 | 1975-2010 | ..." (net Sharpe, 3 decimals), and STOPS if that file is
+      missing, has no "A1 JOB DONE", lacks one of the three lines, or names another A1 PANEL ID than the registered
+      one. The trial log hash of A2 item 4l changes (the two "fix" rows; book / pod rows unchanged, so N 39 and the
+      inflation 0.26 stay). Queue: gm_repro_v7 -> gm_a1_v2 -> gm_a2_v1.
+5. Test (registered with the fix): a smoke check that every class block's columns carry that class's prefix, except
+   cm_aqr_ew, which may appear only in the CM block of Trend (both code paths, BASE and the A2 challenger).
+6. Live paper ledger: untouched (workflow disabled); the next live run restates under gm-1.2.4. Holdout not run.
+
 ## A2: Batch A2, version grids, hygiene H1-H4 (registered 2026-11-27, BEFORE the A2 code and the A2 run): TESTING_PROTOCOL 7.6 step 3, 7.7
 Registered batch entry (no rule, weight, threshold or cost changes; no gm/ code changes; no statistic of the A2
 challenger, of any grid version or of any A2 report line has been computed on real data, cloud or PC). Nothing has to
