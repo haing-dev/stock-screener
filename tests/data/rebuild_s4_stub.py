@@ -1,16 +1,23 @@
-"""STUB of the S4 rebuild, for tests/core_v1_smoke.py ONLY (docs/research/batches/S4_INTERFACE.md shape, not its
-content). It is NOT the independent rebuild (tools/bbgq/lib/rebuild_s4.py, written by a separate agent) and never
+"""STUB of the S4 rebuild, for tests/core_v1_smoke.py ONLY (docs/research/batches/S4_INTERFACE.md v2 shape, not its
+content; it reads only inputs["R"] and checks that the v2 raw keys are present). It is NOT the independent rebuild (tools/bbgq/lib/rebuild_s4.py, written by a separate agent) and never
 ships to the PC. Each key gets a simple 12-month sign trend of an equal-weight basket of its class markets, scaled to
 10% by a trailing 36-month volatility lagged one month: the right shape, deliberately not the engine's numbers."""
 import numpy as np
 import pandas as pd
 
-VERSION = "rebuild_s4-stub-0.0.1"
+VERSION = "rebuild_s4-stub-0.0.2"   # 0.0.2: interface v2 inputs
 KEYS = {"trend": ("eq_", "bd_", "st_", "fx_", "cm_"), "carry": ("fx_", "cm_"), "value_eq": ("eq_",),
         "carry_fx_v2": ("fx_",), "carry_energy": ("cm_",)}
 
 
+V2_KEYS = ("R", "D", "days", "rate3m", "fx_rate_country", "eia", "french_with", "french_without", "us_total",
+           "us_price", "cost", "em_borrow", "classes", "meta")
+
+
 def part_returns(inputs, cut="2010-12-31"):
+    missing = [k for k in V2_KEYS if k not in inputs]
+    if missing:
+        raise KeyError("interface v2 keys missing: %s" % ", ".join(missing))
     R = inputs["R"]
     end = pd.Period(pd.Timestamp(cut), "M")
     out = {}

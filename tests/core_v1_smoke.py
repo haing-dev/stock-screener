@@ -7,7 +7,8 @@ Checks:
   S1           the identity date map reproduces the part-alone net exactly; the placebo p is placebo_runs' share
   S2, S3       equal direct computations (mean of the 2x-cost part; tail_test of the books with / without)
   S4           rebuild = engine passes with difference 0; x 1.10 passes on the mean, x 1.20 fails; Sharpe uses own months
-  interface    rebuild_inputs keys and shapes; validate_rebuild refuses a missing key, a non-monthly index, a month
+  interface    v2 raw inputs: keys, no engine-built measure, copies; raw_check passes on consistent inputs and fails
+               on a changed or missing value; the check formulas by hand; validate_rebuild refuses a missing key, a non-monthly index, a month
                after the cut, an infinite value, too few months; forbidden_imports finds gm / gm_engine / core_v1
   live         a held market without a free return at 2010-12 fails the check
   verdicts     Core = S1-S4 + live; a broken rebuild makes every part not Core -> CORE BOOK V1 EMPTY, alpha against a
@@ -70,9 +71,50 @@ def planted(R, seed=5):
     return R + drift
 
 
+def synth_raw(seed=8):
+    """Synthetic interface-v2 raw inputs on the design grid for the scenario's markets (fx_jpy, fx_gbp, fx_aud, fx_cad;
+    cm_wti, cm_natgas; eq_gb_ftse, eq_jp_nikkei, eq_de_dax and the US)."""
+    rng = np.random.default_rng(seed)
+    idx = pd.period_range("1960-01", "2010-12", freq="M")
+    n = len(idx)
+
+    def walk(x0, sd):
+        return x0 + np.cumsum(rng.normal(0, sd, n))
+    rate = pd.DataFrame({c: np.clip(walk(5.0, 0.2), 0.1, None) for c in ("US", "JP", "GB", "AU", "CA")}, index=idx)
+    rate.loc[:pd.Period("1969-12", "M")] = np.nan
+    eia = {}
+    for m, start in (("cm_wti", "1983-04"), ("cm_natgas", "1990-04")):
+        f1 = pd.Series(np.exp(walk(3.0, 0.08)), index=idx)
+        f2 = f1 * np.exp(rng.normal(0, 0.02, n))
+        F = pd.DataFrame({1: f1, 2: f2}, index=idx)
+        F.loc[:pd.Period(start, "M") - 1] = np.nan
+        eia[m] = F
+    cols = ["eq_gb_ftse", "eq_jp_nikkei", "eq_de_dax"]
+    fw = pd.DataFrame(rng.normal(0.008, 0.04, (n, 3)), index=idx, columns=cols)
+    fx = fw - np.abs(rng.normal(0.003, 0.001, (n, 3)))
+    fw.loc[:pd.Period("1974-12", "M")] = np.nan
+    fx.loc[:pd.Period("1974-12", "M")] = np.nan
+    ust = pd.Series(rng.normal(0.008, 0.04, n), index=idx)
+    usp = ust - np.abs(rng.normal(0.0018, 0.0005, n))
+    ust.loc[:pd.Period("1993-01", "M")] = np.nan
+    return {"rate3m": rate, "fx_rate_country": {"fx_jpy": "JP", "fx_gbp": "GB", "fx_aud": "AU", "fx_cad": "CA"},
+            "eia": eia, "french_with": fw, "french_without": fx, "us_total": ust, "us_price": usp}
+
+
 def scenario(late=False):
+    """a2_batch_smoke's panel with a planted trend; the Core parts' carry and value measures replaced by the spec
+    formulas on synth_raw (so the raw check holds); months after 2010-12 of the late form keep a planted value."""
     R, D, S, gspc = S2.scenario(late=late)
-    return planted(R), D, S, gspc
+    raw = synth_raw()
+    C, V = CV.measures_from_raw(raw)
+    S = {k: v.copy() for k, v in S.items()}
+    for key, X in (("C", C), ("V", V)):
+        for c in X.columns:
+            col = X[c].reindex(S[key].index)
+            if late:
+                col[col.index > pd.Period("2010-12", "M")] = 9.87654321
+            S[key][c] = col
+    return planted(R), D, S, gspc, raw
 
 
 def run(check):
@@ -84,7 +126,7 @@ def run(check):
 
 
 def _run(check, tmp):
-    R, D, S, gspc = scenario()
+    R, D, S, gspc, raw = scenario()
     cfg = CF.A1_INCUMBENT
     days = EX.nyse_days(gspc=gspc)
     M = CV.masks()
@@ -105,16 +147,40 @@ def _run(check, tmp):
     check("masks: Core + shadow parts partition every pod's components (max diff %.1e)" % worst, worst < 1e-15)
 
     # ---- interface inputs
-    inp = CV.rebuild_inputs(R, D, S, days, cfg, {"config": cfg["name"]})
-    need = {"R", "D", "days", "C", "V", "vol", "cost", "em_borrow", "classes", "meta"}
-    check("interface: rebuild_inputs has exactly the documented keys", set(inp) == need, sorted(inp))
-    check("interface: C without equities, V on fx_/bd_/eq_, vol on R's columns, a cost for every market",
-          not any(c.startswith("eq_") for c in inp["C"].columns) and
-          all(c.startswith(("fx_", "bd_", "eq_")) for c in inp["V"].columns) and list(inp["vol"].columns) ==
-          list(R.columns) and set(inp["cost"]) == set(R.columns) and inp["classes"]["FI"] == ("bd_", "st_"))
+    inp = CV.rebuild_inputs(R, D, days, raw, {"config": cfg["name"]})
+    check("interface v2: rebuild_inputs has exactly the documented keys", set(inp) == set(CV.INPUT_KEYS), sorted(inp))
+    check("interface v2: no engine-built measure or volatility in the inputs",
+          not {"C", "V", "vol", "S", "E"} & set(inp))
+    check("interface v2: rate3m in percent with a US column, eia contracts 1 and 2, French with / without, a cost for "
+          "every market", "US" in inp["rate3m"].columns and all(list(F.columns) == [1, 2] for F in inp["eia"].values())
+          and list(inp["french_with"].columns) == list(inp["french_without"].columns) and
+          set(inp["cost"]) == set(R.columns) and inp["classes"]["FI"] == ("bd_", "st_"))
     inp["R"].iloc[:, 0] = 99.0
-    check("interface: the inputs are copies (changing them leaves the panel alone)", not (R.iloc[:, 0] == 99.0).any())
-    rb = STUB.part_returns(CV.rebuild_inputs(R, D, S, days, cfg))
+    inp["eia"]["cm_wti"].iloc[:, 0] = 99.0
+    inp["rate3m"].iloc[:, 0] = 99.0
+    check("interface: the inputs are copies (changing them leaves the panel and the raw inputs alone)",
+          not (R.iloc[:, 0] == 99.0).any() and not (raw["eia"]["cm_wti"].iloc[:, 0] == 99.0).any() and
+          not (raw["rate3m"].iloc[:, 0] == 99.0).any())
+    rc = CV.raw_check(raw, S)
+    check("raw check: the raw inputs reproduce the scenario's carry and value measures (3 groups PASS)",
+          len(rc) == 3 and all(r["pass"] for r in rc), rc)
+    Sb = {k: v.copy() for k, v in S.items()}
+    Sb["C"].loc[pd.Period("1995-06", "M"), "fx_jpy"] += 1e-6
+    Sv = {k: v.copy() for k, v in S.items()}
+    Sv["V"].loc[pd.Period("1990-03", "M"), "eq_de_dax"] = np.nan
+    check("raw check: a changed currency carry value fails the currency group only; a missing value fails the value group",
+          [r["pass"] for r in CV.raw_check(raw, Sb)] == [False, True, True] and
+          [r["pass"] for r in CV.raw_check(raw, Sv)] == [True, True, False])
+    Cm, Vm = CV.measures_from_raw(raw)
+    t = pd.Period("1999-07", "M")
+    hand_fx = (raw["rate3m"].at[t - 1, "JP"] - raw["rate3m"].at[t - 1, "US"]) / 100
+    hand_cm = 12 * (raw["eia"]["cm_wti"].at[t, 1] / raw["eia"]["cm_wti"].at[t, 2] - 1)
+    dd = raw["french_with"]["eq_gb_ftse"] - raw["french_without"]["eq_gb_ftse"]
+    hand_v = float(dd.loc[t - 23:t - 12].sum())
+    check("raw check formulas by hand: FX carry lagged one month, energy 12 x (F1 / F2 - 1), E4 = the 12-month sum "
+          "ending at t - 12", abs(Cm.at[t, "fx_jpy"] - hand_fx) < 1e-15 and abs(Cm.at[t, "cm_wti"] - hand_cm) < 1e-15
+          and abs(Vm.at[t, "eq_gb_ftse"] - hand_v) < 1e-15)
+    rb = STUB.part_returns(CV.rebuild_inputs(R, D, days, raw))
     ok, why, nm = CV.validate_rebuild(rb)
     check("validate: the stub's output passes", ok, why)
     for lab, bad in (("a missing key", {k: v for k, v in rb.items() if k != "carry"}),
@@ -253,7 +319,7 @@ def _run(check, tmp):
           "EMPTY" in tre["note"])
 
     # ---- seal: values after 2010-12 change nothing
-    Rl, Dl, Sl, gl = scenario(late=True)
+    Rl, Dl, Sl, gl, _rawl = scenario(late=True)
     lines_l = []
     CV.report(Rl, Dl, Sl, gl, {"R": Rl, "S": Sl}, rbe, out=lines_l.append, n_placebo=NPL,
               trials_path=os.path.join(REPO, "gm", "trials.csv"), rb_version="engine-copy")
@@ -287,6 +353,7 @@ def _run(check, tmp):
     blocks, _free = A1S.scenario()
     A1S.write_store(os.path.join(loc, "work"), blocks)
     env = dict(os.environ, BBG_WORK=os.path.join(loc, "work"), PYTHONPATH="")
+    env.pop("PYTHONDONTWRITEBYTECODE", None)          # the job itself must keep lib\ free of .pyc (C4)
     job_src = open(os.path.join(bq, "jobs", "gm_core_v1.py"), encoding="utf-8").read()
     core_sha = hashlib.sha256(open(os.path.join(bq, "lib", "core_v1.py"), "rb").read()).hexdigest()
     job_src = re.sub(r'"core_v1.py": "[^"]*"', '"core_v1.py": "%s"' % core_sha, job_src)   # the build note pins it
@@ -336,6 +403,9 @@ def _run(check, tmp):
     check("job: a changed core_v1.py stops it at the hash check", "FAIL lib core_v1.py" in o6 and
           "STOP: lib file differs from the registered build: core_v1.py" in o6, o6[-600:])
     check("job output: no number with 5+ decimals", not re.findall(r"\d\.\d{5,}", o0 + o1 + o2 + o3 + o4 + o5 + o6))
+    pyc = [os.path.join(d, x) for d, _s, fs in os.walk(lib) for x in fs if x.endswith(".pyc")]
+    check("job (C4): sys.dont_write_bytecode, so no .pyc is written under lib\\ (lib modules and the gm package)",
+          not pyc, pyc[:3])
 
 
 if __name__ == "__main__":

@@ -10,7 +10,9 @@
    LOCK_v2; free inputs = the shipped zip.
 2. Free arm vs engine_ref.json; the A1 panel rebuilt (a1_panel-1.1.0), extension-only, its id = the registered A1 PANEL
    ID, compared with work\\a1\\a1_panel_e7f98d4439fc.pkl when present (STOP on a difference). Nothing is written to work\\.
-3. The rebuild (S4_INTERFACE.md) run on the interface inputs and validated BEFORE any statistic (STOP if it fails).
+3. The raw inputs of S4_INTERFACE.md v2 from the engine's loaders (no signal code), checked to reproduce the engine's
+   currency / energy carry and equity value measures exactly; then the rebuild run on them and validated BEFORE any
+   statistic (STOP if either fails).
 4. core_v1.report: as-run check against the A2 report first (STOP on a difference), then S1-S4, the live-source check,
    the verdicts, Core book v1, the Incubator rule and the reported lines; summary statistics over >= 60 months only.
 5. TRIAL ROW line (gm/trials.csv family "book", one row) for the coordinator.
@@ -22,6 +24,7 @@ placebos (a few seconds each on the PC)."""
 import os
 import sys
 
+sys.dont_write_bytecode = True          # C4 (CHECK_CORE): importing the lib modules writes no __pycache__
 sys.path[:0] = [os.path.join(os.getcwd(), "lib"), os.path.join(os.getcwd(), "pylib")]
 
 import contextlib  # noqa: E402
@@ -38,7 +41,7 @@ LIB = os.path.join(os.getcwd(), "lib")
 print("=== gm_core_v1 ===")
 
 # the registered build of the lib files (CORE_V1_BUILD hash table; gm/CHANGES.md "Core book v1" item 7)
-LIB_SHA = {"core_v1.py": "817380e8e9e7ed49f4f2a4ec2495b3e4ec154c186104dd99b07eab06738f1423",
+LIB_SHA = {"core_v1.py": "ee01320501fd1ec1f1fcc8b89dca91000e7644f728ed67cbb9e4ac674b04549e",
            "diag_a2.py": "3264a5381c13b124d2566d02f263e21905f4e901680c1af7c2134f0bd558be1b",
            "a2_batch.py": "35339f673f351f43315ad3c7010ba733b6fb8990a6a41feb1ef20de324de58c6",
            "a1_panel.py": "eb9ef3f7fbd12760e174f9ef1df8573890bed6ca8d36f7d4e5c63eadd822ebb5",
@@ -207,14 +210,24 @@ except SystemExit:
 except Exception as e:  # noqa: BLE001
     stop("A1 panel failed: %s" % frames(e))
 
-# ---- 3. the independent rebuild, validated before any statistic
+# ---- 3. the raw inputs (interface v2), checked; the independent rebuild, validated before any statistic
 try:
     from gm import execution as EX
     from gm import seal as SL
     Tseal = SL.resolve(SL.DESIGN)
     R_, D_, S_, g_ = SL.cut_inputs(Tseal, a1["R"], free["D"], a1["S"], free["gspc"])
     days = EX.nyse_days(gspc=g_)
-    inp = CV.rebuild_inputs(R_, D_, S_, days, CF.A1_INCUMBENT,
+    dy_adm = [r for r in a1["admitted"] if r["kind"] == "dy"]
+    if dy_adm:
+        stop("A1 admitted a dividend-yield extension; interface v2 has no form for it (gm/CHANGES.md 'Core book v1' M2)")
+    raw = CV.raw_from_engine(M, free, a1, store)
+    rows_rc = CV.raw_check(raw, S_)
+    for r in rows_rc:
+        print("%s raw inputs reproduce the engine's measure | %s | markets %d | max abs diff %.1e | missing pattern %d" % (
+            "PASS" if r["pass"] else "FAIL", r["group"], r["n"], r["maxdiff"], r["missing"]))
+    if not all(r["pass"] for r in rows_rc):
+        stop("the raw inputs do not reproduce the engine's measures (interface v2 section 3 item 0)")
+    inp = CV.rebuild_inputs(R_, D_, days, raw,
                             {"config": CF.A1_INCUMBENT["name"], "config_hash": CF.cfg_hash(CF.A1_INCUMBENT),
                              "panel_id": a1["panel_id"], "engine": CF.ENGINE_VERSION})
     print("rebuild inputs | %s" % " | ".join("%s %s" % (k, getattr(v, "shape", len(v) if hasattr(v, "__len__") else ""))

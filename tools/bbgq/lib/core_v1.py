@@ -14,7 +14,9 @@ any candidate that is not Core, against Core book v1. Printing (entry item 5): s
 
 API
   diag_facts(path)                              gm_diag_v1 report: DIAG JOB DONE and the A3-empty summary
-  rebuild_inputs(R, D, S, days, cfg, meta)      the dict of S4_INTERFACE.md section 2
+  raw_from_engine(M, free, a1, store)           interface v2 raw inputs from the engine's loaders (no signal code)
+  raw_check(raw, S)                             the raw inputs reproduce the engine's carry / value measures exactly
+  rebuild_inputs(R, D, days, raw, meta)         the dict of S4_INTERFACE.md v2 section 2
   forbidden_imports(path)                       rebuild source scan (interface section 3 item 1)
   validate_rebuild(out)                         interface section 3 items 2-3 -> (ok, why)
   report(R, D, S, gspc, free, rb, out, ...)     the registered run; returns the result dict
@@ -29,7 +31,7 @@ import re
 import numpy as np
 import pandas as pd
 
-VERSION = "core_v1-1.0.0"
+VERSION = "core_v1-1.1.0"   # 1.1.0 (CHECK_CORE): interface v2 raw inputs, raw check; C1
 A1_PANEL_ID = "e7f98d4439fccf91f3451bc4b9e78079e3bc2cc2452931363b28520460b6cb43"
 LOCK_V2 = "d85a46cb2853646b24796f294f3ccab1d1507188c402e978fd59f5196ea41fc9"
 ENGINE = "gm-2.2.1"
@@ -118,18 +120,97 @@ def forbidden_imports(path):
     return sorted(found)
 
 
-def rebuild_inputs(R, D, S, days, cfg, meta=None):
-    """S4_INTERFACE.md section 2: deep copies of the A1 panel inputs as the A2-final book reads them."""
+RATE_COLS = ("US", "EZ", "JP", "GB", "CH", "AU", "NZ", "CA", "SE", "NO", "MX", "BR", "KR", "ZA")
+ENERGY = ("cm_wti", "cm_natgas", "cm_heatoil", "cm_gasoline")
+FRENCH = ("eq_de_dax", "eq_gb_ftse", "eq_fr_cac", "eq_jp_nikkei", "eq_ca_tsx", "eq_au_asx", "eq_hk_hsi")
+RAW_KEYS = ("rate3m", "fx_rate_country", "eia", "french_with", "french_without", "us_total", "us_price")
+INPUT_KEYS = ("R", "D", "days") + RAW_KEYS + ("cost", "em_borrow", "classes", "meta")
+
+
+def raw_from_engine(M, free, a1=None, store=None):
+    """Interface v2 section 2: the RAW month-end inputs as the engine's loaders return them (gm.panel rate3m,
+    eia_curve; gm.signals _french_mkt; SPY / ^GSPC monthly returns), every loader cut at 2010-12-31, outputs cut at the
+    seal; the A1 block-2 contract extension applied to the EIA contracts exactly as a1_panel.build applies it (a1 and
+    store given). No signal or volatility code is run."""
+    import a1_panel as A1
+    import gm_engine as GE
+    from gm import seal as SL
+    P, G = M["P"], M["G"]
+    with GE.Cut(M, A1.SEAL), contextlib.redirect_stdout(io.StringIO()):
+        rate = pd.DataFrame({c: P.rate3m(c) for c in RATE_COLS}).reindex(P.GRID)
+        fw = pd.DataFrame({k: G._french_mkt("french_intl_countries_ff.zip", G.FRENCH_DY[k]) for k in FRENCH})
+        fx = pd.DataFrame({k: G._french_mkt("french_intl_countries_ff_xdiv.zip", G.FRENCH_DY[k]) for k in FRENCH})
+        ust = P.ret(P.Y("SPY")).reindex(P.GRID)
+        usp = P.ret(P.Y("^GSPC")).reindex(P.GRID)
+    T = SL.resolve(SL.DESIGN)
+    rate, fw, fx, ust, usp = SL.cut_inputs(T, rate, fw, fx, ust, usp)
+    idx = free["R"].index
+    eia = {m: free["eia"][A1.EIA_OF[m]][[1, 2]].reindex(idx).copy() for m in ENERGY}
+    adm = [r for r in (a1 or {}).get("admitted", []) if r["kind"] == "contract"]
+    for m in sorted({r["market"] for r in adm}):                 # a1_panel.build block 2, contracts only
+        for n in (1, 2):
+            base = eia[m][n]
+            rr = [r for r in adm if r["market"] == m and r["n"] == n]
+            if rr:
+                bb = A1._same_from(m, rr[0]["ticker"], store.series(rr[0]["ticker"], "PX_LAST", "Curves"))
+                bb = A1._design(bb.reindex(idx)) if bb is not None else None
+                if bb is not None:
+                    base = base.combine_first(A1._before(bb, base.first_valid_index()).reindex(idx))
+            eia[m][n] = base
+    from gm import signals as GS
+    return {"rate3m": rate.reindex(idx), "fx_rate_country": {k: v[1] for k, v in GS.FX_CC.items()}, "eia": eia,
+            "french_with": fw.reindex(idx), "french_without": fx.reindex(idx), "us_total": ust.reindex(idx),
+            "us_price": usp.reindex(idx)}
+
+
+def measures_from_raw(raw, dy_lag=12):
+    """The packaging check of interface v2 section 3 item 0 (NOT the rebuild): the spec formulas on the raw inputs ->
+    (C: currency and energy carry, before E13; V: the 8 equity dividend yields with E4)."""
+    rt = raw["rate3m"]
+    C = {}
+    for k, cc in raw["fx_rate_country"].items():
+        C[k] = ((rt[cc] - rt["US"]) / 100).shift(1)
+    for m, F in raw["eia"].items():
+        C[m] = 12 * (F[1] / F[2] - 1)
+    V = {}
+    for k in raw["french_with"].columns:
+        d = raw["french_with"][k] - raw["french_without"][k]
+        V[k] = d.rolling(12, min_periods=12).sum().shift(dy_lag)
+    V["eq_us_spx"] = (raw["us_total"] - raw["us_price"]).rolling(12, min_periods=12).sum().clip(0, 0.1)
+    return pd.DataFrame(C), pd.DataFrame(V)
+
+
+def raw_check(raw, S):
+    """-> rows (group, markets, max abs diff, missing-pattern cells, pass): the raw inputs reproduce the engine's
+    carry (currencies, energy; before E13) and equity value measures exactly (tolerance 1e-12)."""
+    C, V = measures_from_raw(raw)
+    rows = []
+    for lab, mine, eng in (("carry currencies", C[[k for k in C if k.startswith("fx_")]], S["C"]),
+                           ("carry energy (before E13)", C[[k for k in C if k.startswith("cm_")]], S["C"]),
+                           ("value equities (E4)", V, S["V"])):
+        cols = list(mine.columns)
+        miss = [k for k in cols if k not in eng.columns]
+        e = eng.reindex(index=mine.index, columns=cols)
+        mp = int((mine.isna() != e.isna()).sum().sum())
+        d = (mine - e).abs().max().max()
+        d = float(d) if d == d else 0.0
+        rows.append({"group": lab, "n": len(cols), "maxdiff": d, "missing": mp + len(miss),
+                     "pass": not miss and mp == 0 and d <= 1e-12})
+    return rows
+
+
+def rebuild_inputs(R, D, days, raw, meta=None):
+    """Interface v2 section 2: deep copies of the A1 panel's returns, the daily returns, the NYSE days and the raw
+    inputs (raw_from_engine), plus the cost table, borrow list and classes. No engine signal or volatility."""
     from gm import book as B
     from gm import signals as G
-    from gm import vol as VM
-    C = S["C"][[c for c in S["C"].columns if not c.startswith("eq_")]]
-    C = G.x1_seasonal(C, cfg.get("x1_seasonal"))
-    V = S["V"][[c for c in S["V"].columns if c.startswith(("fx_", "bd_", "eq_"))]]
-    vol = _quiet(VM.estimate, R, cfg, D)
-    return {"R": R.copy(), "D": D.copy(), "days": pd.DatetimeIndex(days).copy(), "C": C.copy(), "V": V.copy(),
-            "vol": vol.copy(), "cost": {k: tuple(B.cost_bp(k)) for k in R.columns},
-            "em_borrow": tuple(B.EM_EQ), "classes": copy.deepcopy(dict(G.CLASSES)), "meta": dict(meta or {})}
+    out = {"R": R.copy(), "D": D.copy(), "days": pd.DatetimeIndex(days).copy()}
+    for k in RAW_KEYS:
+        v = raw[k]
+        out[k] = {m: f.copy() for m, f in v.items()} if k == "eia" else (dict(v) if isinstance(v, dict) else v.copy())
+    out.update({"cost": {k: tuple(B.cost_bp(k)) for k in R.columns}, "em_borrow": tuple(B.EM_EQ),
+                "classes": copy.deepcopy(dict(G.CLASSES)), "meta": dict(meta or {})})
+    return out
 
 
 def validate_rebuild(out, keys=None, cut="2010-12"):
@@ -475,7 +556,7 @@ def report(R, D, S, gspc, free, rb, out=print, facts=None, cfg=None, trials_path
         "placebo, T4 tail at lambda %.1f; T2 alpha at twice the costs reported" % (
             " (EMPTY: alpha against a zero book, T4 not applicable)" if empty else "", LAMBDA))
     res["incubator"] = {}
-    for p in [q for q in CORE if not res["parts"][q].get("core") and not res["parts"][q]["insufficient"]] + list(SHADOW):
+    for p in [q for q in CORE if not res["parts"][q].get("core")] + list(SHADOW):        # C1: every candidate not Core
         r = res["parts"][p]
         if r["insufficient"]:
             out("INCUBATOR | %s | window %d months < %d: insufficient data" % (p, r["window"], MIN_WINDOW))

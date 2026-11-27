@@ -9,7 +9,8 @@ is registered. No statistic of the rebuild or the engine is printed.
 Checks (A2-final config A1_INCUMBENT, free panel, design months, every loader cut at 2010-12-31):
   1. the Core and shadow masks partition each pod's components (positions add up exactly)
   2. the identity date map of the placebo engine reproduces each part alone exactly (S1 / T3 plumbing)
-  3. the S4 interface inputs build with the documented keys and shapes; the stub rebuild's output validates
+  3. the interface v2 raw inputs reproduce the engine's currency / energy carry and equity value measures exactly;
+     the inputs build with the documented keys and shapes; the stub rebuild's output validates
      (tests/data/rebuild_s4_stub.py; the independent rebuild is NOT run here)
   4. the live-source check runs: markets held at the 2010-12 decision per Core candidate and missing free inputs
 """
@@ -72,15 +73,24 @@ def main():
     ok &= p2
     print("%s S1 / T3: the identity date map reproduces each of the %d parts alone | max abs diff %.1e | missing "
           "pattern diff %d" % ("PASS" if p2 else "FAIL", len(CV.CORE + CV.SHADOW), worst, miss))
-    inp = CV.rebuild_inputs(R, D, S, days, cfg, {"config": cfg["name"]})
-    need = {"R", "D", "days", "C", "V", "vol", "cost", "em_borrow", "classes", "meta"}
-    p3 = set(inp) == need and inp["R"].shape[1] == inp["vol"].shape[1] and set(inp["cost"]) == set(inp["R"].columns)
+    raw = CV.raw_from_engine(M, free)
+    for r in CV.raw_check(raw, S):
+        ok &= r["pass"]
+        print("%s raw inputs (interface v2) reproduce the engine's measure | %s | markets %d | max abs diff %.1e | "
+              "missing pattern %d" % ("PASS" if r["pass"] else "FAIL", r["group"], r["n"], r["maxdiff"], r["missing"]))
+    inp = CV.rebuild_inputs(R, D, days, raw, {"config": cfg["name"]})
+    p3 = set(inp) == set(CV.INPUT_KEYS) and set(inp["cost"]) == set(inp["R"].columns)
     okv, why, nm = CV.validate_rebuild(STUB.part_returns(inp))
     p3 = p3 and okv
     ok &= p3
-    print("%s S4 interface inputs: %s | stub output validates: %s (months per key in 1975-2010: %s)" % (
-        "PASS" if p3 else "FAIL", " | ".join("%s %s" % (k, getattr(v, "shape", len(v) if hasattr(v, "__len__") else ""))
-                                             for k, v in inp.items()), why, ", ".join("%d" % v for v in nm.values())))
+
+    def shp(v):
+        if isinstance(v, dict) and v and all(hasattr(x, "shape") for x in v.values()):
+            return "{%s}" % ", ".join("%s %s" % (k, x.shape) for k, x in v.items())
+        return getattr(v, "shape", len(v) if hasattr(v, "__len__") else "")
+    print("%s S4 interface v2 inputs: %s | stub output validates: %s (months per key in 1975-2010: %s)" % (
+        "PASS" if p3 else "FAIL", " | ".join("%s %s" % (k, shp(v)) for k, v in inp.items()), why,
+        ", ".join("%d" % v for v in nm.values())))
     for p in CV.CORE:
         bk = CV.alone(R, D, S, days, cfg, MK[p])
         okl, held, ms = CV.live_check(bk["pos"], p, R, S)
@@ -91,7 +101,8 @@ def main():
         import rebuild_s4 as RB
         fb = CV.forbidden_imports(os.path.join(HERE, "lib", "rebuild_s4.py"))
         with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
-            out = RB.part_returns(CV.rebuild_inputs(R, D, S, days, cfg, {"config": cfg["name"]}), cut="2010-12-31")
+            out = RB.part_returns(CV.rebuild_inputs(R, D, days, CV.raw_from_engine(M, free), {"config": cfg["name"]}),
+                                  cut="2010-12-31")
         okr, why, nm = CV.validate_rebuild(out)
         p5 = okr and not fb
         ok &= p5
