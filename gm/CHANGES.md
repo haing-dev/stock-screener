@@ -50,6 +50,31 @@ computed anywhere (the A2 job has not run on the PC; the cloud computed position
 5. Test (registered with the fix): a smoke check that every class block's columns carry that class's prefix, except
    cm_aqr_ew, which may appear only in the CM block of Trend (both code paths, BASE and the A2 challenger).
 6. Live paper ledger: untouched (workflow disabled); the next live run restates under gm-1.2.4. Holdout not run.
+Code (2026-11-27, commit 0dadb20; entry afdcadc before it): gm/book.py both class lists as item 2; gm/config.py names and
+ENGINE_VERSION gm-2.2.1; gm/run.py VERSION gm-1.2.4; tests/gm_class_smoke.py (in tests/run_tests.py; it FAILS on the old
+code: cm_aqr_ew in trend/EQ, FI, FX, and passes on the fix). Config hashes: BASE f1d682c384 (was 7651ea6ebc), CANDIDATE
+438a092b53 (a9466df18b), A1_INCUMBENT 77374d7bef (465b5ecd4f), A2_CHALLENGER 1faa343535 (a5b83bdf45).
+Result (2026-11-27, free data, design months only; inputs = the repo cache, the same 239 files as the gm-2.2.0
+reference): new reference tools/bbgq/engine_ref.json made by tools/bbgq/engine_ref.py at gm commit 0dadb20 (sha256
+cebd4932e8643f14c541258abe68809a4e3c119f0c384beaa3d656b44c955e39; old file kept as engine_ref_gm-2.2.0.json); k = 0
+reproduction against it 24 of 24, difference 0 (tools/bbgq/results/engine_repro_cloud_2026-11-27d_gm-2.2.1.txt);
+truncation test PASS at all 8 cut dates, 21 k = 0 stages and 37 feature stages, 0 failing end-to-end or alone
+(results/engine_trunc_cloud_2026-11-27d_gm-2.2.1.txt); tests/run_tests.py ALL TESTS PASSED
+(results/run_tests_gm_2026-11-27d_gm-2.2.1.txt); bbgq_engine_smoke OK; a1_panel, gm_bloomberg, gm_x1, gm_feature, gm_seal,
+gm_class and a2_batch smokes passed. On the free panel the Trend class blocks now hold EQ 18, FI 14, FX 13, CM 17 columns
+(positions only). Design statistics, net of costs, before (gm-2.2.0 reference) -> after (gm-2.2.1), reported once:
+| Config | Period | Sharpe | Mean %/yr | Vol %/yr | Worst drawdown % |
+|---|---|---|---|---|---|
+| BASE gm-1.2.3 -> gm-1.2.4 | 1975-2010 | 1.226 -> 1.220 | 12.46 -> 12.65 | 10.17 -> 10.37 | -21.0 -> -22.4 |
+| BASE gm-1.2.3 -> gm-1.2.4 | 1990-2010 | 1.469 -> 1.474 | 14.47 -> 14.52 | 9.86 -> 9.85 | -12.3 -> -12.4 |
+| CANDIDATE gm-2.0.3 -> gm-2.0.4 | 1975-2010 | 1.461 -> 1.464 | 14.38 -> 14.97 | 9.84 -> 10.22 | -16.8 -> -17.6 |
+| CANDIDATE gm-2.0.3 -> gm-2.0.4 | 1990-2010 | 1.620 -> 1.631 | 16.38 -> 16.65 | 10.11 -> 10.21 | -16.8 -> -17.6 |
+Trial log: two rows, family "fix" (fix gm-2.2.1 gm-1.2.4, fix gm-2.2.1 gm-2.0.4-candidate; one per config, not a
+selection trial); book / pod rows unchanged (N 39, selection inflation 0.26). gm/trials.csv sha256 now
+2b80e2f9b255b05e839f6a6edcafa844aa67c161423d4966d99a141e4e178a36 (a2_batch TRIALS_SHA). Jobs: tools/bbgq/jobs/gm_a1_v2.py
+(= gm_a1_v1 + name + REF_SHA check of the new engine_ref.json); gm_a2_v1.py reads the as-run values from
+local\results\gm_a1_v2.txt (a2_batch-1.1.0 as_run_from_a1; the hard-coded AS_RUN is removed). No A1 or A2 statistic was
+computed in the cloud. The PC is not yet redeployed (queue: docs/research/batches/A2_BUILD_2026-11-27.md).
 
 ## A2: Batch A2, version grids, hygiene H1-H4 (registered 2026-11-27, BEFORE the A2 code and the A2 run): TESTING_PROTOCOL 7.6 step 3, 7.7
 Registered batch entry (no rule, weight, threshold or cost changes; no gm/ code changes; no statistic of the A2
@@ -163,6 +188,10 @@ every A2 statistic is computed by one PC job (tools/bbgq/jobs/gm_a2_v1.py, libra
    stores, synthetic panels with known answers: tests/a2_batch_smoke.py in tests/run_tests.py), the gates of the engine
    (k = 0 reproduction 24 of 24, truncation 8 of 8; gm/ is unchanged, so engine_ref.json is unchanged), and
    positions-only plumbing on free data (the Trend split parts add up to the Trend held positions; no return).
+Amended by "gm-2.2.1 fix" (registered above, before its code): engine gm-2.2.1, arm hashes 77374d7bef (incumbent) and
+1faa343535 (challenger) replace 465b5ecd4f / a5b83bdf45; item 7's as-run values are read from gm_a1_v2's report
+(gm-2.2.1 item 4c), not the gm_a1_v1 numbers; item 4l's trial-log hash is 2b80e2f9...e178a36 (N 39 and 0.26
+unchanged); item 13 is fixed by gm-2.2.1. Every other item stands.
 Closed while coding (2026-11-27, before any A2 run; simplest reading, none from results):
 9. Carry / price (item 4f): both parts and the total are taken over the bond and currency market-months that have a
    held Trend position and a carry value, so total = carry + price exactly; the covered share of Trend's FX + FI gross
