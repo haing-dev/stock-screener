@@ -86,3 +86,4 @@ conviction holdings job (R2) will be the fourth, with its code hash entered befo
 - 2026-11-27: A13 item 13: recall spec v1 written before any recall number; job 9 'recall' to be registered with its code hash. No price, return or 13F read.
 - 2026-11-27: A13 item 16: recall job 9 registered (eq_recall-1.0.0, code 20d8ca89..., lock 004bef34...). Jobs eq_recall_pull_v1 then eq_recall_v1. No result yet.
 - 2026-11-27: A13 item 17: eq_recall 1.0.1 (code 710545c3..., lock 47b10112...) after the independent review; run job eq_recall_v1 uses 1.0.1.
+- 2026-11-27: eq_recall_pull_v1: rc_funda, rc_fqx stored; rc_t10 failed (permission). A13 item 18: eq_recall 1.0.2 (pull fix); eq_recall_pull_v1b queued. No result yet.

@@ -218,7 +218,7 @@
   {
    "registered_job": "recall",
    "module": "eq_recall",
-   "code_sha256": "710545c305e1f231d377bf39f1e4a22e8b347b1e8b62d423c39933b0d4ec895a",
+   "code_sha256": "4677e775bd6ee1b6df82652b191bdafe3c8a33f45b6a0bbf39e14df4ed7f73e2",
    "registration": "docs/research/equity/pilot/RECALL_SPEC_v1.md; V04_REGISTRATION A13 item 13",
    "output": "eq_recall.run: counts, coverage shares, recall, base rate, lift, 90% bootstrap intervals, gate result, per-criterion rejection shares and a masked cross table of lifts; no company, no identifier, no row; reads no forward return. Pass panel (rc_pass_panel) and summary (rc_recall_summary) stay on WRDS",
    "names": [
@@ -240,6 +240,11 @@
      "code_sha256": "20d8ca89bbd09a3ff73f5557a05d7e2fec0ab7ae9e67959efa4572065d6a19d5",
      "version": "eq_recall-1.0.0",
      "note": "pull() identical to 1.0.1; eq_recall_pull_v1 queued with this version"
+    },
+    {
+     "code_sha256": "710545c305e1f231d377bf39f1e4a22e8b347b1e8b62d423c39933b0d4ec895a",
+     "version": "eq_recall-1.0.1",
+     "note": "eq_recall_pull_v1 ran with 1.0.1: Treasury step failed (frb_all_old not readable)"
     }
    ]
   }

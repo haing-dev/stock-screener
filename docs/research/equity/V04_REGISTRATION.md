@@ -563,3 +563,8 @@ as such. Replaces R1.1 (record); R1.2 (material) and R1.3 (screenability) stay.
     direction; a decisive result resting on one R2 version is flagged. The 20-purchase floor applies per R2 version.
     Not changed (notes): full-form bootstrap draw dropping, per-criterion shares under decisive missing-data rules,
     pull connection rollback. Review: pilot/RECALL_CODE_REVIEW_2026-11-27.md.
+18. **Pull fix eq_recall 1.0.2 (2026-11-27).** eq_recall_pull_v1 (ran with 1.0.1; report pilot/recall/
+    eq_recall_pull_v1_report.txt) stored rc_funda (340,638 rows) and rc_fqx (1,011,232) but stopped at the Treasury
+    step: the first FRB table found, frb_all_old.rates_daily, is not readable by this account. 1.0.2 tries every
+    candidate table in order (plus frb.rates_daily / rates_monthly) and uses the first readable one; run() unchanged.
+    Rerun as eq_recall_pull_v1b (stored data sets are reused, only rc_t10 is pulled).

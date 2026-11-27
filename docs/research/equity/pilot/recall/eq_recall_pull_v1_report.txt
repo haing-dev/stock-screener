@@ -1,0 +1,17 @@
+﻿=== WRDSQ REPORT v1.0.7 | job eq_recall_pull_v1 | 2026-11-27 14:45 | metadata and results only ===
+
+## 1. python
+eq_recall-1.0.1 pull
+reused eq_ref data sets: 24 (ref_msf, ref_dv_2008, ref_dv_2009, ref_dv_2010, ref_dv_2011, ref_dv_2012, ref_dv_2013, ref_dv_2014 ...)
+rc_funda       rows    340638  cols 21     22 s
+rc_fqx         rows   1011232  cols  9     52 s
+10-year Treasury: frb_all_old.rates_daily column tcmnom_y10 (date column date)
+rc_t10         FAILED: (psycopg2.errors.InsufficientPrivilege) permission denied for schema frb_all_old
+LINE 1: ...lect date as date, tcmnom_y10::float8 as y10 from frb_all_ol...
+                                                             ^
+
+[SQL: select date as date, tcmnom_y10::float8 as y10 from frb_all_old.rates_dail
+STOP: the 10-year Treasury yield is not available (RECALL_SPEC_v1: the job stops and says so)
+left for the next run: rc_t10
+
+=== END (58 s) ===

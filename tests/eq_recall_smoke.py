@@ -75,10 +75,14 @@ def mk_sql(frb=True):
         if "information_schema" in q:
             if not frb:
                 return pd.DataFrame(columns=["table_schema", "table_name", "column_name"])
-            return pd.DataFrame({"table_schema": ["frb"] * 3 + ["frb_all"],
-                                 "table_name": ["rates_daily"] * 3 + ["other"],
-                                 "column_name": ["date", "tcmnom_y10", "tcmii_y10", "x"]})
+            return pd.DataFrame({"table_schema": ["frb"] * 3 + ["frb_all"] + ["frb_all_old"] * 2,
+                                 "table_name": ["rates_daily"] * 3 + ["other"] + ["rates_daily"] * 2,
+                                 "column_name": ["date", "tcmnom_y10", "tcmii_y10", "x", "date", "tcmnom_y10"]})
+        if "from frb_all_old." in q:  # 1.0.2: a listed but unreadable schema (as on WRDS, 2026-11-27)
+            raise RuntimeError("permission denied for schema frb_all_old")
         if "from frb.rates_daily" in q and "limit 1" not in q:
+            if not frb:
+                raise RuntimeError("relation does not exist")
             return pd.DataFrame({"date": ["2009-12-31"], "y10": [3.85]})
         if "frb." in q and "limit 1" in q:
             raise RuntimeError("relation does not exist")

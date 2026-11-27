@@ -28,7 +28,9 @@ registered in RECIPES so later recipes are added beside it.
 1.0.0 (2026-11-27): first version. 1.0.1 (same day, after an independent review, before run() was ever executed;
 pull() unchanged): stop when the 10-year Treasury is missing at any evaluation quarter-end; the reference-book revision
 measure takes the last CRSP split factor from the untruncated price file (as eq_ref); the AAPL direction check prints
-only the direction; a single-version decisive result is flagged.
+only the direction; a single-version decisive result is flagged. 1.0.2 (after eq_recall_pull_v1, which stopped at the
+Treasury step: the first table found, frb_all_old.rates_daily, is not readable by this account): every candidate FRB
+table is tried in order, plus frb.rates_daily / rates_monthly, and the first readable one is used; run() unchanged.
 """
 import json
 import time
@@ -42,7 +44,7 @@ INVESTORS = json.loads("[{\"name\": \"Joel Greenblatt\", \"group\": \"roster\", 
 TARGET = json.loads("{\"name\": \"Dev Kantesaria\", \"mgrnos\": [\"14460\"], \"recipe\": \"kantesaria_v1\"}")
 # <<< FROZEN INPUT
 
-VERSION = "eq_recall-1.0.1"
+VERSION = "eq_recall-1.0.2"
 COM = ("securitytype = 'EQTY' and securitysubtype = 'COM' and sharetype = 'NS' and primaryexch in ('N','A','Q')")
 MEASURES = ["ey", "bp", "mom", "roe", "acc", "pio", "rev"]
 GROUPS = {"value": ["ey", "bp"], "momentum": ["mom"], "quality": ["roe", "acc", "pio"], "expectations": ["rev"]}
@@ -142,11 +144,12 @@ def _pick_t10(cols_by_table):
     def order(k):
         s, t = k
         return ({"rates_daily": 0, "rates_monthly": 1}.get(t, 2), 0 if s == "frb" else 1, s, t)
+    picks = []
     for k in sorted(cols_by_table, key=order):
         v, d = value_col(cols_by_table[k]), date_col(cols_by_table[k])
         if v and d:
-            return k[0], k[1], d, v
-    return None
+            picks.append((k[0], k[1], d, v))
+    return picks  # 1.0.2: every candidate in order (the first readable one is used)
 
 
 def _t10(sql, out):
@@ -164,18 +167,27 @@ def _t10(sql, out):
                 tabs[("frb", t)] = {str(x).lower() for x in sql("select * from frb.%s limit 1" % t).columns}
             except Exception:  # noqa: BLE001
                 pass
-    pick = _pick_t10(tabs)
-    if pick is None:
+    picks = _pick_t10(tabs)
+    for k in (("frb", "rates_daily"), ("frb", "rates_monthly")):  # 1.0.2: always also try the standard tables
+        if k not in tabs:
+            picks.append((k[0], k[1], "date", "tcmnom_y10"))
+    if not picks:
         raise RuntimeError("STOP: no 10-year constant-maturity Treasury column found in the WRDS FRB tables (%d frb "
                            "tables seen); RECALL_SPEC_v1 says the job stops here" % len(tabs))
-    s, t, d, v = pick
-    out("10-year Treasury: %s.%s column %s (date column %s)" % (s, t, v, d))
-    df = sql("select %s as date, %s::float8 as y10 from %s.%s where %s between '2008-06-01' and '%s' and %s is not null"
-             % (d, v, s, t, d, DATA_END, v))
-    if not len(df):
-        raise RuntimeError("STOP: %s.%s.%s has no values in 2008-06 .. %s" % (s, t, v, DATA_END))
-    df["src"] = "%s.%s.%s" % (s, t, v)
-    return df
+    for s, t, d, v in picks:  # 1.0.2: the first candidate this account may read wins (1.0.1 stopped at frb_all_old)
+        try:
+            df = sql("select %s as date, %s::float8 as y10 from %s.%s where %s between '2008-06-01' and '%s' and %s is "
+                     "not null" % (d, v, s, t, d, DATA_END, v))
+        except Exception as e:  # noqa: BLE001
+            out("10-year Treasury: %s.%s not readable (%s)" % (s, t, str(e).splitlines()[0][:90]))
+            continue
+        if not len(df):
+            out("10-year Treasury: %s.%s.%s has no values in 2008-06 .. %s" % (s, t, v, DATA_END))
+            continue
+        out("10-year Treasury: %s.%s column %s (date column %s)" % (s, t, v, d))
+        df["src"] = "%s.%s.%s" % (s, t, v)
+        return df
+    raise RuntimeError("STOP: no readable 10-year Treasury series among %d candidate tables" % len(picks))
 
 
 def pull(sql, save, load, out, budget=7000):
