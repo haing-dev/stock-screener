@@ -1,0 +1,87 @@
+[
+ {
+  "tid": "T01",
+  "answer": "not_rule",
+  "why": "General description of a great business; no stated decision"
+ },
+ {
+  "tid": "T02",
+  "answer": "rule",
+  "why": "Won't sell a holding for a slightly worse idea"
+ },
+ {
+  "tid": "T03",
+  "answer": "rule",
+  "why": "Research method: ex-employees, data scraping, own thinking"
+ },
+ {
+  "tid": "T04",
+  "answer": "not_rule",
+  "why": "Self-description of fund premise; names no decision"
+ },
+ {
+  "tid": "T05",
+  "answer": "rule",
+  "why": "Hold a handful of well-known names, watch them closely"
+ },
+ {
+  "tid": "T06",
+  "answer": "not_rule",
+  "why": "General view of what makes a great business"
+ },
+ {
+  "tid": "T07",
+  "answer": "rule",
+  "why": "Buy criterion: layered, technology-invariant advantages"
+ },
+ {
+  "tid": "T08",
+  "answer": "not_rule",
+  "why": "Belief about fund objective and ethics; no decision named"
+ },
+ {
+  "tid": "T09",
+  "answer": "rule",
+  "why": "Looks for simple businesses others misunderstand"
+ },
+ {
+  "tid": "T10",
+  "answer": "rule",
+  "why": "Valuation method: sizing long-term opportunity by spend share"
+ },
+ {
+  "tid": "T11",
+  "answer": "rule",
+  "why": "Buy good businesses others doubt"
+ },
+ {
+  "tid": "T12",
+  "answer": "rule",
+  "why": "Looks for businesses with several reinforcing advantages"
+ },
+ {
+  "tid": "T13",
+  "answer": "rule",
+  "why": "Buys more when price detaches from healthy data"
+ },
+ {
+  "tid": "T14",
+  "answer": "rule",
+  "why": "Research: extends circle of competence outward"
+ },
+ {
+  "tid": "T15",
+  "answer": "rule",
+  "why": "Research: tracks average delivery times as demand signal"
+ },
+ {
+  "tid": "T16",
+  "answer": "not_rule",
+  "why": "Definition of contained business; no decision stated"
+ },
+ {
+  "tid": "T17",
+  "answer": "rule",
+  "why": "Research: studies adjacent businesses while waiting"
+ }
+]

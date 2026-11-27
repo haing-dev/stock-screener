@@ -1,0 +1,77 @@
+[
+ {
+  "tid": "T01",
+  "answer": "rule",
+  "why": "Says liquidity, not earnings, drives his market calls"
+ },
+ {
+  "tid": "T02",
+  "answer": "not_rule",
+  "why": "General belief that credit leads the economy"
+ },
+ {
+  "tid": "T03",
+  "answer": "not_rule",
+  "why": "Story of one short bet in July"
+ },
+ {
+  "tid": "T04",
+  "answer": "rule",
+  "why": "Sizing practice: bet really big when conviction is high"
+ },
+ {
+  "tid": "T05",
+  "answer": "not_rule",
+  "why": "Open question about a possible copper position"
+ },
+ {
+  "tid": "T06",
+  "answer": "not_rule",
+  "why": "Morning routine, names no investment decision"
+ },
+ {
+  "tid": "T07",
+  "answer": "not_rule",
+  "why": "Hedged self-description, contradicted by his 2000 tech buy"
+ },
+ {
+  "tid": "T08",
+  "answer": "rule",
+  "why": "Research practice: after buying, dig through the effect chain"
+ },
+ {
+  "tid": "T09",
+  "answer": "rule",
+  "why": "Plays only high-conviction areas, moving across asset classes"
+ },
+ {
+  "tid": "T10",
+  "answer": "not_rule",
+  "why": "Self-description framing an argument about Fed policy"
+ },
+ {
+  "tid": "T11",
+  "answer": "rule",
+  "why": "He would own Bitcoin in inflationary bull, gold in bear"
+ },
+ {
+  "tid": "T12",
+  "answer": "rule",
+  "why": "Entry basis: buys on price action or fundamental conviction"
+ },
+ {
+  "tid": "T13",
+  "answer": "not_rule",
+  "why": "Personal life and work hours, no decision"
+ },
+ {
+  "tid": "T14",
+  "answer": "not_rule",
+  "why": "Specific positioning of one year, not a practice"
+ },
+ {
+  "tid": "T15",
+  "answer": "rule",
+  "why": "Buy a meaningful position first, investigate, then add or sell"
+ }
+]
