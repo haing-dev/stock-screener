@@ -531,3 +531,8 @@ as such. Replaces R1.1 (record); R1.2 (material) and R1.3 (screenability) stay.
     (31%, bar 70%), 0 open contradictions -> FAIL ("file not complete"). The card (2 documents) had no size rule, no
     general sell trigger and no private-company rule; STA2 states all three. Per item 8 the card continues as v1.1 with
     STA2 merged, labelled "held-out failed"; the file is also thin (no written source).
+13. **Recall test spec (2026-11-27, before any recall number).** `pilot/RECALL_SPEC_v1.md`: seal-exempt job 9 `recall`
+    (eq_recall.py), Kantesaria recipe v1 decisive form as entry; inputs, base-rate cells, bootstrap (2,000 quarters,
+    seed 20261127), pass rule and baselines as A10 item 9; 10-year Treasury from the WRDS FRB tables; a fiscal year is
+    known 90 days after its datadate (Compustat as restated, A8 difference). Code to be registered in
+    tools/equity/seal_exempt.json before the job is queued.
