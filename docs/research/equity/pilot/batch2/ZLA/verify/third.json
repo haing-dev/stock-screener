@@ -1,0 +1,82 @@
+[
+ {
+  "tid": "T01",
+  "answer": "not_rule",
+  "why": "Story of the 2018 de-risking episode, not a stated practice"
+ },
+ {
+  "tid": "T02",
+  "answer": "not_rule",
+  "why": "Definition of hard tech; names no decision"
+ },
+ {
+  "tid": "T03",
+  "answer": "rule",
+  "why": "Monitoring practice he keeps: sigma-band tear sheet per ticker"
+ },
+ {
+  "tid": "T04",
+  "answer": "rule",
+  "why": "His changed practice as PM: cut losers quickly"
+ },
+ {
+  "tid": "T05",
+  "answer": "rule",
+  "why": "His learning applied to selling: no doubling down, exit wrong bets"
+ },
+ {
+  "tid": "T06",
+  "answer": "not_rule",
+  "why": "General belief about active management opportunity"
+ },
+ {
+  "tid": "T07",
+  "answer": "not_rule",
+  "why": "Founding pitch about dispersion; a story, no decision"
+ },
+ {
+  "tid": "T08",
+  "answer": "not_rule",
+  "why": "Belief about mature companies; quote names no decision"
+ },
+ {
+  "tid": "T09",
+  "answer": "rule",
+  "why": "Sizing rule: cut gross when drawdown reaches 8-12%"
+ },
+ {
+  "tid": "T10",
+  "answer": "rule",
+  "why": "Stay within sectors of own expertise"
+ },
+ {
+  "tid": "T11",
+  "answer": "not_rule",
+  "why": "Rationale for shorting's function; names no specific decision"
+ },
+ {
+  "tid": "T12",
+  "answer": "not_rule",
+  "why": "Belief about operating leverage in an upturn"
+ },
+ {
+  "tid": "T13",
+  "answer": "not_rule",
+  "why": "General advice to younger self"
+ },
+ {
+  "tid": "T14",
+  "answer": "not_rule",
+  "why": "Self-description of workload; no decision"
+ },
+ {
+  "tid": "T15",
+  "answer": "not_rule",
+  "why": "Explains research interest; no stated decision rule"
+ },
+ {
+  "tid": "T16",
+  "answer": "rule",
+  "why": "Adopted practice: ignore moves within one sigma"
+ }
+]
