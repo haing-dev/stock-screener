@@ -1050,6 +1050,14 @@ print("\nPre-B diagnostics (diag_preb 1.0.0, synthetic panels, mock LSEG store)"
 import diag_preb_smoke  # noqa: E402
 diag_preb_smoke.run(check)
 
+# Batch B1 = Curve carry (tools/bbgq/lib/b1_curve.py, job gm_b1_v1; gm/CHANGES.md "Batch B1: Curve carry"): a mock
+# LSEG store with invented contract prices (contract parse and identity, leg rules, screens, calendar exclusion,
+# sizing, scalers, E11 joint cap, contract-space costs, T1 zero book, placebo identity, truncation and its control,
+# seal, report lines and printing, trial rows, job stops)
+print("\nBatch B1 Curve carry (b1_curve 1.0.0, mock LSEG store)")
+import b1_curve_smoke  # noqa: E402
+b1_curve_smoke.run(check)
+
 # LSEG source (tools/lseg): exchange-rule contract dates and registered listing models, no market data
 print("\nLSEG rules (lseg_rules 1.1.0)")
 _r = subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "lseg_rules_smoke.py")],
