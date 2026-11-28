@@ -2,8 +2,8 @@
 
 **UPDATED for diag_preb 1.1.0** (every row runs; nothing blocked). Registered in gm/CHANGES.md "Pre-B diagnostics"
 (97c3e2f) BEFORE any code; two corrections before the code (29d1986); code 1.0.0 2e25e47; then the data entry "card
-inputs (FRED / ALFRED first release, macro-data branch)" (12e108c) and the addendum 1.1.0 (6146c2c), both before the
-1.1.0 code (049ab75). The job gm_diag_preb_v1 had not run, so it is extended in place (no v2). NOT RUN: no
+inputs (FRED / ALFRED first release, macro-data branch)" (9a40cd6) and the addendum 1.1.0 (efacaeb), both before the
+1.1.0 code (732f592). The job gm_diag_preb_v1 had not run, so it is extended in place (no v2). NOT RUN: no
 diagnostic statistic was computed in the cloud on the free, A1, LSEG or card-input data. gm/ is unchanged
 (engine_ref.json unchanged).
 

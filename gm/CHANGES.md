@@ -84,7 +84,7 @@ diagnostics" item 4 asks for; with it the pre-B job gm_diag_preb_v1 (not yet run
    qualify"). The live cycle needs no LSEG or Bloomberg input for these rows.
 8. Inputs still not available: none of the rows of "Pre-B diagnostics" item 4 needs anything beyond this entry, the
    free inputs and LOCK_LSEG_v5.
-Code (2026-11-27; this entry 12e108c before the code 049ab75): reader tools/bbgq/lib/card_inputs.py 1.0.0 (sha256
+Code (2026-11-27; this entry 9a40cd6 before the code 732f592): reader tools/bbgq/lib/card_inputs.py 1.0.0 (sha256
 4091f84bcbb11f43061bcc0330520a4a5580cb775895148a38849c0fbcab7b80), builder tools/bbgq/build_card_inputs.py (from git at
 264d0a2, deterministic zip, sha256 4f84b01d07ad59da05ad7e8ca4e78b31b1ed687941c6852da804c685be1b068d), lock
 docs/research/card_inputs/LOCK_CARD_v1.json (lock id 6c154f7d...); build_engine ships the zip as
@@ -93,6 +93,25 @@ CPILFESL 1996-12, UNRATE 1960-03, M2SL 1980-01, PCEPILFE 2000-07; first-release 
 2009-06 (the two rebases), M2SL 1983-01 and 1996-01 (first-release level shifts against the revised series); CPILFESL
 none; UNRATE is used as a level only (no break rule); the root CPILFESL.csv and UNRATE.csv equal their _FR files up to
 2010-12-31. The free inputs zip, engine_ref.json and the k = 0 reproduction are unchanged.
+
+Correction 1 (2026-11-28, from the independent check CHECK_PREB items C2-C4, BEFORE the diag_preb 1.1.1 code; no
+value of a card rule read; no rule change):
+(a) Item 5 threshold. Break counts at other thresholds (the checker's count of month-to-month input changes only):
+   PCEPILFE the same 2 months (2003-11, 2009-06) at every threshold from 1 pp to beyond 5 pp; CPILFESL none at 0.5 pp
+   or more; M2SL 2 months (1983-01, 1996-01) at 1.5-2.9 pp, 4 at 1 pp, none at 3 pp or more. So for M2SL the 2 pp
+   threshold decides which series serves the 24 change-months around those two dates (first release, or the latest
+   values flagged; the specs allow both). Item 5's reason "one month's revision moves it by far less" is NOT accurate
+   for M2SL: its two months are 2-3 pp benchmark or definitional shifts of the first-release level, not index rebases
+   or unit switches; they count as breaks because the rule as written classifies them so. The 2 pp threshold stands as
+   registered (a rule by index base gives the same PCEPILFE and CPILFESL months and cannot be applied to M2SL, a
+   dollar series).
+(b) Item 3 seal check. From diag_preb 1.1.1 the pre-B report passes the reader's observations (by observation date,
+   before any lag) and every card rule output (conditions, legs, positions on the panel's months) through
+   gm/seal.check_output. Before 1.1.1 item 3's claim rested on the parse-time cut and the smoke test only.
+(c) Item 7 live source. The research/ files (the latest-value series that the break rule compares with and that fill
+   months without a vintage, and the CPILFESL / UNRATE first-release files research/<id>_FR.csv) are fetched by
+   macro/fetch_research.py (public FRED csv; ALFRED first release for _FR); it is registered as their live source,
+   beside macro/fetch.py for the root files. Same series, same lags, same break rule live.
 
 ## Pre-B diagnostics (registered 2026-11-27, BEFORE the diagnostics code and run): TESTING_PROTOCOL 7.6 step 7, 7.5 order item 3
 Registered run entry (no rule, weight, threshold, gate, cost or market change; no gm/ code change; no statistic of any
@@ -372,7 +391,7 @@ A6. Card 4 (SPEC_Card4 s3, s13): R5 c(t) as A3; v1 on while c(t) < c(t-6), v2 al
    sqrt(252) x the standard deviation (ddof 1) of daily returns in months t-2..t; gate = median(state-on up-months) /
    median(other up-months) >= 1.25 over 1990-01..2010-06, 1990-01..1999-12 and 2000-01..2010-06; printed as the two
    counts and yes / no per window (the ratio over >= 60 months each).
-Code 1.1.0 and cloud gates (2026-11-27; addendum 6146c2c before the code 049ab75; NOT RUN; no diagnostic statistic
+Code 1.1.0 and cloud gates (2026-11-27; addendum efacaeb before the code 732f592; NOT RUN; no diagnostic statistic
 computed in the cloud): tools/bbgq/lib/diag_preb.py 1.1.0 (sha256 5273944bcb9811ccba83510da3359996e28def8eb8b89a4408ed3efad855c64e),
 job tools/bbgq/jobs/gm_diag_preb_v1.py extended in place (sha256 in PREB_BUILD_2026-11-27.md: pins card_inputs.py,
 checks gm_card_inputs.zip against LOCK_CARD_v1 before any value), tests/diag_preb_smoke.py 71 checks. Gates: k = 0
@@ -381,6 +400,29 @@ at all 8 cut dates, 21 k = 0 and 37 feature stages (results/engine_trunc_cloud_2
 TESTS PASSED (results/run_tests_gm_2026-11-27j_gm-2.2.1.txt). Closed while coding (no rule change): a market the panel
 lacks holds no position; card 3 R1's euro rate is the DE-then-EZ series of C2-D1 and the dollar's is TB3MS; card 3's
 reported lines (spec s13) are not printed in this version (they are no gate). Trial rows: 12.
+Bug fix 1.1.1 (registered 2026-11-28, from the independent check CHECK_PREB (APPROVED WITH CORRECTIONS), BEFORE the
+diag_preb 1.1.1 code; the job has not run; no registered reading changes: the code is brought to the text above):
+B1 (M1) Card 1 R3: the spread percentiles (A3: "numpy linear over the expanding window from the first month both BAA
+   and GS10 exist") were taken after the series were laid on the panel's months (from 1960-01). 1.1.1 takes them on
+   BAA - GS10's own months from its first month (1953-04 in the locked files), then lays them on the panel's months.
+B2 (M2) Card 2 R1 bar b (A4; SPEC_Card2 s3 R1 step 2 "all values of y from its first month up to t"): the same fix on
+   y = GS10 - c on its own months (first month 1958-02); the 120-value minimum counts from there.
+B3 (M3) Card 2 R2 labour gate (A4; SPEC_Card2 s7 "from 1968"): the lowest of the 240 prior lagged UNRATE values is
+   taken on UNRATE's own months (from 1948), then laid on the panel's months. Before the fix the gate first existed
+   at 1980-01, so the gate versions were off in 1975-01..1979-12.
+B4 (C9; a reported line, no gate) R1 also prints the count of eligible triple-months whose next-day settlements equal
+   the decision day's for all eight strip contracts (Datastream pads holidays with the last value; such a d1 repeats
+   G(d)). No count is excluded for it.
+B5 (C8) Trial rows: config and note carry the card-inputs lock id (LOCK_CARD_v1 6c154f7d...), since 11 of the 12 rows
+   read card inputs (the row hashes change; no row has been written).
+B6 (C3) Seal: as data entry "card inputs" correction 1 (b).
+B7 (C5, C6) Job: also checks sha256(work\free\gm_card_inputs.zip) against LOCK_CARD_v1 zip_sha256 (4f84b01d...),
+   informational beside the file-by-file check; its docstring lists the 1.1.0 rows.
+Noted, not done (C7): the reported lines of card 3 s13 (cards 1 / 2 in shared markets, R1 against Economic trend's
+   monetary theme, R3 against Carry's directional bonds) and card 5 s13 (C5-D1 against card 1 R4-B) stay unprinted in
+   1.1.1; their inputs now exist, no gate depends on them; a later version may add them.
+Reference fix (C1): commit references written before the rebase are corrected in this file and in PREB_BUILD
+   (12e108c = 9a40cd6, 6146c2c = efacaeb, 049ab75 = 732f592).
 
 ## Core book v1 (registered 2026-11-27, BEFORE the Core book v1 code and run): TESTING_PROTOCOL 7.6 step 6
 Registered run entry (no rule, weight, threshold, gate, cost or market change; no gm/ code change; no statistic of S1-S4,
