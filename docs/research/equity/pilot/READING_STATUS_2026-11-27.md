@@ -6,15 +6,15 @@ holding was read for any of this; the recall test (G8) is the next step and runs
 
 | Investor | Docs read | Claims (quotes all verbatim) | Verified rules | Blind check: planted caught | Held-out test | Card rules | Recipe: buy rules covered (decisive) | Recall (G8) | Labels |
 |---|---|---|---|---|---|---|---|---|---|
-| Dev Kantesaria | 5 | 461 | 183 | 10/10 (v1.1) | FAIL: 6/8 matched, 3 open buy contradictions (FICO inflection) | 72 -> v1.1 (K174 merged, new RB22) | 7 of 22 (32%) | FAIL: recall 10.3% (3 of 29), lift 8.3, 90% [0, 17.6] | held-out failed |
-| Stanley Druckenmiller | 6 | 375 | 92 | 9/10 | FAIL: 17/26 (65%), 3 open buy contradictions | 41 -> 49 (v1.1) | 3 of 11 (27%); no price rule | not run | thin; held-out failed; 13F = equity longs only |
-| Murray Stahl | 3 | 188 | 27 | 6/7 | FAIL: 4/13 (31%), 0 contradictions | 10 -> 20 (v1.1) | 3 of 6 (50%), stand-ins only | not run | thin; held-out failed |
-| Cliff Sosin | 3 | 209 | 54 | 6/6 | FAIL: 4/9 (44%), 2 open sell contradictions | 26 -> 29 (v1.1) | 1 of 6 fully | not run | thin; held-out failed; no 13F profile |
-| Chris Hohn | 2 | 142 | 57 | 6/6 | not possible (2 docs) | 35 | 5 of 14 (36%) | not run | thin |
-| Val Zlatev | 2 | 126 | 37 | 10/10 | not possible | 22 | 3 of 5 (60%) | not run | thin; long/short |
-| Derek Pilecki | 2 | 202 | 60 | 10/10 | not possible | 31 | 2 of 7 fully (29%) | not run | thin; financials only |
-| Bill Nygren / Alex Fitch | 2 | 197 | 78 | 9/10 | not possible | 41 | 2 of 8 fully (25%) | not run | thin |
-| Li Lu | 2 | 168 | 47 | 5/5 | not possible | 30 | 3 of 6 (50%) | not run | thin |
+| Dev Kantesaria | 5 | 461 | 183 | 10/10 (v1.1) | FAIL: 6/8 matched, 3 open buy contradictions (FICO inflection) | 72 -> v1.1 (K174 merged, new RB22) | 7 of 22 (32%) | v1 FAIL 10.3%, lift 8.3 [0, 17.6]; v2 PASS 37.9%, lift 6.41 [4.19, 8.91] (not independent) | held-out failed |
+| Stanley Druckenmiller | 6 | 375 | 92 | 9/10 | FAIL: 17/26 (65%), 3 open buy contradictions | 41 -> 49 (v1.1) | 3 of 11 (27%); no price rule | FAIL: 16.5%, lift 1.69 [1.27, 2.12]; v2 written | thin; held-out failed; 13F = equity longs only |
+| Murray Stahl | 3 | 188 | 27 | 6/7 | FAIL: 4/13 (31%), 0 contradictions | 10 -> 20 (v1.1) | 3 of 6 (50%), stand-ins only | FAIL: 39.3%, lift 1.36 [1.04, 1.68]; v2 written | thin; held-out failed |
+| Cliff Sosin | 3 | 209 | 54 | 6/6 | FAIL: 4/9 (44%), 2 open sell contradictions | 26 -> 29 (v1.1) | 1 of 6 fully | not measured (not in 13F panel) | thin; held-out failed; no 13F profile |
+| Chris Hohn | 2 | 142 | 57 | 6/6 | not possible (2 docs) | 35 | 5 of 14 (36%) | FAIL: 15.9%, lift 2.24 [1.42, 3.17]; v2 written | thin |
+| Val Zlatev | 2 | 126 | 37 | 10/10 | not possible | 22 | 3 of 5 (60%) | FAIL: 7.4%, lift 2.12 [0.70, 3.78]; v2 written | thin; long/short |
+| Derek Pilecki | 2 | 202 | 60 | 10/10 | not possible | 31 | 2 of 7 fully (29%) | FAIL: 18.6%, lift 1.89 [0.95, 3.09]; v2 written | thin; financials only |
+| Bill Nygren / Alex Fitch | 2 | 197 | 78 | 9/10 | not possible | 41 | 2 of 8 fully (25%) | PASS: 31.0%, lift 2.05 [1.54, 2.54] (13F firm-wide) | thin |
+| Li Lu | 2 | 168 | 47 | 5/5 | not possible | 30 | 3 of 6 (50%) | not measurable (14 purchases) | thin |
 
 Agreement between the two readers was reported, not used as a stop (A13 item 6): rule-like agreement 76-92%; the
 recurring split is advice phrased "you should ..." (one reader: rule; the other: belief). The scorer was corrected
@@ -34,8 +34,10 @@ twice after seeing results (number words; "three hundred"), logged in A13 items 
    windows and rankings (pilot/recipe/SECOND_WRITER_COMPARISON.md).
 
 ## Next
-- Recall test (G8): Kantesaria DONE 2026-11-27, FAIL (pilot/recall/RECALL_KANTESARIA_v1.md): the recipe picks his
-  kind of company (lift 8.3 vs 0.56 on control investors) but only 3 of his 29 purchases; the price trigger misses
-  59%. Next: his one revision round, then the other eight recipes added to eq_recall (new registered version).
+- Recall test (G8) DONE for all nine (pilot/recall/RECALL_RESULTS_v2.md): PASS Kantesaria v2 (after revision, not
+  independent) and Nygren/Fitch (thin, firm-wide 13F); FAIL Druckenmiller, Stahl, Hohn, Zlatev, Pilecki; Li Lu not
+  measurable (14 purchases); Sosin not in the 13F panel. Revision rounds written for the five failures (recipe/RECIPE_v2.md
+  in each folder); next: eq_recall 1.2.0 with the v2 recipes, independent check, run. Kill criterion: pilot = Kantesaria,
+  Druckenmiller, Stahl (A13 item 23); 2 of 3 must pass after their rounds.
 - More material lifts the "thin" label and allows held-out tests: letters or written sources for every investor
   (search prompt of 2026-11-24).

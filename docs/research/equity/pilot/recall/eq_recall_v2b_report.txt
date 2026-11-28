@@ -1,0 +1,937 @@
+﻿=== WRDSQ REPORT v1.0.7 | job eq_recall_v2b | 2026-11-28 05:31 | metadata and results only ===
+
+## 1. python
+eq_recall-1.1.2  recall test (RECALL_SPEC_v1; V04_REGISTRATION A10 item 9, A13 items 13 and 21)
+recipes in order: kantesaria_v1, kantesaria_v2, druckenmiller_v1, stahl_v1
+inputs: msf 1059615, link 33324, fq 1024698, gics 46011, ibes 1032932, names 82395, dv 996695, funda 340638, fqx 1011232, t10 211, fqx2 1011232, funda2 340638, ibes2 2536240, idx 319543, ibes2u 2045470, cf_last 11516
+account join: 302495 of 306000 universe line-months have a gvkey; 30007 keys in the quarterly table, 3650 shared
+CRSP price factor direction check: -1
+GICS source: co_hgic; universe months 200810..202509
+eligible stock-quarters: 75658 at 64 quarter-ends (median 1189 per quarter-end)
+with the house-excluded industries (recipes for which the house exclusions do not apply): 93455
+10-year Treasury source public.fred.dgs10 (scale /100); quarter-ends with a value: 64 of 64
+1.1.0 measures: FY1 found 99%, FY2 99%, long-term growth 69% (median 0.114), index-fund ownership 98% (median 0.183), Greenblatt return on capital 70%, S04* 80%, dividend yield 99% of eligible stock-quarters
+index managers found per 13F quarter-end: median 4 (min 3, max 8) over 65 quarter-ends
+I/B/E/S basis of price / estimate criteria (ZLA P1, NYG P4): unadjusted
+panel built 90 s
+
+# Dev Kantesaria: recipe kantesaria_v1 (eligible stock-quarters 75658)
+labels: held-out failed; recipe covers 7 of 22 buy rules (decisive)
+
+## 1. Eligible universe, measure coverage and decisive pass rate (Q4 quarter-ends; last = 2025-09)
+t        elig  pass  rate%  ref%  fy_run    s01    g01    g02    s03    g06    c01  p1gap    p03  p3rel    c06     b7    s02    c04    b01
+200912   1210     8    0.7  20.1     100     83     91     75     83     96     98     98     98     98     96     96     83     96     90
+201012   1215     8    0.7  20.0     100     82     91     79     82     96     97     98     97     97     95     96     82     96     95
+201112   1221     8    0.7  20.1     100     82     92     82     82     95     97     97     98     98     95     96     82     96     95
+201212   1201    11    0.9  20.3     100     82     92     82     82     95     97     98     99     99     95     96     82     95     94
+201312   1203    11    0.9  19.8     100     81     89     78     81     93     96     96     97     97     94     95     81     93     93
+201412   1180    13    1.1  20.0     100     80     87     66     80     93     96     97     97     97     94     96     80     93     94
+201512   1144     5    0.4  20.2     100     81     88     72     81     94     98     98     98     98     94     97     81     94     92
+201612   1154     8    0.7  20.0     100     81     89     79     81     95     98     98     98     98     95     97     81     95     93
+201712   1150    10    0.9  20.3     100     79     89     79     78     95     98     99     99     99     95     98     78     95     94
+201812   1141     7    0.6  20.1     100     78     88     77     77     95     97     97     98     98     93     96     77     95     91
+201912   1137     8    0.7  19.9     100     77     89     77     76     94     97     97     98     98     92     96     76     94     90
+202012   1159     8    0.7  19.5      99     73     85     71     73     90     94     94     96     96     88     94     73     90     84
+202112   1195     7    0.6  19.2      99     72     82     66     71     88     93     93     96     96     86     92     71     88     85
+202212   1187     3    0.3  20.5     100     76     86     71     76     93     99     99     99     99     91     98     76     93     89
+202312   1200     3    0.2  20.3     100     78     87     73     77     96     98     99     99     99     91     98     77     96     89
+202412   1195     3    0.3  20.1     100     78     87     74     78     94     97     98     98     98     91     97     78     95     90
+202509   1192    11    0.9  20.1     100     78     90     72     78     94     98     98     98     98     91     98     78     95     90
+coverage = % of eligible stocks with the measure (fy_run: with any run); rate = decisive pass rate; ref = reference-book top fifth inside sector
+share-pay source among eligible: quarterly 89.6%, annual 8.9%, none (decisive: 0; strict: missing) 1.5%; acquisitions filled as none where missing: 8.6%
+
+## 2. Dev Kantesaria: conviction purchases 2010-2025 evaluated at the quarter-end before purchase
+purchases: either 32 (version a 18, b 32); in the eligible universe at t: either 29 (a 18, b 29); in the universe but in a house-excluded industry (A8 2a, not counted): 0; not in the universe: 3
+quarters with a counted purchase: 15; bootstrap: 2000 draws of quarters, seed 20261127
+DECISIVE (average of versions a and b)       recall  10.3%  base   1.2%  lift   8.30  90% [  0.00,  17.57]
+   NOTE: decisive = one version only (a not measurable: fewer than 20 purchases)
+   per version: a: n 18, recall    -  , base    -  , lift    -  ; b: n 29, recall  10.3%, base   1.2%, lift   8.30
+decisive on 'either version' (reported)      recall  10.3%  base   1.2%  lift   8.30  90% [  0.00,  17.57]
+decisive, strict missing (reported)          recall   6.9%  base   0.9%  lift   7.98  90% [  0.00,  18.87]
+FULL FORM, 108 versions averaged (reported)  recall   2.0%  base   0.1%  lift  13.94  90% [ 11.44,  16.91]  (76 version-sets with no passer in their cells left out of the lift)  (interval on 1315 of 2000 draws: the others have a cell set with no passer)
+
+## 3. Baselines
+(1) recipe on pooled control purchases       recall   0.5%  base   0.9%  lift   0.56  90% [  0.14,   1.09]
+   per version: a: n 102, recall   0.0%, base   1.0%, lift   0.00; b: n 476, recall   1.1%, base   0.9%, lift   1.12
+(2) reference-book top fifth on this investor recall  10.3%  base  18.6%  lift   0.55  90% [  0.13,   1.23]
+   per version: a: n 18, recall    -  , base    -  , lift    -  ; b: n 29, recall  10.3%, base  18.6%, lift   0.55
+
+## 4. Gate (A10 item 9): decisive form
+lift >= 2.00: yes; interval lower end > 1.25: NO; recall >= 25%: NO; lift above control baseline: yes; lift above reference-book baseline: yes
+RECALL GATE: FAIL  (labels: held-out failed; recipe covers 7 of 22 buy rules (decisive))
+
+## 5. Per criterion: share of the counted purchases it rejects (average of versions a and b)
+criterion  rejects  of which measure missing  | universe rejects  | description
+B1           1.7%     0.0%                   |  20.7%           | 10+ consecutive fiscal years of revenue and net income
+B2          28.4%     1.7%                   |  57.6%           | no loss year in the last 10
+B3          18.7%     9.0%                   |  75.8%           | revenue and EPS growth 5y above the universe median
+B4          21.1%     1.7%                   |  60.5%           | revenue-growth s.d. 10y below the universe median
+B5          20.4%     0.0%                   |  46.2%           | operating margin up over 3 years
+B6          15.2%     0.0%                   |  51.4%           | capex / revenue TTM below the universe median
+P1          18.7%     0.0%                   |  42.1%           | FCF after share pay / market value above the 10y Treasury
+P2         100.0%     0.0%                   |  94.6%           | 40%+ below the 12-month high
+P3          58.8%     0.0%                   |  51.5%           | trailed the value-weighted universe over 12 months
+P2|P3       58.8%     0.0%                   |  51.3%           | one of the two price triggers
+A1           0.0%     0.0%                   |  10.8%           | health care (sector 35)
+A2           0.0%     0.0%                   |   6.8%           | technology hardware 4520, metals and mining 151040
+A3           0.0%     0.0%                   |  13.5%           | energy, materials, agricultural products
+A4           0.0%     0.0%                   |   7.0%           | utilities, real estate, banks, mortgage / consumer finance
+A5          20.4%     0.0%                   |  27.4%           | acquisitions > 50% of operating cash flow, 3 years
+B7           8.0%     0.0%                   |  51.6%           | EBIT / tangible assets above the median (full form)
+B8          48.8%     0.0%                   |  60.5%           | operating-margin s.d. 10y below the median (full form)
+B9           9.7%     0.0%                   |  54.2%           | diluted shares fell over 3 years (full form)
+B10          0.0%     0.0%                   |  17.2%           | market value >= $2bn (full form)
+A6_1        38.4%     0.0%                   |  61.8%           | net debt / EBITDA <= 1 (full form)
+A6_2        17.0%     0.0%                   |  45.8%           | net debt / EBITDA <= 2 (full form)
+A6_3         3.4%     0.0%                   |  32.8%           | net debt / EBITDA <= 3 (full form)
+A7           0.0%     0.0%                   |   2.0%           | one listed common line (full form)
+(universe rejects = share of all eligible stock-quarters failing it; context only)
+
+## 6. Cross table: decisive recipe kantesaria_v1 on every roster and control investor (lift, average of a and b; masked ids as in the say-do tables)
+M01  roster   lift   1.07
+M02  roster   lift   0.00
+M03  roster   lift   8.30
+M04  roster   lift   0.29
+M05  roster   lift   1.75
+M06  roster   lift   0.35
+M07  roster   lift   0.00
+M08  roster   lift   3.12
+M09  roster   lift   0.00
+M10  control  lift   0.66
+M12  control  lift   0.00
+M13  control  lift   0.00
+M14  control  lift   1.62
+M15  roster   lift n < 20
+M16  roster   lift   0.00
+M17  roster   lift n < 20
+M18  roster   lift   0.00
+M19  roster   lift   3.58
+M21  roster   lift   0.00
+M22  roster   lift   0.77
+M23  roster   lift   0.46
+M24  control  lift   2.66
+M25  roster   lift   0.00
+M26  control  lift   0.95
+M27  roster   lift   6.78
+M29  roster   lift   0.00
+ROSTER pooled   lift   0.87
+CONTROL pooled  lift   0.56
+(kantesaria_v1 done 96 s)
+
+# Dev Kantesaria: recipe kantesaria_v2 (eligible stock-quarters 75658)
+labels: revision after seeing recall v1: same 29 purchases, not independent evidence; held-out failed; recipe covers 7 of 22 buy rules (decisive)
+
+## 1. Eligible universe, measure coverage and decisive pass rate (Q4 quarter-ends; last = 2025-09)
+labels: revision after seeing recall v1: same 29 purchases, not independent evidence; held-out failed; recipe covers 7 of 22 buy rules (decisive)
+t        elig  pass  rate%  ref%  fy_run    s01    g01    g02  g06_5    c01  p1gap    c06 c06_pr    s03     b7    s02
+200912   1210    23    1.9  20.1     100     83     91     75     91     98     98     96     87     83     96     83
+201012   1215    25    2.1  20.0     100     82     91     79     91     97     98     95     87     82     96     82
+201112   1221    37    3.0  20.1     100     82     92     82     92     97     97     95     89     82     96     82
+201212   1201    44    3.7  20.3     100     82     92     82     92     97     98     95     90     82     96     82
+201312   1203    39    3.2  19.8     100     81     89     78     89     96     96     94     87     81     95     81
+201412   1180    46    3.9  20.0     100     80     87     66     87     96     97     94     84     80     96     80
+201512   1144    41    3.6  20.2     100     81     88     72     88     98     98     94     85     81     97     81
+201612   1154    41    3.6  20.0     100     81     89     79     89     98     98     95     87     81     97     81
+201712   1150    39    3.4  20.3     100     79     89     79     89     98     99     95     86     78     98     78
+201812   1141    26    2.3  20.1     100     78     88     77     88     97     97     93     85     77     96     77
+201912   1137    37    3.3  19.9     100     77     89     77     89     97     97     92     85     76     96     76
+202012   1159    32    2.8  19.5      99     73     85     71     85     94     94     88     80     73     94     73
+202112   1195    36    3.0  19.2      99     72     82     66     82     93     93     86     78     71     92     71
+202212   1187    27    2.3  20.5     100     76     86     71     86     99     99     91     83     76     98     76
+202312   1200    34    2.8  20.3     100     78     87     73     87     98     99     91     82     77     98     77
+202412   1195    22    1.8  20.1     100     78     87     74     87     97     98     91     83     78     97     78
+202509   1192    32    2.7  20.1     100     78     90     72     90     98     98     91     84     78     98     78
+coverage = % of eligible stocks with the measure (fy_run: with any run); rate = decisive pass rate; ref = reference-book top fifth inside sector
+share-pay source among eligible: quarterly 89.6%, annual 8.9%, none (decisive: 0; strict: missing) 1.5%; acquisitions filled as none where missing: 8.6%
+
+## 2. Dev Kantesaria: conviction purchases 2010-2025 evaluated at the quarter-end before purchase
+labels: revision after seeing recall v1: same 29 purchases, not independent evidence; held-out failed; recipe covers 7 of 22 buy rules (decisive)
+purchases: either 32 (version a 18, b 32); in the eligible universe at t: either 29 (a 18, b 29); in the universe but in a house-excluded industry (A8 2a, not counted): 0; not in the universe: 3
+quarters with a counted purchase: 15; bootstrap: 2000 draws of quarters, seed 20261127
+DECISIVE (average of versions a and b)       recall  37.9%  base   5.9%  lift   6.41  90% [  4.19,   8.91]
+   NOTE: decisive = one version only (a not measurable: fewer than 20 purchases)
+   per version: a: n 18, recall    -  , base    -  , lift    -  ; b: n 29, recall  37.9%, base   5.9%, lift   6.41
+decisive on 'either version' (reported)      recall  37.9%  base   5.9%  lift   6.41  90% [  4.19,   8.91]
+decisive, strict missing (reported)          recall  37.9%  base   5.6%  lift   6.72  90% [  4.45,   9.29]
+FULL FORM, 1296 versions averaged (reported) recall   3.1%  base   0.2%  lift  11.13  90% [  7.02,  13.20]  (824 version-sets with no passer in their cells left out of the lift)  (interval on 448 of 2000 draws: the others have a cell set with no passer)
+
+## 3. Baselines
+labels: revision after seeing recall v1: same 29 purchases, not independent evidence; held-out failed; recipe covers 7 of 22 buy rules (decisive)
+(1) recipe on pooled control purchases       recall   4.2%  base   4.1%  lift   1.01  90% [  0.45,   1.57]
+   per version: a: n 102, recall   3.9%, base   4.1%, lift   0.96; b: n 476, recall   4.4%, base   4.2%, lift   1.06
+(2) reference-book top fifth on this investor recall  10.3%  base  18.6%  lift   0.55  90% [  0.13,   1.23]
+   per version: a: n 18, recall    -  , base    -  , lift    -  ; b: n 29, recall  10.3%, base  18.6%, lift   0.55
+   counted purchases without a reference-book score:   0.0%
+
+## 4. Gate (A10 item 9): decisive form
+labels: revision after seeing recall v1: same 29 purchases, not independent evidence; held-out failed; recipe covers 7 of 22 buy rules (decisive)
+lift >= 2.00: yes; interval lower end > 1.25: yes; recall >= 25%: yes; lift above control baseline: yes; lift above reference-book baseline: yes
+RECALL GATE: PASS  (labels: revision after seeing recall v1: same 29 purchases, not independent evidence; held-out failed; recipe covers 7 of 22 buy rules (decisive))
+
+## 5. Per criterion: share of the counted purchases it rejects (average of versions a and b)
+labels: revision after seeing recall v1: same 29 purchases, not independent evidence; held-out failed; recipe covers 7 of 22 buy rules (decisive)
+criterion  rejects  of which measure missing  | universe rejects  | description
+B1           1.7%     0.0%                   |  20.7%           | 10+ consecutive fiscal years of revenue and net income
+B2          28.4%     1.7%                   |  57.6%           | no loss year in the last 10
+B3          18.7%     9.0%                   |  75.8%           | revenue and EPS growth 5y above the universe median
+B5          29.4%     0.0%                   |  48.6%           | operating margin up over 5 fiscal years (v2, C2)
+B6          15.2%     0.0%                   |  51.4%           | capex / revenue TTM below the universe median
+P1          18.7%     0.0%                   |  42.1%           | FCF after share pay / market value above the 10y Treasury
+A1           0.0%     0.0%                   |  10.8%           | health care (sector 35)
+A2           0.0%     0.0%                   |   6.8%           | technology hardware 4520, metals and mining 151040
+A3           0.0%     0.0%                   |  13.5%           | energy, materials, agricultural products
+A4           0.0%     0.0%                   |   7.0%           | utilities, real estate, banks, mortgage / consumer finance
+A5          10.7%     0.0%                   |  23.8%           | acquisitions > 50% of operating cash flow in both 3-year windows (v2, C4)
+B4          21.1%     0.0%                   |  60.5%           | revenue-growth s.d. 10y below the median (v2: full form) (full form)
+B13_3       20.4%     0.0%                   |  46.2%           | operating margin up over 3 years (v1 reading) (full form)
+B13_9        8.6%     0.0%                   |  52.2%           | operating margin up over 9 years (full form)
+B7           8.0%     0.0%                   |  51.6%           | EBIT / tangible assets above the median (full form)
+B8          48.8%     0.0%                   |  60.5%           | operating-margin s.d. 10y below the median (full form)
+B9           9.7%     0.0%                   |  54.2%           | diluted shares fell over 3 years (full form)
+B10          0.0%     0.0%                   |  17.2%           | market value >= $2bn (full form)
+P2|P3       58.8%     0.0%                   |  51.3%           | price trigger (P5 version ii = v1 reading) (full form)
+A6_1        38.4%     0.0%                   |  61.8%           | net debt / EBITDA <= 1 (full form)
+A6_2        17.0%     0.0%                   |  45.8%           | net debt / EBITDA <= 2 (full form)
+A6_3         3.4%     0.0%                   |  32.8%           | net debt / EBITDA <= 3 (full form)
+A7           0.0%     0.0%                   |   2.0%           | one listed common line (full form)
+A10         20.4%     0.0%                   |  27.4%           | acquisitions > 50%, latest 3-year window only (v1 reading) (full form)
+(universe rejects = share of all eligible stock-quarters failing it; context only)
+
+## 6. Cross table: decisive recipe kantesaria_v2 on every roster and control investor (lift, average of a and b; masked ids as in the say-do tables)
+labels: revision after seeing recall v1: same 29 purchases, not independent evidence; held-out failed; recipe covers 7 of 22 buy rules (decisive)
+M01  roster   lift   0.99
+M02  roster   lift   0.00
+M03  roster   lift   6.41
+M04  roster   lift   0.37
+M05  roster   lift   2.26
+M06  roster   lift   0.93
+M07  roster   lift   0.52
+M08  roster   lift   0.18
+M09  roster   lift   0.49
+M10  control  lift   1.12
+M12  control  lift   1.30
+M13  control  lift   0.00
+M14  control  lift   0.68
+M15  roster   lift n < 20
+M16  roster   lift   0.30
+M17  roster   lift n < 20
+M18  roster   lift   2.62
+M19  roster   lift   2.11
+M21  roster   lift   0.00
+M22  roster   lift   0.88
+M23  roster   lift   0.81
+M24  control  lift   3.63
+M25  roster   lift   0.00
+M26  control  lift   0.82
+M27  roster   lift   2.45
+M29  roster   lift   1.58
+ROSTER pooled   lift   0.91
+CONTROL pooled  lift   1.01
+(kantesaria_v2 done 106 s)
+
+# Stan Druckenmiller: recipe druckenmiller_v1 (eligible stock-quarters 75658)
+labels: thin; held-out failed; 13F = equity longs only; recipe covers 3 of 11 buy rules (decisive)
+
+## 1. Eligible universe, measure coverage and decisive pass rate (Q4 quarter-ends; last = 2025-09)
+labels: thin; held-out failed; 13F = equity longs only; recipe covers 3 of 11 buy rules (decisive)
+t        elig  pass  rate%  ref%  rq_gr3 rq_gr1    p02 ebit_t
+200912   1210    79    6.5  20.1      95     99     99     99
+201012   1215    71    5.8  20.0      95     99     99     99
+201112   1221    30    2.5  20.1      95     99     99     99
+201212   1201    75    6.2  20.3      94     99     99     98
+201312   1203    99    8.2  19.8      93     98     98     99
+201412   1180    62    5.3  20.0      92     98     99     99
+201512   1144   114   10.0  20.2      93     99     99     99
+201612   1154   156   13.5  20.0      94     99     99    100
+201712   1150    86    7.5  20.3      94     99     99     99
+201812   1141    48    4.2  20.1      94     99     99     99
+201912   1137    67    5.9  19.9      93     99     99     99
+202012   1159   118   10.2  19.5      89     97     97     98
+202112   1195    92    7.7  19.2      88     97     98     98
+202212   1187   130   11.0  20.5      92     99    100     99
+202312   1200    67    5.6  20.3      95     99    100     99
+202412   1195    85    7.1  20.1      94     98     99     99
+202509   1192    68    5.7  20.1      94     98     99     99
+coverage = % of eligible stocks with the measure (fy_run: with any run); rate = decisive pass rate; ref = reference-book top fifth inside sector
+
+## 2. Stan Druckenmiller: conviction purchases 2010-2025 evaluated at the quarter-end before purchase
+labels: thin; held-out failed; 13F = equity longs only; recipe covers 3 of 11 buy rules (decisive)
+purchases: either 726 (version a 136, b 726); in the eligible universe at t: either 563 (a 109, b 563); in the universe but in a house-excluded industry (A8 2a, not counted): 82; not in the universe: 81
+quarters with a counted purchase: 60; bootstrap: 2000 draws of quarters, seed 20261127
+DECISIVE (average of versions a and b)       recall  16.5%  base   9.8%  lift   1.69  90% [  1.27,   2.12]
+   per version: a: n 109, recall  18.3%, base  10.3%, lift   1.77; b: n 563, recall  14.7%, base   9.2%, lift   1.60
+decisive on 'either version' (reported)      recall  14.7%  base   9.2%  lift   1.60  90% [  1.32,   1.90]
+FULL FORM: not implemented: the recipe does not state how its eleven grid lines combine
+
+## 3. Baselines
+labels: thin; held-out failed; 13F = equity longs only; recipe covers 3 of 11 buy rules (decisive)
+(1) recipe on pooled control purchases       recall  12.4%  base   8.2%  lift   1.51  90% [  1.08,   2.03]
+   per version: a: n 102, recall  14.7%, base   8.6%, lift   1.72; b: n 476, recall  10.1%, base   7.8%, lift   1.30
+(2) reference-book top fifth on this investor recall  22.7%  base  20.1%  lift   1.13  90% [  0.88,   1.40]
+   per version: a: n 109, recall  23.9%, base  20.0%, lift   1.19; b: n 563, recall  21.5%, base  20.2%, lift   1.06
+   counted purchases without a reference-book score:   0.5%
+
+## 4. Gate (A10 item 9): decisive form
+labels: thin; held-out failed; 13F = equity longs only; recipe covers 3 of 11 buy rules (decisive)
+no PRICE criterion in the decisive form: the recipe is tested as written
+lift >= 2.00: NO; interval lower end > 1.25: yes; recall >= 25%: NO; lift above control baseline: yes; lift above reference-book baseline: yes
+RECALL GATE: FAIL  (labels: thin; held-out failed; 13F = equity longs only; recipe covers 3 of 11 buy rules (decisive))
+
+## 5. Per criterion: share of the counted purchases it rejects (average of versions a and b)
+labels: thin; held-out failed; 13F = equity longs only; recipe covers 3 of 11 buy rules (decisive)
+criterion  rejects  of which measure missing  | universe rejects  | description
+B1          69.9%     2.1%                   |  85.3%           | revenue growth 3y (TTM vs 12 quarters before) >= 20%
+B2          67.9%     0.2%                   |  79.3%           | revenue growth 1y >= 20%
+B3          28.0%     0.8%                   |  36.3%           | momentum 6-1 > 0
+G           85.5%     2.2%                   |  94.1%           | branch G: B1 and B2 and B3
+B4          54.3%     0.0%                   |  51.1%           | cyclical sector 10, 15, 20, 25
+B5          97.8%     0.0%                   |  99.0%           | industry EBIT TTM sum < 0 (>= 3 members)
+C           97.8%     0.0%                   |  99.0%           | branch C: B4 and B5
+G|C         83.5%     0.0%                   |  93.1%           | either branch
+(universe rejects = share of all eligible stock-quarters failing it; context only)
+
+## 6. Cross table: decisive recipe druckenmiller_v1 on every roster and control investor (lift, average of a and b; masked ids as in the say-do tables)
+labels: thin; held-out failed; 13F = equity longs only; recipe covers 3 of 11 buy rules (decisive)
+M01  roster   lift   2.31
+M02  roster   lift   0.94
+M03  roster   lift   0.75
+M04  roster   lift   2.67
+M05  roster   lift   1.01
+M06  roster   lift   1.69
+M07  roster   lift   1.15
+M08  roster   lift   0.80
+M09  roster   lift   2.15
+M10  control  lift   1.68
+M12  control  lift   0.00
+M13  control  lift   1.49
+M14  control  lift   0.97
+M15  roster   lift n < 20
+M16  roster   lift   0.66
+M17  roster   lift n < 20
+M18  roster   lift   0.72
+M19  roster   lift   0.62
+M21  roster   lift   0.64
+M22  roster   lift   1.01
+M23  roster   lift   0.10
+M24  control  lift   0.82
+M25  roster   lift   2.46
+M26  control  lift   2.02
+M27  roster   lift   0.48
+M29  roster   lift   1.59
+ROSTER pooled   lift   1.12
+CONTROL pooled  lift   1.51
+(druckenmiller_v1 done 110 s)
+
+# Murray Stahl: recipe stahl_v1 (eligible stock-quarters 75658)
+labels: thin; held-out failed; recipe covers 3 of 6 buy rules (decisive), stand-ins only; 13F filer firm-wide (A6: Horizon Kinetics, firm, not person)
+
+## 1. Eligible universe, measure coverage and decisive pass rate (Q4 quarter-ends; last = 2025-09)
+labels: thin; held-out failed; recipe covers 3 of 6 buy rules (decisive), stand-ins only; 13F filer firm-wide (A6: Horizon Kinetics, firm, not person)
+t        elig  pass  rate%  ref%  rq_fcf    b04 rq_c04    o05     n1
+200912   1210   376   31.1  20.1      98    100     98     99    100
+201012   1215   386   31.8  20.0      97    100     98     98     99
+201112   1221   272   22.3  20.1      97    100     97     99     99
+201212   1201   299   24.9  20.3      97    100     97     99     99
+201312   1203   302   25.1  19.8      96    100     96     98     99
+201412   1180   313   26.5  20.0      96    100     96     98     99
+201512   1144   339   29.6  20.2      98    100     97     99    100
+201612   1154   411   35.6  20.0      98    100     97     96     99
+201712   1150   395   34.3  20.3      98    100     98     99     99
+201812   1141   372   32.6  20.1      97    100     97     94     99
+201912   1137   350   30.8  19.9      97    100     96     97     99
+202012   1159   323   27.9  19.5      94     99     94     96     99
+202112   1195   289   24.2  19.2      93    100     92     98     99
+202212   1187   324   27.3  20.5      99    100     98    100     99
+202312   1200   390   32.5  20.3      98    100     98    100    100
+202412   1195   434   36.3  20.1      97    100     97     99     99
+202509   1192   416   34.9  20.1      98    100     98     99     98
+coverage = % of eligible stocks with the measure (fy_run: with any run); rate = decisive pass rate; ref = reference-book top fifth inside sector
+
+## 2. Murray Stahl: conviction purchases 2010-2025 evaluated at the quarter-end before purchase
+labels: thin; held-out failed; recipe covers 3 of 6 buy rules (decisive), stand-ins only; 13F filer firm-wide (A6: Horizon Kinetics, firm, not person)
+purchases: either 118 (version a 33, b 112); in the eligible universe at t: either 65 (a 15, b 61); in the universe but in a house-excluded industry (A8 2a, not counted): 16; not in the universe: 37
+13F filer is firm-wide (Horizon Kinetics; A6): purchases are the firm's, not only this investor's
+quarters with a counted purchase: 27; bootstrap: 2000 draws of quarters, seed 20261127
+DECISIVE (average of versions a and b)       recall  39.3%  base  28.9%  lift   1.36  90% [  1.04,   1.68]
+   NOTE: decisive = one version only (a not measurable: fewer than 20 purchases)
+   per version: a: n 15, recall    -  , base    -  , lift    -  ; b: n 61, recall  39.3%, base  28.9%, lift   1.36
+decisive on 'either version' (reported)      recall  36.9%  base  28.6%  lift   1.29  90% [  0.98,   1.59]
+FULL FORM, 4 versions averaged (reported)    recall  35.7%  base  23.5%  lift   1.55  90% [  1.16,   1.92]
+
+## 3. Baselines
+labels: thin; held-out failed; recipe covers 3 of 6 buy rules (decisive), stand-ins only; 13F filer firm-wide (A6: Horizon Kinetics, firm, not person)
+(1) recipe on pooled control purchases       recall  29.1%  base  30.1%  lift   0.97  90% [  0.82,   1.12]
+   per version: a: n 102, recall  29.4%, base  30.5%, lift   0.96; b: n 476, recall  28.8%, base  29.8%, lift   0.97
+(2) reference-book top fifth on this investor recall  18.0%  base  18.8%  lift   0.96  90% [  0.53,   1.48]
+   per version: a: n 15, recall    -  , base    -  , lift    -  ; b: n 61, recall  18.0%, base  18.8%, lift   0.96
+   counted purchases without a reference-book score:   4.6%
+
+## 4. Gate (A10 item 9): decisive form
+labels: thin; held-out failed; recipe covers 3 of 6 buy rules (decisive), stand-ins only; 13F filer firm-wide (A6: Horizon Kinetics, firm, not person)
+no PRICE criterion in the decisive form: the recipe is tested as written
+lift >= 2.00: NO; interval lower end > 1.25: NO; recall >= 25%: yes; lift above control baseline: yes; lift above reference-book baseline: yes
+RECALL GATE: FAIL  (labels: thin; held-out failed; recipe covers 3 of 6 buy rules (decisive), stand-ins only; 13F filer firm-wide (A6: Horizon Kinetics, firm, not person))
+
+## 5. Per criterion: share of the counted purchases it rejects (average of versions a and b)
+labels: thin; held-out failed; recipe covers 3 of 6 buy rules (decisive), stand-ins only; 13F filer firm-wide (A6: Horizon Kinetics, firm, not person)
+criterion  rejects  of which measure missing  | universe rejects  | description
+B1          29.0%     5.8%                   |  14.6%           | FCF margin TTM > 0 or net cash >= 0
+B2          48.8%     7.4%                   |  52.5%           | diluted shares not up over 12 quarters
+B3          58.6%     8.3%                   |  80.5%           | index-fund ownership below the sector median and shares down
+B4          33.0%     0.0%                   |  50.1%           | FY1 analyst count below the sector median (none = 0)
+B3|B4       22.2%     0.0%                   |  38.5%           | one of the two neglect tests
+B3g_33      64.4%     0.0%                   |  88.8%           | B3 below the sector 33rd percentile (full form)
+B4g_33      59.5%     0.0%                   |  66.9%           | B4 below the 33rd percentile (full form)
+(universe rejects = share of all eligible stock-quarters failing it; context only)
+
+## 6. Cross table: decisive recipe stahl_v1 on every roster and control investor (lift, average of a and b; masked ids as in the say-do tables)
+labels: thin; held-out failed; recipe covers 3 of 6 buy rules (decisive), stand-ins only; 13F filer firm-wide (A6: Horizon Kinetics, firm, not person)
+M01  roster   lift   0.42
+M02  roster   lift   1.22
+M03  roster   lift   1.79
+M04  roster   lift   0.76
+M05  roster   lift   1.05
+M06  roster   lift   1.11
+M07  roster   lift   0.62
+M08  roster   lift   0.72
+M09  roster   lift   1.02
+M10  control  lift   0.87
+M12  control  lift   1.63
+M13  control  lift   0.85
+M14  control  lift   1.12
+M15  roster   lift n < 20
+M16  roster   lift   1.34
+M17  roster   lift n < 20
+M18  roster   lift   0.79
+M19  roster   lift   1.66
+M21  roster   lift   1.36
+M22  roster   lift   0.93
+M23  roster   lift   1.56
+M24  control  lift   1.37
+M25  roster   lift   1.32
+M26  control  lift   0.89
+M27  roster   lift   0.93
+M29  roster   lift   1.04
+ROSTER pooled   lift   0.94
+CONTROL pooled  lift   0.97
+(stahl_v1 done 114 s)
+
+# Summary: decisive form, average of versions a and b (labels in each block above)
+investor                     recipe            n               recall    base    lift  90% interval      gate
+Dev Kantesaria               kantesaria_v1     a 18, b 29       10.3%    1.2%    8.30  [  0.00,  17.57]  FAIL
+Dev Kantesaria               kantesaria_v2     a 18, b 29       37.9%    5.9%    6.41  [  4.19,   8.91]  PASS
+Stan Druckenmiller           druckenmiller_v1  a 109, b 563     16.5%    9.8%    1.69  [  1.27,   2.12]  FAIL
+Murray Stahl                 stahl_v1          a 15, b 61       39.3%   28.9%    1.36  [  1.04,   1.68]  FAIL
+
+stored on WRDS: rc_pass_<recipe> (pass flags per eligible stock-quarter), rc_recall_summary_v11_p1 (the numbers above); eq_recall_v1's rc_pass_panel and rc_recall_summary are kept
+done 114 s
+
+## 2. python
+eq_recall-1.1.2  recall test (RECALL_SPEC_v1; V04_REGISTRATION A10 item 9, A13 items 13 and 21)
+recipes in order: hohn_v1, zlatev_v1, pilecki_v1, nygren_v1, lilu_v1, sosin_v1
+inputs: msf 1059615, link 33324, fq 1024698, gics 46011, ibes 1032932, names 82395, dv 996695, funda 340638, fqx 1011232, t10 211, fqx2 1011232, funda2 340638, ibes2 2536240, idx 319543, ibes2u 2045470, cf_last 11516
+account join: 302495 of 306000 universe line-months have a gvkey; 30007 keys in the quarterly table, 3650 shared
+CRSP price factor direction check: -1
+GICS source: co_hgic; universe months 200810..202509
+eligible stock-quarters: 75658 at 64 quarter-ends (median 1189 per quarter-end)
+with the house-excluded industries (recipes for which the house exclusions do not apply): 93455
+10-year Treasury source public.fred.dgs10 (scale /100); quarter-ends with a value: 64 of 64
+1.1.0 measures: FY1 found 99%, FY2 99%, long-term growth 69% (median 0.114), index-fund ownership 98% (median 0.183), Greenblatt return on capital 70%, S04* 80%, dividend yield 99% of eligible stock-quarters
+index managers found per 13F quarter-end: median 4 (min 3, max 8) over 65 quarter-ends
+I/B/E/S basis of price / estimate criteria (ZLA P1, NYG P4): unadjusted
+panel built 89 s
+
+# Chris Hohn: recipe hohn_v1 (eligible stock-quarters 75658)
+labels: thin; recipe covers 5 of 14 buy rules (decisive)
+
+## 1. Eligible universe, measure coverage and decisive pass rate (Q4 quarter-ends; last = 2025-09)
+labels: thin; recipe covers 5 of 14 buy rules (decisive)
+t        elig  pass  rate%  ref%  s04sta    s01    s02    v04    s03
+200912   1210    40    3.3  20.1      84     83     83     98     83
+201012   1215    34    2.8  20.0      83     82     82     98     82
+201112   1221    43    3.5  20.1      82     82     82     97     82
+201212   1201    51    4.2  20.3      82     82     82     98     82
+201312   1203    58    4.8  19.8      82     81     81     96     81
+201412   1180    55    4.7  20.0      81     80     80     97     80
+201512   1144    51    4.5  20.2      82     81     81     98     81
+201612   1154    50    4.3  20.0      82     81     81     98     81
+201712   1150    48    4.2  20.3      80     79     78     99     78
+201812   1141    37    3.2  20.1      79     78     77     97     77
+201912   1137    45    4.0  19.9      78     77     76     97     76
+202012   1159    54    4.7  19.5      74     73     73     94     73
+202112   1195    50    4.2  19.2      72     72     71     93     71
+202212   1187    21    1.8  20.5      77     76     76     99     76
+202312   1200    27    2.2  20.3      78     78     77     99     77
+202412   1195    21    1.8  20.1      79     78     78     98     78
+202509   1192    26    2.2  20.1      79     78     78     98     78
+coverage = % of eligible stocks with the measure (fy_run: with any run); rate = decisive pass rate; ref = reference-book top fifth inside sector
+
+## 2. Chris Hohn: conviction purchases 2010-2025 evaluated at the quarter-end before purchase
+labels: thin; recipe covers 5 of 14 buy rules (decisive)
+purchases: either 107 (version a 68, b 102); in the eligible universe at t: either 85 (a 54, b 80); in the universe but in a house-excluded industry (A8 2a, not counted): 1; not in the universe: 21
+quarters with a counted purchase: 44; bootstrap: 2000 draws of quarters, seed 20261127
+DECISIVE (average of versions a and b)       recall  15.9%  base   7.1%  lift   2.24  90% [  1.42,   3.17]
+   per version: a: n 54, recall  13.0%, base   7.0%, lift   1.85; b: n 80, recall  18.8%, base   7.2%, lift   2.62
+decisive on 'either version' (reported)      recall  18.8%  base   7.6%  lift   2.49  90% [  1.60,   3.50]
+FULL FORM, 3 versions averaged (reported)    recall  12.9%  base   4.4%  lift   2.89  90% [  1.77,   4.17]
+
+## 3. Baselines
+labels: thin; recipe covers 5 of 14 buy rules (decisive)
+(1) recipe on pooled control purchases       recall   6.4%  base   5.7%  lift   1.14  90% [  0.81,   1.52]
+   per version: a: n 102, recall   5.9%, base   6.2%, lift   0.94; b: n 476, recall   6.9%, base   5.2%, lift   1.33
+(2) reference-book top fifth on this investor recall  24.9%  base  19.7%  lift   1.26  90% [  0.88,   1.65]
+   per version: a: n 54, recall  22.2%, base  19.9%, lift   1.12; b: n 80, recall  27.5%, base  19.6%, lift   1.40
+   counted purchases without a reference-book score:   1.2%
+
+## 4. Gate (A10 item 9): decisive form
+labels: thin; recipe covers 5 of 14 buy rules (decisive)
+lift >= 2.00: yes; interval lower end > 1.25: yes; recall >= 25%: NO; lift above control baseline: yes; lift above reference-book baseline: yes
+RECALL GATE: FAIL  (labels: thin; recipe covers 5 of 14 buy rules (decisive))
+
+## 5. Per criterion: share of the counted purchases it rejects (average of versions a and b)
+labels: thin; recipe covers 5 of 14 buy rules (decisive)
+criterion  rejects  of which measure missing  | universe rejects  | description
+A1          34.4%     0.0%                   |  17.3%           | consumer discretionary (sector 25)
+A2           0.0%     0.0%                   |  23.9%           | banks, autos, retail, insurance, energy, materials, tobacco, asset managers
+B1          62.1%     9.6%                   |  90.0%           | Q01 > 15% in 10 of the last 10 fiscal years (S04*)
+B1i        100.0%     9.6%                   | 100.0%           | airports / toll roads with no loss year in 10
+B1|B1i      62.1%     9.6%                   |  90.0%           | barrier route
+B2          54.7%     9.6%                   |  60.3%           | operating-margin s.d. 10y in the stable half of the sector
+P1          12.4%     1.6%                   |  36.8%           | FCF yield TTM minus the 10y Treasury >= 0
+B4          35.7%     0.0%                   |  60.3%           | revenue-growth s.d. 10y in the stable half of the sector (full form)
+A3           0.0%     0.0%                   |   1.8%           | airlines, wireless, media (full form)
+P1g_1       25.8%     0.0%                   |  45.7%           | FCF yield gap >= 1 point (full form)
+P1g_2       45.4%     0.0%                   |  55.5%           | FCF yield gap >= 2 points (full form)
+(universe rejects = share of all eligible stock-quarters failing it; context only)
+
+## 6. Cross table: decisive recipe hohn_v1 on every roster and control investor (lift, average of a and b; masked ids as in the say-do tables)
+labels: thin; recipe covers 5 of 14 buy rules (decisive)
+M01  roster   lift   0.10
+M02  roster   lift   0.00
+M03  roster   lift   3.55
+M04  roster   lift   0.83
+M05  roster   lift   2.82
+M06  roster   lift   0.94
+M07  roster   lift   0.00
+M08  roster   lift   1.08
+M09  roster   lift   1.59
+M10  control  lift   1.03
+M12  control  lift   0.95
+M13  control  lift   1.47
+M14  control  lift   0.59
+M15  roster   lift n < 20
+M16  roster   lift   2.84
+M17  roster   lift n < 20
+M18  roster   lift   0.48
+M19  roster   lift   2.66
+M21  roster   lift   1.34
+M22  roster   lift   0.84
+M23  roster   lift   2.24
+M24  control  lift   3.07
+M25  roster   lift   0.00
+M26  control  lift   1.71
+M27  roster   lift   1.29
+M29  roster   lift   1.31
+ROSTER pooled   lift   0.96
+CONTROL pooled  lift   1.14
+(hohn_v1 done 93 s)
+
+# Val Zlatev: recipe zlatev_v1 (eligible stock-quarters 75658)
+labels: thin; long/short, longs only tested; recipe covers 3 of 5 buy rules (decisive)
+
+## 1. Eligible universe, measure coverage and decisive pass rate (Q4 quarter-ends; last = 2025-09)
+labels: thin; long/short, longs only tested; recipe covers 3 of 5 buy rules (decisive)
+t        elig  pass  rate%  ref%   rq_gm rq_dgm    b01 rq_fcf   pfy2    e04
+200912   1210    10    0.8  20.1      99     97     90     98     96     90
+201012   1215    31    2.6  20.0      99     97     95     97     96     94
+201112   1221    15    1.2  20.1      99     97     95     97     96     95
+201212   1201     9    0.7  20.3      98     97     94     97     97     95
+201312   1203    12    1.0  19.8      98     96     93     96     97     95
+201412   1180    14    1.2  20.0      99     97     94     96     97     95
+201512   1144    16    1.4  20.2      99     98     92     98     95     94
+201612   1154     7    0.6  20.0     100     98     93     98     95     91
+201712   1150     9    0.8  20.3      99     99     94     98     96     93
+201812   1141    15    1.3  20.1      99     98     91     97     95     94
+201912   1137     7    0.6  19.9      99     98     90     97     94     92
+202012   1159     6    0.5  19.5      98     95     84     94     89     82
+202112   1195     5    0.4  19.2      98     96     85     93     91     87
+202212   1187     9    0.8  20.5      99     98     89     99     93     90
+202312   1200     5    0.4  20.3      99     99     89     98     95     93
+202412   1195     6    0.5  20.1      99     98     90     97     94     92
+202509   1192     6    0.5  20.1      99     98     90     98     93     92
+coverage = % of eligible stocks with the measure (fy_run: with any run); rate = decisive pass rate; ref = reference-book top fifth inside sector
+
+## 2. Val Zlatev: conviction purchases 2010-2025 evaluated at the quarter-end before purchase
+labels: thin; long/short, longs only tested; recipe covers 3 of 5 buy rules (decisive)
+purchases: either 136 (version a 30, b 136); in the eligible universe at t: either 104 (a 28, b 104); in the universe but in a house-excluded industry (A8 2a, not counted): 0; not in the universe: 32
+quarters with a counted purchase: 20; bootstrap: 2000 draws of quarters, seed 20261127
+DECISIVE (average of versions a and b)       recall   7.4%  base   3.5%  lift   2.12  90% [  0.70,   3.78]
+   per version: a: n 28, recall   7.1%, base   3.6%, lift   1.97; b: n 104, recall   7.7%, base   3.4%, lift   2.27
+decisive on 'either version' (reported)      recall   7.7%  base   3.4%  lift   2.27  90% [  0.93,   3.87]
+FULL FORM, 24 versions averaged (reported)   recall   5.9%  base   1.9%  lift   3.23  90% [  0.78,   6.70]  (interval on 1993 of 2000 draws: the others have a cell set with no passer)
+
+## 3. Baselines
+labels: thin; long/short, longs only tested; recipe covers 3 of 5 buy rules (decisive)
+(1) recipe on pooled control purchases       recall   0.1%  base   1.7%  lift   0.07  90% [  0.00,   0.21]
+   per version: a: n 102, recall   0.0%, base   1.8%, lift   0.00; b: n 476, recall   0.2%, base   1.5%, lift   0.14
+(2) reference-book top fifth on this investor recall  39.1%  base  21.1%  lift   1.84  90% [  1.49,   2.21]
+   per version: a: n 28, recall  46.4%, base  21.8%, lift   2.13; b: n 104, recall  31.7%, base  20.5%, lift   1.55
+   counted purchases without a reference-book score:   1.0%
+
+## 4. Gate (A10 item 9): decisive form
+labels: thin; long/short, longs only tested; recipe covers 3 of 5 buy rules (decisive)
+lift >= 2.00: yes; interval lower end > 1.25: NO; recall >= 25%: NO; lift above control baseline: yes; lift above reference-book baseline: yes
+RECALL GATE: FAIL  (labels: thin; long/short, longs only tested; recipe covers 3 of 5 buy rules (decisive))
+
+## 5. Per criterion: share of the counted purchases it rejects (average of versions a and b)
+labels: thin; long/short, longs only tested; recipe covers 3 of 5 buy rules (decisive)
+criterion  rejects  of which measure missing  | universe rejects  | description
+B1          12.6%     0.0%                   |  93.7%           | semis, communications equipment, tech hardware (GICS industries)
+B3a         41.3%     0.0%                   |  69.8%           | gross margin TTM >= median of the B1 stocks
+B3b         46.2%     0.0%                   |  46.3%           | gross margin TTM not below a year ago
+B4a         21.6%     1.0%                   |  45.8%           | net debt / EBITDA TTM < 2
+B4b          3.4%     0.5%                   |  19.0%           | FCF margin TTM > 0
+P1          59.3%     0.0%                   |  35.7%           | price / FY2 consensus EPS <= 20
+A1           6.5%     0.0%                   |  13.2%           | software, IT services, internet
+B1g          9.8%     0.0%                   |  93.0%           | B1 plus electronic components (full form)
+B3a_3       57.4%     0.0%                   |  78.2%           | gross margin in the top third (full form)
+B4a_1       28.6%     0.0%                   |  61.8%           | net debt / EBITDA < 1 (full form)
+B4a_3       13.7%     0.0%                   |  32.8%           | net debt / EBITDA < 3 (full form)
+P1_15       81.5%     0.0%                   |  60.1%           | price / FY2 EPS <= 15 (full form)
+A2           6.0%     0.0%                   |  13.7%           | FY2 / FY1 EPS growth >= 0 (full form)
+(universe rejects = share of all eligible stock-quarters failing it; context only)
+
+## 6. Cross table: decisive recipe zlatev_v1 on every roster and control investor (lift, average of a and b; masked ids as in the say-do tables)
+labels: thin; long/short, longs only tested; recipe covers 3 of 5 buy rules (decisive)
+M01  roster   lift   0.00
+M02  roster   lift   0.00
+M03  roster   lift   0.00
+M04  roster   lift   1.18
+M05  roster   lift   0.60
+M06  roster   lift   0.32
+M07  roster   lift   0.00
+M08  roster   lift   0.45
+M09  roster   lift   1.28
+M10  control  lift   0.00
+M12  control  lift   0.00
+M13  control  lift   3.20
+M14  control  lift   0.00
+M15  roster   lift n < 20
+M16  roster   lift   0.00
+M17  roster   lift n < 20
+M18  roster   lift   2.12
+M19  roster   lift   0.65
+M21  roster   lift   0.00
+M22  roster   lift   0.84
+M23  roster   lift   0.00
+M24  control  lift   0.00
+M25  roster   lift   0.00
+M26  control  lift   0.00
+M27  roster   lift   4.47
+M29  roster   lift   1.88
+ROSTER pooled   lift   0.83
+CONTROL pooled  lift   0.07
+(zlatev_v1 done 97 s)
+
+# Derek Pilecki: recipe pilecki_v1 (eligible stock-quarters 93455; house exclusions do not apply)
+labels: thin; financials only; recipe covers 2 of 7 buy rules fully (decisive); house exclusions do not apply (recipe section 0); decisive minus B4
+
+## 1. Eligible universe, measure coverage and decisive pass rate (Q4 quarter-ends; last = 2025-09)
+labels: thin; financials only; recipe covers 2 of 7 buy rules fully (decisive); house exclusions do not apply (recipe section 0); decisive minus B4
+t        elig  pass  rate%  ref%     roe rq_tbg    p02    v02    v07 low12n
+200912   1420    34    2.4  20.0      96     78     99     99     99     98
+201012   1436    17    1.2  19.9      95     77     99    100     99     98
+201112   1453     6    0.4  20.1      95     76     99    100     99     98
+201212   1442    17    1.2  20.2      96     74     99    100     99     98
+201312   1458    24    1.6  19.8      94     72     98     99     99     97
+201412   1464    14    1.0  19.8      94     70     99     99     99     97
+201512   1460     9    0.6  20.0      96     70    100    100     99     98
+201612   1464    33    2.3  20.1      95     72     99    100     99     98
+201712   1459    32    2.2  20.2      95     70     99    100     99     99
+201812   1459     9    0.6  20.0      94     68     99    100     99     98
+201912   1466    28    1.9  19.9      94     64     99    100    100     98
+202012   1464    32    2.2  19.4      91     61     97     99     99     96
+202112   1472    20    1.4  19.3      89     60     99     99     99     96
+202212   1468    30    2.0  20.4      95     63    100    100    100     99
+202312   1465    31    2.1  20.3      94     65    100    100     99     99
+202412   1477    37    2.5  20.1      93     68     99    100    100     99
+202509   1473    35    2.4  20.1      94     65     99    100     99     98
+coverage = % of eligible stocks with the measure (fy_run: with any run); rate = decisive pass rate; ref = reference-book top fifth inside sector
+comparison-group fallback (group with fewer than 10 eligible financials at t; ranked among all eligible financials): 0 of 13980 financial stock-quarters
+
+## 2. Derek Pilecki: conviction purchases 2010-2025 evaluated at the quarter-end before purchase
+labels: thin; financials only; recipe covers 2 of 7 buy rules fully (decisive); house exclusions do not apply (recipe section 0); decisive minus B4
+purchases: either 83 (version a 17, b 82); in the eligible universe at t: either 44 (a 8, b 43); in the universe but in a house-excluded industry (A8 2a, not counted): 0; not in the universe: 39
+quarters with a counted purchase: 21; bootstrap: 2000 draws of quarters, seed 20261127
+DECISIVE (average of versions a and b)       recall  18.6%  base   9.8%  lift   1.89  90% [  0.95,   3.09]
+   NOTE: decisive = one version only (a not measurable: fewer than 20 purchases)
+   per version: a: n 8, recall    -  , base    -  , lift    -  ; b: n 43, recall  18.6%, base   9.8%, lift   1.89
+decisive on 'either version' (reported)      recall  18.2%  base  10.0%  lift   1.82  90% [  0.92,   2.99]
+FULL FORM, 2 versions averaged (reported)    recall  22.1%  base  11.7%  lift   1.89  90% [  1.06,   2.88]
+
+## 3. Baselines
+labels: thin; financials only; recipe covers 2 of 7 buy rules fully (decisive); house exclusions do not apply (recipe section 0); decisive minus B4
+(1) recipe on pooled control purchases       recall   1.2%  base   0.9%  lift   1.24  90% [  0.00,   2.38]
+   per version: a: n 111, recall   1.8%, base   1.0%, lift   1.73; b: n 511, recall   0.6%, base   0.8%, lift   0.75
+(2) reference-book top fifth on this investor recall  25.6%  base  19.8%  lift   1.29  90% [  0.80,   1.82]
+   per version: a: n 8, recall    -  , base    -  , lift    -  ; b: n 43, recall  25.6%, base  19.8%, lift   1.29
+   counted purchases without a reference-book score:   2.3%
+
+## 4. Gate (A10 item 9): decisive form
+labels: thin; financials only; recipe covers 2 of 7 buy rules fully (decisive); house exclusions do not apply (recipe section 0); decisive minus B4
+NOT IMPLEMENTED in the decisive form: B4 (evaluated without; label 'decisive minus')
+lift >= 2.00: NO; interval lower end > 1.25: NO; recall >= 25%: NO; lift above control baseline: yes; lift above reference-book baseline: yes
+RECALL GATE: FAIL  (labels: thin; financials only; recipe covers 2 of 7 buy rules fully (decisive); house exclusions do not apply (recipe section 0); decisive minus B4)
+
+## 5. Per criterion: share of the counted purchases it rejects (average of versions a and b)
+labels: thin; financials only; recipe covers 2 of 7 buy rules fully (decisive); house exclusions do not apply (recipe section 0); decisive minus B4
+criterion  rejects  of which measure missing  | universe rejects  | description
+A1           2.3%     0.0%                   |  85.0%           | financials (GICS 2023 groups 4010, 4020, 4030)
+B1          59.2%     2.3%                   |  92.7%           | ROE TTM above the comparison-group median
+B2           2.3%     1.2%                   |   1.4%           | tangible book per share + dividends up over 12 quarters (banks, insurers)
+B3          19.8%     1.2%                   |  36.1%           | momentum 6-1 > 0
+P1          42.0%     0.0%                   |  95.5%           | value score in the cheapest 30% of the comparison group
+A2          15.1%     2.3%                   |  12.2%           | a new 12-month low (excluded)
+B1_33       33.9%     0.0%                   |   5.0%           | ROE rank > 1/3 (full form)
+(universe rejects = share of all eligible stock-quarters failing it; context only)
+
+## 6. Cross table: decisive recipe pilecki_v1 on every roster and control investor (lift, average of a and b; masked ids as in the say-do tables)
+labels: thin; financials only; recipe covers 2 of 7 buy rules fully (decisive); house exclusions do not apply (recipe section 0); decisive minus B4
+M01  roster   lift   0.00
+M02  roster   lift   0.00
+M03  roster   lift   0.00
+M04  roster   lift   0.00
+M05  roster   lift   1.96
+M06  roster   lift   1.40
+M07  roster   lift   0.00
+M08  roster   lift   0.61
+M09  roster   lift   1.03
+M10  control  lift   3.81
+M12  control  lift   2.74
+M13  control  lift   0.00
+M14  control  lift   0.00
+M15  roster   lift   1.89
+M16  roster   lift   0.00
+M17  roster   lift n < 20
+M18  roster   lift   0.00
+M19  roster   lift   0.00
+M21  roster   lift   0.00
+M22  roster   lift   0.95
+M23  roster   lift   0.00
+M24  control  lift   0.00
+M25  roster   lift   0.00
+M26  control  lift   0.00
+M27  roster   lift   0.00
+M29  roster   lift   0.00
+ROSTER pooled   lift   0.98
+CONTROL pooled  lift   1.24
+(pilecki_v1 done 102 s)
+
+# Bill Nygren and Alex Fitch: recipe nygren_v1 (eligible stock-quarters 93455; house exclusions do not apply)
+labels: thin; recipe covers 2 of 8 buy rules fully (decisive); 13F filer firm-wide (A6: Harris Associates, firm, not person); r uses the 10-year Treasury (7-year not loaded; recipe P2 flag); house exclusions do not apply (recipe section 3)
+
+## 1. Eligible universe, measure coverage and decisive pass rate (Q4 quarter-ends; last = 2025-09)
+labels: thin; recipe covers 2 of 8 buy rules fully (decisive); 13F filer firm-wide (A6: Harris Associates, firm, not person); r uses the 10-year Treasury (7-year not loaded; recipe P2 flag); house exclusions do not apply (recipe section 3)
+t        elig  pass  rate%  ref%  rq_sal    v10    ltg    e04    fy1    fy2 rq_sal rq_rps
+200912   1420   109    7.7  20.0     100     99     86     88     99     99     96     96
+201012   1436   134    9.3  19.9     100     99     87     92     99     99     95     95
+201112   1453   177   12.2  20.1     100     99     89     93     99     99     95     95
+201212   1442   135    9.4  20.2     100     99     86     93     99     99     94     94
+201312   1458    73    5.0  19.8      99     98     80     93     99     99     93     92
+201412   1464    64    4.4  19.8      99     99     80     93     99     99     91     91
+201512   1460    85    5.8  20.0     100     99     80     91     99     99     92     91
+201612   1464    59    4.0  20.1     100     99     77     90     99     99     94     94
+201712   1459    46    3.2  20.2     100     99     72     91     99     99     94     94
+201812   1459   150   10.3  20.0     100     99     67     92     99     99     94     94
+201912   1466    63    4.3  19.9     100    100     61     89     99     99     93     93
+202012   1464    64    4.4  19.4      99     98     58     80     99     99     88     88
+202112   1472    98    6.7  19.3      99     98     49     85     99     99     88     88
+202212   1468    73    5.0  20.4     100    100     50     88     99     99     92     92
+202312   1465    63    4.3  20.3     100    100     43     90     99     99     95     95
+202412   1477    73    4.9  20.1      99     99     51     90     99     99     93     93
+202509   1473    78    5.3  20.1     100     99     52     89     99     99     93     93
+coverage = % of eligible stocks with the measure (fy_run: with any run); rate = decisive pass rate; ref = reference-book top fifth inside sector
+
+## 2. Bill Nygren and Alex Fitch: conviction purchases 2010-2025 evaluated at the quarter-end before purchase
+labels: thin; recipe covers 2 of 8 buy rules fully (decisive); 13F filer firm-wide (A6: Harris Associates, firm, not person); r uses the 10-year Treasury (7-year not loaded; recipe P2 flag); house exclusions do not apply (recipe section 3)
+purchases: either 84 (version a 24, b 70); in the eligible universe at t: either 75 (a 23, b 61); in the universe but in a house-excluded industry (A8 2a, not counted): 0; not in the universe: 9
+13F filer is firm-wide (Harris Associates; A6): purchases are the firm's, not only this investor's
+quarters with a counted purchase: 42; bootstrap: 2000 draws of quarters, seed 20261127
+DECISIVE (average of versions a and b)       recall  31.0%  base  14.9%  lift   2.05  90% [  1.54,   2.54]
+   per version: a: n 23, recall  39.1%, base  16.0%, lift   2.45; b: n 61, recall  23.0%, base  13.9%, lift   1.65
+decisive on 'either version' (reported)      recall  28.0%  base  14.7%  lift   1.90  90% [  1.38,   2.42]
+FULL FORM, 10 versions averaged (reported)   recall  27.8%  base  13.7%  lift   1.98  90% [  1.47,   2.48]
+
+## 3. Baselines
+labels: thin; recipe covers 2 of 8 buy rules fully (decisive); 13F filer firm-wide (A6: Harris Associates, firm, not person); r uses the 10-year Treasury (7-year not loaded; recipe P2 flag); house exclusions do not apply (recipe section 3)
+(1) recipe on pooled control purchases       recall  17.0%  base  11.8%  lift   1.44  90% [  1.10,   1.75]
+   per version: a: n 111, recall  17.1%, base  12.7%, lift   1.35; b: n 511, recall  16.8%, base  10.9%, lift   1.54
+(2) reference-book top fifth on this investor recall  21.5%  base  18.6%  lift   1.16  90% [  0.69,   1.67]
+   per version: a: n 23, recall  21.7%, base  17.9%, lift   1.22; b: n 61, recall  21.3%, base  19.3%, lift   1.10
+   counted purchases without a reference-book score:   0.0%
+
+## 4. Gate (A10 item 9): decisive form
+labels: thin; recipe covers 2 of 8 buy rules fully (decisive); 13F filer firm-wide (A6: Harris Associates, firm, not person); r uses the 10-year Treasury (7-year not loaded; recipe P2 flag); house exclusions do not apply (recipe section 3)
+lift >= 2.00: yes; interval lower end > 1.25: yes; recall >= 25%: yes; lift above control baseline: yes; lift above reference-book baseline: yes
+RECALL GATE: PASS  (labels: thin; recipe covers 2 of 8 buy rules fully (decisive); 13F filer firm-wide (A6: Harris Associates, firm, not person); r uses the 10-year Treasury (7-year not loaded; recipe P2 flag); house exclusions do not apply (recipe section 3))
+
+## 5. Per criterion: share of the counted purchases it rejects (average of versions a and b)
+labels: thin; recipe covers 2 of 8 buy rules fully (decisive); 13F filer firm-wide (A6: Harris Associates, firm, not person); r uses the 10-year Treasury (7-year not loaded; recipe P2 flag); house exclusions do not apply (recipe section 3)
+criterion  rejects  of which measure missing  | universe rejects  | description
+B1           5.5%     0.0%                   |  74.4%           | best size rank (revenue, net income, equity) <= 250
+B2          13.4%     3.0%                   |  24.9%           | dividend yield + growth >= 8%
+P4          61.3%     0.0%                   |  76.8%           | price / seven-year consensus value < 0.70
+A1           3.3%     0.0%                   |  14.0%           | consensus growth < 0 (excluded)
+A2           6.3%     1.6%                   |  12.8%           | size up, revenue per share not (excluded; missing = fails)
+A3           1.6%     0.0%                   |   8.8%           | no value (excluded)
+G1_B2       13.4%     0.0%                   |  29.5%           | B2 at 9% (full form)
+G2_P4       78.2%     0.0%                   |  85.7%           | P4 at 0.60 (full form)
+G3_P4       78.2%     0.0%                   |  84.3%           | r floor 9% (full form)
+G4_P4       62.2%     0.0%                   |  77.2%           | growth = E04 only (full form)
+(universe rejects = share of all eligible stock-quarters failing it; context only)
+
+## 6. Cross table: decisive recipe nygren_v1 on every roster and control investor (lift, average of a and b; masked ids as in the say-do tables)
+labels: thin; recipe covers 2 of 8 buy rules fully (decisive); 13F filer firm-wide (A6: Harris Associates, firm, not person); r uses the 10-year Treasury (7-year not loaded; recipe P2 flag); house exclusions do not apply (recipe section 3)
+M01  roster   lift   0.85
+M02  roster   lift   1.02
+M03  roster   lift   0.00
+M04  roster   lift   0.65
+M05  roster   lift   2.26
+M06  roster   lift   1.01
+M07  roster   lift   0.75
+M08  roster   lift   2.17
+M09  roster   lift   2.14
+M10  control  lift   1.41
+M12  control  lift   2.81
+M13  control  lift   1.32
+M14  control  lift   2.00
+M15  roster   lift   1.73
+M16  roster   lift   0.31
+M17  roster   lift n < 20
+M18  roster   lift   1.67
+M19  roster   lift   2.05
+M21  roster   lift   0.34
+M22  roster   lift   1.04
+M23  roster   lift   0.37
+M24  control  lift   1.85
+M25  roster   lift   1.00
+M26  control  lift   0.13
+M27  roster   lift   1.29
+M29  roster   lift   0.00
+ROSTER pooled   lift   1.07
+CONTROL pooled  lift   1.44
+(nygren_v1 done 111 s)
+
+# Li Lu: recipe lilu_v1 (eligible stock-quarters 93455; house exclusions do not apply)
+labels: thin; recipe covers 3 of 6 buy rules (decisive); house exclusions do not apply (recipe section 0; 1.1.1, N1)
+
+## 1. Eligible universe, measure coverage and decisive pass rate (Q4 quarter-ends; last = 2025-09)
+labels: thin; recipe covers 3 of 6 buy rules (decisive); house exclusions do not apply (recipe section 0; 1.1.1, N1)
+t        elig  pass  rate%  ref%  rq_q02   lowq     bp     ey    acc rq_opm
+200912   1420     1    0.1  20.0      75     98    100     98     98     94
+201012   1436     3    0.2  19.9      74     98    100     98     98     95
+201112   1453     7    0.5  20.1      72     98    100     98     98     94
+201212   1442    13    0.9  20.2      73     98    100     98     98     93
+201312   1458     5    0.3  19.8      72     97     99     98     96     92
+201412   1464    14    1.0  19.8      71     97    100     98     97     91
+201512   1460    21    1.4  20.0      70     98    100     98     98     91
+201612   1464    16    1.1  20.1      69     98    100     98     98     94
+201712   1459     8    0.5  20.2      68     99    100     98     98     94
+201812   1459    32    2.2  20.0      68     98    100     98     98     93
+201912   1466     4    0.3  19.9      69     98    100     98     98     91
+202012   1464     9    0.6  19.4      68     96     99     97     94     88
+202112   1472     5    0.3  19.3      68     96    100     97     93     88
+202212   1468     8    0.5  20.4      69     99    100     98     99     93
+202312   1465    19    1.3  20.3      70     99    100     99     99     94
+202412   1477    18    1.2  20.1      69     99    100     99     98     93
+202509   1473    17    1.2  20.1      69     98    100     99     98     93
+coverage = % of eligible stocks with the measure (fy_run: with any run); rate = decisive pass rate; ref = reference-book top fifth inside sector
+
+## 2. Li Lu: conviction purchases 2010-2025 evaluated at the quarter-end before purchase
+labels: thin; recipe covers 3 of 6 buy rules (decisive); house exclusions do not apply (recipe section 0; 1.1.1, N1)
+purchases: either 17 (version a 11, b 17); in the eligible universe at t: either 14 (a 9, b 14); in the universe but in a house-excluded industry (A8 2a, not counted): 0; not in the universe: 3
+quarters with a counted purchase: 12; bootstrap: 2000 draws of quarters, seed 20261127
+DECISIVE (average of versions a and b)       not measurable (fewer than 20 counted purchases)
+   per version: a: n 9, recall    -  , base    -  , lift    -  ; b: n 14, recall    -  , base    -  , lift    -  
+decisive on 'either version' (reported)      not measurable (fewer than 20 counted purchases)
+FULL FORM, 10 versions averaged (reported)   not measurable (fewer than 20 counted purchases)
+decisive on the house set (reported)         not measurable (fewer than 20 counted purchases)
+
+## 3. Baselines
+labels: thin; recipe covers 3 of 6 buy rules (decisive); house exclusions do not apply (recipe section 0; 1.1.1, N1)
+(1) recipe on pooled control purchases       recall   3.6%  base   1.1%  lift   3.20  90% [  1.86,   4.93]
+   per version: a: n 111, recall   4.5%, base   1.2%, lift   3.79; b: n 511, recall   2.7%, base   1.1%, lift   2.60
+(2) reference-book top fifth on this investor not measurable (fewer than 20 counted purchases)
+   per version: a: n 9, recall    -  , base    -  , lift    -  ; b: n 14, recall    -  , base    -  , lift    -  
+   counted purchases without a reference-book score:   0.0%
+
+## 4. Gate (A10 item 9): decisive form
+labels: thin; recipe covers 3 of 6 buy rules (decisive); house exclusions do not apply (recipe section 0; 1.1.1, N1)
+fewer than 20 counted purchases: not measurable
+RECALL GATE: NOT MEASURABLE  (labels: thin; recipe covers 3 of 6 buy rules (decisive); house exclusions do not apply (recipe section 0; 1.1.1, N1))
+
+## 5. Per criterion: share of the counted purchases it rejects (average of versions a and b)
+labels: thin; recipe covers 3 of 6 buy rules (decisive); house exclusions do not apply (recipe section 0; 1.1.1, N1)
+criterion  rejects  of which measure missing  | universe rejects  | description
+B1          47.2%    34.5%                   |  76.6%           | Greenblatt return on capital in the sector's top third
+B2          71.0%     0.0%                   |  81.1%           | new 12-month low during the quarter
+P1         100.0%     0.0%                   |  93.4%           | book / price >= 1
+P2          71.0%     0.0%                   |  80.1%           | EBIT / EV in the sector's cheapest fifth
+P1|P2       71.0%     0.0%                   |  75.6%           | one of the two price tests
+A1          27.4%     0.0%                   |  19.7%           | accruals in the sector's worst fifth (excluded; missing = not)
+A2          25.4%     0.0%                   |  18.6%           | margin vs own 5-year median in the sector's top fifth (excluded)
+B1_50       47.2%     0.0%                   |  64.7%           | return on capital top half (full form)
+B1_80       74.6%     0.0%                   |  85.7%           | top fifth (full form)
+B2_6        52.8%     0.0%                   |  66.1%           | low within 6 months (full form)
+P2_67       25.4%     0.0%                   |  67.3%           | EBIT / EV cheapest third (full form)
+P2_90       92.9%     0.0%                   |  89.9%           | cheapest tenth (full form)
+(universe rejects = share of all eligible stock-quarters failing it; context only)
+
+## 6. Cross table: decisive recipe lilu_v1 on every roster and control investor (lift, average of a and b; masked ids as in the say-do tables)
+labels: thin; recipe covers 3 of 6 buy rules (decisive); house exclusions do not apply (recipe section 0; 1.1.1, N1)
+M01  roster   lift   0.00
+M02  roster   lift   9.66
+M03  roster   lift   0.00
+M04  roster   lift   0.14
+M05  roster   lift   0.67
+M06  roster   lift   1.03
+M07  roster   lift   1.12
+M08  roster   lift   1.18
+M09  roster   lift   1.61
+M10  control  lift   3.12
+M12  control  lift   0.00
+M13  control  lift   2.08
+M14  control  lift   5.06
+M15  roster   lift   0.00
+M16  roster   lift   0.00
+M17  roster   lift n < 20
+M18  roster   lift   0.00
+M19  roster   lift   0.00
+M21  roster   lift   0.00
+M22  roster   lift   0.51
+M23  roster   lift   0.00
+M24  control  lift   1.88
+M25  roster   lift   0.00
+M26  control  lift   0.90
+M27  roster   lift   1.58
+M29  roster   lift   2.75
+ROSTER pooled   lift   0.58
+CONTROL pooled  lift   3.20
+(lilu_v1 done 116 s)
+
+# Cliff Sosin: recipe sosin_v1
+Sosin: not in eq_conv_panel (13F filer to be added by an eq_conv input change); not measured
+
+# Summary: decisive form, average of versions a and b (labels in each block above)
+investor                     recipe            n               recall    base    lift  90% interval      gate
+Chris Hohn                   hohn_v1           a 54, b 80       15.9%    7.1%    2.24  [  1.42,   3.17]  FAIL
+Val Zlatev                   zlatev_v1         a 28, b 104       7.4%    3.5%    2.12  [  0.70,   3.78]  FAIL
+Derek Pilecki                pilecki_v1        a 8, b 43        18.6%    9.8%    1.89  [  0.95,   3.09]  FAIL
+Bill Nygren and Alex Fitch   nygren_v1         a 23, b 61       31.0%   14.9%    2.05  [  1.54,   2.54]  PASS
+Li Lu                        lilu_v1           a 9, b 14          -       -       -    [   -  ,    -  ]  NOT MEASURABLE
+Cliff Sosin                  sosin_v1          -                  -       -       -    [   -  ,    -  ]  NOT MEASURED
+
+stored on WRDS: rc_pass_<recipe> (pass flags per eligible stock-quarter), rc_recall_summary_v11_p2 (the numbers above); eq_recall_v1's rc_pass_panel and rc_recall_summary are kept
+done 116 s
+
+=== END (232 s) ===

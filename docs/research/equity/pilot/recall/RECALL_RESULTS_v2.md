@@ -2,7 +2,7 @@
 
 Full output: eq_recall_v2_report.txt (the runner cut it at 60,000 characters inside the Li Lu block, so Li Lu and the
 summary table were not seen; rerun of the same computation in two steps = eq_recall 1.1.2, job eq_recall_v2b, A13 item
-23). kantesaria_v1 reproduces eq_recall_v1 exactly (recall 10.3%, lift 8.30, 90% [0.00, 17.57]).
+23: every recipe seen in v2 is identical line for line in v2b; report eq_recall_v2b_report.txt). kantesaria_v1 reproduces eq_recall_v1 exactly (recall 10.3%, lift 8.30, 90% [0.00, 17.57]).
 
 Gate (RECALL_SPEC_v1): lift >= 2.0, 90% interval lower end > 1.25, recall >= 25%, lift above the control baseline and
 above the reference-book baseline. Decisive form = average of the two purchase versions (a: into the top five; b: to
@@ -18,7 +18,7 @@ above the reference-book baseline. Decisive form = average of the two purchase v
 | zlatev_v1 | 28 / 104 | 7.4% | 3.5% | 2.12 | 0.70-3.78 | 0.07 | 1.84 | FAIL | thin; longs only tested; 3 of 5 |
 | pilecki_v1 | 8 (n.m.) / 43 | 18.6% | 9.8% | 1.89 | 0.95-3.09 | 1.24 | 1.29 | FAIL | thin; financials only; decisive minus B4 |
 | nygren_v1 | 23 / 61 | 31.0% | 14.9% | 2.05 | 1.54-2.54 | 1.44 | 1.16 | **PASS** | thin; 13F firm-wide (Harris Associates); r = 10y Treasury |
-| lilu_v1 | not seen (output cut) | | | | | | | pending v2b | thin |
+| lilu_v1 | 9 (n.m.) / 14 (n.m.) | - | - | - | - | 3.20 | - | NOT MEASURABLE (fewer than 20 purchases) | thin; own set (all industries) |
 | sosin_v1 | not measured (not in eq_conv_panel) | | | | | | | | |
 
 n.m. = not measurable (fewer than 20). Ref-book lift = the reference book's top fifth on this investor's purchases.
@@ -43,3 +43,9 @@ n.m. = not measurable (fewer than 20). Ref-book lift = the reference book's top 
 Pilot = the three investors with full material: Kantesaria, Druckenmiller, Stahl. Today: Kantesaria passes only
 after his revision (flagged); Druckenmiller and Stahl fail and each has one revision round left. Rule: if fewer than 2
 of 3 pass after their revision rounds, no more recipes; investor work turns analyst-led.
+
+## Li Lu (from eq_recall_v2b)
+Only 14 of his conviction purchases fall in the eligible universe (17 in all; version a 9, version b 14): fewer than
+20, so the recall test cannot measure his recipe and no revision round applies. The recipe on the control investors'
+purchases gives lift 3.20 [1.86, 4.93]: it picks a narrow kind of stock that some professional investors buy, but his
+own record is too small to tell whether it is his.
