@@ -1054,7 +1054,7 @@ diag_preb_smoke.run(check)
 # LSEG store with invented contract prices (contract parse and identity, leg rules, screens, calendar exclusion,
 # sizing, scalers, E11 joint cap, contract-space costs, T1 zero book, placebo identity, truncation and its control,
 # seal, report lines and printing, trial rows, job stops)
-print("\nBatch B1 Curve carry (b1_curve 1.0.0, mock LSEG store)")
+print("\nBatch B1 Curve carry (b1_curve 1.0.1, mock LSEG store)")
 import b1_curve_smoke  # noqa: E402
 b1_curve_smoke.run(check)
 

@@ -345,6 +345,28 @@ def _run(check, tmp):
     pn = BC.run(prep, score_perm={"start": str(win.index[0]), "perm": ident})["net"]
     check("T3: the identity date map reproduces the pod exactly (one code path)",
           np.allclose(pn.fillna(-7), bk["net"].fillna(-7)))
+    # 1.0.1 M1: on a mock with intermittent pairs (wheat, corn listed 16 months ahead), no placebo position sits on a
+    # market-month the pod cannot hold (no priced far leg, stale leg, calendar exclusion)
+    HORIZON.update({"W": 16, "C": 16})
+    try:
+        catG, longG, _rG, _tG = build_mock()
+    finally:
+        del HORIZON["W"], HORIZON["C"]
+    prG = BC.prepare(BC.contract_table(catG, longG, roots))
+    bG = BC.run(prG)
+    wG = BC.window(bG["net"])
+    gaps = int((~prG["pair"]["cm_wheat"] & prG["F"]["cm_wheat"].notna()).loc[wG.index].sum())
+    import gm.stats as GST
+    perms = GST.placebo_perms((BC.LAST - wG.index[0]).n + 1, n=5, L=12, seed=BC.SEED)
+    leak = 0
+    for pm in perms:
+        rG = BC.run(prG, score_perm={"start": str(wG.index[0]), "perm": pm})
+        leak += int(sum((pv_.notna() & ~prG["valid"]).sum().sum() for pv_ in rG["pv"].values()))
+        leak += int((rG["p"].notna() & ~prG["valid"]).sum().sum())
+    idG = BC.run(prG, score_perm={"start": str(wG.index[0]), "perm": np.arange(len(perms[0]))})["net"]
+    check("T3 (1.0.1 M1): on a mock with gaps (%d wheat window months without a pair) no placebo position lands on a "
+          "month the pod cannot hold; the identity map still reproduces the pod" % gaps,
+          gaps > 20 and leak == 0 and np.allclose(idG.fillna(-7), bG["net"].fillna(-7)), leak)
     pl = BC.placebo(prep, win, n=12)
     check("T3: placebo runs give 12 Sharpe ratios and a share in [0, 1]", len(pl["placebo_sr"]) == 12 and
           0 <= pl["p"] <= 1)
@@ -403,6 +425,10 @@ def _run(check, tmp):
     small = [x for x in lines if re.search(r"n (\d+), sign", x)]
     check("report printing: values under 60 months appear as count and sign only",
           all(int(m) < 60 for x in small for m in re.findall(r"n (\d+), sign", x)))
+    tr_ = res["trial"]
+    check("trial rows (1.0.1 M2): a column over fewer than 60 months is empty (mock: 1975-89 has %d window months)" %
+          tr_["n_7589"], (tr_["sr_7589"] is None) == (tr_["n_7589"] < 60) and (tr_["sr_9010"] is None) ==
+          (tr_["n_9010"] < 60) and tr_["n_7589"] < 60)
     rows_ = BC.trial_rows(res)
     check("trial rows: one pod row with Sharpe columns, one diag row without; LSEG lock in the note",
           [r["family"] for r in rows_] == ["pod", "diag"] and "sr_9010" in rows_[0] and "sr_9010" not in rows_[1] and
@@ -432,9 +458,9 @@ def _run(check, tmp):
         q = subprocess.run([sys.executable, job], cwd=loc, env=env, capture_output=True, text=True, timeout=600)
         return q.stdout + q.stderr
     o0 = go()
-    check("job (PC layout): gm code, engine_ref, config hashes, 9 lib files and the trial-log digest PASS (11 'PASS lib' "
-          "lines); no A2 report -> STOP before any store", "PASS gm code vs reference" in o0 and
-          o0.count("PASS lib ") == 11 and "FAIL A2 report gm_a2_v1.txt: missing" in o0 and "lock id" not in o0,
+    check("job (PC layout): gm code, engine_ref, config hashes, 9 lib files, 5 LSEG config lists and the trial-log digest "
+          "PASS (16 'PASS lib' lines); no A2 report -> STOP before any store", "PASS gm code vs reference" in o0 and
+          o0.count("PASS lib ") == 16 and "FAIL A2 report gm_a2_v1.txt: missing" in o0 and "lock id" not in o0,
           o0[-1200:])
     os.makedirs(os.path.join(loc, "results"))
     import diag_a2_smoke as DS

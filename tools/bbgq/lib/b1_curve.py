@@ -24,7 +24,7 @@ import os
 import numpy as np
 import pandas as pd
 
-VERSION = "b1_curve-1.0.0"
+VERSION = "b1_curve-1.0.1"   # 1.0.1 (CHECK_B1): M1 placebo masked by destination validity, M2 trial rows
 LSEG_LOCK = "90322681b9f989cc24393ae7de4fe24bf5af2f32074ffa6400b1cbed09c4074c"          # LOCK_LSEG_v5
 A1_PANEL_ID = "e7f98d4439fccf91f3451bc4b9e78079e3bc2cc2452931363b28520460b6cb43"
 LOCK_V2 = "d85a46cb2853646b24796f294f3ccab1d1507188c402e978fd59f5196ea41fc9"
@@ -448,8 +448,9 @@ def run(prep, cost_mult=1.0, delay=0, versions=(1, 2), score_perm=None, drop=())
     from gm import seal as SL
     from gm import stats as ST
     sc = scores(prep, versions, drop)
-    if score_perm is not None:
-        sc = {k: ST.move_rows(s, score_perm["perm"], score_perm["start"]) for k, s in sc.items()}
+    if score_perm is not None:                     # 1.0.1 M1: the destination month's data rules bind (s3 steps 3-4)
+        v = valid_mask(prep, drop) if drop else prep["valid"]
+        sc = {k: ST.move_rows(s, score_perm["perm"], score_perm["start"]).where(v) for k, s in sc.items()}
     pv, p = version_positions(prep, sc)
     rs = prep["rs"]
     rb = (p.shift(1) * rs).sum(axis=1, min_count=1)
@@ -738,7 +739,8 @@ def report(prep, spx=None, blocks=None, out=print, trials_path=None, n_placebo=N
                                                cell(s["vol"] * 100, s["n"]), cell(s["maxdd"] * 100, s["n"], "%.1f"),
                                                cell(s["skew"], s["n"]), cell(s["lo"], s["n"])))
     d1 = window(run(prep, delay=1)["net"])
-    out("DELAY | one-month delay (positions applied one month late on the leg columns) | Sharpe %s | mean %s %%/yr" % (
+    out("DELAY | one-month delay (face values decided at t-2 on the pair chosen at t-1, the leg columns) | Sharpe %s | "
+        "mean %s %%/yr" % (
         cell(ST.sharpe(d1), len(d1)), cell(float(d1.mean() * 1200), len(d1))))
     vers = {}
     for v in (1, 2):
@@ -823,8 +825,11 @@ def report(prep, spx=None, blocks=None, out=print, trials_path=None, n_placebo=N
         "weekly-implementation check (no daily far-contract settlements, spec s7) | untouched markets (none held back)")
     s9 = ST.summary(net)
     s7 = ST.summary(net, *ST.EXTRA)
-    res["trial"] = {"sr_9010": s9["sr"], "t_9010": s9["t"], "maxdd_9010": s9["maxdd"], "sr_7589": s7["sr"],
-                    "turnover": float(ST.cut(bk["turnover"], *ST.DESIGN).mean() * 12)}
+    ok9, ok7 = s9["n"] >= MIN_PRINT, s7["n"] >= MIN_PRINT          # 1.0.1 M2: no column over fewer than 60 months
+    res["trial"] = {"sr_9010": s9["sr"] if ok9 else None, "t_9010": s9["t"] if ok9 else None,
+                    "maxdd_9010": s9["maxdd"] if ok9 else None, "sr_7589": s7["sr"] if ok7 else None,
+                    "turnover": float(ST.cut(bk["turnover"], *ST.DESIGN).mean() * 12), "n_9010": s9["n"],
+                    "n_7589": s7["n"]}
     out("B1 SUMMARY | window %d | T1 alpha %s, raw p %s | T2 %s | T3 %s | %s | loss %s" % (
         len(win), "> 0" if t1["alpha"] > 0 else "<= 0", cell(t1["p"], t1["n"], "%.4f"),
         "> 0" if t2["alpha"] > 0 else "<= 0", "PASS" if pl["pass"] else "FAIL", res["status"].upper(),

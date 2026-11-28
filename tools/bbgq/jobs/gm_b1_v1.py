@@ -16,8 +16,10 @@ on the PC.
    (STOP on a FAIL; PASS / FAIL and counts only).
 4. b1_curve.report: DATA and WINDOW lines (counts), T1-T3 (T4 not applicable), the verdict, the reported lines; values
    over >= 60 months only (else count and sign); no LSEG or Bloomberg value is printed.
-5. TRIAL ROW lines (gm/trials.csv: one "pod" row, one "diag" row) for the coordinator. Nothing is written to work\\ or
-   lib\\.
+5. TRIAL ROW lines (gm/trials.csv: one "pod" row, one "diag" row) for the coordinator. Nothing is written to lib\\, to
+   the Bloomberg or LSEG stores or to work\\a1\\; gm_engine.ensure_free_inputs (as in every earlier job) rewrites
+   work\\free\\inputs_manifest.json and unpacks missing free input files (CHECK_B1 C3). 1.0.1 (CHECK_B1): the five
+   LSEG config lists are pinned (LIB_SHA and the store manifest, C2).
 Needs: lib\\gm\\ (gm-2.2.1), lib\\gm_engine.py, lib\\bbgdata.py, lib\\bbg_panel.py, lib\\a1_panel.py, lib\\a2_batch.py,
 lib\\diag_a2.py, lib\\b1_curve.py, lib\\lsegdata.py, lib\\lseg_rules.py (+ the lsegdata config CSVs), lib\\engine_ref.json,
 lib\\live_sources.csv, lib\\untouched_markets.csv, work\\bbg\\ (LOCK_v2 store), work\\lseg\\ (LOCK_LSEG_v5 store),
@@ -43,7 +45,7 @@ LIB = os.path.join(os.getcwd(), "lib")
 print("=== gm_b1_v1 ===")
 
 # the registered build of the lib files (B1_BUILD hash table; gm/CHANGES.md "Batch B1: Curve carry" item 10)
-LIB_SHA = {"b1_curve.py": "e8e8844f3b4f974bc8a0baa9ae644884cb89da32ae08b651273b28dc306eb4f5",
+LIB_SHA = {"b1_curve.py": "2f5b859c359c9caad2a74356463d40c869050a5a0a1fe52a9a5414c4750ff526",
            "diag_a2.py": "3264a5381c13b124d2566d02f263e21905f4e901680c1af7c2134f0bd558be1b",
            "a2_batch.py": "35339f673f351f43315ad3c7010ba733b6fb8990a6a41feb1ef20de324de58c6",
            "a1_panel.py": "eb9ef3f7fbd12760e174f9ef1df8573890bed6ca8d36f7d4e5c63eadd822ebb5",
@@ -51,7 +53,15 @@ LIB_SHA = {"b1_curve.py": "e8e8844f3b4f974bc8a0baa9ae644884cb89da32ae08b651273b2
            "bbg_panel.py": "e0b67a42793e67c129ec8a6c3ed2082390933ea9317898b59b8854387ecf1dcd",
            "bbgdata.py": "0b26bb21b50671dca7c2153d3d66a2a09f7f33eeaa7c96ca536b69bbca8e6351",
            "lsegdata.py": "0d1b500ddb2e931ab4069ac8fd6fed0c16778da85b2665d3fcafadfae16198de",
-           "lseg_rules.py": "5686999172a22c76b7190f8df210c93ffc09a6737f32301df030080dccc42da9"}
+           "lseg_rules.py": "5686999172a22c76b7190f8df210c93ffc09a6737f32301df030080dccc42da9",
+           # 1.0.1 C2: the LSEG config lists = the LOCK_LSEG_v5 config hashes (lseg_roots.csv sets identity)
+           "lseg_engine_map.csv": "8812f20d4d6dadcbfe5171cbe92b03a57f65ba01599a6d17d842130864bbaa15",
+           "lseg_exclusions.csv": "8e2ca054128ce420543d8e06252af14255a8492064a647e73e69dde90fb45bf9",
+           "lseg_live_sources.csv": "37e42068a8ae7f36ee12ece245c3c17b6cc27ac6f51b52078d54e1a891c4c77f",
+           "lseg_roots.csv": "7a8caf01fbc70108af78be145337b41ac7e0050fc3f326211c997dc1a9991ee3",
+           "lseg_untouched.csv": "17ec5fb38c2cc3b3f337adac2478d04c100fb949bcbcfe159fd53f26ef705185"}
+LSEG_CFG = ("lseg_engine_map.csv", "lseg_exclusions.csv", "lseg_live_sources.csv", "lseg_roots.csv",
+            "lseg_untouched.csv")
 
 
 def frames(e):
@@ -155,6 +165,12 @@ try:
         "PASS" if lid == BC.LSEG_LOCK else "FAIL", lid, BC.LSEG_LOCK, why))
     if lid != BC.LSEG_LOCK:
         stop("the LSEG store is not LOCK_LSEG_v5 (nothing read)")
+    man = json.load(open(os.path.join(WORK, "lseg", "manifest.json"), encoding="utf-8"))
+    badc = [n for n in LSEG_CFG if (man.get("config") or {}).get(n) != LIB_SHA[n]]
+    print("%s LSEG config lists in lib = the store manifest's config hashes | %d files | differing: %s" % (
+        "PASS" if not badc else "FAIL", len(LSEG_CFG), ", ".join(badc) or "none"))
+    if badc:
+        stop("the LSEG config lists differ from the locked ones (nothing read)")
     st = GE.ensure_free_inputs(FREE)
     if st["manifest"] is None:
         stop("work\\free\\gm_free_inputs.zip not found")
