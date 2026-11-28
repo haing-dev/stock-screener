@@ -307,6 +307,33 @@ difference 0 (tools/bbgq/results/engine_repro_cloud_2026-11-28d_gm-2.2.1.txt); e
 (results/engine_trunc_cloud_2026-11-28d_gm-2.2.1.txt); B2 truncation 8 of 8, 258 stages, mock inputs, both controls FAIL
 (results/b2_trunc_mock_2026-11-28.txt); run_tests ALL TESTS PASSED (results/run_tests_gm_2026-11-28d_gm-2.2.1.txt). NOT
 RUN: queue in docs/research/batches/B2_BUILD_2026-11-28.md.
+Corrections after the independent check (CHECK_B2, APPROVED WITH CORRECTIONS, 2026-11-28; registered BEFORE the
+b2_batch-1.0.1 code and BEFORE any run; items above are not rewritten; no result was read for any of them; the
+checker's probes ran on mocks only):
+- M1 (refines reading (1) of c7d9352; entry items 4h, 4o, 6 T3): a month at or after a currency's start in which that
+  currency holds no contract (no strip at d, no measure passing the screens, or no volatility) holds 0 in its eight
+  slots, not missing. A slot holding 0 contributes 0 to the block return and the gross return whatever its return
+  (also where the contract has no settlement). The block return, both scalers, the window and the costs count such a
+  month (gross 0; the cost of going flat is charged). Slots before a currency's start stay missing. T3 moves every
+  decision month from the window's first month - 1 to 2010-10 (T = the window's span in months). The report prints a
+  DATA line with the window's flat months (gross 0) and its interior gaps; the job STOPs if the window has an interior
+  gap. Reason: 4h "holds nothing" and 7.7's window ("off months entering with return 0") and T3 alignment ("the
+  decision months whose holdings earn the window"); a missing month would drop out of the scalers and the window and
+  leave later decisions unmoved in every placebo.
+- M2 (item 11): in the card 4 R1 and R3 falsifier lines (means of e(d) over held days), n of the printing rule = the
+  calendar months that the held days span; the day count is printed beside as a count.
+- C1 (tests only): tests/b2_batch_smoke.py copies tests/data/trials_b2_shipped.csv (= gm/trials.csv at 943b1fb, 42
+  book / pod rows) into the job layout, so appending the B2 rows later does not break its pin.
+- C3 (item 9c, job): the F0 STOP also compares each rule's held months and episodes with the pre-B report's "F0 |
+  <rule> | held months N | episodes E" lines; any difference STOPs.
+- C4 (item 4a, job): STOP unless at least one Eurodollar and one Euribor contract parse, and the parsed Euribor count
+  equals the number of catalog rows (daily, ok, primary, Datastream) whose code starts with FEI.
+- C7 (job): with the test override B2_N_PLACEBO set, the trial rows print as "TEST TRIAL ROW" (never appended).
+- Noted for the batch review, no code change (C2): the volatility history's slot j (j-th contract with last trading
+  day on or after the day, entry 4i) is the position strip's slot j - 1 in the months whose strip skips a contract
+  expiring in month t + 1 (Feb, May, Aug, Nov decisions): sigma(q) and the leg cap then read the neighbouring
+  contract's history. It follows 4i as written; not a look-ahead; a later version could map by contract. C5, C6, C8-C10
+  noted, not done.
 
 ## Batch B1: Curve carry (registered 2026-11-28, BEFORE the B1 code and run): TESTING_PROTOCOL 7.6 step 8, 7.7, 7.8, register T08
 Registered run entry (no rule, weight, threshold, gate, cost or market change; no gm/ code change, so no feature version:
