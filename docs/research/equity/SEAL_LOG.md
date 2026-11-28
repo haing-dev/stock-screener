@@ -98,3 +98,4 @@ conviction holdings job (R2) will be the fourth, with its code hash entered befo
 - 2026-11-28: eq_recall_v2b RAN (1.1.2): all recipes identical to eq_recall_v2; lilu_v1 NOT MEASURABLE (14 purchases). Revision rounds (v2 recipes) written for Druckenmiller, Stahl, Hohn, Zlatev, Pilecki.
 - 2026-11-28: A13 item 24: eq_recall 1.2.0 registered before the code (five v2 recipes; Stahl v2 on its own set; pulls rc_s34sec_<year>, rc_msf0; diagnostics). No v2-recipe number yet.
 - 2026-11-28: eq_recall 1.2.0 code (9babac6e..., registered in A13 item 24 before it; 1.1.2 to code_history). Jobs eq_recall_pull_v3 then eq_recall_v3 (run_part part=3 only; not queued). No v2-recipe number yet.
+- 2026-11-28: A13 item 25: eq_recall 1.2.1 (code eea7ef1b..., review fixes S1-S3; pull unchanged). eq_recall_pull_v3 queued; eq_recall_v3 after the pull.

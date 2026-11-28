@@ -721,3 +721,9 @@ as such. Replaces R1.1 (record); R1.2 (material) and R1.3 (screenability) stay.
       sub-industry 45102020. Own set (as v1). B4 (December sleeve) NOT IMPLEMENTED as in v1 ("decisive minus B4").
       Full form: B1 rank > 0.30 / > 0.5 (2 versions). Diagnostic: passes that come only through (h), and how many of
       those have (g) < 0.5.
+25. **Review fixes eq_recall 1.2.1 (2026-11-28).** Independent review of 1.2.0 (pilot/RECALL_CODE_REVIEW_1.2.0_2026-11-28.md):
+    no blocker; fixed before any v2 result: S1 zlatev_v2 year-3 EPS fails when FY2 <= 0 (FY1 > 0 with FY2 < 0 gave a
+    positive year-3 value, against the recipe's "year-3 EPS <= 0 fails"); S2 stahl_v2 O05 = 0 only for a stock in the 13F
+    security list with no matched index-manager holding (a held stock with CRSP shares missing at t-3 stays missing);
+    S3 zlatev_v2 carries the split-basis label if the unadjusted I/B/E/S table is unreadable. pull() unchanged, so
+    eq_recall_pull_v3 is valid under either version. Code eea7ef1b.... Run job eq_recall_v3 (run_part part=3).

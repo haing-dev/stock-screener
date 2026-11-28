@@ -75,6 +75,10 @@ after its v1 in TARGETS; PARTS[3] = the five v2 recipes. stahl_v2 runs on its ow
 with the house-set result as a second line. New pulls: rc_s34sec_<year> (CUSIPs in tfn.s34 per 13F quarter-end;
 stahl_v2 O05 = 0 for a listed stock no index manager holds) and rc_msf0 (crsp.msf_v2 2004-2006; pilecki_v2's 60-month
 own-history ranks only). Diagnostics per v2 recipe (counts only). v1 recipes' numbers equal 1.1.2.
+1.2.1 (2026-11-28; A13 item 25, after the independent review of 1.2.0 and before any v2 result): S1 zlatev_v2 FY2 <= 0
+fails the year-3 leg; S2 stahl_v2 O05 = 0 only for a stock in the 13F security list with NO matched index-manager
+holding (a held stock whose CRSP shares are missing at t-3 stays missing); S3 zlatev_v2 carries the split-basis label
+when the unadjusted I/B/E/S table is unreadable. pull() unchanged.
 """
 import json
 import time
@@ -88,7 +92,7 @@ INVESTORS = json.loads("[{\"name\": \"Joel Greenblatt\", \"group\": \"roster\", 
 TARGETS = json.loads("[{\"name\": \"Dev Kantesaria\", \"mgrnos\": [\"14460\"], \"recipe\": \"kantesaria_v1\"}, {\"name\": \"Dev Kantesaria\", \"mgrnos\": [\"14460\"], \"recipe\": \"kantesaria_v2\"}, {\"name\": \"Stan Druckenmiller\", \"mgrnos\": [\"13021\", \"23704\"], \"recipe\": \"druckenmiller_v1\"}, {\"name\": \"Stan Druckenmiller\", \"mgrnos\": [\"13021\", \"23704\"], \"recipe\": \"druckenmiller_v2\"}, {\"name\": \"Murray Stahl\", \"mgrnos\": [\"44850\", \"49373\"], \"recipe\": \"stahl_v1\"}, {\"name\": \"Murray Stahl\", \"mgrnos\": [\"44850\", \"49373\"], \"recipe\": \"stahl_v2\"}, {\"name\": \"Chris Hohn\", \"mgrnos\": [\"11194\"], \"recipe\": \"hohn_v1\"}, {\"name\": \"Chris Hohn\", \"mgrnos\": [\"11194\"], \"recipe\": \"hohn_v2\"}, {\"name\": \"Val Zlatev\", \"mgrnos\": [\"7142\"], \"recipe\": \"zlatev_v1\"}, {\"name\": \"Val Zlatev\", \"mgrnos\": [\"7142\"], \"recipe\": \"zlatev_v2\"}, {\"name\": \"Derek Pilecki\", \"mgrnos\": [\"8799\"], \"recipe\": \"pilecki_v1\"}, {\"name\": \"Derek Pilecki\", \"mgrnos\": [\"8799\"], \"recipe\": \"pilecki_v2\"}, {\"name\": \"Bill Nygren and Alex Fitch\", \"mgrnos\": [\"43485\"], \"recipe\": \"nygren_v1\"}, {\"name\": \"Li Lu\", \"mgrnos\": [\"14546\"], \"recipe\": \"lilu_v1\"}, {\"name\": \"Cliff Sosin\", \"mgrnos\": [\"21801\"], \"recipe\": \"sosin_v1\"}]")
 # <<< FROZEN INPUT
 
-VERSION = "eq_recall-1.2.0"
+VERSION = "eq_recall-1.2.1"
 COM = ("securitytype = 'EQTY' and securitysubtype = 'COM' and sharetype = 'NS' and primaryexch in ('N','A','Q')")
 MEASURES = ["ey", "bp", "mom", "roe", "acc", "pio", "rev"]
 GROUPS = {"value": ["ey", "bp"], "momentum": ["mom"], "quality": ["roe", "acc", "pio"], "expectations": ["rev"]}
@@ -1053,7 +1057,8 @@ def recall_extra2(D, E, msf, s, out):
     k = pd.DataFrame({"permno": E.permno.values, "ym": [ym_add(int(v), -3) for v in E.yyyymm]})
     lst = k.merge(listed, on=["permno", "ym"], how="left").listed.fillna(False).astype(bool).to_numpy()
     E["o05_listed"] = lst
-    E["o05z"] = E.o05.where(E.o05.notna(), pd.Series(np.where(lst, 0.0, np.nan), index=E.index))
+    zero = lst & ~E.o05_held.to_numpy(bool)  # 1.2.1 (review S2): 0 only if listed AND no index-manager holding matched
+    E["o05z"] = E.o05.where(E.o05.notna(), pd.Series(np.where(zero, 0.0, np.nan), index=E.index))
     out("1.2.0 measures: stahl_v2 O05 present %.0f%% of eligible stock-quarters (positive %.0f%%, zero = listed with no "
         "index-manager holding %.1f%%)" % (100 * E.o05z.notna().mean(), 100 * (E.o05z > 0).mean(),
                                           100 * (E.o05z == 0).mean()))
@@ -1139,6 +1144,9 @@ def o05_at(D, E, msf):
     x = x[(x.rdate >= x.namedt) & (x.rdate <= x.nend)].drop_duplicates(["rdate", "cusip"])
     x["ym"] = x.rdate.dt.year * 100 + x.rdate.dt.month
     x = x.groupby(["permno", "ym"], as_index=False).sh.sum()
+    k0 = pd.DataFrame({"permno": E.permno.values, "ym": [ym_add(int(v), -3) for v in E.yyyymm]})
+    E["o05_held"] = k0.merge(x[["permno", "ym"]].assign(held=True), on=["permno", "ym"],
+                             how="left").held.fillna(False).astype(bool).to_numpy()  # 1.2.1 (review S2)
     sh = msf[["permno", "yyyymm", "shrout"]].rename(columns={"yyyymm": "ym"})
     x = x.merge(sh, on=["permno", "ym"], how="inner")
     x["o05"] = (x.sh / (x.shrout * 1000.0)).where(x.shrout > 0)
@@ -1805,6 +1813,7 @@ def zlatev_v2(P):
     F["B4a"] = F["B4a_2"]
     F["B4b"] = P.rq_fcfm > 0
     y3 = pd.Series(np.where(P.fy1b > 0, P.fy2b * (P.fy2b / P.fy1b), P.fy2b), index=P.index)
+    y3 = y3.where(P.fy2b > 0)  # 1.2.1 (review S1): FY2 <= 0 fails the year-3 leg (FY1 > 0, FY2 < 0 gave a positive y3)
     p3 = (P.px_ib / y3).where(y3 > 0)
     for k in (15, 20):
         F["P1y3_%d" % k] = p3 <= k
@@ -2605,7 +2614,8 @@ def _run(load, save, out, targets, summary_name):
     r_all = rank_panel(u.assign(excluded=False))  # 1.1.1 (S2): reference score with the house exclusions off
     E = recall_panel(D, u, msf, s, out)
     prov = "unreadable" in D["ibes2u"].columns     # 1.1.1 (S1)
-    extra = {"zlatev_v1": ["P1 provisional (split basis)"], "nygren_v1": ["P4 provisional (split basis)"]} if prov else {}
+    extra = {"zlatev_v1": ["P1 provisional (split basis)"], "nygren_v1": ["P4 provisional (split basis)"],
+             "zlatev_v2": ["P1 provisional (split basis)"]} if prov else {}  # 1.2.1 (review S3): zlatev_v2 added
     out("panel built %.0f s" % (time.time() - t0))
     cp = load_conv(load)
     parts, summ = [], []

@@ -218,8 +218,8 @@
   {
    "registered_job": "recall",
    "module": "eq_recall",
-   "code_sha256": "9babac6eebab5c7be898d21da71a941839c31d65e7a8876360e204919d7febb8",
-   "registration": "docs/research/equity/pilot/RECALL_SPEC_v1.md; V04_REGISTRATION A13 item 13; A13 item 19 (1.0.3 public H.15 fallback); A13 item 21 (1.1.0 other recipes, kantesaria_v2, pulls rc_fqx2 / rc_funda2 / rc_ibes2 / rc_idx); A13 item 22 (1.1.1 review fixes S1-S4, N1, N5; pull rc_ibes2u); A13 item 23 (1.1.2 output split); A13 item 24 (1.2.0 v2 recipes, pulls rc_s34sec_<year>, rc_msf0, part 3)",
+   "code_sha256": "eea7ef1beb0aef992e76a8a8cf814f52ae52b14c9899afceac4c4e129448f7c6",
+   "registration": "docs/research/equity/pilot/RECALL_SPEC_v1.md; V04_REGISTRATION A13 item 13; A13 item 19 (1.0.3 public H.15 fallback); A13 item 21 (1.1.0 other recipes, kantesaria_v2, pulls rc_fqx2 / rc_funda2 / rc_ibes2 / rc_idx); A13 item 22 (1.1.1 review fixes S1-S4, N1, N5; pull rc_ibes2u); A13 item 23 (1.1.2 output split); A13 item 24 (1.2.0 v2 recipes, pulls rc_s34sec_<year>, rc_msf0, part 3); A13 item 25 (1.2.1 review fixes)",
    "output": "eq_recall.run: per recipe (kantesaria_v1, kantesaria_v2, druckenmiller_v1/v2, stahl_v1/v2, hohn_v1/v2, zlatev_v1/v2, pilecki_v1/v2, nygren_v1, lilu_v1; sosin_v1 not measured; v2 diagnostics as counts) counts, coverage shares, recall, base rate, lift, 90% bootstrap intervals, gate result, per-criterion rejection shares and a masked cross table of lifts, then a summary table; pull prints 13F index-manager names (metadata); no company, no identifier, no row; reads no forward return. Pull also prints whether ibes.statsumu_epsus is readable (metadata). Pass panels (rc_pass_<recipe>) and summary (rc_recall_summary_v11) stay on WRDS",
    "names": [
     {
@@ -271,6 +271,11 @@
      "code_sha256": "c0d4836792c0d3bee3131bc2ed83da88d78c3956ba96127a178658a1cedb6579",
      "version": "eq_recall-1.1.2",
      "note": "eq_recall_v2b ran with 1.1.2: all recipes identical to v2; lilu_v1 not measurable"
+    },
+    {
+     "code_sha256": "9babac6eebab5c7be898d21da71a941839c31d65e7a8876360e204919d7febb8",
+     "version": "eq_recall-1.2.0",
+     "note": "reviewed (RECALL_CODE_REVIEW_1.2.0), not run; pull identical in 1.2.1"
     }
    ]
   }
