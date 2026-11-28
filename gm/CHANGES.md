@@ -4,6 +4,166 @@ Every rule change gets a new VERSION in gm/run.py and a line here. Every variant
 (1990-2010; extra check 1975-89) is logged so the deflated Sharpe can count the trials. The holdout (2011-2026) is run
 once, after the rules are frozen, by gm/holdout.py.
 
+## Batch B1: Curve carry (registered 2026-11-28, BEFORE the B1 code and run): TESTING_PROTOCOL 7.6 step 8, 7.7, 7.8, register T08
+Registered run entry (no rule, weight, threshold, gate, cost or market change; no gm/ code change, so no feature version:
+the pod is new code under its spec in tools/bbgq/lib, and BASE / CANDIDATE at k = 0 are untouched; no statistic of
+Curve carry has been computed on any data, cloud or PC). The LSEG store (and the A1 panel the reported lines read) exist
+only on the PC, so every statistic is computed by one PC job (tools/bbgq/jobs/gm_b1_v1.py, library
+tools/bbgq/lib/b1_curve.py). Every choice below is closed from the registered text (spec, 7.x, the LSEG data entry, the
+Core book v1 entry), with the reason; none reads a result. The builder read the coverage counts of lseg_contract_v3
+(metadata: months with both legs priced) and no value.
+1. The registered text. 7.6 step 8: "Batch B1 = Curve carry (2 versions, register T08). It runs only once the LSEG
+   contract history (with delivery month per observation, last trading and first notice days) is locked with the 2011+
+   seal. If that lock does not exist when step 7 ends, Curve carry moves to B2 (charter s3) and B1 is empty ... a market
+   holds nothing in a month in which the last trading day or first notice day of either leg, as the LSEG reader reports
+   it, falls inside the holding month; Brent's far leg is the same rule." 7.3 item 3: "Curve carry trades at the
+   decision-day settlement (k = 0) because no daily far-contract settlements exist; this departure is accepted and
+   reported ...; its test 1 uses the Core book's k = 0 returns". 7.6 step 6 / CORE BOOK V1 RUN: Core book v1 is EMPTY,
+   so "B tests read alpha against a zero book (the pod's own mean)". 7.2 item 3: Curve carry "not qualified"; 7.2 item
+   5: "No B1 or B2 pod can be Core under today's data: Curve carry is not qualified". 7.7 T1-T4, Window, Held size,
+   Verdicts, reported list, P3, P4; 7.8 items 1-4 (Curve carry 1 tuned knob, the hybrid estimator).
+2. Precondition (7.6 step 8): MET by LOCK_LSEG_v5 (90322681b9f989cc24393ae7de4fe24bf5af2f32074ffa6400b1cbed09c4074c,
+   data entry "LSEG registered as a source for history", 2026-11-27), so B1 runs and Curve carry does not move to B2:
+   a. delivery month per observation: contract-level series carry it in their code (data entry item 2a: CL, LCO, RB,
+      SI, HG, PL, C, W, S, SB, CT, LC; L14a-l Datastream, L16a-e Brent HistoricalPricing); NG, HO, GC, KC by the
+      registered listing models of lseg_rules-1.1.0 (item 2c) on their continuous positions;
+   b. last trading day: the observed TR.ExpiryDate of the contract where LSEG shows one (c1 / c2 series, item 2b-c),
+      else lseg_rules.dates() (the exchange rule); first notice day: lseg_rules.dates() (None where no notice precedes
+      the last trading day: CL, LCO, NG, HO, RB, SB). These are "the LSEG reader" of the data entry (lsegdata-1.0.0 +
+      lseg_rules-1.1.0, both hashed in it); LSEG itself returns no contract dates on this licence (L11);
+   c. sealed: the job reads the design part only (observations dated <= 2010-12-31; item 7).
+   Not identified (item 2d), so those market-months hold nothing: gasoline before RB (HU, deliveries before 2006),
+   copper before 1988, cotton and cattle contracts of the 1970s.
+3. Markets and instruments (spec s4): the 16 panel commodities, root -> engine id as tools/lseg/lseg_roots.csv (CL
+   cm_wti, LCO cm_brent, NG cm_natgas, HO cm_heatoil, RB cm_gasoline, GC cm_gold, SI cm_silver, HG cm_copper, PL
+   cm_platinum, C cm_corn, W cm_wheat, S cm_soybeans, SB cm_sugar, KC cm_coffee, CT cm_cotton, LC cm_cattle). Two leg
+   instruments per market, far (D) and front (F); the spread id is cc_ plus the market name (cc_wti, ...). Recorded (CHECK_3.2_B s4): the 16
+   panel commodities are the panel's hand-picked surviving universe (gm-1.2.0 "Known and documented").
+4. Closed here (simplest reading of the registered text; none from results):
+   a. Contract series: catalog rows of the files L14* and L16* (the contract-level pulls of data entry item 2a), per M,
+      status ok, primary (duplicate_of empty), price fields (no TR. date field), code = lsegdata RIC_RE with the decade
+      digit ("^d"; decade digit >= 5 -> 19xx, as lseg_contract_v3), root by its ric_root (HU, the alternative root, is
+      not pulled). One series per (root, delivery): Brent the HistoricalPricing form first, every other root the
+      Datastream form first (data entry item 2a names those forms), the other form only where the first is missing.
+      Listing roots (NG, HO, GC, KC): the monthly continuous positions of lseg_roots.csv (depth_m and depth_m_l11); at
+      each month-end the identity day = lsegdata.trading_day(observation date, market) and the delivery of position n =
+      lseg_rules.held_contract(root, n, day, observed expiries); the contract's settlement that month = that position's
+      value; two positions naming one contract in a month -> no settlement for it that month (counted).
+   b. Observed expiries (item 2b-c): the TR.ExpiryDate monthly series of c1 and c2 of each root (primary), each date
+      mapped to the delivery whose rule last trading day lies within 10 days of it (the nearest; lseg_ident_v4's
+      method); identity facts, not returns.
+   c. Settlement at month-end t = the monthly value labelled t (Datastream: the last weekday; HistoricalPricing: the
+      calendar month-end label, which carries the last trading day's close).
+   d. As-of: lsegdata.load_design (lock verified, held-back instruments hidden, design part only) with the delay of spec
+      s3 step 10 and data entry item 1 for settlements: 0 days ("settlements are public the same day; no publication
+      lag"). Reason: the sheets of L12, L14 and L16 are not listed in lseg_live_sources.csv, so the reader's default (1
+      day, a build warning, not a registered delay) would hide the 2010-12-31 settlements at the as-of seal date and drop
+      the registered last return month 2010-12 of the contract-level roots.
+   e. Front leg (spec s3 step 2) F(t) = the nearest delivery at least three calendar months after month t with a
+      settlement at t ("listed" = priced at t, the reading of lseg_contract_v3 whose counts data entry item 3 records).
+      Far leg (step 3) D(t) = F's delivery month one year later; no settlement of D at t -> no position (no substitute).
+   f. Stale screen (step 4): the monthly form for every leg, because no Curve carry leg has daily settlements of an
+      identified contract in LOCK_LSEG_v5 (the daily L9a c1 / c2 series are continuous across rolls, which step 1 forbids
+      as a contract's series): a leg is stale at t when its settlement at t equals its settlement at t-1 exactly; a
+      contract without a settlement at t-1 is not stale.
+   g. Calendar exclusion (7.6 step 8): market m holds nothing at decision t when the last trading day or the first
+      notice day of F(t) or D(t) (item 2b) falls in calendar month t+1 (the holding month). Counted and printed.
+   h. Returns: leg return r_X(t) = P_X(t) / P_X(t-1) - 1 of the contract chosen at t-1; spread return r_s(t) = r_D(t) -
+      r_F(t) only where both legs have settlements at t-1 and t; otherwise neither leg earns (counted). Front-leg
+      return r_F(t) where F(t-1) has settlements at t-1 and t.
+   i. Volatility (step 8): gm.vol.estimate on the monthly r_s frame with CANDIDATE's vol parameters (model hybrid,
+      hl_months 6, fast_w 0.7, floor 0.75), no daily input; the spread history is every month with an r_s (the screens
+      remove positions, not data). Eligible(m, t) = gm.vol.slow(r_s) exists at t (at least 36 spread returns in the 120
+      months to t: "after 36 monthly spread returns, so the slow part and the floor exist"). Leg-cap volatility (spec s5
+      item 5) = the same estimate on r_F; no cap volatility -> no position.
+   j. Start (spec s7): t0 = the first decision month with at least 8 of the 16 markets eligible (availability counts
+      only); no position before t0; markets enter as they become eligible after it.
+   k. Scores (step 6): V1 s = +1, V2 s = +1 if B(t) = 0 else 0 (B(t) = 1 if F's settlement > D's at t), defined where t
+      >= t0, the pair exists at t, neither leg is stale and the calendar exclusion does not bite; elsewhere missing.
+      Version position p_v = s_v x 0.40 / v / n_v, n_v = markets with a non-missing p_v that month (V2's zeros count,
+      spec s5 item 1). Pod position p = (p_1 + p_2) / 2 at the unscaled stage (E7: a missing version adds 0, no position
+      where neither has one).
+   l. Book of the pod alone (spec s5 items 3-5, book.py run() conventions): one block (all 16 are commodities); block
+      return r_b(t) = sum_m p(m, t-1) r_s(m, t); block scaler k = 1 / (36-month std, at least 24, x sqrt 12), lagged one
+      month, at most 50; unscaled book = p x k (0 where missing); active months = months with r_b x k; book scaler
+      0.10 / (36-month std of the active raw book return, at least 24, x sqrt 12), lagged; legs far = +pos, front = -pos;
+      E11 joint cap (gm.book.cap_positions, group {far, front}, cap_from front, cap = 0.10 x 0.10 x 3 / front-leg
+      volatility); 5x gross cap with gross weight 1 per leg; gross return = sum of leg positions at t-1 x leg returns at
+      t, where active and the book scaler exist.
+   m. Costs (spec s9): one-way cost per leg = gm.book.cost_bp(engine id)[0] bp (4 bp; natural gas 6 bp); a leg's trade
+      at t = |L(t) - L(t-1)| when it holds the same contract at t and t-1, else |L(t)| + |L(t-1)| (close one contract,
+      open the next: "rolls are charged as the trades they are"); no rolls-per-year term; net(t) = gross(t) - c x
+      cost(t-1), c = 1 or 2 (book.py timing; missing positions as book.py: a trade from a missing position is not
+      charged).
+   n. Holding cut (7.3 item 5): decisions are computed to month-end 2010-12, which earns nothing; the last return month
+      is 2010-12 (decision 2010-11).
+   o. Window (7.7): return months 1975-01..2010-12 with a net test return; fewer than 120 = "insufficient data". The
+      expected length, recorded now from lock metadata (lseg_contract_v3 LEGS and the continuous-series first dates of
+      docs/research/batches/META_lseg_v5_2026-11-27.csv): eight markets eligible about 1983 (corn, sugar, silver,
+      cotton, soybeans, wheat, gold, coffee), first scaled test month about 1987, so about 280-290 months; the job
+      computes the exact window from availability alone and prints it (WINDOW line) before any statistic.
+   p. Timing: k = 0 decisive (7.3 item 3); reported: the one-month delay (positions applied one month late on the leg
+      columns, book.py delay_months 1); no k = 1 form; no weekly check (spec s7: no daily far-contract settlements).
+5. Tests and verdict (7.7), Core book v1 EMPTY:
+   T1 = gm.stats.alpha_boot(pod net, zero book) on the window (beta 0, alpha = mean; one-sided centred stationary
+   bootstrap p, 10,000 resamples, mean block 6, seed 20261101). B1's Core-eligible pods: none (Curve carry is not 7.2
+   qualified and has no registered live source: lsegdata LIVE_START is not set), so the Holm count is 0 and the raw p is
+   reported outside it. T2 = alpha at twice the costs (printed; decisive only for Core). T3 = 1,000 placebos (gm.stats
+   placebo_perms, 12-month blocks from the window's first month, seed 20261101): both versions' score arrays (step 6,
+   missing values included, as gm.book._perm_rows moves w) moved jointly for all markets, then re-sized with each
+   month's own volatility, scalers, caps and costs; share with net Sharpe >= the pod's on the window < 0.05. T4: not
+   applicable (empty Core book; the reading of "Core book v1" item 4j: test 5 compares two books at the same volatility
+   target and a zero book has none; the registered text adapts only the alpha). Verdict: Core impossible (not
+   Core-eligible; no rebuild is run); Incubator = window >= 120, T1 alpha > 0 (point estimate) and T3 pass; else
+   Shelved; under 120 months "insufficient data". 7.6 step 10: a failed test is written "not shown".
+6. Reported, not decisive (7.7 list, those that apply; spec s5, s10, s14): the eras 1975-89 and 1990-2010 (alpha =
+   mean with a one-sided 95% lower bound from the T1 bootstrap draws, Sharpe); by class (one class, commodities) and by
+   market (gross contribution); share of versions positive (V1 alone, V2 alone, each as the whole pod through item 4l-m);
+   the one-month delay; cost sensitivity (T2); tuned knobs 1 (the hybrid estimator, 7.8 items 3-4); fragility (largest
+   loss of the annualised net mean when one calendar year or one market is removed; flag when one year gives more than
+   40% of the net profit); P4 with the S&P 500 alone (M1 outcome; A1 panel eq_us_spx, a2_batch.p4) from 1978-01; skew,
+   Lo-adjusted Sharpe, achieved volatility; share of held market-months with a binding leg cap; correlation of the pod's
+   monthly net return with Carry's and Trend's commodity blocks of the A2-final book at k = 0 (book.run blocks) by era;
+   the falsifier lines of spec s10 (items 1-3 on V1's equal-risk positions before scaling, gross; item 2 split by each
+   market's own state at the decision; item 3 = ten worst V1 months vs months with a held front moving from at or below
+   to above its far contract, against that share over all window months; item 4 NOT computed: USREC is in no registered
+   source; item 5 and the P3 flag: "loss not seen" unless a crude or oil-product spread (WTI, Brent, heating oil,
+   gasoline) is held in 1990-08..1990-10 or an item-3 month is in the window); the selection inflation of 7.8 item 2
+   (printed beside). Not applicable: Sharpe difference of the Core book with the pod (empty book), k = 1 flagged share,
+   weekly check, untouched markets (none of the pod's markets is held back).
+7. Seal and truncation: the job reads only the design part (load_design) and checks every output with gm.seal
+   check_output. Pod truncation (the registered gate for new paths, 7.4): at the 8 cut dates of gm_engine.CUT_DATES the
+   pod is rebuilt with every LSEG observation dated after T removed (contract prices, continuous positions, expiry series)
+   and compared with the full run for months <= T: contract table, legs, states, eligibility, scores, volatilities,
+   version and pod positions, final leg positions, gross and net returns (0 differing cells = PASS). In the cloud on a
+   mock store; on the PC inside the job before any statistic (STOP on a FAIL; PASS / FAIL and counts only).
+8. Printing: Sharpe ratios, means, alphas, p-values, shares and correlations only over at least 60 months, else count
+   and sign; worst-month levels not printed; ids, counts, PASS / FAIL; no LSEG or Bloomberg value.
+9. Trial count (7.8 item 1): two gm/trials.csv rows written by the coordinator from the job's TRIAL ROW lines: one
+   "pod" row (Curve carry, k = 0, LOCK_LSEG_v5; sr_9010, t_9010, maxdd_9010, sr_7589, turnover of the pod's net return)
+   and one "diag" row (the spec s10 falsifier computations, no Sharpe columns). The placebos, version-alone runs and
+   fragility runs are report lines of the pod trial.
+10. Job (tools/bbgq/jobs/gm_b1_v1.py, the gm_diag_preb_v1 pattern): STOP before any Bloomberg or LSEG value is read
+   unless the gm .py files equal engine_ref.json's code block; sha256(lib\engine_ref.json) = cebd4932...c955e39;
+   config.ENGINE_VERSION gm-2.2.1 and the config hashes BASE f1d682c384, CANDIDATE 438a092b53, A1_INCUMBENT 77374d7bef,
+   A2_CHALLENGER 1faa343535; lib b1_curve.py, diag_a2.py, a2_batch.py, a1_panel.py, gm_engine.py, bbg_panel.py,
+   bbgdata.py, lsegdata.py, lseg_rules.py = the sha256 registered in the job (LIB_SHA); the book / pod rows of
+   lib\gm\trials.csv have the digest f200d02ce574f002753c0d9ad54ae7a082c8e7f3d2ad120a14905fcf498e268a, N = 41;
+   results\gm_a2_v1.txt gives the A2 facts; results\gm_core_v1.txt has "CORE V1 JOB DONE" and "CORE BOOK V1 EMPTY";
+   results\gm_diag_preb_v1.txt has "PREB JOB DONE" (step 7 ended); the Bloomberg store is LOCK_v2; the LSEG store's lock
+   id (manifest and LOCK, read before any table) is LOCK_LSEG_v5; the free inputs match the reference. Then: the A1
+   panel rebuilt, extension-only, id e7f98d44... (compared with the saved file when present), the A2-final book as run
+   (diag_a2.as_run); the pod truncation gate (item 7); the WINDOW and data lines (counts only); the tests, verdict and
+   reported lines; the TRIAL ROW lines. Nothing is written to work\ or lib\.
+11. Cloud: no statistic of Curve carry on LSEG or A1 data. Cloud work = the code, tests on a mock LSEG store with
+   invented contract prices (tests/b1_curve_smoke.py in tests/run_tests.py: leg rules, identity, screens, sizing, caps,
+   contract-space costs, placebo identity, truncation, printing, job stops), the engine gates (k = 0 reproduction 24 of
+   24, truncation 8 of 8: gm/ is unchanged, so engine_ref.json is unchanged), build_engine, and the build note
+   docs/research/batches/B1_BUILD_2026-11-28.md (sha256 table and queue).
+12. After the run (an "outcomes" paragraph under this entry): the verdict (Incubator, Shelved or insufficient data), the
+   window, T1-T3 values; then the batch review (7.6 step 10). Nothing in the specs, the register or 7.x changes from this
+   run except that status word.
+
 ## data: card inputs (FRED / ALFRED first release, macro-data branch) (registered 2026-11-27, BEFORE first use): 7.4 E15
 Registered data entry (no rule change; no statistic of any card rule has been computed on these files; the builder
 read only file metadata: first / last dates, row counts, the fetch mode in the branch manifests, and the size of month-
