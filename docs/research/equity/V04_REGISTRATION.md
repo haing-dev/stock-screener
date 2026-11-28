@@ -676,3 +676,48 @@ as such. Replaces R1.1 (record); R1.2 (material) and R1.3 (screenability) stay.
     (A10 item 9: writer sees recall, base, lift and per-criterion rejection shares only; every change cites a quote);
     if fewer than 2 of the 3 pilot investors pass after their round, no more recipes are written. Thin investors
     (two documents) cannot be classed above Incubator whatever their recall.
+24. **eq_recall 1.2.0 registered (2026-11-28, before the code and before any v2-recipe recall number): the five
+    revision-round recipes** (A10 item 9; recipes pilot/batch2/{DRU,STA,HOH,ZLA,PIL}/recipe/RECIPE_v2.md, written after
+    the v1 recall feedback). druckenmiller_v2, stahl_v2, hohn_v2, zlatev_v2, pilecki_v2 are added beside the v1 functions,
+    which stay byte-for-byte unchanged with numbers identical to 1.1.2 (checked on the smoke mock against 1.1.2 read from
+    git). Statistics unchanged (RECALL_SPEC_v1, seed 20261127). Every v2 block carries "revision after seeing recall v1:
+    same purchases, not independent evidence" plus its v1 labels. TARGETS: each v2 right after its v1; PARTS[3] = the
+    five v2 recipes; job eq_recall_v3 = run_part part=3 only (v1 results are logged, not rerun).
+    - **New pulls (job eq_recall_pull_v3; WRDS subscription tables only; resumable):** rc_s34sec_<year> 2009-2025 =
+      the CUSIPs present in tfn.s34 (first versions, fdate = rdate, any filer, shares > 0) at each 13F quarter-end
+      (stahl_v2 C3: "matched in the 13F security list"); rc_msf0 = crsp.msf_v2 2004-01 .. 2006-12, same fields and
+      share filter as ref_msf (pilecki_v2's own-history ranks need 60 month-ends before t; used ONLY there).
+    - **druckenmiller_v2:** decisive = ((GR3 >= 0.20 OR E04 >= 0.20) AND P02 > 0) OR (sector 10/15/20/25 AND IND_NI <
+      0); IND_NI = sum of net income TTM (quarterly niq TTM) over the eligible stocks of the GICS industry at t, at least
+      3 present; E04 = adjusted FY2 / FY1 - 1 (FY1 <= 0 missing); a missing measure fails only its own side of an OR.
+      House set (as v1). Full form NOT implemented: as in v1, the recipe does not say how its 11 grid lines combine.
+    - **stahl_v2:** decisive = B1 AND B2 AND (B3 OR B4) with C04s = (cshoq x ajexq) now / 12 consecutive fiscal
+      quarters before (R39 split-adjusted) in B2 and B3; O05 = 0 when the stock's CUSIP (CRSP names at the 13F
+      quarter-end before t) is in rc_s34sec at that quarter-end and no index-manager holding is found, missing when not
+      in the list. **Universe: the recipe's own set with the house exclusions off** (its A0: "the generic exclusions
+      are house rules ... not his"), as pilecki/nygren/lilu; the house-set result is a reported second line.
+      Full form: B3g x B4g at 0.33 / 0.50 (4 entry rules; P1 and Z2g change ranking and size only).
+      Diagnostic printed: decisive passes and counted purchases that pass, split into B3 passed with O05 = 0, B3 passed
+      with O05 > 0, and B4 only.
+    - **hohn_v2:** decisive = A1 v2 (sector 25 at the date excluded except industry group 2540) AND A2 AND (B1 v2 OR
+      B1i) AND P1. B1 v2 = median of the 10 yearly Q01 values > 15%, all 10 consecutive fiscal years present; a year
+      with Q01 denominator <= 0 counts as +infinity if EBIT > 0, -infinity if EBIT <= 0; Q01 missing otherwise counts
+      as -infinity (at or below 15%); the median of 10 is the mean of the 5th and 6th values, and +inf with -inf in
+      those places gives 0 (fails). House set (as v1). Full form: + B2 (S02), B4 (S03), A3 (v1 codes + group 2540), P1g
+      0 / 1 / 2 (3 versions). Diagnostic: passes (decisive, and counted purchases) in group 2540 while in sector 25.
+    - **zlatev_v2:** decisive = B1 (groups 4520, 4530) AND B3a AND B4a (< 2) AND B4b AND P1 AND A1. B3a = gross margin
+      TTM >= the median among eligible stocks with the margin in the same GICS sub-industry at t; fewer than 5 such
+      stocks: industry; still fewer: all B1 stocks. P1 = price / year-3 EPS <= 20, year-3 = FY2 x (FY2 / FY1) (FY2
+      alone if FY1 <= 0 or missing; <= 0 fails), on the unadjusted I/B/E/S basis against the CRSP price as traded
+      (1.1.1 S1). House set (as v1). Full form: B1-g {v1 industries, groups 4520+4530} x B3a-g {1/2, 1/3} x B4a-g
+      {1, 2, 3} x P1-g {FY2, year-3} x {15, 20} + B3b + A2 = 48 versions; the B3a fallback set is that version's B1
+      set. Diagnostic: passes that need the year-3 leg (pass, but price / FY2 > 20 or FY2 <= 0).
+    - **pilecki_v2:** decisive = A1 AND A2 AND B1 v2 (ROE rank in the comparison group > 0.30; ROE missing fails) AND
+      B2 AND B3 AND P1 v2 (group leg (g) >= 0.70 as 1.1.1, OR own-history leg (h) >= 0.70). (h): for V02 and V07, the
+      share of the stock's own month-end values at t-60 .. t-1 that are <= its value at t, each past value as known
+      then (CRSP company value at that month-end; quarterly accounts by the 1.0.3 as-of rule; link and line as at that
+      month), at least 48 of 60 present; a negative value at t ranks 0; 4010 / 4030 = mean of the two ranks (both
+      needed), 4020 = the V02 rank; (h) missing = group leg only. Computed for eligible rows in sector 40 or
+      sub-industry 45102020. Own set (as v1). B4 (December sleeve) NOT IMPLEMENTED as in v1 ("decisive minus B4").
+      Full form: B1 rank > 0.30 / > 0.5 (2 versions). Diagnostic: passes that come only through (h), and how many of
+      those have (g) < 0.5.
