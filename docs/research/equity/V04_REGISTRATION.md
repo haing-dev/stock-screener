@@ -584,3 +584,54 @@ as such. Replaces R1.1 (record); R1.2 (material) and R1.3 (screenability) stay.
     17.57; control baseline 0.56, reference-book baseline 0.55. Largest rejector: the price trigger P2|P3 (59% of
     purchases; P2 alone 100%). No rule changed. Next as registered: one revision round (writer sees recall, base rate,
     lift and per-criterion rejection shares only; every change cites a quote); both results logged.
+21. **Recall code eq_recall 1.1.0 registered (2026-11-28, before any 1.1.0 run): the other recipes.** Code sha256
+    db3651587e32...bbb276 (seal_exempt job 9 `recall`; 1.0.3 moved to code_history). Statistics unchanged
+    (RECALL_SPEC_v1: purchases at the quarter-end before, cells quarter x sector x size third, 2,000 quarter draws, seed
+    20261127 for every investor, gate, two baselines, per-criterion shares, masked cross table). run() evaluates in
+    order: kantesaria_v1 (unchanged; its sections and stored numbers equal 1.0.3's on the smoke mock, checked against
+    1.0.3 read from git), kantesaria_v2 (RECIPE_v2.md, the registered revision round; label "revision after seeing
+    recall v1: same 29 purchases, not independent evidence" + held-out failed + covers 7 of 22), druckenmiller_v1,
+    stahl_v1, hohn_v1, zlatev_v1, pilecki_v1, nygren_v1, lilu_v1, then one summary table; sosin_v1 is written but
+    reported "not in eq_conv_panel (13F filer 21801 to be added by an eq_conv input change); not measured" (eq_conv
+    unchanged). Labels from READING_STATUS_2026-11-27 on every section block; firm-wide 13F filers flagged (A6: Stahl /
+    Horizon Kinetics, Nygren / Harris Associates). Stored: rc_pass_<recipe>, rc_recall_summary_v11 (v1's sets kept).
+    - **New pulls (job eq_recall_pull_v2; WRDS subscription tables only; resumable, stored sets reused):** rc_fqx2
+      (comp.fundq cshfdq, ppentq, dvpsxq), rc_funda2 (comp.funda seq, mib, txt, pi), rc_ibes2 (ibes.statsum_epsus
+      fpi 0 / 1 / 2 with fpedats, meanest, numest), rc_idx (tfn.s34 first versions, shares of the managers whose
+      tfn.s34names name contains VANGUARD GROUP, BLACKROCK, STATE STREET or BARCLAYS GLOBAL INV, summed per quarter-end
+      and CUSIP, 2009-06 .. 2025-06; the names found are printed).
+    - **NOT IMPLEMENTED rule:** a decisive criterion whose data is not on WRDS, or that cannot be evaluated with prices
+      up to t, is left out; the decisive entry is evaluated without it and every line block carries "decisive minus
+      <ids>". List: pilecki_v1 minus B4 (December sleeve, chosen at the November month-end, after t). No other decisive
+      criterion is left out. Full forms implemented for every recipe except druckenmiller_v1 (the recipe does not say
+      whether its eleven grid lines combine one at a time or crossed).
+    - **Eligible set:** the house set of 1.0.3 (A8 2a exclusions out) unless the recipe states that the house
+      exclusions do not apply to it: pilecki_v1 (section 0) and nygren_v1 (section 3) use all industries. Stahl's
+      recipe leaves sector 60 to registration: house set (sector 60 out). Druckenmiller ("only if the pilot universe
+      requires it") and Li Lu ("no industry is excluded" refers to his rules): house set. Size-third cells are made on
+      each recipe's own set (house cells = 1.0.3's).
+    - **Choices where the recipe text left a point open (fixed here):** percentiles of the new recipes = (rank - 1) /
+      (n - 1) with average ties inside the group the recipe names, over its eligible set at t, missing measures not
+      ranked; "below / above the median" = percentile < / > 0.5. P02 momentum 6-1 = months t-5 .. t-1 (the v0.1
+      "t-6 .. t-2" in v1.0 indexing), at least 4 of 5. Price-window rules (PIL A2, LIL B2) need 9 of the 12 month-ends
+      and the close at t (as P03); a low equal to an earlier one counts as set. DRU: 3-year revenue growth with a
+      base <= 0 missing, a negative end value = -100% (as 1.0.0's growth rule). STA: C04 = cshfdq x ajexq against 12
+      quarters before; O05 = 13F shares at the last quarter-end before t over CRSP shares then, line level, none found
+      = missing (fails); B04 net debt as 1.0.3's B01 net debt (missing parts = 0 if any present). HOH: Q01 per fiscal
+      year with R34 = seq + mib (mib missing = 0), debt and cash missing = 0, equity missing = missing, tax rate
+      txt / pi (missing when pi <= 0), the denominator averaged over the year; S04* needs 10 consecutive years. ZLA:
+      gross margin = (saleq - cogsq) TTM; price / FY2 on the I/B/E/S share basis as E01. PIL: 2023 structure for
+      names coded 45102020 (Financials if today's code is 40201060) and pre-2016 group 4040 (today's group if today in
+      sector 40, else not financial), today's code = the last comp.co_hgic spell; group size = eligible financials in
+      the group at t; the value score is ranked again inside the comparison group; dividends per share missing = 0,
+      intangibles missing = tangible book missing. NYG: NTM EPS = FY1 and FY2 means weighted by the share of FY1
+      still ahead at t (LSEG's NTM definition; both needed); I/B/E/S long-term growth read as percent; r = max(8%,
+      10-year Treasury) because the 7-year is not loaded (the recipe's flag is printed); dividend yield = dividends
+      per share of the last 4 quarters on the latest quarter's share basis over the price at t put on that basis with
+      the CRSP factor; A2 missing = excluded (missing fails); B1 ranks among stocks with the measure. LIL: Q02 with
+      cash and short-term debt missing = 0; A2 median over the last 20 fiscal quarters incl. the latest, >= 12 present;
+      "highest fifth" = percentile > 0.8 (as A1's reversed < 0.2); full-form B2 "within 12 months" read literally
+      (always met when the measure exists). KAN v2: A5 needs both 3-year windows present (missing = fails, as v1);
+      strict variant on both windows; full form crossed (1,296 versions, as v1's 108). Full forms with a selling or
+      size-only line count its versions with the decisive entry (Stahl 32 -> 4 entry rules, Nygren 10 books, Li Lu
+      10 versions).

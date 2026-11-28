@@ -8,13 +8,14 @@ pull(sql, save, load, out, budget=N)   stores rc_* data sets on WRDS (resumable;
                                        (Compustat annual), rc_fqx (extra quarterly items), rc_t10 (10-year constant-
                                        maturity Treasury from the WRDS FRB tables; the step stops with a clear message
                                        if no such table is found)
-run(load, save, out)                   universe at each quarter-end 2009-12 .. 2025-09 (eq_ref's R3 universe), the
+run(load, save, out)                   (1.1.0: every recipe of TARGETS in order, then one summary table)
+                                       universe at each quarter-end 2009-12 .. 2025-09 (eq_ref's R3 universe), the
                                        recipe's measures and pass flags (decisive and full form), conviction purchases
                                        from eq_conv_panel, recall, base rate by sector x size-third cells, lift, the
                                        2,000-draw quarter bootstrap (seed 20261127), the two baselines, per-criterion
                                        rejection shares and the masked cross table. Prints counts, ratios and intervals
-                                       only (no company, no identifier, no row). Stores the pass panel (rc_pass_panel)
-                                       and the summary (rc_recall_summary) on WRDS.
+                                       only (no company, no identifier, no row). Stores the pass panel (1.1.0:
+                                       rc_pass_<recipe>) and the summary (1.1.0: rc_recall_summary_v11) on WRDS.
 
 No forward return is computed or read: monthly returns are read only up to the last evaluation quarter-end (2025-09)
 and every measure at quarter-end t uses data up to t (12-month price and return windows end at t). Seal-exempt modules
@@ -23,7 +24,12 @@ score) are copied from eq_ref 1.1.0 with the changes noted at each copy.
 
 Recipes: the criteria of a recipe live in ONE function (kantesaria_v1) that returns pass flags per criterion; the
 decisive entry and the full-form versions are compositions of those flags (kantesaria_v1_entry, kantesaria_v1_full),
-registered in RECIPES so later recipes are added beside it.
+registered in RECIPES so later recipes are added beside it. 1.1.0: one such triple per recipe (see 1.1.0 below);
+RECIPES also holds each recipe's eligible set ('house' = A8 2a exclusions out, as 1.0.3; 'all' = the recipe states
+that the house exclusions do not apply: pilecki_v1, nygren_v1), labels, NOT IMPLEMENTED ids and coverage columns.
+Percentiles of the new recipes: pct01 (0 = lowest, 1 = highest) inside the group the recipe names, over the recipe's
+eligible set at t; a missing measure fails its criterion unless the recipe says otherwise (lilu_v1 AVOID: missing =
+not excluded; stahl_v1 B4: no estimate = 0).
 
 1.0.0 (2026-11-27): first version. 1.0.1 (same day, after an independent review, before run() was ever executed;
 pull() unchanged): stop when the 10-year Treasury is missing at any evaluation quarter-end; the reference-book revision
@@ -36,6 +42,20 @@ FRB tables it saw (names and their 10-year-like column names: metadata only) and
 uses the same series from its public source: the Federal Reserve H.15 10-year constant-maturity yield as published by
 FRED (DGS10), last daily value of each month 2008-06 .. 2025-12, embedded below (taken from branch macro-data
 research/DGS10.csv, 2026-11-01 download). src = "public.fred.dgs10"; run() unchanged.
+1.1.0 (2026-11-28; V04_REGISTRATION A13 item 21, registered before any 1.1.0 run): nine more recipes beside
+kantesaria_v1, each a flag function + a decisive entry (+ a full form where the recipe states it clearly), evaluated
+in order by run(): kantesaria_v1 (numbers identical to eq_recall_v1: same panel, same seed), kantesaria_v2 (the
+registered revision round, RECIPE_v2.md), druckenmiller_v1, stahl_v1, hohn_v1, zlatev_v1, pilecki_v1, nygren_v1,
+lilu_v1; sosin_v1 is written but not measured (13F filer 21801 is not in eq_conv_panel). New pulls (resumable, WRDS
+subscription tables only): rc_fqx2 (comp.fundq cshfdq, ppentq, dvpsxq), rc_funda2 (comp.funda seq, mib, txt, pi),
+rc_ibes2 (ibes.statsum_epsus FY1, FY2 and long-term growth with fpedats), rc_idx (tfn.s34 holdings of the three
+largest index managers, by name in tfn.s34names). Bootstrap seed 20261127 for every investor.
+NOT IMPLEMENTED rule: a decisive criterion whose data is not on WRDS, or that cannot be evaluated with prices up to t,
+is left out; the decisive entry is evaluated without it and every printed line block of that investor carries the
+label "decisive minus <ids>". Per investor: pilecki_v1 minus B4 (December sleeve: chosen at the November month-end,
+after t). All other decisive criteria are implemented. Full forms: implemented for kantesaria_v1, kantesaria_v2,
+stahl_v1, hohn_v1, zlatev_v1, pilecki_v1, nygren_v1, lilu_v1; NOT for druckenmiller_v1 (the recipe does not say how
+its eleven grid lines combine).
 """
 import json
 import time
@@ -46,10 +66,10 @@ import pandas as pd
 # >>> FROZEN INPUT
 CFG = json.loads("{\"y0\": 2007, \"y1\": 2025, \"form0\": 200901, \"form1\": 202511, \"ret0\": 201001, \"ret1\": 202512, \"top_n\": 1500, \"min_price\": 5.0, \"min_dv\": 2000000.0, \"top_frac\": 0.1, \"keep_frac\": 0.2, \"hold\": 12, \"cost_big\": 0.001, \"cost_small\": 0.0025, \"big_n\": 500, \"basket_cost\": 0.001, \"max_missing\": 3, \"stale_days\": 270, \"q_lag_days\": 45, \"ibes_tol_days\": 35, \"cap\": 0.025}")
 INVESTORS = json.loads("[{\"name\": \"Joel Greenblatt\", \"group\": \"roster\", \"mgrnos\": [\"10969\", \"12775\"], \"quant\": true}, {\"name\": \"Terry Smith\", \"group\": \"roster\", \"mgrnos\": [\"13408\"]}, {\"name\": \"Dev Kantesaria\", \"group\": \"roster\", \"mgrnos\": [\"14460\"]}, {\"name\": \"Chris Hohn\", \"group\": \"roster\", \"mgrnos\": [\"11194\"]}, {\"name\": \"Glenn Greenberg\", \"group\": \"roster\", \"mgrnos\": [\"16080\"]}, {\"name\": \"Val Zlatev\", \"group\": \"roster\", \"mgrnos\": [\"7142\"]}, {\"name\": \"Derek Pilecki\", \"group\": \"roster\", \"mgrnos\": [\"8799\"]}, {\"name\": \"Bill Nygren and Alex Fitch\", \"group\": \"roster\", \"mgrnos\": [\"43485\"]}, {\"name\": \"Murray Stahl\", \"group\": \"roster\", \"mgrnos\": [\"44850\", \"49373\"]}, {\"name\": \"Pat Dorsey\", \"group\": \"roster\", \"mgrnos\": [\"14201\"]}, {\"name\": \"Chris Davis\", \"group\": \"roster\", \"mgrnos\": [\"78320\"]}, {\"name\": \"Joseph Shaposhnik\", \"group\": \"roster\", \"mgrnos\": []}, {\"name\": \"Alex Sacerdote\", \"group\": \"roster\", \"mgrnos\": [\"11405\"]}, {\"name\": \"David Einhorn\", \"group\": \"roster\", \"mgrnos\": [\"42315\"]}, {\"name\": \"Stan Druckenmiller\", \"group\": \"roster\", \"mgrnos\": [\"13021\", \"23704\"]}, {\"name\": \"Todd Kantor\", \"group\": \"roster\", \"mgrnos\": [\"13431\"]}, {\"name\": \"Bob Robotti\", \"group\": \"roster\", \"mgrnos\": [\"10247\"]}, {\"name\": \"Fred Martin\", \"group\": \"roster\", \"mgrnos\": [\"23050\"]}, {\"name\": \"Brad Gerstner\", \"group\": \"roster\", \"mgrnos\": [\"13112\"]}, {\"name\": \"Chris Bloomstran\", \"group\": \"roster\", \"mgrnos\": [\"11757\"]}, {\"name\": \"Li Lu\", \"group\": \"roster\", \"mgrnos\": [\"14546\"]}, {\"name\": \"Warren Buffett\", \"group\": \"control\", \"mgrnos\": [\"8350\"]}, {\"name\": \"Henry Ellenbogen\", \"group\": \"control\", \"mgrnos\": [\"9442\"]}, {\"name\": \"Jim Chanos\", \"group\": \"control\", \"mgrnos\": [\"12867\"]}, {\"name\": \"John Lennon\", \"group\": \"control\", \"mgrnos\": [\"9090\"]}, {\"name\": \"Peter Keefe\", \"group\": \"control\", \"mgrnos\": [\"5300\"]}, {\"name\": \"Tobias Carlisle\", \"group\": \"control\", \"mgrnos\": []}, {\"name\": \"Arnold Van Den Berg\", \"group\": \"control\", \"mgrnos\": [\"15095\"]}, {\"name\": \"Eddy Elfenbein\", \"group\": \"control\", \"mgrnos\": []}]")
-TARGET = json.loads("{\"name\": \"Dev Kantesaria\", \"mgrnos\": [\"14460\"], \"recipe\": \"kantesaria_v1\"}")
+TARGETS = json.loads("[{\"name\": \"Dev Kantesaria\", \"mgrnos\": [\"14460\"], \"recipe\": \"kantesaria_v1\"}, {\"name\": \"Dev Kantesaria\", \"mgrnos\": [\"14460\"], \"recipe\": \"kantesaria_v2\"}, {\"name\": \"Stan Druckenmiller\", \"mgrnos\": [\"13021\", \"23704\"], \"recipe\": \"druckenmiller_v1\"}, {\"name\": \"Murray Stahl\", \"mgrnos\": [\"44850\", \"49373\"], \"recipe\": \"stahl_v1\"}, {\"name\": \"Chris Hohn\", \"mgrnos\": [\"11194\"], \"recipe\": \"hohn_v1\"}, {\"name\": \"Val Zlatev\", \"mgrnos\": [\"7142\"], \"recipe\": \"zlatev_v1\"}, {\"name\": \"Derek Pilecki\", \"mgrnos\": [\"8799\"], \"recipe\": \"pilecki_v1\"}, {\"name\": \"Bill Nygren and Alex Fitch\", \"mgrnos\": [\"43485\"], \"recipe\": \"nygren_v1\"}, {\"name\": \"Li Lu\", \"mgrnos\": [\"14546\"], \"recipe\": \"lilu_v1\"}, {\"name\": \"Cliff Sosin\", \"mgrnos\": [\"21801\"], \"recipe\": \"sosin_v1\"}]")
 # <<< FROZEN INPUT
 
-VERSION = "eq_recall-1.0.3"
+VERSION = "eq_recall-1.1.0"
 COM = ("securitytype = 'EQTY' and securitysubtype = 'COM' and sharetype = 'NS' and primaryexch in ('N','A','Q')")
 MEASURES = ["ey", "bp", "mom", "roe", "acc", "pio", "rev"]
 GROUPS = {"value": ["ey", "bp"], "momentum": ["mom"], "quality": ["roe", "acc", "pio"], "expectations": ["rev"]}
@@ -72,6 +92,15 @@ FUNDA_COLS = ["revt", "ni", "epsfx", "epspx", "oiadp", "oibdp", "capx", "oancf",
               "dlc", "che", "csho", "cshfd", "ajex"]
 FQX_COLS = ["capxy", "oibdpq", "intanq", "stkcoq", "stkcoy"]
 REF_BASES = ["msf", "link", "fq", "gics", "ibes", "names"]
+# 1.1.0: inputs of the other recipes (V04_REGISTRATION A13 item 21)
+FQX2_COLS = ["cshfdq", "ppentq", "dvpsxq"]          # diluted shares (R15), net PPE (R22), dividends per share (R16)
+FUNDA2_COLS = ["seq", "mib", "txt", "pi"]          # equity, minorities (R34 = seq + mib), income tax (R12), pre-tax (R11)
+IBES0 = "%d-06-01" % CFG["y0"]
+IDX_PATTERNS = ["VANGUARD GROUP", "BLACKROCK", "STATE STREET", "BARCLAYS GLOBAL INV"]  # O05: the three largest index
+IDX0, IDX1 = "2009-06-30", "2025-06-30"            # managers (BGI = BlackRock's index arm before its 2009-12 purchase)
+NEW_SETS = ["rc_fqx2", "rc_funda2", "rc_ibes2", "rc_idx"]
+FIRM_WIDE = {"Murray Stahl": "Horizon Kinetics", "Bill Nygren and Alex Fitch": "Harris Associates",
+             "Chris Davis": "Davis Selected"}      # A6: firm-wide 13F filers ("firm, not person")
 
 
 # ----------------------------------------------------------------------------------------------------------- pulls
@@ -251,6 +280,13 @@ def pull(sql, save, load, out, budget=7000):
     step("rc_fqx", lambda: _select_existing(sql, out, "comp", "fundq", ["gvkey", "datadate", "fyearq", "fqtr"], FQX_COLS,
                                             qwhere))
     step("rc_t10", lambda: _t10(sql, out))
+    # 1.1.0: inputs of the other recipes
+    step("rc_fqx2", lambda: _select_existing(sql, out, "comp", "fundq", ["gvkey", "datadate", "fyearq", "fqtr"],
+                                             FQX2_COLS, qwhere))
+    step("rc_funda2", lambda: _select_existing(sql, out, "comp", "funda", ["gvkey", "datadate", "fyear"], FUNDA2_COLS,
+                                               fwhere))
+    step("rc_ibes2", lambda: _ibes2(sql))
+    step("rc_idx", lambda: _idx(sql, out))
     left = [n for n in _needed() if not (have(n) or (n.startswith("ref_") and have("rc_" + n[4:])))]
     if "rc_t10" in left:
         out("STOP: the 10-year Treasury yield is not available (RECALL_SPEC_v1: the job stops and says so)")
@@ -259,7 +295,35 @@ def pull(sql, save, load, out, budget=7000):
 
 def _needed():
     return (["ref_" + b for b in REF_BASES] + ["ref_dv_%d" % y for y in range(CFG["y0"] + 1, CFG["y1"] + 1)]
-            + ["rc_funda", "rc_fqx", "rc_t10"])
+            + ["rc_funda", "rc_fqx", "rc_t10"] + NEW_SETS)
+
+
+def _ibes2(sql):
+    """1.1.0: I/B/E/S summary EPS for FY1 and FY2 (fpi 1, 2) and long-term growth (fpi 0), with the period end date"""
+    cols = list(sql("select * from ibes.statsum_epsus limit 1").columns)
+    cur = ", curcode" if "curcode" in cols else ""
+    return sql("select ticker, cusip, statpers, fpi, fpedats, meanest::float8 as meanest, numest%s from "
+               "ibes.statsum_epsus where fpi in ('0', '1', '2') and measure = 'EPS' and statpers between '%s' and "
+               "'%d-12-31' and meanest is not null" % (cur, IBES0, CFG["y1"]))
+
+
+def _idx(sql, out):
+    """1.1.0 (O05): 13F shares held by the three largest index managers, summed per quarter-end and CUSIP (first
+    versions, fdate = rdate, as eq_conv). Managers found by name in tfn.s34names; the names found are printed
+    (metadata only)."""
+    nm = sql("select distinct mgrno, mgrname from tfn.s34names")
+    up = nm.mgrname.astype(str).str.upper()
+    hit = nm[np.logical_or.reduce([up.str.contains(p_, regex=False) for p_ in IDX_PATTERNS])]
+    ids = sorted({int(x) for x in hit.mgrno})
+    for p_ in IDX_PATTERNS:
+        h = hit[hit.mgrname.astype(str).str.upper().str.contains(p_, regex=False)]
+        out("index managers '%s': %d 13F ids (%s)" % (p_, h.mgrno.nunique(), "; ".join(
+            sorted({str(x)[:40] for x in h.mgrname})[:12])))
+    if not ids:
+        raise RuntimeError("no index manager found by name in tfn.s34names")
+    return sql("select rdate, cusip, sum(shares)::float8 as sh, count(distinct mgrno) as nmgr from tfn.s34 where "
+               "fdate = rdate and rdate between '%s' and '%s' and mgrno in (%s) and shares > 0 group by rdate, cusip"
+               % (IDX0, IDX1, ",".join(map(str, ids))))
 
 
 # ------------------------------------------------------------------------------------------------------- helpers
@@ -433,6 +497,54 @@ def recall_quarter_measures(q):
     return m
 
 
+def recall_quarter_measures2(f):
+    """1.1.0: quarterly inputs of the other recipes (TTM flows from quarterly_table; lags need consecutive fiscal
+    quarters): 3-year revenue growth (DRU B1), gross margin and its change over 4 quarters (ZLA B3a, B3b), diluted
+    shares against 12 quarters before (STA C04), tangible book per share growth with dividends (PIL B2), dividends per
+    share of the last 4 quarters on the latest quarter's share basis (NYG V10), revenue and revenue per diluted share
+    growth over 12 quarters (NYG A2), Greenblatt return on capital (LIL Q02), operating margin against the median of
+    its last 20 quarters (LIL A2), net income TTM, tangible equity"""
+    for c in FQX2_COLS:
+        f[c] = pd.to_numeric(f[c], errors="coerce") if c in f.columns else np.nan
+    g = f.groupby("gvkey", sort=False)
+
+    def lagk(s, k):
+        return s.groupby(f.gvkey, sort=False).shift(k).where(g.qi.shift(k) == f.qi - k)
+
+    m = pd.DataFrame(index=f.index)
+    sale = f.sale_ttm
+    s12 = lagk(sale, 12)
+    ratio = (sale / s12).where(s12 > 0)
+    m["rq_gr3"] = (np.sign(ratio) * np.abs(ratio) ** (1.0 / 3) - 1).where(ratio > 0, -1.0).where(ratio.notna())
+    m["rq_gr1"] = (sale / f.sale_ttm_l4 - 1).where(f.sale_ttm_l4 > 0)
+    m["rq_saleg12"] = (sale / s12 - 1).where(s12 > 0)
+    gm = (f.gp_ttm / sale).where(sale > 0)
+    m["rq_gm"] = gm
+    m["rq_dgm"] = gm - (f.gp_ttm_l4 / f.sale_ttm_l4).where(f.sale_ttm_l4 > 0)
+    shd = f.cshfdq * f.ajexq
+    shd12 = lagk(shd, 12)
+    m["rq_c04q"] = (shd / shd12).where(shd12 > 0)
+    rps = (sale / shd).where(shd > 0)
+    rps12 = lagk(rps, 12)
+    m["rq_rpsg"] = (rps / rps12 - 1).where(rps12 > 0)
+    tbv = f.ceqq - f.intanq
+    shs = f.cshoq * f.ajexq
+    tbvps = (tbv / shs).where(shs > 0)
+    tb12 = lagk(tbvps, 12)
+    dpsa = f.dvpsxq.fillna(0) / f.ajexq.where(f.ajexq > 0)       # no dividend reported = 0; latest-basis per share
+    d12 = sum(lagk(dpsa, k) for k in range(12))
+    m["rq_tbg"] = ((tbvps + d12) / tb12 - 1).where(tb12 > 0)
+    m["rq_dps4q"] = f.ajexq * sum(lagk(dpsa, k) for k in range(4))  # on the share basis of the latest quarter
+    den = f.actq - f.cheq.fillna(0) - f.lctq + f.dlcq.fillna(0) + f.ppentq
+    m["rq_q02"] = (f.oiadp_ttm / den).where(den > 0)
+    opm = (f.oiadp_ttm / sale).where(sale > 0)
+    O = pd.concat([lagk(opm, k) for k in range(20)], axis=1)
+    m["rq_opmdev"] = opm - O.median(axis=1).where(O.notna().sum(axis=1) >= 12)
+    m["rq_ni_ttm"] = f.ni_ttm
+    m["rq_tbv"] = tbv
+    return m
+
+
 def annual_table(fa):
     """one row per gvkey-fiscal year with the recipe's history measures (lags require consecutive fiscal years)"""
     a = fa.copy()
@@ -440,6 +552,8 @@ def annual_table(fa):
     a["datadate"] = pd.to_datetime(a.datadate).astype("datetime64[ns]")
     a["fyear"] = pd.to_numeric(a.fyear, errors="coerce")
     for c in FUNDA_COLS:
+        a[c] = pd.to_numeric(a[c], errors="coerce") if c in a.columns else np.nan
+    for c in FUNDA2_COLS:  # 1.1.0
         a[c] = pd.to_numeric(a[c], errors="coerce") if c in a.columns else np.nan
     a = a.dropna(subset=["gvkey", "fyear", "datadate"]).sort_values(["gvkey", "fyear", "datadate"])
     a = a.drop_duplicates(["gvkey", "fyear"], keep="last").reset_index(drop=True)
@@ -484,6 +598,22 @@ def annual_table(fa):
     m["c06_strict"] = m.c06.where(A.notna().all(axis=1))
     m["aqc_filled"] = A.isna().any(axis=1) & cfo3.gt(0)
     m["sbc_ann"] = a.stkco
+    # 1.1.0: kantesaria_v2 (B5 on 5 fiscal years, B13 grid 3 / 5 / 9, A5 on two 3-year windows)
+    m["g06_5"] = opm - lag(opm, 5)
+    m["g06_9"] = opm - lag(opm, 9)
+    m["c06_prev"] = lag(m.c06, 3)
+    m["c06_strict_prev"] = lag(m.c06_strict, 3)
+    # 1.1.0: hohn_v1 S04* = years of the last 10 with Q01 > 15% (or Q01 denominator <= 0 and EBIT > 0). Q01 = EBIT x
+    # (1 - income tax / pre-tax income) / average over the year of (total equity incl. minorities + total debt - cash);
+    # tax rate missing when pre-tax income <= 0; missing debt / cash / minorities = 0; equity missing = Q01 missing
+    den = a.seq + a.mib.fillna(0) + a.dltt.fillna(0) + a.dlc.fillna(0) - a.che.fillna(0)
+    avg = (den + lag(den, 1)) / 2
+    tax = (a.txt / a.pi).where(a.pi > 0)
+    q01 = (a.oiadp * (1 - tax) / avg).where(avg > 0)
+    yok = (((avg > 0) & (q01 > 0.15)) | ((avg <= 0) & (a.oiadp > 0))).astype(float)
+    Y = pd.concat([lag(yok, k) for k in range(10)], axis=1)
+    m["s04star"] = Y.sum(axis=1).where(Y.notna().all(axis=1))
+    m["q01_ann"] = q01
     return m
 
 
@@ -504,7 +634,7 @@ def build_panel(D, out):
     """copied from eq_ref 1.1.0 build_panel. Changes: (1) the next-month return (ret_next) is NOT computed (this job
     reads no forward return); (2) the recipe's quarterly inputs (recall_quarter_measures) are joined at t with the
     same as-of rule; (3) the as-of keys are cast to datetime64[ns] (pandas versions differ); (4) returns (u, msf,
-    price direction, GICS source)."""
+    price direction, GICS source); (5) 1.1.0: the other recipes' quarterly inputs (recall_quarter_measures2) too."""
     msf = D["msf"].copy()
     msf["mcap"] = msf.prc * msf.shrout * 1000.0
     msf = msf[msf.usincflg.astype(str).str.upper() == "Y"]
@@ -560,7 +690,8 @@ def build_panel(D, out):
     q = quarterly_table(D["fq"])
     am = account_measures(q)
     rq = recall_quarter_measures(q)
-    q = pd.concat([q[["gvkey", "datadate", "avail"]], am, rq], axis=1).dropna(subset=["avail"]).sort_values("avail")
+    rq2 = recall_quarter_measures2(q)  # 1.1.0
+    q = pd.concat([q[["gvkey", "datadate", "avail"]], am, rq, rq2], axis=1).dropna(subset=["avail"]).sort_values("avail")
     left = u[["permno", "yyyymm", "t_end", "gvkey"]].dropna(subset=["gvkey"]).sort_values("t_end")
     left = left.rename(columns={"t_end": "avail_key"})
     q = q.rename(columns={"avail": "avail_key"})
@@ -681,12 +812,16 @@ def treasury_at(t10, ts):
 
 
 def recall_panel(D, u, msf, s, out):
-    """eligible stocks at each quarter-end t (R3 universe, price and liquidity, GICS sector known, house exclusions
-    A8 2a out) with every recipe measure"""
+    """eligible stocks at each quarter-end t (R3 universe, price and liquidity, GICS sector known) with every recipe
+    measure. 1.1.0: the rows of house-excluded industries (A8 2a; column 'excluded') are kept, for the recipes that
+    state that the house exclusions do not apply to them (recipe_set); the size-third cells are made per recipe set
+    (add_cells), so the house set and its cells are those of 1.0.3."""
     qe = quarter_ends(T0, T1)
-    E = u[u.yyyymm.isin(qe) & u.in_univ & u.gsector.notna() & ~u.excluded].copy()
+    E = u[u.yyyymm.isin(qe) & u.in_univ & u.gsector.notna()].copy()
+    H = E[~E.excluded]
     out("eligible stock-quarters: %d at %d quarter-ends (median %d per quarter-end)" % (
-        len(E), E.yyyymm.nunique(), int(E.groupby("yyyymm").size().median()) if len(E) else 0))
+        len(H), H.yyyymm.nunique(), int(H.groupby("yyyymm").size().median()) if len(H) else 0))
+    out("with the house-excluded industries (recipes for which the house exclusions do not apply): %d" % len(E))
     # annual accounts known at t
     A = annual_table(D["funda"])
     A = A.sort_values("avail")
@@ -697,7 +832,8 @@ def recall_panel(D, u, msf, s, out):
     A["gvkey"] = A.gvkey.astype(str)
     j = pd.merge_asof(left, A.rename(columns={"datadate": "fy_datadate"}), on="avail", by="gvkey", direction="backward")
     j = j[(j.avail - j.fy_datadate).dt.days <= ANN_STALE_DAYS]
-    keep = ["fy_run", "s01", "g01", "g02", "s03", "g06", "s02", "c04", "c06", "c06_strict", "aqc_filled", "sbc_ann"]
+    keep = ["fy_run", "s01", "g01", "g02", "s03", "g06", "s02", "c04", "c06", "c06_strict", "aqc_filled", "sbc_ann",
+            "g06_5", "g06_9", "c06_prev", "c06_strict_prev", "s04star", "q01_ann"]  # 1.1.0: last six
     E = E.merge(j[["permno", "yyyymm"] + keep], on=["permno", "yyyymm"], how="left")
     E["fy_run"] = E.fy_run.fillna(0)
     # prices
@@ -727,11 +863,155 @@ def recall_panel(D, u, msf, s, out):
     E["b01"] = (E.rq_nd / ebitda).where((ebitda > 0) & E.rq_nd_ok.fillna(False).astype(bool))
     avg_tang = (E.rq_tang + E.rq_tang_l4) / 2
     E["b7"] = (E.ebit_ttm / avg_tang).where(avg_tang > 0)
-    # size thirds inside sector and t (company market value)
+    recall_extra(D, E, msf, s, out)  # 1.1.0
+    return E
+
+
+def add_cells(E):
+    """size thirds inside sector and t (company market value), made on the recipe's own eligible set (1.0.3 code)"""
     pct = E.groupby(["yyyymm", "gsector"]).mcap_co.rank(pct=True, method="first")
     E["third"] = np.ceil(pct * 3).clip(1, 3)
     E["cell"] = E.yyyymm.astype(str) + "|" + E.gsector.astype(str) + "|" + E.third.astype(int).astype(str)
     return E
+
+
+def recipe_set(E, rec):
+    """the recipe's eligible set: the house set (A8 2a exclusions out, as 1.0.3) unless the recipe states that the
+    house exclusions do not apply (universe 'all'), with its own size-third cells"""
+    P = E if rec.get("universe") == "all" else E[~E.excluded.astype(bool)]
+    return add_cells(P.reset_index(drop=True).copy())
+
+
+def price_measures2(msf, s):
+    """1.1.0: P02 momentum 6-1 (compound return of months t-5 .. t-1, at least 4 of the 5), PIL A2 (month-end
+    split-adjusted close at t at or below the lowest of months t-11 .. t-1), LIL B2 (the lowest close of months
+    t-11 .. t was set in months t-2 .. t; full form: t-5 .. t, t-11 .. t). Price windows: at least 9 of the 12
+    months t-11 .. t present and the close at t present (as P03). Only months up to T1 are read."""
+    m = msf[msf.yyyymm <= T1][["permno", "yyyymm", "mi", "ret", "prc", "cfpr"]].copy()
+    m = m.sort_values(["permno", "mi"]).reset_index(drop=True)
+    m["padj"] = m.prc * np.power(m.cfpr.where(m.cfpr > 0), s)
+    L, acc, rc = [m.padj], pd.Series(0.0, index=m.index), pd.Series(0, index=m.index)
+    for k in range(1, 12):
+        ok = (m.permno.shift(k) == m.permno) & (m.mi.shift(k) == m.mi - k)
+        L.append(m.padj.shift(k).where(ok))
+        if k <= 5:
+            rv = m.ret.shift(k).where(ok)
+            acc = acc + np.log1p(rv.clip(lower=-0.9999)).fillna(0.0)
+            rc = rc + rv.notna().astype(int)
+    W = pd.concat(L, axis=1)
+    okw = (W.notna().sum(axis=1) >= 9) & m.padj.notna()
+    m["p02"] = np.expm1(acc).where(rc >= 4)
+    m["low12new"] = (m.padj <= W.iloc[:, 1:].min(axis=1)).astype(float).where(okw)
+    for nm_, k in (("lowq", 3), ("low6", 6), ("low12", 12)):
+        rest = W.iloc[:, k:].min(axis=1) if k < 12 else pd.Series(np.inf, index=m.index)
+        m[nm_] = (W.iloc[:, :k].min(axis=1) <= rest.fillna(np.inf)).astype(float).where(okw)
+    return m[["permno", "yyyymm", "p02", "low12new", "lowq", "low6", "low12"]]
+
+
+def cusip8(s):
+    """1.1.0: CUSIP as 8 characters (a CUSIP read back as a number loses its leading zeros)"""
+    return s.astype(str).str.strip().str.replace(r"\.0$", "", regex=True).str.zfill(8)
+
+
+def ibes2_at(D, E, msf, s):
+    """1.1.0: FY1 mean, number of estimates and period end, FY2 mean and long-term growth mean (latest within 35 days
+    before t, by CUSIP through CRSP names as eq_ref), and the CRSP price at t on the I/B/E/S share basis (as E01)"""
+    ib = D["ibes2"].copy()
+    if "curcode" in ib:
+        ib = ib[ib.curcode.astype(str).str.upper().isin(["USD", "NONE", "NAN"])]
+    ib["statpers"] = pd.to_datetime(ib.statpers)
+    ib["fpedats"] = pd.to_datetime(ib.fpedats, errors="coerce")
+    ib["fpi"] = ib.fpi.astype(str).str.replace(r"\.0$", "", regex=True)
+    nm = D["names"].copy()
+    nm["namedt"], nm["nend"] = pd.to_datetime(nm.namedt), pd.to_datetime(nm.nend)
+    ib["cusip"], nm["cusip"] = cusip8(ib.cusip), cusip8(nm.cusip)
+    x = ib.merge(nm, on="cusip", how="inner")
+    x = x[(x.statpers >= x.namedt) & (x.statpers <= x.nend)].sort_values(["permno", "fpi", "statpers"])
+    x = x.drop_duplicates(["permno", "fpi", "statpers"], keep="last")
+    ends = pd.to_datetime([ym_end(int(v)) for v in E.yyyymm]).values
+    k = pd.DataFrame({"permno": E.permno.values, "key": ends, "row": np.arange(len(E))}).sort_values("key")
+    k["key"] = k.key.astype("datetime64[ns]")
+    res = {}
+    for f_ in ("1", "2", "0"):
+        y = x[x.fpi == f_][["permno", "statpers", "meanest", "numest", "fpedats"]].rename(columns={"statpers": "key"})
+        y["key"] = y.key.astype("datetime64[ns]")
+        r = pd.merge_asof(k, y.sort_values("key"), on="key", by="permno", direction="backward",
+                          tolerance=pd.Timedelta(days=CFG["ibes_tol_days"])).sort_values("row")
+        res[f_] = r
+    E["fy1"] = res["1"].meanest.to_numpy(float)
+    E["n1"] = pd.to_numeric(res["1"].numest, errors="coerce").to_numpy(float)
+    E["fpe1"] = pd.to_datetime(res["1"].fpedats).values
+    E["fy2"] = res["2"].meanest.to_numpy(float)
+    E["ltg"] = res["0"].meanest.to_numpy(float) / 100.0       # I/B/E/S long-term growth is in percent
+    last = D["cf_last"] if "cf_last" in D else msf.sort_values("yyyymm").groupby("permno").cfpr.last()
+    cf_last = E.permno.map(last).to_numpy(float)
+    cf_t = pd.merge(E[["permno", "yyyymm"]], msf[["permno", "yyyymm", "cfpr"]], on=["permno", "yyyymm"],
+                    how="left").cfpr.to_numpy(float)
+    padj = E.prc.to_numpy(float) * np.power(cf_t / cf_last, s)
+    padj[~np.isfinite(padj) | (padj <= 0)] = np.nan
+    E["padj_ib"] = padj
+    E["e04"] = (E.fy2 / E.fy1 - 1).where(E.fy1 > 0)
+    E["pfy2"] = (E.padj_ib / E.fy2).where(E.fy2 > 0)
+
+
+def o05_at(D, E, msf):
+    """1.1.0 (STA B3): O05 = shares held by the three largest index managers at the last 13F quarter-end before t
+    (filed by t) / CRSP shares outstanding at that quarter-end (line level); no holding found = missing"""
+    h = D["idx"].copy()
+    h["rdate"] = pd.to_datetime(h.rdate)
+    nm = D["names"].copy()
+    nm["namedt"], nm["nend"] = pd.to_datetime(nm.namedt), pd.to_datetime(nm.nend)
+    h["cusip"], nm["cusip"] = cusip8(h.cusip), cusip8(nm.cusip)
+    x = h.merge(nm, on="cusip", how="inner")
+    x = x[(x.rdate >= x.namedt) & (x.rdate <= x.nend)].drop_duplicates(["rdate", "cusip"])
+    x["ym"] = x.rdate.dt.year * 100 + x.rdate.dt.month
+    x = x.groupby(["permno", "ym"], as_index=False).sh.sum()
+    sh = msf[["permno", "yyyymm", "shrout"]].rename(columns={"yyyymm": "ym"})
+    x = x.merge(sh, on=["permno", "ym"], how="inner")
+    x["o05"] = (x.sh / (x.shrout * 1000.0)).where(x.shrout > 0)
+    k = pd.DataFrame({"permno": E.permno.values, "ym": [ym_add(int(v), -3) for v in E.yyyymm]})
+    E["o05"] = k.merge(x[["permno", "ym", "o05"]], on=["permno", "ym"], how="left").o05.to_numpy(float)
+
+
+def recall_extra(D, E, msf, s, out):
+    """1.1.0: the measures of the other recipes, on every eligible row (row order kept)"""
+    mc = E.mcap_co.where(E.mcap_co > 0)
+    fcf = E.rq_cfo_ttm - E.rq_capx_ttm
+    E["rq_fcfm"] = (fcf / E.rq_sale_ttm).where(E.rq_sale_ttm > 0)               # Q06
+    E["b04"] = (-E.rq_nd * 1e6 / mc).where(E.rq_nd_ok.fillna(False).astype(bool))  # B04
+    E["v04"] = fcf * 1e6 / mc                                                 # V04
+    E["v02"] = E.rq_ni_ttm * 1e6 / mc                                         # V02
+    E["v07"] = E.rq_tbv * 1e6 / mc                                            # V07
+    pm = price_measures2(msf, s)
+    for c in ("p02", "low12new", "lowq", "low6", "low12"):
+        E[c] = E[["permno", "yyyymm"]].merge(pm[["permno", "yyyymm", c]], on=["permno", "yyyymm"],
+                                               how="left")[c].to_numpy(float)
+    ibes2_at(D, E, msf, s)
+    o05_at(D, E, msf)
+    # NYG V10: dividends per share of the last 4 quarters (latest quarter's basis) / price at t on that basis
+    dd = pd.to_datetime(E.datadate)
+    ym_dd = (dd.dt.year * 100 + dd.dt.month).astype("Int64")
+    cf = msf[["permno", "yyyymm", "cfpr"]]
+    cf_dd = pd.DataFrame({"permno": E.permno.values, "yyyymm": ym_dd.values}).merge(
+        cf, on=["permno", "yyyymm"], how="left").cfpr.to_numpy(float)
+    cf_t = E[["permno", "yyyymm"]].merge(cf, on=["permno", "yyyymm"], how="left").cfpr.to_numpy(float)
+    p_dd = E.prc.to_numpy(float) * np.power(cf_t / cf_dd, s)
+    p_dd[~np.isfinite(p_dd) | (p_dd <= 0)] = np.nan
+    E["v10"] = E.rq_dps4q.to_numpy(float) / p_dd
+    # today's GICS (last co_hgic spell; PIL: 2023 structure for names coded 45102020 or group 4040 at the date)
+    gi = D["gics"].copy()
+    gi["gvkey"] = keynorm(gi.gvkey)
+    if "indfrom" in gi and gi.indfrom.notna().any():
+        gi = gi.assign(_f=pd.to_datetime(gi.indfrom)).sort_values(["gvkey", "_f"])
+    gi = gi.drop_duplicates("gvkey", keep="last")
+    for c in ("gsector", "ggroup", "gsubind"):
+        v = gi.set_index("gvkey")[c].astype(str).str.replace(r"\.0$", "", regex=True)
+        E[c + "_now"] = E.gvkey.astype(str).map(v).where(E.gvkey.notna())
+    out("1.1.0 measures: FY1 found %.0f%%, FY2 %.0f%%, long-term growth %.0f%% (median %.3f), index-fund ownership "
+        "%.0f%% (median %.3f), Greenblatt return on capital %.0f%%, S04* %.0f%%, dividend yield %.0f%% of eligible "
+        "stock-quarters" % (100 * E.fy1.notna().mean(), 100 * E.fy2.notna().mean(), 100 * E.ltg.notna().mean(),
+                            E.ltg.median(), 100 * E.o05.notna().mean(), E.o05.median(), 100 * E.rq_q02.notna().mean(),
+                            100 * E.s04star.notna().mean(), 100 * E.v10.notna().mean()))
 
 
 # ------------------------------------------------------------------------------------------------------- recipes
@@ -813,6 +1093,396 @@ def kantesaria_v1_full(F):
     return pd.DataFrame(cols, index=F.index)
 
 
+# ------------------------------------------------------------------------------------- 1.1.0: helpers for the recipes
+def pct01(v, keys):
+    """percentile inside groups, 0 = lowest, 1 = highest value (average rank of ties: (rank - 1) / (n - 1)); a group
+    with one value = 0.5; missing stays missing"""
+    r = v.groupby(keys).rank(method="average")
+    n = v.notna().astype(float).groupby(keys).transform("sum")
+    return ((r - 1) / (n - 1)).where(n > 1, 0.5).where(v.notna())
+
+
+def _or(F, c):
+    """flag of criterion c; 'X|Y' not stored = X OR Y"""
+    if c in F:
+        return F[c]
+    out_ = None
+    for p_ in c.split("|"):
+        out_ = F[p_] if out_ is None else (out_ | F[p_])
+    return out_
+
+
+def kantesaria_v2(P):
+    """Kantesaria recipe v2 (RECIPE_v2.md; the registered revision round after the v1 recall result, A10 item 9):
+    the kantesaria_v1 flags with C2 B5 = operating margin of the latest fiscal year minus 5 fiscal years before > 0
+    (B13 grid 3 / 5 / 9 years: B13_3, B13_5, B13_9) and C4 A5 = excluded only when acquisitions / operating cash flow
+    > 0.50 in BOTH the latest 3-year sum and the 3-year sum before it (missing either window = fails, as v1's missing
+    measure; A5_strict on the strict acquisition reading); A10 = v1's one-window A5 (full form). B4 (C1) and P2, P3
+    (C3, inside P5) are full form only."""
+    F = kantesaria_v1(P).copy()
+    v1a5, v1a5s = F.A5.copy(), F.A5_strict.copy()
+    F["B5"] = (P.g06_5 > 0).fillna(False)
+    for k, c in ((3, "g06"), (5, "g06_5"), (9, "g06_9")):
+        F["B13_%d" % k] = (P[c] > 0).fillna(False)
+    F["A5"] = (P.c06.notna() & P.c06_prev.notna() & ~((P.c06 > 0.50) & (P.c06_prev > 0.50))).astype(bool)
+    F["A5_strict"] = (P.c06_strict.notna() & P.c06_strict_prev.notna()
+                      & ~((P.c06_strict > 0.50) & (P.c06_strict_prev > 0.50))).astype(bool)
+    F["A10"], F["A10_strict"] = v1a5, v1a5s
+    return F
+
+
+def kantesaria_v2_entry(F, strict=False):
+    """decisive entry: B1, B2, B3, B5 (5 years), B6 AND P1 AND none of A1-A5 (A5 on two windows)"""
+    p1 = F.P1_strict if strict else F.P1
+    a5 = F.A5_strict if strict else F.A5
+    return F.B1 & F.B2 & F.B3 & F.B5 & F.B6 & p1 & F.A1 & F.A2 & F.A3 & F.A4 & a5
+
+
+def kantesaria_v2_full(F):
+    """full form: every combination of the grids, each a full entry rule, averaged: B11 (B3, B4, B6, B7, B8 at the
+    50th / 67th / 80th percentile) x B13 (3 / 5 / 9 years) x P4 (gap > 0 / >= 1 / >= 2 points) x P5 (no trigger /
+    P2 OR P3) x A6 (1 / 2 / 3) x A1/A8 x A4/A9 x A5/A10 = 3 x 3 x 3 x 2 x 3 x 2 x 2 x 2 = 1,296 versions; B9, B10, A7
+    in every version"""
+    cols = {}
+    for g in (50, 67, 80):
+        for w in (3, 5, 9):
+            buy = (F.B1 & F.B2 & F["B3_%d" % g] & F["B4_%d" % g] & F["B13_%d" % w] & F["B6_%d" % g] & F["B7_%d" % g]
+                   & F["B8_%d" % g] & F.B9 & F.B10)
+            for p in (0, 1, 2):
+                for trig in (0, 1):
+                    price = F["P4_%d" % p] & ((F.P2 | F.P3) if trig else True)
+                    for lv in (1, 2, 3):
+                        for hc in ("A1", "A8"):
+                            for rt in ("A4", "A9"):
+                                for aq in ("A5", "A10"):
+                                    avoid = F[hc] & F.A2 & F.A3 & F[rt] & F[aq] & F["A6_%d" % lv] & F.A7
+                                    cols["g%d_w%d_p%d_t%d_l%d_%s_%s_%s" % (g, w, p, trig, lv, hc, rt, aq)] = \
+                                        buy & price & avoid
+    return pd.DataFrame(cols, index=F.index)
+
+
+def druckenmiller_v1(P):
+    """Druckenmiller recipe v1 (batch2/DRU/recipe/RECIPE_v1.md): branch G = B1 3-year revenue growth (TTM vs TTM 12
+    quarters before, compound) >= 0.20 AND B2 1-year revenue growth >= 0.20 AND B3 P02 momentum 6-1 > 0; branch C = B4
+    GICS sector 10, 15, 20 or 25 AND B5 IND_EBIT < 0 (sum of EBIT TTM over the eligible stocks of the same GICS
+    industry at t, at least 3 with EBIT present). Pass = G OR C. No price criterion; A1 is a weight rule (portfolio)."""
+    F = pd.DataFrame(index=P.index)
+    F["B1"] = P.rq_gr3 >= 0.20
+    F["B2"] = P.rq_gr1 >= 0.20
+    F["B3"] = P.p02 > 0
+    F["B4"] = P.gsector.isin(["10", "15", "20", "25"])
+    keys = [P.yyyymm, P.gind]
+    tot = P.ebit_ttm.groupby(keys).transform("sum")
+    cnt = P.ebit_ttm.notna().astype(float).groupby(keys).transform("sum")
+    F["B5"] = tot.where(cnt >= 3) < 0
+    F = F.fillna(False).astype(bool)
+    F["G"] = F.B1 & F.B2 & F.B3
+    F["C"] = F.B4 & F.B5
+    return F
+
+
+def druckenmiller_v1_entry(F, strict=False):
+    return F.G | F.C
+
+
+def stahl_v1(P):
+    """Stahl recipe v1 (batch2/STA/recipe/RECIPE_v1.md): B1 Q06 FCF margin TTM > 0 OR B04 net cash / market value
+    >= 0; B2 C04 (diluted shares x adjustment factor now / 12 quarters before) <= 1.00; B3 O05 below the sector median
+    AND C04 < 1.00; B4 E05 (FY1 estimates; none = 0, which passes) below the sector median. Pass = B1 AND B2 AND (B3 OR B4). Sector
+    percentiles inside GICS sector at t among the eligible set; a missing measure fails. Full form: B3g, B4g below the
+    sector percentile 0.33 / 0.50 (2 x 2 entry versions; the recipe's P1, S2, Z2g change ranking and size only)."""
+    F = pd.DataFrame(index=P.index)
+    keys = [P.yyyymm, P.gsector]
+    F["B1"] = (P.rq_fcfm > 0) | (P.b04 >= 0)
+    F["B2"] = P.rq_c04q <= 1.0
+    po, pe = pct01(P.o05, keys), pct01(P.n1.fillna(0), keys)
+    F["B3"] = (po < 0.5) & (P.rq_c04q < 1.0)
+    none = P.n1.isna() | (P.n1 <= 0)                      # "no estimate = 0, which passes"
+    F["B4"] = none | (pe < 0.5)
+    for c in (33, 50):
+        F["B3g_%d" % c] = (po < c / 100.0) & (P.rq_c04q < 1.0)
+        F["B4g_%d" % c] = none | (pe < c / 100.0)
+    F = F.fillna(False).astype(bool)
+    F["B3|B4"] = F.B3 | F.B4
+    return F
+
+
+def stahl_v1_entry(F, strict=False):
+    return F.B1 & F.B2 & (F.B3 | F.B4)
+
+
+def stahl_v1_full(F):
+    return pd.DataFrame({"b3_%d_b4_%d" % (a, b): F.B1 & F.B2 & (F["B3g_%d" % a] | F["B4g_%d" % b])
+                         for a in (33, 50) for b in (33, 50)}, index=F.index)
+
+
+HOH_A2_GRP = ["4010", "2510", "2550", "3010", "4030"]
+
+
+def hohn_v1(P):
+    """Hohn recipe v1 (batch2/HOH/recipe/RECIPE_v1.md): A1 not sector 25; A2 not groups 4010, 2510, 2550, 3010, 4030,
+    sectors 10, 15, sub-industries 30203010, 40203010; B1 S04* = 10 of the last 10 fiscal years; B1i sub-industry
+    20305010 / 20305020 AND no loss year in 10; B2 S02 in the more stable half of the sector (percentile <= 0.5, low
+    = stable); P1 V13 = FCF yield TTM - 10-year Treasury >= 0 (FCF yield <= 0 fails). Pass = A1, A2, (B1 OR B1i), B2,
+    P1. Full form: + B4 (S03 stable half), A3 (20302010, 50102010, industry 502010), P1g gap >= 0 / 1 / 2 points (3
+    versions)."""
+    F = pd.DataFrame(index=P.index)
+    sec, grp, ind, sub = P.gsector, P.ggroup, P.gind, P.gsubind
+    keys = [P.yyyymm, P.gsector]
+    F["A1"] = ~sec.eq("25")
+    F["A2"] = ~(grp.isin(HOH_A2_GRP) | sec.isin(["10", "15"]) | sub.isin(["30203010", "40203010"]))
+    F["B1"] = P.s04star == 10
+    F["B1i"] = sub.isin(["20305010", "20305020"]) & (P.s01 == 0)
+    F["B2"] = pct01(P.s02, keys) <= 0.5
+    gap = P.v04 - P.y10
+    F["P1"] = (P.v04 > 0) & (gap >= 0)
+    F["B4"] = pct01(P.s03, keys) <= 0.5
+    F["A3"] = ~(sub.isin(["20302010", "50102010"]) | ind.eq("502010"))
+    for k in (0, 1, 2):
+        F["P1g_%d" % k] = (P.v04 > 0) & (gap >= k / 100.0)
+    F = F.fillna(False).astype(bool)
+    F["B1|B1i"] = F.B1 | F.B1i
+    return F
+
+
+def hohn_v1_entry(F, strict=False):
+    return F.A1 & F.A2 & (F.B1 | F.B1i) & F.B2 & F.P1
+
+
+def hohn_v1_full(F):
+    return pd.DataFrame({"p%d" % k: F.A1 & F.A2 & F.A3 & (F.B1 | F.B1i) & F.B2 & F.B4 & F["P1g_%d" % k]
+                         for k in (0, 1, 2)}, index=F.index)
+
+
+ZLA_B1 = ["453010", "452010", "452020"]
+ZLA_A1 = ["451030", "451020", "451010", "502030", "255020", "255030"]
+
+
+def zlatev_v1(P):
+    """Zlatev recipe v1 (batch2/ZLA/recipe/RECIPE_v1.md; long side): B1 GICS industry 453010, 452010, 452020; B3a gross
+    margin TTM >= the median among the B1 stocks at t; B3b gross margin TTM minus 4 quarters before >= 0; B4a net debt
+    / EBITDA TTM < 2.0 (EBITDA <= 0 = fail; net cash passes); B4b FCF margin TTM > 0; P1 price / FY2 consensus EPS
+    <= 20 (FY2 <= 0 = fail; price on the I/B/E/S share basis); A1 not 451030, 451020, 451010, 502030, 255020, 255030.
+    Full form: B1-g (+ sub-industry 45203015) x B3a-g (top 1/2, 1/3 of that B1 set) x B4a-g (< 1, < 2, < 3) x P1-g
+    (<= 15, <= 20), plus A2 (E04 FY2 / FY1 - 1 >= 0; FY1 <= 0 = fail) = 24 versions."""
+    F = pd.DataFrame(index=P.index)
+    b1 = P.gind.isin(ZLA_B1)
+    b1g = b1 | P.gsubind.eq("45203015")
+    F["B1"] = b1
+    F["B1g"] = b1g
+    for nm_, base in (("", b1), ("g", b1g)):
+        for q, tag in ((0.5, "2"), (2.0 / 3, "3")):
+            thr = P.rq_gm.where(base).groupby(P.yyyymm).transform(lambda x: x.quantile(q))
+            F["B3a%s_%s" % (nm_, tag)] = P.rq_gm >= thr
+    F["B3a"] = F["B3a_2"]
+    F["B3b"] = P.rq_dgm >= 0
+    for k in (1, 2, 3):
+        F["B4a_%d" % k] = P.b01 < k
+    F["B4a"] = F["B4a_2"]
+    F["B4b"] = P.rq_fcfm > 0
+    for k in (15, 20):
+        F["P1_%d" % k] = P.pfy2 <= k
+    F["P1"] = F["P1_20"]
+    F["A1"] = ~P.gind.isin(ZLA_A1)
+    F["A2"] = P.e04 >= 0
+    return F.fillna(False).astype(bool)
+
+
+def zlatev_v1_entry(F, strict=False):
+    return F.B1 & F.B3a & F.B3b & F.B4a & F.B4b & F.P1 & F.A1
+
+
+def zlatev_v1_full(F):
+    cols = {}
+    for b in ("", "g"):
+        for tag in ("2", "3"):
+            for k in (1, 2, 3):
+                for p in (15, 20):
+                    cols["b1%s_t%s_l%d_p%d" % (b or "d", tag, k, p)] = (
+                        F["B1" + b] & F["B3a%s_%s" % (b, tag)] & F.B3b & F["B4a_%d" % k] & F.B4b & F["P1_%d" % p]
+                        & F.A1 & F.A2)
+    return pd.DataFrame(cols, index=F.index)
+
+
+def pil_groups(P):
+    """PIL: GICS industry group on the March 2023 structure: sector 40 groups; group 4040 (pre-2016 real estate) and
+    sub-industry 45102020 (pre-2023 data processing) by today's code (4040: today's group if today in sector 40, else
+    not financial; 45102020: 4020 if today 40201060)"""
+    grp = P.ggroup.where(P.gsector.eq("40") & ~P.ggroup.eq("4040"))
+    r4040 = P.ggroup.eq("4040")
+    grp = grp.where(~r4040, P.ggroup_now.where(P.gsector_now.eq("40")))
+    pay = P.gsubind.eq("45102020") & P.gsubind_now.eq("40201060")
+    return grp.where(~pay, "4020")
+
+
+def pilecki_v1(P):
+    """Pilecki recipe v1 (batch2/PIL/recipe/RECIPE_v1.md; house exclusions do not apply): A1 financials only (pil_groups
+    in 4010, 4020, 4030); comparison group = that group, or sector 40 when fewer than 10 eligible financials are in it
+    at t; B1 ROE TTM rank in the comparison group > 0.5 (missing = 0.5); B2 (groups 4010, 4030 only) tangible book per
+    share now plus dividends per share of the last 12 quarters over tangible book per share 12 quarters before > 1;
+    B3 P02 > 0; P1 value score (4010, 4030: mean of the in-group ranks of V02 and V07; 4020: rank of V02; missing rank
+    = 0.5) ranked in the comparison group >= 0.70; A2 not a new 12-month low (missing = fail). B4 (December sleeve) is
+    NOT IMPLEMENTED: it is chosen at the November month-end, after t. Full form: B1 rank > 0.5 / > 1/3 (2 versions)."""
+    F = pd.DataFrame(index=P.index)
+    grp = pil_groups(P)
+    fin = grp.isin(["4010", "4020", "4030"])
+    size = fin.astype(float).groupby([P.yyyymm, grp]).transform("sum")
+    cmpg = grp.where(size >= 10, "40").where(fin)
+    keys = [P.yyyymm, cmpg]
+
+    def rk(v):
+        return pct01(v.where(fin), keys)
+    r_roe = rk(P.roe).fillna(0.5)
+    bs = grp.isin(["4010", "4030"])
+    score = ((rk(P.v02).fillna(0.5) + rk(P.v07).fillna(0.5)) / 2).where(bs, rk(P.v02).fillna(0.5)).where(fin)
+    F["A1"] = fin
+    F["B1"] = r_roe > 0.5
+    F["B1_33"] = r_roe > 1.0 / 3
+    F["B2"] = (P.rq_tbg > 0) | ~bs
+    F["B3"] = P.p02 > 0
+    F["P1"] = rk(score) >= 0.70
+    F["A2"] = P.low12new == 0
+    return F.fillna(False).astype(bool)
+
+
+def pilecki_v1_entry(F, strict=False):
+    return F.A1 & F.A2 & F.B1 & F.B2 & F.B3 & F.P1
+
+
+def pilecki_v1_full(F):
+    return pd.DataFrame({"b1_50": pilecki_v1_entry(F), "b1_33": F.A1 & F.A2 & F.B1_33 & F.B2 & F.B3 & F.P1},
+                        index=F.index)
+
+
+def ntm_eps(P):
+    """NTM consensus EPS: FY1 and FY2 means weighted by the share of FY1 still ahead at t (LSEG's NTM definition);
+    both needed"""
+    t_end = pd.to_datetime([ym_end(int(v)) for v in P.yyyymm])
+    w1 = ((pd.to_datetime(P.fpe1).values - t_end.values) / np.timedelta64(1, "D")) / 365.25
+    w1 = pd.Series(np.clip(w1, 0.0, 1.0), index=P.index)
+    return w1 * P.fy1 + (1 - w1) * P.fy2
+
+
+def nygren_value(P, floor=0.08, gsrc="ltg"):
+    """NYG section 0: E1 = NTM consensus EPS (FY1 and FY2 means weighted by the share of FY1 still ahead at t, the
+    LSEG NTM definition; both needed), g_raw = long-term growth mean (else E04; gsrc 'e04' = E04 only), g = g_raw
+    clipped to [0, 10%], r = max(floor, 10-year Treasury: the 7-year is not loaded, so the 10-year stands in, flagged),
+    V = sum_{t=1..7} E1 (1+g)^(t-1) / (1+r)^t + E1 (1+g)^6 / r / (1+r)^7; V missing if E1 <= 0 or g_raw missing"""
+    e1 = ntm_eps(P)
+    graw = P.e04 if gsrc == "e04" else P.ltg.where(P.ltg.notna(), P.e04)
+    g = graw.clip(lower=0.0, upper=0.10)
+    r = np.maximum(floor, P.y10)
+    V = sum(e1 * (1 + g) ** (k - 1) / (1 + r) ** k for k in range(1, 8)) + e1 * (1 + g) ** 6 / r / (1 + r) ** 7
+    V = V.where((e1 > 0) & graw.notna())
+    return V, graw, g
+
+
+def nygren_v1(P):
+    """Nygren / Fitch recipe v1 (batch2/NYG/recipe/RECIPE_v1.md; house exclusions do not apply): B1 best rank (1 =
+    largest) of revenue TTM, net income TTM or common equity inside the eligible set <= 250; B2 V10 (dividends per share
+    of the last 4 quarters / price) + g >= 8%; P4 PV = price (I/B/E/S basis) / V < 0.70 (V: nygren_value); A1 g_raw <
+    0 excluded; A2 revenue up over 12 quarters while revenue per diluted share is not up excluded (missing = fails);
+    A3 V missing excluded. Full form: the decisive book and the 9 one-at-a-time books G1-G9, averaged (G1 B2 9%, G2 P4
+    0.60, G3 r floor 9%, G4 growth = E04 only; G5-G9 change selling and size only, so their entry = decisive)."""
+    F = pd.DataFrame(index=P.index)
+    rk = [P[c].groupby(P.yyyymm).rank(ascending=False, method="min") for c in ("rq_sale_ttm", "rq_ni_ttm", "ceq")]
+    F["B1"] = pd.concat(rk, axis=1).min(axis=1) <= 250
+    V, graw, g = nygren_value(P)
+    pv = P.padj_ib / V
+    F["B2"] = (P.v10 + g) >= 0.08
+    F["P4"] = pv < 0.70
+    F["A1"] = graw >= 0
+    F["A2"] = P.rq_saleg12.notna() & P.rq_rpsg.notna() & ~((P.rq_saleg12 > 0) & (P.rq_rpsg <= 0))
+    F["A3"] = V.notna()
+    F["G1_B2"] = (P.v10 + g) >= 0.09
+    F["G2_P4"] = pv < 0.60
+    V3, _, g3 = nygren_value(P, floor=0.09)
+    F["G3_B2"], F["G3_P4"], F["G3_A3"] = (P.v10 + g3) >= 0.08, (P.padj_ib / V3) < 0.70, V3.notna()
+    V4, gr4, g4 = nygren_value(P, gsrc="e04")
+    F["G4_B2"], F["G4_P4"], F["G4_A1"], F["G4_A3"] = (P.v10 + g4) >= 0.08, (P.padj_ib / V4) < 0.70, gr4 >= 0, V4.notna()
+    return F.fillna(False).astype(bool)
+
+
+def nygren_v1_entry(F, strict=False):
+    return F.B1 & F.B2 & F.P4 & F.A1 & F.A2 & F.A3
+
+
+def nygren_v1_full(F):
+    d = nygren_v1_entry(F)
+    cols = {"G0_decisive": d}
+    cols["G1"] = F.B1 & F.G1_B2 & F.P4 & F.A1 & F.A2 & F.A3
+    cols["G2"] = F.B1 & F.B2 & F.G2_P4 & F.A1 & F.A2 & F.A3
+    cols["G3"] = F.B1 & F.G3_B2 & F.G3_P4 & F.A1 & F.A2 & F.G3_A3
+    cols["G4"] = F.B1 & F.G4_B2 & F.G4_P4 & F.G4_A1 & F.A2 & F.G4_A3
+    for k in (5, 6, 7, 8, 9):
+        cols["G%d" % k] = d
+    return pd.DataFrame(cols, index=F.index)
+
+
+def lilu_v1(P):
+    """Li Lu recipe v1 (batch2/LIL/recipe/RECIPE_v1.md): B1 Q02 (EBIT TTM / (current assets - cash - current
+    liabilities + short-term debt + net PPE)) sector percentile >= 0.667; B2 the lowest month-end close of months
+    t-11 .. t was set in months t-2 .. t; P1 book / price >= 1.0 OR P2 EBIT / EV sector percentile >= 0.8; A1 accruals
+    in the worst fifth of the sector (reversed percentile < 0.2) excluded; A2 operating margin TTM minus the median of
+    its last 20 quarters in the highest fifth of the sector (> 0.8) excluded; AVOID measure missing = not excluded.
+    Full form: the central version and 9 one-at-a-time versions averaged (B1 0.5 / 0.8; B2 low set within 6 / 12
+    months; P2 0.667 / 0.9; S6 1 / 2 / 5% = selling only, entry = central)."""
+    F = pd.DataFrame(index=P.index)
+    keys = [P.yyyymm, P.gsector]
+    q02, ey = pct01(P.rq_q02, keys), pct01(P.ey, keys)
+    F["B1"] = q02 >= 0.667
+    F["B2"] = P.lowq == 1
+    F["P1"] = P.bp >= 1.0
+    F["P2"] = ey >= 0.8
+    F["A1"] = ~(pct01(-P.acc, keys) < 0.2)
+    F["A2"] = ~(pct01(P.rq_opmdev, keys) > 0.8)
+    F["B1_50"], F["B1_80"] = q02 >= 0.5, q02 >= 0.8
+    F["B2_6"], F["B2_12"] = P.low6 == 1, P.low12 == 1
+    F["P2_67"], F["P2_90"] = ey >= 0.667, ey >= 0.9
+    F = F.fillna(False).astype(bool)
+    F["P1|P2"] = F.P1 | F.P2
+    return F
+
+
+def lilu_v1_entry(F, strict=False):
+    return F.B1 & F.B2 & (F.P1 | F.P2) & F.A1 & F.A2
+
+
+def lilu_v1_full(F):
+    d = lilu_v1_entry(F)
+    av = F.A1 & F.A2
+    cols = {"central": d, "b1_50": F.B1_50 & F.B2 & (F.P1 | F.P2) & av, "b1_80": F.B1_80 & F.B2 & (F.P1 | F.P2) & av,
+            "b2_6": F.B1 & F.B2_6 & (F.P1 | F.P2) & av, "b2_12": F.B1 & F.B2_12 & (F.P1 | F.P2) & av,
+            "p2_67": F.B1 & F.B2 & (F.P1 | F.P2_67) & av, "p2_90": F.B1 & F.B2 & (F.P1 | F.P2_90) & av,
+            "s6_1": d, "s6_2": d, "s6_5": d}
+    return pd.DataFrame(cols, index=F.index)
+
+
+def sosin_v1(P):
+    """Sosin recipe v1 (batch2/SOS/recipe/RECIPE_v1.md), written but NOT measured: 13F filer 21801 is not in
+    eq_conv_panel. B1 gross margin TTM above the median of its GICS industry (industry with >= 5 eligible stocks, else
+    group, else sector); B2 Q01 (latest fiscal year, as hohn_v1's S04*) above the sector median, EBIT TTM > 0 only
+    (loss stocks exempt); P1 EBIT / EV sector percentile >= 0.5 for EBIT TTM > 0, forward earnings yield (NTM EPS /
+    price) > 0 and sector percentile >= 0.5 for loss stocks."""
+    F = pd.DataFrame(index=P.index)
+    prof = P.ebit_ttm > 0
+    lvl = P.gind.copy()
+    for c in ("ggroup", "gsector"):
+        n = lvl.notna().astype(float).groupby([P.yyyymm, lvl]).transform("sum")
+        lvl = lvl.where(n >= 5, P[c])
+    sk = [P.yyyymm, P.gsector]
+    F["B1"] = pct01(P.rq_gm, [P.yyyymm, lvl]) > 0.5
+    F["B2"] = ~prof | (pct01(P.q01_ann.where(prof), sk) > 0.5)
+    v03 = (ntm_eps(P) / P.padj_ib).where(P.padj_ib > 0)
+    F["P1"] = (prof & (pct01(P.ey.where(prof), sk) >= 0.5)) | (
+        ~prof & (v03 > 0) & (pct01(v03.where(~prof), sk) >= 0.5))
+    return F.fillna(False).astype(bool)
+
+
+def sosin_v1_entry(F, strict=False):
+    return F.B1 & F.B2 & F.P1
+
+
 RECIPES = {
     "kantesaria_v1": {
         "flags": kantesaria_v1, "entry": kantesaria_v1_entry, "full": kantesaria_v1_full,
@@ -835,6 +1505,142 @@ RECIPES = {
                        "median"), ("B9", "diluted shares fell over 3 years"), ("B10", "market value >= $2bn"),
                        ("A6_1", "net debt / EBITDA <= 1"), ("A6_2", "net debt / EBITDA <= 2"),
                        ("A6_3", "net debt / EBITDA <= 3"), ("A7", "one listed common line")],
+        # 1.1.0 (layout of the v1 report kept exactly for this recipe)
+        "strict": True, "universe": "house", "labels": LABELS, "v1_layout": True,
+        "coverage": ["fy_run", "s01", "g01", "g02", "s03", "g06", "c01", "p1gap", "p03", "p3rel", "c06", "b7", "s02",
+                     "c04", "b01"],
+    },
+    "kantesaria_v2": {
+        "flags": kantesaria_v2, "entry": kantesaria_v2_entry, "full": kantesaria_v2_full, "strict": True,
+        "universe": "house",
+        "labels": ["revision after seeing recall v1: same 29 purchases, not independent evidence"] + LABELS,
+        "criteria": [("B1", "10+ consecutive fiscal years of revenue and net income", ["fy_run"]),
+                     ("B2", "no loss year in the last 10", ["s01"]),
+                     ("B3", "revenue and EPS growth 5y above the universe median", ["g01", "g02"]),
+                     ("B5", "operating margin up over 5 fiscal years (v2, C2)", ["g06_5"]),
+                     ("B6", "capex / revenue TTM below the universe median", ["c01"]),
+                     ("P1", "FCF after share pay / market value above the 10y Treasury", ["p1gap"]),
+                     ("A1", "health care (sector 35)", []),
+                     ("A2", "technology hardware 4520, metals and mining 151040", []),
+                     ("A3", "energy, materials, agricultural products", []),
+                     ("A4", "utilities, real estate, banks, mortgage / consumer finance", []),
+                     ("A5", "acquisitions > 50% of operating cash flow in both 3-year windows (v2, C4)",
+                      ["c06", "c06_prev"])],
+        "full_extra": [("B4", "revenue-growth s.d. 10y below the median (v2: full form)"),
+                       ("B13_3", "operating margin up over 3 years (v1 reading)"),
+                       ("B13_9", "operating margin up over 9 years"),
+                       ("B7", "EBIT / tangible assets above the median"), ("B8", "operating-margin s.d. 10y below the "
+                       "median"), ("B9", "diluted shares fell over 3 years"), ("B10", "market value >= $2bn"),
+                       ("P2|P3", "price trigger (P5 version ii = v1 reading)"),
+                       ("A6_1", "net debt / EBITDA <= 1"), ("A6_2", "net debt / EBITDA <= 2"),
+                       ("A6_3", "net debt / EBITDA <= 3"), ("A7", "one listed common line"),
+                       ("A10", "acquisitions > 50%, latest 3-year window only (v1 reading)")],
+        "coverage": ["fy_run", "s01", "g01", "g02", "g06_5", "c01", "p1gap", "c06", "c06_prev", "s03", "b7", "s02"],
+    },
+    "druckenmiller_v1": {
+        "flags": druckenmiller_v1, "entry": druckenmiller_v1_entry, "full": None,
+        "full_note": "not implemented: the recipe does not state how its eleven grid lines combine",
+        "universe": "house", "no_price": True,
+        "labels": ["thin", "held-out failed", "13F = equity longs only", "recipe covers 3 of 11 buy rules (decisive)"],
+        "criteria": [("B1", "revenue growth 3y (TTM vs 12 quarters before) >= 20%", ["rq_gr3"]),
+                     ("B2", "revenue growth 1y >= 20%", ["rq_gr1"]),
+                     ("B3", "momentum 6-1 > 0", ["p02"]),
+                     ("G", "branch G: B1 and B2 and B3", ["rq_gr3", "rq_gr1", "p02"]),
+                     ("B4", "cyclical sector 10, 15, 20, 25", []),
+                     ("B5", "industry EBIT TTM sum < 0 (>= 3 members)", []),
+                     ("C", "branch C: B4 and B5", []),
+                     ("G|C", "either branch", [])],
+        "full_extra": [], "coverage": ["rq_gr3", "rq_gr1", "p02", "ebit_ttm"],
+    },
+    "stahl_v1": {
+        "flags": stahl_v1, "entry": stahl_v1_entry, "full": stahl_v1_full, "universe": "house", "no_price": True,
+        "labels": ["thin", "held-out failed", "recipe covers 3 of 6 buy rules (decisive), stand-ins only",
+                   "13F filer firm-wide (A6: Horizon Kinetics, firm, not person)"],
+        "criteria": [("B1", "FCF margin TTM > 0 or net cash >= 0", ["rq_fcfm", "b04"]),
+                     ("B2", "diluted shares not up over 12 quarters", ["rq_c04q"]),
+                     ("B3", "index-fund ownership below the sector median and shares down", ["o05", "rq_c04q"]),
+                     ("B4", "FY1 analyst count below the sector median (none = 0)", []),
+                     ("B3|B4", "one of the two neglect tests", [])],
+        "full_extra": [("B3g_33", "B3 below the sector 33rd percentile"), ("B4g_33", "B4 below the 33rd percentile")],
+        "coverage": ["rq_fcfm", "b04", "rq_c04q", "o05", "n1"],
+    },
+    "hohn_v1": {
+        "flags": hohn_v1, "entry": hohn_v1_entry, "full": hohn_v1_full, "universe": "house",
+        "labels": ["thin", "recipe covers 5 of 14 buy rules (decisive)"],
+        "criteria": [("A1", "consumer discretionary (sector 25)", []),
+                     ("A2", "banks, autos, retail, insurance, energy, materials, tobacco, asset managers", []),
+                     ("B1", "Q01 > 15% in 10 of the last 10 fiscal years (S04*)", ["s04star"]),
+                     ("B1i", "airports / toll roads with no loss year in 10", ["s01"]),
+                     ("B1|B1i", "barrier route", ["s04star"]),
+                     ("B2", "operating-margin s.d. 10y in the stable half of the sector", ["s02"]),
+                     ("P1", "FCF yield TTM minus the 10y Treasury >= 0", ["v04"])],
+        "full_extra": [("B4", "revenue-growth s.d. 10y in the stable half of the sector"),
+                       ("A3", "airlines, wireless, media"), ("P1g_1", "FCF yield gap >= 1 point"),
+                       ("P1g_2", "FCF yield gap >= 2 points")],
+        "coverage": ["s04star", "s01", "s02", "v04", "s03"],
+    },
+    "zlatev_v1": {
+        "flags": zlatev_v1, "entry": zlatev_v1_entry, "full": zlatev_v1_full, "universe": "house",
+        "labels": ["thin", "long/short, longs only tested", "recipe covers 3 of 5 buy rules (decisive)"],
+        "criteria": [("B1", "semis, communications equipment, tech hardware (GICS industries)", []),
+                     ("B3a", "gross margin TTM >= median of the B1 stocks", ["rq_gm"]),
+                     ("B3b", "gross margin TTM not below a year ago", ["rq_dgm"]),
+                     ("B4a", "net debt / EBITDA TTM < 2", ["b01"]),
+                     ("B4b", "FCF margin TTM > 0", ["rq_fcfm"]),
+                     ("P1", "price / FY2 consensus EPS <= 20", ["pfy2"]),
+                     ("A1", "software, IT services, internet", [])],
+        "full_extra": [("B1g", "B1 plus electronic components"), ("B3a_3", "gross margin in the top third"),
+                       ("B4a_1", "net debt / EBITDA < 1"), ("B4a_3", "net debt / EBITDA < 3"),
+                       ("P1_15", "price / FY2 EPS <= 15"), ("A2", "FY2 / FY1 EPS growth >= 0")],
+        "coverage": ["rq_gm", "rq_dgm", "b01", "rq_fcfm", "pfy2", "e04"],
+    },
+    "pilecki_v1": {
+        "flags": pilecki_v1, "entry": pilecki_v1_entry, "full": pilecki_v1_full, "universe": "all",
+        "not_implemented": ["B4"],
+        "labels": ["thin", "financials only", "recipe covers 2 of 7 buy rules fully (decisive)",
+                   "house exclusions do not apply (recipe section 0)"],
+        "criteria": [("A1", "financials (GICS 2023 groups 4010, 4020, 4030)", []),
+                     ("B1", "ROE TTM above the comparison-group median", ["roe"]),
+                     ("B2", "tangible book per share + dividends up over 12 quarters (banks, insurers)", ["rq_tbg"]),
+                     ("B3", "momentum 6-1 > 0", ["p02"]),
+                     ("P1", "value score in the cheapest 30% of the comparison group", ["v02"]),
+                     ("A2", "a new 12-month low (excluded)", ["low12new"])],
+        "full_extra": [("B1_33", "ROE rank > 1/3")],
+        "coverage": ["roe", "rq_tbg", "p02", "v02", "v07", "low12new"],
+    },
+    "nygren_v1": {
+        "flags": nygren_v1, "entry": nygren_v1_entry, "full": nygren_v1_full, "universe": "all",
+        "labels": ["thin", "recipe covers 2 of 8 buy rules fully (decisive)",
+                   "13F filer firm-wide (A6: Harris Associates, firm, not person)",
+                   "r uses the 10-year Treasury (7-year not loaded; recipe P2 flag)",
+                   "house exclusions do not apply (recipe section 3)"],
+        "criteria": [("B1", "best size rank (revenue, net income, equity) <= 250", ["rq_sale_ttm"]),
+                     ("B2", "dividend yield + growth >= 8%", ["v10", "ltg"]),
+                     ("P4", "price / seven-year consensus value < 0.70", ["fy1", "fy2"]),
+                     ("A1", "consensus growth < 0 (excluded)", []),
+                     ("A2", "size up, revenue per share not (excluded; missing = fails)", ["rq_saleg12", "rq_rpsg"]),
+                     ("A3", "no value (excluded)", ["fy1", "fy2"])],
+        "full_extra": [("G1_B2", "B2 at 9%"), ("G2_P4", "P4 at 0.60"), ("G3_P4", "r floor 9%"),
+                       ("G4_P4", "growth = E04 only")],
+        "coverage": ["rq_sale_ttm", "v10", "ltg", "e04", "fy1", "fy2", "rq_saleg12", "rq_rpsg"],
+    },
+    "lilu_v1": {
+        "flags": lilu_v1, "entry": lilu_v1_entry, "full": lilu_v1_full, "universe": "house",
+        "labels": ["thin", "recipe covers 3 of 6 buy rules (decisive)"],
+        "criteria": [("B1", "Greenblatt return on capital in the sector's top third", ["rq_q02"]),
+                     ("B2", "new 12-month low during the quarter", ["lowq"]),
+                     ("P1", "book / price >= 1", ["bp"]),
+                     ("P2", "EBIT / EV in the sector's cheapest fifth", ["ey"]),
+                     ("P1|P2", "one of the two price tests", ["bp", "ey"]),
+                     ("A1", "accruals in the sector's worst fifth (excluded; missing = not)", []),
+                     ("A2", "margin vs own 5-year median in the sector's top fifth (excluded)", [])],
+        "full_extra": [("B1_50", "return on capital top half"), ("B1_80", "top fifth"), ("B2_6", "low within 6 months"),
+                       ("P2_67", "EBIT / EV cheapest third"), ("P2_90", "cheapest tenth")],
+        "coverage": ["rq_q02", "lowq", "bp", "ey", "acc", "rq_opmdev"],
+    },
+    "sosin_v1": {
+        "flags": sosin_v1, "entry": sosin_v1_entry, "full": None, "universe": "house", "measured": False,
+        "labels": ["thin", "held-out failed", "no 13F profile"], "criteria": [], "full_extra": [], "coverage": [],
     },
 }
 
@@ -967,13 +1773,15 @@ def load_inputs(load):
             pass
     D["dv"] = pd.concat(parts, ignore_index=True)
     D["funda"], D["fqx"], D["t10"] = load("rc_funda"), load("rc_fqx"), load("rc_t10")
+    D["fqx2"], D["funda2"], D["ibes2"], D["idx"] = load("rc_fqx2"), load("rc_funda2"), load("rc_ibes2"), load("rc_idx")
     # no monthly data after the last evaluation quarter-end is read (no forward return)
     D["cf_last"] = D["msf"].sort_values("yyyymm").groupby("permno").cfpr.last()  # 1.0.1: split factor only, no return
     D["msf"] = D["msf"][pd.to_numeric(D["msf"].yyyymm) <= T1].copy()
     D["dv"] = D["dv"][pd.to_numeric(D["dv"].yyyymm) <= T1].copy()
     fq = D["fq"].copy()
     fx = D["fqx"].copy()
-    for f_ in (fq, fx):
+    fx2 = D["fqx2"].copy()
+    for f_ in (fq, fx, fx2):
         f_["gvkey"] = keynorm(f_.gvkey)
         f_["datadate"] = pd.to_datetime(f_.datadate)
         for c in ("fyearq", "fqtr"):
@@ -981,57 +1789,83 @@ def load_inputs(load):
     fx = fx.sort_values(["gvkey", "datadate"]).drop_duplicates(["gvkey", "datadate", "fyearq", "fqtr"], keep="last")
     D["fq"] = fq.merge(fx[["gvkey", "datadate", "fyearq", "fqtr"] + [c for c in FQX_COLS if c in fx.columns]],
                        on=["gvkey", "datadate", "fyearq", "fqtr"], how="left")
+    # 1.1.0: the extra quarterly and annual items, joined the same way (left joins: no row added or dropped)
+    fx2 = fx2.sort_values(["gvkey", "datadate"]).drop_duplicates(["gvkey", "datadate", "fyearq", "fqtr"], keep="last")
+    D["fq"] = D["fq"].merge(fx2[["gvkey", "datadate", "fyearq", "fqtr"] + [c for c in FQX2_COLS if c in fx2.columns]],
+                            on=["gvkey", "datadate", "fyearq", "fqtr"], how="left")
+    fa, fa2 = D["funda"].copy(), D["funda2"].copy()
+    for f_ in (fa, fa2):
+        f_["gvkey"] = keynorm(f_.gvkey)
+        f_["datadate"] = pd.to_datetime(f_.datadate)
+        f_["fyear"] = pd.to_numeric(f_.fyear, errors="coerce")
+    fa2 = fa2.sort_values(["gvkey", "datadate"]).drop_duplicates(["gvkey", "datadate", "fyear"], keep="last")
+    D["funda"] = fa.merge(fa2[["gvkey", "datadate", "fyear"] + [c for c in FUNDA2_COLS if c in fa2.columns]],
+                          on=["gvkey", "datadate", "fyear"], how="left")
     return D
 
 
-def run(load, save, out):
-    t0 = time.time()
-    out("%s  recall test (RECALL_SPEC_v1; V04_REGISTRATION A10 item 9, A13 item 13)" % VERSION)
-    out("labels: %s" % "; ".join('"%s"' % x for x in LABELS))
-    miss = []
-    for n in _needed() + ["eq_conv_panel"]:
-        try:
-            load(n)
-        except Exception:  # noqa: BLE001
-            if n.startswith("ref_"):
-                try:
-                    load("rc_" + n[4:])
-                    continue
-                except Exception:  # noqa: BLE001
-                    pass
-            miss.append(n)
-    if "rc_t10" in miss:
-        out("STOP: no 10-year Treasury yield stored (rc_t10); RECALL_SPEC_v1: the job stops and says so")
-    if miss:
-        out("PULLS INCOMPLETE (%s): nothing computed" % ", ".join(miss))
-        return
-    rec = RECIPES[TARGET["recipe"]]
-    D = load_inputs(load)
-    out("inputs: " + ", ".join("%s %d" % (k, len(v)) for k, v in D.items()))
-    u, msf, s, src = build_panel(D, out)
-    if src != "co_hgic":
-        out("STOP: GICS history (comp.co_hgic) not available; RECIPE_v1 does not accept today's GICS for A1-A4")
-        return
-    r = rank_panel(u)
-    E = recall_panel(D, u, msf, s, out)
+def _line(label, res):
+    if not res["measurable"]:
+        return "%-44s not measurable (fewer than %d counted purchases)" % (label, MIN_N)
+    return "%-44s recall %s  base %s  lift %s  90%% [%s, %s]%s" % (
+        label, fmt(res["recall"], True), fmt(res["base"], True), fmt(res["lift"]), fmt(res.get("lo", np.nan)),
+        fmt(res.get("hi", np.nan)), ("  (%d version-sets with no passer in their cells left out of the lift)"
+                                     % res["lift_undefined"]) if res.get("lift_undefined") else "") + (
+        "  (interval on %d of %d draws: the others have a cell set with no passer)" % (res["draws_used"], NBOOT)
+        if res.get("draws_used", NBOOT) < NBOOT else "")
+
+
+def _per_set(res):
+    return "; ".join("%s: n %d, recall %s, base %s, lift %s" % (r["set"], r["n"], fmt(r["recall"], True),
+                                                               fmt(r["base"], True), fmt(r["lift"]))
+                     for r in res["per"])
+
+
+def recipe_labels(rec, name):
+    """labels printed with every result block: READING_STATUS labels, 'decisive minus <ids>', firm-wide 13F filer"""
+    lab = list(rec.get("labels", []))
+    if rec.get("not_implemented"):
+        lab.append("decisive minus %s" % ", ".join(rec["not_implemented"]))
+    return lab
+
+
+def evaluate(tgt, E_all, u, r, cp, out, save):
+    """one recipe on one investor: the section set of the eq_recall_v1 report. kantesaria_v1 keeps the v1 layout
+    line for line; every other recipe repeats its labels under each section header."""
+    rec = RECIPES[tgt["recipe"]]
+    v1 = rec.get("v1_layout", False)
+    labels = recipe_labels(rec, tgt["name"])
+    lab_txt = "; ".join(labels)
+
+    def head(txt):
+        out(txt)
+        if not v1:
+            out("labels: %s" % lab_txt)
+    E = recipe_set(E_all, rec)
     F = rec["flags"](E)
-    FV = rec["full"](F)
-    fcols = list(FV.columns)
-    add = {"dec": rec["entry"](F).values, "dec_strict": rec["entry"](F, strict=True).values}
-    add.update({c: FV[c].values for c in fcols})
+    FV = rec["full"](F) if rec.get("full") else None
+    fcols = list(FV.columns) if FV is not None else []
+    assert not set(fcols) & {"dec", "dec_strict", "ref"}, "full-form version name clashes with a fixed column"
+    add = {"dec": rec["entry"](F).values}
+    if rec.get("strict"):
+        add["dec_strict"] = rec["entry"](F, strict=True).values
+    if FV is not None:
+        add.update({c: FV[c].values for c in fcols})
     for c, _, _ in rec["criteria"]:
-        add["f_" + c] = (F.P2 | F.P3).values if c == "P2|P3" else F[c].values
+        add["f_" + c] = _or(F, c).values
     for c, _ in rec["full_extra"]:
-        add["f_" + c] = F[c].values
+        add["f_" + c] = _or(F, c).values
     E = pd.concat([E, pd.DataFrame(add, index=E.index)], axis=1)
     rk = r[["permno", "yyyymm", "sec_pct"]]
     E = E.merge(rk, on=["permno", "yyyymm"], how="left")
     E["ref"] = E.sec_pct.fillna(0) >= REF_TOP
-    out("panel built %.0f s" % (time.time() - t0))
+    out("\n# %s: recipe %s (eligible stock-quarters %d%s)" % (
+        tgt["name"], tgt["recipe"], len(E), "; house exclusions do not apply" if rec.get("universe") == "all" else ""))
+    out("labels: %s" % lab_txt)
 
     # ---------------------------------------------------------------- 1. coverage and pass rates (plumbing)
-    out("\n## 1. Eligible universe, measure coverage and decisive pass rate (Q4 quarter-ends; last = 2025-09)")
-    mcols = ["fy_run", "s01", "g01", "g02", "s03", "g06", "c01", "p1gap", "p03", "p3rel", "c06", "b7", "s02", "c04", "b01"]
+    head("\n## 1. Eligible universe, measure coverage and decisive pass rate (Q4 quarter-ends; last = 2025-09)")
+    mcols = rec["coverage"]
     out("t        elig  pass  rate%  ref%  " + " ".join("%6s" % c[:6] for c in mcols))
     for t in [y * 100 + 12 for y in range(T0 // 100, T1 // 100)] + [T1]:
         d = E[E.yyyymm == t]
@@ -1041,70 +1875,68 @@ def run(load, save, out):
         out("%d  %5d %5d  %5.1f %5.1f  %s" % (t, len(d), int(d.dec.sum()), 100 * d.dec.mean(), 100 * d.ref.mean(), cov))
     out("coverage = % of eligible stocks with the measure (fy_run: with any run); rate = decisive pass rate; ref = "
         "reference-book top fifth inside sector")
-    out("share-pay source among eligible: quarterly %.1f%%, annual %.1f%%, none (decisive: 0; strict: missing) %.1f%%; "
-        "acquisitions filled as none where missing: %.1f%%" % tuple(
-            [100 * (E.sbc_src == k).mean() for k in ("quarterly", "annual", "none")] + [100 * E.aqc_filled.fillna(False).astype(bool).mean()]))
+    if tgt["recipe"].startswith("kantesaria"):
+        out("share-pay source among eligible: quarterly %.1f%%, annual %.1f%%, none (decisive: 0; strict: missing) %.1f%%; "
+            "acquisitions filled as none where missing: %.1f%%" % tuple(
+                [100 * (E.sbc_src == k).mean() for k in ("quarterly", "annual", "none")] + [100 * E.aqc_filled.fillna(False).astype(bool).mean()]))
 
     # ---------------------------------------------------------------- purchases
-    cp = load_conv(load)
-    tgt = {"name": TARGET["name"], "mgrnos": TARGET["mgrnos"]}
-    for inv in INVESTORS:
-        if inv["name"] == TARGET["name"]:
-            tgt = dict(inv)
-    Pk = investor_purchases(cp, tgt)
-    cols = ["dec", "dec_strict", "ref"] + fcols
+    inv = {"name": tgt["name"], "mgrnos": tgt["mgrnos"]}
+    for i_ in INVESTORS:
+        if i_["name"] == tgt["name"]:
+            inv = dict(i_)
+    Pk = investor_purchases(cp, inv)
+    cols = ["dec"] + (["dec_strict"] if rec.get("strict") else []) + ["ref"] + fcols
     S = sets_for(Pk, E, cols)
     inu = u[u.in_univ & u.gsector.notna()][["permno", "yyyymm", "excluded"]].rename(columns={"yyyymm": "t"})
     pu = Pk.merge(inu, on=["permno", "t"], how="left")
-    out("\n## 2. %s: conviction purchases 2010-2025 evaluated at the quarter-end before purchase" % TARGET["name"])
+    excl_n = int((pu.excluded == True).sum()) if rec.get("universe") != "all" else 0  # noqa: E712
+    head("\n## 2. %s: conviction purchases 2010-2025 evaluated at the quarter-end before purchase" % tgt["name"])
     out("purchases: either %d (version a %d, b %d); in the eligible universe at t: either %d (a %d, b %d); in the "
         "universe but in a house-excluded industry (A8 2a, not counted): %d; not in the universe: %d" % (
             len(Pk), int(Pk.a.sum()), int(Pk.b.sum()), len(S["either"]), len(S["a"]), len(S["b"]),
-            int((pu.excluded == True).sum()), int(pu.excluded.isna().sum())))  # noqa: E712
+            excl_n, int(pu.excluded.isna().sum())))
+    if not v1 and tgt["name"] in FIRM_WIDE:
+        out("13F filer is firm-wide (%s; A6): purchases are the firm's, not only this investor's" % FIRM_WIDE[tgt["name"]])
     out("quarters with a counted purchase: %d; bootstrap: %d draws of quarters, seed %d" % (
         len(set(S["either"].t)), NBOOT, SEED))
-
-    def line(label, res):
-        if not res["measurable"]:
-            return "%-44s not measurable (fewer than %d counted purchases)" % (label, MIN_N)
-        return "%-44s recall %s  base %s  lift %s  90%% [%s, %s]%s" % (
-            label, fmt(res["recall"], True), fmt(res["base"], True), fmt(res["lift"]), fmt(res.get("lo", np.nan)),
-            fmt(res.get("hi", np.nan)), ("  (%d version-sets with no passer in their cells left out of the lift)"
-                                         % res["lift_undefined"]) if res.get("lift_undefined") else "") + (
-            "  (interval on %d of %d draws: the others have a cell set with no passer)" % (res["draws_used"], NBOOT)
-            if res.get("draws_used", NBOOT) < NBOOT else "")
-
-    def per_set(res):
-        return "; ".join("%s: n %d, recall %s, base %s, lift %s" % (r["set"], r["n"], fmt(r["recall"], True),
-                                                                   fmt(r["base"], True), fmt(r["lift"]))
-                         for r in res["per"])
     ab = {k: S[k] for k in ("a", "b")}
     dec = summarize(ab, ["dec"])
     ref = summarize(ab, ["ref"])
-    out(line("DECISIVE (average of versions a and b)", dec))
-    only = [r["set"] for r in dec["per"] if not r["measurable"]]
+    out(_line("DECISIVE (average of versions a and b)", dec))
+    only = [x["set"] for x in dec["per"] if not x["measurable"]]
     if only and dec["measurable"]:
         out("   NOTE: decisive = one version only (%s not measurable: fewer than 20 purchases)" % ", ".join(only))
-    out("   per version: " + per_set(dec))
+    out("   per version: " + _per_set(dec))
     eit = summarize({"either": S["either"]}, ["dec"])
-    out(line("decisive on 'either version' (reported)", eit))
-    strict = summarize(ab, ["dec_strict"])
-    out(line("decisive, strict missing (reported)", strict))
-    full = summarize(ab, fcols)
-    out(line("FULL FORM, %d versions averaged (reported)" % len(fcols), full))
+    out(_line("decisive on 'either version' (reported)", eit))
+    strict = summarize(ab, ["dec_strict"]) if rec.get("strict") else None
+    if strict is not None:
+        out(_line("decisive, strict missing (reported)", strict))
+    if FV is not None:
+        full = summarize(ab, fcols)
+        out(_line("FULL FORM, %d versions averaged (reported)" % len(fcols), full))
+    else:
+        full = {"measurable": False}
+        out("FULL FORM: %s" % rec.get("full_note", "not implemented"))
     # baselines
     ctrl = [i for i in INVESTORS if i["group"] == "control" and i["mgrnos"]]
     Pc = pd.concat([investor_purchases(cp, i) for i in ctrl], ignore_index=True) if ctrl else Pk.iloc[0:0]
     Sc = sets_for(Pc, E, ["dec"])
     base1 = summarize({k: Sc[k] for k in ("a", "b")}, ["dec"])
-    out("\n## 3. Baselines")
-    out(line("(1) recipe on pooled control purchases", base1))
-    out("   per version: " + per_set(base1))
-    out(line("(2) reference-book top fifth on this investor", ref))
-    out("   per version: " + per_set(ref))
+    head("\n## 3. Baselines")
+    out(_line("(1) recipe on pooled control purchases", base1))
+    out("   per version: " + _per_set(base1))
+    out(_line("(2) reference-book top fifth on this investor", ref))
+    out("   per version: " + _per_set(ref))
 
     # ---------------------------------------------------------------- gate
-    out("\n## 4. Gate (A10 item 9): decisive form")
+    head("\n## 4. Gate (A10 item 9): decisive form")
+    if rec.get("no_price"):
+        out("no PRICE criterion in the decisive form: the recipe is tested as written")
+    if rec.get("not_implemented"):
+        out("NOT IMPLEMENTED in the decisive form: %s (evaluated without; label 'decisive minus')"
+            % ", ".join(rec["not_implemented"]))
     if not dec["measurable"]:
         verdict = "NOT MEASURABLE"
         out("fewer than %d counted purchases: not measurable" % MIN_N)
@@ -1119,10 +1951,10 @@ def run(load, save, out):
                                                         "yes" if c2 else "NO", 100 * GATE["recall"], "yes" if c3 else "NO",
                                                         "yes" if c4 else "NO", "yes" if c5 else "NO"))
         verdict = "PASS" if (c1 and c2 and c3 and c4 and c5) else "FAIL"
-    out("RECALL GATE: %s  (labels: %s)" % (verdict, "; ".join(LABELS)))
+    out("RECALL GATE: %s  (labels: %s)" % (verdict, lab_txt))
 
     # ---------------------------------------------------------------- per criterion
-    out("\n## 5. Per criterion: share of the counted purchases it rejects (average of versions a and b)")
+    head("\n## 5. Per criterion: share of the counted purchases it rejects (average of versions a and b)")
     out("criterion  rejects  of which measure missing  | universe rejects  | description")
     rows = []
     for c, desc, meas in rec["criteria"] + [(c, d, []) for c, d in rec["full_extra"]]:
@@ -1145,17 +1977,17 @@ def run(load, save, out):
     out("(universe rejects = share of all eligible stock-quarters failing it; context only)")
 
     # ---------------------------------------------------------------- cross table
-    out("\n## 6. Cross table: decisive recipe %s on every roster and control investor (lift, average of a and b; "
-        "masked ids as in the say-do tables)" % TARGET["recipe"])
+    head("\n## 6. Cross table: decisive recipe %s on every roster and control investor (lift, average of a and b; "
+         "masked ids as in the say-do tables)" % tgt["recipe"])
     mask = mask_ids(sorted({i["name"] for i in INVESTORS}))
     cross = []
-    for inv in INVESTORS:
-        if not inv["mgrnos"]:
+    for i_ in INVESTORS:
+        if not i_["mgrnos"]:
             continue
-        Pi = investor_purchases(cp, inv)
+        Pi = investor_purchases(cp, i_)
         Si = sets_for(Pi, E, ["dec"])
         ri = summarize({k: Si[k] for k in ("a", "b")}, ["dec"], nboot=0)
-        cross.append((mask[inv["name"]], inv["group"], ri))
+        cross.append((mask[i_["name"]], i_["group"], ri))
     cross.sort()
     for mid, grp, ri in cross:
         out("%s  %-7s  lift %s" % (mid, grp, fmt(ri["lift"]) if ri["measurable"] else "n < %d" % MIN_N))
@@ -1167,14 +1999,78 @@ def run(load, save, out):
     out("ROSTER pooled   lift %s" % fmt(rr.get("lift", np.nan)))
     out("CONTROL pooled  lift %s" % fmt(base1.get("lift", np.nan)))
 
-    # ---------------------------------------------------------------- store
     for nm_, res in (("decisive", dec), ("either", eit), ("strict", strict), ("full", full), ("control", base1),
                      ("reference", ref)):
+        if res is None:
+            continue
         rows.append(dict(kind="result", key=nm_, recall=res.get("recall"), base=res.get("base"), lift=res.get("lift"),
                          lo=res.get("lo"), hi=res.get("hi")))
     rows.append(dict(kind="verdict", key=verdict))
-    save("rc_recall_summary", pd.DataFrame(rows))
-    keepc = ["permno", "yyyymm", "cell", "dec", "dec_strict", "ref"] + ["f_" + c for c, _, _ in rec["criteria"]]
-    save("rc_pass_panel", E[keepc].copy())
-    out("\nstored on WRDS: rc_pass_panel (pass flags per eligible stock-quarter), rc_recall_summary (the numbers above)")
+    R_ = pd.DataFrame(rows)
+    R_.insert(0, "recipe", tgt["recipe"])
+    keepc = ["permno", "yyyymm", "cell", "dec"] + (["dec_strict"] if rec.get("strict") else []) + ["ref"] + [
+        "f_" + c for c, _, _ in rec["criteria"]]
+    save("rc_pass_" + tgt["recipe"], E[keepc].copy())
+    nn = dec.get("n", {}) if dec["measurable"] else {x["set"]: x["n"] for x in dec["per"]}
+    summ = dict(name=tgt["name"], recipe=tgt["recipe"], n="a %s, b %s" % (nn.get("a", len(S["a"])), nn.get("b", len(S["b"]))),
+                recall=dec.get("recall"), base=dec.get("base"), lift=dec.get("lift"), lo=dec.get("lo"),
+                hi=dec.get("hi"), gate=verdict, labels=lab_txt)
+    return R_, summ
+
+
+def run(load, save, out):
+    t0 = time.time()
+    out("%s  recall test (RECALL_SPEC_v1; V04_REGISTRATION A10 item 9, A13 items 13 and 21)" % VERSION)
+    out("recipes in order: %s" % ", ".join(x["recipe"] for x in TARGETS))
+    miss = []
+    for n in _needed() + ["eq_conv_panel"]:
+        try:
+            load(n)
+        except Exception:  # noqa: BLE001
+            if n.startswith("ref_"):
+                try:
+                    load("rc_" + n[4:])
+                    continue
+                except Exception:  # noqa: BLE001
+                    pass
+            miss.append(n)
+    if "rc_t10" in miss:
+        out("STOP: no 10-year Treasury yield stored (rc_t10); RECALL_SPEC_v1: the job stops and says so")
+    if miss:
+        out("PULLS INCOMPLETE (%s): nothing computed" % ", ".join(miss))
+        return
+    D = load_inputs(load)
+    out("inputs: " + ", ".join("%s %d" % (k, len(v)) for k, v in D.items()))
+    u, msf, s, src = build_panel(D, out)
+    if src != "co_hgic":
+        out("STOP: GICS history (comp.co_hgic) not available; RECIPE_v1 does not accept today's GICS for A1-A4")
+        return
+    r = rank_panel(u)
+    E = recall_panel(D, u, msf, s, out)
+    out("panel built %.0f s" % (time.time() - t0))
+    cp = load_conv(load)
+    parts, summ = [], []
+    for tgt in TARGETS:
+        rec = RECIPES[tgt["recipe"]]
+        if not rec.get("measured", True):
+            out("\n# %s: recipe %s" % (tgt["name"], tgt["recipe"]))
+            out("Sosin: not in eq_conv_panel (13F filer %s to be added by an eq_conv input change); not measured"
+                % ",".join(tgt["mgrnos"]))
+            summ.append(dict(name=tgt["name"], recipe=tgt["recipe"], n="-", recall=np.nan, base=np.nan, lift=np.nan,
+                             lo=np.nan, hi=np.nan, gate="NOT MEASURED", labels="; ".join(recipe_labels(rec, tgt["name"]))))
+            continue
+        R_, s_ = evaluate(tgt, E, u, r, cp, out, save)
+        parts.append(R_)
+        summ.append(s_)
+        out("(%s done %.0f s)" % (tgt["recipe"], time.time() - t0))
+    out("\n# Summary: decisive form, average of versions a and b (labels in each block above)")
+    out("%-28s %-17s %-14s %7s %7s %7s  %-17s %s" % ("investor", "recipe", "n", "recall", "base", "lift", "90% interval",
+                                                     "gate"))
+    for x in summ:
+        out("%-28s %-17s %-14s %7s %7s %7s  [%s, %s]  %s" % (
+            x["name"][:28], x["recipe"], x["n"], fmt(x["recall"], True), fmt(x["base"], True), fmt(x["lift"]),
+            fmt(x["lo"]), fmt(x["hi"]), x["gate"]))
+    save("rc_recall_summary_v11", pd.concat(parts, ignore_index=True) if parts else pd.DataFrame())
+    out("\nstored on WRDS: rc_pass_<recipe> (pass flags per eligible stock-quarter), rc_recall_summary_v11 (the numbers "
+        "above); eq_recall_v1's rc_pass_panel and rc_recall_summary are kept")
     out("done %.0f s" % (time.time() - t0))
