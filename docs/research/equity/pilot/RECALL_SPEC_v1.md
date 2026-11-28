@@ -23,6 +23,8 @@ median" = median over the whole eligible universe at t BEFORE the exclusions; a 
 GICS codes for A1-A4 exactly as listed (sector 35; group 4520; industry 151040; sectors 10, 15; sub-industry
 30202010; sectors 55, 60; group 4010 incl. 40102010; group 4040; sub-industries 40201050, 40202010, 40204010).
 Insurance (group 4030) is excluded by the house rule (A8 2a) in every pod, recipe or not.
+(Amended 2026-11-28: the house exclusions, insurance included, do not apply where a registered recipe says so:
+pilecki_v1, nygren_v1 and, from 1.1.1, lilu_v1; V04_REGISTRATION A13 items 21-22.)
 The full form (B7-B11, P4, A6-A9 versions) is computed and REPORTED only.
 
 ## Statistics (A10 item 9)

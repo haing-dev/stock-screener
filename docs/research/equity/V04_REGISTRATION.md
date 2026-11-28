@@ -635,3 +635,32 @@ as such. Replaces R1.1 (record); R1.2 (material) and R1.3 (screenability) stay.
       strict variant on both windows; full form crossed (1,296 versions, as v1's 108). Full forms with a selling or
       size-only line count its versions with the decisive entry (Stahl 32 -> 4 entry rules, Nygren 10 books, Li Lu
       10 versions).
+22. **eq_recall 1.1.1 (2026-11-28): fixes after the independent review of 1.1.0, made after the review
+    (pilot/RECALL_CODE_REVIEW_1.1.0_2026-11-28.md: no blocker, 4 should-fix, 12 notes) and before any 1.1.x result
+    (no 1.1.x run() has executed; eq_recall_pull_v2 may have stored rc_fqx2, rc_funda2, rc_ibes2, rc_idx, which stay
+    reusable). Registered here before the code; the code hash is in tools/equity/seal_exempt.json and SEAL_LOG.**
+    - **S1 share basis.** Zlatev P1 (price / FY2 EPS) and Nygren P4 / G2-G4 (price / V) and Sosin's forward yield use
+      the unadjusted I/B/E/S summary ibes.statsumu_epsus (new data set rc_ibes2u: fpi 1 and 2, same fields and date
+      rule as rc_ibes2) and the CRSP price at t as traded (no factor); both are then on the basis of the statistic date
+      (at most 35 days before t). rc_ibes2 (adjusted) stays for long-term growth, E04 (FY2 / FY1, basis-free) and the
+      FY1 estimate count. If statsumu_epsus is not readable by the account, the pull step prints so and stores a
+      marker; run() then uses the 1.1.0 method and labels Zlatev P1 and Nygren P4 "provisional (split basis)" on
+      every line block instead of stopping. New job eq_recall_pull_v2b (pulls only what is missing).
+    - **S2 reference-book baseline.** For recipes on their own set (universe 'all': pilecki_v1, nygren_v1, lilu_v1)
+      the reference-book score is computed on that set (rank_panel's code with the house exclusions off, inside-sector
+      percentile). Every recipe prints the share of its counted purchases without a reference score; where it is above
+      50%, gate condition c5 is printed "not informative" and the gate is decided on the other four conditions,
+      labelled so (kantesaria_v1's printed layout is unchanged unless this happens).
+    - **S3 Pilecki fallback.** Rows of an industry group with fewer than 10 eligible financials at t are ranked among
+      all eligible financials (sector 40) at t, as the recipe says (1.1.0 ranked them only among themselves); the
+      number of fallback stock-quarters is printed.
+    - **S4.** The Sosin line no longer prints the 13F filer number (21801 stays in the frozen input and in A13 item
+      21).
+    - **N1 Li Lu's set.** lilu_v1's decisive result is on his recipe's own set (section 0: "No industry is excluded";
+      banks and insurers are in the set and fail by construction where B1 is missing), replacing A13 item 21's house
+      set; the house-set result is reported as a second line ("decisive on the house set (reported)").
+    - **N2.** RECALL_SPEC_v1.md gets one dated line: the insurance house exclusion does not apply where a registered
+      recipe says so.
+    - **N5.** The run prints the median over quarter-ends of the number of index managers found (rc_idx nmgr, the
+      largest count over CUSIPs at each quarter-end).
+    - Not changed (notes N3, N4, N6-N12 read and kept as registered).
