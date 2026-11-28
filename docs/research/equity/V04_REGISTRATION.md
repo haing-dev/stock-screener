@@ -664,3 +664,15 @@ as such. Replaces R1.1 (record); R1.2 (material) and R1.3 (screenability) stay.
     - **N5.** The run prints the median over quarter-ends of the number of index managers found (rc_idx nmgr, the
       largest count over CUSIPs at each quarter-end).
     - Not changed (notes N3, N4, N6-N12 read and kept as registered).
+23. **Recall results v2 and output fix eq_recall 1.1.2 (2026-11-28).** eq_recall_v2 (1.1.1; report pilot/recall/
+    eq_recall_v2_report.txt; note pilot/recall/RECALL_RESULTS_v2.md) ran all recipes; kantesaria_v1 reproduces
+    eq_recall_v1 exactly. Seen: kantesaria_v2 PASS (not independent), nygren_v1 PASS (thin, firm-wide 13F);
+    druckenmiller_v1, stahl_v1, hohn_v1, zlatev_v1, pilecki_v1 FAIL. The runner cut the report at 60,000 characters
+    inside the lilu_v1 block: lilu_v1 and the summary table were NOT seen. 1.1.2 changes output only: run_part(load,
+    save, out, part=k) runs the same computation for PARTS[k] (1 = kantesaria_v1, kantesaria_v2, druckenmiller_v1,
+    stahl_v1; 2 = the rest) as two job steps; numbers must equal eq_recall_v2 (smoke test: run_part(1) + run_part(2)
+    = run()). Job eq_recall_v2b. PILOT FOR THE KILL CRITERION (registered here, before any revision result): the three
+    investors with full material, Kantesaria, Druckenmiller, Stahl. Each failing recipe gets its one revision round
+    (A10 item 9: writer sees recall, base, lift and per-criterion rejection shares only; every change cites a quote);
+    if fewer than 2 of the 3 pilot investors pass after their round, no more recipes are written. Thin investors
+    (two documents) cannot be classed above Incubator whatever their recall.

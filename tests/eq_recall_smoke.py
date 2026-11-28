@@ -461,4 +461,23 @@ for rc_, lab_ in (("zlatev_v1", "P1 provisional (split basis)"), ("nygren_v1", "
     assert txt2[a:b].count(lab_) >= 7, rc_
 assert txt2.count("provisional (split basis)") == txt2[txt2.index("recipe zlatev_v1"):].count("provisional (split basis)")
 print("1.1.1: unreadable unadjusted I/B/E/S -> labelled provisional, no stop: OK")
+# ---------------------------------------------------------------- 6. 1.1.2: run_part = run, split in two steps
+lines.clear()
+saved.clear()
+R.run(load, save, out)
+full_ = saved["rc_recall_summary_v11"].copy()
+seen_ = set()
+for k_ in (1, 2):
+    lines.clear()
+    R.run_part(load, save, out, part=k_)
+    assert len("\n".join(lines)) < 60000, "part %d output too long for the runner" % k_
+    seen_ |= set(R.PARTS[k_])
+assert seen_ == {t["recipe"] for t in R.TARGETS}, "PARTS must cover every recipe once"
+both_ = pd.concat([saved["rc_recall_summary_v11_p1"], saved["rc_recall_summary_v11_p2"]], ignore_index=True)
+assert len(both_) == len(full_)
+cols_ = [c for c in full_.columns if c != "t"]
+a_ = full_.sort_values(list(full_.columns[:3])).reset_index(drop=True)
+b_ = both_.sort_values(list(both_.columns[:3])).reset_index(drop=True)
+pd.testing.assert_frame_equal(a_, b_[list(a_.columns)])
+print("1.1.2: run_part(1) + run_part(2) = run() on the mock, each part under 60,000 characters: OK")
 print("\nRECALL SMOKE OK")

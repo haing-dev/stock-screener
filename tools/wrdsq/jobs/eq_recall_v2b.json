@@ -1,0 +1,1 @@
+{"name": "eq_recall_v2b", "steps": [{"do": "python", "code": "import eq_recall\neq_recall.run_part(load, save, out, part=1)"}, {"do": "python", "code": "import eq_recall\neq_recall.run_part(load, save, out, part=2)"}]}

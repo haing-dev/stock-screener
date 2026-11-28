@@ -64,6 +64,11 @@ baseline scored on the recipe's own set for recipes with the house exclusions of
 reference score printed; above 50% c5 is "not informative" and the gate rests on the other four conditions. S3
 pilecki_v1 small groups ranked among all eligible financials at t. S4 the Sosin line prints no filer number. N1 lilu_v1
 on his own set (all industries), the house-set result as a second line. N5 index managers per quarter-end printed.
+1.1.2 (2026-11-28; A13 item 23, after eq_recall_v2, whose report the runner cut at 60,000 characters inside the lilu_v1
+block, so lilu_v1 and the summary table were not seen): output only. run_part(load, save, out, part=k) runs the same
+computation for the recipes of PARTS[k] (1 = kantesaria_v1, kantesaria_v2, druckenmiller_v1, stahl_v1; 2 = the rest),
+so each job step stays under the runner's per-step limit; the summary of a part is stored as rc_recall_summary_v11_p<k>.
+run() unchanged (all recipes, one step). No measure, recipe, statistic or seed changed: numbers must equal eq_recall_v2.
 """
 import json
 import time
@@ -77,7 +82,7 @@ INVESTORS = json.loads("[{\"name\": \"Joel Greenblatt\", \"group\": \"roster\", 
 TARGETS = json.loads("[{\"name\": \"Dev Kantesaria\", \"mgrnos\": [\"14460\"], \"recipe\": \"kantesaria_v1\"}, {\"name\": \"Dev Kantesaria\", \"mgrnos\": [\"14460\"], \"recipe\": \"kantesaria_v2\"}, {\"name\": \"Stan Druckenmiller\", \"mgrnos\": [\"13021\", \"23704\"], \"recipe\": \"druckenmiller_v1\"}, {\"name\": \"Murray Stahl\", \"mgrnos\": [\"44850\", \"49373\"], \"recipe\": \"stahl_v1\"}, {\"name\": \"Chris Hohn\", \"mgrnos\": [\"11194\"], \"recipe\": \"hohn_v1\"}, {\"name\": \"Val Zlatev\", \"mgrnos\": [\"7142\"], \"recipe\": \"zlatev_v1\"}, {\"name\": \"Derek Pilecki\", \"mgrnos\": [\"8799\"], \"recipe\": \"pilecki_v1\"}, {\"name\": \"Bill Nygren and Alex Fitch\", \"mgrnos\": [\"43485\"], \"recipe\": \"nygren_v1\"}, {\"name\": \"Li Lu\", \"mgrnos\": [\"14546\"], \"recipe\": \"lilu_v1\"}, {\"name\": \"Cliff Sosin\", \"mgrnos\": [\"21801\"], \"recipe\": \"sosin_v1\"}]")
 # <<< FROZEN INPUT
 
-VERSION = "eq_recall-1.1.1"
+VERSION = "eq_recall-1.1.2"
 COM = ("securitytype = 'EQTY' and securitysubtype = 'COM' and sharetype = 'NS' and primaryexch in ('N','A','Q')")
 MEASURES = ["ey", "bp", "mom", "roe", "acc", "pio", "rev"]
 GROUPS = {"value": ["ey", "bp"], "momentum": ["mom"], "quality": ["roe", "acc", "pio"], "expectations": ["rev"]}
@@ -2106,10 +2111,24 @@ def evaluate(tgt, E_all, u, r, cp, out, save, r_all=None, extra=None):
     return R_, summ
 
 
+PARTS = {1: ["kantesaria_v1", "kantesaria_v2", "druckenmiller_v1", "stahl_v1"],
+         2: ["hohn_v1", "zlatev_v1", "pilecki_v1", "nygren_v1", "lilu_v1", "sosin_v1"]}  # 1.1.2: output split only
+
+
+def run_part(load, save, out, part=1):
+    """1.1.2: run() for the recipes of PARTS[part] only (same computation; output under the runner's per-step limit)"""
+    keep = PARTS[part]
+    _run(load, save, out, [t for t in TARGETS if t["recipe"] in keep], "rc_recall_summary_v11_p%d" % part)
+
+
 def run(load, save, out):
+    _run(load, save, out, TARGETS, "rc_recall_summary_v11")
+
+
+def _run(load, save, out, targets, summary_name):
     t0 = time.time()
     out("%s  recall test (RECALL_SPEC_v1; V04_REGISTRATION A10 item 9, A13 items 13 and 21)" % VERSION)
-    out("recipes in order: %s" % ", ".join(x["recipe"] for x in TARGETS))
+    out("recipes in order: %s" % ", ".join(x["recipe"] for x in targets))
     miss = []
     for n in _needed() + ["eq_conv_panel"]:
         try:
@@ -2141,7 +2160,7 @@ def run(load, save, out):
     out("panel built %.0f s" % (time.time() - t0))
     cp = load_conv(load)
     parts, summ = [], []
-    for tgt in TARGETS:
+    for tgt in targets:
         rec = RECIPES[tgt["recipe"]]
         if not rec.get("measured", True):
             out("\n# %s: recipe %s" % (tgt["name"], tgt["recipe"]))
@@ -2160,7 +2179,7 @@ def run(load, save, out):
         out("%-28s %-17s %-14s %7s %7s %7s  [%s, %s]  %s" % (
             x["name"][:28], x["recipe"], x["n"], fmt(x["recall"], True), fmt(x["base"], True), fmt(x["lift"]),
             fmt(x["lo"]), fmt(x["hi"]), x["gate"]))
-    save("rc_recall_summary_v11", pd.concat(parts, ignore_index=True) if parts else pd.DataFrame())
-    out("\nstored on WRDS: rc_pass_<recipe> (pass flags per eligible stock-quarter), rc_recall_summary_v11 (the numbers "
+    save(summary_name, pd.concat(parts, ignore_index=True) if parts else pd.DataFrame())
+    out("\nstored on WRDS: rc_pass_<recipe> (pass flags per eligible stock-quarter), " + summary_name + " (the numbers "
         "above); eq_recall_v1's rc_pass_panel and rc_recall_summary are kept")
     out("done %.0f s" % (time.time() - t0))
