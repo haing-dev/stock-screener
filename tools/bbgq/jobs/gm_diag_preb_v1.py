@@ -9,14 +9,16 @@ diagnostics", 2026-11-27) on the PC.
    results\\gm_diag_v1.txt = the diagnostics run (A3 empty); results\\gm_core_v1.txt = Core book v1 (CORE V1 JOB DONE,
    CORE BOOK V1 EMPTY); Bloomberg store lock id = LOCK_v2; LSEG store lock id = LOCK_LSEG_v5 (read from its manifest
    before any table is loaded); work\\free\\gm_card_inputs.zip = LOCK_CARD_v1 file by file (card_inputs.py, before a
-   value is parsed); free inputs = the shipped zip.
+   value is parsed; its own sha256 against LOCK_CARD_v1 zip_sha256 is printed, informational); free inputs = the
+   shipped zip.
 2. Free arm vs engine_ref.json; the A1 panel rebuilt (a1_panel-1.1.0), extension-only, its id = the registered A1 PANEL
    ID, compared with work\\a1\\a1_panel_e7f98d4439fc.pkl when present (STOP on a difference). Nothing is written to work\\.
 3. The free card inputs under the 2010-12-31 cut: panel.fx_usd_value (EUR, JPY, GBP, AUD, CAD), TB3MS and the OECD
    3-month rates of C2-D1 (DE then EZ).
-4. diag_preb.report: as-run check of the A2-final book against the A2 report first (STOP on a difference), then R1,
-   C1-D1, C1-D2, C2-D1, C3-D1, C5-D1, C5-D2, F0 and the blocked list; values over >= 60 months only (else count and
-   sign); no LSEG or Bloomberg value is printed.
+4. diag_preb.report (1.1.1): as-run check of the A2-final book against the A2 report first (STOP on a difference), then
+   the 12 rows R1, C1-D1, C1-D2, C2-D1, C2-D2, C3-D2, C3-D1, C4-D1, C4-D2, C5-D1, C5-D2, F0 on the card inputs (each
+   first-published input's flagged share printed; seal checks on the card inputs and rule outputs); values over >= 60
+   months only (else count and sign); no LSEG, Bloomberg or card-input value is printed.
 5. TRIAL ROW lines (gm/trials.csv family "diag", one per diagnostic run) for the coordinator.
 Needs: lib\\gm\\ (gm-2.2.1), lib\\gm_engine.py, lib\\bbgdata.py, lib\\bbg_panel.py, lib\\a1_panel.py, lib\\a2_batch.py,
 lib\\diag_a2.py, lib\\diag_preb.py, lib\\card_inputs.py, lib\\lsegdata.py, lib\\lseg_rules.py (+ the lsegdata config CSVs), lib\\engine_ref.json,
@@ -43,7 +45,7 @@ LIB = os.path.join(os.getcwd(), "lib")
 print("=== gm_diag_preb_v1 ===")
 
 # the registered build of the lib files (PREB_BUILD hash table; gm/CHANGES.md "Pre-B diagnostics" item 9)
-LIB_SHA = {"diag_preb.py": "5273944bcb9811ccba83510da3359996e28def8eb8b89a4408ed3efad855c64e",
+LIB_SHA = {"diag_preb.py": "2e9cadd9d41250b8009ca159e23fc69f5c73d44bc79dd9cca51cc8aa4a4ee102",
            "diag_a2.py": "3264a5381c13b124d2566d02f263e21905f4e901680c1af7c2134f0bd558be1b",
            "a2_batch.py": "35339f673f351f43315ad3c7010ba733b6fb8990a6a41feb1ef20de324de58c6",
            "a1_panel.py": "eb9ef3f7fbd12760e174f9ef1df8573890bed6ca8d36f7d4e5c63eadd822ebb5",
@@ -54,6 +56,7 @@ LIB_SHA = {"diag_preb.py": "5273944bcb9811ccba83510da3359996e28def8eb8b89a4408ed
            "lseg_rules.py": "5686999172a22c76b7190f8df210c93ffc09a6737f32301df030080dccc42da9",
            "card_inputs.py": "4091f84bcbb11f43061bcc0330520a4a5580cb775895148a38849c0fbcab7b80"}
 CARD_ZIP = os.path.join(FREE, "gm_card_inputs.zip")      # LOCK_CARD_v1 (gm/CHANGES.md data entry "card inputs")
+CARD_ZIP_SHA = "4f84b01d07ad59da05ad7e8ca4e78b31b1ed687941c6852da804c685be1b068d"   # LOCK_CARD_v1 zip_sha256 (B7)
 
 
 def frames(e):
@@ -171,6 +174,9 @@ try:
                          CIN.COMMIT[:12]))
     if not okci:
         stop("the card inputs lock id is not LOCK_CARD_v1")
+    zs = hashlib.sha256(open(CARD_ZIP, "rb").read()).hexdigest()
+    print("%s card inputs zip sha256 %s | LOCK_CARD_v1 zip_sha256 %s | informational (content pinned file by file)" % (
+        "PASS" if zs == CARD_ZIP_SHA else "NOTE", zs[:16], CARD_ZIP_SHA[:16]))
     st = GE.ensure_free_inputs(FREE)
     if st["manifest"] is None:
         stop("work\\free\\gm_free_inputs.zip not found")

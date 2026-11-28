@@ -5,7 +5,9 @@ tested in the cloud on synthetic panels and a mock LSEG store only.
 Run (entry item 4 and addendum 1.1.0 A1): R1 (Strip reversion's gate, LSEG Eurodollar contracts), C1-D1 / C1-D2 (card 1
 R1-R5), C2-D1, C2-D2 (card 2 R1, R2), C3-D2 then C3-D1 (card 3 R1-R4), C4-D1, C4-D2 (card 4 R5), C5-D1, C5-D2 and F0
 on every card rule as it would enter B2. Card inputs: card_inputs.Inputs (LOCK_CARD_v1, FRED / ALFRED first release
-from the macro-data branch). Nothing is blocked in 1.1.0.
+from the macro-data branch). Nothing is blocked in 1.1.0. 1.1.1 (bug fix B1-B7, gm/CHANGES.md): card 1 R3's
+percentiles, card 2 R1's bar b and card 2 R2's labour gate on the series' own months; R1's padded next-day count; seal
+checks on the card inputs and rule outputs; LOCK_CARD id in the trial rows.
 The reference book: the A2-final book config.A1_INCUMBENT (77374d7bef), engine gm-2.2.1, A1 panel e7f98d44..., its
 book.run "pos". Card rule positions are minimal signals from the specs (positions only, no returns of the rules).
 Printing (entry item 7): shares, means and gaps over at least 60 months only, else count and sign.
@@ -17,6 +19,7 @@ API
   card1_r5(fxv, vol), card3_r4(eps, spx_me, tb3, vol_spx), card4_days(gspc, days, vol_spx),
   card5_r1(P, vol)                       minimal rule positions (entry item 5)
   card1_rules, card2_rules, card3_rules, card3_r1, card4_r5           1.1.0 rule positions (addendum A3-A6)
+  r3_bars, r1_bar_b, labour_gate (ci, idx)                            1.1.1 windows on the series' own months
   c2d2(...), c4d1(...), c4d2(...)        1.1.0 gates
   f0(...), c1d1(...), c1d2(...), c2d1(...), c3d1(...), c5d1(...), c5d2(...)
   report(R, D, S, gspc, fxv, rates, lseg, ci, out, ...)   the registered pass; returns the result dict
@@ -30,7 +33,7 @@ import re
 import numpy as np
 import pandas as pd
 
-VERSION = "diag_preb-1.1.0"   # 1.1.0 (addendum): every row on the card inputs (card_inputs-1.0.0)
+VERSION = "diag_preb-1.1.1"   # 1.1.1 (bug fix B1-B7): windows on the series' own months; 1.1.0: card inputs
 A1_PANEL_ID = "e7f98d4439fccf91f3451bc4b9e78079e3bc2cc2452931363b28520460b6cb43"
 LOCK_V2 = "d85a46cb2853646b24796f294f3ccab1d1507188c402e978fd59f5196ea41fc9"
 LSEG_LOCK = "90322681b9f989cc24393ae7de4fe24bf5af2f32074ffa6400b1cbed09c4074c"          # LOCK_LSEG_v5
@@ -353,10 +356,12 @@ def r1(contracts, days, start=pd.Period("1990-01", "M"), end=pd.Period("2010-11"
             g1 = measures(r1v)[key] - normal[key]
             c = r1_cost(n)
             q = abs(g0) > c and abs(g1) > c and np.sign(g0) == np.sign(g1)
-            rows.append({"month": p, "n": n, "q": bool(q)})
+            same = bool(np.array_equal(px.loc[d, st].to_numpy(dtype=float), px.loc[d1, st].to_numpy(dtype=float)))
+            rows.append({"month": p, "n": n, "q": bool(q), "d1_same": same})
     elig = len(rows)
     qual = sum(1 for x in rows if x["q"])
     share = qual / elig if elig else float("nan")
+    d1_same = sum(1 for x in rows if x["d1_same"])               # B4: reported only
     by_n = {n: (sum(1 for x in rows if x["n"] == n and x["q"]), sum(1 for x in rows if x["n"] == n))
             for n in range(2, 8)}
     first_normal = {}
@@ -372,7 +377,7 @@ def r1(contracts, days, start=pd.Period("1990-01", "M"), end=pd.Period("2010-11"
         if all(np.isfinite(px.at[d, k]) for k in alive) and len(alive) == 8:
             full += 1
     return {"eligible": elig, "qualifying": qual, "share": share, "pass": bool(elig and share >= 0.5),
-            "by_n": by_n, "excluded": excl, "months": n_month, "start": start_found,
+            "by_n": by_n, "excluded": excl, "d1_same": d1_same, "months": n_month, "start": start_found,
             "end": window[-1][0] if window else None, "first_normal": first_normal,
             "coverage": (full, len(cov_days)), "contracts": len(contracts)}
 
@@ -803,6 +808,42 @@ def _idx(R):
     return R.index
 
 
+# 1.1.1 (bug fix B1-B3): each window on the series' own months from its first month, then laid on the panel's months
+def r3_bars(ci, idx):
+    """Card 1 R3 (A3): expanding numpy-linear median and 33.3rd percentile of BAA - GS10 from its first month."""
+    sp_full = (ci.m("BAA") - ci.m("GS10")).dropna()
+    med = sp_full.expanding().quantile(0.5, interpolation="linear").reindex(idx)
+    low3 = sp_full.expanding().quantile(0.333, interpolation="linear").reindex(idx)
+    return med, low3
+
+
+def r1_bar_b(ci, idx):
+    """Card 2 R1 bar b (A4): numpy-linear 33.3rd percentile of y = GS10 - c from y's first month, once 120 exist."""
+    y_full = (ci.m("GS10") - core_cpi(ci)[0]).dropna()
+    return y_full.expanding(min_periods=120).quantile(0.333, interpolation="linear").reindex(idx)
+
+
+def labour_gate(ci, idx):
+    """Card 2 R2 (A4, spec s7): UNRATE at lag 1 and the lowest of its 240 prior values (all present), own months."""
+    un_full = ci.fr_level("UNRATE")[0]
+    low240 = un_full.shift(1).rolling(240, min_periods=240).min().reindex(idx)
+    return un_full.reindex(idx), low240
+
+
+def _frames(obj, path="", out=None):
+    """Flatten dicts / lists / tuples into {path: Series or DataFrame} for gm/seal.check_output (B6)."""
+    out = {} if out is None else out
+    if isinstance(obj, (pd.Series, pd.DataFrame)):
+        out[path or "x"] = obj
+    elif isinstance(obj, dict):
+        for k, v in obj.items():
+            _frames(v, "%s/%s" % (path, k), out)
+    elif isinstance(obj, (list, tuple)):
+        for i, v in enumerate(obj):
+            _frames(v, "%s/%d" % (path, i), out)
+    return out
+
+
 def card1_rules(ci, R, vol, spx_me):
     """Card 1 R1-R4 (SPEC_Card1 s3; addendum A3). -> {rule: rule dict}."""
     idx = _idx(R)
@@ -852,9 +893,7 @@ def card1_rules(ci, R, vol, spx_me):
     cond_any = pd.Series(False, index=idx)
     spx = spx_me.reindex(idx)
     spx_ok = spx > spx.rolling(10, min_periods=10).mean()
-    spv = sp.dropna()
-    med = spv.expanding().quantile(0.5, interpolation="linear").reindex(idx)
-    low3 = spv.expanding().quantile(0.333, interpolation="linear").reindex(idx)
+    med, low3 = r3_bars(ci, idx)
     gold = R["cm_gold"] if "cm_gold" in R else pd.Series(np.nan, index=idx)
     lvl = (1 + gold.fillna(0)).cumprod().where(gold.notna().cummax())
     gold_hi = (lvl >= lvl.rolling(12, min_periods=12).max()) & lvl.notna()
@@ -899,8 +938,7 @@ def card2_rules(ci, R, vol, spx_me):
     GS10 = ci.m("GS10").reindex(idx)
     c = core_cpi(ci)[0].reindex(idx)
     y = GS10 - c
-    yv = y.dropna()
-    y3 = yv.expanding(min_periods=120).quantile(0.333, interpolation="linear").reindex(idx)
+    y3 = r1_bar_b(ci, idx)
     hedge = R["eq_us_spx"].rolling(12, min_periods=12).corr(R["bd_us_10y"]) > 0
     vers1 = {}
     for bar in ("0.0", "third"):
@@ -911,8 +949,7 @@ def card2_rules(ci, R, vol, spx_me):
     spx = spx_me.reindex(idx)
     d = GS10 - GS10.shift(12)
     chg = 100.0 * (spx / spx.shift(12) - 1)
-    un = ci.fr_level("UNRATE")[0].reindex(idx)
-    low240 = un.shift(1).rolling(240, min_periods=240).min()
+    un, low240 = labour_gate(ci, idx)
     vers2 = {}
     for X in (1.5, 1.0):
         for lab in (False, True):
@@ -1189,6 +1226,8 @@ def report(R, D, S, gspc, fxv, rates, lseg, ci, out=print, cfg=None, facts=None)
             cfg["name"], CF.cfg_hash(cfg)))
     if getattr(ci, "lock_id", None) != CARD_LOCK:
         raise RuntimeError("card inputs are not LOCK_CARD_v1")
+    SL.check_output({"card inputs by observation date": dict(getattr(ci, "_raw", {}))}, T,
+                    "diag_preb.report card inputs")                       # B6: data entry correction 1 (b)
     out("CORE BOOK READING | C3-D1 'Core book' = the registered systematic book (7.5 fix: content, not trading status); "
         "C1-D2 the same; C4-D2 and C5-D1 name Trend (a pod of that book); the others name no book: the empty Core book "
         "v1 changes no reference here")
@@ -1206,6 +1245,8 @@ def report(R, D, S, gspc, fxv, rates, lseg, ci, out=print, cfg=None, facts=None)
     out("R1 | month-ends %s..%s (%d) | first normal: %s" % (r["start"], r["end"], r["months"], ", ".join(
         "K%d %s" % kv for kv in sorted(r["first_normal"].items()))))
     out("R1 | left out: %s" % ", ".join("%s %d" % kv for kv in r["excluded"].items()))
+    out("R1 | reported, not a gate: eligible triple-months whose next-day settlements equal the decision day's for all "
+        "eight contracts %d of %d" % (r["d1_same"], r["eligible"]))
     for n in range(2, 8):
         q, e = r["by_n"][n]
         out("R1 | K%d (cost %.3f bp) | qualifying %d of %d | share %s" % (
@@ -1249,6 +1290,7 @@ def report(R, D, S, gspc, fxv, rates, lseg, ci, out=print, cfg=None, facts=None)
     rules1 = card1_rules(ci, R, vol, spx_me)
     r5 = card1_r5(fxv, vol)
     rules1["card 1 R5"] = rule(r5["legs"], r5["cond_months"], 4)
+    SL.check_output(_frames(rules1), T, "diag_preb.report card 1 rules")
     g11, g12 = [], []
     res["C1-D1"], res["C1-D2"] = {}, {}
     for name in ("card 1 R1", "card 1 R2", "card 1 R3", "card 1 R4", "card 1 R5"):
@@ -1279,6 +1321,7 @@ def report(R, D, S, gspc, fxv, rates, lseg, ci, out=print, cfg=None, facts=None)
     # ---- card 2: C2-D2, F0
     r45 = r4_state(ci, 4.5).reindex(R.index)
     v2 = card2_rules(ci, R, vol, spx_me)
+    SL.check_output(_frames({"r45": r45, "v2": v2}), T, "diag_preb.report card 2 rules")
     res["C2-D2"] = {}
     g22 = []
     for name, mk in (("card 2 R1", "bd_us_10y"), ("card 2 R2", "eq_us_spx")):
@@ -1307,6 +1350,7 @@ def report(R, D, S, gspc, fxv, rates, lseg, ci, out=print, cfg=None, facts=None)
     eps = lseg.monthly(EPS_SID)
     r4 = card3_r4(eps, spx_me, rates["TB3MS"], vol["eq_us_spx"])
     rules3["card 3 R4"] = rule({"leg": r4["pos"].to_frame("eq_us_spx")}, [], 4, r4["start"])
+    SL.check_output(_frames({"rules3": rules3, "aux": aux}), T, "diag_preb.report card 3 rules")
     res["C3-D1"] = {}
     g31 = []
     for name in ("card 3 R1", "card 3 R2", "card 3 R3", "card 3 R4"):
@@ -1334,6 +1378,7 @@ def report(R, D, S, gspc, fxv, rates, lseg, ci, out=print, cfg=None, facts=None)
                              else "FAIL: analyst question only"))
     gates["C4-D1"] = "PASS" if c41["pass"] else "FAIL"
     v45, st45 = card4_r5(ci, R, aux)
+    SL.check_output(_frames(v45), T, "diag_preb.report card 4 R5")
     sp_, spm = aux["S"], aux["Smean"]
     r2on = ((sp_ < 1.0) | (sp_ < spm)).fillna(False)            # card 3 R2 on, either version
     score = DG.trend_parts(R, D, S, cfg)[2]                      # the A2-final book's Trend score (addendum A6)
@@ -1347,6 +1392,7 @@ def report(R, D, S, gspc, fxv, rates, lseg, ci, out=print, cfg=None, facts=None)
         "R5 stays"))
     gates["C4-D2"] = "R5 not registered" if c42["not_registered"] else "R5 stays"
     c4 = card4_days(gspc, days, vol["eq_us_spx"])
+    SL.check_output(_frames(c4), T, "diag_preb.report card 4 R1-R4")
     for name in ("card 4 R1", "card 4 R2", "card 4 R3", "card 4 R4"):
         f0line(name, c4[name]["months"])
     p5 = (v45[1][1] + v45[2][1]) / 2
@@ -1354,6 +1400,7 @@ def report(R, D, S, gspc, fxv, rates, lseg, ci, out=print, cfg=None, facts=None)
     # ---- card 5: C5-D1, C5-D2, F0
     P = {mk: lseg.monthly(sid) for mk, sid in C5_P.items()}
     r5c = card5_r1(P, vol)
+    SL.check_output(_frames(r5c), T, "diag_preb.report card 5 R1")
     avg, nv = trend12_avg_sign(R, D)
     c5 = c5d1(r5c, avg, book_pos)
     res["C5-D1"] = c5
@@ -1399,11 +1446,13 @@ def trial_rows(res, panel_id_, engine_version, cfg=None):
     cfg = cfg or CF.A1_INCUMBENT
     rows = []
     for d in DIAG_IDS:
-        c = {"diag": d, "version": VERSION, "book": CF.cfg_hash(cfg), "panel": panel_id_[:16], "lseg": LSEG_LOCK[:16]}
+        c = {"diag": d, "version": VERSION, "book": CF.cfg_hash(cfg), "panel": panel_id_[:16], "lseg": LSEG_LOCK[:16],
+             "card": CARD_LOCK[:16]}
         rows.append({"trial": "%s diagnostic (pre-B)" % d, "family": "diag", "hash": CF.cfg_hash(c),
                      "note": "TESTING_PROTOCOL 7.5 %s, 7.6 step 7, gm/CHANGES.md 'Pre-B diagnostics'; engine %s; A1 "
-                             "panel %s; LOCK_v2 %s; LSEG %s; book %s (%s); outcome: %s" % (
-                                 d, engine_version, panel_id_[:16], LOCK_V2[:16], LSEG_LOCK[:16], cfg["name"],
+                             "panel %s; LOCK_v2 %s; LSEG %s; LOCK_CARD_v1 %s; book %s (%s); outcome: %s" % (
+                                 d, engine_version, panel_id_[:16], LOCK_V2[:16], LSEG_LOCK[:16], CARD_LOCK[:16],
+                                 cfg["name"],
                                  CF.cfg_hash(cfg), res["gates"][d]),
                      "config": json.dumps(c, sort_keys=True)})
     return rows

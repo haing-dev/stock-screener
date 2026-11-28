@@ -337,6 +337,19 @@ def _run(check, tmp):
     rs = PB.r1(stale, days)
     check("R1: a contract unchanged over the 20 days before a month-end leaves that month's triples out (stale)",
           rs["excluded"]["stale"] >= rb["excluded"]["stale"] + 6, (rs["excluded"], rb["excluded"]))
+    pad = {k: v.copy() for k, v in bent.items()}
+    me95 = pd.Series(days, index=days).groupby(days.to_period("M")).max()
+    me95 = me95[(me95.index >= P("1995-01")) & (me95.index <= P("1995-12"))]
+    for d_ in me95:
+        d1_ = days[days.get_loc(d_) + 1]
+        for k, v in pad.items():
+            if d_ in v.index and d1_ in v.index:
+                v[d1_] = v[d_]
+    rp = PB.r1(pad, days)
+    check("R1 (1.1.1 B4, reported): next days padded with the decision day's settlements (12 month-ends of 1995) are "
+          "counted: 72 = 12 x 6 eligible triples; none on unpadded strips; the gate counts do not use it",
+          rp["d1_same"] == 72 and r0["d1_same"] == 0 and rb["d1_same"] == 0 and rp["eligible"] == rb["eligible"],
+          (rp["d1_same"], r0["d1_same"], rb["d1_same"]))
     late = ed_contracts(bend=5.0, late=True)
     rl = PB.r1({k: v[v.index <= PB.SEAL] for k, v in late.items()}, pd.bdate_range("1970-01-02", "2010-12-31"))
     rl2 = PB.r1(late, pd.bdate_range("1970-01-02", "2012-12-31"))
@@ -565,8 +578,35 @@ def _run(check, tmp):
             r2 = True
         check("card inputs lock (real files from git, hashes only, no value used): the registered files pass with lock "
               "id 6c154f7d...; one changed byte is refused", okl and r2)
-    # ---------------------------------------------------------------- 1.1.0: card rules by hand
+    # ---------------------------------------------------------------- 1.1.1: windows on the series' own months
     ix = R.index
+    spn = (ci.m("BAA") - ci.m("GS10")).dropna()
+    med_, low3_ = PB.r3_bars(ci, ix)
+    tm = P("1965-06")
+    cut = spn[spn.index >= ix[0]]
+    check("card 1 R3 (1.1.1 B1): spread median / 33.3rd percentile over BAA - GS10 from its first month (1953-04, "
+          "before the panel's 1960-01), numpy linear; the panel-cut window gives another value",
+          spn.index[0] == P("1953-04") < ix[0] and
+          abs(med_[tm] - np.percentile(spn[spn.index <= tm].to_numpy(), 50)) < 1e-12 and
+          abs(low3_[tm] - np.percentile(spn[spn.index <= tm].to_numpy(), 33.3)) < 1e-12 and
+          abs(low3_[tm] - np.percentile(cut[cut.index <= tm].to_numpy(), 33.3)) > 1e-6, (spn.index[0], ix[0]))
+    yfull = (ci.m("GS10") - PB.core_cpi(ci)[0]).dropna()
+    y3_ = PB.r1_bar_b(ci, ix)
+    ty = P("1972-06")
+    check("card 2 R1 bar b (1.1.1 B2): 33.3rd percentile of y from y's first month (1958-02), first once 120 values "
+          "exist (1968-01, not 1969-12 as on the panel's months)",
+          yfull.index[0] == P("1958-02") and y3_.first_valid_index() == P("1968-01") and
+          abs(y3_[ty] - np.percentile(yfull[yfull.index <= ty].to_numpy(), 33.3)) < 1e-12,
+          (yfull.index[0], y3_.first_valid_index()))
+    unf = ci.fr_level("UNRATE")[0].dropna()
+    un_, low_ = PB.labour_gate(ci, ix)
+    tu = P("1976-03")
+    check("card 2 R2 labour gate (1.1.1 B3): lowest of the 240 prior lagged UNRATE values on UNRATE's own months (from "
+          "1948-02 at lag 1) -> first 1968-02, so the gate exists in 1975-79 (on the panel's months it began 1980-01)",
+          unf.index[0] == P("1948-02") and low_.first_valid_index() == P("1968-02") and
+          abs(low_[tu] - unf[(unf.index >= tu - 240) & (unf.index <= tu - 1)].min()) < 1e-12 and
+          abs(un_[tu] - unf[tu]) < 1e-12, (unf.index[0], low_.first_valid_index()))
+    # ---------------------------------------------------------------- 1.1.0: card rules by hand
     r1c = PB.card1_rules(ci, R, vol, spx_me)
     WTI, TW, FFs, G10 = (ci.m(x).reindex(ix) for x in ("WTISPLC", "TWEXMMTH", "FEDFUNDS", "GS10"))
     t0 = next(p for p in r1c["card 1 R1"]["cond_months"] if p >= P("1980-01"))
@@ -692,7 +732,8 @@ def _run(check, tmp):
     res = PB.report(R, D, S, gspc, fxv, rates, mock, ci0, out=lines.append)
     txt = "\n".join(lines)
     need = ["R1 GATE", "C1-D1 |", "C1-D2 | card 1 R5 stock leg", "C2-D1 GATE", "C3-D1 | card 3 R4", "C5-D1 | card 5 R1",
-            "C5-D2 GATE", "C5-D2 | reported line not computed", "F0 | card 4 R1", "F0 | card 5 R1", "PRE-B SUMMARY", "CORE BOOK READING"]
+            "C5-D2 GATE", "C5-D2 | reported line not computed", "F0 | card 4 R1", "F0 | card 5 R1", "PRE-B SUMMARY", "CORE BOOK READING",
+            "R1 | reported, not a gate: eligible triple-months whose next-day settlements equal"]
     check("report: every registered line is printed and nothing is BLOCKED (1.1.0)", all(x in txt for x in need) and
           "BLOCKED" not in txt,
           [x for x in need if x not in txt])
@@ -704,9 +745,12 @@ def _run(check, tmp):
     check("report printing: values under 60 months appear as count and sign only",
           all(int(m) < 60 for x in small for m in re.findall(r"n (\d+), sign", x)))
     rows_ = PB.trial_rows(res, PB.A1_PANEL_ID, CF.ENGINE_VERSION)
-    check("trial rows: 12 diag rows, no Sharpe column, ids R1..F0, LSEG lock in the note",
+    check("trial rows: 12 diag rows, no Sharpe column, ids R1..F0, LSEG lock in the note; 1.1.1 B5: LOCK_CARD_v1 id in "
+          "config and note",
           len(rows_) == 12 and all(r["family"] == "diag" and "sr_9010" not in r for r in rows_) and
-          [json.loads(r["config"])["diag"] for r in rows_] == list(PB.DIAG_IDS) and PB.LSEG_LOCK[:16] in rows_[0]["note"])
+          [json.loads(r["config"])["diag"] for r in rows_] == list(PB.DIAG_IDS) and PB.LSEG_LOCK[:16] in rows_[0]["note"]
+          and all(json.loads(r["config"])["card"] == PB.CARD_LOCK[:16] and PB.CARD_LOCK[:16] in r["note"]
+                  for r in rows_))
     RL, DL_, SL_, gl = panel(late=True)
     lml = lseg_monthly(late=True)
     lml[PB.EPS_SID] = pd.concat([lm[PB.EPS_SID], pd.Series(9.87654321, index=pd.period_range("2011-01", "2012-12",
@@ -724,6 +768,17 @@ def _run(check, tmp):
     check("report seal: values dated after 2010-12 (panel, FX, rates, LSEG monthly and daily, card inputs) change no "
           "line",
           strip_t(lines) == strip_t(lines2), [(a_, b_) for a_, b_ in zip(lines, lines2) if a_ != b_][:2])
+    from gm import seal as GSL
+    ciT, _ct = synth_ci()
+    g10 = ciT._raw["GS10.csv"]
+    ciT._raw["GS10.csv"] = pd.concat([g10, pd.Series([9.87654321], index=pd.DatetimeIndex(["2011-03-01"]))])
+    try:
+        PB.report(R, D, S, gspc, fxv, rates, mock, ciT, out=lambda *_: None)
+        breach = False
+    except GSL.SealBreach:
+        breach = True
+    check("report seal (1.1.1 B6): a card-input observation dated after 2010-12-31 stops the report (gm/seal "
+          "check_output on the card inputs by observation date)", breach)
     # ---------------------------------------------------------------- the job in the PC layout
     import a1_panel_smoke as A1S
     loc = os.path.join(tmp, "local")
