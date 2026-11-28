@@ -1,6 +1,8 @@
 # Pre-B diagnostics build (2026-11-27): TESTING_PROTOCOL 7.6 step 7, 7.5 order item 3, the PC job
 
-**UPDATED for diag_preb 1.1.0** (every row runs; nothing blocked). Registered in gm/CHANGES.md "Pre-B diagnostics"
+**UPDATED for diag_preb 1.1.1** (bug fix after the independent check CHECK_PREB, APPROVED WITH CORRECTIONS: registered
+in gm/CHANGES.md as "Bug fix 1.1.1" B1-B7 and data entry correction 1 at 1ca0787 BEFORE the code 280bdd6). 1.1.0: every
+row runs; nothing blocked. Registered in gm/CHANGES.md "Pre-B diagnostics"
 (97c3e2f) BEFORE any code; two corrections before the code (29d1986); code 1.0.0 2e25e47; then the data entry "card
 inputs (FRED / ALFRED first release, macro-data branch)" (9a40cd6) and the addendum 1.1.0 (efacaeb), both before the
 1.1.0 code (732f592). The job gm_diag_preb_v1 had not run, so it is extended in place (no v2). NOT RUN: no
@@ -77,6 +79,19 @@ Bloomberg value.
 
 ## Cloud gates (no diagnostic statistic computed)
 
+1.1.1 (2026-11-28):
+- Fixes: card 1 R3 spread percentiles, card 2 R1 bar b and card 2 R2 labour gate now use each series' own months from
+  its first month, then go onto the panel's months (M1-M3); R1 prints the count of eligible triple-months with a
+  padded next day (reported only, C9); seal checks on the card inputs (by observation date) and on every card rule
+  output (C3); trial rows carry the LOCK_CARD_v1 id (C8); the job prints the card zip sha against LOCK_CARD_v1
+  zip_sha256 (informational, C5) and its docstring lists the 1.1.0 rows (C6). C7 (card 3 / card 5 reported lines)
+  noted, not printed.
+- k = 0 reproduction 24 of 24, difference 0 (tools/bbgq/results/engine_repro_cloud_2026-11-28_gm-2.2.1.txt).
+- Truncation PASS at all 8 cut dates, 21 k = 0 and 37 feature stages (results/engine_trunc_cloud_2026-11-28_gm-2.2.1.txt).
+- tests/run_tests.py ALL TESTS PASSED (results/run_tests_gm_2026-11-28_gm-2.2.1.txt); tests/diag_preb_smoke.py 76
+  checks (71 + one each for M1, M2, M3, C9 and the C3 seal stop; C8 inside the trial-row check).
+- `python3 tools/bbgq/build_engine.py`: engine_pkg/ rebuilt; packaged copies equal the table below.
+
 1.1.0 (2026-11-27):
 - k = 0 reproduction 24 of 24, difference 0 (tools/bbgq/results/engine_repro_cloud_2026-11-27h_gm-2.2.1.txt).
 - Truncation PASS at all 8 cut dates, 21 k = 0 and 37 feature stages (results/engine_trunc_cloud_2026-11-27h_gm-2.2.1.txt).
@@ -105,8 +120,8 @@ Bloomberg value.
 
 | File (PC destination under local\) | Status | sha256 |
 |---|---|---|
-| jobs\gm_diag_preb_v1.py (diag_preb 1.1.0 and card_inputs 1.0.0 pinned) | new | 76e93713cf9079845b7fac39c305ca1c61bf6cca168f4bdbb86835497473f8f8 |
-| lib\diag_preb.py (1.1.0) | new | 5273944bcb9811ccba83510da3359996e28def8eb8b89a4408ed3efad855c64e |
+| jobs\gm_diag_preb_v1.py (diag_preb 1.1.1 and card_inputs 1.0.0 pinned) | new | c269fadeb486562031eec1c5c94fa1ac5c1dbd1096a0cd2c87cd9b5597d7b83d |
+| lib\diag_preb.py (1.1.1) | new | 2e9cadd9d41250b8009ca159e23fc69f5c73d44bc79dd9cca51cc8aa4a4ee102 |
 | lib\card_inputs.py (1.0.0) | new | 4091f84bcbb11f43061bcc0330520a4a5580cb775895148a38849c0fbcab7b80 |
 | work\free\gm_card_inputs.zip (LOCK_CARD_v1 6c154f7d...) | new | 4f84b01d07ad59da05ad7e8ca4e78b31b1ed687941c6852da804c685be1b068d |
 | lib\lsegdata.py (1.0.0 = LOCK_LSEG_v5 code hash; already on the PC) | unchanged (verify) | 0d1b500ddb2e931ab4069ac8fd6fed0c16778da85b2665d3fcafadfae16198de |
@@ -116,6 +131,7 @@ Bloomberg value.
 | lib\lseg_live_sources.csv (= lock config) | unchanged (verify) | 37e42068a8ae7f36ee12ece245c3c17b6cc27ac6f51b52078d54e1a891c4c77f |
 | lib\lseg_roots.csv (= lock config) | unchanged (verify) | 7a8caf01fbc70108af78be145337b41ac7e0050fc3f326211c997dc1a9991ee3 |
 | lib\lseg_untouched.csv (= lock config; hides cocoa and LME cash) | unchanged (verify) | 17ec5fb38c2cc3b3f337adac2478d04c100fb949bcbcfe159fd53f26ef705185 |
+| lib\lseg_spec_needs.csv (= lock config) | unchanged (verify) | 29e1b0b33abbe99d2fa92c80049c8839870647182d199c2acf865242f1cacbbe |
 | lib\gm\trials.csv (63 lines; book / pod digest f200d02c..., N 41) | changed (Core book v1 row) | 2774b59568595183383345840a8988aa6af26551dc31ceaab4a1f3c0ec806581 |
 | lib\gm\CHANGES.md (documentation, not checked) | changed | the repo version at the build-note commit |
 | lib\diag_a2.py (1.0.1) | unchanged | 3264a5381c13b124d2566d02f263e21905f4e901680c1af7c2134f0bd558be1b |
@@ -126,6 +142,6 @@ Bloomberg value.
 | lib\bbgdata.py (= LOCK_v2 code hash) | unchanged | 0b26bb21b50671dca7c2153d3d66a2a09f7f33eeaa7c96ca536b69bbca8e6351 |
 | lib\engine_ref.json (gm-2.2.1 reference) | unchanged | cebd4932e8643f14c541258abe68809a4e3c119f0c384beaa3d656b44c955e39 |
 | lib\gm\*.py | unchanged | engine_ref.json code.gm_files_sha256 |
-| tests\diag_preb_smoke.py (cloud tests only; never ships) | - | cea4ae2f14542962b8d51b25bfdd0783a170f7d89623750f5eb6db99d0604f78 |
+| tests\diag_preb_smoke.py (cloud tests only; never ships) | - | cf50847c3e0e9c7f4b9df27a09dbe1f106477a6622cb283a394e20fc6a40950e |
 | tools\bbgq\build_card_inputs.py (cloud builder; never ships) | - | eb61f119fed530dd9a2660085613d85b259f941deae76177f3f387f5373cd9bd |
 | docs\research\card_inputs\LOCK_CARD_v1.json (repo lock record) | - | ab3a08cd002885bd994c9199dc8b89bb3bea0abec016e3d1eb05118e7649eea1 |

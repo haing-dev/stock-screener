@@ -423,6 +423,12 @@ Noted, not done (C7): the reported lines of card 3 s13 (cards 1 / 2 in shared ma
    1.1.1; their inputs now exist, no gate depends on them; a later version may add them.
 Reference fix (C1): commit references written before the rebase are corrected in this file and in PREB_BUILD
    (12e108c = 9a40cd6, 6146c2c = efacaeb, 049ab75 = 732f592).
+Code 1.1.1 and cloud gates (2026-11-28; bug fix 1ca0787 before the code 280bdd6; NOT RUN; no diagnostic statistic
+computed in the cloud): tools/bbgq/lib/diag_preb.py 1.1.1 (sha256 2e9cadd9d41250b8009ca159e23fc69f5c73d44bc79dd9cca51cc8aa4a4ee102),
+job gm_diag_preb_v1.py (sha256 c269fadeb486562031eec1c5c94fa1ac5c1dbd1096a0cd2c87cd9b5597d7b83d), tests/diag_preb_smoke.py
+76 checks. Gates: k = 0 reproduction 24 of 24, difference 0 (tools/bbgq/results/engine_repro_cloud_2026-11-28_gm-2.2.1.txt);
+truncation PASS at all 8 cut dates, 21 k = 0 and 37 feature stages (results/engine_trunc_cloud_2026-11-28_gm-2.2.1.txt);
+run_tests ALL TESTS PASSED (results/run_tests_gm_2026-11-28_gm-2.2.1.txt). gm/ and engine_ref.json unchanged.
 
 ## Core book v1 (registered 2026-11-27, BEFORE the Core book v1 code and run): TESTING_PROTOCOL 7.6 step 6
 Registered run entry (no rule, weight, threshold, gate, cost or market change; no gm/ code change; no statistic of S1-S4,
