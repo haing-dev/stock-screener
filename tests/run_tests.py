@@ -1058,6 +1058,14 @@ print("\nBatch B1 Curve carry (b1_curve 1.0.1, mock LSEG store)")
 import b1_curve_smoke  # noqa: E402
 b1_curve_smoke.run(check)
 
+# Batch B2 = Strip reversion + ten card rule layers (tools/bbgq/lib/b2_batch.py, job gm_b2_v1; gm/CHANGES.md "Batch
+# B2"): synthetic panel, invented card inputs, mock Eurodollar / Euribor strips (weights, volatility identity, caps,
+# contract costs, E3, fixed sizes, card 4 costs, diag_preb identity, placebo masks with coverage gaps, seal,
+# truncation and its controls, report lines and printing, trial rows, job stops)
+print("\nBatch B2 (b2_batch 1.0.0, mock LSEG strips)")
+import b2_batch_smoke  # noqa: E402
+b2_batch_smoke.run(check)
+
 # LSEG source (tools/lseg): exchange-rule contract dates and registered listing models, no market data
 print("\nLSEG rules (lseg_rules 1.1.0)")
 _r = subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "lseg_rules_smoke.py")],

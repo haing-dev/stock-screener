@@ -16,12 +16,13 @@ engine_pkg/
   lib/diag_preb.py           pre-B diagnostics (gm-2.2.1, gm/CHANGES.md "Pre-B diagnostics")
   lib/card_inputs.py         reader of the locked card inputs (gm/CHANGES.md data entry "card inputs")
   lib/b1_curve.py            Batch B1 = Curve carry (gm-2.2.1, gm/CHANGES.md "Batch B1: Curve carry")
+  lib/b2_batch.py            Batch B2 = Strip reversion + ten card rule layers (gm-2.2.1, gm/CHANGES.md "Batch B2")
   lib/lsegdata.py, lseg_rules.py, lseg_*.csv   the LSEG reader (= LOCK_LSEG_v5 code hash), its rules and config lists,
                              copied unchanged from tools/lseg (already on the PC; shipped so the job's pins can be checked)
   lib/rebuild_s4.py          the independent S4 rebuild (separate agent; docs/research/batches/S4_INTERFACE.md), copied
                              unchanged and only if present (OPTIONAL_LIBS); never opened by this script beyond the copy
   jobs/gm_repro_v1.py, gm_trunc_v1.py, gm_bbg_map_v1.py, bbg_build_v2.py, bbg_check_v2.py, gm_a1_v1.py, gm_a1_v2.py,
-  gm_a2_v1.py, gm_diag_v1.py, gm_core_v1.py, gm_diag_preb_v1.py, gm_b1_v1.py
+  gm_a2_v1.py, gm_diag_v1.py, gm_core_v1.py, gm_diag_preb_v1.py, gm_b1_v1.py, gm_b2_v1.py
   work/free/gm_free_inputs.zip   the free input files the engine opens (research/..., raw/...) + inputs_manifest.json
   work/free/gm_card_inputs.zip   the card inputs (FRED / ALFRED, macro-data 264d0a2), LOCK_CARD_v1
                                  (tools/bbgq/build_card_inputs.py; not an engine input)
@@ -50,9 +51,9 @@ REPO = os.path.dirname(os.path.dirname(HERE))
 PKG = os.path.join(HERE, "engine_pkg")
 REF = os.path.join(HERE, "engine_ref.json")
 JOBS = ["gm_repro_v1", "gm_trunc_v1", "gm_bbg_map_v1", "bbg_build_v2", "bbg_check_v2", "gm_a1_v1", "gm_a1_v2", "gm_a2_v1",
-        "gm_diag_v1", "gm_core_v1", "gm_diag_preb_v1", "gm_b1_v1"]
+        "gm_diag_v1", "gm_core_v1", "gm_diag_preb_v1", "gm_b1_v1", "gm_b2_v1"]
 LIBS = ["lib/gm_engine.py", "lib/bbg_panel.py", "lib/bbgdata.py", "lib/a1_panel.py", "lib/a2_batch.py", "lib/diag_a2.py",
-        "lib/core_v1.py", "lib/diag_preb.py", "lib/card_inputs.py", "lib/b1_curve.py", "live_sources.csv",
+        "lib/core_v1.py", "lib/diag_preb.py", "lib/card_inputs.py", "lib/b1_curve.py", "lib/b2_batch.py", "live_sources.csv",
         "untouched_markets.csv", "engine_ref.json"]
 OPTIONAL_LIBS = ["lib/rebuild_s4.py"]       # copied if present (written by a separate agent; not opened here)
 SRC_DIRS = {"research": os.path.join(REPO, "cache", "macro", "raw", "research"),

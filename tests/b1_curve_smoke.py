@@ -439,6 +439,8 @@ def _run(check, tmp):
     os.makedirs(lib)
     shutil.copytree(os.path.join(REPO, "gm"), os.path.join(lib, "gm"),
                     ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
+    # the trial log as shipped to the job (gm/trials.csv grew after the run: the B1 rows, 2d13f47; the job pins 41)
+    shutil.copy(os.path.join(REPO, "tests", "data", "trials_b1_shipped.csv"), os.path.join(lib, "gm", "trials.csv"))
     bq = os.path.join(REPO, "tools", "bbgq")
     for rel in ("lib/gm_engine.py", "lib/bbg_panel.py", "lib/bbgdata.py", "lib/a1_panel.py", "lib/a2_batch.py",
                 "lib/diag_a2.py", "lib/b1_curve.py", "live_sources.csv", "untouched_markets.csv", "engine_ref.json"):
