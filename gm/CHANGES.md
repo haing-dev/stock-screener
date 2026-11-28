@@ -177,6 +177,34 @@ is computed (it earns nothing; the placebo window's last block holds it, as gm.b
 a settlement at t earns nothing in either leg that month (counted on the DATA lines); fragility's market removal keeps
 t0 and reads the pod's window months. NOT RUN: queue in docs/research/batches/B1_BUILD_2026-11-28.md.
 
+Corrections after the independent check (CHECK_B1, APPROVED WITH CORRECTIONS, 2026-11-28; registered BEFORE the
+b1_curve-1.0.1 code and BEFORE any run; items above are not rewritten; no result was read for any of them; the
+checker's mock-store probe is evidence about the code path, not a B1 statistic):
+- M1 (T3, item 5): a placebo position obeys the destination month's own data rules. Reading of spec s3 step 3 ("If D
+  has no settlement at t, market m holds nothing that month"), step 4 (a stale leg sets market m to no position) and
+  7.6 step 8 (the calendar exclusion), which bind every position the pod holds, placebo positions included. After the
+  score arrays are moved, they are masked with the destination month's validity (item 4k: pair priced, no stale leg,
+  no calendar exclusion, t >= t0). Reason: gm.book's placebo gets this mask automatically, because a market without
+  data has no volatility there; Curve carry's volatility exists in months without a priced pair, so the mask must be
+  explicit. Without it, moved scores land on impossible market-months, take a share of 1/n, earn nothing and pay a
+  roll every month. The identity map still reproduces the pod exactly (its scores are already masked).
+- M2 (item 8, printing): a trial-row column that covers fewer than 60 months is left empty (None): sr_9010, t_9010,
+  maxdd_9010 on 1990-2010 months, sr_7589 on 1975-89 months (the expected window starts about 1987).
+- C2 (item 10): the job also pins the five LSEG config lists in lib (lseg_engine_map, lseg_exclusions,
+  lseg_live_sources, lseg_roots, lseg_untouched) to the LOCK_LSEG_v5 config hashes, in LIB_SHA and against the store's
+  manifest (STOP on a difference); lseg_roots.csv sets ric_root and depth, so identity.
+- C3 (item 10, wording): "Nothing is written to work\ or lib\" reads: nothing is written to lib\, to the Bloomberg or
+  LSEG stores or to work\a1\; gm_engine.ensure_free_inputs (shared by every earlier job) rewrites
+  work\free\inputs_manifest.json and unpacks missing free input files, as before.
+- C4 (item 6, DELAY line): the one-month delay applies the face values decided at t-2 to the returns of the pair
+  chosen at t-1 (registered "on the leg columns"); the report line and the batch review say so.
+- C6 (process): the three "Closed while coding" readings of the paragraph above were written after the code commit
+  32a15be; they are readings already implied by items 4h, 4n and 6, not rule changes. Such readings go into the entry
+  before the code from now on.
+- Noted, not done (can wait): C1 (list L12, L14*, L16* in lseg_live_sources.csv at the next LSEG lock, delay 0), C5
+  (P4's first beta from 1975-01 uses few pod months; reported only), C7 (record the empty-book readings T4 n/a and
+  alpha = mean as a 7.12 sub-section), C8 (a second truncation control on the leg choice).
+
 ## data: card inputs (FRED / ALFRED first release, macro-data branch) (registered 2026-11-27, BEFORE first use): 7.4 E15
 Registered data entry (no rule change; no statistic of any card rule has been computed on these files; the builder
 read only file metadata: first / last dates, row counts, the fetch mode in the branch manifests, and the size of month-
