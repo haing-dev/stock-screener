@@ -164,6 +164,19 @@ Core book v1 entry), with the reason; none reads a result. The builder read the 
    window, T1-T3 values; then the batch review (7.6 step 10). Nothing in the specs, the register or 7.x changes from this
    run except that status word.
 
+Code and cloud gates (2026-11-28; entry fd13ffb before the code 32a15be; NOT RUN; no Curve carry statistic computed
+in the cloud): tools/bbgq/lib/b1_curve.py 1.0.0 (sha256 e8e8844f3b4f974bc8a0baa9ae644884cb89da32ae08b651273b28dc306eb4f5),
+PC job tools/bbgq/jobs/gm_b1_v1.py (sha256 8f2076604ace0096a889c44f8d22a44fd1b7d1d6b26910254f7b6ec8a86492c7),
+tests/b1_curve_smoke.py (39 checks, in tests/run_tests.py), tools/bbgq/b1_trunc_mock.py; build_engine ships the lib
+and the job. gm/ unchanged, so engine_ref.json is unchanged. Gates: k = 0 reproduction 24 of 24, difference 0
+(tools/bbgq/results/engine_repro_cloud_2026-11-28b_gm-2.2.1.txt); engine truncation PASS at all 8 cut dates, 21 k = 0
+and 37 feature stages (results/engine_trunc_cloud_2026-11-28b_gm-2.2.1.txt); pod truncation PASS at all 8 cut dates,
+39 stages, mock store (results/b1_trunc_mock_2026-11-28.txt), a planted look-ahead fails it; run_tests ALL TESTS PASSED
+(results/run_tests_gm_2026-11-28b_gm-2.2.1.txt). Closed while coding (no rule change): the score of month-end 2010-12
+is computed (it earns nothing; the placebo window's last block holds it, as gm.book's placebo); a spread whose leg lacks
+a settlement at t earns nothing in either leg that month (counted on the DATA lines); fragility's market removal keeps
+t0 and reads the pod's window months. NOT RUN: queue in docs/research/batches/B1_BUILD_2026-11-28.md.
+
 ## data: card inputs (FRED / ALFRED first release, macro-data branch) (registered 2026-11-27, BEFORE first use): 7.4 E15
 Registered data entry (no rule change; no statistic of any card rule has been computed on these files; the builder
 read only file metadata: first / last dates, row counts, the fetch mode in the branch manifests, and the size of month-
