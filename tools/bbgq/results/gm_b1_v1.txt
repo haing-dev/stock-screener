@@ -1,0 +1,95 @@
+=== gm_b1_v1 ===
+b1_curve-1.0.1 | diag_a2-1.0.1 | a2_batch-1.1.1 | a1_panel-1.1.0 | bbgdata-1.2.0 | bbg_panel-1.0.0 | gm_engine-1.3.0 | lsegdata-1.0.0 | lseg_rules-1.1.0 | engine gm-2.2.1 | python 3.15.0, numpy 2.5.4, pandas 3.1.1, scipy 1.18.1, openpyxl 3.1.5, xlrd missing
+PASS gm code vs reference | 21 files | differing or missing: none
+PASS lib engine_ref.json | sha256 cebd4932e8643f14 | registered cebd4932e8643f14
+PASS engine gm-2.2.1 and config hashes A1_INCUMBENT 77374d7bef, A2_CHALLENGER 1faa343535, BASE f1d682c384, CANDIDATE 438a092b53 | registered gm-2.2.1, A1_INCUMBENT 77374d7bef, A2_CHALLENGER 1faa343535, BASE f1d682c384, CANDIDATE 438a092b53
+PASS lib a1_panel.py | sha256 eb9ef3f7fbd12760 | registered eb9ef3f7fbd12760
+PASS lib a2_batch.py | sha256 35339f673f351f43 | registered 35339f673f351f43
+PASS lib b1_curve.py | sha256 2f5b859c359c9caa | registered 2f5b859c359c9caa
+PASS lib bbg_panel.py | sha256 e0b67a42793e67c1 | registered e0b67a42793e67c1
+PASS lib bbgdata.py | sha256 0b26bb21b50671dc | registered 0b26bb21b50671dc
+PASS lib diag_a2.py | sha256 3264a5381c13b124 | registered 3264a5381c13b124
+PASS lib gm_engine.py | sha256 ac43a33cd8943719 | registered ac43a33cd8943719
+PASS lib lseg_engine_map.csv | sha256 8812f20d4d6dadcb | registered 8812f20d4d6dadcb
+PASS lib lseg_exclusions.csv | sha256 8e2ca054128ce420 | registered 8e2ca054128ce420
+PASS lib lseg_live_sources.csv | sha256 37e42068a8ae7f36 | registered 37e42068a8ae7f36
+PASS lib lseg_roots.csv | sha256 7a8caf01fbc70108 | registered 7a8caf01fbc70108
+PASS lib lseg_rules.py | sha256 5686999172a22c76 | registered 5686999172a22c76
+PASS lib lseg_untouched.csv | sha256 17ec5fb38c2cc3b3 | registered 17ec5fb38c2cc3b3
+PASS lib lsegdata.py | sha256 0d1b500ddb2e931a | registered 0d1b500ddb2e931a
+PASS lib gm\trials.csv book / pod rows | 41 rows | digest f200d02ce574f002 | registered 41 rows, f200d02ce574f002
+PASS A2 report gm_a2_v1.txt: ok
+PASS Core book v1 report gm_core_v1.txt: ok
+PASS pre-B report gm_diag_preb_v1.txt: ok
+PASS Bloomberg store lock id d85a46cb2853646b24796f294f3ccab1d1507188c402e978fd59f5196ea41fc9 | registered LOCK_v2 d85a46cb2853646b24796f294f3ccab1d1507188c402e978fd59f5196ea41fc9
+PASS LSEG store lock id 90322681b9f989cc24393ae7de4fe24bf5af2f32074ffa6400b1cbed09c4074c | registered LOCK_LSEG_v5 90322681b9f989cc24393ae7de4fe24bf5af2f32074ffa6400b1cbed09c4074c | ok
+PASS LSEG config lists in lib = the store manifest's config hashes | 5 files | differing: none
+PASS free inputs | 239 files | not matching the manifest 0 | file list and sizes match the reference | digest 378d65b09c23d234
+PASS free arm vs reference | signal E (per-market sum of |signal|) | n 62 | missing 0 | max abs diff 0.0e+00
+PASS free arm vs reference | signal C (per-market sum of |signal|) | n 39 | missing 0 | max abs diff 0.0e+00
+PASS free arm vs reference | signal V (per-market sum of |signal|) | n 31 | missing 0 | max abs diff 0.0e+00
+PASS free arm vs reference | market months with a return | n 65 | missing 0 | max abs diff 0.0e+00
+EXTENSION-ONLY CHECK PASS | admitted series 4 | 365s
+PASS A1 PANEL ID e7f98d4439fccf91f3451bc4b9e78079e3bc2cc2452931363b28520460b6cb43 | registered e7f98d4439fccf91f3451bc4b9e78079e3bc2cc2452931363b28520460b6cb43
+PASS A1 panel file work\a1\a1_panel_e7f98d4439fc.pkl: same
+PASS A2-final book as run (A2 report): book d1 1.064, k0 1.481, k1 1.439 | pods trend 1.19 (432), econ 0.53 (432), carry 1.07 (432), value 0.15 (345) | P4 book 1.39 specific 1.34 (396) | registered book d1 1.064, k0 1.481, k1 1.439 | pods trend 1.19 (432), econ 0.53 (432), carry 1.07 (432), value 0.15 (345) | P4 1.39 / 1.34 (396)
+A2-final book k = 0 commodity blocks | carry present | trend present (reported overlap only)
+B1 TRUNC 1980-06-30 | stages 44 | differing: none | PASS
+B1 TRUNC 1984-12-31 | stages 44 | differing: none | PASS
+B1 TRUNC 1989-06-30 | stages 44 | differing: none | PASS
+B1 TRUNC 1993-12-31 | stages 44 | differing: none | PASS
+B1 TRUNC 1998-06-30 | stages 44 | differing: none | PASS
+B1 TRUNC 2002-12-31 | stages 44 | differing: none | PASS
+B1 TRUNC 2007-06-30 | stages 44 | differing: none | PASS
+B1 TRUNC 2010-12-31 | stages 44 | differing: none | PASS
+PASS B1 truncation | 8 cut dates | 51s
+--- BATCH B1: CURVE CARRY (TESTING_PROTOCOL 7.6 step 8; gm/CHANGES.md "Batch B1: Curve carry"): 16 commodity spreads, far = 12 months after the front (>= 3 months out), V1 always on, V2 flat in backwardation, averaged; k = 0; LSEG LOCK_LSEG_v5 design part; Core book v1 EMPTY (alpha = the pod's own mean); values over fewer than 60 months are printed as count and sign
+DATA | cm_wti CL | identity DS | contracts 355 | pair months 268 (1984-10 .. 2010-12) | stale 2 | calendar exclusions 0 | pair at t-1 without a return at t 0 | mixed-form pairs 0 | eligible from 1991-09 | listing conflicts 0
+DATA | cm_brent LCO | identity DS/HP | contracts 290 | pair months 98 (1997-12 .. 2010-12) | stale 0 | calendar exclusions 0 | pair at t-1 without a return at t 0 | mixed-form pairs 2 | eligible from 2005-11 | listing conflicts 0
+DATA | cm_natgas NG | identity LIST | contracts 272 | pair months 229 (1991-09 .. 2010-12) | stale 2 | calendar exclusions 0 | pair at t-1 without a return at t 1 | mixed-form pairs 0 | eligible from 1995-01 | listing conflicts 0
+DATA | cm_heatoil HO | identity LIST | contracts 403 | pair months 245 (1988-05 .. 2010-12) | stale 1 | calendar exclusions 0 | pair at t-1 without a return at t 1 | mixed-form pairs 0 | eligible from 1993-09 | listing conflicts 0
+DATA | cm_gasoline RB | identity DS | contracts 84 | pair months 48 (2005-10 .. 2010-12) | stale 0 | calendar exclusions 0 | pair at t-1 without a return at t 0 | mixed-form pairs 0 | eligible from 2010-01 | listing conflicts 0
+DATA | cm_gold GC | identity LIST | contracts 408 | pair months 190 (1979-05 .. 2010-11) | stale 1 | calendar exclusions 0 | pair at t-1 without a return at t 0 | mixed-form pairs 0 | eligible from 1985-04 | listing conflicts 0
+DATA | cm_silver SI | identity DS | contracts 270 | pair months 335 (1977-10 .. 2010-12) | stale 1 | calendar exclusions 0 | pair at t-1 without a return at t 0 | mixed-form pairs 0 | eligible from 1980-12 | listing conflicts 0
+DATA | cm_copper HG | identity DS | contracts 211 | pair months 270 (1988-07 .. 2010-12) | stale 2 | calendar exclusions 0 | pair at t-1 without a return at t 0 | mixed-form pairs 0 | eligible from 1991-07 | listing conflicts 0
+DATA | cm_platinum PL | identity DS | contracts 149 | pair months 82 (1977-08 .. 2010-07) | stale 0 | calendar exclusions 0 | pair at t-1 without a return at t 0 | mixed-form pairs 0 | eligible from 1983-01 | listing conflicts 0
+DATA | cm_corn C | identity DS | contracts 190 | pair months 343 (1978-09 .. 2010-12) | stale 2 | calendar exclusions 0 | pair at t-1 without a return at t 0 | mixed-form pairs 0 | eligible from 1985-04 | listing conflicts 0
+DATA | cm_wheat W | identity DS | contracts 190 | pair months 174 (1979-09 .. 2010-12) | stale 2 | calendar exclusions 0 | pair at t-1 without a return at t 0 | mixed-form pairs 0 | eligible from 1997-05 | listing conflicts 0
+DATA | cm_soybeans S | identity DS | contracts 266 | pair months 278 (1981-09 .. 2010-12) | stale 8 | calendar exclusions 0 | pair at t-1 without a return at t 0 | mixed-form pairs 0 | eligible from 1985-12 | listing conflicts 0
+DATA | cm_sugar SB | identity DS | contracts 180 | pair months 370 (1977-11 .. 2010-12) | stale 5 | calendar exclusions 0 | pair at t-1 without a return at t 0 | mixed-form pairs 0 | eligible from 1981-03 | listing conflicts 0
+DATA | cm_coffee KC | identity LIST | contracts 165 | pair months 373 (1979-11 .. 2010-12) | stale 3 | calendar exclusions 0 | pair at t-1 without a return at t 0 | mixed-form pairs 0 | eligible from 1982-12 | listing conflicts 0
+DATA | cm_cotton CT | identity DS | contracts 170 | pair months 382 (1978-10 .. 2010-12) | stale 3 | calendar exclusions 0 | pair at t-1 without a return at t 0 | mixed-form pairs 0 | eligible from 1981-10 | listing conflicts 0
+DATA | cm_cattle LC | identity DS | contracts 200 | pair months 51 (1980-09 .. 2010-12) | stale 1 | calendar exclusions 0 | pair at t-1 without a return at t 0 | mixed-form pairs 0 | eligible from 2009-12 | listing conflicts 0
+WINDOW | start t0 (first decision month with >= 8 of 16 markets eligible) 1985-12 | eligible markets at t0 8 | first active block month 1988-01 | first scaled test month 1990-02 | window 251 months to 2010-12 | minimum 120 | TESTED
+T1 | alpha against the empty Core book (= mean) 0.54 (251) %/yr | bootstrap p 0.3846 (251) (raw; Holm count 0: B1 has no Core-eligible pod) | alpha > 0
+T2 | alpha at twice the costs -0.93 (251) %/yr | <= 0 (decisive only for Core; Curve carry is not Core-eligible)
+T3 | placebo window 1990-02..2010-12 | pod net Sharpe 0.10 (251) | placebos 1000 | share with Sharpe >= the pod's 0.149 | FAIL
+T4 | not applicable: Core book v1 is EMPTY (test 5 compares two books at the same volatility target; a zero book has none; reading of "Core book v1" item 4j)
+B1 VERDICT | Curve carry | not Core-eligible (7.2 not qualified; no registered live source) | T1 alpha > 0, T3 FAIL, T4 n/a | SHELVED
+--- reported, not decisive (7.7 list; spec s5, s10, s14)
+ERAS | 1975-2010 alpha 0.54 (251) %/yr, lb95 -2.43 (251), Sharpe 0.10 (251) | 1975-89 alpha n 0, n/a %/yr, lb95 n 0, n/a, Sharpe n 0, n/a | 1990-2010 alpha 0.54 (251) %/yr, lb95 -2.43 (251), Sharpe 0.10 (251)
+POD | net, k = 0, costs x1 | months 251 | Sharpe 0.10 (251) | mean 0.54 (251) %/yr | achieved vol 5.67 (251) %/yr | max drawdown -38.7 (251) % | skew -0.36 (251) | Lo-adjusted Sharpe 0.06 (251)
+DELAY | one-month delay (face values decided at t-2 on the pair chosen at t-1, the leg columns) | Sharpe 0.08 (250) | mean 0.47 (250) %/yr
+VERSION | V1 alone (the whole pod path) | Sharpe 0.06 (251) | mean 0.38 (251) %/yr
+VERSION | V2 alone (the whole pod path) | Sharpe 0.08 (251) | mean 0.34 (251) %/yr
+VERSIONS POSITIVE | 2 of 2
+BY CLASS | one class (commodities) = the pod | BY MARKET (gross contribution of the unscaled pod position, %/yr per unit, held months) | cm_wti 0.37 (229), cm_brent 1.66 (61), cm_natgas 0.46 (190), cm_heatoil -0.01 (206), cm_gasoline n 11, sign -, cm_gold -1.17 (125), cm_silver -1.83 (188), cm_copper 0.14 (231), cm_platinum n 8, sign +, cm_corn 2.19 (246), cm_wheat 1.49 (125), cm_soybeans -0.00 (196), cm_sugar -1.09 (236), cm_coffee -0.02 (250), cm_cotton 0.47 (249), cm_cattle n 12, sign +
+LEG CAP | held market-months 2570 | binding 2027 | share 0.789 (2570)
+FRAGILITY | largest change of the annual mean (%/yr points) without one year: 2006 -0.85 (251) | without one market: cm_corn -0.88 (251) | top year 2006 gives 1.55 (251) of the net profit | FLAG (> 0.40)
+P4 | S&P 500 alone (M1) | pod 0.11 (248) | specific 0.15 (248)
+OVERLAP | correlation with Carry's commodity block (A2-final book, k = 0) | 1975-2010 0.21 (251) | 1975-89 n 0, n/a | 1990-2010 0.21 (251)
+OVERLAP | correlation with Trend's commodity block (A2-final book, k = 0) | 1975-2010 -0.01 (251) | 1975-89 n 0, n/a | 1990-2010 -0.01 (251)
+FALSIFIER 1 | V1 pooled gross mean (equal risk, unscaled) 2.246 (251) | does not hold
+FALSIFIER 2 | contango market-months 1.154 (251) | backwardation market-months 1.093 (251) | does not hold
+FALSIFIER 3 | ten worst V1 months with a held front moving above its far contract: 6 of 10 | base share over the window 0.31 (251) | does not hold
+FALSIFIER 4 | not computed: USREC is in no registered source
+FALSIFIER 5 / P3 | oil spread held in 1990-08..1990-10: no | window months with a held front moving into backwardation: 78 | loss seen
+selection inflation (7.8 item 2; printed beside, not subtracted): 40 logged book / pod rows, mean 1990-2010 Sharpe 1.482, sd 0.117, z 2.19 -> expected best Sharpe from luck alone about +0.26
+tuned knobs (7.8 item 4): Curve carry 1 (the hybrid volatility estimator, chosen on the whole book; 7.8 item 3)
+NOT APPLICABLE | Sharpe difference of the Core book with the pod (empty book) | k = 1 flagged share (k = 0 pod) | weekly-implementation check (no daily far-contract settlements, spec s7) | untouched markets (none held back)
+B1 SUMMARY | window 251 | T1 alpha > 0, raw p 0.3846 (251) | T2 <= 0 | T3 FAIL | SHELVED | loss seen
+report 145s
+TRIAL ROW {"config": "{\"block_vol_months\": 36, \"book_vol\": 0.1, \"costs\": \"cost_bp per leg, contract space\", \"far_offset_months\": 12, \"front_min_months\": 3, \"gross_cap\": 5.0, \"leg_cap\": \"joint, from the front leg's hybrid volatility (E11)\", \"lseg_lock\": \"90322681b9f989cc\", \"market_risk_cap\": 0.1, \"markets\": [\"cm_wti\", \"cm_brent\", \"cm_natgas\", \"cm_heatoil\", \"cm_gasoline\", \"cm_gold\", \"cm_silver\", \"cm_copper\", \"cm_platinum\", \"cm_corn\", \"cm_wheat\", \"cm_soybeans\", \"cm_sugar\", \"cm_coffee\", \"cm_cotton\", \"cm_cattle\"], \"name\": \"curve-carry-b1\", \"pod\": \"Curve carry (T08)\", \"start_markets\": 8, \"timing\": \"k0\", \"versions\": [\"V1 always on\", \"V2 flat in backwardation\"], \"vol\": {\"fast_w\": 0.7, \"floor\": 0.75, \"hl_days\": 35, \"hl_months\": 6, \"model\": \"hybrid\"}}", "family": "pod", "hash": "6f0549070b", "maxdd_9010": -0.387, "note": "TESTING_PROTOCOL 7.6 step 8 Batch B1, register T08; engine gm-2.2.1; b1_curve-1.0.1; LOCK_LSEG_v5 90322681b9f989cc; Core book v1 EMPTY (alpha = mean); window 251; verdict Shelved", "sr_7589": null, "sr_9010": 0.095, "t_9010": 0.43, "trial": "Curve carry B1 (k = 0, LSEG lock v5)", "turnover": 35.8}
+TRIAL ROW {"config": "{\"block_vol_months\": 36, \"book_vol\": 0.1, \"costs\": \"cost_bp per leg, contract space\", \"diag\": \"Curve carry s10 falsifiers\", \"far_offset_months\": 12, \"front_min_months\": 3, \"gross_cap\": 5.0, \"leg_cap\": \"joint, from the front leg's hybrid volatility (E11)\", \"lseg_lock\": \"90322681b9f989cc\", \"market_risk_cap\": 0.1, \"markets\": [\"cm_wti\", \"cm_brent\", \"cm_natgas\", \"cm_heatoil\", \"cm_gasoline\", \"cm_gold\", \"cm_silver\", \"cm_copper\", \"cm_platinum\", \"cm_corn\", \"cm_wheat\", \"cm_soybeans\", \"cm_sugar\", \"cm_coffee\", \"cm_cotton\", \"cm_cattle\"], \"name\": \"curve-carry-b1\", \"pod\": \"Curve carry (T08)\", \"start_markets\": 8, \"timing\": \"k0\", \"versions\": [\"V1 always on\", \"V2 flat in backwardation\"], \"vol\": {\"fast_w\": 0.7, \"floor\": 0.75, \"hl_days\": 35, \"hl_months\": 6, \"model\": \"hybrid\"}}", "family": "diag", "hash": "d0f5ff08f5", "note": "SPEC_Curve_carry s10 items 1-3, 5 (item 4 not computed); TESTING_PROTOCOL 7.6 step 8 Batch B1, register T08; engine gm-2.2.1; b1_curve-1.0.1; LOCK_LSEG_v5 90322681b9f989cc; Core book v1 EMPTY (alpha = mean); window 251; verdict Shelved", "trial": "Curve carry falsifiers (spec s10, B1)"}
+B1 JOB DONE
+=== END === 568s

@@ -213,6 +213,16 @@ engine truncation 8 of 8, 21 + 37 stages (results/engine_trunc_cloud_2026-11-28c
 39 stages, mock store (results/b1_trunc_mock_2026-11-28b.txt); run_tests ALL TESTS PASSED
 (results/run_tests_gm_2026-11-28c_gm-2.2.1.txt). gm/ and engine_ref.json unchanged. NOT RUN: queue in B1_BUILD_2026-11-28.md.
 
+B1 RUN (2026-11-28, PC job gm_b1_v1, b1_curve-1.0.1, 568 s; report tools/bbgq/results/gm_b1_v1.txt; every pin, lock,
+A1 panel id, as-run check and the 8-date pod truncation PASS; check CHECK_B1 APPROVED WITH CORRECTIONS, M1-M2 applied
+before the run): B1 VERDICT SHELVED. Window 1990-02..2010-12 (251 months; 16 markets, t0 1985-12). T1 alpha vs the empty
+Core book 0.54 %/yr, raw bootstrap p 0.385 (alpha > 0); T2 at 2x costs -0.93 %/yr; T3 placebo share 0.149 >= the pod's
+Sharpe 0.10 -> FAIL; T4 n/a. Reported: max drawdown -38.7%, Sharpe 0.10 (V1 0.06, V2 0.08), one-month delay 0.08; leg cap
+binding 79% of held market-months; 2006 gives 1.55 of the net profit (fragility FLAG); correlation with Carry's
+commodity block 0.21, with Trend's -0.01; falsifiers 1-3 do not hold, 4 not computed, 5 loss seen.
+BATCH REVIEW (7.6 step 10): Curve carry's premium is NOT SHOWN on 1990-2010 (not refuted): the pod earns a small
+positive gross spread but does not beat random timing of the same exposure after costs. Shelved; it may only return
+through a new registration. B1 trial rows (2) appended.
 ## data: card inputs (FRED / ALFRED first release, macro-data branch) (registered 2026-11-27, BEFORE first use): 7.4 E15
 Registered data entry (no rule change; no statistic of any card rule has been computed on these files; the builder
 read only file metadata: first / last dates, row counts, the fetch mode in the branch manifests, and the size of month-

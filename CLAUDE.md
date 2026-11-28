@@ -576,6 +576,9 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   6c154f7d from macro-data 264d0a2): R1 PASS (0.748) -> Strip reversion in B2; 10 card rule layers judged in B2 (card 1
   R1 R2 R5, card 2 R1 R2, card 3 R2 R4 flagged, card 4 R1 R3 R5); 7 not judgeable / dropped (card 5 R1 dropped by C5-D2).
   NEXT: B1 (Curve carry) / B2 builds per 7.6 steps 8-9 (pod builds, card rule-layer engine).
+  2026-11-28 B1 CURVE CARRY RAN (gm_b1_v1, b1_curve 1.0.1; check APPROVED WITH CORRECTIONS): SHELVED (251 months
+  1990-2010; Sharpe 0.10, alpha 0.54 %/yr p 0.385; T3 placebo FAIL 0.149; 2x costs -0.93; max fall -38.7%). Premium 'not
+  shown'. NEXT: B2 = Strip reversion (2 versions) + 10 card rule layers (card rule-layer engine to build).
   USER RULE 2026-11-27: every result report ENDS with a short summary in simple, plain terms (what it means, no jargon).
   User 2026-11-22: NO MORE FABLE UNITS for now.
 - MT228 (2026-11-10): raw X posts of John Galt @AtlasShrug1 (1,359 posts, Jul 2025 - 8 Nov 2026) extracted like a transcript
