@@ -282,6 +282,22 @@ and its addenda, the B1 entry, the data entries), with the reason; none reads a 
 15. After the run (an "outcomes" paragraph under this entry): each item's verdict (Incubator, Shelved, not judgeable,
    insufficient data), window, T1-T3; the netting report's shadow book; then the batch review (7.6 step 10). Nothing in
    the specs, the register or 7.x changes from this run except those status words.
+Correction found while writing the code (2026-11-28, BEFORE the code commit and any run; no data read; items above are
+not rewritten): item 10's Strip control "a normal that includes the current month-end" is not a look-ahead in time
+(the month-end value is known at d), so a truncation test cannot catch it. The Strip control is instead a normal that
+includes the NEXT month-end's value of the measure (a value dated after d); the rule control stays next month's
+volatility. Reason: the control must plant information dated after the cut.
+Readings closed while writing the code (2026-11-28, registered BEFORE the code commit and any run, as CHECK_B1 C6
+asks; no data read, none changes a rule): (1) Strip: a contract slot in which the pod holds no position is missing,
+not 0, in the position frames (costs still count an absent contract as 0, item 4m); the version average is taken cell
+by cell (E7, as B1 4k). (2) Strip, falsifier 2 and the delay line: the positions and both scalers are the traded pod's
+(item 7: "the same pod"); only the earning returns change. (3) Card 4 T3: all windows of a rule are moved in one call
+of gm.stats.move_windows in date order, which draws exactly as one call per window in that order. (4) P4 is computed on
+one sorted month index (the union of the item's months and the S&P's), since a2_batch.p4 slices by label. (5) The job
+reads an environment override B2_N_PLACEBO for tests only; it prints a NOTE when set; the registered run uses 1,000
+(the queue says not to set it). (6) Test-only: tests/diag_preb_smoke.py and tests/b1_curve_smoke.py now copy the trial
+log as shipped to their jobs (tests/data/trials_b1_shipped.csv = gm/trials.csv at a997f23), because the B1 rows
+appended at 2d13f47 broke their 41-row pin (6 failures in run_tests before the fix; no job or lib changed).
 
 ## Batch B1: Curve carry (registered 2026-11-28, BEFORE the B1 code and run): TESTING_PROTOCOL 7.6 step 8, 7.7, 7.8, register T08
 Registered run entry (no rule, weight, threshold, gate, cost or market change; no gm/ code change, so no feature version:
