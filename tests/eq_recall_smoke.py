@@ -91,9 +91,15 @@ def mk_sql(frb=True):
         if "from tfn.s34names" in q:
             return pd.DataFrame({"mgrno": [1, 2, 3, 4], "mgrname": ["VANGUARD GROUP INC", "BLACKROCK INC.",
                                                                    "STATE STREET CORP", "OTHER FUND LLC"]})
-        if "from tfn.s34 where" in q:
+        if "from tfn.s34 where" in q and "mgrno in (" in q:
             assert "mgrno in (1,2,3)" in q and "fdate = rdate" in q
             return pd.DataFrame({"rdate": ["2009-09-30"], "cusip": ["X"], "sh": [1e6], "nmgr": [3]})
+        if "from tfn.s34 where" in q:          # 1.2.0: 13F security list, one year per query
+            assert "fdate = rdate" in q and "group by rdate, cusip" in q
+            return pd.DataFrame({"rdate": ["2009-09-30"], "cusip": ["X"], "nmgr": [5]})
+        if "from crsp.msf_v2 where yyyymm between 200401 and 200612" in q:   # 1.2.0 rc_msf0
+            return pd.DataFrame({"permno": [1], "permco": [1], "yyyymm": [200401], "prc": [10.0], "shrout": [1.0],
+                                 "cfpr": [1.0], "usincflg": ["Y"]})
         if "from comp.funda where" in q:
             return pd.DataFrame({"gvkey": ["001000"], "datadate": ["2010-12-31"], "fyear": [2010]})
         if "from comp.fundq where" in q:
@@ -142,7 +148,8 @@ ptxt = "\n".join(plines)
 assert "rc_names" in store and "ref_names" not in store, "missing ref_ data set pulled under rc_"
 assert "rc_msf" not in store, "stored ref_msf must be reused"
 assert "rc_funda" in store and "rc_fqx" in store and "rc_t10" in store
-assert all(n in store for n in R.NEW_SETS), [n for n in R.NEW_SETS if n not in store]
+assert all(n in store for n in R.NEW_SETS + R.NEW_SETS_120), [n for n in R.NEW_SETS + R.NEW_SETS_120 if n not in store]
+assert len([q for q in queries if "from tfn.s34 where" in q and "mgrno in (" not in q]) == len(R.SEC_YEARS)
 fq_sql = [q for q in queries if "from comp.funda where" in q][0]
 assert "null::float8 as stkco" in fq_sql and "revt::float8 as revt" in fq_sql
 fx2_sql = [q for q in queries if "from comp.fundq where" in q and "cshfdq" in q][0]
@@ -225,7 +232,7 @@ refq = pd.DataFrame(fq, columns=["gvkey", "datadate", "fyearq", "fqtr", "rdq", "
 fqx = pd.DataFrame(fx, columns=["gvkey", "datadate", "fyearq", "fqtr"] + R.FQX_COLS)
 fqx2 = pd.DataFrame(fx2, columns=["gvkey", "datadate", "fyearq", "fqtr"] + R.FQX2_COLS)
 
-rows, dv, ib, ib2, idx = [], [], [], [], []
+rows, dv, ib, ib2, idx, sec = [], [], [], [], [], []
 z = np.zeros(N)
 price = np.full(N, 30.0)
 prev = None
@@ -249,7 +256,9 @@ for ym in months:
         ib2.append(("T%03d" % i, "C%07d" % i, st, "2", fpe + pd.offsets.YearEnd(1), 1.1 * e, 5, "USD"))
         ib2.append(("T%03d" % i, "C%07d" % i, st, "0", pd.NaT, 6.0 + 6 * rng2.random(), 4, "USD"))
         if ym % 100 in (3, 6, 9, 12) and R.IDX0 <= R.ym_end(ym).strftime("%Y-%m-%d") <= R.IDX1:
-            idx.append((R.ym_end(ym), "C%07d" % i, 1e8 * (0.05 + 0.2 * rng2.random()), 3))
+            sec.append((R.ym_end(ym), "C%07d" % i, 40))
+            if i % 9:                               # 1.2.0: some listed stocks held by no index manager
+                idx.append((R.ym_end(ym), "C%07d" % i, 1e8 * (0.05 + 0.2 * rng2.random()), 3))
 msf = pd.DataFrame(rows, columns=["permno", "permco", "yyyymm", "ret", "prc", "shrout", "cfpr", "usincflg"])
 dvf = pd.DataFrame(dv, columns=["permno", "yyyymm", "mdv", "nd"])
 link = pd.DataFrame({"gvkey": ["%06d" % (1000 + i) for i in range(N)], "permno": permnos, "linkprim": "P",
@@ -260,6 +269,13 @@ gics = pd.DataFrame({"gvkey": ["%06d" % (1000 + i) for i in range(N)], "indfrom"
 ibes = pd.DataFrame(ib, columns=["ticker", "cusip", "statpers", "meanest", "numest", "curcode"])
 ibes2 = pd.DataFrame(ib2, columns=["ticker", "cusip", "statpers", "fpi", "fpedats", "meanest", "numest", "curcode"])
 idxf = pd.DataFrame(idx, columns=["rdate", "cusip", "sh", "nmgr"])
+secf = pd.DataFrame(sec, columns=["rdate", "cusip", "nmgr"])
+m0 = []
+for ym in [y * 100 + m for y in (2004, 2005, 2006) for m in range(1, 13)]:      # 1.2.0 rc_msf0
+    for i in range(N):
+        m0.append((permnos[i], 90088 if i in (88, 89) else permnos[i], ym, 25.0 * (1 + 0.1 * np.sin(ym + i)), 100000.0,
+                   1.0, "Y"))
+msf0 = pd.DataFrame(m0, columns=["permno", "permco", "yyyymm", "prc", "shrout", "cfpr", "usincflg"])
 names = pd.DataFrame({"permno": permnos, "cusip": ["C%07d" % i for i in range(N)], "namedt": pd.Timestamp("1990-01-01"),
                       "nend": pd.Timestamp("2099-12-31")})
 t10 = pd.DataFrame({"date": [R.ym_end(m) for m in months if m >= 200806], "y10": 3.0, "src": "frb.rates_daily.tcmnom_y10"})
@@ -279,7 +295,9 @@ CPCOLS = ["mgrno", "yyyymm", "permno", "w", "rank", "new", "add", "conv_a", "con
 wstore = {"ref_msf": msf, "ref_link": link, "ref_fq": refq, "ref_gics": gics, "ref_ibes": ibes, "ref_names": names,
           "rc_funda": funda, "rc_fqx": fqx, "rc_t10": t10, "rc_fqx2": fqx2, "rc_funda2": funda2, "rc_ibes2": ibes2,
           "rc_idx": idxf, "rc_ibes2u": ibes2[ibes2.fpi != "0"].drop(columns=["curcode"]),
-          "eq_conv_panel": pd.DataFrame(cp, columns=CPCOLS)}
+          "rc_msf0": msf0, "eq_conv_panel": pd.DataFrame(cp, columns=CPCOLS)}
+for y_ in R.SEC_YEARS:
+    wstore["rc_s34sec_%d" % y_] = secf[pd.to_datetime(secf.rdate).dt.year == y_]
 for y in range(R.CFG["y0"] + 1, R.CFG["y1"] + 1):
     wstore["ref_dv_%d" % y] = dvf[dvf.yyyymm // 100 == y]
 saved = {}
@@ -397,6 +415,22 @@ assert "decisive on the house set (reported)" in blk["lilu_v1"] and "decisive on
 assert "index managers found per 13F quarter-end: median 3" in txt
 PR = saved["rc_pass_pilecki_v1"].merge(gics.assign(permno=permnos)[["permno", "ggroup"]], on="permno")
 assert PR.ref[PR.ggroup.isin(["4010", "4030"])].any(), "S2: banks / insurers get a reference score on the own set"
+# 1.2.0: v2 recipes: labels, diagnostics, Stahl own set + house line, Pilecki own-history leg
+V2L = "revision after seeing recall v1: same purchases, not independent evidence"
+for rc_ in ("druckenmiller_v2", "stahl_v2", "hohn_v2", "zlatev_v2", "pilecki_v2"):
+    assert blk[rc_].count(V2L) >= 7, rc_
+assert "decisive on the house set (reported)" in blk["stahl_v2"] and "house exclusions do not apply" in blk["stahl_v2"]
+assert re.search(r"through B3 with O05 = 0 \(listed, held by no index manager\): passes \d+, purchases \d+",
+                 blk["stahl_v2"])
+assert re.search(r"only through the own-history leg: passes \d+, purchases \d+; of those in the dearer half",
+                 blk["pilecki_v2"])
+assert "need the year-3 EPS leg" in blk["zlatev_v2"] and "pre-2018 media (group 2540 in sector 25)" in blk["hohn_v2"]
+assert "decisive minus B4" in blk["pilecki_v2"] and "FULL FORM, 48 versions averaged" in blk["zlatev_v2"]
+assert "pilecki_v2 own-history ranks: V02" in txt and "stahl_v2 O05 present" in txt
+ow = re.search(r"pilecki_v2 own-history ranks: V02 (\d+), V07 (\d+) of (\d+)", txt)
+assert int(ow.group(1)) > 0 and int(ow.group(2)) > 0, ow.group(0)
+SV = saved["rc_pass_stahl_v2"].merge(gics.assign(permno=permnos)[["permno", "ggroup"]], on="permno")
+assert (SV.ggroup == "4030").any(), "stahl_v2 on its own set"
 LL = saved["rc_pass_lilu_v1"].merge(gics.assign(permno=permnos)[["permno", "ggroup"]], on="permno")
 assert (LL.ggroup == "4030").any(), "N1: Li Lu on his own set"
 assert not re.search(r"^labels: ", blk["kantesaria_v1"].split("## 1.")[1], re.M), "kantesaria_v1 keeps the v1 layout"
@@ -467,17 +501,58 @@ saved.clear()
 R.run(load, save, out)
 full_ = saved["rc_recall_summary_v11"].copy()
 seen_ = set()
-for k_ in (1, 2):
+for k_ in (1, 2, 3):
     lines.clear()
     R.run_part(load, save, out, part=k_)
-    assert len("\n".join(lines)) < 60000, "part %d output too long for the runner" % k_
+    assert len("\n".join(lines)) < (50000 if k_ == 3 else 60000), "part %d output too long for the runner" % k_
+    assert not seen_ & set(R.PARTS[k_])
     seen_ |= set(R.PARTS[k_])
 assert seen_ == {t["recipe"] for t in R.TARGETS}, "PARTS must cover every recipe once"
-both_ = pd.concat([saved["rc_recall_summary_v11_p1"], saved["rc_recall_summary_v11_p2"]], ignore_index=True)
+both_ = pd.concat([saved["rc_recall_summary_v11_p%d" % k_] for k_ in (1, 2, 3)], ignore_index=True)
 assert len(both_) == len(full_)
 cols_ = [c for c in full_.columns if c != "t"]
 a_ = full_.sort_values(list(full_.columns[:3])).reset_index(drop=True)
 b_ = both_.sort_values(list(both_.columns[:3])).reset_index(drop=True)
 pd.testing.assert_frame_equal(a_, b_[list(a_.columns)])
-print("1.1.2: run_part(1) + run_part(2) = run() on the mock, each part under 60,000 characters: OK")
+print("1.1.2/1.2.0: run_part(1) + (2) + (3) = run() on the mock, parts under 60,000 / 50,000 characters: OK")
+
+# ---------------------------------------------------------------- 7. 1.2.0: v1 recipes identical to eq_recall 1.1.2
+OLD112 = "13b99ee"                                              # eq_recall 1.1.2 (A13 item 23)
+try:
+    src112 = subprocess.run(["git", "-C", root, "show", OLD112 + ":tools/equity/wrds/eq_recall.py"], check=True,
+                            capture_output=True, text=True).stdout
+except Exception as e:  # noqa: BLE001
+    src112 = None
+    print("WARNING: eq_recall 1.1.2 not readable from git (%s): identity check against 1.1.2 skipped" % str(e)[:80])
+if src112 is not None:
+    assert 'VERSION = "eq_recall-1.1.2"' in src112
+    o112 = types.ModuleType("eq_recall_112")
+    exec(compile(src112, "eq_recall_112", "exec"), o112.__dict__)
+    s112, l112 = {}, []
+    o112.run(load, lambda n, df: s112.__setitem__(n, df), lambda *a: l112.append(" ".join(str(v) for v in a)))
+    t112 = "\n".join(l112)
+    lines.clear()
+    saved.clear()
+    R.run(load, save, out)
+    t120 = "\n".join(lines)
+
+    def block(s_, rc_):
+        a = s_.index("recipe %s " % rc_) if ("recipe %s " % rc_) in s_ else s_.index("recipe %s\n" % rc_)
+        b = s_.find("\n# ", a)
+        return "\n".join(x for x in s_[a:b if b > 0 else None].split("\n") if not re.match(r"^\(\S+ done \d+ s\)$", x))
+    old_recipes = [x["recipe"] for x in o112.TARGETS]
+    assert old_recipes == [x["recipe"] for x in R.TARGETS if not x["recipe"].endswith("_v2")
+                           or x["recipe"] == "kantesaria_v2"]
+    for rc_ in old_recipes:
+        assert block(t112, rc_) == block(t120, rc_), "printed block of %s differs from 1.1.2" % rc_
+    A_ = s112["rc_recall_summary_v11"].reset_index(drop=True)
+    B_ = saved["rc_recall_summary_v11"]
+    B_ = B_[B_.recipe.isin(old_recipes)].reset_index(drop=True)[list(A_.columns)]
+    pd.testing.assert_frame_equal(A_, B_)
+    for rc_ in old_recipes:
+        if "rc_pass_" + rc_ in s112:
+            assert s112["rc_pass_" + rc_].reset_index(drop=True).equals(
+                saved["rc_pass_" + rc_].reset_index(drop=True)), rc_
+    print("1.2.0: all %d 1.1.2 recipes identical to eq_recall 1.1.2 on the mock (printed blocks, summary rows, pass "
+          "panels): OK" % len(old_recipes))
 print("\nRECALL SMOKE OK")

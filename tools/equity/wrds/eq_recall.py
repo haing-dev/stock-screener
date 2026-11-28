@@ -69,6 +69,12 @@ block, so lilu_v1 and the summary table were not seen): output only. run_part(lo
 computation for the recipes of PARTS[k] (1 = kantesaria_v1, kantesaria_v2, druckenmiller_v1, stahl_v1; 2 = the rest),
 so each job step stays under the runner's per-step limit; the summary of a part is stored as rc_recall_summary_v11_p<k>.
 run() unchanged (all recipes, one step). No measure, recipe, statistic or seed changed: numbers must equal eq_recall_v2.
+1.2.0 (2026-11-28; A13 item 24, registered before the code): the five revision-round recipes druckenmiller_v2,
+stahl_v2, hohn_v2, zlatev_v2, pilecki_v2 (pilot/batch2/*/recipe/RECIPE_v2.md) beside the unchanged v1 functions; each
+after its v1 in TARGETS; PARTS[3] = the five v2 recipes. stahl_v2 runs on its own set (house exclusions off, recipe A0)
+with the house-set result as a second line. New pulls: rc_s34sec_<year> (CUSIPs in tfn.s34 per 13F quarter-end;
+stahl_v2 O05 = 0 for a listed stock no index manager holds) and rc_msf0 (crsp.msf_v2 2004-2006; pilecki_v2's 60-month
+own-history ranks only). Diagnostics per v2 recipe (counts only). v1 recipes' numbers equal 1.1.2.
 """
 import json
 import time
@@ -79,10 +85,10 @@ import pandas as pd
 # >>> FROZEN INPUT
 CFG = json.loads("{\"y0\": 2007, \"y1\": 2025, \"form0\": 200901, \"form1\": 202511, \"ret0\": 201001, \"ret1\": 202512, \"top_n\": 1500, \"min_price\": 5.0, \"min_dv\": 2000000.0, \"top_frac\": 0.1, \"keep_frac\": 0.2, \"hold\": 12, \"cost_big\": 0.001, \"cost_small\": 0.0025, \"big_n\": 500, \"basket_cost\": 0.001, \"max_missing\": 3, \"stale_days\": 270, \"q_lag_days\": 45, \"ibes_tol_days\": 35, \"cap\": 0.025}")
 INVESTORS = json.loads("[{\"name\": \"Joel Greenblatt\", \"group\": \"roster\", \"mgrnos\": [\"10969\", \"12775\"], \"quant\": true}, {\"name\": \"Terry Smith\", \"group\": \"roster\", \"mgrnos\": [\"13408\"]}, {\"name\": \"Dev Kantesaria\", \"group\": \"roster\", \"mgrnos\": [\"14460\"]}, {\"name\": \"Chris Hohn\", \"group\": \"roster\", \"mgrnos\": [\"11194\"]}, {\"name\": \"Glenn Greenberg\", \"group\": \"roster\", \"mgrnos\": [\"16080\"]}, {\"name\": \"Val Zlatev\", \"group\": \"roster\", \"mgrnos\": [\"7142\"]}, {\"name\": \"Derek Pilecki\", \"group\": \"roster\", \"mgrnos\": [\"8799\"]}, {\"name\": \"Bill Nygren and Alex Fitch\", \"group\": \"roster\", \"mgrnos\": [\"43485\"]}, {\"name\": \"Murray Stahl\", \"group\": \"roster\", \"mgrnos\": [\"44850\", \"49373\"]}, {\"name\": \"Pat Dorsey\", \"group\": \"roster\", \"mgrnos\": [\"14201\"]}, {\"name\": \"Chris Davis\", \"group\": \"roster\", \"mgrnos\": [\"78320\"]}, {\"name\": \"Joseph Shaposhnik\", \"group\": \"roster\", \"mgrnos\": []}, {\"name\": \"Alex Sacerdote\", \"group\": \"roster\", \"mgrnos\": [\"11405\"]}, {\"name\": \"David Einhorn\", \"group\": \"roster\", \"mgrnos\": [\"42315\"]}, {\"name\": \"Stan Druckenmiller\", \"group\": \"roster\", \"mgrnos\": [\"13021\", \"23704\"]}, {\"name\": \"Todd Kantor\", \"group\": \"roster\", \"mgrnos\": [\"13431\"]}, {\"name\": \"Bob Robotti\", \"group\": \"roster\", \"mgrnos\": [\"10247\"]}, {\"name\": \"Fred Martin\", \"group\": \"roster\", \"mgrnos\": [\"23050\"]}, {\"name\": \"Brad Gerstner\", \"group\": \"roster\", \"mgrnos\": [\"13112\"]}, {\"name\": \"Chris Bloomstran\", \"group\": \"roster\", \"mgrnos\": [\"11757\"]}, {\"name\": \"Li Lu\", \"group\": \"roster\", \"mgrnos\": [\"14546\"]}, {\"name\": \"Warren Buffett\", \"group\": \"control\", \"mgrnos\": [\"8350\"]}, {\"name\": \"Henry Ellenbogen\", \"group\": \"control\", \"mgrnos\": [\"9442\"]}, {\"name\": \"Jim Chanos\", \"group\": \"control\", \"mgrnos\": [\"12867\"]}, {\"name\": \"John Lennon\", \"group\": \"control\", \"mgrnos\": [\"9090\"]}, {\"name\": \"Peter Keefe\", \"group\": \"control\", \"mgrnos\": [\"5300\"]}, {\"name\": \"Tobias Carlisle\", \"group\": \"control\", \"mgrnos\": []}, {\"name\": \"Arnold Van Den Berg\", \"group\": \"control\", \"mgrnos\": [\"15095\"]}, {\"name\": \"Eddy Elfenbein\", \"group\": \"control\", \"mgrnos\": []}]")
-TARGETS = json.loads("[{\"name\": \"Dev Kantesaria\", \"mgrnos\": [\"14460\"], \"recipe\": \"kantesaria_v1\"}, {\"name\": \"Dev Kantesaria\", \"mgrnos\": [\"14460\"], \"recipe\": \"kantesaria_v2\"}, {\"name\": \"Stan Druckenmiller\", \"mgrnos\": [\"13021\", \"23704\"], \"recipe\": \"druckenmiller_v1\"}, {\"name\": \"Murray Stahl\", \"mgrnos\": [\"44850\", \"49373\"], \"recipe\": \"stahl_v1\"}, {\"name\": \"Chris Hohn\", \"mgrnos\": [\"11194\"], \"recipe\": \"hohn_v1\"}, {\"name\": \"Val Zlatev\", \"mgrnos\": [\"7142\"], \"recipe\": \"zlatev_v1\"}, {\"name\": \"Derek Pilecki\", \"mgrnos\": [\"8799\"], \"recipe\": \"pilecki_v1\"}, {\"name\": \"Bill Nygren and Alex Fitch\", \"mgrnos\": [\"43485\"], \"recipe\": \"nygren_v1\"}, {\"name\": \"Li Lu\", \"mgrnos\": [\"14546\"], \"recipe\": \"lilu_v1\"}, {\"name\": \"Cliff Sosin\", \"mgrnos\": [\"21801\"], \"recipe\": \"sosin_v1\"}]")
+TARGETS = json.loads("[{\"name\": \"Dev Kantesaria\", \"mgrnos\": [\"14460\"], \"recipe\": \"kantesaria_v1\"}, {\"name\": \"Dev Kantesaria\", \"mgrnos\": [\"14460\"], \"recipe\": \"kantesaria_v2\"}, {\"name\": \"Stan Druckenmiller\", \"mgrnos\": [\"13021\", \"23704\"], \"recipe\": \"druckenmiller_v1\"}, {\"name\": \"Stan Druckenmiller\", \"mgrnos\": [\"13021\", \"23704\"], \"recipe\": \"druckenmiller_v2\"}, {\"name\": \"Murray Stahl\", \"mgrnos\": [\"44850\", \"49373\"], \"recipe\": \"stahl_v1\"}, {\"name\": \"Murray Stahl\", \"mgrnos\": [\"44850\", \"49373\"], \"recipe\": \"stahl_v2\"}, {\"name\": \"Chris Hohn\", \"mgrnos\": [\"11194\"], \"recipe\": \"hohn_v1\"}, {\"name\": \"Chris Hohn\", \"mgrnos\": [\"11194\"], \"recipe\": \"hohn_v2\"}, {\"name\": \"Val Zlatev\", \"mgrnos\": [\"7142\"], \"recipe\": \"zlatev_v1\"}, {\"name\": \"Val Zlatev\", \"mgrnos\": [\"7142\"], \"recipe\": \"zlatev_v2\"}, {\"name\": \"Derek Pilecki\", \"mgrnos\": [\"8799\"], \"recipe\": \"pilecki_v1\"}, {\"name\": \"Derek Pilecki\", \"mgrnos\": [\"8799\"], \"recipe\": \"pilecki_v2\"}, {\"name\": \"Bill Nygren and Alex Fitch\", \"mgrnos\": [\"43485\"], \"recipe\": \"nygren_v1\"}, {\"name\": \"Li Lu\", \"mgrnos\": [\"14546\"], \"recipe\": \"lilu_v1\"}, {\"name\": \"Cliff Sosin\", \"mgrnos\": [\"21801\"], \"recipe\": \"sosin_v1\"}]")
 # <<< FROZEN INPUT
 
-VERSION = "eq_recall-1.1.2"
+VERSION = "eq_recall-1.2.0"
 COM = ("securitytype = 'EQTY' and securitysubtype = 'COM' and sharetype = 'NS' and primaryexch in ('N','A','Q')")
 MEASURES = ["ey", "bp", "mom", "roe", "acc", "pio", "rev"]
 GROUPS = {"value": ["ey", "bp"], "momentum": ["mom"], "quality": ["roe", "acc", "pio"], "expectations": ["rev"]}
@@ -112,6 +118,9 @@ IBES0 = "%d-06-01" % CFG["y0"]
 IDX_PATTERNS = ["VANGUARD GROUP", "BLACKROCK", "STATE STREET", "BARCLAYS GLOBAL INV"]  # O05: the three largest index
 IDX0, IDX1 = "2009-06-30", "2025-06-30"            # managers (BGI = BlackRock's index arm before its 2009-12 purchase)
 NEW_SETS = ["rc_fqx2", "rc_funda2", "rc_ibes2", "rc_idx", "rc_ibes2u"]  # 1.1.1: + rc_ibes2u
+SEC_YEARS = list(range(2009, 2026))                 # 1.2.0: 13F security list per year (rdate 2009-06 .. 2025-06)
+NEW_SETS_120 = ["rc_msf0"] + ["rc_s34sec_%d" % y for y in SEC_YEARS]
+MSF0 = (200401, 200612)                             # 1.2.0: early CRSP months for pilecki_v2 own-history ranks only
 FIRM_WIDE = {"Murray Stahl": "Horizon Kinetics", "Bill Nygren and Alex Fitch": "Harris Associates",
              "Chris Davis": "Davis Selected"}      # A6: firm-wide 13F filers ("firm, not person")
 
@@ -301,6 +310,16 @@ def pull(sql, save, load, out, budget=7000):
     step("rc_ibes2", lambda: _ibes2(sql))
     step("rc_idx", lambda: _idx(sql, out))
     step("rc_ibes2u", lambda: _ibes2u(sql, out))  # 1.1.1 (S1)
+    # 1.2.0: early CRSP months (pilecki_v2 own history) and the 13F security list per year (stahl_v2 O05 = 0)
+    step("rc_msf0", lambda: sql(
+        "select permno, permco, yyyymm, abs(mthprc)::float8 as prc, shrout::float8 as shrout, mthcumfacpr::float8 as "
+        "cfpr, usincflg from crsp.msf_v2 where yyyymm between %d and %d and %s" % (MSF0[0], MSF0[1], COM)))
+    for y in SEC_YEARS:
+        lo, hi = ("%d-06-30" % y if y == SEC_YEARS[0] else "%d-01-01" % y), ("%d-06-30" % y if y == SEC_YEARS[-1]
+                                                                              else "%d-12-31" % y)
+        step("rc_s34sec_%d" % y, lambda lo=lo, hi=hi: sql(
+            "select rdate, cusip, count(distinct mgrno) as nmgr from tfn.s34 where fdate = rdate and rdate between "
+            "'%s' and '%s' and shares > 0 group by rdate, cusip" % (lo, hi)))
     left = [n for n in _needed() if not (have(n) or (n.startswith("ref_") and have("rc_" + n[4:])))]
     if "rc_t10" in left:
         out("STOP: the 10-year Treasury yield is not available (RECALL_SPEC_v1: the job stops and says so)")
@@ -309,7 +328,7 @@ def pull(sql, save, load, out, budget=7000):
 
 def _needed():
     return (["ref_" + b for b in REF_BASES] + ["ref_dv_%d" % y for y in range(CFG["y0"] + 1, CFG["y1"] + 1)]
-            + ["rc_funda", "rc_fqx", "rc_t10"] + NEW_SETS)
+            + ["rc_funda", "rc_fqx", "rc_t10"] + NEW_SETS + NEW_SETS_120)
 
 
 def _ibes2(sql):
@@ -575,6 +594,15 @@ def recall_quarter_measures2(f):
     return m
 
 
+def recall_quarter_measures3(f):
+    """1.2.0: stahl_v2 C04s = common shares outstanding x adjustment factor (R39 split-adjusted) now / 12 consecutive
+    fiscal quarters before"""
+    g = f.groupby("gvkey", sort=False)
+    sh = f.cshoq * f.ajexq
+    s12 = sh.groupby(f.gvkey, sort=False).shift(12).where(g.qi.shift(12) == f.qi - 12)
+    return pd.DataFrame({"rq_c04s": (sh / s12).where(s12 > 0)}, index=f.index)
+
+
 def annual_table(fa):
     """one row per gvkey-fiscal year with the recipe's history measures (lags require consecutive fiscal years)"""
     a = fa.copy()
@@ -644,6 +672,13 @@ def annual_table(fa):
     Y = pd.concat([lag(yok, k) for k in range(10)], axis=1)
     m["s04star"] = Y.sum(axis=1).where(Y.notna().all(axis=1))
     m["q01_ann"] = q01
+    # 1.2.0: hohn_v2 B1 = median of the 10 yearly Q01 values (denominator <= 0: +inf if EBIT > 0, else -inf; Q01
+    # missing otherwise: -inf); all 10 consecutive fiscal years present; +inf / -inf as +-1e9 (a 5th / 6th pair of
+    # -inf and +inf gives 0, at or below 15%)
+    yv = q01.where(avg > 0)
+    yv = yv.where(~(avg <= 0), np.where(a.oiadp > 0, 1e9, -1e9)).fillna(-1e9)
+    V = pd.concat([lag(yv, k) for k in range(10)], axis=1)
+    m["q01_med10"] = V.median(axis=1).where(V.notna().all(axis=1))
     return m
 
 
@@ -721,7 +756,8 @@ def build_panel(D, out):
     am = account_measures(q)
     rq = recall_quarter_measures(q)
     rq2 = recall_quarter_measures2(q)  # 1.1.0
-    q = pd.concat([q[["gvkey", "datadate", "avail"]], am, rq, rq2], axis=1).dropna(subset=["avail"]).sort_values("avail")
+    rq3 = recall_quarter_measures3(q)  # 1.2.0
+    q = pd.concat([q[["gvkey", "datadate", "avail"]], am, rq, rq2, rq3], axis=1).dropna(subset=["avail"]).sort_values("avail")
     left = u[["permno", "yyyymm", "t_end", "gvkey"]].dropna(subset=["gvkey"]).sort_values("t_end")
     left = left.rename(columns={"t_end": "avail_key"})
     q = q.rename(columns={"avail": "avail_key"})
@@ -863,7 +899,7 @@ def recall_panel(D, u, msf, s, out):
     j = pd.merge_asof(left, A.rename(columns={"datadate": "fy_datadate"}), on="avail", by="gvkey", direction="backward")
     j = j[(j.avail - j.fy_datadate).dt.days <= ANN_STALE_DAYS]
     keep = ["fy_run", "s01", "g01", "g02", "s03", "g06", "s02", "c04", "c06", "c06_strict", "aqc_filled", "sbc_ann",
-            "g06_5", "g06_9", "c06_prev", "c06_strict_prev", "s04star", "q01_ann"]  # 1.1.0: last six
+            "g06_5", "g06_9", "c06_prev", "c06_strict_prev", "s04star", "q01_ann", "q01_med10"]  # 1.1.0+
     E = E.merge(j[["permno", "yyyymm"] + keep], on=["permno", "yyyymm"], how="left")
     E["fy_run"] = E.fy_run.fillna(0)
     # prices
@@ -894,6 +930,7 @@ def recall_panel(D, u, msf, s, out):
     avg_tang = (E.rq_tang + E.rq_tang_l4) / 2
     E["b7"] = (E.ebit_ttm / avg_tang).where(avg_tang > 0)
     recall_extra(D, E, msf, s, out)  # 1.1.0
+    recall_extra2(D, E, msf, s, out)  # 1.2.0
     return E
 
 
@@ -999,6 +1036,95 @@ def _ibes_match(ib, names, E, fpis):
                           tolerance=pd.Timedelta(days=CFG["ibes_tol_days"])).sort_values("row")
         res[f_] = r
     return res
+
+
+def recall_extra2(D, E, msf, s, out):
+    """1.2.0: stahl_v2 O05 with zero for a listed stock no index manager holds; pilecki_v2 own-history value ranks"""
+    # stahl_v2: CUSIPs in the 13F security list at the quarter-end before t
+    sec = D["s34sec"].copy()
+    sec["rdate"] = pd.to_datetime(sec.rdate)
+    nm = D["names"].copy()
+    nm["namedt"], nm["nend"] = pd.to_datetime(nm.namedt), pd.to_datetime(nm.nend)
+    sec["cusip"], nm["cusip"] = cusip8(sec.cusip), cusip8(nm.cusip)
+    x = sec.merge(nm, on="cusip", how="inner")
+    x = x[(x.rdate >= x.namedt) & (x.rdate <= x.nend)]
+    x["ym"] = x.rdate.dt.year * 100 + x.rdate.dt.month
+    listed = x[["permno", "ym"]].drop_duplicates().assign(listed=True)
+    k = pd.DataFrame({"permno": E.permno.values, "ym": [ym_add(int(v), -3) for v in E.yyyymm]})
+    lst = k.merge(listed, on=["permno", "ym"], how="left").listed.fillna(False).astype(bool).to_numpy()
+    E["o05_listed"] = lst
+    E["o05z"] = E.o05.where(E.o05.notna(), pd.Series(np.where(lst, 0.0, np.nan), index=E.index))
+    out("1.2.0 measures: stahl_v2 O05 present %.0f%% of eligible stock-quarters (positive %.0f%%, zero = listed with no "
+        "index-manager holding %.1f%%)" % (100 * E.o05z.notna().mean(), 100 * (E.o05z > 0).mean(),
+                                          100 * (E.o05z == 0).mean()))
+    pil_history(D, E, msf, s, out)
+
+
+def pil_history(D, E, msf, s, out):
+    """1.2.0 pilecki_v2 (h): for V02 (net income TTM / company value) and V07 (tangible equity / company value), the
+    share of the stock's own month-end values at t-60 .. t-1 that are <= its value at t; each past value as known then
+    (CRSP company value at that month-end, quarterly accounts by the 1.0.3 as-of rule, link at that month); at least
+    48 of 60 present, else missing; a negative value at t ranks 0. Rows in sector 40 or sub-industry 45102020 only."""
+    E["v02_own"], E["v07_own"] = np.nan, np.nan
+    rows = E.gsector.eq("40") | E.gsubind.eq("45102020")
+    if not rows.any():
+        return
+    pset = set(E.permno[rows].astype(int))
+    m0 = D["msf0"].copy()
+    for c in ("permno", "permco", "yyyymm", "prc", "shrout"):
+        m0[c] = pd.to_numeric(m0[c], errors="coerce")
+    m0 = m0[m0.usincflg.astype(str).str.upper() == "Y"].dropna(subset=["permno", "yyyymm"])
+    m0 = m0.sort_values(["permno", "yyyymm"]).drop_duplicates(["permno", "yyyymm"], keep="last")
+    m0["mcap"] = m0.prc * m0.shrout * 1000.0
+    m0["mcap_co"] = m0.groupby(["permco", "yyyymm"]).mcap.transform("sum")
+    M = pd.concat([m0[["permno", "yyyymm", "mcap_co"]], msf[["permno", "yyyymm", "mcap_co"]]], ignore_index=True)
+    M["permno"], M["yyyymm"] = M.permno.astype(int), M.yyyymm.astype(int)
+    M = M[M.permno.isin(pset)].drop_duplicates(["permno", "yyyymm"], keep="last")
+    M["t_end"] = pd.to_datetime([ym_end(int(v)) for v in M.yyyymm]).astype("datetime64[ns]")
+    lk = D["link"].copy()
+    lk["gvkey"] = keynorm(lk.gvkey)
+    lk["permno"] = pd.to_numeric(lk.permno, errors="coerce")
+    lk["linkdt"] = pd.to_datetime(lk.linkdt)
+    lk["linkenddt"] = pd.to_datetime(lk.linkenddt).fillna(pd.Timestamp("2099-12-31"))
+    lk["pri"] = (lk.linkprim == "P").astype(int)
+    y = M.merge(lk[lk.permno.isin(pset)], on="permno", how="inner")
+    y = y[(y.linkdt <= y.t_end) & (y.t_end <= y.linkenddt)].sort_values(["permno", "yyyymm", "pri"])
+    y = y.drop_duplicates(["permno", "yyyymm"], keep="last")[["permno", "yyyymm", "t_end", "mcap_co", "gvkey"]]
+    q = quarterly_table(D["fq"])
+    q["intanq"] = pd.to_numeric(q.intanq, errors="coerce") if "intanq" in q else np.nan
+    q = q[q.gvkey.isin(set(y.gvkey))][["gvkey", "datadate", "avail", "ni_ttm", "ceqq", "intanq"]].dropna(subset=["avail"])
+    q = q.rename(columns={"avail": "t_end"}).sort_values("t_end")
+    q["t_end"], q["datadate"] = q.t_end.astype("datetime64[ns]"), q.datadate.astype("datetime64[ns]")
+    q["gvkey"] = q.gvkey.astype(str)
+    y["gvkey"] = y.gvkey.astype(str)
+    j = pd.merge_asof(y.sort_values("t_end"), q, on="t_end", by="gvkey", direction="backward")
+    j = j[(j.t_end - j.datadate).dt.days <= CFG["stale_days"]]
+    mc = j.mcap_co.where(j.mcap_co > 0)
+    j["v02"], j["v07"] = j.ni_ttm * 1e6 / mc, (j.ceqq - j.intanq) * 1e6 / mc
+    j["mi"] = (j.yyyymm // 100) * 12 + j.yyyymm % 100 - 1
+    mi0 = int(j.mi.min()) if len(j) else 0
+    perm = sorted(pset)
+    pix = {p_: i for i, p_ in enumerate(perm)}
+    nmo = int(j.mi.max()) - mi0 + 1 if len(j) else 1
+    R_ = E[rows]
+    er = np.array([pix[int(p_)] for p_ in R_.permno])
+    emi = np.array([(int(v) // 100) * 12 + int(v) % 100 - 1 for v in R_.yyyymm]) - mi0
+    for c in ("v02", "v07"):
+        A = np.full((len(perm), nmo), np.nan)
+        jj = j.dropna(subset=[c])
+        A[[pix[int(p_)] for p_ in jj.permno], (jj.mi - mi0).to_numpy()] = jj[c].to_numpy()
+        cur = R_[c].to_numpy(float)
+        res = np.full(len(R_), np.nan)
+        for n_, (i_, m_) in enumerate(zip(er, emi)):
+            if m_ <= 0 or not np.isfinite(cur[n_]):
+                continue
+            w = A[i_, max(m_ - 60, 0):m_]               # months t-60 .. t-1
+            w = w[np.isfinite(w)]
+            if len(w) >= 48:
+                res[n_] = 0.0 if cur[n_] < 0 else float((w <= cur[n_]).mean())
+        E.loc[rows, c + "_own"] = res
+    out("pilecki_v2 own-history ranks: V02 %d, V07 %d of %d sector-40 / 45102020 stock-quarters" % (
+        int(E.v02_own[rows].notna().sum()), int(E.v07_own[rows].notna().sum()), int(rows.sum())))
 
 
 def o05_at(D, E, msf):
@@ -1552,6 +1678,240 @@ def sosin_v1_entry(F, strict=False):
     return F.B1 & F.B2 & F.P1
 
 
+# ---------------------------------------------------------------------------- 1.2.0: revision-round recipes (v2)
+V2_LABEL = "revision after seeing recall v1: same purchases, not independent evidence"
+
+
+def druckenmiller_v2(P):
+    """Druckenmiller recipe v2 (batch2/DRU/recipe/RECIPE_v2.md): branch G = (B1 3-year revenue growth >= 0.20 OR B6
+    E04 FY2 / FY1 - 1 >= 0.20) AND B3 P02 > 0; branch C = B4 sector 10, 15, 20, 25 AND B5 IND_NI < 0 (sum of net
+    income TTM over the eligible stocks of the GICS industry at t, at least 3 present). A missing measure fails only
+    its own side of an OR. No price criterion."""
+    F = pd.DataFrame(index=P.index)
+    F["B1"] = P.rq_gr3 >= 0.20
+    F["B6"] = P.e04 >= 0.20
+    F["B3"] = P.p02 > 0
+    F["B4"] = P.gsector.isin(["10", "15", "20", "25"])
+    keys = [P.yyyymm, P.gind]
+    tot = P.rq_ni_ttm.groupby(keys).transform("sum")
+    cnt = P.rq_ni_ttm.notna().astype(float).groupby(keys).transform("sum")
+    F["B5"] = tot.where(cnt >= 3) < 0
+    F = F.fillna(False).astype(bool)
+    F["B1|B6"] = F.B1 | F.B6
+    F["G"] = (F.B1 | F.B6) & F.B3
+    F["C"] = F.B4 & F.B5
+    return F
+
+
+def druckenmiller_v2_entry(F, strict=False):
+    return F.G | F.C
+
+
+def stahl_v2(P):
+    """Stahl recipe v2 (batch2/STA/recipe/RECIPE_v2.md): as stahl_v1 with C04s (common shares x adjustment factor now
+    / 12 quarters before) in B2 and B3, and O05 = 0 for a stock in the 13F security list that no index manager holds
+    (missing only when not in the list). Own set (house exclusions off, recipe A0). Full form: B3g x B4g at 0.33 /
+    0.50 (4 entry rules)."""
+    F = pd.DataFrame(index=P.index)
+    keys = [P.yyyymm, P.gsector]
+    F["B1"] = (P.rq_fcfm > 0) | (P.b04 >= 0)
+    F["B2"] = P.rq_c04s <= 1.0
+    po, pe = pct01(P.o05z, keys), pct01(P.n1.fillna(0), keys)
+    none = P.n1.isna() | (P.n1 <= 0)
+    F["B3"] = (po < 0.5) & (P.rq_c04s < 1.0)
+    F["B4"] = none | (pe < 0.5)
+    for c in (33, 50):
+        F["B3g_%d" % c] = (po < c / 100.0) & (P.rq_c04s < 1.0)
+        F["B4g_%d" % c] = none | (pe < c / 100.0)
+    F["O05zero"] = P.o05z == 0
+    F["O05pos"] = P.o05z > 0
+    F = F.fillna(False).astype(bool)
+    F["B3|B4"] = F.B3 | F.B4
+    return F
+
+
+def stahl_v2_entry(F, strict=False):
+    return F.B1 & F.B2 & (F.B3 | F.B4)
+
+
+def hohn_v2(P):
+    """Hohn recipe v2 (batch2/HOH/recipe/RECIPE_v2.md): A1 sector 25 at the date excluded except industry group 2540
+    (media before the 2018 GICS change); A2 as v1; B1 median of the 10 yearly Q01 values > 15% (q01_med10) OR B1i;
+    P1 FCF yield - 10-year Treasury >= 0 (FCF yield <= 0 fails). B2 (S02) moves to the full form. Full form: + B2,
+    B4 (S03), A3 (v1 codes + group 2540), P1g gap >= 0 / 1 / 2 points (3 versions)."""
+    F = pd.DataFrame(index=P.index)
+    sec, grp, ind, sub = P.gsector, P.ggroup, P.gind, P.gsubind
+    keys = [P.yyyymm, P.gsector]
+    F["A1"] = ~(sec.eq("25") & ~grp.eq("2540"))
+    F["A2"] = ~(grp.isin(HOH_A2_GRP) | sec.isin(["10", "15"]) | sub.isin(["30203010", "40203010"]))
+    F["B1"] = P.q01_med10 > 0.15
+    F["B1i"] = sub.isin(["20305010", "20305020"]) & (P.s01 == 0)
+    gap = P.v04 - P.y10
+    F["P1"] = (P.v04 > 0) & (gap >= 0)
+    F["B2"] = pct01(P.s02, keys) <= 0.5
+    F["B4"] = pct01(P.s03, keys) <= 0.5
+    F["A3"] = ~(sub.isin(["20302010", "50102010"]) | ind.eq("502010") | grp.eq("2540"))
+    for k in (0, 1, 2):
+        F["P1g_%d" % k] = (P.v04 > 0) & (gap >= k / 100.0)
+    F["media2540"] = sec.eq("25") & grp.eq("2540")
+    F = F.fillna(False).astype(bool)
+    F["B1|B1i"] = F.B1 | F.B1i
+    return F
+
+
+def hohn_v2_entry(F, strict=False):
+    return F.A1 & F.A2 & (F.B1 | F.B1i) & F.P1
+
+
+def hohn_v2_full(F):
+    return pd.DataFrame({"p%d" % k: F.A1 & F.A2 & F.A3 & (F.B1 | F.B1i) & F.B2 & F.B4 & F["P1g_%d" % k]
+                         for k in (0, 1, 2)}, index=F.index)
+
+
+def _peer_thr(v, P, base, q):
+    """zlatev_v2 B3a: quantile q of v among eligible stocks with v in the same GICS sub-industry at t (>= 5 such
+    stocks), else the same industry (>= 5), else the stocks of base at t"""
+    out_ = pd.Series(np.nan, index=P.index)
+    done = pd.Series(False, index=P.index)
+    for lvl in ("gsubind", "gind"):
+        keys = [P.yyyymm, P[lvl]]
+        n = v.notna().astype(float).groupby(keys).transform("sum")
+        thr = v.groupby(keys).transform(lambda x: x.quantile(q))
+        use = ~done & (n >= 5)
+        out_ = out_.where(~use, thr)
+        done = done | use.fillna(False)
+    fb = v.where(base).groupby(P.yyyymm).transform(lambda x: x.quantile(q))
+    return out_.where(done, fb)
+
+
+def zlatev_v2(P):
+    """Zlatev recipe v2 (batch2/ZLA/recipe/RECIPE_v2.md; long side): B1 GICS industry groups 4520 and 4530; B3a gross
+    margin TTM >= the median of its same-sub-industry peers (>= 5 with a margin; else industry; else the B1 stocks);
+    B4a net debt / EBITDA < 2; B4b FCF margin > 0; P1 price / year-3 EPS <= 20, year-3 = FY2 x FY2 / FY1 (FY2 if FY1
+    <= 0 or missing; <= 0 fails), unadjusted I/B/E/S against the price as traded; A1 as v1. B3b full form only.
+    Full form: B1-g {v1 industries, v2 groups} x B3a-g {1/2, 1/3} x B4a-g {1, 2, 3} x P1-g {FY2, year-3} x {15, 20},
+    + B3b + A2 = 48 versions."""
+    F = pd.DataFrame(index=P.index)
+    b1 = P.ggroup.isin(["4520", "4530"])
+    b1n = P.gind.isin(ZLA_B1)
+    F["B1"], F["B1n"] = b1, b1n
+    for nm_, base in (("", b1), ("n", b1n)):
+        for q, tag in ((0.5, "2"), (2.0 / 3, "3")):
+            F["B3a%s_%s" % (nm_, tag)] = P.rq_gm >= _peer_thr(P.rq_gm, P, base, q)
+    F["B3a"] = F["B3a_2"]
+    F["B3b"] = P.rq_dgm >= 0
+    for k in (1, 2, 3):
+        F["B4a_%d" % k] = P.b01 < k
+    F["B4a"] = F["B4a_2"]
+    F["B4b"] = P.rq_fcfm > 0
+    y3 = pd.Series(np.where(P.fy1b > 0, P.fy2b * (P.fy2b / P.fy1b), P.fy2b), index=P.index)
+    p3 = (P.px_ib / y3).where(y3 > 0)
+    for k in (15, 20):
+        F["P1y3_%d" % k] = p3 <= k
+        F["P1fy2_%d" % k] = P.pfy2 <= k
+    F["P1"] = F["P1y3_20"]
+    F["A1"] = ~P.gind.isin(ZLA_A1)
+    F["A2"] = P.e04 >= 0
+    return F.fillna(False).astype(bool)
+
+
+def zlatev_v2_entry(F, strict=False):
+    return F.B1 & F.B3a & F.B4a & F.B4b & F.P1 & F.A1
+
+
+def zlatev_v2_full(F):
+    cols = {}
+    for b in ("", "n"):
+        for tag in ("2", "3"):
+            for k in (1, 2, 3):
+                for pb in ("fy2", "y3"):
+                    for p in (15, 20):
+                        cols["b1%s_t%s_l%d_%s_p%d" % (b or "v", tag, k, pb, p)] = (
+                            F["B1" + b] & F["B3a%s_%s" % (b, tag)] & F.B3b & F["B4a_%d" % k] & F.B4b
+                            & F["P1%s_%d" % (pb, p)] & F.A1 & F.A2)
+    return pd.DataFrame(cols, index=F.index)
+
+
+def pilecki_v2(P):
+    """Pilecki recipe v2 (batch2/PIL/recipe/RECIPE_v2.md; house exclusions do not apply): as pilecki_v1 (1.1.1 group
+    and fallback ranking) with B1 ROE rank > 0.30 (ROE missing fails) and P1 = group leg (g) >= 0.70 OR own-history
+    leg (h) >= 0.70 (h: pil_history; 4010 / 4030 = mean of the V02 and V07 own ranks, both needed; 4020 = V02 rank;
+    missing = group leg only). B4 (December sleeve) NOT IMPLEMENTED. Full form: B1 rank > 0.30 / > 0.5."""
+    F = pd.DataFrame(index=P.index)
+    grp = pil_groups(P)
+    fin = grp.isin(["4010", "4020", "4030"])
+    small = pil_small(P, grp, fin)
+
+    def rk(v):
+        vv = v.where(fin)
+        a = pct01(vv.where(~small), [P.yyyymm, grp])
+        b = pct01(vv, [P.yyyymm])
+        return a.where(~small, b.where(small))
+    r_roe = rk(P.roe)
+    bs = grp.isin(["4010", "4030"])
+    score = ((rk(P.v02).fillna(0.5) + rk(P.v07).fillna(0.5)) / 2).where(bs, rk(P.v02).fillna(0.5)).where(fin)
+    g = rk(score)
+    h = ((P.v02_own + P.v07_own) / 2).where(bs, P.v02_own).where(fin)
+    F["A1"] = fin
+    F["B1"] = P.roe.notna() & (r_roe > 0.30)
+    F["B1_50"] = P.roe.notna() & (r_roe > 0.5)
+    F["B2"] = (P.rq_tbg > 0) | ~bs
+    F["B3"] = P.p02 > 0
+    F["P1g"] = g >= 0.70
+    F["P1h"] = h >= 0.70
+    F["P1g_lt50"] = g < 0.5
+    F["A2"] = P.low12new == 0
+    F = F.fillna(False).astype(bool)
+    F["P1"] = F.P1g | F.P1h
+    return F
+
+
+def pilecki_v2_entry(F, strict=False):
+    return F.A1 & F.A2 & F.B1 & F.B2 & F.B3 & F.P1
+
+
+def pilecki_v2_full(F):
+    return pd.DataFrame({"b1_30": pilecki_v2_entry(F), "b1_50": F.A1 & F.A2 & F.B1_50 & F.B2 & F.B3 & F.P1},
+                        index=F.index)
+
+
+def _diag(E, S, items):
+    """1.2.0: counts of decisive passes (eligible stock-quarters) and of counted purchases (either version) that pass,
+    by the registered split; items = [(label, column of E)]"""
+    Y = S["either"][["t", "permno"]].merge(E.rename(columns={"yyyymm": "t"}), on=["permno", "t"], how="left")
+    pas, pp = E.dec.astype(bool), Y.dec.fillna(False).astype(bool)
+    parts = []
+    for lab, col in items:
+        parts.append("%s: passes %d, purchases %d" % (lab, int((pas & E[col].astype(bool)).sum()),
+                                                      int((pp & Y[col].fillna(False).astype(bool)).sum())))
+    return ["diagnostic (counts; %d decisive passes, %d counted purchases that pass): %s" % (
+        int(pas.sum()), int(pp.sum()), "; ".join(parts))]
+
+
+def diag_stahl_v2(E, S):
+    E["dg_z"] = E.d_B3 & E.d_O05zero
+    E["dg_p"] = E.d_B3 & E.d_O05pos
+    E["dg_b4"] = ~E.d_B3 & E.d_B4
+    return _diag(E, S, [("through B3 with O05 = 0 (listed, held by no index manager)", "dg_z"),
+                        ("through B3 with O05 > 0", "dg_p"), ("through B4 only", "dg_b4")])
+
+
+def diag_pilecki_v2(E, S):
+    E["dg_h"] = ~E.d_P1g & E.d_P1h
+    E["dg_hd"] = E.dg_h & E.d_P1g_lt50
+    return _diag(E, S, [("only through the own-history leg", "dg_h"),
+                        ("of those in the dearer half of their group", "dg_hd")])
+
+
+def diag_zlatev_v2(E, S):
+    E["dg_y3"] = ~E.d_P1fy2_20
+    return _diag(E, S, [("need the year-3 EPS leg (price / FY2 not <= 20)", "dg_y3")])
+
+
+def diag_hohn_v2(E, S):
+    return _diag(E, S, [("pre-2018 media (group 2540 in sector 25)", "d_media2540")])
+
+
 RECIPES = {
     "kantesaria_v1": {
         "flags": kantesaria_v1, "entry": kantesaria_v1_entry, "full": kantesaria_v1_full,
@@ -1708,6 +2068,87 @@ RECIPES = {
                        ("P2_67", "EBIT / EV cheapest third"), ("P2_90", "cheapest tenth")],
         "coverage": ["rq_q02", "lowq", "bp", "ey", "acc", "rq_opmdev"],
     },
+    # ------------------------------------------------------------- 1.2.0: revision-round recipes (A13 item 24)
+    "druckenmiller_v2": {
+        "flags": druckenmiller_v2, "entry": druckenmiller_v2_entry, "full": None,
+        "full_note": "not implemented: the recipe does not state how its eleven grid lines combine (as v1)",
+        "universe": "house", "no_price": True,
+        "labels": [V2_LABEL, "thin", "held-out failed", "13F = equity longs only",
+                   "recipe covers 4 of 11 buy rules (decisive)"],
+        "criteria": [("B1", "revenue growth 3y (TTM vs 12 quarters before) >= 20%", ["rq_gr3"]),
+                     ("B6", "forward EPS growth FY2 / FY1 >= 20%", ["e04"]),
+                     ("B1|B6", "either growth measure", []),
+                     ("B3", "momentum 6-1 > 0", ["p02"]),
+                     ("G", "branch G: (B1 or B6) and B3", []),
+                     ("B4", "cyclical sector 10, 15, 20, 25", []),
+                     ("B5", "industry net income TTM sum < 0 (>= 3 members)", []),
+                     ("C", "branch C: B4 and B5", []),
+                     ("G|C", "either branch", [])],
+        "full_extra": [], "coverage": ["rq_gr3", "e04", "p02", "rq_ni_ttm"],
+    },
+    "stahl_v2": {
+        "flags": stahl_v2, "entry": stahl_v2_entry, "full": stahl_v1_full, "universe": "all", "also_house": True,
+        "no_price": True, "diag": diag_stahl_v2, "diag_cols": ["B3", "B4", "O05zero", "O05pos"],
+        "labels": [V2_LABEL, "thin", "held-out failed", "recipe covers 3 of 6 buy rules (decisive), stand-ins only",
+                   "13F filer firm-wide (A6: Horizon Kinetics, firm, not person)",
+                   "house exclusions do not apply (recipe A0; A13 item 24)"],
+        "criteria": [("B1", "FCF margin TTM > 0 or net cash >= 0", ["rq_fcfm", "b04"]),
+                     ("B2", "common shares not up over 12 quarters", ["rq_c04s"]),
+                     ("B3", "index-fund ownership (0 if listed, unheld) below the sector median and shares down",
+                      ["o05z", "rq_c04s"]),
+                     ("B4", "FY1 analyst count below the sector median (none = 0)", []),
+                     ("B3|B4", "one of the two neglect tests", [])],
+        "full_extra": [("B3g_33", "B3 below the sector 33rd percentile"), ("B4g_33", "B4 below the 33rd percentile")],
+        "coverage": ["rq_fcfm", "b04", "rq_c04s", "o05z", "n1"],
+    },
+    "hohn_v2": {
+        "flags": hohn_v2, "entry": hohn_v2_entry, "full": hohn_v2_full, "universe": "house",
+        "diag": diag_hohn_v2, "diag_cols": ["media2540"],
+        "labels": [V2_LABEL, "thin", "recipe covers 4 of 14 buy rules (decisive)"],
+        "criteria": [("A1", "consumer discretionary (sector 25) except group 2540 media", []),
+                     ("A2", "banks, autos, retail, insurance, energy, materials, tobacco, asset managers", []),
+                     ("B1", "10-year median of Q01 > 15%", ["q01_med10"]),
+                     ("B1i", "airports / toll roads with no loss year in 10", ["s01"]),
+                     ("B1|B1i", "barrier route", ["q01_med10"]),
+                     ("P1", "FCF yield TTM minus the 10y Treasury >= 0", ["v04"])],
+        "full_extra": [("B2", "operating-margin s.d. 10y in the stable half of the sector"),
+                       ("B4", "revenue-growth s.d. 10y in the stable half of the sector"),
+                       ("A3", "airlines, wireless, media (incl. group 2540)"), ("P1g_1", "FCF yield gap >= 1 point"),
+                       ("P1g_2", "FCF yield gap >= 2 points")],
+        "coverage": ["q01_med10", "s01", "v04", "s02", "s03"],
+    },
+    "zlatev_v2": {
+        "flags": zlatev_v2, "entry": zlatev_v2_entry, "full": zlatev_v2_full, "universe": "house",
+        "diag": diag_zlatev_v2, "diag_cols": ["P1fy2_20"],
+        "labels": [V2_LABEL, "thin", "long/short, longs only tested", "recipe covers 3 of 5 buy rules (decisive)"],
+        "criteria": [("B1", "GICS groups 4520 tech hardware and 4530 semiconductors", []),
+                     ("B3a", "gross margin TTM >= median of same-sub-industry peers", ["rq_gm"]),
+                     ("B4a", "net debt / EBITDA TTM < 2", ["b01"]),
+                     ("B4b", "FCF margin TTM > 0", ["rq_fcfm"]),
+                     ("P1", "price / year-3 EPS estimate <= 20", ["fy2b"]),
+                     ("A1", "software, IT services, internet", [])],
+        "full_extra": [("B1n", "B1 on the v1 industries"), ("B3a_3", "gross margin in the peers' top third"),
+                       ("B3b", "gross margin TTM not below a year ago"), ("B4a_1", "net debt / EBITDA < 1"),
+                       ("B4a_3", "net debt / EBITDA < 3"), ("P1fy2_20", "price / FY2 EPS <= 20 (v1 reading)"),
+                       ("P1y3_15", "price / year-3 EPS <= 15"), ("A2", "FY2 / FY1 EPS growth >= 0")],
+        "coverage": ["rq_gm", "b01", "rq_fcfm", "fy1b", "fy2b", "pfy2"],
+    },
+    "pilecki_v2": {
+        "flags": pilecki_v2, "entry": pilecki_v2_entry, "full": pilecki_v2_full, "universe": "all", "note": pil_note,
+        "not_implemented": ["B4"], "diag": diag_pilecki_v2, "diag_cols": ["P1g", "P1h", "P1g_lt50"],
+        "labels": [V2_LABEL, "thin", "financials only", "recipe covers 2 of 7 buy rules fully (decisive)",
+                   "house exclusions do not apply (recipe section 0)"],
+        "criteria": [("A1", "financials (GICS 2023 groups 4010, 4020, 4030)", []),
+                     ("B1", "ROE TTM above the comparison group's lowest 30%", ["roe"]),
+                     ("B2", "tangible book per share + dividends up over 12 quarters (banks, insurers)", ["rq_tbg"]),
+                     ("B3", "momentum 6-1 > 0", ["p02"]),
+                     ("P1g", "value score in the cheapest 30% of the comparison group", ["v02"]),
+                     ("P1h", "value score in the cheapest 30% of its own last 60 month-ends", ["v02_own"]),
+                     ("P1", "either value leg", ["v02"]),
+                     ("A2", "a new 12-month low (excluded)", ["low12new"])],
+        "full_extra": [("B1_50", "ROE rank > 0.5 (v1 reading)")],
+        "coverage": ["roe", "rq_tbg", "p02", "v02", "v07", "v02_own", "v07_own", "low12new"],
+    },
     "sosin_v1": {
         "flags": sosin_v1, "entry": sosin_v1_entry, "full": None, "universe": "house", "measured": False,
         "labels": ["thin", "held-out failed", "no 13F profile"], "criteria": [], "full_extra": [], "coverage": [],
@@ -1845,6 +2286,8 @@ def load_inputs(load):
     D["funda"], D["fqx"], D["t10"] = load("rc_funda"), load("rc_fqx"), load("rc_t10")
     D["fqx2"], D["funda2"], D["ibes2"], D["idx"] = load("rc_fqx2"), load("rc_funda2"), load("rc_ibes2"), load("rc_idx")
     D["ibes2u"] = load("rc_ibes2u")  # 1.1.1 (S1)
+    D["msf0"] = load("rc_msf0")      # 1.2.0
+    D["s34sec"] = pd.concat([load("rc_s34sec_%d" % y) for y in SEC_YEARS], ignore_index=True)  # 1.2.0
     # no monthly data after the last evaluation quarter-end is read (no forward return)
     D["cf_last"] = D["msf"].sort_values("yyyymm").groupby("permno").cfpr.last()  # 1.0.1: split factor only, no return
     D["msf"] = D["msf"][pd.to_numeric(D["msf"].yyyymm) <= T1].copy()
@@ -1927,6 +2370,8 @@ def evaluate(tgt, E_all, u, r, cp, out, save, r_all=None, extra=None):
         add["f_" + c] = _or(F, c).values
     for c, _ in rec["full_extra"]:
         add["f_" + c] = _or(F, c).values
+    for c in rec.get("diag_cols", []):  # 1.2.0: flag columns the diagnostics read
+        add["d_" + c] = F[c].values
     E = pd.concat([E, pd.DataFrame(add, index=E.index)], axis=1)
     rr_ = r_all if (rec.get("universe") == "all" and r_all is not None) else r   # 1.1.1 (S2): the recipe's own set
     rk = rr_[["permno", "yyyymm", "sec_pct"]]
@@ -2001,6 +2446,9 @@ def evaluate(tgt, E_all, u, r, cp, out, save, r_all=None, extra=None):
         SH = sets_for(Pk, EH, ["dec"])
         house = summarize({k: SH[k] for k in ("a", "b")}, ["dec"])
         out(_line("decisive on the house set (reported)", house))
+    if rec.get("diag"):  # 1.2.0: registered diagnostics (counts only)
+        for ln in rec["diag"](E, S):
+            out(ln)
     # baselines
     ctrl = [i for i in INVESTORS if i["group"] == "control" and i["mgrnos"]]
     Pc = pd.concat([investor_purchases(cp, i) for i in ctrl], ignore_index=True) if ctrl else Pk.iloc[0:0]
@@ -2112,7 +2560,8 @@ def evaluate(tgt, E_all, u, r, cp, out, save, r_all=None, extra=None):
 
 
 PARTS = {1: ["kantesaria_v1", "kantesaria_v2", "druckenmiller_v1", "stahl_v1"],
-         2: ["hohn_v1", "zlatev_v1", "pilecki_v1", "nygren_v1", "lilu_v1", "sosin_v1"]}  # 1.1.2: output split only
+         2: ["hohn_v1", "zlatev_v1", "pilecki_v1", "nygren_v1", "lilu_v1", "sosin_v1"],   # 1.1.2: output split only
+         3: ["druckenmiller_v2", "stahl_v2", "hohn_v2", "zlatev_v2", "pilecki_v2"]}       # 1.2.0: the v2 recipes
 
 
 def run_part(load, save, out, part=1):

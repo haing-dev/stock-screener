@@ -1,0 +1,1 @@
+{"name": "eq_recall_pull_v3", "steps": [{"do": "python", "code": "import eq_recall\neq_recall.pull(sql, save, load, out, budget=7000)"}]}
