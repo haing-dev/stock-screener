@@ -572,6 +572,10 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   better; carry: 4 pts deeper fall) against the joint 3-candidate book that includes value; value fails all. As
   registered: no holdout run, BASE continues 'no Core book', B tests read alpha vs a zero book. Incubator: trend,
   carry, econ, carry v1+bonds, value bonds+FX; Shelved: value equities. NEXT: step 7 pre-B diagnostics, B1/B2.
+  2026-11-28 PRE-B DIAGNOSTICS RAN (gm_diag_preb_v1, diag_preb 1.1.1; card inputs FRED/ALFRED locked LOCK_CARD_v1
+  6c154f7d from macro-data 264d0a2): R1 PASS (0.748) -> Strip reversion in B2; 10 card rule layers judged in B2 (card 1
+  R1 R2 R5, card 2 R1 R2, card 3 R2 R4 flagged, card 4 R1 R3 R5); 7 not judgeable / dropped (card 5 R1 dropped by C5-D2).
+  NEXT: B1 (Curve carry) / B2 builds per 7.6 steps 8-9 (pod builds, card rule-layer engine).
   USER RULE 2026-11-27: every result report ENDS with a short summary in simple, plain terms (what it means, no jargon).
   User 2026-11-22: NO MORE FABLE UNITS for now.
 - MT228 (2026-11-10): raw X posts of John Galt @AtlasShrug1 (1,359 posts, Jul 2025 - 8 Nov 2026) extracted like a transcript

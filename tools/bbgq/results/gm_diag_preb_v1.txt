@@ -1,0 +1,132 @@
+=== gm_diag_preb_v1 ===
+diag_preb-1.1.1 | diag_a2-1.0.1 | a2_batch-1.1.1 | a1_panel-1.1.0 | bbgdata-1.2.0 | bbg_panel-1.0.0 | gm_engine-1.3.0 | lsegdata-1.0.0 | lseg_rules-1.1.0 | card_inputs-1.0.0 | engine gm-2.2.1 | python 3.15.0, numpy 2.5.4, pandas 3.1.1, scipy 1.18.1, openpyxl 3.1.5, xlrd missing
+PASS gm code vs reference | 21 files | differing or missing: none
+PASS lib engine_ref.json | sha256 cebd4932e8643f14 | registered cebd4932e8643f14
+PASS engine gm-2.2.1 and config hashes A1_INCUMBENT 77374d7bef, A2_CHALLENGER 1faa343535, BASE f1d682c384, CANDIDATE 438a092b53 | registered gm-2.2.1, A1_INCUMBENT 77374d7bef, A2_CHALLENGER 1faa343535, BASE f1d682c384, CANDIDATE 438a092b53
+PASS lib a1_panel.py | sha256 eb9ef3f7fbd12760 | registered eb9ef3f7fbd12760
+PASS lib a2_batch.py | sha256 35339f673f351f43 | registered 35339f673f351f43
+PASS lib bbg_panel.py | sha256 e0b67a42793e67c1 | registered e0b67a42793e67c1
+PASS lib bbgdata.py | sha256 0b26bb21b50671dc | registered 0b26bb21b50671dc
+PASS lib card_inputs.py | sha256 4091f84bcbb11f43 | registered 4091f84bcbb11f43
+PASS lib diag_a2.py | sha256 3264a5381c13b124 | registered 3264a5381c13b124
+PASS lib diag_preb.py | sha256 2e9cadd9d41250b8 | registered 2e9cadd9d41250b8
+PASS lib gm_engine.py | sha256 ac43a33cd8943719 | registered ac43a33cd8943719
+PASS lib lseg_rules.py | sha256 5686999172a22c76 | registered 5686999172a22c76
+PASS lib lsegdata.py | sha256 0d1b500ddb2e931a | registered 0d1b500ddb2e931a
+PASS lib gm\trials.csv book / pod rows | 41 rows | digest f200d02ce574f002 | registered 41 rows, f200d02ce574f002
+PASS A2 report gm_a2_v1.txt: ok
+PASS diagnostics report gm_diag_v1.txt: ok
+PASS Core book v1 report gm_core_v1.txt: ok
+PASS Bloomberg store lock id d85a46cb2853646b24796f294f3ccab1d1507188c402e978fd59f5196ea41fc9 | registered LOCK_v2 d85a46cb2853646b24796f294f3ccab1d1507188c402e978fd59f5196ea41fc9
+PASS LSEG store lock id 90322681b9f989cc24393ae7de4fe24bf5af2f32074ffa6400b1cbed09c4074c | registered LOCK_LSEG_v5 90322681b9f989cc24393ae7de4fe24bf5af2f32074ffa6400b1cbed09c4074c | ok
+PASS card inputs gm_card_inputs.zip | 19 files, each = its LOCK_CARD_v1 sha256 | lock id 6c154f7d736cefd1 | registered 6c154f7d736cefd1 | commit 264d0a2cc2f7
+PASS card inputs zip sha256 4f84b01d07ad59da | LOCK_CARD_v1 zip_sha256 4f84b01d07ad59da | informational (content pinned file by file)
+PASS free inputs | 239 files | not matching the manifest 0 | file list and sizes match the reference | digest 378d65b09c23d234
+PASS free arm vs reference | signal E (per-market sum of |signal|) | n 62 | missing 0 | max abs diff 0.0e+00
+PASS free arm vs reference | signal C (per-market sum of |signal|) | n 39 | missing 0 | max abs diff 0.0e+00
+PASS free arm vs reference | signal V (per-market sum of |signal|) | n 31 | missing 0 | max abs diff 0.0e+00
+PASS free arm vs reference | market months with a return | n 65 | missing 0 | max abs diff 0.0e+00
+EXTENSION-ONLY CHECK PASS | admitted series 4 | 204s
+PASS A1 PANEL ID e7f98d4439fccf91f3451bc4b9e78079e3bc2cc2452931363b28520460b6cb43 | registered e7f98d4439fccf91f3451bc4b9e78079e3bc2cc2452931363b28520460b6cb43
+PASS A1 panel file work\a1\a1_panel_e7f98d4439fc.pkl: same
+card inputs | fx values EUR 144 months, JPY 480 months, GBP 480 months, AUD 480 months, CAD 480 months | rates TB3MS 1960-01.. (612), US 1960-01.. (612), JP 2002-04.. (105), DE 1960-01.. (612), GB 1960-01.. (612), CA 1960-01.. (612), CH 1999-07.. (138), SE 1982-01.. (348)
+PASS A2-final book as run (A2 report): book d1 1.064, k0 1.481, k1 1.439 | pods trend 1.19 (432), econ 0.53 (432), carry 1.07 (432), value 0.15 (345) | P4 book 1.39 specific 1.34 (396) | registered book d1 1.064, k0 1.481, k1 1.439 | pods trend 1.19 (432), econ 0.53 (432), carry 1.07 (432), value 0.15 (345) | P4 1.39 / 1.34 (396)
+--- PRE-B DIAGNOSTICS (TESTING_PROTOCOL 7.6 step 7, 7.5 order item 3; gm/CHANGES.md "Pre-B diagnostics"): registered systematic book gm-2.0.4-candidate-x1 (77374d7bef), A1 panel, positions book.run pos; LSEG design part as of 2010-12-31; zero slots, nothing adopted; values over fewer than 60 months are printed as count and sign
+CORE BOOK READING | C3-D1 'Core book' = the registered systematic book (7.5 fix: content, not trading status); C1-D2 the same; C4-D2 and C5-D1 name Trend (a pod of that book); the others name no book: the empty Core book v1 changes no reference here
+R1 | Eurodollar quarterly contracts (Datastream daily) 124 | NYSE days 1990-2010 with the first eight alive contracts priced 5289 of 5295
+R1 | month-ends 1990-01..2010-11 (251) | first normal: K2 1990-01, K3 1990-01, K4 1990-01, K5 1990-01, K6 1990-01, K7 1990-01
+R1 | left out: no normal 0, strip missing on d 0, strip missing on d1 0, stale 327
+R1 | reported, not a gate: eligible triple-months whose next-day settlements equal the decision day's for all eight contracts 6 of 1179
+R1 | K2 (cost 1.333 bp) | qualifying 152 of 198 | share 0.768 (198)
+R1 | K3 (cost 0.833 bp) | qualifying 147 of 198 | share 0.742 (198)
+R1 | K4 (cost 0.600 bp) | qualifying 148 of 197 | share 0.751 (197)
+R1 | K5 (cost 0.467 bp) | qualifying 150 of 196 | share 0.765 (196)
+R1 | K6 (cost 0.381 bp) | qualifying 148 of 195 | share 0.759 (195)
+R1 | K7 (cost 0.321 bp) | qualifying 137 of 195 | share 0.703 (195)
+R1 GATE | triple-months qualifying 882 of 1179 | share 0.748 (1179) | PASS: Strip reversion enters B2 (both versions)
+CARD INPUTS | CPILFESL 12-month change | first published where a comparable vintage exists, else latest (flagged) | flagged share 1975-2010 0.639 (432) | breaks none
+CARD INPUTS | M2SL 12-month change | first published where a comparable vintage exists, else latest (flagged) | flagged share 1975-2010 0.225 (432) | breaks 1983-01, 1996-01
+CARD INPUTS | PCEPILFE 12-month change | first published where a comparable vintage exists, else latest (flagged) | flagged share 1975-2010 0.796 (432) | breaks 2003-11, 2009-06
+CARD INPUTS | UNRATE level | first published where a comparable vintage exists, else latest (flagged) | flagged share 1975-2010 0.000 (432) | breaks n/a (level)
+C2-D1 | worst-fifth months by country (low-rate / other): US 8 / 79, JP 23 / 0, DE 2 / 54, GB 3 / 35, CA 6 / 18
+C2-D1 | pooled | 10-year bond mean excess return: rate < 1.0 n 42, sign + | rate >= 1.0 -1.15 %/yr (186) | FAIL (gate)
+C2-D1 | japan | 10-year bond mean excess return: rate < 1.0 n 23, sign + | rate >= 1.0 n 0, n/a | FAIL (reported)
+C2-D1 GATE | FAIL: no change
+C1-D1 | card 1 R1 | condition months (any version) 109 | episodes 9 | gate fewer than 6 | PASS: rule stays (with F0)
+C1-D2 | card 1 R1 2-year leg | held market-months 239 | same sign as the book 0.531 (239) | gate > 0.80 | leg stays
+C1-D2 | card 1 R1 10-year leg | held market-months 257 | same sign as the book 0.521 (257) | gate > 0.80 | leg stays
+C1-D1 | card 1 R2 | condition months (any version) 72 | episodes 6 | gate fewer than 6 | PASS: rule stays (with F0)
+C1-D2 | card 1 R2 2-year leg | held market-months 181 | same sign as the book 0.674 (181) | gate > 0.80 | leg stays
+C1-D2 | card 1 R2 10-year leg | held market-months 181 | same sign as the book 0.497 (181) | gate > 0.80 | leg stays
+C1-D1 | card 1 R3 | condition months (any version) 0 | episodes 0 | gate fewer than 6 | FAIL: analyst watch condition
+C1-D2 | card 1 R3 10-year leg | held market-months 0 | same sign as the book n 0, n/a | gate > 0.80 | leg stays
+C1-D2 | card 1 R3 S&P leg | held market-months 0 | same sign as the book n 0, n/a | gate > 0.80 | leg stays
+C1-D1 | card 1 R4 | condition months (any version) 38 | episodes 2 | gate fewer than 6 | FAIL: analyst watch condition
+C1-D2 | card 1 R4 2-year leg | held market-months 20 | same sign as the book n 20, sign + | gate > 0.80 | leg dropped
+C1-D2 | card 1 R4 10-year leg | held market-months 38 | same sign as the book n 38, sign + | gate > 0.80 | leg stays
+C1-D2 | card 1 R4 S&P leg | held market-months 38 | same sign as the book n 38, sign + | gate > 0.80 | leg stays
+C1-D2 | card 1 R4 basket leg | held market-months 38 | same sign as the book n 38, sign + | gate > 0.80 | leg stays
+C1-D1 | card 1 R5 | condition months (any version) 70 | episodes 13 | gate fewer than 6 | PASS: rule stays (with F0)
+C1-D2 | card 1 R5 stock leg | held market-months 435 | same sign as the book 0.595 (435) | gate > 0.80 | leg stays
+C1-D2 | card 1 R5 bond leg | held market-months 196 | same sign as the book 0.551 (196) | gate > 0.80 | leg stays
+C2-D2 | card 2 R1 version 0.0/False | on-months 24 | episodes 2 | share inside card 1 R4's 4.5 state n 24, sign + | left out
+C2-D2 | card 2 R1 version 0.0/True | on-months 22 | episodes 2 | share inside card 1 R4's 4.5 state n 22, sign + | left out
+C2-D2 | card 2 R1 version third/False | on-months 127 | episodes 3 | share inside card 1 R4's 4.5 state 0.283 (127) | kept
+C2-D2 | card 2 R1 version third/True | on-months 78 | episodes 5 | share inside card 1 R4's 4.5 state 0.410 (78) | kept
+C2-D2 | card 2 R2 version 1.5/False | on-months 41 | episodes 5 | share inside card 1 R4's 4.5 state n 41, sign + | kept
+C2-D2 | card 2 R2 version 1.5/True | on-months 4 | episodes 1 | share inside card 1 R4's 4.5 state n 4, sign 0 | left out
+C2-D2 | card 2 R2 version 1.0/False | on-months 72 | episodes 8 | share inside card 1 R4's 4.5 state 0.042 (72) | kept
+C2-D2 | card 2 R2 version 1.0/True | on-months 6 | episodes 1 | share inside card 1 R4's 4.5 state n 6, sign 0 | left out
+C3-D2 | card 3 R1 activity gate | design months with the FEDFUNDS 12-month range below 0.50: 71 | gate fewer than 60 | gate kept (R1 16 versions with sizing)
+C3-D1 | card 3 R1 | versions 16 | held market-months 1567 | same sign as the book 0.611 (1567) | gate >= 0.80 dropped, 0.50-0.80 flagged | kept, flagged
+C3-D1 | card 3 R2 | versions 4 | held market-months 482 | same sign as the book 0.529 (482) | gate >= 0.80 dropped, 0.50-0.80 flagged | kept, flagged
+C3-D1 | card 3 R3 | versions 8 | held market-months 43 | same sign as the book n 43, sign + | gate >= 0.80 dropped, 0.50-0.80 flagged | kept, flagged
+C3-D1 | card 3 R4 | versions 4 | held market-months 65 | same sign as the book 0.631 (65) | gate >= 0.80 dropped, 0.50-0.80 flagged | kept, flagged
+C3-D1 | reported lines (cards 1 and 2 in shared markets; R1 against Economic trend's monetary theme; R3 against Carry's directional bonds) are not gates and are not printed in this version
+C4-D1 | 1990-01..2010-06 | up-months state on 60 / other 108 | median ratio 1.02 | at least 1.25: no
+C4-D1 | 1990-99 | up-months state on 40 / other 56 | median ratio count only | at least 1.25: no
+C4-D1 | 2000-01..2010-06 | up-months state on 20 / other 52 | median ratio count only | at least 1.25: no
+C4-D1 GATE | FAIL: analyst question only
+C4-D2 | card 4 R5 version 1 | on-months 240 | share with card 3 R2 on 0.500 (240) | share with Trend long 2-year and short or flat 10-year 0.087 (240)
+C4-D2 | card 4 R5 version 2 | on-months 101 | share with card 3 R2 on 0.356 (101) | share with Trend long 2-year and short or flat 10-year 0.079 (101)
+C4-D2 GATE | either share >= 0.80 in both versions: no | R5 stays
+C5-D1 | card 5 R1 | held market-months 144 (cm_copper 65, cm_wti 79) | 12-month Trend versions (4) long by average sign 0.625 (144) | gate >= 0.75 | R1 stays
+C5-D1 | reported, not a gate: same sign as the book's net position 0.569 (144)
+C5-D2 | reported line not computed: cocoa (HP:LCCc1, HP:CCc1) and LME cash (DS:L..CASH) are held-back (untouched) instruments
+C5-D2 | slow class (copper) | breaks to 2008-12 2 | higher 24 months on 1 | share printed as counts only
+C5-D2 | grains (wheat, corn, soybeans) | breaks to 2008-12 5 | higher 24 months on 0 | share printed as counts only
+C5-D2 | crude (reported) | breaks to 2008-12 1 | higher 24 months on 1 | share printed as counts only
+C5-D2 GATE | slow minus grains sign + | at least 10 breaks each: no | FAIL: R1 dropped unbuilt
+F0 | card 1 R1 | held months 257 | episodes 6 | at least 48 and 3: yes | judged in B2
+F0 | card 1 R2 | held months 181 | episodes 4 | at least 48 and 3: yes | judged in B2
+F0 | card 1 R3 | held months 0 | episodes 0 | at least 48 and 3: no | not judgeable (analyst watch condition) | rule not in B2: C1-D1 watch condition
+F0 | card 1 R4 | held months 38 | episodes 2 | at least 48 and 3: no | not judgeable (analyst watch condition) | rule not in B2: C1-D1 watch condition
+F0 | card 1 R5 | held months 319 | episodes 4 | at least 48 and 3: yes | judged in B2
+F0 | card 2 R1 | held months 127 | episodes 3 | at least 48 and 3: yes | judged in B2
+F0 | card 2 R2 | held months 177 | episodes 7 | at least 48 and 3: yes | judged in B2
+F0 | card 3 R1 | held months 431 | episodes 1 | at least 48 and 3: no | not judgeable (analyst watch condition)
+F0 | card 3 R2 | held months 241 | episodes 5 | at least 48 and 3: yes | judged in B2
+F0 | card 3 R3 | held months 43 | episodes 3 | at least 48 and 3: no | not judgeable (analyst watch condition)
+F0 | card 3 R4 | held months 65 | episodes 3 | at least 48 and 3: yes | judged in B2
+F0 | card 4 R1 | held months 84 | episodes 6 | at least 48 and 3: yes | judged in B2
+F0 | card 4 R2 | held months 432 | episodes 1 | at least 48 and 3: no | not judgeable (analyst watch condition)
+F0 | card 4 R3 | held months 79 | episodes 8 | at least 48 and 3: yes | judged in B2
+F0 | card 4 R4 | held months 432 | episodes 1 | at least 48 and 3: no | not judgeable (analyst watch condition)
+F0 | card 4 R5 | held months 231 | episodes 7 | at least 48 and 3: yes | judged in B2
+F0 | card 5 R1 | held months 79 | episodes 1 | at least 48 and 3: no | not judgeable (analyst watch condition) | rule not in B2: C5-D2
+PRE-B SUMMARY | R1: PASS | C1-D1: R1 PASS, R2 PASS, R3 FAIL, R4 FAIL, R5 PASS | C1-D2: R1 all legs stay, R2 all legs stay, R3 all legs stay, R4 dropped 2-year, R5 all legs stay | C2-D1: FAIL | C2-D2: R1 2 of 4 versions kept, R2 2 of 4 versions kept | C3-D1: R1 kept, flagged, R2 kept, flagged, R3 kept, flagged, R4 kept, flagged | C3-D2: gate kept | C4-D1: FAIL | C4-D2: R5 stays | C5-D1: R1 stays | C5-D2: FAIL | F0: card 1 R1 judged in B2; card 1 R2 judged in B2; card 1 R3 not judgeable; card 1 R4 not judgeable; card 1 R5 judged in B2; card 2 R1 judged in B2; card 2 R2 judged in B2; card 3 R1 not judgeable; card 3 R2 judged in B2; card 3 R3 not judgeable; card 3 R4 judged in B2; card 4 R1 judged in B2; card 4 R2 not judgeable; card 4 R3 judged in B2; card 4 R4 not judgeable; card 4 R5 judged in B2; card 5 R1 not judgeable
+report 30s
+TRIAL ROW {"config": "{\"book\": \"77374d7bef\", \"card\": \"6c154f7d736cefd1\", \"diag\": \"R1\", \"lseg\": \"90322681b9f989cc\", \"panel\": \"e7f98d4439fccf91\", \"version\": \"diag_preb-1.1.1\"}", "family": "diag", "hash": "2b6abb7f53", "note": "TESTING_PROTOCOL 7.5 R1, 7.6 step 7, gm/CHANGES.md 'Pre-B diagnostics'; engine gm-2.2.1; A1 panel e7f98d4439fccf91; LOCK_v2 d85a46cb2853646b; LSEG 90322681b9f989cc; LOCK_CARD_v1 6c154f7d736cefd1; book gm-2.0.4-candidate-x1 (77374d7bef); outcome: PASS", "trial": "R1 diagnostic (pre-B)"}
+TRIAL ROW {"config": "{\"book\": \"77374d7bef\", \"card\": \"6c154f7d736cefd1\", \"diag\": \"C1-D1\", \"lseg\": \"90322681b9f989cc\", \"panel\": \"e7f98d4439fccf91\", \"version\": \"diag_preb-1.1.1\"}", "family": "diag", "hash": "ca34a28eb1", "note": "TESTING_PROTOCOL 7.5 C1-D1, 7.6 step 7, gm/CHANGES.md 'Pre-B diagnostics'; engine gm-2.2.1; A1 panel e7f98d4439fccf91; LOCK_v2 d85a46cb2853646b; LSEG 90322681b9f989cc; LOCK_CARD_v1 6c154f7d736cefd1; book gm-2.0.4-candidate-x1 (77374d7bef); outcome: R1 PASS, R2 PASS, R3 FAIL, R4 FAIL, R5 PASS", "trial": "C1-D1 diagnostic (pre-B)"}
+TRIAL ROW {"config": "{\"book\": \"77374d7bef\", \"card\": \"6c154f7d736cefd1\", \"diag\": \"C1-D2\", \"lseg\": \"90322681b9f989cc\", \"panel\": \"e7f98d4439fccf91\", \"version\": \"diag_preb-1.1.1\"}", "family": "diag", "hash": "1abd1b79ec", "note": "TESTING_PROTOCOL 7.5 C1-D2, 7.6 step 7, gm/CHANGES.md 'Pre-B diagnostics'; engine gm-2.2.1; A1 panel e7f98d4439fccf91; LOCK_v2 d85a46cb2853646b; LSEG 90322681b9f989cc; LOCK_CARD_v1 6c154f7d736cefd1; book gm-2.0.4-candidate-x1 (77374d7bef); outcome: R1 all legs stay, R2 all legs stay, R3 all legs stay, R4 dropped 2-year, R5 all legs stay", "trial": "C1-D2 diagnostic (pre-B)"}
+TRIAL ROW {"config": "{\"book\": \"77374d7bef\", \"card\": \"6c154f7d736cefd1\", \"diag\": \"C2-D1\", \"lseg\": \"90322681b9f989cc\", \"panel\": \"e7f98d4439fccf91\", \"version\": \"diag_preb-1.1.1\"}", "family": "diag", "hash": "a3895120c6", "note": "TESTING_PROTOCOL 7.5 C2-D1, 7.6 step 7, gm/CHANGES.md 'Pre-B diagnostics'; engine gm-2.2.1; A1 panel e7f98d4439fccf91; LOCK_v2 d85a46cb2853646b; LSEG 90322681b9f989cc; LOCK_CARD_v1 6c154f7d736cefd1; book gm-2.0.4-candidate-x1 (77374d7bef); outcome: FAIL", "trial": "C2-D1 diagnostic (pre-B)"}
+TRIAL ROW {"config": "{\"book\": \"77374d7bef\", \"card\": \"6c154f7d736cefd1\", \"diag\": \"C2-D2\", \"lseg\": \"90322681b9f989cc\", \"panel\": \"e7f98d4439fccf91\", \"version\": \"diag_preb-1.1.1\"}", "family": "diag", "hash": "6da38eac08", "note": "TESTING_PROTOCOL 7.5 C2-D2, 7.6 step 7, gm/CHANGES.md 'Pre-B diagnostics'; engine gm-2.2.1; A1 panel e7f98d4439fccf91; LOCK_v2 d85a46cb2853646b; LSEG 90322681b9f989cc; LOCK_CARD_v1 6c154f7d736cefd1; book gm-2.0.4-candidate-x1 (77374d7bef); outcome: R1 2 of 4 versions kept, R2 2 of 4 versions kept", "trial": "C2-D2 diagnostic (pre-B)"}
+TRIAL ROW {"config": "{\"book\": \"77374d7bef\", \"card\": \"6c154f7d736cefd1\", \"diag\": \"C3-D1\", \"lseg\": \"90322681b9f989cc\", \"panel\": \"e7f98d4439fccf91\", \"version\": \"diag_preb-1.1.1\"}", "family": "diag", "hash": "78e94dfdd9", "note": "TESTING_PROTOCOL 7.5 C3-D1, 7.6 step 7, gm/CHANGES.md 'Pre-B diagnostics'; engine gm-2.2.1; A1 panel e7f98d4439fccf91; LOCK_v2 d85a46cb2853646b; LSEG 90322681b9f989cc; LOCK_CARD_v1 6c154f7d736cefd1; book gm-2.0.4-candidate-x1 (77374d7bef); outcome: R1 kept, flagged, R2 kept, flagged, R3 kept, flagged, R4 kept, flagged", "trial": "C3-D1 diagnostic (pre-B)"}
+TRIAL ROW {"config": "{\"book\": \"77374d7bef\", \"card\": \"6c154f7d736cefd1\", \"diag\": \"C3-D2\", \"lseg\": \"90322681b9f989cc\", \"panel\": \"e7f98d4439fccf91\", \"version\": \"diag_preb-1.1.1\"}", "family": "diag", "hash": "2d756b5ded", "note": "TESTING_PROTOCOL 7.5 C3-D2, 7.6 step 7, gm/CHANGES.md 'Pre-B diagnostics'; engine gm-2.2.1; A1 panel e7f98d4439fccf91; LOCK_v2 d85a46cb2853646b; LSEG 90322681b9f989cc; LOCK_CARD_v1 6c154f7d736cefd1; book gm-2.0.4-candidate-x1 (77374d7bef); outcome: gate kept", "trial": "C3-D2 diagnostic (pre-B)"}
+TRIAL ROW {"config": "{\"book\": \"77374d7bef\", \"card\": \"6c154f7d736cefd1\", \"diag\": \"C4-D1\", \"lseg\": \"90322681b9f989cc\", \"panel\": \"e7f98d4439fccf91\", \"version\": \"diag_preb-1.1.1\"}", "family": "diag", "hash": "eaf9264975", "note": "TESTING_PROTOCOL 7.5 C4-D1, 7.6 step 7, gm/CHANGES.md 'Pre-B diagnostics'; engine gm-2.2.1; A1 panel e7f98d4439fccf91; LOCK_v2 d85a46cb2853646b; LSEG 90322681b9f989cc; LOCK_CARD_v1 6c154f7d736cefd1; book gm-2.0.4-candidate-x1 (77374d7bef); outcome: FAIL", "trial": "C4-D1 diagnostic (pre-B)"}
+TRIAL ROW {"config": "{\"book\": \"77374d7bef\", \"card\": \"6c154f7d736cefd1\", \"diag\": \"C4-D2\", \"lseg\": \"90322681b9f989cc\", \"panel\": \"e7f98d4439fccf91\", \"version\": \"diag_preb-1.1.1\"}", "family": "diag", "hash": "df927805e6", "note": "TESTING_PROTOCOL 7.5 C4-D2, 7.6 step 7, gm/CHANGES.md 'Pre-B diagnostics'; engine gm-2.2.1; A1 panel e7f98d4439fccf91; LOCK_v2 d85a46cb2853646b; LSEG 90322681b9f989cc; LOCK_CARD_v1 6c154f7d736cefd1; book gm-2.0.4-candidate-x1 (77374d7bef); outcome: R5 stays", "trial": "C4-D2 diagnostic (pre-B)"}
+TRIAL ROW {"config": "{\"book\": \"77374d7bef\", \"card\": \"6c154f7d736cefd1\", \"diag\": \"C5-D1\", \"lseg\": \"90322681b9f989cc\", \"panel\": \"e7f98d4439fccf91\", \"version\": \"diag_preb-1.1.1\"}", "family": "diag", "hash": "ed5c65271e", "note": "TESTING_PROTOCOL 7.5 C5-D1, 7.6 step 7, gm/CHANGES.md 'Pre-B diagnostics'; engine gm-2.2.1; A1 panel e7f98d4439fccf91; LOCK_v2 d85a46cb2853646b; LSEG 90322681b9f989cc; LOCK_CARD_v1 6c154f7d736cefd1; book gm-2.0.4-candidate-x1 (77374d7bef); outcome: R1 stays", "trial": "C5-D1 diagnostic (pre-B)"}
+TRIAL ROW {"config": "{\"book\": \"77374d7bef\", \"card\": \"6c154f7d736cefd1\", \"diag\": \"C5-D2\", \"lseg\": \"90322681b9f989cc\", \"panel\": \"e7f98d4439fccf91\", \"version\": \"diag_preb-1.1.1\"}", "family": "diag", "hash": "1e5dd369d4", "note": "TESTING_PROTOCOL 7.5 C5-D2, 7.6 step 7, gm/CHANGES.md 'Pre-B diagnostics'; engine gm-2.2.1; A1 panel e7f98d4439fccf91; LOCK_v2 d85a46cb2853646b; LSEG 90322681b9f989cc; LOCK_CARD_v1 6c154f7d736cefd1; book gm-2.0.4-candidate-x1 (77374d7bef); outcome: FAIL", "trial": "C5-D2 diagnostic (pre-B)"}
+TRIAL ROW {"config": "{\"book\": \"77374d7bef\", \"card\": \"6c154f7d736cefd1\", \"diag\": \"F0\", \"lseg\": \"90322681b9f989cc\", \"panel\": \"e7f98d4439fccf91\", \"version\": \"diag_preb-1.1.1\"}", "family": "diag", "hash": "bf58482782", "note": "TESTING_PROTOCOL 7.5 F0, 7.6 step 7, gm/CHANGES.md 'Pre-B diagnostics'; engine gm-2.2.1; A1 panel e7f98d4439fccf91; LOCK_v2 d85a46cb2853646b; LSEG 90322681b9f989cc; LOCK_CARD_v1 6c154f7d736cefd1; book gm-2.0.4-candidate-x1 (77374d7bef); outcome: card 1 R1 judged in B2; card 1 R2 judged in B2; card 1 R3 not judgeable; card 1 R4 not judgeable; card 1 R5 judged in B2; card 2 R1 judged in B2; card 2 R2 judged in B2; card 3 R1 not judgeable; card 3 R2 judged in B2; card 3 R3 not judgeable; card 3 R4 judged in B2; card 4 R1 judged in B2; card 4 R2 not judgeable; card 4 R3 judged in B2; card 4 R4 not judgeable; card 4 R5 judged in B2; card 5 R1 not judgeable", "trial": "F0 diagnostic (pre-B)"}
+PREB JOB DONE
+=== END === 240s

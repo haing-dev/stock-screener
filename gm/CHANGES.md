@@ -430,6 +430,21 @@ job gm_diag_preb_v1.py (sha256 c269fadeb486562031eec1c5c94fa1ac5c1dbd1096a0cd2c8
 truncation PASS at all 8 cut dates, 21 k = 0 and 37 feature stages (results/engine_trunc_cloud_2026-11-28_gm-2.2.1.txt);
 run_tests ALL TESTS PASSED (results/run_tests_gm_2026-11-28_gm-2.2.1.txt). gm/ and engine_ref.json unchanged.
 
+PRE-B DIAGNOSTICS RUN (2026-11-28, PC job gm_diag_preb_v1, diag_preb-1.1.1, 240 s; report
+tools/bbgq/results/gm_diag_preb_v1.txt; every pin, lock and as-run check PASS; check CHECK_PREB APPROVED WITH
+CORRECTIONS, must-fix M1-M3 applied before the run). OUTCOMES:
+- R1 PASS (882 of 1,179 triple-months qualify, share 0.748; every contract triple 0.70-0.77) -> Strip reversion
+  enters B2 with both versions.
+- Card 1: R1, R2, R5 stay (C1-D1 episodes 9 / 6 / 13; no leg above 0.80 same-sign); R3 (0 condition months) and R4
+  (2 episodes) -> analyst watch conditions, not in B2; R4's 2-year leg would be dropped (C1-D2).
+- C2-D1 FAIL (no change to card 2 R1); C2-D2: card 2 R1 and R2 each keep 2 of 4 versions.
+- Card 3: R1-R4 kept and FLAGGED (0.53-0.63 same sign as the systematic book); C3-D2 gate kept (71 months).
+- C4-D1 FAIL (median ratio 1.02 < 1.25) -> analyst question only; C4-D2: card 4 R5 stays.
+- Card 5: C5-D1 R1 stays (0.625), but C5-D2 FAIL (fewer than 10 breaks per class) -> card 5 R1 dropped unbuilt.
+- F0 judged in B2 (10 rule layers): card 1 R1, R2, R5; card 2 R1, R2; card 3 R2, R4; card 4 R1, R3, R5. Not
+  judgeable (analyst watch conditions): card 1 R3, R4; card 3 R1 (1 episode), R3; card 4 R2, R4 (1 episode each);
+  card 5 R1.
+Trial rows (12, family diag) appended.
 ## Core book v1 (registered 2026-11-27, BEFORE the Core book v1 code and run): TESTING_PROTOCOL 7.6 step 6
 Registered run entry (no rule, weight, threshold, gate, cost or market change; no gm/ code change; no statistic of S1-S4,
 of any Incubator test or of Core book v1 has been computed on real data, cloud or PC). The A1 panel holds Bloomberg
