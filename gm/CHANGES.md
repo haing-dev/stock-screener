@@ -205,6 +205,14 @@ checker's mock-store probe is evidence about the code path, not a B1 statistic):
   (P4's first beta from 1975-01 uses few pod months; reported only), C7 (record the empty-book readings T4 n/a and
   alpha = mean as a 7.12 sub-section), C8 (a second truncation control on the leg choice).
 
+Code 1.0.1 and cloud gates (2026-11-28; corrections f236677 before the code ce45981; NOT RUN): tools/bbgq/lib/b1_curve.py
+1.0.1 (sha256 2f5b859c359c9caad2a74356463d40c869050a5a0a1fe52a9a5414c4750ff526; replaces 1.0.0 e8e8844f...), job
+gm_b1_v1.py (sha256 0db1fee3bd945522ff28c64d8fc5eccebdd0a5d05158c9dc6f4329ebaf6bc7f8), tests/b1_curve_smoke.py 41
+checks. Gates: k = 0 reproduction 24 of 24, difference 0 (tools/bbgq/results/engine_repro_cloud_2026-11-28c_gm-2.2.1.txt);
+engine truncation 8 of 8, 21 + 37 stages (results/engine_trunc_cloud_2026-11-28c_gm-2.2.1.txt); pod truncation 8 of 8,
+39 stages, mock store (results/b1_trunc_mock_2026-11-28b.txt); run_tests ALL TESTS PASSED
+(results/run_tests_gm_2026-11-28c_gm-2.2.1.txt). gm/ and engine_ref.json unchanged. NOT RUN: queue in B1_BUILD_2026-11-28.md.
+
 ## data: card inputs (FRED / ALFRED first release, macro-data branch) (registered 2026-11-27, BEFORE first use): 7.4 E15
 Registered data entry (no rule change; no statistic of any card rule has been computed on these files; the builder
 read only file metadata: first / last dates, row counts, the fetch mode in the branch manifests, and the size of month-
