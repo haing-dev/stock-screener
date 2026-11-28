@@ -201,6 +201,43 @@ def _run(check, tmp):
         leak += int((sc_.notna() & ~valid.reindex(sc_.index).fillna(False)).to_numpy().sum())
     check("Strip placebo mask (CHECK_B1 M1 lesson): moved scores never hold Euribor in a month without its strip, nor "
           "any score on an invalid (root, measure, month)", leak == 0, leak)
+    # ------------------------------------------------------------------------------------------------ 1.0.1 M1
+    ms = M.inputs()
+    for k_, s_ in ms["ed"].items():                 # every ED contract flat 1995-02..1996-02 (stale screen fails)
+        msk = (s_.index >= pd.Timestamp("1995-02-01")) & (s_.index <= pd.Timestamp("1996-02-29"))
+        if msk.any():
+            s_[msk] = s_[msk].iloc[0]
+    bs = build(ms)
+    sps = bs["sp"]
+    bks = B2.strip_run(sps)
+    ws = B2.strip_window(bks["net"])
+    span = pd.period_range(ws.index[0], ws.index[-1], freq="M")
+    flat = ws.index[(bks["gross"].reindex(ws.index) == 0).to_numpy()]
+    check("M1 (1.0.1): a stale stretch of the dollar strip leaves the window contiguous (%d months = span %d)" % (
+        len(ws), len(span)), len(ws) == len(span) and ws.index[-1] == P("2010-11"), (len(ws), len(span)))
+    check("M1: flat months (no contract held) earn gross 0 and net = - cost of the month before (%d flat)" % len(flat),
+          len(flat) >= 10 and np.allclose(ws.reindex(flat), -bks["cost"].shift(1).reindex(flat)) and
+          float(bks["cost"].reindex(flat - 1).max()) > 0)
+    ids = B2.strip_run(sps, score_perm={"start": str(ws.index[0] - 1), "perm": np.arange(len(span))},
+                       sc=bks["scores"])["net"]
+    check("M1: the identity map over the window's span reproduces the pod", np.allclose(ids.reindex(ws.index), ws))
+    lines_s = []
+    B2.report_strip(sps, None, lines_s.append, n_placebo=2)
+    check("M1: the report prints the flat-month DATA line (contiguous, flat months counted)",
+          any(x.startswith("DATA | Strip reversion window") and "interior gaps 0 | contiguous" in x and
+              "flat months (no contract held, gross 0) %d" % len(flat) in x for x in lines_s))
+    net_g = bks["net"].copy()
+    net_g[P("2000-06")] = np.nan                     # a planted interior gap
+    orig = B2.strip_run
+    B2.strip_run = lambda *a_, **k_: dict(orig(*a_, **k_), net=net_g) if not k_ else orig(*a_, **k_)
+    raised = False
+    try:
+        B2.report_strip(sps, None, lambda x: None, n_placebo=0)
+    except B2.WindowGap:
+        raised = True
+    finally:
+        B2.strip_run = orig
+    check("M1: an interior gap in the window raises WindowGap (the job STOPs)", raised is True, raised)
     # ------------------------------------------------------------------------------------------------ cards: E3, fixed
     idx = pd.period_range("2000-01", periods=8, freq="M")
     d = pd.Series([0, 1, 1, 1, 0, 1, 1, 0], index=idx, dtype=float)
@@ -346,6 +383,16 @@ def _run(check, tmp):
     check("report: verdict words only Incubator / Shelved / not judgeable / insufficient data",
           all(v.get("status") in ("Incubator", "Shelved", "not judgeable", "insufficient data")
               for v in res["items"].values()))
+    c41 = [x for x in lines if x.startswith("FALSIFIER | card 4 R1")]
+    nums = re.findall(r"(?:big|other) years (n (\d+), sign [+-0]|[-\d.]+ \((\d+)\)) \((\d+) days\)", c41[0] if c41
+                      else "")
+    check("M2 (1.0.1): card 4 R1 falsifier n = calendar months spanned by the held days (value only over >= 60 months; "
+          "days printed as a count)", len(nums) == 4 and all(
+              (int(g[1]) < 60 if g[1] else int(g[2]) >= 60) for g in nums) and
+          all(int(g[1] or g[2]) < int(g[3]) for g in nums), c41)
+    c43 = [x for x in lines if x.startswith("FALSIFIER | card 4 R3")]
+    check("M2: card 4 R3 falsifier n = months spanned", bool(c43) and re.search(r"\((\d+) days\)", c43[0]) is not None
+          and "(%s)" % re.search(r"\((\d+) days\)", c43[0]).group(1) not in c43[0].split("%/yr")[0], c43)
     check("report printing: no number with 5+ decimals", not re.findall(r"\d\.\d{5,}", txt),
           re.findall(r".{40}\d\.\d{5,}.{10}", txt)[:3])
     small = re.findall(r"n (\d+), sign", txt)
@@ -361,6 +408,8 @@ def _run(check, tmp):
     os.makedirs(lib)
     shutil.copytree(os.path.join(REPO, "gm"), os.path.join(lib, "gm"),
                     ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
+    # 1.0.1 C1: the trial log as shipped to the job (42 book / pod rows); gm/trials.csv grows after the run
+    shutil.copy(os.path.join(REPO, "tests", "data", "trials_b2_shipped.csv"), os.path.join(lib, "gm", "trials.csv"))
     bq = os.path.join(REPO, "tools", "bbgq")
     for rel in ("lib/gm_engine.py", "lib/bbg_panel.py", "lib/bbgdata.py", "lib/a1_panel.py", "lib/a2_batch.py",
                 "lib/diag_a2.py", "lib/diag_preb.py", "lib/card_inputs.py", "lib/b2_batch.py", "live_sources.csv",

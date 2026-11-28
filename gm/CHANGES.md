@@ -334,6 +334,12 @@ checker's probes ran on mocks only):
   expiring in month t + 1 (Feb, May, Aug, Nov decisions): sigma(q) and the leg cap then read the neighbouring
   contract's history. It follows 4i as written; not a look-ahead; a later version could map by contract. C5, C6, C8-C10
   noted, not done.
+Code 1.0.1 and cloud gates (2026-11-28; corrections 5bf2fb5 before the code; NOT RUN): tools/bbgq/lib/b2_batch.py 1.0.1
+(sha256 b16b68a44295b59a483e6cc323fa2e2cebfdd3f8f07c363df2d36c8bb211d0d9; replaces 1.0.0 48b308d7...), job gm_b2_v1.py
+(sha256 2605c29133e570e009fb419b22ac25218382a5faaf265295662f45dbaedad549), tests/b2_batch_smoke.py 55 checks,
+tests/data/trials_b2_shipped.csv. Gates: B2 truncation 8 of 8, controls FAIL (tools/bbgq/results/b2_trunc_mock_2026-11-28b.txt);
+run_tests ALL TESTS PASSED (results/run_tests_gm_2026-11-28e_gm-2.2.1.txt); gm/ and engine_ref.json unchanged (k = 0
+reproduction and engine truncation of 2026-11-28d stand). NOT RUN: queue in B2_BUILD_2026-11-28.md.
 
 ## Batch B1: Curve carry (registered 2026-11-28, BEFORE the B1 code and run): TESTING_PROTOCOL 7.6 step 8, 7.7, 7.8, register T08
 Registered run entry (no rule, weight, threshold, gate, cost or market change; no gm/ code change, so no feature version:

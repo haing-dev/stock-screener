@@ -45,7 +45,7 @@ LIB = os.path.join(os.getcwd(), "lib")
 print("=== gm_b2_v1 ===")
 
 # the registered build of the lib files (B2_BUILD hash table; gm/CHANGES.md "Batch B2" item 13)
-LIB_SHA = {"b2_batch.py": "48b308d7f45f44edc36ddb2f8050656e65e5c625dadb8e139b2a83926e0130ae",
+LIB_SHA = {"b2_batch.py": "b16b68a44295b59a483e6cc323fa2e2cebfdd3f8f07c363df2d36c8bb211d0d9",
            "diag_preb.py": "2e9cadd9d41250b8009ca159e23fc69f5c73d44bc79dd9cca51cc8aa4a4ee102",
            "card_inputs.py": "4091f84bcbb11f43061bcc0330520a4a5580cb775895148a38849c0fbcab7b80",
            "diag_a2.py": "3264a5381c13b124d2566d02f263e21905f4e901680c1af7c2134f0bd558be1b",
@@ -272,6 +272,12 @@ try:
     if lseg.panel.lock_id != B2.LSEG_LOCK:
         stop("the loaded LSEG store is not LOCK_LSEG_v5")
     con = B2.strip_contracts(lseg)
+    ncat = B2.strip_catalog_counts(lseg)
+    okp = len(con["ED"]) > 0 and len(con["FEI"]) > 0 and len(con["FEI"]) == ncat["FEI"]
+    print("%s LSEG strip contracts parsed | ED %d (catalog %d) | FEI %d (catalog %d)" % (
+        "PASS" if okp else "FAIL", len(con["ED"]), ncat["ED"], len(con["FEI"]), ncat["FEI"]))
+    if not okp:
+        stop("the Eurodollar / Euribor contracts do not all parse (entry item 4a, CHECK_B2 C4)")
     contracts = {r: {k: lseg.daily(s) for k, s in c.items()} for r, c in con.items()}
     eps = lseg.monthly(PB.EPS_SID)
     print("LSEG | strip contracts %s | forward EPS months %d" % (
@@ -289,12 +295,15 @@ try:
         okn, det = idn[name]
         print("%s IDENTITY %s vs diag_preb 1.1.1 | %s" % ("PASS" if okn else "FAIL", name, det))
     f0bad = []
+    pre_f0 = B2.preb_f0(os.path.join(res_dir, B2.PREB_REPORT))
     for name in B2.RULES:
         f, _m = B2.f0_b2(rules[name], B2.rule_run(rules[name], inp))
-        print("%s F0 on the B2 positions | %s | held months %d | episodes %d | %s" % (
-            "PASS" if f["judgeable"] else "FAIL", name, f["held"], f["episodes"],
-            "judged in B2 (= pre-B)" if f["judgeable"] else "NOT the pre-B outcome"))
-        f0bad += [] if f["judgeable"] else [name]
+        want_f0 = pre_f0.get(name)
+        okf = f["judgeable"] and want_f0 == (f["held"], f["episodes"])
+        print("%s F0 on the B2 positions | %s | held months %d | episodes %d | pre-B %s | %s" % (
+            "PASS" if okf else "FAIL", name, f["held"], f["episodes"],
+            "%d / %d" % want_f0 if want_f0 else "missing", "= pre-B, judged in B2" if okf else "NOT the pre-B outcome"))
+        f0bad += [] if okf else [name]
     if badi or not all(v[0] for v in idn.values()) or f0bad:
         stop("the B2 positions are not the pre-B positions (no statistic printed)")
     print("identity %.0fs" % (time.time() - t))
@@ -317,13 +326,16 @@ try:
     print("report %.0fs" % (time.time() - t))
 except SystemExit:
     raise
+except B2.WindowGap:
+    stop("the Strip reversion window has interior gaps (CHECK_B2 M1; no test printed)")
 except Exception as e:  # noqa: BLE001
     stop("report failed: %s" % frames(e))
 
 # ---- 6. trial rows
 try:
     for row in B2.trial_rows(res, CF.ENGINE_VERSION):
-        print("TRIAL ROW " + json.dumps(row, sort_keys=True))
+        print(("TRIAL ROW " if N_PLACEBO == B2.NPLACEBO else "TEST TRIAL ROW (not for gm/trials.csv) ") +
+              json.dumps(row, sort_keys=True))
 except Exception as e:  # noqa: BLE001
     stop("trial rows failed: %s" % frames(e))
 print("B2 JOB DONE")

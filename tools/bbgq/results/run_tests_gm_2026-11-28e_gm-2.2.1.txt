@@ -1,0 +1,1296 @@
+fixtures written to /tmp/qs_test_wio8eifa/fixtures
+Downloading the SEC list of listed companies...
+Universe: 40 companies (NYSE, Nasdaq)
+Step 1/4 - company profiles and filing events: 40 companies
+  40/40 done, 0 errors, ~0 min left
+  profiles: 0 reused from the cache, 40 downloaded
+Step 2/4 - financial statements (XBRL, 10-K and 10-Q): 39 companies
+  39/39 done, 0 errors, ~0 min left
+  financial statements: 0 reused from the cache, 39 downloaded
+Step 3/4 - prices for 38 companies (only companies that passed the financial rules)
+  Price on the public-float date found for 14 of 14 Owner-Operator candidates
+Step 4/4 - applying the screens
+
+Results saved to: /tmp/qs_test_wio8eifa/output/screen_results_2025-06-30.xlsx
+
+Universe and data
+  ok   OTC company not in universe
+  ok   bank not screened anywhere
+  ok   waste management (SIC 4953) kept in (not a utility)
+  ok   revenue CAGR = 10% across tag switch (SalesRevenueNet -> ASC 606 tag)
+  ok   ROIC = NOPAT / avg invested capital  (0.4828 vs 0.4828)
+  ok   FCF conversion after stock pay: (FCF - SBC) / net income  (1.0053345389788575)
+  ok   share count CAGR is split-proof (-2%/yr despite 2:1 split)  (-0.02000000036853511)
+  ok   inflation test: gross margin change 2021->2023 = +2pp
+  ok   annual revenue ignores 10-Q figures
+  ok   restated 2019 revenue: latest filing wins
+  ok   TTM revenue = FY2024 + Q1-2025 - Q1-2024  (3216.9 vs 3216.9)
+  ok   year-to-date revenue growth = 10%
+  ok   latest balance sheet is the 10-Q (2025-03-31)
+  ok   January fiscal year labelled as prior year
+  ok   negative equity company still gets ROIC (operating capital)
+  ok   negative equity flagged
+  ok   serial acquirer flagged
+  ok   IFRS filer parsed in TWD with live FX
+  ok   capex under a non-standard tag is found by the fallback (and flagged)
+  ok   recession test: SHOK revenue = trend x shock vs prior year (2009: 1.06 x 0.95 - 1; 2020: 1.06 x 0.70 - 1)  (0.006999999999999895, -0.2580000001113212)
+  ok   cash runway: BIOX = (cash after Q1 burn) / annual burn  (4.75)
+  ok   biotech with NO revenue tags is still screened (pre-revenue book)  (PASS)
+  ok   debt missing from the latest 10-Q falls back to the annual figure (no fake net cash)
+  ok   new spin-off with no financials yet is CHECK on Special Situations, not dropped  (CHECK)
+  ok   ...and doesn't appear on other screens
+  ok   52/53-week year ending 2019-06-01 labelled 2018; 2020-05-30 labelled 2019
+  ok   share classes on the cover page are summed
+  ok   preferreds/warrants aren't share classes; BRK-A/BRK-B are
+
+Prices and valuation
+  ok   quote in EUR from a German exchange is rejected
+  ok   stale quote is rejected
+  ok   good US quote accepted
+  ok   share-class symbol mapping BRK-B -> BRK.B
+  ok   market cap = price x cover-page shares
+  ok   EV = market cap + debt - cash
+  ok   EV/EBITDA uses TTM EBITDA
+  ok   market cap far from the reported public float is held for checking (share-class mix-up)
+  ok   ...and the doubtful market cap can't pass or fail a rule (kept only for display)
+  ok   20-F issuer market cap marked unverified (ADR ratio)
+
+Screens
+  ok   core: GOOD -> PASS  (got PASS [] [])
+  ok   core: RIVL -> PASS  (got PASS [] [])
+  ok   core: PHRM -> PASS  (got PASS [] [])
+  ok   core: SLOW -> ONE  (got ONE ['G6'] [])
+  ok   core: LEVR -> ONE  (got ONE ['G8'] [])
+  ok   core: LOSS -> FAIL  (got FAIL ['G4', 'G5a', 'G5b', 'G7'] [])
+  ok   core: NEAR -> NEAR  (got NEAR ['G5a'] [])
+  ok   core: NCPX -> PASS*  (got PASS* [] ["G7 Cash conversion: capital expenditure isn't tagged with a standard XBRL tag; operating cash flow / net income = 1.25"])
+  ok   core: ALTX -> PASS*  (got PASS* [] ['capex_ppe taken from non-standard tag PaymentsToAcquireNetPropertyPlantAndEquipmentAltTag (check)'])
+  ok   core: STEL -> outside  (got outside)
+  ok   core: BANK -> outside  (got outside)
+  ok   emerging: EMRG -> PASS  (got PASS [] [])
+  ok   emerging: DILU -> ONE  (got ONE ['E8'] [])
+  ok   emerging: PRCY -> PRICE  (got PRICE ['E12'] [])
+  ok   emerging: GOOD -> FAIL  (got FAIL ['E4', 'E11', 'E12'] [])
+  ok   emerging: BIOX -> FAIL  (got FAIL ['E3', 'E5'] ['E4 Fast growth: need revenue 3 years ago', 'E7 Operating leverage: no margin or SG&A history'])
+  ok   special: SPIN -> PASS  (got PASS [] [])
+  ok   special: REOR -> PASS  (got PASS [] [])
+  ok   special: NIPO -> FAIL  (got FAIL ['S2'] ['S4 Cheap: EV/EBIT unavailable'])
+  ok   special: GOOD -> outside  (got outside)
+  ok   fortress: FORT -> PASS  (got PASS [] [])
+  ok   fortress: SHOK -> FAIL  (got FAIL ['F4', 'F7'] [])
+  ok   fortress: GOOD -> PASS*  (got PASS* [] ["F5 Held up in 2009: listed before 2009 but its 2008-09 results aren't in SEC's XBRL data: check the FY2008-09 annual reports"])
+  ok   fortress: NCPX -> PASS*  (got PASS* [] ["F5 Held up in 2009: listed before 2009 but its 2008-09 results aren't in SEC's XBRL data: check the FY2008-09 annual reports", 'F12 Cash every year: fewer than 5 years of FCF (capex not tagged?)'])
+  ok   fortress: LEVR -> FAIL  (got FAIL ['F9', 'F10'] ["F5 Held up in 2009: listed before 2009 but its 2008-09 results aren't in SEC's XBRL data: check the FY2008-09 annual reports"])
+  ok   hc_commercial: PHRM -> PASS  (got PASS [] [])
+  ok   hc_commercial: BIOX -> FAIL  (got FAIL ['H3', 'H4', 'H5', 'H7'] ['H6 Gross margin (products): no gross profit line', 'H9 Growing: no revenue history'])
+  ok   hc_commercial: GOOD -> outside  (got outside)
+  ok   hc_clinical: BIOX -> PASS  (got PASS [] [])
+  ok   hc_clinical: BURN -> FAIL  (got FAIL ['B2'] ['B4 Size: no market cap', 'B5 Liquidity: no trading volume in the quote'])
+  ok   hc_clinical: PHRM -> outside  (got outside)
+  ok   cyclicals: STEL -> PASS  (got PASS [] [])
+  ok   cyclicals: STL2 -> ONE  (got ONE ['C6'] ['C8 Cheap on normalized earnings: Twelve Data: **symbol** STL2 not found | retry: Twelve Data: **symbol** STL2 not found'])
+  ok   cyclicals: PEAK -> FAIL  (got FAIL ['C7'] ['C8 Cheap on normalized earnings: Twelve Data: **symbol** PEAK not found | retry: Twelve Data: **symbol** PEAK not found'])
+  ok   cyclicals: GOOD -> outside  (got outside)
+  ok   owners: OWNR -> PASS  (got PASS [] [])
+  ok   owners: GOOD -> FAIL  (got FAIL ['O4', 'O11'] [])
+  ok   owners: STEL -> outside  (got outside)
+  ok   owners: BANK -> outside  (got outside)
+  ok   real_assets: ROYL -> PASS  (got PASS [] [])
+  ok   real_assets: OILP -> FAIL  (got FAIL ['R4'] [])
+  ok   real_assets: GOOD -> outside  (got outside)
+  ok   asset_floor: CASH -> PASS  (got PASS [] [])
+  ok   asset_floor: GOOD -> FAIL  (got FAIL ['K4'] [])
+  ok   asset_floor: BANK -> outside  (got outside)
+  ok   trough_cash: TRGH -> PASS  (got PASS [] [])
+  ok   trough_cash: PEAK -> FAIL  (got FAIL ['T4'] ['T8 Cash yield on the cycle: Twelve Data: **symbol** PEAK not found | retry: Twelve Data: **symbol** PEAK not found', 'T9 Size (market cap): Twelve Data: **symbol** PEAK not found | retry: Twelve Data: **symbol** PEAK not found'])
+  ok   trough_cash: GOOD -> outside  (got outside)
+  ok   hidden: SPUN -> PASS  (got PASS [] [])
+  ok   hidden: DROP -> PASS  (got PASS [] [])
+  ok   hidden: GOOD -> FAIL  (got FAIL ['X3', 'X9'] [])
+  ok   hidden: BANK -> outside  (got outside)
+  ok   red_flags: HYPE -> PASS  (got PASS [] [])
+  ok   red_flags: EMRG -> FAIL  (got FAIL ['W3', 'W4'] [])
+  ok   red_flags: GOOD -> FAIL  (got FAIL ['W4'] [])
+  ok   red_flags: BIOX -> outside  (got outside)
+  ok   tech: SCRV -> PASS  (got PASS [] [])
+  ok   tech: SCRP -> PRICE  (got PRICE ['A16'] [])
+  ok   tech: HYPE -> FAIL  (got FAIL ['A5', 'A6', 'A8', 'A9', 'A10', 'A12', 'A16'] ['A13 Working capital: receivables 3 years ago not available'])
+  ok   tech: LOSS -> FAIL  (got FAIL ['A6', 'A9'] ['A13 Working capital: receivables 3 years ago not available', 'A14 Size (market cap): Twelve Data: **symbol** LOSS not found | retry: Twelve Data: **symbol** LOSS not found'])
+  ok   tech: GOOD -> outside  (got outside)
+  ok   tech: BANK -> outside  (got outside)
+  ok   tech: rule of 40 after stock pay = growth + (FCF - SBC)/sales over 3 years  (('PASS', 0.49935218032944606, 0.4, 'growth 30% + free cash flow after stock pay 20% of sales'))
+  ok   tech: stock pay / FCF and receivable days measured  ((0.09117757557714683, 49.9999998743131))
+  ok   tech: 3-year incremental return on capital computed  (0.4346649963721489)
+  ok   tech: 30% grower may trade up to 10x sales  (('FAIL', 12.427604390331153, 10.000000000000002, '30% growth allows up to 10.0x sales'))
+  ok   tech hardware: gross margin must rise; inventory at a 5-year high fails
+  ok   tech: FCF not positive fails the stock-pay rule
+  ok   pass with asterisk only when the defining rule is checked and it isn't the avoid list
+  ok   NCPX: missing capex is a pass with an asterisk and the reason, not a FAIL
+  ok   emerging DILU fails on dilution only
+  ok   emerging PRCY fails on valuation only
+  ok   fortress SHOK fails the 2020 test
+  ok   clinical BURN fails runway
+  ok   cyclicals PEAK fails 'not at peak margins'
+  ok   PEAK flagged as an over-earner
+  ok   event detection: spin-off, bankruptcy, IPO
+  ok   old-history company with an S-1 is not called an IPO
+  ok   steel industry signal computed from 3 companies
+  ok   robustness flag computed for passes
+  ok   owners: insider share = 1 - public float / value on the float date (45%)  (0.44999999999999996)
+  ok   owners: insider share uses the shares outstanding at the float date (6%, not 25% after an issue)  ((0.0625, '80.0M shares on the 2024-07-26 cover page'))
+  ok   owners: a 10% insider stake fails the defining rule  (['O4', 'O11'])
+  ok   hard assets: a capex-heavy producer fails 'little reinvestment'
+  ok   asset floor: market cap below net cash  (0.7061393367069386)
+  ok   trough cash: PEAK fails 'margins below normal'
+  ok   trough cash: 5-year average FCF yield computed  (0.16087205704000002)
+  ok   hidden: discontinued operations mark a spin-off parent  (FY2024 discontinued-operations income -71M; discontinued-operations income -18M in the 2 months to 2025-03-31)
+  ok   hidden: 50% below the 12-month high triggers  (-0.5)
+  ok   hidden: ordinary 23% dip doesn't
+  ok   red flags: growth fading under half its 3-year rate is named  (growth fading: +5% (year-to-date) vs +30%/yr over 3 years (Cohen); share count +6%/yr over 3 years)
+  ok   red flags: an expensive company with nothing breaking isn't flagged  (['W4'])
+
+Outputs
+  ok   workbook has every sheet
+  ok   evidence CSV written
+  ok   latest_results.json lists every screen
+Building AI review pack for 2 companies (blind=yes)
+  C01: 1181 words of evidence, sections: business, mdna, risk
+  C02: 1187 words of evidence, sections: business, mdna, risk
+
+Pack saved: /tmp/qs_test_wio8eifa/output/ai_pack_core_2026-11-28.zip
+Upload this zip to Claude for the moat review.
+  ok   hidden XBRL header removed from text
+  ok   company name redacted in blind pack
+  ok   screen focus written into the pack
+Checked 2 quotes: 1 verified, 1 not found. Saved /tmp/qs_test_wio8eifa/output/ai_pack_core_2026-11-28/moat_scores_verified.xlsx
+  ok   real quote verified
+  ok   fabricated quote rejected and score withdrawn
+
+Real SEC data
+  ok   Apple FY2024 revenue = $391.035B (10-K)
+  ok   Apple FY2024 gross margin = 46.2%
+  ok   Apple FY2024 free cash flow = $108.8B (118.3 OCF - 9.4 capex)
+  ok   Apple FY2024 total debt = $106.6B (term debt + commercial paper)
+  ok   Apple share count falling ~3%/yr through the 2020 4-for-1 split  (-0.0306)
+  ok   Snowflake year to Jan-2024 labelled FY2023, revenue $2.806B
+  ok   Snowflake fails consistent profits (operating losses)
+  ok   real data: AAPL passes Core (as in your test run)  (PASS [] [])
+  ok   real data: V passes Core (as in your test run)  (PASS [] [])
+  ok   real data: MA passes Core (as in your test run)  (PASS [] [])
+  ok   real data: COST passes Core (as in your test run)  (PASS [] [])
+  ok   real data: MCO passes Core (as in your test run)  (PASS [] [])
+  ok   real data: MSFT is now a near miss on cash conversion (AI capex + stock pay: FCF after SBC < 0.8x net income)  (NEAR ['G7'])
+  ok   real data: ADP (capex tag not in the old cache) is a pass with an asterisk, not FAIL  (PASS ["G7 Cash conversion: capital expenditure isn't tagged with a standard XBRL tag; operating cash flow / net income = 1.19"])
+  ok   real data: ODFL fails cash conversion and 'revenue not shrinking' (sales below 3 years ago)  (FAIL ['G7', 'G10'])
+  ok   real data: SPGI is a near miss on ROIC consistency  (NEAR ['G5b'])
+  ok   real data: KO fails Core  (FAIL ['G5a', 'G6', 'G8'])
+  ok   real data: INTC fails Core  (FAIL ['G5a', 'G5b', 'G6', 'G7', 'G10'])
+  ok   real data: Moody's 2009 revenue change computed
+
+Fixes from the first live test run (Oct 2026 data from your cache)
+  ok   LRCX: operating loss in FY2009 fails Fortress 2009 test (was N/A -> PASS)  (('FAIL', None, (-0.1, -0.25), 'operating loss in a recession fiscal year') FAIL)
+  ok   DHI: operating loss in FY2009 fails Fortress 2009 test (was N/A -> PASS)  (('FAIL', None, (-0.1, -0.25), 'operating loss in a recession fiscal year') FAIL)
+  ok   JNJ: no operating-income line in any year -> EBIT proxy is a flag, not a hold  ([])
+  ok   JNJ: Healthcare commercial PASS (was CHECK)  (PASS [])
+  ok   AAPL: interest not tagged -> worst-case 10% estimate passes coverage (was NO DATA)  (('PASS', 18.360405008062223, 6.0, 'interest not tagged: assumed 10% on all debt (worst case) - still passes'))
+  ok   SNDK: post-spin dilution uses the amended 10-Q/A share count (~1%/yr, not 18%)  (0.007445195437408847 cover-page shares 2025-02-27 -> 2026-08-07)
+  ok   SNDK: computer storage is in the Semiconductors & memory cycle group
+  ok   SNDK: 61% margin after a revenue surge (memory cycle) is flagged as peak margins
+  ok   ALAB: growth company turning profitable (20% margin) is NOT flagged as peak margins
+  ok   ALAB: dilution measured after the IPO = ~5%/yr (raw figure incl. preferred conversion was 74%)  (0.04923017315228617 cover-page shares 2024-04-30 -> 2026-07-31)
+  ok   ALLO: no 'stock pay = 100,000% of revenue' flag for a pre-revenue biotech
+  ok   ALLO: $1.3M lease interest no longer flags 'debt may be missed'  ([])
+  ok   TSM: annual report filed but not yet in SEC XBRL -> 'Recent report' is NO DATA + hold, not FAIL  (('NO DATA', 1.76, 1.6, "annual report for the period ending 2025-12-31 was filed but isn't in SEC's XBRL data yet"))
+  ok   FICO: fails only the debt rule (4.7x) -> 'Failed 1 rule' watch list, not dropped  (ONE ['G8'])
+  ok   quote name check: Moody's Corporation = MOODYS CORP /DE/
+  ok   quote name check: D.R. Horton = HORTON D R INC /DE/
+  ok   quote name check: different companies don't match
+  ok   XOM: new holding company -> predecessor CIK 34088 found from the filings' accession numbers  ([34088])
+  ok   XOM: merged history has annual data plus the successor's 2026 10-Q  (2025 2026-06-30)
+
+Fixes from the first full run (Oct 2026)
+  ok   FLS: 'Revenues' tag is 0 every year -> the real revenue tag is used ($4.73B in 2025)  (4729260000.0)
+  ok   AIT: 'Revenues' tag holds a small line in 2011-16 -> continuity picks total sales ($2.52B in FY2016)  (2519428000.0 ['revenue: in 6 year(s) (2011-2016) the preferred tag holds only part of revenue - the tag consistent with later years is used (see Evidence)'])
+  ok   HSY: revenue tag jump in 2013-14 is outside the window and fixed by continuity - no hold  (7146079000.0 ['revenue: in 3 year(s) (2011-2013) the preferred tag holds only part of revenue - the tag consistent with later years is used (see Evidence)'])
+  ok   NVS: no standard revenue tag -> revenue = gross profit + cost of sales (not 0)  (56674000000.0)
+  ok   MTH: revenue tag not found but the company is profitable -> not screened as 'revenue = 0'  (revenue not found in standard XBRL tags (company-specific tag) - not screened; check by hand (see Data_Gaps for candidate tags))
+  ok   RRC: no pretax tag -> pretax = net income + tax, company screened  (None)
+  ok   TJX: no operating-income line in the latest year -> one EBIT definition for all years, Core PASS  (PASS [] [])
+  ok   VEEV: PP&E capex tag missing after 2019 but PP&E is small -> software capex counts, Core PASS (was CHECK)  (PASS [])
+  ok   GGG: small interest bill vs tiny tagged debt is not 'debt partly missed'  ([])
+  ok   FIX: small interest bill vs tiny tagged debt is not 'debt partly missed'  ([])
+  ok   ABEV: IFRS finance costs (FX etc.) don't trigger 'debt partly missed'  ([])
+  ok   TOL: 2008-09 losses but no 2007-08 sales in SEC data -> downturn rule unverified (NO DATA, with the reason)  (('NO DATA', None, None, "operating loss in FY2008, FY2009 but the prior year's sales aren't in SEC data"))
+  ok   TOL: all debt lines counted (credit line $2.3B, not only $0.2B secured debt) -> ROIC median below 15%  (0.137 ['G5a', 'G5b'])
+  ok   POOL: revenue shrinking 5%/yr over 3 years -> fails only 'revenue not shrinking' (a near miss, not dropped)  (ONE ['G10'])
+  ok   ASML: operating loss in FY2009 as sales fell 46% -> fails 'profitable in downturns'  (('FAIL', None, None, 'FY2009 (2008-09): operating loss as sales fell -46%'))
+  ok   downturn windows tested: 2008-09, 2015-16, 2020, 2022  (['2008-09', '2015-16', '2020', '2022'])
+  ok   MA: 2008 litigation charge (sales still grew) passes the downturn rule  (PASS ('PASS', None, None, 'tested: 2008-09, 2015-16, 2020, 2022'))
+
+Metric audit fixes (Oct 2026)
+  ok   AAPL: ROIC shown as computed (~152% median), not capped at 100%  (1.524)
+  ok   JNJ: revenue growth like-for-like after the Kenvue split (5.1%/yr, not 3.0% mixing restated years) -> passes  (0.0507 [])
+  ok   JNJ: R&D from the total tag (~17% of sales), not the acquired-IPR&D-only tag  (0.17519287922348634)
+  ok   RRC: capex from the largest tag (oil & gas $466M, not $1-36M of office equipment) -> FCF 2016 negative  (466252000 -79184000)
+  ok   ADP: capex not tagged -> capex / cash flow unknown (NO DATA), never 0% (a false pass on 'little reinvestment')  (('NO DATA', None, 0.2, "capital expenditure isn't tagged with a standard XBRL tag"))
+  ok   VEEV: cycle-average EBITDA never below average EBIT when D&A is missing in some years; capex/D&A only over years with both  (427976100 416722100 None)
+  ok   TSM: USD convenience translations are not a second reporting currency (no permanent hold)  ([])
+  ok   ROIC with negative/near-zero invested capital (customer-funded) is 'n/m' and passes the high-returns rule
+  ok   cash: short-term investments tagged only inside the combined line are counted (MSFT pre-2018: $133B, not $7.7B)
+  ok   ROIC median counts n/m years as high; none when they are half or more
+  ok   CNI: 40-F filer without XBRL statements is explained, not silently missing  ( - Canadian 40-F filer whose financial statements aren't in SEC XBRL; check by hand)
+  ok   XPRO: new registrant after an S-4 reorganization is explained  ( - new registrant after a merger/reorganization (S-4): its history is filed under the old company's CIK; check by hand)
+  ok   Special Situations excludes a P&C insurer (EV/EBIT meaningless)  (excluded industry: banks, lenders, brokers, asset managers, insurers)
+  ok   Special Situations excludes a crypto treasury / finance (EV/EBIT meaningless)  (excluded industry: banks, lenders, brokers, asset managers, insurers)
+  ok   Special Situations excludes a savings bank (EV/EBIT meaningless)  (excluded industry: banks, lenders, brokers, asset managers, insurers)
+  ok   Special Situations keeps insurance brokers
+  ok   Core screens auto-parts retailers (O'Reilly, AutoZone) - no longer excluded as 'auto dealers'
+  ok   Core screens Morningstar via config 'screen_anyway' despite the 'investment advice' code
+  ok   All_Companies shows which rules failed
+  ok   price fell 60% since the float date -> float check uses the price on that date, market cap accepted
+  ok   20-F company listed as ordinary shares (not an ADR) -> market cap accepted
+
+Synthetic edge cases (independent review)
+  ok   a genuine 37% revenue fall is not 'smoothed' with a partial revenue tag  (1600000000.0 -0.14501202666165147)
+  ok   capex tagged only 2007-11: no estimate for the 10-year window -> pass with an asterisk (G7 unverified)  (PASS ['G7'])
+  ok   latest year's EBIT estimated from net income (one-off gain possible) -> hold  (['pretax and operating income not tagged for the latest year - estimated from net income (one-off gains or discontinued operations would inflate it)'])
+  ok   no debt tag but finance costs of 6% of revenue -> 'debt may be missed' hold (IFRS too)  (['debt not found in standard tags but interest expense is material - debt may be missed'])
+  ok   10-Qs switched revenue tag: trailing 12 months still use them (1,340, not the stale 1,200)  (1340.0)
+  ok   a 12%-gross-margin distributor fails Emerging's gross-margin rule (cost of sales under the ex-D&A tag)  (('FAIL', 0.12, 0.35, ''))
+  ok   biotech with one profitable year and a company-specific revenue tag is still screened (clinical codes)  (revenue not found in standard XBRL tags (company-specific tag) - not screened; check by hand (see Data_Gaps for candidate tags))
+
+== Web portal ==
+  ok   Massive: open/close of the latest day, SEC 'BRK-B' found as 'BRK.B'  ({'symbol': 'ABC', 'name': 'ABC Holdings Inc', 'exchange': 'US', 'currency': 'USD', 'price': 10.2, 'open': 9.8, 'price_date': '2026-10-05', 'previous_close': 10.0, 'source': 'Massive', 'avg_volume': 980.3921568627452, 'adv_days': 20, 'listing_type': 'Common Stock', 'ok': True, 'reason': ''})
+  ok   Massive: average daily traded value over 20 trading days (liquidity rules)  (980.3921568627452)
+  ok   Massive: unknown ticker -> not priced (with the reason), never guessed  ({'ok': False, 'reason': "not in Massive's end-of-day data", 'symbol': 'NOPE'})
+  ok   Massive: listing type from the reference list
+  ok   Massive: a price older than 7 days is refused  ({'symbol': 'ABC', 'name': 'ABC Holdings Inc', 'exchange': 'US', 'currency': 'USD', 'price': 10.2, 'open': 9.8, 'price_date': '2026-10-05', 'previous_close': 10.0, 'source': 'Massive', 'avg_volume': 980.3921568627452, 'adv_days': 20, 'listing_type': 'Common Stock', 'ok': False, 'reason': 'last trade 12 days ago'})
+  ok   Massive: 12-month high = highest month-end close (14.0 at end of August)  ({'ABC': (14.0, '2026-08-31')})
+  ok   Massive: a 2-for-1 split halves earlier closes - a split never looks like a fall  ({'ABC': (11.0, '2026-09-30')})
+  ok   Massive: no split list -> no 12-month high from Massive (Twelve Data's 52-week high instead)
+  ok   after a 2-for-1 split: share count put on today's basis, insider share measured on the float date's basis  ({'price': 10.2, 'price_date': '2026-10-05', 'market_cap_usd': 20400000.0, 'ev_usd': 20400000.0, 'val_ok': True, 'val_issue': '', 'shares_used': 2000000.0, 'shares_source': 'cover page shares (2026-08-01) x 2 for a split since then', 'adv_usd': 10000.0, 'price_open': 9.8, 'price_source': 'Massive', 'listing_type': 'Common Stock', 'mcap_to_public_float': 3.4, 'ev_ebit': None, 'ev_ebitda': None, 'ev_sales': None, 'pe': None, 'earnings_yield': None, 'fcf_yield': None, 'ev_normalized_ebit': None, 'price_to_tangible_book': None, 'mcap_to_net_cash': None, 'fcf_yield_5y': None, 'insider_share': 0.4, 'insider_basis': '0.5M shares outstanding near 2026-06-30 (cover page of 2026-07-25)'})
+  ok   drawdown from the 12-month high, and insider share from the float-date price  ({'price': 10.2, 'price_date': '2026-10-05', 'market_cap_usd': 10200000.0, 'ev_usd': 10200000.0, 'val_ok': True, 'val_issue': '', 'shares_used': 1000000.0, 'shares_source': 'cover page shares (2026-08-01)', 'adv_usd': 10000.0, 'price_open': 9.8, 'price_source': 'Massive', 'listing_type': 'Common Stock', 'mcap_to_public_float': 1.7, 'ev_ebit': None, 'ev_ebitda': None, 'ev_sales': None, 'pe': None, 'earnings_yield': None, 'fcf_yield': None, 'ev_normalized_ebit': None, 'price_to_tangible_book': None, 'mcap_to_net_cash': None, 'fcf_yield_5y': None, 'insider_share': 0.4, 'insider_basis': "today's share count", 'high_12m_used': 14.0, 'drawdown_12m': -0.27142857142857146})
+  ok   past closes older than the refresh window are downloaded again (split-adjusted today)
+  ok   portal data is encrypted (no plaintext in the file) and opens with the password
+  ok   portal data does not open with a wrong password
+  ok   rule labels read as plain English  (at least 15% ROIC, 10-year median | at least 8 years of data)
+  ok   peers: same 4-digit industry when 6+ companies; median uses verified, positive multiples only  ({'label': 'Services-Prepackaged Software', 'sic': '7372', 'n': 7, 'med': {'pe': 13.5}, 'top': [['T6', None], ['T5', None], ['T4', None], ['T3', None], ['T2', None], ['T1', None], ['T8', None]]})
+  ok   peers: a company in a thin industry falls back to the broader 3-digit group  (3:737)
+  ok   asset floor: no debt tag doesn't block the tangible-book test
+  ok   asset floor: below tangible book with book per share shrinking is a value trap (FAIL), unknown history = NO DATA
+  ok   red flags: profits above cash, recurring restructuring, bought growth, inventory build, capex burn are signals
+  ok   emerging: capital-heavy (D&A 70% of EBITDA) is judged on operating profit and EV/EBIT, not EBITDA
+  ok   asset floor: below cash with no debt tag (and above tangible book) -> check by hand
+  ok   red flags: a loss year and its margin drop count as one signal
+  ok   hidden: a -50% 'fall' when the split list was unavailable is held, not passed
+  ok   portal: Red Flags is marked as an avoid list; other screens aren't
+  ok   portal: plain-English rule for insider ownership  (['at least 5 years of data', 'at most 1.6 years since the last annual report', 'at least $50M revenue', 'at least 20% owned by insiders'])
+  ok   portal: all 14 screens, unique gate ids
+  ok   portal: 'recent report' is applied but hidden from the rules table; no investor names in rationales
+  ok   portal: same table columns on every screen (P/E, EV/EBIT, EV/Sales, FCF yield, ROIC 10y median, 5y revenue CAGR)
+  ok   model: up to 10 fiscal years with statement lines
+  ok   model: shares on today's basis are split-proof (2019 x 2 = 2020 basis, falling 2%/yr)  (173625107.0 170152605.0 163414561.0)
+  ok   history: P/E at a fiscal year end = price x shares / net income
+  ok   history: share count that doesn't match the market cap (share classes) -> no history, with the reason  (share count doesn't match the market cap (share classes?))
+  ok   history: 3-year and 10-year averages  ((19.982863333295427, 31.47403188654301, 10))
+  ok   valuation verdict: cheaper than own history and peers by >10% -> cheap; dearer on both -> expensive
+  ok   closest peers: same 4-digit code first (nearest revenue), then the 3-digit group  (['1', '3', '4', '5'])
+  ok   multiples by industry: banks -> P/E, P/B; loss-makers -> EV/Sales; else P/E, EV/EBIT, FCF yield
+  ok   52-week range: days folded into weekly high/low within the request budget  (3 1 {'ABC': {'hi': 12.0, 'lo': 8.0, 'days': 3}})
+  ok   52-week range: a 2-for-1 split after the download halves the stored high/low  ({'ABC': {'hi': 6.0, 'lo': 4.0, 'days': 3}})
+  ok   summaries: Claude's JSON answer is parsed even with text around it
+  ok   summaries: listed companies first, then their peers; others none; written once (not redone for a new 10-K)
+
+Healthcare rules, 13F holders and near-miss reasons (Oct 2026)
+  ok   H6: a drug maker needs a 65% gross margin (60% fails), a device maker 50% (60% passes)
+  ok   H4/H5: a new launcher (profitable now, revenue +25%/yr, drug margins) is not judged on its loss years
+  ok   B2: under 2 years of cash fails, but a gap one normal raise can cover is a near miss
+  ok   B7: market value against cash left after a year of burn
+  ok   13F: buyers and sellers against the previous quarter (new, add, exit) with portfolio share  ({'h': [['Ostrander Biotech Partners', 200000000, 2000000, 1.0], ['Northfield Partners', 600000000, 6000000, 0.6]], 'n': 3, 'sp': [], 'buy': [['Northfield Partners', 400000000, 'add', 0.6, 2.0], ['Ostrander Biotech Partners', 200000000, 'new', 1.0, None]], 'sell': [['Old Fund', -100000000, 'exit', None, -1.0]]})
+  ok   13F: latest period, restatement replaces the original, options and other issuers ignored, share classes combined  ({'h': [['Ostrander Biotech Partners', 200000000, 2000000, 1.0], ['Northfield Partners', 600000000, 6000000, 0.6]], 'n': 3, 'sp': ['Ostrander Biotech Partners']})
+  ok   13F: holders ranked by the share of their own portfolio (conviction); index funds left out; options not in the portfolio  ({'h': [['Ostrander Biotech Partners', 200000000, 2000000, 1.0], ['Northfield Partners', 600000000, 6000000, 0.6]], 'n': 3, 'sp': ['Ostrander Biotech Partners']})
+  ok   13F: the site column keeps the conviction order, shows % of the company and marks specialists  ([['Ostrander Biotech Partners', 0.02, True, 1.0, 200000000], ['Northfield Partners', 0.06, False, 0.6, 600000000]])
+  ok   13F: funds that own everything (by position count) or named fund houses / quants are left out
+  ok   insiders: open-market buys, plan sales and other sales split; amendments, grants and other issuers ignored  ({'1001': {'buy': {'n': 1, 'value': 50000, 'people': 1, 'top': [['Smith Jane', 'Director', 50000, '2026-05-15']]}, 'sell': {'n': 1, 'value': 6000, 'people': 1, 'top': [['Roe Richard', 'CFO', 6000, '2026-06-03']]}, 'plan_sell': {'n': 1, 'value': 120000, 'people': 1, 'top': [['Doe John', 'Chief Executive Officer', 120000, '2026-06-02']]}, 'ex_sell': {'n': 1, 'value': 18000, 'people': 1, 'top': [['', '', 18000, '2026-06-05']]}}})
+  ok   insiders: data-set links parsed newest first
+  ok   13F: manager names cleaned  (JPMorgan Chase)
+  ok   check report lists couldn't-screen companies by blocker and asterisk notes  ( Data: **symbol** PEAK not found  (e.g. PEAK)
+
+## Red Flags (avoid list): PASS 1, CHECK 0, NEAR 0, PRICE 0, ONE 0, FAIL 33
+
+## Tech S-Curve Leaders: PASS 1, CHECK 0, NEAR 1, PRICE 1, ONE 0, FAIL 8
+
+## Couldn't screen: 1 companies
+- **1** × New listing: no annual report (10-K / 20-F) filed yet: NEWS
+)
+  ok   couldn't screen: plain blocker and fix for each SEC message
+  ok   site reasons: each rule carries what it measures and the threshold  ({'id': 'G5a', 'name': 'High returns', 'rule': 'at least 15% ROIC, 10-year median', 'why': 'High returns on capital sustained for a decade are the clearest sign of a moat.', 'hard': False, 'valuation': False, 'price': False, 'hidden': False, 'what': '10-year median ROIC', 'need': 'at least 15%', 'ftxt': '', 'def': False})
+  ok   site values: short display formats
+  ok   Excel template by industry
+
+Validation
+  ok   as-of filter keeps only facts filed before the date
+  ok   last filing date before a date
+  ok   profile as of a date: latest annual report before it
+  ok   profile as of a date: later events invisible
+  ok   holding return: 2-for-1 split + dividend
+  ok   Kenneth French files parsed (monthly block only, percent -> decimal)
+  ok   formation: every screen evaluated
+  ok   formation: companies in screen universes  (231)
+  ok   formation: some passes in the latest month  (24)
+  ok   no look-ahead: formation unchanged after deleting every fact filed later
+  ok   price grid: month-end formation day and next trading day  ([('2024-01-31', '2024-02-01')])
+  ok   ticker reuse: a delisted ticker maps to its old company before the delisting
+  ok   universe: stocks of the wanted exchanges only (ETF left out)  ({111: {'tickers': ['OLD'], 'type': 'CS', 'ex': 'XNYS', 'name': ''}})
+  ok   dividend list
+  ok   audit sample: stratified by screen, distinct companies  (14)
+  ok   audit: figures carry tag, accession and period for the SEC data-set lookup  ([('revenue', 2025, 20560900000.0, 'Revenues', 'us-gaap', '0000008670-25-000037', '2025-06-30', '2025-08-06'), ('net_income', 2025, 4079700000.0, 'NetIncomeLoss', 'us-gaap', '0000008670-25-000037', '2025-06-30', '2025-08-06')])
+  ok   star review sheet doesn't show the screener's verdict
+  ok   style fidelity: rate and universe rate per screen
+  ok   forward record: live lists matched to their formation month  ({'core': [1.0], 'emerging': [], 'special': [], 'fortress': [1.0], 'hc_commercial': [], 'hc_clinical': [], 'cyclicals': [], 'owners': [], 'real_assets': [], 'asset_floor': [], 'trough_cash': [], 'hidde)
+  ok   raw outputs: monthly lists exported for anyone to recompute  (19447)
+  ok   statistics: a verdict for every screen
+  ok   statistics: random prices give no 'edge'  (core=no evidence, emerging=too little history, special=too little history, fortress=no evidence, hc_commercial=too little history, hc_clinical=too little history, cyclicals=too little history, owners=too little history, real_assets=too little history, asset_floor=too little history, trough_cash=too little history, hidden=too little history, red_flags=no evidence, tech=too little history)
+  ok   report written with the verdict table
+  ok   pre-registration fingerprints match validation/freeze.json  (match)
+  ok   forward record snapshot lists PASS / starred / NEAR per screen with code and config hashes
+
+Triage
+  ok   triage: weights add up to 100 in every triage
+  ok   triage: score and call follow the written thresholds
+  ok   triage: bands (higher and lower is better)
+  ok   panel: a file per month  (210 of 210)
+  ok   panel: US companies with prices, fundamentals and universes  (29)
+  ok   panel: 12-month fall and price change measured
+  ok   no look-ahead: panel unchanged after deleting every fact filed later
+  ok   company pass: a later run adds only the new month-ends
+  ok   profit trend: year-ago operating income computed point in time  (4872300000.0 vs 4872300000.0)
+  ok   returns: index ETF months
+  ok   events found in every triage  ({'hidden': 23, 'emerging': 20, 'core': 48})
+  ok   events: trigger crossed, backend met, 6-month cooldown  ([])
+  ok   calls: score = weighted cells, call = the written rule  ([])
+  ok   calls: Buy candidates, Watch and Avoid all occur  ({'overdone', 'justified', 'close'})
+  ok   outcomes: 12 months of returns for played events
+  ok   outcomes: open events marked to the latest close
+  ok   outcomes: similar stocks and index alongside
+  ok   similar stocks: up to 10, never the company itself
+  ok   13F: last quarter past its deadline, filed by the date; later filers kept apart  ({'before': '2024-03-31', 'after': '2024-06-30', 'pending': False, 'list': [('1', 'F', 0.05, '2024-03-31')], 'later': [('3', 'H', 0.06, '2024-07-20')]})
+  ok   13F data set: conviction positions (3%+, options out, index funds out, dollar units from 2023)  ([['777', 'Patient Capital', '2024-03-31', '2024-05-14', '5', 0.1]])
+  ok   insider data set: buys, plan sales and same-day exercise sales told apart  ({'5': [['2024-03-01', '2024-03-05', 'P', 20000, 'Doe Jane', 'Director'], ['2024-03-04', '2024-03-06', 'Splan', 10500, 'Roe Rick', 'CEO'], ['2024-03-01', '2024-03-05', 'Sex', 200, 'Doe Jane', 'Director']]})
+  ok   insiders: plan sales and old trades left out; materiality vs market cap
+  ok   statistics: factor regression of the Buy candidates
+  ok   statistics: per-cell evidence and the $10,000 test
+  ok   live calls written to the ledger (recent events only)  (2)
+  ok   ledger: a rebuild adds no duplicate calls
+  ok   site: data readable, three triages, page code copied
+  ok   site: encrypted with the password (salt, check, AES-GCM)
+  ok   macro: percentile uses only past values  ([nan, 75.0, 83.33333333333333, nan, 12.5])
+  ok   macro: stage rule walks the cycle  ([nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 'expansion', 'late', 'contraction', 'recovery'])
+  ok   macro: calls at t ignore outcomes not finished by t
+  ok   macro: playbook + stress overlay combine (clash cancels)  ({'SMH': -1, 'IGV': -1, 'VOX': 0, 'KBE': 1, 'KRE': 0, 'KIE': 1, 'ITB': 1, 'XRT': 1, 'IYT': 0, 'XLI': 1, 'ITA': 0, 'XLE': 0, 'XLU': 0, 'XLP': 0, 'XLV': 1, 'XBI': -1, 'XLB': 1, 'XME': 0, 'GDX': 0, 'IYR': 0})
+  ok   macro: full build on invented data
+  ok   macro: page built and data sealed
+
+Global Macro Book (gm-1.2.3 fixes)
+  ok   E5 seal: no design output of gm.book.run is dated after 2010-12  ({})
+  ok   E5 holding cut: last return month 2010-12 (held from month-end 2010-11), nothing earned later  (2010-11    0.005236
+2010-12   -0.001965
+Freq: M, dtype: float64)
+  ok   E5 seal: changing every input dated after the seal leaves every design output unchanged
+  ok   E5 seal: the unsealed engine (live / holdout only) does run past 2010 (test not vacuous)
+  ok   E5 seal: k = 0 design numbers up to 2010-12 equal the unsealed engine's
+  ok   E5 guard: a value dated 2011-01 in a design output raises SealBreach (an empty late row does not)
+  ok   E5 delay diagnostic: no month after 2010-12, the 2010-11 holding ends at the 2010-12-31 close, later days unread  ({Period('2010-12', 'M'): 0.010593460328042793} 0.010593460328042793)
+  ok   E2 EQ_INDEX: no eq_eu_stoxx50 / eq_us_ndx / eq_us_r2k mapping; same-country MSCI mappings kept
+  ok   E1 Bloomberg switches: all four OFF by default
+  ok   E1 switches off: Value ignores the Bloomberg composite, Carry the Bloomberg curves, growth the surprises
+  ok   E1 switches on: each Bloomberg input is used (the flags are live)  ([0.123] [0.777] [0.5])
+  ok   E3 quarterly CPI: Q1 sits on March (+ the callers' 1-month lag = end of April), carried to May; monthly rows unchanged; monthly wins over quarterly  ({Period('2009-03', 'M'): 3.0, Period('2009-04', 'M'): 3.0, Period('2009-05', 'M'): 3.0, Period('2009-06', 'M'): 4.0, Period('2009-07', 'M'): 4.0, Period('2009-08', 'M'): 4.0})
+  ok   E3 as-of: with the 1-month lag a quarter enters at the end of the month after it ends
+  ok   E3 oecd_sdmx raises on an unparseable csv (no silent fallback); a missing file stays empty
+  ok   E3 metadata listing: frequency per country and first design date  ({'AAA': {'country': 'AAA', 'frequency': 'monthly', 'FREQ column': 'monthly', 'first': '2009-01', 'design rows': 2}, 'BBB': {'country': 'BBB', 'frequency': 'quarterly', 'FREQ column': 'quarterly', 'first': '2009-03', 'design rows': 2}, 'CCC': {'country': 'CCC', 'frequency': 'both', 'FREQ column': 'monthly/quarterly', 'first': '2009-03', 'design rows': 2}})
+  ok   E4 Value dividend yield: non-US = the 12 months ending at t-12 (no carry-forward); US unchanged; registered lag is 12
+
+Global Macro Book (gm-2.1.0 features)
+  ok   E8 calendar: NYSE days from the ^GSPC dates, cut at the seal
+  ok   E6 k = 1 = R(t) - r(first day of t) + r(first day of t+1)
+  ok   E6 bonds: the daily value is already a price return (no exp)
+  ok   E6 no price on a first day -> k = 0 return, flagged
+  ok   E6 no daily data at all (cm_gold, cm_natgas) -> k = 0, flagged
+  ok   E6 holding cut: the holding decided at 2010-11 ends at the 2010-12-31 close (no January day read)
+  ok   E5 k = 1: no output after 2010-12
+  ok   E5 k = 1 unchanged when every input after the seal changes
+  ok   E6 a k = 1 book holds the k = 0 positions
+  ok   E6 a k = 1 book earns the k = 1 returns
+  ok   E6 costs charged as today (same cost series)
+  ok   E6 flag report: share of gross position flagged by year, in [0, 1]
+  ok   E7 Carry v1 (sign) and v2 (rank) averaged = today's half-and-half (1e-12)
+  ok   E7 single-version pods unchanged on the version path
+  ok   E7 version counts: Trend 16, Economic trend 2, Carry 2, Value 2
+  ok   E7 pod position = sum of version terms p_v / V, a missing version = 0
+  ok   E7 a missing version adds 0 (Value v2 missing for fx_aud before 1991: pod = v1 / 2)
+  ok   E7 Trend v2 (3 months, sign, hybrid) = sign x 0.40 / vol / n / 16
+  ok   E7 Trend v16 (12 months, graded cap 2, m36) by hand
+  ok   E7 a grid run without the Value v2 signal stops
+  ok   E5 grid book: no output after 2010-12
+  ok   E9 Core and shadow masks partition every (pod, class, version) component
+  ok   E9 Core + shadow masked positions = the whole pod position
+  ok   E9 Core holds Carry FX v2 only, energy v1 + v2, Value EQ only
+  ok   E9 equal-risk Core book = parts at unit volatility x 1/n, then the book scaler (by hand)
+  ok   E9 each Core part rescaled to about unit volatility (three parts, each 0.6-1.6)
+  ok   E5 Core and shadow books: no output after 2010-12
+  ok   E8 offsets: tranche j decides on NYSE day 5j after month-end, trades the next NYSE day
+  ok   E8 holidays: the special closure is skipped (5 NYSE days after 2001-08-31 = 2001-09-07, 10 = 2001-09-20)
+  ok   E8 tranche 0 = the monthly k = 1 path
+  ok   E8 tranche panel X_j(t) = R(t) - pr(me(t-1) -> d_j(t-1)) + pr(me(t) -> d_j(t))
+  ok   E8 tranche holding return runs from the day after d_j(t-1) to the day after d_j(t)
+  ok   E8 a market without a price that day uses its last price
+  ok   E8 no daily data (cm_wti before 1995): tranche 0's position, tranche 0's k = 1 return, flagged
+  ok   E8 a market with daily data has its own tranche position
+  ok   E8 tranche form = one quarter of the four tranche returns
+  ok   E5 tranches: no decision after 2010-12-31 (tranches 1-3 of 2010-12 decide in January 2011)
+  ok   E5 tranches: holdings decided in December 2010 end at the 2010-12-31 close
+  ok   E5 tranches unchanged when every input after the seal changes
+  ok   E5 tranches: no output after 2010-12
+  ok   E10 alpha = least-squares intercept, beta = slope
+  ok   E10 a strong true alpha: p = 0
+  ok   E10 a strong negative alpha: p = 1
+  ok   E10 alpha bootstrap agrees with tools/power boot_alpha (same alpha; count = p x 10,001 - 1)
+  ok   E10 a zero Core book: alpha = the pod's own mean
+  ok   E10 Holm at 2.5% over the batch (two pods at 0.01 / 0.012 -> 0.02 / 0.02 pass)
+  ok   E10 placebo maps: permutations of whole 12-month blocks aligned to the window start, last part-block kept
+  ok   E10 placebo maps are fixed by the registered seed
+  ok   E10 placebo: a pod that times every month beats all its placebos (p = 0, pass)
+  ok   E10 placebo: a standing long exposure is no better than its placebos (p = 1, fail)
+  ok   E10 placebo engine: the identity map reproduces the pod on the version path
+  ok   E10 placebo engine: scores moved jointly in the window, re-sized with each month's own volatility
+  ok   E10 date-rule mover: same year / month, same length in NYSE days, cut at the seal
+  ok   E10 H1-H3: identical books pass
+  ok   E10 H1: a challenger 12%/yr worse fails non-inferiority
+  ok   E10 H4: an A3 item that misses its own target fails
+  ok   E10 test 5 agrees with gm.protocol.decide check 5 (100 of 100)
+  ok   E10 T4: Core book + a zero pod, rescaled by the book scaler's convention
+  ok   E11 strip vector times the smallest cap_j / |x_j| (proportions kept)
+  ok   E11 columns outside a group clip alone, as today
+  ok   E11 Curve carry legs share the front leg's cap
+  ok   E11 no group = today's clip
+  ok   E11 gross weight 0.25/1.9 counts in the gross cap
+  ok   E14 a month held in full earns exactly the panel's monthly excess return
+  ok   E14 e(d) = price return of d + (panel - month's summed price returns) / N(m)
+  ok   E5 card 4 daily excess: no day after 2010-12-31
+  ok   E5 card 4 daily excess unchanged when every input after the seal changes
+
+Global Macro Book (gm-2.2.0 X1 / E13)
+  ok   X1: a pure calendar pattern has share 1
+  ok   X1: share equals the R^2 of 12 calendar-month dummies (least squares)  (0.5390438244483724 0.5390438244483724)
+  ok   X1: white noise gives a small share (about 11 / n)
+  ok   X1: a calendar month with fewer than 5 values -> insufficient (no share, gate closed)
+  ok   X1: exactly 5 values per calendar month is enough
+  ok   X1: gate constants as registered (0.25, 5)
+  ok   E13: x1_adjust equals the SPEC_Carry s3 formula by hand
+  ok   E13: no adjusted value before 12 months + five earlier same-calendar month-ends (first 1985-12)  (1985-12 1986-12)
+  ok   E13: point in time: changing the carry from 2000-07 on leaves every adjusted value up to 2000-06 unchanged
+  ok   E13: a pure, constant calendar pattern is removed (adjusted carry = its annual mean)
+  ok   E13: only the markets of the key change
+  ok   E13: registered markets and configs (X1_MARKETS natgas, gasoline; BASE and CANDIDATE without the key; A1_INCUMBENT and the A2 challenger with it)
+  ok   E13 book: A1_INCUMBENT changes only the Carry family (every other family position identical)
+  ok   E13 book: the Carry CM block differs, the other Carry classes do not
+  ok   E13 book: the version path (components) gives the same Carry position as the old path
+  ok   E13 book: the key equals feeding the adjusted carry into CANDIDATE
+
+Global Macro Book (gm-2.2.1 class blocks)
+  ok   gm-2.2.1 class blocks (BASE, old path): every block holds only its class's markets; cm_aqr_ew only in trend/CM
+  ok   gm-2.2.1 class blocks (CANDIDATE, old path): every block holds only its class's markets; cm_aqr_ew only in trend/CM
+  ok   gm-2.2.1 class blocks (A1_INCUMBENT, old path): every block holds only its class's markets; cm_aqr_ew only in trend/CM
+  ok   gm-2.2.1 class blocks (A2 challenger, version path and components): only the class's markets; cm_aqr_ew only in trend/CM
+  ok   gm-2.2.1 class blocks (CANDIDATE, components=True): only the class's markets
+  ok   gm-2.2.1 cm_aqr_ew still holds a Trend position (CM block) and none in any other family
+
+Batch A1 data swap (a1_panel 1.1.0, mock stores)
+  ok   A1 mock store: bbgdata.Panel opens it (lock id = the LOCK file)
+  ok   A1 status ok, same root, correlation >= 0.95, months before the free start: ADMITTED  (ADMITTED | block 1 | cm_wti | SPGSCLP Index PX_LAST | status ok | first in lock 1969-12 (492 months as of 2010-12-31) | first used 1971-12 | free first 1985-02 | overlap months 310 | corr 0.995 | extension 1971-12..1985-01 (158 months) | NYMEX WTI (CL): free EIA CL roll / USO / CL=F; GSCI and BCOM roll CL)
+  ok   A1 correlation gate: an unrelated index (corr < 0.95) is rejected and listed  (REJECTED | block 1 | cm_wti | BCOMCL Index PX_LAST | status ok | first in lock 1969-12 (492 months as of 2010-12-31) | first used 1971-12 | free first 1985-02 | overlap months 310 | corr 0.020 | extension 1971-12..1985-01 (158 months) | NYMEX WTI (CL): free EIA CL roll / USO / CL=F; GSCI and BCOM roll CL | reasons: correlation below 0.95)
+  ok   A1 copy: a copy block (no series id) is rejected with its status  (REJECTED | block 1 | cm_natgas | SPGSNGP Index PX_LAST | status copy | first in lock - (0 months as of 2010-12-31) | first used - | free first - | overlap months 0 | corr - | extension -..- (0 months) | NYMEX Henry Hub (NG): free EIA NG roll / UNG / NG=F; GSCI and BCOM roll NG | reasons: status in LOCK_v2: copy)
+  ok   A1 cut: a block from a _CUT file is rejected  (REJECTED | block 1 | cm_heatoil | SPGSHOP Index PX_LAST | status ok | first in lock 1969-12 (492 months as of 2010-12-31) | first used 1971-12 | free first 1975-01 | overlap months 431 | corr 0.013 | extension 1971-12..1974-12 (37 months) | NYMEX heating oil (HO): free EIA HO roll / HO=F; GSCI and BCOM roll HO | reasons: cut file (1_Bloomberg_macro_UBC_CUT.xlsx); correlation below 0.95)
+  ok   A1 held back: an untouched market is invisible (not in the lock)  (REJECTED | block 1 | cm_corn | SPGSCNP Index PX_LAST | status not in the lock (or held back) | first in lock - (0 months as of 2010-12-31) | first used - | free first - | overlap months 0 | corr - | extension -..- (0 months) | CBOT corn (C): free CORN / ZC=F; GSCI and BCOM roll C | reasons: status in LOCK_v2: not in the lock (or held back))
+  ok   A1 extension only: a series starting after the free start adds nothing (rejected, listed)  (REJECTED | block 1 | cm_gold | SPGSGCP Index PX_LAST | status ok | first in lock 2003-06 (90 months as of 2010-12-31) | first used 2005-06 | free first 2000-09 | overlap months 66 | corr 0.998 | extension -..- (0 months) | COMEX gold (GC): free GLD / GC=F; GSCI and BCOM roll GC | reasons: nothing to extend (starts at or after the free start 2000-09))
+  ok   A1 too few overlap months (< 24) is rejected  (REJECTED | block 1 | cm_silver | SPGSSIP Index PX_LAST | status ok | first in lock 1969-12 (392 months as of 2010-12-31) | first used 1971-12 | free first 2000-09 | overlap months 23 | corr - | extension 1971-12..2000-08 (345 months) | COMEX silver (SI): free SLV / SI=F; GSCI and BCOM roll SI | reasons: too few overlap months (23 < 24))
+  ok   A1 block 2: contracts 1-2 from another file / sheet (primary id) admitted, extension 1990-04..1993-12  (ADMITTED | block 2 | cm_natgas | NG1 Comdty PX_LAST | status ok | first in lock 1990-04 (248 months as of 2010-12-31) | first used 1990-04 | free first 1994-01 | overlap months 202 | corr 1.000 | extension 1990-04..1993-12 (45 months) | generic contract 1 of root NG = position 1 of NYMEX Henry Hub (NG): free EIA NG roll / UNG / NG=F; GSCI and BCOM roll NG)
+  ok   A1 block 3: a dividend yield starting after the free one adds nothing; a market without a free yield has nothing to extend  (REJECTED | block 3 | eq_jp_nikkei | MXJP Index EQY_DVD_YLD_12M | status ok | first in lock 1995-01 (191 months as of 2010-12-31) | first used 1995-01 | free first 1975-01 | overlap months 190 | corr 0.017 | extension -..- (0 months) | MSCI index of the same country (7.4 E2 mapping); free yield: Ken French country Mkt portfolio | reasons: not the same instrument: the free yield is the Ken French country Mkt portfolio; that it is an MSCI index is not established (CHANGES A1 item 5b); correlation below 0.95 / REJECTED | block 3 | eq_cn | MXCN Index EQY_DVD_YLD_12M | status ok | first in lock 1995-01 (191 months as of 2010-12-31) | first used 1995-01 | free first - | overlap months 0 | corr - | extension -..- (0 months) | MSCI index of the same country (7.4 E2 mapping); free yield: none | reasons: no free history to extend (no overlap))
+  ok   A1 same instrument (item 5b): a well-correlated SPGSICP (LME copper) is rejected; BCOMHG (HG) admitted  (REJECTED | block 1 | cm_copper | SPGSICP Index PX_LAST | status ok | first in lock 1969-12 (492 months as of 2010-12-31) | first used 1971-12 | free first 2000-09 | overlap months 123 | corr 0.999 | extension 1971-12..2000-08 (345 months) | COMEX copper (HG): free CPER / HG=F; BCOM rolls HG, S&P GSCI rolls LME copper (IC) | reasons: not the same instrument: S&P GSCI copper rolls LME copper (IC), the free series is COMEX HG / ADMITTED | block 1 | cm_copper | BCOMHG Index PX_LAST | status ok | first in lock 1969-12 (492 months as of 2010-12-31) | first used 1971-12 | free first 2000-09 | overlap months 123 | corr 0.999 | extension 1971-12..2000-08 (345 months) | COMEX copper (HG): free CPER / HG=F; BCOM rolls HG, S&P GSCI rolls LME copper (IC))
+  ok   A1 same instrument: gasoline index months before 2006 (HU) are not used, so nothing is extended  (REJECTED | block 1 | cm_gasoline | SPGSRBP Index PX_LAST | status ok | first in lock 1969-12 (492 months as of 2010-12-31) | first used 2008-01 | free first 2000-12 | overlap months 35 | corr withheld (<60 months) | extension -..- (0 months) | NYMEX RBOB (RB, XB) from 2006; NYMEX unleaded (HU) before: free EIA RB / RB=F | reasons: nothing to extend (starts at or after the free start 2000-12) | note: before 2006-01 the index rolled NYMEX HU (unleaded), not RBOB (those months are not used))
+  ok   A1 same instrument: MXUS (MSCI USA) rejected for the S&P 500 dividend yield, although it could extend  (REJECTED | block 3 | eq_us_spx | MXUS Index EQY_DVD_YLD_12M | status ok | first in lock 1969-12 (492 months as of 2010-12-31) | first used 1969-12 | free first 1994-01 | overlap months 202 | corr 0.109 | extension 1969-12..1993-12 (289 months) | MSCI index of the same country (7.4 E2 mapping); free yield: S&P 500 (SPY - ^GSPC) | reasons: not the same instrument: MSCI USA, the free yield is the S&P 500's (SPY - ^GSPC); correlation below 0.95)
+  ok   A1 same instrument: every non-US MSCI dividend yield with a Ken French free yield is rejected
+  ok   A1 Brent indexes are candidates (same ICE Brent contract), not in the not-same table
+  ok   A1 free-arm check (C4): passes on the reference path, fails when a signal drifts
+  ok   A1 scrub (C3): numbers with 3+ decimals are removed from exception text
+  ok   A1 a ticker not in the lock is rejected with that status
+  ok   A1 report line R: bond futures vs yield-built return, correlation reported, never admitted  (REPORT ONLY | block R | bd_us_10y | TY1 Comdty PX_LAST | status ok | first in lock 1969-12 (492 months as of 2010-12-31) | first used 1969-12 | free first 1975-01 | overlap months 431 | corr 0.981 | extension -..- (0 months) | yield-built return bd_us_10y (report only))
+  ok   A1 every candidate of the registered list is evaluated (16 x ER, 8 contracts, 15 dividend yields)
+  ok   A1 extension only: assert_extension_only passes on the built panel  (True)
+  ok   A1 extension only: every free month of cm_wti unchanged; new months only before 1985-02
+  ok   A1 extension only: in overlap months the panel keeps the FREE value although the index differs
+  ok   A1 rejected series change nothing (cm_heatoil, cm_gold, cm_silver identical)
+  ok   A1 block 2: natgas carry extended only before its free start (1990-04..1993-12), free months unchanged
+  ok   A1 the blocks applied: build((2,)) leaves R as free, build((1,)) leaves carry as free
+  ok   A1 seal: the panel has no value dated after 2010-12
+  ok   A1 seal: a one-day-delay series is served to 2010-11 only (as of 2010-12-31)
+  ok   A1 seal: an as-of date after 2010-12-31 raises HoldoutSealed
+  ok   A1 seal: other values in the sealed tables change nothing (sealed tables never read)
+  ok   A1 seal: free inputs dated after 2010-12 make build raise SealBreach (the guard is live)
+  ok   A1 seal: Bloomberg values after 2010 are dropped by the store interface
+  ok   A1 panel id: stable for the same inputs
+  ok   A1 panel id: changes with the blocks / admitted list
+  ok   A1 panel id: changes with the free inputs digest and the lock id
+  ok   A1 panel id: a store with another lock id gives another id
+  ok   A1 printing: no planted data value appears in the job's output (candidate rows + registered report)  ([])
+  ok   A1 printing: no number with 5 or more decimals in the output  ([])
+  ok   A1 report: k = 1 and k = 0 lines for every arm and era, dSR beside each non-free arm  (free | k1 | 1975-2010 | 383 | -0.099 | -0.73 | 7.38 | -40.4
+free | k1 | 1975-89 | 131 | -0.238 | -1.80 | 7.58 | -28.5
+free | k1 | 1990-2010 | 252 | -0.023 | -0.17 | 7.29 | -40.4
+free | k0 | 1975-2010 | 383 | -0.198 | -1.43 | 7.20 | -47.1
+free | k0 | 1975-89 | 131 | -0.299 | -2.25 | 7.52 | -33.2
+free | k0 | 1990-2010 | 252 | -0.142 | -1.00 | 7.04 | -44.9
+block 1 alone | k1 | 1975-2010 | 408 | -0.061 | -0.47 | 7.75 | -39.7 | +0.051 | -0.036 | 0.051
+block 1 alone | k1 | 1975-89 | 156 | -0.058 | -0.48 | 8.26 | -28.1 | +0.219 | +0.039 | 0.102
+block 1 alone | k1 | 1990-2010 | 252 | -0.064 | -0.47 | )
+  ok   A1 report: differences explained (blocks that differ, series extended)
+  ok   A1 report (C1, C2): one-month delay lines, flagged share by year, k = 1 contributions table  (--- differences explained, 1975-2010, Sharpe (months) where at least 60 months; only what differs from the free arm. [k = 0] the k = 0 book's unit-volatility family x class blocks; [k = 1] family x class contributions at k = 1 (held family positions x k = 1 returns, before costs; the decisive timing)
+block 1 alone | [k = 0] blocks that differ: carry/CM -0.07 (396) -> 0.05 (432); econ/CM -0.36 (396) -> -0.09 (432); trend/CM -0.03 (395) -> 0.08 (432)
+block 1 alone | [k = 1] contributions that differ: carry/CM 0.00 (381) -> 0.02 (408); carry/FI -0.10 (383) -> -0.02 (407); carry/FX 0.04 (383) -> 0.01 (407); econ/CM -0.31 (383) -> -0.00 (408); econ/EQ -0.16 (383) -> -0.13 (407); econ/FI 0.33 (383) -> 0.20 (407); econ/FX 0.05 (383) -> -0.00 (407); trend/CM 0.04 (383) -> 0.05 (408); trend/EQ -0.2)
+  ok   A1 job (PC layout): gm code = the reference, a non-LOCK_v2 store -> STOP before any value is read  (| 21 files | differing or missing: none
+PASS lib a1_panel.py | sha256 eb9ef3f7fbd12760 | registered eb9ef3f7fbd12760
+PASS lib bbg_panel.py | sha256 e0b67a42793e67c1 | registered e0b67a42793e67c1
+PASS lib bbgdata.py | sha256 0b26bb21b50671dc | registered 0b26bb21b50671dc
+PASS lib gm_engine.py | sha256 ac43a33cd8943719 | registered ac43a33cd8943719
+FAIL Bloomberg store lock id ef38aaebaaa80b051903760810c1d7494b628f16cd1edae320486874be90c6ba | registered LOCK_v2 d85a46cb2853646b24796f294f3ccab1d1507188c402e978fd59f5196ea41fc9
+STOP: the Bloomberg store is not LOCK_v2 (nothing read)
+=== END === 0s
+)
+  ok   A1 job output: no planted value, no number with 5+ decimals
+
+Batch A2 grids / hygiene (a2_batch 1.1.1; job gm_a2_v1 on the frozen 1.1.0, synthetic panels)
+  ok   A2 decisive = gm.stats.noninferiority on the k = 1 nets, pooled 1975-01..2010-12 (lb95, H1, H3, pass)  (({'dsr': 0.06609212603806744, 'lb95': -0.026613432532448772, 'H1': True, 'H3': False, 'tail': {'dd_inc': -0.3462986174154399, 'dd_cha': -0.3850674559577798, 'wm_inc': -0.083463426927489, 'wm_cha': -0.08859516572890114, 'n': 432, 'pass': False}, 'n': 432, 'H2_dsr_2x': 0.07861213072540776, 'pass': False, 'se': 0.05587316940067358, 'identical': False}, {'dsr': 0.06609212603806744, 'lb95': -0.026613432532448772, 'H1': True, 'H3': False, 'tail': {'dd_inc': -0.3462986174154399, 'dd_cha': -0.3850674559577798, 'wm_inc': -0.083463426927489, 'wm_cha': -0.08859516572890114, 'n': 432, 'pass': False}, 'n': 432, 'H2_dsr_2x': 0.07861213072540776, 'pass': False}))
+  ok   A2 verdict line matches the decisive result and names the A2-final book  (['A2 VERDICT FAIL | H1 lb95 -0.027 > -0.10 | H3 fail | A2-final book = gm-2.0.4-candidate-x1 (77374d7bef) | the incumbent stays without averaging; no cell of a grid is picked'])
+  ok   A2 H2 (double costs) is the dSR of the two books at cost multiple 2 (reported)
+  ok   A2 identical books: dSR 0, H1 PASS, H3 PASS, verdict PASS  (HYGIENE | k1 | n 432 | dSR +0.000 | lb95 +0.000 | se 0.000 | H1 PASS | H2 dSR at 2x costs +0.000 (reported) | H3 PASS (max fall +0.0 pts, worst month +0.0 pts; max drawdown incumbent -34.6%, challenger -34.6%) | PASS)
+  ok   A2 H1: a near-identical challenger passes, a steady drag of 0.6%/month fails (lb95 <= -0.10)  ((-0.0077785325458375, -0.7554810978452638))
+  ok   A2 H3: one extra month 8 points worse fails the tail test (worst month > 1 point worse)  ({'dd_inc': -0.18691909634262294, 'dd_cha': -0.20210429731417034, 'wm_inc': -0.07100311939658709, 'wm_cha': -0.1510031193965871, 'n': 432, 'pass': False})
+  ok   A2 as-run check: a mismatch raises before any other statistic is printed (one FAIL line only)  (['FAIL incumbent as run (A1 report, net Sharpe 1975-2010): d1 -0.013, k0 0.087, k1 0.069 | registered d1 9.999, k0 9.999, k1 9.999'])
+  ok   A2 as-run check: the incumbent's own values pass  (['PASS incumbent as run (A1 report, net Sharpe 1975-2010): d1 -0.013, k0 0.087, k1 0.069 | registered d1 -0.013, k0 0.087, k1 0.069'])
+  ok   A2 Trend split (incumbent): class-average + relative = the held Trend position (max diff < 1e-9)  ((4.440892098500626e-16, 3.885780586188048e-16))
+  ok   A2 Trend split (incumbent): the unscaled pod position equals the engine's Trend position (diff 0)  ((1.1102230246251565e-16, 0))
+  ok   A2 carry + price = total (bonds and currencies, incumbent); covered share in [0, 1]
+  ok   A2 Trend split (challenger): class-average + relative = the held Trend position (max diff < 1e-9)  ((4.996003610813204e-16, 4.440892098500626e-16))
+  ok   A2 Trend split (challenger): the unscaled pod position equals the engine's Trend position (diff 0)  ((2.220446049250313e-16, 0))
+  ok   A2 carry + price = total (bonds and currencies, challenger); covered share in [0, 1]
+  ok   A2 P4: first value 1978-01 (month 37), point in time (later months change nothing before them)
+  ok   A2 P4: a known market beta 0.5 is removed (correlation of w with m near 0)  ((np.float64(-0.03975966802347015), np.float64(0.7410421225850435)))
+  ok   A2 selection inflation: book + pod rows only, the stats_audit formula  (({'n': 25, 'mean': 1.41808, 'sd': 0.08769783349661495, 'z': 1.9971498869590656, 'inflation': 0.1751457182543195, 'by_family': {'book': 20, 'pod': 5}}, np.float64(0.1751457182988383)))
+  ok   A2 selection inflation on the shipped trial log: N 39, inflation 0.26 (registered, CHANGES A2 item 4l; the gm-2.2.1 fix rows are not counted)  ({'n': 39, 'mean': 1.4810769230769232, 'sd': 0.11813560108161711, 'z': 2.1794579028610137, 'inflation': 0.2574715693865665, 'by_family': {'book': 39}})
+  ok   A2 fragility: the year removal equals a direct computation (largest loss and its year)  (((1984, 0.01645807646822159), 1984, 0.01645807646822159))
+  ok   A2 fragility: markets and classes re-run (2 markets tried, a class named)
+  ok   A2 panel id: the registered id passes, another fails
+  ok   A2 saved panel: absent when no file
+  ok   A2 saved panel: same when the file equals the rebuild
+  ok   A2 saved panel: a one-cell difference is found
+  ok   A2 saved panel: a signal difference is found
+  ok   A2 seal: values dated after 2010-12 in every input change nothing in the report
+  ok   A2 report: every registered line type is printed (counts)
+  ok   A2 frozen copy tests/data/a2_batch_1.1.0.py = the sha256 gm_a2_v1 registers (the A2 run's a2_batch)
+  ok   A2 report: the split checks pass in the printed lines
+  ok   A2 printing: no planted data value appears
+  ok   A2 printing: no number with 5 or more decimals
+  ok   A2 trial row: family book, challenger hash 1faa343535 (gm-2.2.1), note names panel, parent and verdict  ({'trial': 'A2 grids (challenger, k = 1, A1 panel)', 'family': 'book', 'hash': '1faa343535', 'sr_9010': 0.128, 't_9010': 0.58, 'maxdd_9010': -0.385, 'sr_7589': 0.146, 'turnover': 20.4, 'note': 'TESTING_PROTOCOL 7.6 step 3 A2 challenger; engine gm-2.2.1; A1 panel e7f98d4439fccf91; LOCK_v2 d85a46cb2853646b; incumbent A1_INCUMBENT 77374d7bef as run; verdict FAIL (H1 lb95 -0.027, H3 fail)'})
+  ok   A2 registered constants: incumbent hash 77374d7bef = A1_INCUMBENT under gm-2.2.1
+  ok   A2 as-run source: a missing gm_a1_v2 report gives no values  (missing (gm_a1_v2.txt))
+  ok   A2 as-run source: the three 1975-2010 lines of the all-blocks arm are read (not the free arm, not 1990-2010)  (({'k1': 1.234, 'k0': 1.345, 'd1': 0.987}, 'ok'))
+  ok   A2 as-run source: another A1 PANEL ID is refused  (A1 PANEL ID ffffffffffffffff, registered e7f98d4439fccf91)
+  ok   A2 as-run source: a report without 'A1 JOB DONE' is refused  (no 'A1 JOB DONE' line)
+  ok   A2 as-run source: a missing timing line is refused  (lines missing: d1)
+  ok   A2 job (PC layout): no gm_a1_v2 report -> STOP before the store is opened  (y | sha256 eb9ef3f7fbd12760 | registered eb9ef3f7fbd12760
+PASS lib a2_batch.py | sha256 87b24d8f558da20f | registered 87b24d8f558da20f
+PASS lib bbg_panel.py | sha256 e0b67a42793e67c1 | registered e0b67a42793e67c1
+PASS lib bbgdata.py | sha256 0b26bb21b50671dc | registered 0b26bb21b50671dc
+PASS lib gm_engine.py | sha256 ac43a33cd8943719 | registered ac43a33cd8943719
+PASS lib gm\trials.csv | sha256 2b80e2f9b255b05e | registered 2b80e2f9b255b05e
+FAIL A1 report gm_a1_v2.txt: missing (gm_a1_v2.txt)
+STOP: the gm_a1_v2 report is not usable (missing (gm_a1_v2.txt)): queue gm_a1_v2 first
+=== END === 0s
+)
+  ok   A2 job (PC layout): gm code, 5 lib files, the trial log and the gm_a1_v2 report PASS; a non-LOCK_v2 store -> STOP before any value is read  (missing: none
+PASS lib a1_panel.py | sha256 eb9ef3f7fbd12760 | registered eb9ef3f7fbd12760
+PASS lib a2_batch.py | sha256 87b24d8f558da20f | registered 87b24d8f558da20f
+PASS lib bbg_panel.py | sha256 e0b67a42793e67c1 | registered e0b67a42793e67c1
+PASS lib bbgdata.py | sha256 0b26bb21b50671dc | registered 0b26bb21b50671dc
+PASS lib gm_engine.py | sha256 ac43a33cd8943719 | registered ac43a33cd8943719
+PASS lib gm\trials.csv | sha256 2b80e2f9b255b05e | registered 2b80e2f9b255b05e
+PASS A1 report gm_a1_v2.txt: ok | as run d1 0.987, k0 1.345, k1 1.234
+FAIL Bloomberg store lock id ef38aaebaaa80b051903760810c1d7494b628f16cd1edae320486874be90c6ba | registered LOCK_v2 d85a46cb2853646b24796f294f3ccab1d1507188c402e978fd59f5196ea41fc9
+STOP: the Bloomberg store is not LOCK_v2 (nothing read)
+=== END === 0s
+)
+  ok   A1 rerun job gm_a1_v2 (PC layout): gm code, 4 lib files and the gm-2.2.1 engine_ref.json PASS; a non-LOCK_v2 store -> STOP before any value is read  (18, numpy 2.5.3, pandas 3.0.5, scipy 1.18.1, openpyxl 3.1.5, xlrd 2.0.2
+PASS gm code vs reference | 21 files | differing or missing: none
+PASS lib a1_panel.py | sha256 eb9ef3f7fbd12760 | registered eb9ef3f7fbd12760
+PASS lib bbg_panel.py | sha256 e0b67a42793e67c1 | registered e0b67a42793e67c1
+PASS lib bbgdata.py | sha256 0b26bb21b50671dc | registered 0b26bb21b50671dc
+PASS lib gm_engine.py | sha256 ac43a33cd8943719 | registered ac43a33cd8943719
+PASS lib engine_ref.json | sha256 cebd4932e8643f14 | registered cebd4932e8643f14 (gm-2.2.1 reference)
+FAIL Bloomberg store lock id ef38aaebaaa80b051903760810c1d7494b628f16cd1edae320486874be90c6ba | registered LOCK_v2 d85a46cb2853646b24796f294f3ccab1d1507188c402e978fd59f5196ea41fc9
+STOP: the Bloomberg store is not LOCK_v2 (nothing read)
+=== END === 0s
+)
+  ok   A2 job: a changed a2_batch.py stops it at the hash check  (8, numpy 2.5.3, pandas 3.0.5, scipy 1.18.1, openpyxl 3.1.5, xlrd 2.0.2
+PASS gm code vs reference | 21 files | differing or missing: none
+PASS lib a1_panel.py | sha256 eb9ef3f7fbd12760 | registered eb9ef3f7fbd12760
+FAIL lib a2_batch.py | sha256 074cbc609b2a6b5d | registered 87b24d8f558da20f
+PASS lib bbg_panel.py | sha256 e0b67a42793e67c1 | registered e0b67a42793e67c1
+PASS lib bbgdata.py | sha256 0b26bb21b50671dc | registered 0b26bb21b50671dc
+PASS lib gm_engine.py | sha256 ac43a33cd8943719 | registered ac43a33cd8943719
+STOP: lib file differs from the registered build: a2_batch.py
+=== END === 0s
+)
+  ok   A2 job: a changed trial log stops it before the store is opened  (iffering or missing: none
+PASS lib a1_panel.py | sha256 eb9ef3f7fbd12760 | registered eb9ef3f7fbd12760
+PASS lib a2_batch.py | sha256 87b24d8f558da20f | registered 87b24d8f558da20f
+PASS lib bbg_panel.py | sha256 e0b67a42793e67c1 | registered e0b67a42793e67c1
+PASS lib bbgdata.py | sha256 0b26bb21b50671dc | registered 0b26bb21b50671dc
+PASS lib gm_engine.py | sha256 ac43a33cd8943719 | registered ac43a33cd8943719
+FAIL lib gm\trials.csv | sha256 daa11b94bc90e5f0 | registered 2b80e2f9b255b05e
+STOP: the trial log differs from the registered one (selection inflation, CHANGES A2 item 4l)
+=== END === 0s
+)
+  ok   A2 job output: no number with 5+ decimals
+
+Diagnostics after A2 (diag_a2 1.0.1, synthetic panels)
+  ok   D1: 373 windows (60 months ending 1979-12..2010-12); first-factor share on 10 streams with correlation 0.5 is about (1 + 9 x 0.5) / 10 = 0.55; loadings positive  ({'windows': 373, 'share': 0.5267098088317385, 'markets_mean': 10.0, 'markets_min': 10, 'markets_max': 10, 'class_loading': {'EQ': (0.7313839157113978, 373), 'FI': (nan, 0), 'FX': (0.7137879767136692, 373), 'CM': (nan, 0)}, 'ratio': 1.3035697564247033, 'ratio_windows': 182, 'ratio_skipped': 191, 'n_markets': 10})
+  ok   D1: P&L = clip(score(t-1)) x 0.40 / vol(t-1) x R1(t) (one market-month by hand); cm_aqr_ew excluded  ((np.float64(-0.01688089904528884), -0.01688089904528884))
+  ok   D2: the rebuild equals book.run's positions (diff 0, same missing pattern) and is printed PASS
+  ok   D2: constant volatility and scalers -> non-signal share 0 in both eras (all trading is signal trading)  ({'1975-89': {'share': 0.0, 'scores_share': 0.0, 'months': 180, 'left_out': 1}, '1990-2010': {'share': 0.0, 'scores_share': 0.0, 'months': 251, 'left_out': 1}})
+  ok   D2: constant scores -> non-signal share 1 and scores-held share 1 (all trading is from volatilities and scalers), gate OPEN  ({'1975-89': {'share': 0.9999999999999998, 'scores_share': 1.0, 'months': 180, 'left_out': 0}, '1990-2010': {'share': 0.9999999999999998, 'scores_share': 0.9999999999999999, 'months': 251, 'left_out': 0}})
+  ok   D2 gate: open only if both eras >= 0.20
+  ok   D2 cost drag: per-market costs sum to the book's cost  (4.336808689942018e-19)
+  ok   D2 cost drag (W2): a decision month's cost is charged in the next month, months 1975-01..2010-12 with a held position  (((5.286903739189097, 432), 432))
+  ok   D2 (W1): the 2010-12 decision is not a trade month (tripling its positions changes no era share)  (({'1975-89': {'share': 0.004059900271312755, 'scores_share': 0.059641206835061404, 'months': 180, 'left_out': 1}, '1990-2010': {'share': 0.004984016404373182, 'scores_share': 0.05736256555382757, 'months': 251, 'left_out': 1}}, {'1975-89': {'share': 0.004059900271312755, 'scores_share': 0.059641206835061404, 'months': 180, 'left_out': 1}, '1990-2010': {'share': 0.004984016404373182, 'scores_share': 0.05736256555382757, 'months': 251, 'left_out': 1}}))
+  ok   D2 (W5): the rebuild refuses a panel with an alternative-commodity column
+  ok   D2 (M2): a failed rebuild prints FAIL and 'not gated', and the recorded outcome is not gated (not closed)  ((['D2 GATE | not gated (rebuild FAIL) | no A3 buffer item decision'], 'not gated (rebuild FAIL)'))
+  ok   D3: a planted +4 points in the named state opens the split; no difference keeps it closed  (({'n': 420, 'n_state': 121, 'mean_state': 0.14102493661047058, 'mean_other': 0.100122323865485, 'diff': 0.04090261274498558, 'lb90': 0.039786670063420806, 'open': True, 'empty': 0}, {'n': 420, 'n_state': 121, 'mean_state': 0.10102493661047056, 'mean_other': 0.100122323865485, 'diff': 0.0009026127449855564, 'lb90': -0.00021332993657924336, 'open': False, 'empty': 0}))
+  ok   D3 (M1): a split with a group under 60 months prints its difference and bound as sign only; a split with both groups >= 60 prints them in points; empty resamples printed  (['D3 | (a) stock-bond 12-month correlation > 0 | months 420, in state 258 | forward vol %/yr: state 8.6 (258), other 7.9 (162) | difference +0.77 pts | one-sided 90% bound +0.36 pts | resamples without a state or other month 0 | closed', 'D3 | (b) top tenth of mean |trend score| | months 420, in state 51 | forward vol %/yr: state n 51, sign +, other 8.3 (369) | difference sign + | one-sided 90% bound sign - | resamples without a state or other month 0 | closed'])
+  ok   D3 (W6): a 21-month state is gated on full precision and counts its empty resamples  ({'n': 420, 'n_state': 21, 'mean_state': 0.1382154654998993, 'mean_other': 0.10049640949912048, 'diff': 0.03771905600077882, 'lb90': 0.03582593611338709, 'open': True, 'empty': 0})
+  ok   D3: state months end at 2009-12  (2009-12)
+  ok   D3: forward volatility = std of the next 12 months x sqrt(12)
+  ok   D4: fall from the 24-month high and age by hand; states  (             fall  age        state
+1982-06  0.000000  0.0          <5%
+1982-07  0.030000  1.0          <5%
+1982-08  0.059100  2.0  5-15% young
+1982-09  0.049691  3.0          <5%
+1982-10  0.192237  4.0     >15% old
+1982-11  0.176082  5.0     >15% old)
+  ok   D4 crisis set: the six design stress windows + the worst fifth of eq_us_spx months  ((6, 106, 106))
+  ok   D4 Trend gate = (young 5-15% mean < 0 and >15% mean > 0, cells >= 6 months)
+  ok   D4: the <5% Trend cell mean is a direct computation
+  ok   D5: delay 0 at k = 1 equals the pod alone (A2's convention); gate = Sharpe(3) < 0.5 x Sharpe(0)
+  ok   D5: delay d = positions earn 1 + d months after the decision (gross, one month by hand)  ((np.float64(-0.025232834527501743), np.float64(-0.025232834527501743)))
+  ok   D6: nw_ols intercept t equals gm.stats.nw_alpha_t (same sandwich); slope recovered  ((1.402178814290169, 1.402178814290169, 0.6449406108152018))
+  ok   D6: z = (slope 1990-2010 - slope 1975-89) / sqrt(se1^2 + se2^2); gate |z| < 2; 15 and 21 years  ({'years': 36, 'eras': {'1975-89': {'n': 15, 'slope': 0.8018896867752074, 'se': 0.1493660053312933, 'intercept': -0.6522370255167247, 'markets': 14.2}, '1990-2010': {'n': 21, 'slope': 0.688040450039238, 'se': 0.15403386703809127, 'intercept': -0.6393012403218626, 'markets': 15.714285714285714}}, 'z': -0.5306135473458513, 'open': True})
+  ok   X2: income + price = total exactly per leg; gate = price part <= 0  ({'EQ': {'n': 432, 'total': 0.0004238416113069208, 'income': -0.00022875277694894196, 'price': 0.0006525943882558625, 'ci90': (-0.003099352863362644, 0.004282830846001161), 'covered': 1.0, 'exact': 8.673617379884035e-19, 'paid_by_income': False}, 'FI': {'n': 432, 'total': -0.0018638272572195002, 'income': 0.0002294404921303835, 'price': -0.0020932677493498844, 'ci90': (-0.00557254455987169, 0.0013126124864150305), 'covered': 1.0, 'exact': 8.673617379884035e-19, 'paid_by_income': True}, 'FX': {'n': 432, 'total': -0.0010246283168970198, 'income': 0.00029756429270798583, 'price': -0.001322192609605006, 'ci90': (-0.004436914914878853, 0.001794946816304721), 'covered': 1.0, 'exact': 8.673617379884035e-19, 'paid_by_income': True}})
+  ok   X2: income = held position(t-1) x carry(t-1) / 12 (one month by hand)
+  ok   M1: one-market p4_multi equals a2_batch.p4; first value 1978-01
+  ok   M1: the two-market form removes both betas (correlations near 0)
+  ok   M1 (W7): each era's Sharpe ratios are over the common months of the three series (count printed)
+  ok   M1 gate: both iff in either era Sharpe(both) <= Sharpe(S&P) - 0.05
+  ok   Falsifier theme split: parts add to the held Economic trend position (< 1e-12) and the theme scores reproduce E  ((4.163336342344337e-17, 0.0))
+  ok   Falsifiers: every registered line has a verdict
+  ok   seal: values dated after 2010-12 in every input change nothing in the report
+  ok   report: every registered line type is printed (counts)
+  ok   printing: no planted data value appears
+  ok   printing: no number with 5 or more decimals
+  ok   printing: every value printed with a month count has >= 60 months (smaller cells: count and sign)
+  ok   A2 facts: a missing report gives nothing  (missing (gm_a2_v1.txt))
+  ok   A2 facts: book k1 / k0 / d1, the incumbent's pods and P4 are read (not the challenger, not costs x2)  (({'book': {'k1': 1.439, 'k0': 1.481, 'd1': 1.064}, 'pods': {'trend': (1.19, 432), 'econ': (0.53, 432), 'carry': (1.07, 432), 'value': (0.15, 345)}, 'p4': (1.39, 1.34, 396)}, 'ok'))
+  ok   A2 facts: refused when VERDICT  (the A2 VERDICT line is not 'FAIL ... A2-final book = gm-2.0.4-candidate-x1 (77374d7bef)')
+  ok   A2 facts: refused when JOB DONE  (no 'A2 JOB DONE' line)
+  ok   A2 facts: refused when PANEL ID  (no 'PASS A1 PANEL ID' line with the registered id)
+  ok   as-run: the book's own values pass (one PASS line)  (['PASS A2-final book as run (A2 report): book d1 -0.005, k0 0.059, k1 0.049 | pods trend 0.17 (405), econ -0.30 (416), carry -0.23 (416), value -0.15 (416) | P4 book 0.13 specific 0.09 (396) | registered book d1 -0.005, k0 0.059, k1 0.049 | pods trend 0.17 (405), econ -0.30 (416), carry -0.23 (416), value -0.15 (416) | P4 0.13 / 0.09 (396)'])
+  ok   as-run: a mismatch raises before any diagnostic is printed (one FAIL line)  (['FAIL A2-final book as run (A2 report): book d1 -0.005, k0 0.059, k1 0.049 | pods trend 0.17 (405), econ -0.30 (416), carry -0.23 (416), value -0.15 (416) | P4 book 0.13 specific 0.09 (396) | registered book d1 -0.005, k0 0.059, k1 9.999 | pods trend 0.17 (405), econ -0.30 (416), carry -0.23 (416), value -0.15 (416) | P4 0.13 / 0.09 (396)'])
+  ok   trial log pin (C7): the repo trial log's book / pod rows have the registered digest (N 40)  (('676b7b0f157cc6cc3e14f4e82754d5ad4c80bc61e3e9e5aa7c26596c6403e5ed', 40))
+  ok   trial log pin (C7): an appended diag row does not change the digest
+  ok   trial log pin (C7): a changed book row changes the digest
+  ok   trial rows: 10 rows, family diag, distinct hashes, note names the panel, book and outcome
+  ok   registered constants: config hashes and engine as the gm-2.2.1 entry
+  ok   job (PC layout): no gm_a2_v1 report -> STOP before the store is opened  (ENT 77374d7bef, A2_CHALLENGER 1faa343535, BASE f1d682c384, CANDIDATE 438a092b53 | registered gm-2.2.1, A1_INCUMBENT 77374d7bef, A2_CHALLENGER 1faa343535, BASE f1d682c384, CANDIDATE 438a092b53
+PASS lib a1_panel.py | sha256 eb9ef3f7fbd12760 | registered eb9ef3f7fbd12760
+PASS lib a2_batch.py | sha256 35339f673f351f43 | registered 35339f673f351f43
+PASS lib bbg_panel.py | sha256 e0b67a42793e67c1 | registered e0b67a42793e67c1
+PASS lib bbgdata.py | sha256 0b26bb21b50671dc | registered 0b26bb21b50671dc
+PASS lib diag_a2.py | sha256 3264a5381c13b124 | registered 3264a5381c13b124
+PASS lib gm_engine.py | sha256 ac43a33cd8943719 | registered ac43a33cd8943719
+PASS lib gm\trials.csv book / pod rows | 40 rows | digest 676b7b0f157cc6cc | registered 40 rows, 676b7b0f157cc6cc
+FAIL A2 report gm_a2_v1.txt: missing (gm_a2_v1.txt)
+STOP: the gm_a2_v1 report is not usable (missing (gm_a2_v1.txt))
+=== END === 0s
+)
+  ok   job: A2 report PASS, an appended diag row passes the trial-log pin, a non-LOCK_v2 store -> STOP before any value is read  (ef3f7fbd12760
+PASS lib a2_batch.py | sha256 35339f673f351f43 | registered 35339f673f351f43
+PASS lib bbg_panel.py | sha256 e0b67a42793e67c1 | registered e0b67a42793e67c1
+PASS lib bbgdata.py | sha256 0b26bb21b50671dc | registered 0b26bb21b50671dc
+PASS lib diag_a2.py | sha256 3264a5381c13b124 | registered 3264a5381c13b124
+PASS lib gm_engine.py | sha256 ac43a33cd8943719 | registered ac43a33cd8943719
+PASS lib gm\trials.csv book / pod rows | 40 rows | digest 676b7b0f157cc6cc | registered 40 rows, 676b7b0f157cc6cc
+PASS A2 report gm_a2_v1.txt: ok | A2 VERDICT FAIL, A2-final book gm-2.0.4-candidate-x1 (77374d7bef) | book d1 1.064, k0 1.481, k1 1.439
+FAIL Bloomberg store lock id ef38aaebaaa80b051903760810c1d7494b628f16cd1edae320486874be90c6ba | registered LOCK_v2 d85a46cb2853646b24796f294f3ccab1d1507188c402e978fd59f5196ea41fc9
+STOP: the Bloomberg store is not LOCK_v2 (nothing read)
+=== END === 0s
+)
+  ok   job: a changed diag_a2.py stops it at the hash check  (_CHALLENGER 1faa343535, BASE f1d682c384, CANDIDATE 438a092b53
+PASS lib a1_panel.py | sha256 eb9ef3f7fbd12760 | registered eb9ef3f7fbd12760
+PASS lib a2_batch.py | sha256 35339f673f351f43 | registered 35339f673f351f43
+PASS lib bbg_panel.py | sha256 e0b67a42793e67c1 | registered e0b67a42793e67c1
+PASS lib bbgdata.py | sha256 0b26bb21b50671dc | registered 0b26bb21b50671dc
+FAIL lib diag_a2.py | sha256 a6342922b61c3c38 | registered 3264a5381c13b124
+PASS lib gm_engine.py | sha256 ac43a33cd8943719 | registered ac43a33cd8943719
+STOP: lib file differs from the registered build: diag_a2.py
+=== END === 0s
+)
+  ok   job: an old engine_ref.json stops it (C2)  (=== gm_diag_v1 ===
+diag_a2-1.0.1 | a2_batch-1.1.1 | a1_panel-1.1.0 | bbgdata-1.2.0 | bbg_panel-1.0.0 | gm_engine-1.3.0 | engine gm-2.2.1 | python 3.13.18, numpy 2.5.3, pandas 3.0.5, scipy 1.18.1, openpyxl 3.1.5, xlrd 2.0.2
+FAIL gm code vs reference | 21 files | differing or missing: book.py, config.py, run.py
+STOP: the gm code on the PC is not the registered engine
+=== END === 0s
+)
+  ok   job: a changed book row of the trial log stops it before the store (C7)  (12760
+PASS lib a2_batch.py | sha256 35339f673f351f43 | registered 35339f673f351f43
+PASS lib bbg_panel.py | sha256 e0b67a42793e67c1 | registered e0b67a42793e67c1
+PASS lib bbgdata.py | sha256 0b26bb21b50671dc | registered 0b26bb21b50671dc
+PASS lib diag_a2.py | sha256 3264a5381c13b124 | registered 3264a5381c13b124
+PASS lib gm_engine.py | sha256 ac43a33cd8943719 | registered ac43a33cd8943719
+FAIL lib gm\trials.csv book / pod rows | 40 rows | digest 17781b50423c1339 | registered 40 rows, 676b7b0f157cc6cc
+STOP: the book / pod rows of the trial log differ from the registered ones (C7)
+=== END === 0s
+)
+  ok   job output: no number with 5+ decimals
+
+Core book v1 (core_v1 1.0.0, synthetic panels, stub rebuild)
+  ok   masks: Core + shadow parts partition every pod's components (max diff 0.0e+00)
+  ok   interface v2: rebuild_inputs has exactly the documented keys  (['D', 'R', 'classes', 'cost', 'days', 'eia', 'em_borrow', 'french_with', 'french_without', 'fx_rate_country', 'meta', 'rate3m', 'us_price', 'us_total'])
+  ok   interface v2: no engine-built measure or volatility in the inputs
+  ok   interface v2: rate3m in percent with a US column, eia contracts 1 and 2, French with / without, a cost for every market
+  ok   interface: the inputs are copies (changing them leaves the panel and the raw inputs alone)
+  ok   raw check: the raw inputs reproduce the scenario's carry and value measures (3 groups PASS)  ([{'group': 'carry currencies', 'n': 4, 'maxdiff': 0.0, 'missing': 0, 'pass': True}, {'group': 'carry energy (before E13)', 'n': 2, 'maxdiff': 0.0, 'missing': 0, 'pass': True}, {'group': 'value equities (E4)', 'n': 4, 'maxdiff': 0.0, 'missing': 0, 'pass': True}])
+  ok   raw check: a changed currency carry value fails the currency group only; a missing value fails the value group
+  ok   raw check formulas by hand: FX carry lagged one month, energy 12 x (F1 / F2 - 1), E4 = the 12-month sum ending at t - 12
+  ok   validate: the stub's output passes  (ok)
+  ok   validate: a missing key is refused (key 'carry' missing)
+  ok   validate: a non-monthly index is refused (trend index is not a monthly PeriodIndex)
+  ok   validate: a month after the cut is refused (trend has a month after 2010-12)
+  ok   validate: an infinite value is refused (trend has an infinite value)
+  ok   validate: too few months is refused (value_eq has 72 months in 1975-01..2010-12 (< 120))
+  ok   forbidden imports: 'import numpy as np\nimport pandas as pd' -> []
+  ok   forbidden imports: 'import gm' -> ['gm']  (['gm'])
+  ok   forbidden imports: 'from gm.book import run' -> ['gm']  (['gm'])
+  ok   forbidden imports: 'import numpy, gm_engine' -> ['gm_engine']  (['gm_engine'])
+  ok   forbidden imports: "x = __import__('core_v1')" -> ['core_v1']  (['core_v1'])
+  ok   forbidden imports: 'import importlib\nm = importlib.import_mo' -> ['diag_a2']  (['diag_a2'])
+  ok   forbidden imports: '# import gm in a comment is text only\nim' -> []
+  ok   forbidden imports: the stub imports none
+  ok   S1: the identity date map reproduces the part alone exactly (max diff 0.0e+00)
+  ok   S1: p = share of placebo Sharpe ratios >= the part's; pass iff p < 0.05
+  ok   S3: tail_test(without, with) on 1975-2010 as run
+  ok   S4: rebuild = engine passes with 0 difference; x1.10 passes (mean 0.10, Sharpe 0); x1.20 fails on the mean  (({'eng_sr': 4.081062826567937, 'rb_sr': 4.081062826567937, 'eng_mean': 0.4018484492568729, 'rb_mean': 0.4018484492568729, 'n_eng': 405, 'n_rb': 405, 'n_common': 405, 'corr': 0.9999999999999999, 'rel_sr': 0.0, 'rel_mean': 0.0, 'pass': True}, {'eng_sr': 4.081062826567937, 'rb_sr': 4.081062826567937, 'eng_mean': 0.4018484492568729, 'rb_mean': 0.4420332941825602, 'n_eng': 405, 'n_rb': 405, 'n_common': 405, 'corr': 1.0, 'rel_sr': 0.0, 'rel_mean': 0.10000000000000003, 'pass': True}, {'eng_sr': 4.081062826567937, 'rb_sr': 4.081062826567938, 'eng_mean': 0.4018484492568729, 'rb_mean': 0.4822181391082476, 'n_eng': 405, 'n_rb': 405, 'n_common': 405, 'corr': 1.0, 'rel_sr': 2.176340961766225e-16, 'rel_mean': 0.20000000000000034, 'pass': False}))
+  ok   S4: each series over its own months (a shorter rebuild has fewer months and fewer common months)
+  ok   live: every held market has a free return -> PASS; one without -> FAIL naming it  ((['eq_us_spx', 'eq_gb_ftse', 'eq_jp_nikkei', 'eq_de_dax', 'bd_us_10y', 'bd_us_5y', 'bd_de_10y', 'st_de_2y', 'fx_jpy', 'fx_gbp', 'fx_aud', 'fx_cad', 'cm_wti', 'cm_gold', 'cm_copper', 'cm_natgas'], [('eq_us_spx', 'free return at 2010-12')]))
+  ok   live: value without its free V measure at 2010-12 -> FAIL
+  ok   alpha: against a zero book = the part's own mean, beta 0
+  ok   alpha: leave-one-out = gm.stats.alpha_boot on common window months
+  ok   S4 with a rebuild equal to the engine: PASS for all three parts
+  ok   the synthetic run has a non-empty Core book and at least one candidate that is not Core (both branches)  ({'trend': {'S1': True, 'S2': True, 'S3': True, 'LIVE': True}, 'carry': {'S1': False, 'S2': False, 'S3': False, 'LIVE': True}, 'value': {'S1': False, 'S2': False, 'S3': False, 'LIVE': True}})
+  ok   a candidate that is not Core takes the Incubator rule against Core book v1  (['carry', 'value'])
+  ok   report prints 'PARTS |'
+  ok   report prints 'PART | trend'
+  ok   report prints 'PART | econ'
+  ok   report prints 'S1 | trend'
+  ok   report prints 'S2 | carry'
+  ok   report prints 'S3 | value'
+  ok   report prints 'S4 | trend'
+  ok   report prints 'S4 REPORTED | carry_fx_v2'
+  ok   report prints 'LIVE | trend'
+  ok   report prints 'LOO | value'
+  ok   report prints 'VERDICT | trend'
+  ok   report prints 'INCUBATOR | econ'
+  ok   report prints 'CORE V1 VERDICT |'
+  ok   report prints 'selection inflation'
+  ok   report prints 'tuned knobs'
+  ok   verdicts: Core = S1 and S2 and S3 and S4 and live, per part
+  ok   S2: the verdict equals the direct mean of the 2x-cost part
+  ok   Core book v1 = the Core parts at equal risk (E9)
+  ok   Incubator: econ's T4 = t4_tail(Core book v1, econ)
+  ok   BOOK lines at k1 / k0 / d1 and P4 printed for a non-empty Core book
+  ok   trial row: family book, hash = cfg_hash(A1_INCUMBENT + core_parts), note names panel, parent, verdicts
+  ok   printing: every value printed with a month count has >= 60 months
+  ok   printing: no number with 5+ decimals
+  ok   empty branch: every part fails S4 -> CORE BOOK V1 EMPTY, no holdout, BASE 'no Core book'
+  ok   empty branch: Incubator lines read 'T4 not applicable' and the three failed candidates are tested too  (['INCUBATOR | trend | Trend (all classes) | T1 alpha 40.18 (405) %/yr, beta 0.00 (405), raw p 0.0000 (405) -> PASS | T2 alpha at 2x costs 39.18 (405) %/yr | T3 placebo share 0.000 PASS | T4 not applicable (empty Core book) | INCUBATOR', 'INCUBATOR | carry | Carry currencies v2 + energy | T1 alpha -5.66 (416) %/yr, beta 0.00 (416), raw p 1.0000 (416) -> FAIL | T2 alpha at 2x costs -6.55 (416) %/yr | T3 placebo share 0.300 FAIL | T4 not applicable (empty Core book) | SHELVED', 'INCUBATOR | value | Value equities | T1 alpha -3.29 (334) %/yr, beta 0.00 (334), raw p 0.9923 (334) -> FAIL | T2 alpha at 2x costs -3.43 (334) %/yr | T3 placebo share 1.000 FAIL | T4 not applicable (empty Core book) | SHELVED', 'INCUBATOR | econ | Economic trend | T1 alpha -1.88 (416) %/yr, beta 0.00 (416), raw p 0.8041 (416) -> FAIL | T2 alpha at 2x costs -2.68 (416) %/yr | T3 placebo share 0.900 FAIL | T4 not applicable (empty Core book) | SHELVED', 'INCUBATOR | carry_shadow | Carry currencies v1 + bonds | T1 alpha -12.54 (416) %/yr, beta 0.00 (416), raw p 1.0000 (416) -> FAIL | T2 alpha at 2x costs -12.81 (416) %/yr | T3 placebo share 1.000 FAIL | T4 not applicable (empty Core book) | SHELVED', 'INCUBATOR | value_shadow | Value bonds + currencies | T1 alpha -1.51 (416) %/yr, beta 0.00 (416), raw p 0.9044 (416) -> FAIL | T2 alpha at 2x costs -1.77 (416) %/yr | T3 placebo share 0.850 FAIL | T4 not applicable (empty Core book) | SHELVED'])
+  ok   empty branch: econ's T1 alpha is its own mean
+  ok   empty branch: trial row without Sharpe columns, note says EMPTY
+  ok   seal: planted values after 2010-12 change no printed line
+  ok   diag facts: the A3-empty report is accepted
+  ok   diag facts: a report without 'D2: closed' is refused
+  ok   diag facts: a report without DIAG JOB DONE is refused
+  ok   registered constants: config hashes and engine as the gm-2.2.1 entry
+  ok   job (PC layout): REBUILD_SHA unset -> STOP after the lib checks, before the store  (f14
+PASS engine gm-2.2.1 and config hashes A1_INCUMBENT 77374d7bef, A2_CHALLENGER 1faa343535, BASE f1d682c384, CANDIDATE 438a092b53 | registered gm-2.2.1, A1_INCUMBENT 77374d7bef, A2_CHALLENGER 1faa343535, BASE f1d682c384, CANDIDATE 438a092b53
+PASS lib a1_panel.py | sha256 eb9ef3f7fbd12760 | registered eb9ef3f7fbd12760
+PASS lib a2_batch.py | sha256 35339f673f351f43 | registered 35339f673f351f43
+PASS lib bbg_panel.py | sha256 e0b67a42793e67c1 | registered e0b67a42793e67c1
+PASS lib bbgdata.py | sha256 0b26bb21b50671dc | registered 0b26bb21b50671dc
+PASS lib core_v1.py | sha256 ee01320501fd1ec1 | registered ee01320501fd1ec1
+PASS lib diag_a2.py | sha256 3264a5381c13b124 | registered 3264a5381c13b124
+PASS lib gm_engine.py | sha256 ac43a33cd8943719 | registered ac43a33cd8943719
+STOP: REBUILD_SHA not registered (gm/CHANGES.md 'Core book v1' item 4e): the job is not ready to queue
+=== END === 0s
+)
+  ok   job: the stub registered -> rebuild sha and import scan PASS; no diag report -> STOP before the store  (b a2_batch.py | sha256 35339f673f351f43 | registered 35339f673f351f43
+PASS lib bbg_panel.py | sha256 e0b67a42793e67c1 | registered e0b67a42793e67c1
+PASS lib bbgdata.py | sha256 0b26bb21b50671dc | registered 0b26bb21b50671dc
+PASS lib core_v1.py | sha256 ee01320501fd1ec1 | registered ee01320501fd1ec1
+PASS lib diag_a2.py | sha256 3264a5381c13b124 | registered 3264a5381c13b124
+PASS lib gm_engine.py | sha256 ac43a33cd8943719 | registered ac43a33cd8943719
+PASS lib rebuild_s4.py | sha256 4bf94e8f7ebe9750 | registered 4bf94e8f7ebe9750
+PASS rebuild_s4.py imports none of gm, gm_engine, a1_panel, a2_batch, diag_a2, core_v1, bbgdata, bbg_panel | found: none
+PASS lib gm\trials.csv book / pod rows | 40 rows | digest 676b7b0f157cc6cc | registered 40 rows, 676b7b0f157cc6cc
+FAIL A2 report gm_a2_v1.txt: missing (gm_a2_v1.txt)
+STOP: the gm_a2_v1 report is not usable (missing (gm_a2_v1.txt))
+=== END === 0s
+)
+  ok   job: A2 report PASS, no diagnostics report -> STOP before the store  (b50671dc
+PASS lib core_v1.py | sha256 ee01320501fd1ec1 | registered ee01320501fd1ec1
+PASS lib diag_a2.py | sha256 3264a5381c13b124 | registered 3264a5381c13b124
+PASS lib gm_engine.py | sha256 ac43a33cd8943719 | registered ac43a33cd8943719
+PASS lib rebuild_s4.py | sha256 4bf94e8f7ebe9750 | registered 4bf94e8f7ebe9750
+PASS rebuild_s4.py imports none of gm, gm_engine, a1_panel, a2_batch, diag_a2, core_v1, bbgdata, bbg_panel | found: none
+PASS lib gm\trials.csv book / pod rows | 40 rows | digest 676b7b0f157cc6cc | registered 40 rows, 676b7b0f157cc6cc
+PASS A2 report gm_a2_v1.txt: ok | A2 VERDICT FAIL, A2-final book gm-2.0.4-candidate-x1 (77374d7bef)
+FAIL diagnostics report gm_diag_v1.txt: missing (gm_diag_v1.txt) | A3 empty (D1: candidate half blocked; D2: closed; D3: closed)
+STOP: the gm_diag_v1 report does not show the diagnostics run with A3 empty (missing (gm_diag_v1.txt))
+=== END === 0s
+)
+  ok   job: diagnostics report PASS (A3 empty), a non-LOCK_v2 store -> STOP before any value is read  (56 3264a5381c13b124 | registered 3264a5381c13b124
+PASS lib gm_engine.py | sha256 ac43a33cd8943719 | registered ac43a33cd8943719
+PASS lib rebuild_s4.py | sha256 4bf94e8f7ebe9750 | registered 4bf94e8f7ebe9750
+PASS rebuild_s4.py imports none of gm, gm_engine, a1_panel, a2_batch, diag_a2, core_v1, bbgdata, bbg_panel | found: none
+PASS lib gm\trials.csv book / pod rows | 40 rows | digest 676b7b0f157cc6cc | registered 40 rows, 676b7b0f157cc6cc
+PASS A2 report gm_a2_v1.txt: ok | A2 VERDICT FAIL, A2-final book gm-2.0.4-candidate-x1 (77374d7bef)
+PASS diagnostics report gm_diag_v1.txt: ok | A3 empty (D1: candidate half blocked; D2: closed; D3: closed)
+FAIL Bloomberg store lock id ef38aaebaaa80b051903760810c1d7494b628f16cd1edae320486874be90c6ba | registered LOCK_v2 d85a46cb2853646b24796f294f3ccab1d1507188c402e978fd59f5196ea41fc9
+STOP: the Bloomberg store is not LOCK_v2 (nothing read)
+=== END === 1s
+)
+  ok   job: a changed rebuild_s4.py stops it at the sha check  (_batch.py | sha256 35339f673f351f43 | registered 35339f673f351f43
+PASS lib bbg_panel.py | sha256 e0b67a42793e67c1 | registered e0b67a42793e67c1
+PASS lib bbgdata.py | sha256 0b26bb21b50671dc | registered 0b26bb21b50671dc
+PASS lib core_v1.py | sha256 ee01320501fd1ec1 | registered ee01320501fd1ec1
+PASS lib diag_a2.py | sha256 3264a5381c13b124 | registered 3264a5381c13b124
+PASS lib gm_engine.py | sha256 ac43a33cd8943719 | registered ac43a33cd8943719
+FAIL lib rebuild_s4.py | sha256 45e20506334544c7 | registered 4bf94e8f7ebe9750
+STOP: rebuild_s4.py differs from the registered rebuild
+=== END === 0s
+)
+  ok   job: a rebuild that imports gm stops it (not independent)  (c1
+PASS lib bbgdata.py | sha256 0b26bb21b50671dc | registered 0b26bb21b50671dc
+PASS lib core_v1.py | sha256 ee01320501fd1ec1 | registered ee01320501fd1ec1
+PASS lib diag_a2.py | sha256 3264a5381c13b124 | registered 3264a5381c13b124
+PASS lib gm_engine.py | sha256 ac43a33cd8943719 | registered ac43a33cd8943719
+PASS lib rebuild_s4.py | sha256 45e20506334544c7 | registered 45e20506334544c7
+FAIL rebuild_s4.py imports none of gm, gm_engine, a1_panel, a2_batch, diag_a2, core_v1, bbgdata, bbg_panel | found: gm
+STOP: the rebuild imports the engine or the job's libraries (not independent)
+=== END === 0s
+)
+  ok   job: a changed core_v1.py stops it at the hash check  (nel.py | sha256 eb9ef3f7fbd12760 | registered eb9ef3f7fbd12760
+PASS lib a2_batch.py | sha256 35339f673f351f43 | registered 35339f673f351f43
+PASS lib bbg_panel.py | sha256 e0b67a42793e67c1 | registered e0b67a42793e67c1
+PASS lib bbgdata.py | sha256 0b26bb21b50671dc | registered 0b26bb21b50671dc
+FAIL lib core_v1.py | sha256 84823ef07ed194d7 | registered ee01320501fd1ec1
+PASS lib diag_a2.py | sha256 3264a5381c13b124 | registered 3264a5381c13b124
+PASS lib gm_engine.py | sha256 ac43a33cd8943719 | registered ac43a33cd8943719
+STOP: lib file differs from the registered build: core_v1.py
+=== END === 0s
+)
+  ok   job output: no number with 5+ decimals
+  ok   job (C4): sys.dont_write_bytecode, so no .pyc is written under lib\ (lib modules and the gm package)
+
+Pre-B diagnostics (diag_preb 1.0.0, synthetic panels, mock LSEG store)
+  ok   R1 strip: month-end 1990-02 -> holding end 1990-04-02, contract 1 = June 1990, contract 8 = March 1992  ([(1990, 6), (1990, 9), (1990, 12), (1991, 3), (1991, 6), (1991, 9), (1991, 12), (1992, 3)])
+  ok   R1 strip: month-end 2010-11 -> holding end in January 2011 by calendar arithmetic, contract 1 = March 2011  ([(2011, 3), (2011, 6), (2011, 9), (2011, 12), (2012, 3), (2012, 6), (2012, 9), (2012, 12)])
+  ok   R1 ED code parse: <EDH0^9> = 1990-03, <EDZ2^8> = 1982-12, <EDZ0^1> = 2010-12, serial <EDG5^0> -> None
+  ok   R1: a strip linear in years to expiry has no curvature gap above cost: 0 qualifying, gate FAIL  ((1506, 0))
+  ok   R1: month-ends from 1990-01 to 2010-11; every K_n has a first normal; all eight priced on every weekday  ((Period('1990-01', 'M'), Period('2010-11', 'M'), (5480, 5480)))
+  ok   R1: month-long bends of 5 bp per contract qualify (same sign on d and d1, above cost): share > 0.5, PASS  (0.9960159362549801)
+  ok   R1 K2 at 1995-06-30: the library's gap = an independent brute force (strip, rates, normal by group)  ((np.float64(-383.4421650059248), np.float64(-383.4421650059248)))
+  ok   R1 K5 at 1995-06-30: the library's gap = an independent brute force (strip, rates, normal by group)  ((np.float64(-75.3302520634418), np.float64(-75.3302520634418)))
+  ok   R1 K7 at 1995-06-30: the library's gap = an independent brute force (strip, rates, normal by group)  ((np.float64(-64.75757806487206), np.float64(-64.75757806487206)))
+  ok   R1 cost: 2 x 0.5 x (2n + 4) / (n (n + 1)): K2 1.333, K7 0.321
+  ok   R1: a contract unchanged over the 20 days before a month-end leaves that month's triples out (stale)  (({'no normal': 0, 'strip missing on d': 0, 'strip missing on d1': 0, 'stale': 6}, {'no normal': 0, 'strip missing on d': 0, 'strip missing on d1': 0, 'stale': 0}))
+  ok   R1 (1.1.1 B4, reported): next days padded with the decision day's settlements (12 month-ends of 1995) are counted: 72 = 12 x 6 eligible triples; none on unpadded strips; the gate counts do not use it  ((72, 0, 0))
+  ok   R1 seal: days and values after 2010-12-31 change nothing
+  ok   F0 episodes: months 0..47 -> 1; gaps of 11 months -> 1; a gap of 12 starts a new one
+  ok   F0: 50 held months in 3 episodes judgeable; 49 held months... 47 + 2 = 49 >= 48 too; 47 alone not
+  ok   card 1 R5: a 30% GBP fall triggers GBP at G 15 in its month (6-month change <= median - 15)
+  ok   card 1 R5 trigger by hand equals the library
+  ok   card 1 R5: the GBP stock leg is held from the trigger to 12 months after the last trigger, then flat; the bond leg only in the 'stocks and bond' versions (half the versions)  ((Period('1993-03', 'M'),))
+  ok   card 1 R5: no trigger in months with fewer than three currencies with data
+  ok   C1-D1: episodes of the condition months (G 10, any currency) by the 12-month rule  ({'condition_months': 6, 'episodes': 1, 'pass': False, 'outcome': 'analyst watch condition'})
+  ok   C1-D2: the stock-leg share = GBP stock-months / all held stock-months (book long FTSE only); bond leg 0  ({'stock': {'share': 1.0, 'n': 18, 'drop': True}, 'bond': {'share': 0.0, 'n': 18, 'drop': False}})
+  ok   C2-D1: pooled low-rate / other worst-fifth bond means by hand  ({'n_low': 190, 'n_other': 245, 'mean_low': -0.0006893643167681943, 'mean_other': 0.0009234484152103256, 'pass': True})
+  ok   C2-D1 gate by hand
+  ok   C2-D1: bonds that lose in low-rate stock falls and gain otherwise -> PASS
+  ok   card 3 R4: on while E - TB3MS < B; short; starts at the first EPS month
+  ok   C3-D1: a book always short the S&P -> share 1.0 -> dropped before B2; always long -> 0 -> kept  ({'share': 1.0, 'n': 146, 'outcome': 'dropped before B2'})
+  ok   card 4 R1: the six versions sum to 3 per entry above last year's close, 0 below (form A + B + C = 1 + 0 - 1, an exact cancellation), over (entry, last day <= 15 January]
+  ok   card 4 R1: the direction sum is an exact integer per day (cancellation is exact)
+  ok   F0 (entry correction of item 5 F0 g): card 4 R2 and R4 have one episode; R1's episodes follow the years the averaged rule is non-zero (data-dependent)  ([10, 1, 1])
+  ok   card 4 R2: before the June 1995 expiry the window sum is 4 (all versions) on the last 12 days and the X+1 day holds 2 (two exit-next-day versions)  ([0, 2, 2, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4])
+  ok   card 4 R4: d = 3 holds the month-to-date sign from T-3 to day 3 of the next month (by hand)
+  ok   card 5 R1 triggers: new high over every earlier value, at least 120 earlier values (by hand)  ((14,))
+  ok   card 5 R1: copper held 36 months after its last trigger (H 36 versions), at half size 25-36 months after (only the H 36 versions)
+  ok   C5-D1: share of held market-months with the four 12-month Trend versions long by average sign (by hand)  ((0.49159663865546216, np.float64(0.49159663865546216)))
+  ok   C5-D2 breaks: first trigger after 12 months without one, to 2008-12; higher = P(t+24) > P(t)
+  ok   C5-D2 gate: fewer than 10 breaks in a class -> FAIL whatever the shares  (({'breaks': 1, 'higher': 1, 'no_outcome': 0, 'share': 1.0}, {'breaks': 1, 'higher': 1, 'no_outcome': 0, 'share': 1.0}))
+  ok   card inputs: WTISPLC at lag 1 (the value used at t is month t-1); FEDFUNDS lag 0
+  ok   card inputs: a daily series enters as the mean of the month's daily values (VIXCLS, lag 0)
+  ok   card inputs: CPILFESL 12-month change from two first-release values at lag 1 (2005-06 uses 2005-05 / 2004-05)
+  ok   card inputs: before the first vintage (1996-12) the change uses latest values, flagged
+  ok   card inputs: the planted PCEPILFE rebase (2003-11) is the only break; changes whose window holds it use latest values, flagged; later ones are first release again
+  ok   card inputs: UNRATE level at lag 1, first release from 1960-03, latest (flagged) before
+  ok   card inputs seal: values dated after 2010-12-31 are dropped on parsing
+  ok   card inputs lock: files that differ from LOCK_CARD_v1 are refused before any value is parsed
+  ok   card inputs lock (real files from git, hashes only, no value used): the registered files pass with lock id 6c154f7d...; one changed byte is refused
+  ok   card 1 R3 (1.1.1 B1): spread median / 33.3rd percentile over BAA - GS10 from its first month (1953-04, before the panel's 1960-01), numpy linear; the panel-cut window gives another value  ((Period('1953-04', 'M'), Period('1960-01', 'M')))
+  ok   card 2 R1 bar b (1.1.1 B2): 33.3rd percentile of y from y's first month (1958-02), first once 120 values exist (1968-01, not 1969-12 as on the panel's months)  ((Period('1958-02', 'M'), Period('1968-01', 'M')))
+  ok   card 2 R2 labour gate (1.1.1 B3): lowest of the 240 prior lagged UNRATE values on UNRATE's own months (from 1948-02 at lag 1) -> first 1968-02, so the gate exists in 1975-79 (on the panel's months it began 1980-01)  ((Period('1948-02', 'M'), Period('1968-02', 'M')))
+  ok   card 1 R1: a condition month satisfies oil, dollar and rate all above their level L months ago (by hand)  (1980-05)
+  ok   card 1 R4: state at 4.5 = core CPI change > 4.5 and FEDFUNDS below it (by hand); R4 legs short bonds, B adds short S&P and a long basket  (1975-01)
+  ok   card 1 R4: no tail (held months = state months with a volatility)
+  ok   C2-D2: on-months, episodes and the share inside card 1 R4's 4.5 state by hand; kept = >= 24, >= 3 and <= 2/3
+  ok   C3-D2: gate-off months (FEDFUNDS 12-month range < 0.50, 1975-2010) by hand; gate kept iff >= 60
+  ok   card 3 R1: 16 versions with the gate (8 without); R2 long 2-year / short 10-year at D2 / D10
+  ok   card 3 fixed size: a notional is fixed at the first month of a same-direction run  ([0.0, 2.0, 2.0, 2.0, -5.0, -5.0, 0.0, 8.0])
+  ok   card 4 R5: version 1 on while core CPI's change is below its value 6 months earlier (by hand); version 2 inside version 1
+  ok   C4-D2: card 3 R2 always on and Trend always long 2-year / short 10-year -> both shares 1.0, R5 not registered; never -> R5 stays
+  ok   C4-D1: three windows; gate = all three median ratios >= 1.25
+  ok   lseg_lock_of: reads the lock id from the manifest and LOCK before any table
+  ok   lseg_lock_of: LOCK not matching the manifest -> None
+  ok   LsegView: three quarterly ED contracts parsed (serial G5 dropped); daily series equal the stored values; monthly on a Period index  ([(1981, 12), (1982, 3), (1982, 6)])
+  ok   LsegView: an as-of date after 2010-12-31 is refused (sealed)
+  ok   LsegView (correction 2): a held-back (untouched) instrument such as London cocoa is hidden
+  ok   report: every registered line is printed and nothing is BLOCKED (1.1.0)
+  ok   report: the R1 gate equals r1() on the same inputs
+  ok   report printing: no number with 5+ decimals
+  ok   report printing: values under 60 months appear as count and sign only
+  ok   trial rows: 12 diag rows, no Sharpe column, ids R1..F0, LSEG lock in the note; 1.1.1 B5: LOCK_CARD_v1 id in config and note
+  ok   report seal: values dated after 2010-12 (panel, FX, rates, LSEG monthly and daily, card inputs) change no line
+  ok   report seal (1.1.1 B6): a card-input observation dated after 2010-12-31 stops the report (gm/seal check_output on the card inputs by observation date)
+  ok   job (PC layout): gm code, engine_ref, config hashes, 10 lib files and the trial-log digest PASS (12 'PASS lib' lines); no A2 report -> STOP before any store  (, A2_CHALLENGER 1faa343535, BASE f1d682c384, CANDIDATE 438a092b53 | registered gm-2.2.1, A1_INCUMBENT 77374d7bef, A2_CHALLENGER 1faa343535, BASE f1d682c384, CANDIDATE 438a092b53
+PASS lib a1_panel.py | sha256 eb9ef3f7fbd12760 | registered eb9ef3f7fbd12760
+PASS lib a2_batch.py | sha256 35339f673f351f43 | registered 35339f673f351f43
+PASS lib bbg_panel.py | sha256 e0b67a42793e67c1 | registered e0b67a42793e67c1
+PASS lib bbgdata.py | sha256 0b26bb21b50671dc | registered 0b26bb21b50671dc
+PASS lib card_inputs.py | sha256 4091f84bcbb11f43 | registered 4091f84bcbb11f43
+PASS lib diag_a2.py | sha256 3264a5381c13b124 | registered 3264a5381c13b124
+PASS lib diag_preb.py | sha256 2e9cadd9d41250b8 | registered 2e9cadd9d41250b8
+PASS lib gm_engine.py | sha256 ac43a33cd8943719 | registered ac43a33cd8943719
+PASS lib lseg_rules.py | sha256 5686999172a22c76 | registered 5686999172a22c76
+PASS lib lsegdata.py | sha256 0d1b500ddb2e931a | registered 0d1b500ddb2e931a
+PASS lib gm\trials.csv book / pod rows | 41 rows | digest f200d02ce574f002 | registered 41 rows, f200d02ce574f002
+FAIL A2 report gm_a2_v1.txt: missing (gm_a2_v1.txt)
+STOP: the gm_a2_v1 report is not usable (missing (gm_a2_v1.txt))
+=== END === 0s
+)
+  ok   job: A2 and diagnostics reports PASS, no Core book v1 report -> STOP before any store  (256 0b26bb21b50671dc | registered 0b26bb21b50671dc
+PASS lib card_inputs.py | sha256 4091f84bcbb11f43 | registered 4091f84bcbb11f43
+PASS lib diag_a2.py | sha256 3264a5381c13b124 | registered 3264a5381c13b124
+PASS lib diag_preb.py | sha256 2e9cadd9d41250b8 | registered 2e9cadd9d41250b8
+PASS lib gm_engine.py | sha256 ac43a33cd8943719 | registered ac43a33cd8943719
+PASS lib lseg_rules.py | sha256 5686999172a22c76 | registered 5686999172a22c76
+PASS lib lsegdata.py | sha256 0d1b500ddb2e931a | registered 0d1b500ddb2e931a
+PASS lib gm\trials.csv book / pod rows | 41 rows | digest f200d02ce574f002 | registered 41 rows, f200d02ce574f002
+PASS A2 report gm_a2_v1.txt: ok
+PASS diagnostics report gm_diag_v1.txt: ok
+FAIL Core book v1 report gm_core_v1.txt: missing (gm_core_v1.txt)
+STOP: the gm_core_v1 report is not usable (missing (gm_core_v1.txt)): 7.5 order item 3 runs after Core book v1
+=== END === 0s
+)
+  ok   job: Core book v1 report PASS; a non-LOCK_v2 Bloomberg store -> STOP before any value is read (LSEG not opened)  (registered 4091f84bcbb11f43
+PASS lib diag_a2.py | sha256 3264a5381c13b124 | registered 3264a5381c13b124
+PASS lib diag_preb.py | sha256 2e9cadd9d41250b8 | registered 2e9cadd9d41250b8
+PASS lib gm_engine.py | sha256 ac43a33cd8943719 | registered ac43a33cd8943719
+PASS lib lseg_rules.py | sha256 5686999172a22c76 | registered 5686999172a22c76
+PASS lib lsegdata.py | sha256 0d1b500ddb2e931a | registered 0d1b500ddb2e931a
+PASS lib gm\trials.csv book / pod rows | 41 rows | digest f200d02ce574f002 | registered 41 rows, f200d02ce574f002
+PASS A2 report gm_a2_v1.txt: ok
+PASS diagnostics report gm_diag_v1.txt: ok
+PASS Core book v1 report gm_core_v1.txt: ok
+FAIL Bloomberg store lock id ef38aaebaaa80b051903760810c1d7494b628f16cd1edae320486874be90c6ba | registered LOCK_v2 d85a46cb2853646b24796f294f3ccab1d1507188c402e978fd59f5196ea41fc9
+STOP: the Bloomberg store is not LOCK_v2 (nothing read)
+=== END === 0s
+)
+  ok   job: a changed diag_preb.py stops it at the hash check  (sha256 0b26bb21b50671dc | registered 0b26bb21b50671dc
+PASS lib card_inputs.py | sha256 4091f84bcbb11f43 | registered 4091f84bcbb11f43
+PASS lib diag_a2.py | sha256 3264a5381c13b124 | registered 3264a5381c13b124
+FAIL lib diag_preb.py | sha256 01ea79d9c9c97d77 | registered 2e9cadd9d41250b8
+PASS lib gm_engine.py | sha256 ac43a33cd8943719 | registered ac43a33cd8943719
+PASS lib lseg_rules.py | sha256 5686999172a22c76 | registered 5686999172a22c76
+PASS lib lsegdata.py | sha256 0d1b500ddb2e931a | registered 0d1b500ddb2e931a
+STOP: lib file differs from the registered build: diag_preb.py
+=== END === 0s
+)
+  ok   job output: no number with 5+ decimals
+  ok   job: no .pyc written under lib\
+
+Batch B1 Curve carry (b1_curve 1.0.1, mock LSEG store)
+  ok   table: Datastream L14 contract <CN5^8> parsed (decade digit 8 -> 1985), its month-end values equal the invented ones
+  ok   table: a contract code in a non-L14/L16 file, an invalid block, a duplicate and a TR. date field are ignored
+  ok   table: Brent prefers the HistoricalPricing form (L16) over the Datastream twin
+  ok   table: NG contract 1998-05 rebuilt from continuous positions by lseg_rules.held_contract equals the invented contract wherever identified (24 months)
+  ok   table: observed NG expiries mapped to their deliveries (c1 / c2 TR.ExpiryDate = the rule day here)
+  ok   legs: corn 1986-01 front = nearest delivery >= 1986-04 priced (by hand), far = front + 12
+  ok   legs: backwardation state B = front settles above far
+  ok   legs: a front without a priced 12-month contract gives no pair (platinum months 444)
+  ok   legs: the planted equal month-end settlement (corn front 1990-03, at 1989-12) is stale; no score there
+  ok   legs: with the registered front rule (>= 3 months) no calendar exclusion bites on the mock
+  ok   legs: the calendar exclusion bites where a leg's last trading day falls in the holding month (WTI with a 2-month front: delivery (2001, 5), LTD 2001-04-20)
+  ok   returns: spread return of 1986-02 = far minus front return of the pair chosen at 1986-01 (by hand)
+  ok   sizing: eligible (slow part) from the 36th spread return on
+  ok   sizing: start t0 = first month with >= 8 of 16 eligible (1990-01)
+  ok   sizing: version positions s x 0.40 / v / n at 1995-06 by hand; V2 zero where backwardated; pod = mean
+  ok   book: block scaler, active months and book scaler recomputed independently
+  ok   book: E11 joint cap, legs equal and opposite, |leg| <= 0.1 x 0.1 x 3 / front-leg vol; 1827 binding market-months
+  ok   book: 5x gross cap holds
+  ok   book: contract-space costs by hand (5 roll months and 5 same-contract months checked; roll = |a| + |b|)
+  ok   book: gross = legs at t-1 x leg returns at t; net = gross - cost(t-1)
+  ok   T1: alpha against a zero book = the pod's mean (202 window months)
+  ok   T3: the identity date map reproduces the pod exactly (one code path)
+  ok   T3 (1.0.1 M1): on a mock with gaps (34 wheat window months without a pair) no placebo position lands on a month the pod cannot hold; the identity map still reproduces the pod
+  ok   T3: placebo runs give 12 Sharpe ratios and a share in [0, 1]
+  ok   truncation: the pod rebuilt with observations after T removed equals the full run for months <= T (4 cut dates on the mock)  ({'1980-06-30': [], '1989-06-30': [], '1998-06-30': [], '2010-12-31': []})
+  ok   truncation control: a planted look-ahead (next month's volatility) FAILS the gate
+  ok   calendar: the last trading day is the observed expiry where LSEG shows one, else the rule; first notice by the rule
+  ok   seal: observations dated after 2010-12-31 change nothing
+  ok   store: lseg_lock_of reads the lock first; load_design on a mini lsegdata store gives the same table
+  ok   report: every registered line printed
+  ok   report: verdict is Incubator or Shelved (window >= 120 on the mock)
+  ok   report printing: no number with 5+ decimals
+  ok   report printing: values under 60 months appear as count and sign only
+  ok   trial rows (1.0.1 M2): a column over fewer than 60 months is empty (mock: 1975-89 has 0 window months)
+  ok   trial rows: one pod row with Sharpe columns, one diag row without; LSEG lock in the note
+  ok   job (PC layout): gm code, engine_ref, config hashes, 9 lib files, 5 LSEG config lists and the trial-log digest PASS (16 'PASS lib' lines); no A2 report -> STOP before any store  ( b1_curve.py | sha256 2f5b859c359c9caa | registered 2f5b859c359c9caa
+PASS lib bbg_panel.py | sha256 e0b67a42793e67c1 | registered e0b67a42793e67c1
+PASS lib bbgdata.py | sha256 0b26bb21b50671dc | registered 0b26bb21b50671dc
+PASS lib diag_a2.py | sha256 3264a5381c13b124 | registered 3264a5381c13b124
+PASS lib gm_engine.py | sha256 ac43a33cd8943719 | registered ac43a33cd8943719
+PASS lib lseg_engine_map.csv | sha256 8812f20d4d6dadcb | registered 8812f20d4d6dadcb
+PASS lib lseg_exclusions.csv | sha256 8e2ca054128ce420 | registered 8e2ca054128ce420
+PASS lib lseg_live_sources.csv | sha256 37e42068a8ae7f36 | registered 37e42068a8ae7f36
+PASS lib lseg_roots.csv | sha256 7a8caf01fbc70108 | registered 7a8caf01fbc70108
+PASS lib lseg_rules.py | sha256 5686999172a22c76 | registered 5686999172a22c76
+PASS lib lseg_untouched.csv | sha256 17ec5fb38c2cc3b3 | registered 17ec5fb38c2cc3b3
+PASS lib lsegdata.py | sha256 0d1b500ddb2e931a | registered 0d1b500ddb2e931a
+PASS lib gm\trials.csv book / pod rows | 41 rows | digest f200d02ce574f002 | registered 41 rows, f200d02ce574f002
+FAIL A2 report gm_a2_v1.txt: missing (gm_a2_v1.txt)
+STOP: the gm_a2_v1 report is not usable (missing (gm_a2_v1.txt))
+=== END === 0s
+)
+  ok   job: A2 and Core book v1 reports PASS, no pre-B report -> STOP before any store  (istered 8812f20d4d6dadcb
+PASS lib lseg_exclusions.csv | sha256 8e2ca054128ce420 | registered 8e2ca054128ce420
+PASS lib lseg_live_sources.csv | sha256 37e42068a8ae7f36 | registered 37e42068a8ae7f36
+PASS lib lseg_roots.csv | sha256 7a8caf01fbc70108 | registered 7a8caf01fbc70108
+PASS lib lseg_rules.py | sha256 5686999172a22c76 | registered 5686999172a22c76
+PASS lib lseg_untouched.csv | sha256 17ec5fb38c2cc3b3 | registered 17ec5fb38c2cc3b3
+PASS lib lsegdata.py | sha256 0d1b500ddb2e931a | registered 0d1b500ddb2e931a
+PASS lib gm\trials.csv book / pod rows | 41 rows | digest f200d02ce574f002 | registered 41 rows, f200d02ce574f002
+PASS A2 report gm_a2_v1.txt: ok
+PASS Core book v1 report gm_core_v1.txt: ok
+FAIL pre-B report gm_diag_preb_v1.txt: missing (gm_diag_preb_v1.txt)
+STOP: the gm_diag_preb_v1 report is not usable (missing (gm_diag_preb_v1.txt)): 7.6 step 8 runs after step 7
+=== END === 0s
+)
+  ok   job: pre-B report PASS; no Bloomberg store -> STOP before any value is read (LSEG not opened)  (ne_map.csv | sha256 8812f20d4d6dadcb | registered 8812f20d4d6dadcb
+PASS lib lseg_exclusions.csv | sha256 8e2ca054128ce420 | registered 8e2ca054128ce420
+PASS lib lseg_live_sources.csv | sha256 37e42068a8ae7f36 | registered 37e42068a8ae7f36
+PASS lib lseg_roots.csv | sha256 7a8caf01fbc70108 | registered 7a8caf01fbc70108
+PASS lib lseg_rules.py | sha256 5686999172a22c76 | registered 5686999172a22c76
+PASS lib lseg_untouched.csv | sha256 17ec5fb38c2cc3b3 | registered 17ec5fb38c2cc3b3
+PASS lib lsegdata.py | sha256 0d1b500ddb2e931a | registered 0d1b500ddb2e931a
+PASS lib gm\trials.csv book / pod rows | 41 rows | digest f200d02ce574f002 | registered 41 rows, f200d02ce574f002
+PASS A2 report gm_a2_v1.txt: ok
+PASS Core book v1 report gm_core_v1.txt: ok
+PASS pre-B report gm_diag_preb_v1.txt: ok
+STOP: checks failed: FileNotFoundError at bbgdata.py:929 __init__ <- gm_b1_v1.py:157 <module>
+=== END === 0s
+)
+  ok   job: a changed b1_curve.py stops it at the hash check  ( | registered 8812f20d4d6dadcb
+PASS lib lseg_exclusions.csv | sha256 8e2ca054128ce420 | registered 8e2ca054128ce420
+PASS lib lseg_live_sources.csv | sha256 37e42068a8ae7f36 | registered 37e42068a8ae7f36
+PASS lib lseg_roots.csv | sha256 7a8caf01fbc70108 | registered 7a8caf01fbc70108
+PASS lib lseg_rules.py | sha256 5686999172a22c76 | registered 5686999172a22c76
+PASS lib lseg_untouched.csv | sha256 17ec5fb38c2cc3b3 | registered 17ec5fb38c2cc3b3
+PASS lib lsegdata.py | sha256 0d1b500ddb2e931a | registered 0d1b500ddb2e931a
+STOP: lib file differs from the registered build: b1_curve.py
+=== END === 0s
+)
+  ok   job output: no number with 5+ decimals
+  ok   job: no .pyc written under lib\
+
+Batch B2 (b2_batch 1.0.0, mock LSEG strips)
+  ok   strip code parse: ED / FEI quarterly with the decade digit; serial and other roots refused
+  ok   strip catalog filter: only DS daily ok primary quarterly codes (HP form, invalid, monthly, duplicate refused)
+  ok   weights: level-neutral (sum 0) and w . r = the measure (S_n, K_n) on random strips
+  ok   gate levels: 2 x 0.5 x A (K_n = diag_preb.r1_cost, S_n = 2 / n)
+  ok   identity (entry 9a): b2's own strip, normals, stale screen and next-day measures give diag_preb.r1's counts  (([], 1506, 1506))
+  ok   volatility identity (entry 4i): quadratic forms = gm.vol.estimate on the q series (rel diff 3.2e-15); the 0.25 screen cannot bind
+  ok   leg-cap volatility of slot 3 = the unit-vector quadratic form
+  ok   starts: ED 1990-01 (normals from 1981-12 + 60 months), FEI after its 60-month normals (>= 2003-12)  ((Period('1990-01', 'M'), Period('2003-12', 'M')))
+  ok   window: first scaled test month about 48 months after 1990-01, last 2010-11, >= 120 months  ((Period('1994-03', 'M'), Period('2010-11', 'M'), 201))
+  ok   version position by hand (FEI, version A, 2006-06): 0.40 / sigma(q) x q / n_c, n_c = 2  ((array([-4.70603832,  2.0978725 ,  2.0978725 ,  2.0978725 , -1.30408291,
+        1.41748142, -0.85048885, -0.85048885]), array([-4.70603832,  2.0978725 ,  2.0978725 ,  2.0978725 , -1.30408291,
+        1.41748142, -0.85048885, -0.85048885])))
+  ok   pod = mean of the two versions
+  ok   strip-vector cap (E11): one factor for the whole currency vector (level neutrality kept)
+  ok   gross cap 5x at 0.25 / 1.9 per contract never exceeded
+  ok   contract-level trades by hand (a strip roll moves notional between contracts)  ([3.0, 5.0, 3.0])
+  ok   cost per unit 0.125 bp of notional (0.5 bp of rate x 0.25); net = gross - c x cost(t-1)
+  ok   slot return by hand: contract 3 of the 1995-02 strip from the first NYSE day of 1995-03 to that of 1995-04
+  ok   Strip placebo: the identity map reproduces the pod
+  ok   Strip placebo mask (CHECK_B1 M1 lesson): moved scores never hold Euribor in a month without its strip, nor any score on an invalid (root, measure, month)
+  ok   M1 (1.0.1): a stale stretch of the dollar strip leaves the window contiguous (201 months = span 201)  ((201, 201))
+  ok   M1: flat months (no contract held) earn gross 0 and net = - cost of the month before (14 flat)
+  ok   M1: the identity map over the window's span reproduces the pod
+  ok   M1: the report prints the flat-month DATA line (contiguous, flat months counted)
+  ok   M1: an interior gap in the window raises WindowGap (the job STOPs)  (True)
+  ok   E3 by hand: one third at a run's first month, full once the cumulative return times the direction > 0  ([0.0, 0.3333333333333333, 0.3333333333333333, 1.0, 0.0, 0.3333333333333333, 1.0, 0.0])
+  ok   fixed size by hand: notional 0.40 / V and h fixed at the run's first month
+  ok   fixed leg (diag_preb fixed_runs) by hand  ([0.0, 2.0, 2.0, 2.0, 0.0, 0.8, 0.8, 0.0])
+  ok   rule test return = 0.10 / 0.40 x (k = 1 gross - cost(t-1)), book.run costs
+  ok   card 1 R1: 16 versions (8 x E1 / E3); card 1 R2 16; R5 8; card 2 2 + 2; card 3 4 + 4; card 4 R1 6, R3 2, R5 2 (62)  ([16, 16, 8, 2, 2, 4, 4, 6, 2, 2])
+  ok   card 4: a fully held month pays book.run's monthly roll charge pro rata (sum = |pos| x 2 x 4 / 12 x ow)
+  ok   card 4 costs by hand: one-way at every entry and exit close, roll pro rata per held day (net = gross - cost)
+  ok   identity (entry 9b): the eight non-card-2 B2 base layers = diag_preb 1.1.1 positions; full positions keep signs and held months  ({'card 2 R1': 'base vs diag_preb max rel diff 1.0e+00; full positions same signs and held months as the base layer: yes; C2-D2 keeps OTHER versions', 'card 2 R2': 'base vs diag_preb max rel diff 1.0e+00; full positions same signs and held months as the base layer: yes; C2-D2 keeps OTHER versions'})
+  ok   identity: card 2 is flagged exactly when the data's C2-D2 keeps other versions than the registered ones (mock keeps {'card 2 R1': [], 'card 2 R2': []})
+  ok   identity, card 2 per version: with all four versions kept, the B2 base = diag_preb.card2_rule
+  ok   rule placebo: the identity map reproduces the rule
+  ok   rule placebo mask: moved directions never hold a market in months without its volatility
+  ok   card 4 placebo: each window moved inside its entry's calendar year, length in NYSE days kept (cut at the seal)
+  ok   seal: values planted after 2010-12 change no Strip or rule return
+  ok   truncation (entry 10): every B2 path at 2 cut dates, 0 differing cells  (['B2 TRUNC 1993-12-31 | stages 258 | differing: none | PASS', 'B2 TRUNC 2007-06-30 | stages 258 | differing: none | PASS'])
+  ok   truncation controls: next month's volatility (card 1 R1) and a normal with the next month-end (Strip) FAIL
+  ok   report: every registered line present
+  ok   report: every judged rule has T1, T3, falsifier and loss-flag lines (5 judged on the mock)
+  ok   report: verdict words only Incubator / Shelved / not judgeable / insufficient data
+  ok   M2 (1.0.1): card 4 R1 falsifier n = calendar months spanned by the held days (value only over >= 60 months; days printed as a count)  (["FALSIFIER | card 4 R1 | mean e(d) over form A's held days | oct entry: big years n 23, sign + (424 days) vs other years 6.52 (85) (1532 days) %/yr does not hold | dec entry: big years n 18, sign + (196 days) vs other years n 54, sign + (602 days) %/yr holds"])
+  ok   M2: card 4 R3 falsifier n = months spanned  (['FALSIFIER | card 4 R3 | mean e(d) over held days of gated windows 10.82 (64) %/yr (672 days) | holds (zero or more)'])
+  ok   report printing: no number with 5+ decimals
+  ok   report printing: values under 60 months appear as count and sign only
+  ok   trial rows: 13 (11 pod with Sharpe columns where judged, 2 diag); locks in the note
+  ok   job (PC layout): gm code, engine_ref, config hashes, 11 lib files, 5 LSEG config lists and the trial-log digest PASS (18 'PASS lib' lines); no A2 report -> STOP before any store  ( | sha256 eb9ef3f7fbd12760 | registered eb9ef3f7fbd12760
+PASS lib a2_batch.py | sha256 35339f673f351f43 | registered 35339f673f351f43
+PASS lib b2_batch.py | sha256 b16b68a44295b59a | registered b16b68a44295b59a
+PASS lib bbg_panel.py | sha256 e0b67a42793e67c1 | registered e0b67a42793e67c1
+PASS lib bbgdata.py | sha256 0b26bb21b50671dc | registered 0b26bb21b50671dc
+PASS lib card_inputs.py | sha256 4091f84bcbb11f43 | registered 4091f84bcbb11f43
+PASS lib diag_a2.py | sha256 3264a5381c13b124 | registered 3264a5381c13b124
+PASS lib diag_preb.py | sha256 2e9cadd9d41250b8 | registered 2e9cadd9d41250b8
+PASS lib gm_engine.py | sha256 ac43a33cd8943719 | registered ac43a33cd8943719
+PASS lib lseg_engine_map.csv | sha256 8812f20d4d6dadcb | registered 8812f20d4d6dadcb
+PASS lib lseg_exclusions.csv | sha256 8e2ca054128ce420 | registered 8e2ca054128ce420
+PASS lib lseg_live_sources.csv | sha256 37e42068a8ae7f36 | registered 37e42068a8ae7f36
+PASS lib lseg_roots.csv | sha256 7a8caf01fbc70108 | registered 7a8caf01fbc70108
+PASS lib lseg_rules.py | sha256 5686999172a22c76 | registered 5686999172a22c76
+PASS lib lseg_untouched.csv | sha256 17ec5fb38c2cc3b3 | registered 17ec5fb38c2cc3b3
+PASS lib lsegdata.py | sha256 0d1b500ddb2e931a | registered 0d1b500ddb2e931a
+PASS lib gm\trials.csv book / pod rows | 42 rows | digest 4fd1775ecdbf4bf0 | registered 42 rows, 4fd1775ecdbf4bf0
+FAIL A2 report gm_a2_v1.txt: missing (gm_a2_v1.txt)
+STOP: the gm_a2_v1 report is not usable (missing (gm_a2_v1.txt))
+=== END === 0s
+)
+  ok   job: A2 and Core reports PASS, no pre-B report -> STOP before any store  (red 8812f20d4d6dadcb
+PASS lib lseg_exclusions.csv | sha256 8e2ca054128ce420 | registered 8e2ca054128ce420
+PASS lib lseg_live_sources.csv | sha256 37e42068a8ae7f36 | registered 37e42068a8ae7f36
+PASS lib lseg_roots.csv | sha256 7a8caf01fbc70108 | registered 7a8caf01fbc70108
+PASS lib lseg_rules.py | sha256 5686999172a22c76 | registered 5686999172a22c76
+PASS lib lseg_untouched.csv | sha256 17ec5fb38c2cc3b3 | registered 17ec5fb38c2cc3b3
+PASS lib lsegdata.py | sha256 0d1b500ddb2e931a | registered 0d1b500ddb2e931a
+PASS lib gm\trials.csv book / pod rows | 42 rows | digest 4fd1775ecdbf4bf0 | registered 42 rows, 4fd1775ecdbf4bf0
+PASS A2 report gm_a2_v1.txt: ok
+PASS report gm_core_v1.txt: ok
+FAIL report gm_diag_preb_v1.txt: missing (gm_diag_preb_v1.txt)
+STOP: the gm_diag_preb_v1.txt report is not usable (missing (gm_diag_preb_v1.txt)): B2's contents are the registered pre-B outcomes
+=== END === 0s
+)
+  ok   job: a pre-B report without the registered outcomes -> STOP  ( ok
+FAIL report gm_diag_preb_v1.txt: PRE-B SUMMARY lacks: C2-D1: FAIL; C2-D2: R1 2 of 4 versions kept, R2 2 of 4 versions kept; C4-D1: FAIL; C4-D2: R5 stays; C5-D2: FAIL; card 1 R1 judged in B2; card 1 R2 judged in B2; card 1 R5 judged in B2; card 2 R1 judged in B2; card 2 R2 judged in B2; card 3 R2 judged in B2; card 3 R4 judged in B2; card 4 R1 judged in B2; card 4 R3 judged in B2; card 4 R5 judged in B2
+STOP: the gm_diag_preb_v1.txt report is not usable (PRE-B SUMMARY lacks: C2-D1: FAIL; C2-D2: R1 2 of 4 versions kept, R2 2 of 4 versions kept; C4-D1: FAIL; C4-D2: R5 stays; C5-D2: FAIL; card 1 R1 judged in B2; card 1 R2 judged in B2; card 1 R5 judged in B2; card 2 R1 judged in B2; card 2 R2 judged in B2; card 3 R2 judged in B2; card 3 R4 judged in B2; card 4 R1 judged in B2; card 4 R3 judged in B2; card 4 R5 judged in B2): B2's contents are the registered pre-B outcomes
+=== END === 0s
+)
+  ok   job: the real pre-B report PASSES (entry 9d); no B1 report -> STOP  (f20d4d6dadcb
+PASS lib lseg_exclusions.csv | sha256 8e2ca054128ce420 | registered 8e2ca054128ce420
+PASS lib lseg_live_sources.csv | sha256 37e42068a8ae7f36 | registered 37e42068a8ae7f36
+PASS lib lseg_roots.csv | sha256 7a8caf01fbc70108 | registered 7a8caf01fbc70108
+PASS lib lseg_rules.py | sha256 5686999172a22c76 | registered 5686999172a22c76
+PASS lib lseg_untouched.csv | sha256 17ec5fb38c2cc3b3 | registered 17ec5fb38c2cc3b3
+PASS lib lsegdata.py | sha256 0d1b500ddb2e931a | registered 0d1b500ddb2e931a
+PASS lib gm\trials.csv book / pod rows | 42 rows | digest 4fd1775ecdbf4bf0 | registered 42 rows, 4fd1775ecdbf4bf0
+PASS A2 report gm_a2_v1.txt: ok
+PASS report gm_core_v1.txt: ok
+PASS report gm_diag_preb_v1.txt: ok
+FAIL report gm_b1_v1.txt: missing (gm_b1_v1.txt)
+STOP: the gm_b1_v1.txt report is not usable (missing (gm_b1_v1.txt)): 7.6 step 9 runs after B1; Curve carry not moved
+=== END === 0s
+)
+  ok   job: the real B1 report PASSES (Curve carry SHELVED); no Bloomberg store -> STOP before any value is read  ( | sha256 8812f20d4d6dadcb | registered 8812f20d4d6dadcb
+PASS lib lseg_exclusions.csv | sha256 8e2ca054128ce420 | registered 8e2ca054128ce420
+PASS lib lseg_live_sources.csv | sha256 37e42068a8ae7f36 | registered 37e42068a8ae7f36
+PASS lib lseg_roots.csv | sha256 7a8caf01fbc70108 | registered 7a8caf01fbc70108
+PASS lib lseg_rules.py | sha256 5686999172a22c76 | registered 5686999172a22c76
+PASS lib lseg_untouched.csv | sha256 17ec5fb38c2cc3b3 | registered 17ec5fb38c2cc3b3
+PASS lib lsegdata.py | sha256 0d1b500ddb2e931a | registered 0d1b500ddb2e931a
+PASS lib gm\trials.csv book / pod rows | 42 rows | digest 4fd1775ecdbf4bf0 | registered 42 rows, 4fd1775ecdbf4bf0
+PASS A2 report gm_a2_v1.txt: ok
+PASS report gm_core_v1.txt: ok
+PASS report gm_diag_preb_v1.txt: ok
+PASS report gm_b1_v1.txt: ok
+STOP: checks failed: FileNotFoundError at bbgdata.py:929 __init__ <- gm_b2_v1.py:166 <module>
+=== END === 0s
+)
+  ok   job: a changed b2_batch.py stops it at the hash check  ( | registered 8812f20d4d6dadcb
+PASS lib lseg_exclusions.csv | sha256 8e2ca054128ce420 | registered 8e2ca054128ce420
+PASS lib lseg_live_sources.csv | sha256 37e42068a8ae7f36 | registered 37e42068a8ae7f36
+PASS lib lseg_roots.csv | sha256 7a8caf01fbc70108 | registered 7a8caf01fbc70108
+PASS lib lseg_rules.py | sha256 5686999172a22c76 | registered 5686999172a22c76
+PASS lib lseg_untouched.csv | sha256 17ec5fb38c2cc3b3 | registered 17ec5fb38c2cc3b3
+PASS lib lsegdata.py | sha256 0d1b500ddb2e931a | registered 0d1b500ddb2e931a
+STOP: lib file differs from the registered build: b2_batch.py
+=== END === 0s
+)
+  ok   job output: no number with 5+ decimals
+  ok   job: no .pyc written under lib\
+
+LSEG rules (lseg_rules 1.1.0)
+  ok   lseg_rules smoke  ()]
+PASS KC c1 2005-12-30: got (2006, 3) want (2006, 3)
+PASS observed expiry overrides the rule: got (2006, 1) want (2006, 1)
+PASS root without a model: got None want None
+ALL LSEG RULES CHECKS PASSED
+)
+
+Recall test (eq_recall 1.0.0, invented data)
+  ok   eq_recall smoke  (ary are kept
+done 15 s
+1.1.0 recipes on the mock: finite numbers, labels, Sosin skipped: OK
+kantesaria_v1 identical to eq_recall 1.0.3 on the mock (97 section lines, 56 summary rows, pass panel 5120 rows): OK
+1.1.1: unreadable unadjusted I/B/E/S -> labelled provisional, no stop: OK
+
+RECALL SMOKE OK
+)
+
+ALL TESTS PASSED
+EXIT 0

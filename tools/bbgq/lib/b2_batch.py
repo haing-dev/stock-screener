@@ -34,7 +34,7 @@ import pandas as pd
 
 import diag_preb as DP
 
-VERSION = "b2_batch-1.0.0"
+VERSION = "b2_batch-1.0.1"   # 1.0.1 (CHECK_B2): M1 flat strip months hold 0, T3 over the span; M2 card 4 falsifier n
 LSEG_LOCK = "90322681b9f989cc24393ae7de4fe24bf5af2f32074ffa6400b1cbed09c4074c"          # LOCK_LSEG_v5
 CARD_LOCK = "6c154f7d736cefd141fac2252a71536811e7440724d8e3cb4d4eacfecb8e3110"          # LOCK_CARD_v1
 A1_PANEL_ID = "e7f98d4439fccf91f3451bc4b9e78079e3bc2cc2452931363b28520460b6cb43"
@@ -100,6 +100,10 @@ class IdentityFail(RuntimeError):
     pass
 
 
+class WindowGap(RuntimeError):
+    """1.0.1 M1: the Strip window has an interior gap (the job STOPs)."""
+
+
 # =====================================================================================================================
 # job checks
 # =====================================================================================================================
@@ -143,6 +147,25 @@ def b1_facts(path):
 
 def lseg_lock_of(work_dir):
     return DP.lseg_lock_of(work_dir)
+
+
+def preb_f0(path):
+    """1.0.1 C3: {rule: (held months, episodes)} from the pre-B report's 'F0 | <rule> | held months N | episodes E'."""
+    out = {}
+    for x in _lines(path):
+        m = re.match(r"^F0 \| (card \d R\d) \| held months (\d+) \| episodes (\d+) \|", x)
+        if m:
+            out[m.group(1)] = (int(m.group(2)), int(m.group(3)))
+    return out
+
+
+def strip_catalog_counts(view):
+    """1.0.1 C4: catalog rows (daily, ok, primary, Datastream) whose code starts with ED / FEI (any month letter)."""
+    c = view.cat
+    c = c[(c["per"] == "D") & (c["status"] == "ok") & (c["duplicate_of"] == "") &
+          c["series_id"].astype(str).str.startswith("DS:")]
+    code = c["code"].astype(str).str.strip().str.lstrip("<").str.upper()
+    return {"ED": int(code.str.match(r"^ED[FGHJKMNQUVXZ]\d").sum()), "FEI": int(code.str.startswith("FEI").sum())}
 
 
 # =====================================================================================================================
@@ -502,6 +525,8 @@ def strip_positions(sp, sc, versions=("A", "B"), drop=()):
                 x = x / np.where(nn > 0, nn, np.nan)[:, None]
             ok = has & np.isfinite(s) & (nn > 0)
             x[~ok] = np.nan
+            started = np.array([R["start"] is not None and p_ >= R["start"] for p_ in R["grid"]])
+            x[started & ~ok] = 0.0          # 1.0.1 M1: a started currency without a position holds 0, not missing
             X.loc[R["grid"], ["%s|%d" % (root, j) for j in range(1, 9)]] = x
             qv[(v, root)] = pd.DataFrame(np.where(has[:, None], q, np.nan), index=R["grid"])
             sg[(v, root)] = pd.Series(s, index=R["grid"])
@@ -579,7 +604,8 @@ def strip_run(sp, cost_mult=1.0, versions=("A", "B"), score_perm=None, drop=(), 
     pv, p, qv, sg = strip_positions(sp, sc, versions, drop)
     cols = list(p.columns)
     RE = _slot_frames(sp, grid, cols, "RE")             # the traded returns: scalers always read these
-    rb = (p.shift(1) * RE).sum(axis=1, min_count=1)
+    p1 = p.shift(1)
+    rb = (p1 * RE).mask(p1 == 0, 0.0).sum(axis=1, min_count=1)      # 1.0.1 M1: a slot holding 0 earns 0
     k = (1.0 / (rb.rolling(BLOCK_MONTHS, min_periods=SCALER_MIN).std() * np.sqrt(12))).shift(1).clip(upper=BLOCK_CAP)
     total = p.mul(k, axis=0).fillna(0.0)
     blocks = rb * k
@@ -606,7 +632,8 @@ def strip_run(sp, cost_mult=1.0, versions=("A", "B"), score_perm=None, drop=(), 
     elif returns != "RE":
         RE = _slot_frames(sp, grid, cols, returns)     # falsifier 2: decision-day settlements, same positions
     lag = 1 + int(delay)
-    gross = (Lg.shift(lag) * RE).sum(axis=1, min_count=1).where(active & s.notna())
+    Lp = Lg.shift(lag)
+    gross = (Lp * RE).mask(Lp == 0, 0.0).sum(axis=1, min_count=1).where(active & s.notna())
     cid = _cid(sp, grid, cols)
     trade = contract_trades(Lg, cid)
     tc = trade * COST_NOTIONAL
@@ -1181,7 +1208,7 @@ def strip_placebo(sp, win, n=NPLACEBO, seed=SEED, sc=None):
     grid = _grid(sp)
     sc = sc.reindex(grid)
     a = win.index[0] - 1
-    T = len(win)
+    T = (win.index[-1] - win.index[0]).n + 1        # 1.0.1 M1: the window's span (= len(win) once contiguous)
     sr0 = ST.sharpe(win)
     srs = []
     for pm in ST.placebo_perms(T, n, 12, seed):
@@ -1518,6 +1545,14 @@ def report_strip(sp, spx, out, n_placebo=NPLACEBO):
             win.index[0] if len(win) else "-", len(win), STRIP_DEC_LAST + 1, MIN_WINDOW,
             "TESTED" if len(win) >= MIN_WINDOW else "INSUFFICIENT DATA"))
     res["window"] = len(win)
+    span = pd.period_range(win.index[0], win.index[-1], freq="M") if len(win) else []
+    gaps = [q for q in span if q not in win.index]
+    flat = int(((bk["gross"].reindex(win.index) == 0)).sum())
+    res["flat_months"], res["gaps"] = flat, len(gaps)
+    out("DATA | Strip reversion window | months %d | span %d | flat months (no contract held, gross 0) %d | interior "
+        "gaps %d | %s" % (len(win), len(span), flat, len(gaps), "contiguous" if not gaps else "GAPS"))
+    if gaps:
+        raise WindowGap("the Strip window has %d interior gap months" % len(gaps))
     if len(win) < MIN_WINDOW:
         res["status"] = "insufficient data"
         out("B2 VERDICT | Strip reversion | window %d months < %d: insufficient data, not tested" % (len(win),
@@ -1880,7 +1915,7 @@ def rule_falsifiers(name, ru, inp, r, win, out):
         e = inp["e"]
         lines = []
         for ent in ("oct", "dec"):
-            big, oth = [], []
+            big, oth, bm, om = [], [], set(), set()
             for w in ru["windows"]:
                 if w["ent"] != ent:
                     continue
@@ -1888,25 +1923,29 @@ def rule_falsifiers(name, ru, inp, r, win, out):
                 big_y = c / w["ref"] - 1 >= 0.15 if (c == c and w["ref"] == w["ref"]) else False
                 dd = e[(e.index > w["entry"]) & (e.index <= min(w["exit"], SEAL))]
                 dd = dd[dd.index >= pd.Timestamp("1975-01-01")]
-                (big if big_y else oth).extend(dd.dropna().tolist())
+                dd = dd.dropna()
+                (big if big_y else oth).extend(dd.tolist())
+                (bm if big_y else om).update(dd.index.to_period("M"))
             a, b = (float(np.mean(big)) if big else np.nan), (float(np.mean(oth)) if oth else np.nan)
-            lines.append("%s entry: big years %s vs other years %s %%/yr (held days) %s" % (
-                ent, cell(a * 25200 if a == a else a, len(big)), cell(b * 25200 if b == b else b, len(oth)),
-                "holds" if (a == a and b == b and a <= b) else "does not hold"))
+            # 1.0.1 M2: n of the printing rule = calendar months spanned by the held days
+            lines.append("%s entry: big years %s (%d days) vs other years %s (%d days) %%/yr %s" % (
+                ent, cell(a * 25200 if a == a else a, len(bm)), len(big), cell(b * 25200 if b == b else b, len(om)),
+                len(oth), "holds" if (a == a and b == b and a <= b) else "does not hold"))
             f[ent] = (a, b)
         out("FALSIFIER | %s | mean e(d) over form A's held days | %s" % (name, " | ".join(lines)))
     elif name == "card 4 R3":
         e = inp["e"]
-        vals = []
+        vals, vm = [], set()
         for w in ru["windows"]:
             if not any(w["dirs"].values()):
                 continue
-            dd = e[(e.index > w["entry"]) & (e.index <= min(w["exit"], SEAL))]
-            vals.extend(dd.dropna().tolist())
+            dd = e[(e.index > w["entry"]) & (e.index <= min(w["exit"], SEAL))].dropna()
+            vals.extend(dd.tolist())
+            vm.update(dd.index.to_period("M"))
         a = float(np.mean(vals)) if vals else np.nan
         f = {"mean": a}
-        out("FALSIFIER | %s | mean e(d) over held days of gated windows %s %%/yr | %s" % (
-            name, cell(a * 25200 if a == a else a, len(vals)),
+        out("FALSIFIER | %s | mean e(d) over held days of gated windows %s %%/yr (%d days) | %s" % (
+            name, cell(a * 25200 if a == a else a, len(vm)), len(vals),
             "holds (zero or more)" if (a == a and a >= 0) else "does not hold"))
     if name.startswith("card 3"):
         x = R1["eq_us_spx"].reindex(win.index)
