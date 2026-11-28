@@ -340,6 +340,41 @@ Code 1.0.1 and cloud gates (2026-11-28; corrections 5bf2fb5 before the code; NOT
 tests/data/trials_b2_shipped.csv. Gates: B2 truncation 8 of 8, controls FAIL (tools/bbgq/results/b2_trunc_mock_2026-11-28b.txt);
 run_tests ALL TESTS PASSED (results/run_tests_gm_2026-11-28e_gm-2.2.1.txt); gm/ and engine_ref.json unchanged (k = 0
 reproduction and engine truncation of 2026-11-28d stand). NOT RUN: queue in B2_BUILD_2026-11-28.md.
+B2 RUN (2026-11-28, PC job gm_b2_v1, b2_batch-1.0.1, report 155 s, job about 4 min; report tools/bbgq/results/gm_b2_v1.txt;
+lib files read back from the PC and matched the build-note sha256 before queuing; every pin, lock, A1 panel id, as-run
+check, the eleven diag_preb identities, F0 against pre-B and the 8-date B2 truncation PASS; strip contracts parsed ED
+124 of 125, FEI 56 of 56; check CHECK_B2 APPROVED WITH CORRECTIONS, M1-M2 + C1, C3, C4, C7 applied before the run).
+Outcomes (k = 1 or card 4 daily windows, net, alpha against the EMPTY Core book = mean, raw bootstrap p, Holm count 0):
+- Strip reversion: SHELVED. Window 1994-03..2010-11 (201 months, contiguous, 29 flat months). T1 -0.32 %/yr, p 0.921;
+  T2 -0.76; T3 share 0.138 -> FAIL. Sharpe -0.29 (A spread 0.28, B curvature -0.70); max drawdown -6.0%; leg cap binds
+  in every held contract-month; falsifier 1 holds (gross mean 0.12 %/yr, B <= 0) and falsifier 4 holds (the roll part,
+  0.33 %/yr, exceeds the gross: the profit that exists is Carry); falsifiers 2-3 do not hold; funding-stress months held.
+- card 1 R1 Squeeze: SHELVED (F0 met, 257 held months, 6 episodes; T1 1.24 %/yr p 0.118; T3 share 0.656 FAIL).
+- card 1 R2 Tightening into warnings: SHELVED (T1 > 0, p not decisive; T3 share 0.618 FAIL).
+- card 1 R5 After the fall: SHELVED (T1 1.81 %/yr; T3 share 0.305 FAIL; 1975-89 Sharpe 0.61, 1990-2010 0.18).
+- card 2 R1 Not paid to hold: INCUBATOR (127 held months, 3 episodes; T1 1.28 %/yr p 0.096; T2 1.24; T3 share 0.002
+  PASS; Sharpe 0.24, max drawdown -17.4%, skew 2.42; 1975-89 Sharpe 0.38, 1990-2010 0.05: almost all from the early era).
+- card 2 R2 Rates-only repricing: SHELVED (T1 -1.33 %/yr; T3 share 0.261 FAIL; max drawdown -43.8%).
+- card 3 R2 Steepener: INCUBATOR (241 held months, 5 episodes; T1 1.99 %/yr p 0.032; T2 1.60; T3 share 0.029 PASS;
+  Sharpe 0.33; both eras positive, 1990-2010 0.44; falsifier holds: 0.81 of net P&L after Fed funds fell over 6 months).
+- card 3 R4 No alternative: SHELVED (T1 0.18 %/yr; T3 share 0.083 FAIL; fragility FLAG, 2000 gives 2.05 of the net).
+- card 4 R1 Year-end window: INCUBATOR (84 held months, 6 episodes; T1 1.66 %/yr p 0.0002; T2 1.64; T3 share 0.011
+  PASS; Sharpe 0.59, max drawdown -5.5%; both eras positive, 1990-2010 0.47; 6 of 6 versions positive).
+- card 4 R3 After the ramp: SHELVED (T1 -0.23 %/yr; T3 share 0.366 FAIL; falsifier holds).
+- card 4 R5 Disinflation steepener: INCUBATOR (231 held months, 7 episodes; T1 1.43 %/yr p 0.043; T2 0.95; T3 share
+  0.040 PASS; Sharpe 0.29; 1990-2010 0.35; falsifier holds: 1.30 of net P&L after Fed funds fell over 6 months).
+Netting (shadow book of the four Incubator rules): standing positions only in bd_us_10y (short, 92% of months),
+bd_us_2y (long, 82%) and eq_us_spx (long, 19%); no month with opposite rules. card 3 R2 and card 4 R5 hold the same
+US 2y-long / 10y-short pair (the overlap the register named): in the shadow book they are one curve position, not two.
+Selection inflation (7.8 item 2, printed beside): expected best Sharpe from luck alone about +0.54 over 41 logged rows.
+BATCH REVIEW (7.6 step 10): Strip reversion's premium is NOT SHOWN on 1994-2010 (not refuted): the local-bend signal
+does not beat random timing after costs, and what little gross return exists is the roll (Carry). Shelved; it may only
+return through a new registration. Four card rule layers reach INCUBATOR (shadow, never Core; hindsight-flagged under
+rule 5): card 2 R1, card 3 R2, card 4 R1, card 4 R5. Six are SHELVED (not shown): card 1 R1, R2, R5, card 2 R2, card 3
+R4, card 4 R3. Read with care: card 2 R1 earns almost only before 1990; card 3 R2 and card 4 R5 are one shared curve
+bet driven by Fed easing; card 4 R1 is the strongest (both eras, small falls) but its net Sharpe 0.59 is near the
+selection-inflation figure. C2 (CHECK_B2; volatility slot of the neighbouring contract in Feb/May/Aug/Nov decisions)
+did not matter for the verdict: it changes sizing, not signs, and the Strip pod fails T1 and T3 by a wide margin. B2 trial rows (13) appended.
 
 ## Batch B1: Curve carry (registered 2026-11-28, BEFORE the B1 code and run): TESTING_PROTOCOL 7.6 step 8, 7.7, 7.8, register T08
 Registered run entry (no rule, weight, threshold, gate, cost or market change; no gm/ code change, so no feature version:

@@ -1,0 +1,308 @@
+=== gm_b2_v1 ===
+b2_batch-1.0.1 | diag_preb-1.1.1 | card_inputs-1.0.0 | diag_a2-1.0.1 | a2_batch-1.1.1 | a1_panel-1.1.0 | bbgdata-1.2.0 | bbg_panel-1.0.0 | gm_engine-1.3.0 | lsegdata-1.0.0 | lseg_rules-1.1.0 | engine gm-2.2.1 | python 3.15.0, numpy 2.5.4, pandas 3.1.1, scipy 1.18.1, openpyxl 3.1.5, xlrd missing
+PASS gm code vs reference | 21 files | differing or missing: none
+PASS lib engine_ref.json | sha256 cebd4932e8643f14 | registered cebd4932e8643f14
+PASS engine gm-2.2.1 and config hashes A1_INCUMBENT 77374d7bef, A2_CHALLENGER 1faa343535, BASE f1d682c384, CANDIDATE 438a092b53 | registered gm-2.2.1, A1_INCUMBENT 77374d7bef, A2_CHALLENGER 1faa343535, BASE f1d682c384, CANDIDATE 438a092b53
+PASS lib a1_panel.py | sha256 eb9ef3f7fbd12760 | registered eb9ef3f7fbd12760
+PASS lib a2_batch.py | sha256 35339f673f351f43 | registered 35339f673f351f43
+PASS lib b2_batch.py | sha256 b16b68a44295b59a | registered b16b68a44295b59a
+PASS lib bbg_panel.py | sha256 e0b67a42793e67c1 | registered e0b67a42793e67c1
+PASS lib bbgdata.py | sha256 0b26bb21b50671dc | registered 0b26bb21b50671dc
+PASS lib card_inputs.py | sha256 4091f84bcbb11f43 | registered 4091f84bcbb11f43
+PASS lib diag_a2.py | sha256 3264a5381c13b124 | registered 3264a5381c13b124
+PASS lib diag_preb.py | sha256 2e9cadd9d41250b8 | registered 2e9cadd9d41250b8
+PASS lib gm_engine.py | sha256 ac43a33cd8943719 | registered ac43a33cd8943719
+PASS lib lseg_engine_map.csv | sha256 8812f20d4d6dadcb | registered 8812f20d4d6dadcb
+PASS lib lseg_exclusions.csv | sha256 8e2ca054128ce420 | registered 8e2ca054128ce420
+PASS lib lseg_live_sources.csv | sha256 37e42068a8ae7f36 | registered 37e42068a8ae7f36
+PASS lib lseg_roots.csv | sha256 7a8caf01fbc70108 | registered 7a8caf01fbc70108
+PASS lib lseg_rules.py | sha256 5686999172a22c76 | registered 5686999172a22c76
+PASS lib lseg_untouched.csv | sha256 17ec5fb38c2cc3b3 | registered 17ec5fb38c2cc3b3
+PASS lib lsegdata.py | sha256 0d1b500ddb2e931a | registered 0d1b500ddb2e931a
+PASS lib gm\trials.csv book / pod rows | 42 rows | digest 4fd1775ecdbf4bf0 | registered 42 rows, 4fd1775ecdbf4bf0
+PASS A2 report gm_a2_v1.txt: ok
+PASS report gm_core_v1.txt: ok
+PASS report gm_diag_preb_v1.txt: ok
+PASS report gm_b1_v1.txt: ok
+PASS Bloomberg store lock id d85a46cb2853646b24796f294f3ccab1d1507188c402e978fd59f5196ea41fc9 | registered LOCK_v2 d85a46cb2853646b24796f294f3ccab1d1507188c402e978fd59f5196ea41fc9
+PASS LSEG store lock id 90322681b9f989cc24393ae7de4fe24bf5af2f32074ffa6400b1cbed09c4074c | registered LOCK_LSEG_v5 90322681b9f989cc24393ae7de4fe24bf5af2f32074ffa6400b1cbed09c4074c | ok
+PASS LSEG config lists in lib = the store manifest's config hashes | 5 files | differing: none
+PASS card inputs gm_card_inputs.zip | 19 files, each = its LOCK_CARD_v1 sha256 | lock id 6c154f7d736cefd1 | registered 6c154f7d736cefd1
+PASS card inputs zip sha256 4f84b01d07ad59da | LOCK_CARD_v1 zip_sha256 4f84b01d07ad59da | informational (content pinned file by file)
+PASS free inputs | 239 files | not matching the manifest 0 | file list and sizes match the reference | digest 378d65b09c23d234
+PASS free arm vs reference | signal E (per-market sum of |signal|) | n 62 | missing 0 | max abs diff 0.0e+00
+PASS free arm vs reference | signal C (per-market sum of |signal|) | n 39 | missing 0 | max abs diff 0.0e+00
+PASS free arm vs reference | signal V (per-market sum of |signal|) | n 31 | missing 0 | max abs diff 0.0e+00
+PASS free arm vs reference | market months with a return | n 65 | missing 0 | max abs diff 0.0e+00
+EXTENSION-ONLY CHECK PASS | admitted series 4 | 60s
+PASS A1 PANEL ID e7f98d4439fccf91f3451bc4b9e78079e3bc2cc2452931363b28520460b6cb43 | registered e7f98d4439fccf91f3451bc4b9e78079e3bc2cc2452931363b28520460b6cb43
+PASS A1 panel file work\a1\a1_panel_e7f98d4439fc.pkl: same
+PASS A2-final book as run (A2 report): book d1 1.064, k0 1.481, k1 1.439 | pods trend 1.19 (432), econ 0.53 (432), carry 1.07 (432), value 0.15 (345) | P4 book 1.39 specific 1.34 (396) | registered book d1 1.064, k0 1.481, k1 1.439 | pods trend 1.19 (432), econ 0.53 (432), carry 1.07 (432), value 0.15 (345) | P4 1.39 / 1.34 (396)
+card inputs | fx values EUR 144 months, JPY 480 months, GBP 480 months, AUD 480 months, CAD 480 months | TB3MS 1960-01.. (612)
+PASS LSEG strip contracts parsed | ED 124 (catalog 125) | FEI 56 (catalog 56)
+LSEG | strip contracts ED 124, FEI 56 | forward EPS months 312
+PASS IDENTITY Strip reversion vs diag_preb.r1 | eligible 1179 / 1179 | qualifying 882 / 882 | differing fields: none
+PASS IDENTITY card 1 R1 vs diag_preb 1.1.1 | base vs diag_preb max rel diff 0.0e+00; full positions same signs and held months as the base layer: yes
+PASS IDENTITY card 1 R2 vs diag_preb 1.1.1 | base vs diag_preb max rel diff 0.0e+00; full positions same signs and held months as the base layer: yes
+PASS IDENTITY card 1 R5 vs diag_preb 1.1.1 | base vs diag_preb max rel diff 0.0e+00; full positions same signs and held months as the base layer: yes
+PASS IDENTITY card 2 R1 vs diag_preb 1.1.1 | base vs diag_preb max rel diff 0.0e+00; full positions same signs and held months as the base layer: yes; C2-D2 keeps the registered versions
+PASS IDENTITY card 2 R2 vs diag_preb 1.1.1 | base vs diag_preb max rel diff 0.0e+00; full positions same signs and held months as the base layer: yes; C2-D2 keeps the registered versions
+PASS IDENTITY card 3 R2 vs diag_preb 1.1.1 | base vs diag_preb max rel diff 0.0e+00; full positions same signs and held months as the base layer: yes
+PASS IDENTITY card 3 R4 vs diag_preb 1.1.1 | base vs diag_preb max rel diff 0.0e+00; full positions same signs and held months as the base layer: yes
+PASS IDENTITY card 4 R1 vs diag_preb 1.1.1 | direction sums per day equal; held months 84 vs 84 equal
+PASS IDENTITY card 4 R3 vs diag_preb 1.1.1 | direction sums per day equal; held months 79 vs 79 equal
+PASS IDENTITY card 4 R5 vs diag_preb 1.1.1 | base vs diag_preb max rel diff 0.0e+00; full positions same signs and held months as the base layer: yes
+PASS F0 on the B2 positions | card 1 R1 | held months 257 | episodes 6 | pre-B 257 / 6 | = pre-B, judged in B2
+PASS F0 on the B2 positions | card 1 R2 | held months 181 | episodes 4 | pre-B 181 / 4 | = pre-B, judged in B2
+PASS F0 on the B2 positions | card 1 R5 | held months 319 | episodes 4 | pre-B 319 / 4 | = pre-B, judged in B2
+PASS F0 on the B2 positions | card 2 R1 | held months 127 | episodes 3 | pre-B 127 / 3 | = pre-B, judged in B2
+PASS F0 on the B2 positions | card 2 R2 | held months 177 | episodes 7 | pre-B 177 / 7 | = pre-B, judged in B2
+PASS F0 on the B2 positions | card 3 R2 | held months 241 | episodes 5 | pre-B 241 / 5 | = pre-B, judged in B2
+PASS F0 on the B2 positions | card 3 R4 | held months 65 | episodes 3 | pre-B 65 / 3 | = pre-B, judged in B2
+PASS F0 on the B2 positions | card 4 R1 | held months 84 | episodes 6 | pre-B 84 / 6 | = pre-B, judged in B2
+PASS F0 on the B2 positions | card 4 R3 | held months 79 | episodes 8 | pre-B 79 / 8 | = pre-B, judged in B2
+PASS F0 on the B2 positions | card 4 R5 | held months 231 | episodes 7 | pre-B 231 / 7 | = pre-B, judged in B2
+identity 10s
+B2 TRUNC 1980-06-30 | stages 258 | differing: none | PASS
+B2 TRUNC 1984-12-31 | stages 258 | differing: none | PASS
+B2 TRUNC 1989-06-30 | stages 258 | differing: none | PASS
+B2 TRUNC 1993-12-31 | stages 258 | differing: none | PASS
+B2 TRUNC 1998-06-30 | stages 258 | differing: none | PASS
+B2 TRUNC 2002-12-31 | stages 258 | differing: none | PASS
+B2 TRUNC 2007-06-30 | stages 258 | differing: none | PASS
+B2 TRUNC 2010-12-31 | stages 258 | differing: none | PASS
+PASS B2 truncation | 8 cut dates | 15s
+--- BATCH B2 (TESTING_PROTOCOL 7.6 step 9; gm/CHANGES.md "Batch B2"): Strip reversion (Eurodollar, Euribor; versions A spread, B curvature; native k = 1) and ten card rule layers (62 versions; k = 1 or card 4 daily windows; held size 0.10 / 0.40); Core book v1 EMPTY (alpha = the item's own mean); no Core-eligible pod (Holm count 0); values over fewer than 60 months are printed as count and sign
+DATA | Strip sr_usd ED | quarterly contracts 124 | first month-end 1981-12 | start 1990-01 | month-ends with the strip 303 | measure-months failing the stale screen 755 | held contracts without an entry or exit settlement 0 | complete days 6587 of 7332
+DATA | Strip sr_eur FEI | quarterly contracts 56 | first month-end 1998-12 | start 2003-12 | month-ends with the strip 144 | measure-months failing the stale screen 182 | held contracts without an entry or exit settlement 0 | complete days 3030 of 3035
+WINDOW | Strip reversion | start 1990-01 | first active block month 1992-02 | first scaled test month 1994-03 | window 201 months to 2010-11 | minimum 120 | TESTED
+DATA | Strip reversion window | months 201 | span 201 | flat months (no contract held, gross 0) 29 | interior gaps 0 | contiguous
+T1 | Strip reversion | alpha against the empty Core book (= mean) -0.32 (201) %/yr | bootstrap p 0.9210 (201) (raw; Holm count 0: no Core-eligible pod in B2) | alpha <= 0
+T2 | Strip reversion | alpha at twice the costs (1 bp of rate per side) -0.76 (201) %/yr | <= 0 (decisive only for Core)
+T3 | Strip reversion | placebo window 1994-03..2010-11 | net Sharpe -0.29 (201) | placebos 1000 | share with Sharpe >= the pod's 0.138 | FAIL
+T4 | Strip reversion | not applicable: Core book v1 is EMPTY
+B2 VERDICT | Strip reversion | not Core-eligible (7.2 qualified, no registered live source) | T1 alpha <= 0, T3 FAIL, T4 n/a | SHELVED
+ERAS | Strip reversion | 1975-89 no data (passes by construction, tests nothing) | 1990-2010 alpha -0.32 (201) %/yr, lb95 -0.70 (201), Sharpe -0.29 (201)
+POD | Strip reversion | net, k = 1, costs x1 | months 201 | Sharpe -0.29 (201) | mean -0.32 (201) %/yr | achieved vol 1.11 (201) %/yr | max drawdown -6.0 (201) % | skew 0.02 (201) | Lo-adjusted Sharpe -0.39 (201)
+DELAY | Strip reversion | one-month delay (notionals per contract one month later) | Sharpe -0.51 (200) | mean -0.83 (200) %/yr
+VERSION | Strip reversion A alone | Sharpe 0.28 (201) | mean 0.71 (201) %/yr
+VERSION | Strip reversion B alone | Sharpe -0.70 (201) | mean -0.53 (201) %/yr
+VERSIONS POSITIVE | Strip reversion | 1 of 2
+BY MARKET | Strip reversion | gross mean %/yr of each currency alone (one class: short-rate strips) | sr_usd 0.09 (201), sr_eur n 34, sign +
+LEG CAP | Strip reversion | held contract-months 1845 | strip vector scaled by a binding cap 1845 | share 1.000 (1845)
+FRAGILITY | Strip reversion | largest change of the annual mean (%/yr points) without one year: 2002 -0.17 (201) | without one currency: FEI 0.04 (201) | top year: n/a (net profit <= 0) | no flag
+P4 | Strip reversion | S&P 500 alone (M1) | item -0.30 (198) | specific -0.54 (198)
+GAPS | Strip reversion | mean |G| (bp) by months to expiry of contract n | 0-3 n 0, n/a, 4-6 6.24 (380), 7-9 4.84 (568), 10-12 4.24 (568), 13-15 3.92 (568), 16-18 3.69 (568), 19-21 3.40 (568), 22-27 4.67 (472)
+FALSIFIER 1 | Strip reversion | pod gross mean 0.116 (201) %/yr | A 1.106 (201) | B -0.086 (201) | holds (zero or below)
+FALSIFIER 2 | Strip reversion | entered at the decision-day settlement (not tradeable) gross mean 0.112 (201) %/yr | traded 0.116 (201) | does not hold
+FALSIFIER 3 | Strip reversion | correlation of the gross return with the sum of |G| held 0.145 (201) | does not hold
+FALSIFIER 4 | Strip reversion | roll part mean 0.333 (201) %/yr | gross mean 0.116 (201) | holds (the profit is roll: Carry)
+FALSIFIER 5 / P3 | Strip reversion | funding-stress months: 1998-08..1998-10 held, 2007-07..2007-08 held, 2008-09..2008-12 held | loss flag: not flagged (spec s10 names window months)
+--- card 1 R1
+WINDOW | card 1 R1 | versions 16 | first decision month 1975-01 | window 1975-02..2010-12, 431 months | held months 257 | episodes 6 | F0 met | market-months without a return 0
+T1 | card 1 R1 | alpha against the empty Core book (= mean) 1.24 (431) %/yr | bootstrap p 0.1182 (431) (raw; rule layers are outside the Holm count) | alpha > 0
+T2 | card 1 R1 | alpha at twice the costs 1.13 (431) %/yr | > 0 (decisive only for Core; a rule layer is never Core)
+T3 | card 1 R1 | placebo (12-month blocks of the direction arrays) | net Sharpe 0.21 (431) | placebos 1000 | share with Sharpe >= the rule's 0.656 | FAIL
+T4 | card 1 R1 | not applicable: Core book v1 is EMPTY
+B2 VERDICT | card 1 R1 | rule layer (hindsight-flagged, never Core) | F0 met, T1 alpha > 0, T3 FAIL, T4 n/a | SHELVED
+ERAS | card 1 R1 | 1975-89 alpha 0.48 (179) %/yr, lb95 -2.74 (179), Sharpe 0.06 (179) | 1990-2010 alpha 1.78 (252) %/yr, lb95 -0.16 (252), Sharpe 0.40 (252)
+POD | card 1 R1 | net, k = 1, costs x1, held size 0.10 / 0.40 | months 431 | Sharpe 0.21 (431) | mean 1.24 (431) %/yr | achieved vol 5.87 (431) %/yr | max drawdown -34.2 (431) % | skew -0.57 (431) | Lo-adjusted Sharpe 0.19 (431)
+TIMING | card 1 R1 | k = 0 Sharpe 0.20 (431) | one-month delay Sharpe 0.24 (431) | k = 1 held market-months flagged (k = 0 return used) 0.000 (510)
+VERSIONS POSITIVE | card 1 R1 | 16 of 16 (each version alone as the whole rule)
+BY MARKET | card 1 R1 | gross contribution %/yr over its held months | bd_us_2y 1.46 (239), bd_us_10y 0.89 (257)
+FRAGILITY | card 1 R1 | largest change of the annual mean (%/yr points) without one year: 2000 -0.53 (431) | without one market: bd_us_2y -0.73 (431) | top year 2000 gives 0.45 (431) of the net profit | FLAG (> 0.40)
+P4 | card 1 R1 | S&P 500 alone (M1) | item 0.20 (396) | specific 0.10 (396)
+TUNED KNOBS | card 1 R1 | 2 (hybrid estimator; the R4 gate version chosen with post-2010 sight); hindsight-flagged (7.2 item 3)
+FALSIFIER | card 1 R1 | gross mean over held months 2.252 (257) %/yr | episodes ending by 2009-12 8, GS2 higher 12 months after the last condition month in 1 | does not hold
+LOSS FLAG | card 1 R1 | not flagged (spec s10 names window months)
+--- card 1 R2
+WINDOW | card 1 R2 | versions 16 | first decision month 1976-06 | window 1976-07..2010-12, 414 months | held months 181 | episodes 4 | F0 met | market-months without a return 0
+T1 | card 1 R2 | alpha against the empty Core book (= mean) 1.02 (414) %/yr | bootstrap p 0.1592 (414) (raw; rule layers are outside the Holm count) | alpha > 0
+T2 | card 1 R2 | alpha at twice the costs 0.96 (414) %/yr | > 0 (decisive only for Core; a rule layer is never Core)
+T3 | card 1 R2 | placebo (12-month blocks of the direction arrays) | net Sharpe 0.20 (414) | placebos 1000 | share with Sharpe >= the rule's 0.618 | FAIL
+T4 | card 1 R2 | not applicable: Core book v1 is EMPTY
+B2 VERDICT | card 1 R2 | rule layer (hindsight-flagged, never Core) | F0 met, T1 alpha > 0, T3 FAIL, T4 n/a | SHELVED
+ERAS | card 1 R2 | 1975-89 alpha 0.01 (162) %/yr, lb95 -3.00 (162), Sharpe 0.00 (162) | 1990-2010 alpha 1.66 (252) %/yr, lb95 -0.26 (252), Sharpe 0.44 (252)
+POD | card 1 R2 | net, k = 1, costs x1, held size 0.10 / 0.40 | months 414 | Sharpe 0.20 (414) | mean 1.02 (414) %/yr | achieved vol 5.20 (414) %/yr | max drawdown -30.1 (414) % | skew -1.10 (414) | Lo-adjusted Sharpe 0.17 (414)
+TIMING | card 1 R2 | k = 0 Sharpe 0.20 (414) | one-month delay Sharpe 0.22 (414) | k = 1 held market-months flagged (k = 0 return used) 0.000 (362)
+VERSIONS POSITIVE | card 1 R2 | 14 of 16 (each version alone as the whole rule)
+BY MARKET | card 1 R2 | gross contribution %/yr over its held months | bd_us_2y 1.87 (181), bd_us_10y 0.59 (181)
+FRAGILITY | card 1 R2 | largest change of the annual mean (%/yr points) without one year: 2000 -0.53 (414) | without one market: bd_us_2y -0.77 (414) | top year 2000 gives 0.53 (414) of the net profit | FLAG (> 0.40)
+P4 | card 1 R2 | S&P 500 alone (M1) | item 0.20 (396) | specific 0.07 (396)
+TUNED KNOBS | card 1 R2 | 2 (hybrid estimator; the R4 gate version chosen with post-2010 sight); hindsight-flagged (7.2 item 3)
+FALSIFIER | card 1 R2 | gross mean over held months 2.465 (181) %/yr | episodes ending by 2009-12 6, GS2 higher 12 months after the last condition month in 0 | does not hold
+LOSS FLAG | card 1 R2 | not flagged (spec s10 names window months)
+--- card 1 R5
+WINDOW | card 1 R5 | versions 8 | first decision month 1975-01 | window 1975-02..2010-12, 431 months | held months 319 | episodes 4 | F0 met | market-months without a return 0
+T1 | card 1 R5 | alpha against the empty Core book (= mean) 1.81 (431) %/yr | bootstrap p 0.0115 (431) (raw; rule layers are outside the Holm count) | alpha > 0
+T2 | card 1 R5 | alpha at twice the costs 1.75 (431) %/yr | > 0 (decisive only for Core; a rule layer is never Core)
+T3 | card 1 R5 | placebo (12-month blocks of the direction arrays) | net Sharpe 0.36 (431) | placebos 1000 | share with Sharpe >= the rule's 0.305 | FAIL
+T4 | card 1 R5 | not applicable: Core book v1 is EMPTY
+B2 VERDICT | card 1 R5 | rule layer (hindsight-flagged, never Core) | F0 met, T1 alpha > 0, T3 FAIL, T4 n/a | SHELVED
+ERAS | card 1 R5 | 1975-89 alpha 3.16 (179) %/yr, lb95 1.11 (179), Sharpe 0.61 (179) | 1990-2010 alpha 0.85 (252) %/yr, lb95 -0.62 (252), Sharpe 0.18 (252)
+POD | card 1 R5 | net, k = 1, costs x1, held size 0.10 / 0.40 | months 431 | Sharpe 0.36 (431) | mean 1.81 (431) %/yr | achieved vol 4.98 (431) %/yr | max drawdown -16.9 (431) % | skew -0.45 (431) | Lo-adjusted Sharpe 0.40 (431)
+TIMING | card 1 R5 | k = 0 Sharpe 0.36 (431) | one-month delay Sharpe 0.29 (431) | k = 1 held market-months flagged (k = 0 return used) 0.355 (631)
+VERSIONS POSITIVE | card 1 R5 | 8 of 8 (each version alone as the whole rule)
+BY MARKET | card 1 R5 | gross contribution %/yr over its held months | eq_de_dax n 7, sign +, eq_jp_nikkei -0.13 (107), eq_gb_ftse 1.33 (145), eq_au_asx 2.66 (99), eq_ca_tsx 3.25 (77), bd_de_10y n 7, sign -, bd_jp_10y 0.99 (84), bd_gb_10y n 50, sign -, bd_au_10y n 42, sign +, bd_ca_10y n 13, sign +
+FRAGILITY | card 1 R5 | largest change of the annual mean (%/yr points) without one year: 1986 -0.30 (431) | without one market: eq_au_asx -0.60 (431) | top year 1986 gives 0.19 (431) of the net profit | no flag
+P4 | card 1 R5 | S&P 500 alone (M1) | item 0.37 (396) | specific 0.21 (396)
+TUNED KNOBS | card 1 R5 | 1 (hybrid estimator); hindsight-flagged (7.2 item 3)
+FALSIFIER | card 1 R5 | stock leg gross mean over its held months 2.270 (319) %/yr | does not hold | Economic trend trade-theme part: not computed (no gate)
+LOSS FLAG | card 1 R5 | not flagged (spec s10 names window months)
+--- card 2 R1
+WINDOW | card 2 R1 | versions 2 | first decision month 1975-01 | window 1975-02..2010-12, 431 months | held months 127 | episodes 3 | F0 met | market-months without a return 0
+T1 | card 2 R1 | alpha against the empty Core book (= mean) 1.28 (431) %/yr | bootstrap p 0.0957 (431) (raw; rule layers are outside the Holm count) | alpha > 0
+T2 | card 2 R1 | alpha at twice the costs 1.24 (431) %/yr | > 0 (decisive only for Core; a rule layer is never Core)
+T3 | card 2 R1 | placebo (12-month blocks of the direction arrays) | net Sharpe 0.24 (431) | placebos 1000 | share with Sharpe >= the rule's 0.002 | PASS
+T4 | card 2 R1 | not applicable: Core book v1 is EMPTY
+B2 VERDICT | card 2 R1 | rule layer (hindsight-flagged, never Core) | F0 met, T1 alpha > 0, T3 PASS, T4 n/a | INCUBATOR
+ERAS | card 2 R1 | 1975-89 alpha 2.83 (179) %/yr, lb95 -0.75 (179), Sharpe 0.38 (179) | 1990-2010 alpha 0.18 (252) %/yr, lb95 -0.60 (252), Sharpe 0.05 (252)
+POD | card 2 R1 | net, k = 1, costs x1, held size 0.10 / 0.40 | months 431 | Sharpe 0.24 (431) | mean 1.28 (431) %/yr | achieved vol 5.43 (431) %/yr | max drawdown -17.4 (431) % | skew 2.42 (431) | Lo-adjusted Sharpe 0.24 (431)
+TIMING | card 2 R1 | k = 0 Sharpe 0.23 (431) | one-month delay Sharpe 0.18 (431) | k = 1 held market-months flagged (k = 0 return used) 0.190 (181)
+VERSIONS POSITIVE | card 2 R1 | 2 of 2 (each version alone as the whole rule)
+BY MARKET | card 2 R1 | gross contribution %/yr over its held months | bd_us_10y 4.48 (127)
+FRAGILITY | card 2 R1 | largest change of the annual mean (%/yr points) without one year: 1979 -0.47 (431) | without one market: n/a (one market or a pair)  | top year 1979 gives 0.39 (431) of the net profit | no flag
+P4 | card 2 R1 | S&P 500 alone (M1) | item 0.30 (396) | specific 0.38 (396)
+TUNED KNOBS | card 2 R1 | 2 (hybrid estimator; the hedge gate seen in a related rule, Macro Compass); hindsight-flagged (7.2 item 3)
+FALSIFIER | card 2 R1 | bd_us_10y mean return after on-months -2.796 (127) | after off-months 5.281 (304) %/yr | does not hold
+LOSS FLAG | card 2 R1 | not flagged (spec s10 names window months)
+--- card 2 R2
+WINDOW | card 2 R2 | versions 2 | first decision month 1975-01 | window 1975-02..2010-12, 431 months | held months 177 | episodes 7 | F0 met | market-months without a return 0
+T1 | card 2 R2 | alpha against the empty Core book (= mean) -1.33 (431) %/yr | bootstrap p 0.9104 (431) (raw; rule layers are outside the Holm count) | alpha <= 0
+T2 | card 2 R2 | alpha at twice the costs -1.36 (431) %/yr | <= 0 (decisive only for Core; a rule layer is never Core)
+T3 | card 2 R2 | placebo (12-month blocks of the direction arrays) | net Sharpe -0.23 (431) | placebos 1000 | share with Sharpe >= the rule's 0.261 | FAIL
+T4 | card 2 R2 | not applicable: Core book v1 is EMPTY
+B2 VERDICT | card 2 R2 | rule layer (hindsight-flagged, never Core) | F0 met, T1 alpha <= 0, T3 FAIL, T4 n/a | SHELVED
+ERAS | card 2 R2 | 1975-89 alpha -1.10 (179) %/yr, lb95 -4.19 (179), Sharpe -0.14 (179) | 1990-2010 alpha -1.50 (252) %/yr, lb95 -3.13 (252), Sharpe -0.39 (252)
+POD | card 2 R2 | net, k = 1, costs x1, held size 0.10 / 0.40 | months 431 | Sharpe -0.23 (431) | mean -1.33 (431) %/yr | achieved vol 5.72 (431) %/yr | max drawdown -43.8 (431) % | skew 1.67 (431) | Lo-adjusted Sharpe -0.21 (431)
+TIMING | card 2 R2 | k = 0 Sharpe -0.22 (431) | one-month delay Sharpe -0.16 (431) | k = 1 held market-months flagged (k = 0 return used) 0.000 (191)
+VERSIONS POSITIVE | card 2 R2 | 0 of 2 (each version alone as the whole rule)
+BY MARKET | card 2 R2 | gross contribution %/yr over its held months | eq_us_spx -3.19 (177)
+FRAGILITY | card 2 R2 | largest change of the annual mean (%/yr points) without one year: 1987 -0.42 (431) | without one market: n/a (one market or a pair)  | top year: n/a (net profit <= 0) | no flag
+P4 | card 2 R2 | S&P 500 alone (M1) | item -0.24 (396) | specific 0.10 (396)
+TUNED KNOBS | card 2 R2 | 1 (hybrid estimator); hindsight-flagged (7.2 item 3)
+FALSIFIER | card 2 R2 | S&P 12-month forward excess return after on-months 0.049 (71) | after other months 0.071 (349) | does not hold | mechanism: GS10 up a further 1.0+ in 0 of 7 episodes
+LOSS FLAG | card 2 R2 | not flagged (spec s10 names window months)
+--- card 3 R2
+WINDOW | card 3 R2 | versions 4 | first decision month 1976-06 | window 1976-07..2010-12, 414 months | held months 241 | episodes 5 | F0 met | market-months without a return 0
+T1 | card 3 R2 | alpha against the empty Core book (= mean) 1.99 (414) %/yr | bootstrap p 0.0315 (414) (raw; rule layers are outside the Holm count) | alpha > 0
+T2 | card 3 R2 | alpha at twice the costs 1.60 (414) %/yr | > 0 (decisive only for Core; a rule layer is never Core)
+T3 | card 3 R2 | placebo (12-month blocks of the direction arrays) | net Sharpe 0.33 (414) | placebos 1000 | share with Sharpe >= the rule's 0.029 | PASS
+T4 | card 3 R2 | not applicable: Core book v1 is EMPTY
+B2 VERDICT | card 3 R2 | rule layer (hindsight-flagged, never Core) | F0 met, T1 alpha > 0, T3 PASS, T4 n/a | INCUBATOR
+ERAS | card 3 R2 | 1975-89 alpha 1.73 (162) %/yr, lb95 -1.35 (162), Sharpe 0.23 (162) | 1990-2010 alpha 2.16 (252) %/yr, lb95 0.08 (252), Sharpe 0.44 (252)
+POD | card 3 R2 | net, k = 1, costs x1, held size 0.10 / 0.40 | months 414 | Sharpe 0.33 (414) | mean 1.99 (414) %/yr | achieved vol 6.04 (414) %/yr | max drawdown -19.3 (414) % | skew 1.82 (414) | Lo-adjusted Sharpe 0.34 (414)
+TIMING | card 3 R2 | k = 0 Sharpe 0.31 (414) | one-month delay Sharpe 0.33 (414) | k = 1 held market-months flagged (k = 0 return used) 0.000 (482)
+VERSIONS POSITIVE | card 3 R2 | 4 of 4 (each version alone as the whole rule)
+BY MARKET | card 3 R2 | gross contribution %/yr over its held months | bd_us_2y 6.88 (241), bd_us_10y -2.81 (241)
+FRAGILITY | card 3 R2 | largest change of the annual mean (%/yr points) without one year: 2007 -0.42 (414) | without one market: n/a (one market or a pair)  | top year 2007 gives 0.24 (414) of the net profit | no flag
+P4 | card 3 R2 | S&P 500 alone (M1) | item 0.34 (396) | specific 0.24 (396)
+TUNED KNOBS | card 3 R2 | 2 (hybrid estimator; the 1.0 bar chosen with post-2010 sight); hindsight-flagged (7.2 item 3)
+FALSIFIER | card 3 R2 | pair gross mean over held months 4.078 (241) %/yr | share of net P&L after FEDFUNDS fell over 6 months 0.813 (414) | holds
+FALSIFIER (c) | card 3 R2 | mean return in the worst tenth of eq_us_spx months n 42, sign + %/yr | does not hold
+LOSS FLAG | card 3 R2 | not flagged (spec s10 names window months)
+--- card 3 R4
+WINDOW | card 3 R4 | versions 4 | first decision month 1985-01 | window 1985-02..2010-12, 311 months | held months 65 | episodes 3 | F0 met | market-months without a return 0
+T1 | card 3 R4 | alpha against the empty Core book (= mean) 0.18 (311) %/yr | bootstrap p 0.4032 (311) (raw; rule layers are outside the Holm count) | alpha > 0
+T2 | card 3 R4 | alpha at twice the costs 0.17 (311) %/yr | > 0 (decisive only for Core; a rule layer is never Core)
+T3 | card 3 R4 | placebo (12-month blocks of the direction arrays) | net Sharpe 0.04 (311) | placebos 1000 | share with Sharpe >= the rule's 0.083 | FAIL
+T4 | card 3 R4 | not applicable: Core book v1 is EMPTY
+B2 VERDICT | card 3 R4 | rule layer (hindsight-flagged, never Core) | F0 met, T1 alpha > 0, T3 FAIL, T4 n/a | SHELVED
+ERAS | card 3 R4 | 1975-89 alpha n 59, sign + %/yr, lb95 n 59, n/a, Sharpe n 59, sign + | 1990-2010 alpha -0.00 (252) %/yr, lb95 -1.34 (252), Sharpe -0.00 (252)
+POD | card 3 R4 | net, k = 1, costs x1, held size 0.10 / 0.40 | months 311 | Sharpe 0.04 (311) | mean 0.18 (311) %/yr | achieved vol 4.09 (311) %/yr | max drawdown -20.7 (311) % | skew 1.41 (311) | Lo-adjusted Sharpe 0.05 (311)
+TIMING | card 3 R4 | k = 0 Sharpe 0.07 (311) | one-month delay Sharpe 0.12 (311) | k = 1 held market-months flagged (k = 0 return used) 0.000 (65)
+VERSIONS POSITIVE | card 3 R4 | 4 of 4 (each version alone as the whole rule)
+BY MARKET | card 3 R4 | gross contribution %/yr over its held months | eq_us_spx 0.91 (65)
+FRAGILITY | card 3 R4 | largest change of the annual mean (%/yr points) without one year: 2000 -0.38 (311) | without one market: n/a (one market or a pair)  | top year 2000 gives 2.05 (311) of the net profit | FLAG (> 0.40)
+P4 | card 3 R4 | S&P 500 alone (M1) | item 0.04 (308) | specific 0.23 (308)
+TUNED KNOBS | card 3 R4 | 1 (hybrid estimator); hindsight-flagged (7.2 item 3)
+FALSIFIER | card 3 R4 | S&P mean return after on-months -0.378 (65) | after off-months 8.725 (246) %/yr | does not hold
+FALSIFIER (c) | card 3 R4 | mean return in the worst tenth of eq_us_spx months n 32, sign + %/yr | does not hold
+LOSS FLAG | card 3 R4 | not flagged (spec s10 names window months)
+--- card 4 R1
+WINDOW | card 4 R1 | versions 6 | first decision month 1975-01 | window 1975-01..2010-12, 432 months | held months 84 | episodes 6 | F0 met | market-months without a return 0
+T1 | card 4 R1 | alpha against the empty Core book (= mean) 1.66 (432) %/yr | bootstrap p 0.0002 (432) (raw; rule layers are outside the Holm count) | alpha > 0
+T2 | card 4 R1 | alpha at twice the costs 1.64 (432) %/yr | > 0 (decisive only for Core; a rule layer is never Core)
+T3 | card 4 R1 | placebo (windows moved within their year) | net Sharpe 0.59 (432) | placebos 1000 | share with Sharpe >= the rule's 0.011 | PASS
+T4 | card 4 R1 | not applicable: Core book v1 is EMPTY
+B2 VERDICT | card 4 R1 | rule layer (hindsight-flagged, never Core) | F0 met, T1 alpha > 0, T3 PASS, T4 n/a | INCUBATOR
+ERAS | card 4 R1 | 1975-89 alpha 2.14 (180) %/yr, lb95 1.23 (180), Sharpe 0.76 (180) | 1990-2010 alpha 1.31 (252) %/yr, lb95 0.34 (252), Sharpe 0.47 (252)
+POD | card 4 R1 | net, daily windows (E14), costs x1, held size 0.10 / 0.40 | months 432 | Sharpe 0.59 (432) | mean 1.66 (432) %/yr | achieved vol 2.81 (432) %/yr | max drawdown -5.5 (432) % | skew 3.16 (432) | Lo-adjusted Sharpe 0.68 (432)
+TIMING | card 4 R1 | k = 0 and the one-month delay: not applicable (the dates are the signal, 7.3 item 3)
+VERSIONS POSITIVE | card 4 R1 | 6 of 6 (each version alone as the whole rule)
+BY MARKET | card 4 R1 | one market (eq_us_spx)
+FRAGILITY | card 4 R1 | largest change of the annual mean (%/yr points) without one year: 1976 -0.18 (432) | without one market: n/a (one market or a pair)  | top year 1976 gives 0.14 (432) of the net profit | no flag
+P4 | card 4 R1 | S&P 500 alone (M1) | item 0.58 (396) | specific 0.43 (396)
+TUNED KNOBS | card 4 R1 | 1 (hybrid estimator); hindsight-flagged (7.2 item 3)
+FALSIFIER | card 4 R1 | mean e(d) over form A's held days | oct entry: big years n 30, sign + (510 days) vs other years 15.00 (78) (1338 days) %/yr does not hold | dec entry: big years n 28, sign + (288 days) vs other years n 44, sign + (440 days) %/yr does not hold
+LOSS FLAG | card 4 R1 | not flagged (spec s10 names window months)
+--- card 4 R3
+WINDOW | card 4 R3 | versions 2 | first decision month 1975-01 | window 1975-01..2010-12, 432 months | held months 79 | episodes 8 | F0 met | market-months without a return 0
+T1 | card 4 R3 | alpha against the empty Core book (= mean) -0.23 (432) %/yr | bootstrap p 0.8058 (432) (raw; rule layers are outside the Holm count) | alpha <= 0
+T2 | card 4 R3 | alpha at twice the costs -0.24 (432) %/yr | <= 0 (decisive only for Core; a rule layer is never Core)
+T3 | card 4 R3 | placebo (windows moved within their year) | net Sharpe -0.14 (432) | placebos 1000 | share with Sharpe >= the rule's 0.366 | FAIL
+T4 | card 4 R3 | not applicable: Core book v1 is EMPTY
+B2 VERDICT | card 4 R3 | rule layer (hindsight-flagged, never Core) | F0 met, T1 alpha <= 0, T3 FAIL, T4 n/a | SHELVED
+ERAS | card 4 R3 | 1975-89 alpha -0.08 (180) %/yr, lb95 -0.89 (180), Sharpe -0.04 (180) | 1990-2010 alpha -0.33 (252) %/yr, lb95 -0.80 (252), Sharpe -0.24 (252)
+POD | card 4 R3 | net, daily windows (E14), costs x1, held size 0.10 / 0.40 | months 432 | Sharpe -0.14 (432) | mean -0.23 (432) %/yr | achieved vol 1.61 (432) %/yr | max drawdown -17.3 (432) % | skew 3.00 (432) | Lo-adjusted Sharpe -0.15 (432)
+TIMING | card 4 R3 | k = 0 and the one-month delay: not applicable (the dates are the signal, 7.3 item 3)
+VERSIONS POSITIVE | card 4 R3 | 0 of 2 (each version alone as the whole rule)
+BY MARKET | card 4 R3 | one market (eq_us_spx)
+FRAGILITY | card 4 R3 | largest change of the annual mean (%/yr points) without one year: 1980 -0.15 (432) | without one market: n/a (one market or a pair)  | top year: n/a (net profit <= 0) | no flag
+P4 | card 4 R3 | S&P 500 alone (M1) | item -0.15 (396) | specific 0.02 (396)
+TUNED KNOBS | card 4 R3 | 1 (hybrid estimator); hindsight-flagged (7.2 item 3)
+FALSIFIER | card 4 R3 | mean e(d) over held days of gated windows 7.96 (79) %/yr (807 days) | holds (zero or more)
+LOSS FLAG | card 4 R3 | not flagged (spec s10 names window months)
+--- card 4 R5
+WINDOW | card 4 R5 | versions 2 | first decision month 1976-06 | window 1976-07..2010-12, 414 months | held months 231 | episodes 7 | F0 met | market-months without a return 0
+T1 | card 4 R5 | alpha against the empty Core book (= mean) 1.43 (414) %/yr | bootstrap p 0.0426 (414) (raw; rule layers are outside the Holm count) | alpha > 0
+T2 | card 4 R5 | alpha at twice the costs 0.95 (414) %/yr | > 0 (decisive only for Core; a rule layer is never Core)
+T3 | card 4 R5 | placebo (12-month blocks of the direction arrays) | net Sharpe 0.29 (414) | placebos 1000 | share with Sharpe >= the rule's 0.040 | PASS
+T4 | card 4 R5 | not applicable: Core book v1 is EMPTY
+B2 VERDICT | card 4 R5 | rule layer (hindsight-flagged, never Core) | F0 met, T1 alpha > 0, T3 PASS, T4 n/a | INCUBATOR
+ERAS | card 4 R5 | 1975-89 alpha 0.69 (162) %/yr, lb95 -0.73 (162), Sharpe 0.17 (162) | 1990-2010 alpha 1.90 (252) %/yr, lb95 -0.10 (252), Sharpe 0.35 (252)
+POD | card 4 R5 | net, k = 1, costs x1, held size 0.10 / 0.40 | months 414 | Sharpe 0.29 (414) | mean 1.43 (414) %/yr | achieved vol 4.88 (414) %/yr | max drawdown -12.9 (414) % | skew 0.96 (414) | Lo-adjusted Sharpe 0.30 (414)
+TIMING | card 4 R5 | k = 0 Sharpe 0.25 (414) | one-month delay Sharpe 0.42 (414) | k = 1 held market-months flagged (k = 0 return used) 0.000 (462)
+VERSIONS POSITIVE | card 4 R5 | 2 of 2 (each version alone as the whole rule)
+BY MARKET | card 4 R5 | gross contribution %/yr over its held months | bd_us_2y 9.92 (231), bd_us_10y -6.50 (231)
+FRAGILITY | card 4 R5 | largest change of the annual mean (%/yr points) without one year: 2007 -0.46 (414) | without one market: n/a (one market or a pair)  | top year 2007 gives 0.34 (414) of the net profit | no flag
+P4 | card 4 R5 | S&P 500 alone (M1) | item 0.31 (396) | specific 0.33 (396)
+TUNED KNOBS | card 4 R5 | 1 (hybrid estimator); hindsight-flagged (7.2 item 3)
+FALSIFIER | card 4 R5 | pair gross mean over held months 3.417 (231) %/yr | share of net P&L after FEDFUNDS fell over 6 months 1.298 (414) | holds | version 1 on in 0.580 (414) of months
+LOSS FLAG | card 4 R5 | not flagged (spec s10 names window months)
+--- NETTING REPORT (7.6 step 9, register B19 / C7; reported, no threshold)
+NETTING | shadow book (Incubator rules) | bd_us_10y | net non-zero months 398 | share of 431 decision months 0.923 (431) | long share 0.000 (398) | months with opposite rules 0 | mean |net| / mean sum |rule| 1.000 (431)
+NETTING | shadow book (Incubator rules) | bd_us_2y | net non-zero months 354 | share of 431 decision months 0.821 (431) | long share 1.000 (354) | months with opposite rules 0 | mean |net| / mean sum |rule| 1.000 (431)
+NETTING | shadow book (Incubator rules) | eq_us_spx | net non-zero months 83 | share of 431 decision months 0.193 (431) | long share 1.000 (83) | months with opposite rules 0 | mean |net| / mean sum |rule| 1.000 (431)
+NETTING | all ten judged rules (context) | bd_au_10y | net non-zero months 42 | share of 431 decision months 0.097 (431) | long share n 42, sign + | months with opposite rules 0 | mean |net| / mean sum |rule| 1.000 (431)
+NETTING | all ten judged rules (context) | bd_ca_10y | net non-zero months 13 | share of 431 decision months 0.030 (431) | long share n 13, sign + | months with opposite rules 0 | mean |net| / mean sum |rule| 1.000 (431)
+NETTING | all ten judged rules (context) | bd_de_10y | net non-zero months 7 | share of 431 decision months 0.016 (431) | long share n 7, sign + | months with opposite rules 0 | mean |net| / mean sum |rule| 1.000 (431)
+NETTING | all ten judged rules (context) | bd_gb_10y | net non-zero months 50 | share of 431 decision months 0.116 (431) | long share n 50, sign + | months with opposite rules 0 | mean |net| / mean sum |rule| 1.000 (431)
+NETTING | all ten judged rules (context) | bd_jp_10y | net non-zero months 84 | share of 431 decision months 0.195 (431) | long share 1.000 (84) | months with opposite rules 0 | mean |net| / mean sum |rule| 1.000 (431)
+NETTING | all ten judged rules (context) | bd_us_10y | net non-zero months 421 | share of 431 decision months 0.977 (431) | long share 0.071 (421) | months with opposite rules 296 | mean |net| / mean sum |rule| 0.697 (431)
+NETTING | all ten judged rules (context) | bd_us_2y | net non-zero months 402 | share of 431 decision months 0.933 (431) | long share 1.000 (402) | months with opposite rules 0 | mean |net| / mean sum |rule| 1.000 (431)
+NETTING | all ten judged rules (context) | eq_au_asx | net non-zero months 99 | share of 431 decision months 0.230 (431) | long share 1.000 (99) | months with opposite rules 0 | mean |net| / mean sum |rule| 1.000 (431)
+NETTING | all ten judged rules (context) | eq_ca_tsx | net non-zero months 77 | share of 431 decision months 0.179 (431) | long share 1.000 (77) | months with opposite rules 0 | mean |net| / mean sum |rule| 1.000 (431)
+NETTING | all ten judged rules (context) | eq_de_dax | net non-zero months 7 | share of 431 decision months 0.016 (431) | long share n 7, sign + | months with opposite rules 0 | mean |net| / mean sum |rule| 1.000 (431)
+NETTING | all ten judged rules (context) | eq_gb_ftse | net non-zero months 145 | share of 431 decision months 0.336 (431) | long share 1.000 (145) | months with opposite rules 0 | mean |net| / mean sum |rule| 1.000 (431)
+NETTING | all ten judged rules (context) | eq_jp_nikkei | net non-zero months 107 | share of 431 decision months 0.248 (431) | long share 1.000 (107) | months with opposite rules 0 | mean |net| / mean sum |rule| 1.000 (431)
+NETTING | all ten judged rules (context) | eq_us_spx | net non-zero months 285 | share of 431 decision months 0.661 (431) | long share 0.133 (285) | months with opposite rules 59 | mean |net| / mean sum |rule| 0.792 (431)
+selection inflation (7.8 item 2; printed beside, not subtracted): 41 logged book / pod rows, mean 1990-2010 Sharpe 1.448, sd 0.245, z 2.20 -> expected best Sharpe from luck alone about +0.54
+NOT APPLICABLE | Sharpe difference of the Core book with an item (empty book) | untouched markets (none held back) | NOT COMPUTED in b2_batch-1.0.1: the weekly-implementation checks (entry item 4q)
+B2 SUMMARY | Strip reversion SHELVED | card 1 R1 SHELVED | card 1 R2 SHELVED | card 1 R5 SHELVED | card 2 R1 INCUBATOR | card 2 R2 SHELVED | card 3 R2 INCUBATOR | card 3 R4 SHELVED | card 4 R1 INCUBATOR | card 4 R3 SHELVED | card 4 R5 INCUBATOR
+report 155s
+TRIAL ROW {"config": "{\"card\": \"6c154f7d736cefd1\", \"item\": \"Strip reversion\", \"lseg\": \"90322681b9f989cc\", \"panel\": \"e7f98d4439fccf91\", \"version\": \"b2_batch-1.0.1\"}", "family": "pod", "hash": "c4206f8449", "maxdd_9010": -0.06, "note": "TESTING_PROTOCOL 7.6 step 9 Batch B2; engine gm-2.2.1; b2_batch-1.0.1; LOCK_LSEG_v5 90322681b9f989cc; LOCK_CARD_v1 6c154f7d736cefd1; A1 panel e7f98d4439fccf91; Core book v1 EMPTY (alpha = mean); window 201; verdict Shelved", "sr_7589": null, "sr_9010": -0.289, "t_9010": -1.18, "trial": "Strip reversion B2 (k = 1)", "turnover": 284.0}
+TRIAL ROW {"config": "{\"card\": \"6c154f7d736cefd1\", \"item\": \"card 1 R1\", \"lseg\": \"90322681b9f989cc\", \"panel\": \"e7f98d4439fccf91\", \"version\": \"b2_batch-1.0.1\"}", "family": "pod", "hash": "45e4b9a562", "maxdd_9010": -0.135, "note": "TESTING_PROTOCOL 7.6 step 9 Batch B2; engine gm-2.2.1; b2_batch-1.0.1; LOCK_LSEG_v5 90322681b9f989cc; LOCK_CARD_v1 6c154f7d736cefd1; A1 panel e7f98d4439fccf91; Core book v1 EMPTY (alpha = mean); window 431; verdict Shelved", "sr_7589": 0.064, "sr_9010": 0.398, "t_9010": 1.83, "trial": "card 1 R1 B2 (k = 1)", "turnover": 1.9}
+TRIAL ROW {"config": "{\"card\": \"6c154f7d736cefd1\", \"item\": \"card 1 R2\", \"lseg\": \"90322681b9f989cc\", \"panel\": \"e7f98d4439fccf91\", \"version\": \"b2_batch-1.0.1\"}", "family": "pod", "hash": "420f4969ea", "maxdd_9010": -0.094, "note": "TESTING_PROTOCOL 7.6 step 9 Batch B2; engine gm-2.2.1; b2_batch-1.0.1; LOCK_LSEG_v5 90322681b9f989cc; LOCK_CARD_v1 6c154f7d736cefd1; A1 panel e7f98d4439fccf91; Core book v1 EMPTY (alpha = mean); window 414; verdict Shelved", "sr_7589": 0.002, "sr_9010": 0.44, "t_9010": 2.02, "trial": "card 1 R2 B2 (k = 1)", "turnover": 0.9}
+TRIAL ROW {"config": "{\"card\": \"6c154f7d736cefd1\", \"item\": \"card 1 R5\", \"lseg\": \"90322681b9f989cc\", \"panel\": \"e7f98d4439fccf91\", \"version\": \"b2_batch-1.0.1\"}", "family": "pod", "hash": "1015d76253", "maxdd_9010": -0.106, "note": "TESTING_PROTOCOL 7.6 step 9 Batch B2; engine gm-2.2.1; b2_batch-1.0.1; LOCK_LSEG_v5 90322681b9f989cc; LOCK_CARD_v1 6c154f7d736cefd1; A1 panel e7f98d4439fccf91; Core book v1 EMPTY (alpha = mean); window 431; verdict Shelved", "sr_7589": 0.608, "sr_9010": 0.177, "t_9010": 0.81, "trial": "card 1 R5 B2 (k = 1)", "turnover": 0.9}
+TRIAL ROW {"config": "{\"card\": \"6c154f7d736cefd1\", \"item\": \"card 2 R1\", \"lseg\": \"90322681b9f989cc\", \"panel\": \"e7f98d4439fccf91\", \"version\": \"b2_batch-1.0.1\"}", "family": "pod", "hash": "7f1e4f7d47", "maxdd_9010": -0.105, "note": "TESTING_PROTOCOL 7.6 step 9 Batch B2; engine gm-2.2.1; b2_batch-1.0.1; LOCK_LSEG_v5 90322681b9f989cc; LOCK_CARD_v1 6c154f7d736cefd1; A1 panel e7f98d4439fccf91; Core book v1 EMPTY (alpha = mean); window 431; verdict Incubator", "sr_7589": 0.382, "sr_9010": 0.054, "t_9010": 0.25, "trial": "card 2 R1 B2 (k = 1)", "turnover": 1.0}
+TRIAL ROW {"config": "{\"card\": \"6c154f7d736cefd1\", \"item\": \"card 2 R2\", \"lseg\": \"90322681b9f989cc\", \"panel\": \"e7f98d4439fccf91\", \"version\": \"b2_batch-1.0.1\"}", "family": "pod", "hash": "b398c88586", "maxdd_9010": -0.312, "note": "TESTING_PROTOCOL 7.6 step 9 Batch B2; engine gm-2.2.1; b2_batch-1.0.1; LOCK_LSEG_v5 90322681b9f989cc; LOCK_CARD_v1 6c154f7d736cefd1; A1 panel e7f98d4439fccf91; Core book v1 EMPTY (alpha = mean); window 431; verdict Shelved", "sr_7589": -0.144, "sr_9010": -0.391, "t_9010": -1.79, "trial": "card 2 R2 B2 (k = 1)", "turnover": 0.3}
+TRIAL ROW {"config": "{\"card\": \"6c154f7d736cefd1\", \"item\": \"card 3 R2\", \"lseg\": \"90322681b9f989cc\", \"panel\": \"e7f98d4439fccf91\", \"version\": \"b2_batch-1.0.1\"}", "family": "pod", "hash": "69c5ba5640", "maxdd_9010": -0.111, "note": "TESTING_PROTOCOL 7.6 step 9 Batch B2; engine gm-2.2.1; b2_batch-1.0.1; LOCK_LSEG_v5 90322681b9f989cc; LOCK_CARD_v1 6c154f7d736cefd1; A1 panel e7f98d4439fccf91; Core book v1 EMPTY (alpha = mean); window 414; verdict Incubator", "sr_7589": 0.23, "sr_9010": 0.441, "t_9010": 2.02, "trial": "card 3 R2 B2 (k = 1)", "turnover": 3.0}
+TRIAL ROW {"config": "{\"card\": \"6c154f7d736cefd1\", \"item\": \"card 3 R4\", \"lseg\": \"90322681b9f989cc\", \"panel\": \"e7f98d4439fccf91\", \"version\": \"b2_batch-1.0.1\"}", "family": "pod", "hash": "e8a5018f88", "maxdd_9010": -0.207, "note": "TESTING_PROTOCOL 7.6 step 9 Batch B2; engine gm-2.2.1; b2_batch-1.0.1; LOCK_LSEG_v5 90322681b9f989cc; LOCK_CARD_v1 6c154f7d736cefd1; A1 panel e7f98d4439fccf91; Core book v1 EMPTY (alpha = mean); window 311; verdict Shelved", "sr_7589": null, "sr_9010": -0.0, "t_9010": -0.0, "trial": "card 3 R4 B2 (k = 1)", "turnover": 0.2}
+TRIAL ROW {"config": "{\"card\": \"6c154f7d736cefd1\", \"item\": \"card 4 R1\", \"lseg\": \"90322681b9f989cc\", \"panel\": \"e7f98d4439fccf91\", \"version\": \"b2_batch-1.0.1\"}", "family": "pod", "hash": "3ac9717fbc", "maxdd_9010": -0.055, "note": "TESTING_PROTOCOL 7.6 step 9 Batch B2; engine gm-2.2.1; b2_batch-1.0.1; LOCK_LSEG_v5 90322681b9f989cc; LOCK_CARD_v1 6c154f7d736cefd1; A1 panel e7f98d4439fccf91; Core book v1 EMPTY (alpha = mean); window 432; verdict Incubator", "sr_7589": 0.758, "sr_9010": 0.469, "t_9010": 2.15, "trial": "card 4 R1 B2 (k = 1)", "turnover": 1.0}
+TRIAL ROW {"config": "{\"card\": \"6c154f7d736cefd1\", \"item\": \"card 4 R3\", \"lseg\": \"90322681b9f989cc\", \"panel\": \"e7f98d4439fccf91\", \"version\": \"b2_batch-1.0.1\"}", "family": "pod", "hash": "55ae188b29", "maxdd_9010": -0.116, "note": "TESTING_PROTOCOL 7.6 step 9 Batch B2; engine gm-2.2.1; b2_batch-1.0.1; LOCK_LSEG_v5 90322681b9f989cc; LOCK_CARD_v1 6c154f7d736cefd1; A1 panel e7f98d4439fccf91; Core book v1 EMPTY (alpha = mean); window 432; verdict Shelved", "sr_7589": -0.044, "sr_9010": -0.236, "t_9010": -1.08, "trial": "card 4 R3 B2 (k = 1)", "turnover": 1.1}
+TRIAL ROW {"config": "{\"card\": \"6c154f7d736cefd1\", \"item\": \"card 4 R5\", \"lseg\": \"90322681b9f989cc\", \"panel\": \"e7f98d4439fccf91\", \"version\": \"b2_batch-1.0.1\"}", "family": "pod", "hash": "6d155092dd", "maxdd_9010": -0.129, "note": "TESTING_PROTOCOL 7.6 step 9 Batch B2; engine gm-2.2.1; b2_batch-1.0.1; LOCK_LSEG_v5 90322681b9f989cc; LOCK_CARD_v1 6c154f7d736cefd1; A1 panel e7f98d4439fccf91; Core book v1 EMPTY (alpha = mean); window 414; verdict Incubator", "sr_7589": 0.174, "sr_9010": 0.353, "t_9010": 1.62, "trial": "card 4 R5 B2 (k = 1)", "turnover": 19.9}
+TRIAL ROW {"config": "{\"card\": \"6c154f7d736cefd1\", \"diag\": \"strip s10\", \"lseg\": \"90322681b9f989cc\", \"panel\": \"e7f98d4439fccf91\", \"version\": \"b2_batch-1.0.1\"}", "family": "diag", "hash": "02006783c1", "note": "TESTING_PROTOCOL 7.6 step 9 Batch B2; b2_batch-1.0.1; engine gm-2.2.1", "trial": "Strip reversion falsifiers (spec s10, incl. the non-tradeable variant)"}
+TRIAL ROW {"config": "{\"card\": \"6c154f7d736cefd1\", \"diag\": \"cards s10 + netting\", \"lseg\": \"90322681b9f989cc\", \"panel\": \"e7f98d4439fccf91\", \"version\": \"b2_batch-1.0.1\"}", "family": "diag", "hash": "14f2c53a74", "note": "TESTING_PROTOCOL 7.6 step 9 Batch B2; b2_batch-1.0.1; engine gm-2.2.1", "trial": "Card rule falsifiers (specs s10) and netting report (B2)"}
+B2 JOB DONE
+=== END === 242s
