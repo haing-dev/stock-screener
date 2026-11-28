@@ -298,7 +298,7 @@ reads an environment override B2_N_PLACEBO for tests only; it prints a NOTE when
 (the queue says not to set it). (6) Test-only: tests/diag_preb_smoke.py and tests/b1_curve_smoke.py now copy the trial
 log as shipped to their jobs (tests/data/trials_b1_shipped.csv = gm/trials.csv at a997f23), because the B1 rows
 appended at 2d13f47 broke their 41-row pin (6 failures in run_tests before the fix; no job or lib changed).
-Code and cloud gates (2026-11-28; entry 929859a and readings cd28bde before the code; NOT RUN; no B2 statistic computed in
+Code and cloud gates (2026-11-28; entry c18eb0c and readings c7d9352 before the code 7ac8db9; NOT RUN; no B2 statistic computed in
 the cloud): tools/bbgq/lib/b2_batch.py 1.0.0 (sha256 48b308d7f45f44edc36ddb2f8050656e65e5c625dadb8e139b2a83926e0130ae),
 PC job tools/bbgq/jobs/gm_b2_v1.py (sha256 ec97551c940130408ffab435ec0310f1c413d94f538b87812d3d0e3d6ce31c3c),
 tests/b2_mocks.py, tests/b2_batch_smoke.py (48 checks, in tests/run_tests.py), tools/bbgq/b2_trunc_mock.py; build_engine
