@@ -56,6 +56,14 @@ label "decisive minus <ids>". Per investor: pilecki_v1 minus B4 (December sleeve
 after t). All other decisive criteria are implemented. Full forms: implemented for kantesaria_v1, kantesaria_v2,
 stahl_v1, hohn_v1, zlatev_v1, pilecki_v1, nygren_v1, lilu_v1; NOT for druckenmiller_v1 (the recipe does not say how
 its eleven grid lines combine).
+1.1.1 (2026-11-28; A13 item 22, after the independent review of 1.1.0 and before any 1.1.x result): S1 price / FY2 EPS
+(zlatev_v1 P1) and price / value (nygren_v1 P4, sosin_v1) on one share basis: the unadjusted I/B/E/S summary
+(ibes.statsumu_epsus, new data set rc_ibes2u, fpi 1 and 2) against the CRSP price at t as traded; if the table is not
+readable, the pull stores a marker and those criteria are labelled "provisional (split basis)". S2 reference-book
+baseline scored on the recipe's own set for recipes with the house exclusions off; share of counted purchases without a
+reference score printed; above 50% c5 is "not informative" and the gate rests on the other four conditions. S3
+pilecki_v1 small groups ranked among all eligible financials at t. S4 the Sosin line prints no filer number. N1 lilu_v1
+on his own set (all industries), the house-set result as a second line. N5 index managers per quarter-end printed.
 """
 import json
 import time
@@ -69,7 +77,7 @@ INVESTORS = json.loads("[{\"name\": \"Joel Greenblatt\", \"group\": \"roster\", 
 TARGETS = json.loads("[{\"name\": \"Dev Kantesaria\", \"mgrnos\": [\"14460\"], \"recipe\": \"kantesaria_v1\"}, {\"name\": \"Dev Kantesaria\", \"mgrnos\": [\"14460\"], \"recipe\": \"kantesaria_v2\"}, {\"name\": \"Stan Druckenmiller\", \"mgrnos\": [\"13021\", \"23704\"], \"recipe\": \"druckenmiller_v1\"}, {\"name\": \"Murray Stahl\", \"mgrnos\": [\"44850\", \"49373\"], \"recipe\": \"stahl_v1\"}, {\"name\": \"Chris Hohn\", \"mgrnos\": [\"11194\"], \"recipe\": \"hohn_v1\"}, {\"name\": \"Val Zlatev\", \"mgrnos\": [\"7142\"], \"recipe\": \"zlatev_v1\"}, {\"name\": \"Derek Pilecki\", \"mgrnos\": [\"8799\"], \"recipe\": \"pilecki_v1\"}, {\"name\": \"Bill Nygren and Alex Fitch\", \"mgrnos\": [\"43485\"], \"recipe\": \"nygren_v1\"}, {\"name\": \"Li Lu\", \"mgrnos\": [\"14546\"], \"recipe\": \"lilu_v1\"}, {\"name\": \"Cliff Sosin\", \"mgrnos\": [\"21801\"], \"recipe\": \"sosin_v1\"}]")
 # <<< FROZEN INPUT
 
-VERSION = "eq_recall-1.1.0"
+VERSION = "eq_recall-1.1.1"
 COM = ("securitytype = 'EQTY' and securitysubtype = 'COM' and sharetype = 'NS' and primaryexch in ('N','A','Q')")
 MEASURES = ["ey", "bp", "mom", "roe", "acc", "pio", "rev"]
 GROUPS = {"value": ["ey", "bp"], "momentum": ["mom"], "quality": ["roe", "acc", "pio"], "expectations": ["rev"]}
@@ -98,7 +106,7 @@ FUNDA2_COLS = ["seq", "mib", "txt", "pi"]          # equity, minorities (R34 = s
 IBES0 = "%d-06-01" % CFG["y0"]
 IDX_PATTERNS = ["VANGUARD GROUP", "BLACKROCK", "STATE STREET", "BARCLAYS GLOBAL INV"]  # O05: the three largest index
 IDX0, IDX1 = "2009-06-30", "2025-06-30"            # managers (BGI = BlackRock's index arm before its 2009-12 purchase)
-NEW_SETS = ["rc_fqx2", "rc_funda2", "rc_ibes2", "rc_idx"]
+NEW_SETS = ["rc_fqx2", "rc_funda2", "rc_ibes2", "rc_idx", "rc_ibes2u"]  # 1.1.1: + rc_ibes2u
 FIRM_WIDE = {"Murray Stahl": "Horizon Kinetics", "Bill Nygren and Alex Fitch": "Harris Associates",
              "Chris Davis": "Davis Selected"}      # A6: firm-wide 13F filers ("firm, not person")
 
@@ -287,6 +295,7 @@ def pull(sql, save, load, out, budget=7000):
                                                fwhere))
     step("rc_ibes2", lambda: _ibes2(sql))
     step("rc_idx", lambda: _idx(sql, out))
+    step("rc_ibes2u", lambda: _ibes2u(sql, out))  # 1.1.1 (S1)
     left = [n for n in _needed() if not (have(n) or (n.startswith("ref_") and have("rc_" + n[4:])))]
     if "rc_t10" in left:
         out("STOP: the 10-year Treasury yield is not available (RECALL_SPEC_v1: the job stops and says so)")
@@ -305,6 +314,22 @@ def _ibes2(sql):
     return sql("select ticker, cusip, statpers, fpi, fpedats, meanest::float8 as meanest, numest%s from "
                "ibes.statsum_epsus where fpi in ('0', '1', '2') and measure = 'EPS' and statpers between '%s' and "
                "'%d-12-31' and meanest is not null" % (cur, IBES0, CFG["y1"]))
+
+
+def _ibes2u(sql, out):
+    """1.1.1 (S1): the UNADJUSTED I/B/E/S summary EPS (ibes.statsumu_epsus) for FY1 and FY2, same fields and date rule
+    as rc_ibes2: per-share figures on the share basis of the statistic date. If the table is not readable by this
+    account, a one-row marker is stored (column 'unreadable') and run() labels the two criteria provisional."""
+    try:
+        cols = list(sql("select * from ibes.statsumu_epsus limit 1").columns)
+        cur = ", curcode" if "curcode" in cols else ""
+        return sql("select ticker, cusip, statpers, fpi, fpedats, meanest::float8 as meanest, numest%s from "
+                   "ibes.statsumu_epsus where fpi in ('1', '2') and measure = 'EPS' and statpers between '%s' and "
+                   "'%d-12-31' and meanest is not null" % (cur, IBES0, CFG["y1"]))
+    except Exception as e:  # noqa: BLE001
+        out("ibes.statsumu_epsus not readable (%s): Zlatev P1 and Nygren P4 will be labelled 'provisional (split "
+            "basis)'" % str(e).splitlines()[0][:90])
+        return pd.DataFrame({"unreadable": [1]})
 
 
 def _idx(sql, out):
@@ -916,28 +941,7 @@ def cusip8(s):
 def ibes2_at(D, E, msf, s):
     """1.1.0: FY1 mean, number of estimates and period end, FY2 mean and long-term growth mean (latest within 35 days
     before t, by CUSIP through CRSP names as eq_ref), and the CRSP price at t on the I/B/E/S share basis (as E01)"""
-    ib = D["ibes2"].copy()
-    if "curcode" in ib:
-        ib = ib[ib.curcode.astype(str).str.upper().isin(["USD", "NONE", "NAN"])]
-    ib["statpers"] = pd.to_datetime(ib.statpers)
-    ib["fpedats"] = pd.to_datetime(ib.fpedats, errors="coerce")
-    ib["fpi"] = ib.fpi.astype(str).str.replace(r"\.0$", "", regex=True)
-    nm = D["names"].copy()
-    nm["namedt"], nm["nend"] = pd.to_datetime(nm.namedt), pd.to_datetime(nm.nend)
-    ib["cusip"], nm["cusip"] = cusip8(ib.cusip), cusip8(nm.cusip)
-    x = ib.merge(nm, on="cusip", how="inner")
-    x = x[(x.statpers >= x.namedt) & (x.statpers <= x.nend)].sort_values(["permno", "fpi", "statpers"])
-    x = x.drop_duplicates(["permno", "fpi", "statpers"], keep="last")
-    ends = pd.to_datetime([ym_end(int(v)) for v in E.yyyymm]).values
-    k = pd.DataFrame({"permno": E.permno.values, "key": ends, "row": np.arange(len(E))}).sort_values("key")
-    k["key"] = k.key.astype("datetime64[ns]")
-    res = {}
-    for f_ in ("1", "2", "0"):
-        y = x[x.fpi == f_][["permno", "statpers", "meanest", "numest", "fpedats"]].rename(columns={"statpers": "key"})
-        y["key"] = y.key.astype("datetime64[ns]")
-        r = pd.merge_asof(k, y.sort_values("key"), on="key", by="permno", direction="backward",
-                          tolerance=pd.Timedelta(days=CFG["ibes_tol_days"])).sort_values("row")
-        res[f_] = r
+    res = _ibes_match(D["ibes2"], D["names"], E, ("1", "2", "0"))
     E["fy1"] = res["1"].meanest.to_numpy(float)
     E["n1"] = pd.to_numeric(res["1"].numest, errors="coerce").to_numpy(float)
     E["fpe1"] = pd.to_datetime(res["1"].fpedats).values
@@ -951,7 +955,45 @@ def ibes2_at(D, E, msf, s):
     padj[~np.isfinite(padj) | (padj <= 0)] = np.nan
     E["padj_ib"] = padj
     E["e04"] = (E.fy2 / E.fy1 - 1).where(E.fy1 > 0)
-    E["pfy2"] = (E.padj_ib / E.fy2).where(E.fy2 > 0)
+    # 1.1.1 (S1): price-to-estimate criteria on one share basis = unadjusted FY1 / FY2 against the price at t as traded
+    u_ = D.get("ibes2u")
+    if u_ is not None and "unreadable" not in u_.columns:
+        ru = _ibes_match(u_, D["names"], E, ("1", "2"))
+        E["fy1b"] = ru["1"].meanest.to_numpy(float)
+        E["fy2b"] = ru["2"].meanest.to_numpy(float)
+        E["px_ib"] = E.prc.where(E.prc > 0).astype(float)
+        E["ib_basis"] = "unadjusted"
+    else:                                  # provisional (split basis): the 1.1.0 method
+        E["fy1b"], E["fy2b"], E["px_ib"], E["ib_basis"] = E.fy1, E.fy2, E.padj_ib, "provisional"
+    E["pfy2"] = (E.px_ib / E.fy2b).where(E.fy2b > 0)
+
+
+def _ibes_match(ib, names, E, fpis):
+    """1.1.0 matching (moved here in 1.1.1, unchanged): by CUSIP through CRSP names, latest statistic within 35 days
+    before t, per fpi"""
+    ib = ib.copy()
+    if "curcode" in ib:
+        ib = ib[ib.curcode.astype(str).str.upper().isin(["USD", "NONE", "NAN"])]
+    ib["statpers"] = pd.to_datetime(ib.statpers)
+    ib["fpedats"] = pd.to_datetime(ib.fpedats, errors="coerce")
+    ib["fpi"] = ib.fpi.astype(str).str.replace(r"\.0$", "", regex=True)
+    nm = names.copy()
+    nm["namedt"], nm["nend"] = pd.to_datetime(nm.namedt), pd.to_datetime(nm.nend)
+    ib["cusip"], nm["cusip"] = cusip8(ib.cusip), cusip8(nm.cusip)
+    x = ib.merge(nm, on="cusip", how="inner")
+    x = x[(x.statpers >= x.namedt) & (x.statpers <= x.nend)].sort_values(["permno", "fpi", "statpers"])
+    x = x.drop_duplicates(["permno", "fpi", "statpers"], keep="last")
+    ends = pd.to_datetime([ym_end(int(v)) for v in E.yyyymm]).values
+    k = pd.DataFrame({"permno": E.permno.values, "key": ends, "row": np.arange(len(E))}).sort_values("key")
+    k["key"] = k.key.astype("datetime64[ns]")
+    res = {}
+    for f_ in fpis:
+        y = x[x.fpi == f_][["permno", "statpers", "meanest", "numest", "fpedats"]].rename(columns={"statpers": "key"})
+        y["key"] = y.key.astype("datetime64[ns]")
+        r = pd.merge_asof(k, y.sort_values("key"), on="key", by="permno", direction="backward",
+                          tolerance=pd.Timedelta(days=CFG["ibes_tol_days"])).sort_values("row")
+        res[f_] = r
+    return res
 
 
 def o05_at(D, E, msf):
@@ -1012,6 +1054,12 @@ def recall_extra(D, E, msf, s, out):
         "stock-quarters" % (100 * E.fy1.notna().mean(), 100 * E.fy2.notna().mean(), 100 * E.ltg.notna().mean(),
                             E.ltg.median(), 100 * E.o05.notna().mean(), E.o05.median(), 100 * E.rq_q02.notna().mean(),
                             100 * E.s04star.notna().mean(), 100 * E.v10.notna().mean()))
+    ix = D["idx"]
+    if "nmgr" in ix and len(ix):  # 1.1.1 (N5): index managers found at each quarter-end (largest count over CUSIPs)
+        per = pd.to_numeric(ix.nmgr, errors="coerce").groupby(ix.rdate).max()
+        out("index managers found per 13F quarter-end: median %.0f (min %.0f, max %.0f) over %d quarter-ends" % (
+            per.median(), per.min(), per.max(), len(per)))
+    out("I/B/E/S basis of price / estimate criteria (ZLA P1, NYG P4): %s" % E.ib_basis.iloc[0] if len(E) else "-")
 
 
 # ------------------------------------------------------------------------------------------------------- recipes
@@ -1315,10 +1363,23 @@ def pil_groups(P):
     return grp.where(~pay, "4020")
 
 
+def pil_small(P, grp, fin):
+    """1.1.1 (S3): eligible financials whose industry group has fewer than 10 eligible financials at t"""
+    size = fin.astype(float).groupby([P.yyyymm, grp]).transform("sum")
+    return fin & (size < 10)
+
+
+def pil_note(P):
+    grp = pil_groups(P)
+    fin = grp.isin(["4010", "4020", "4030"])
+    return ("comparison-group fallback (group with fewer than 10 eligible financials at t; ranked among all eligible "
+            "financials): %d of %d financial stock-quarters" % (int(pil_small(P, grp, fin).sum()), int(fin.sum())))
+
+
 def pilecki_v1(P):
     """Pilecki recipe v1 (batch2/PIL/recipe/RECIPE_v1.md; house exclusions do not apply): A1 financials only (pil_groups
-    in 4010, 4020, 4030); comparison group = that group, or sector 40 when fewer than 10 eligible financials are in it
-    at t; B1 ROE TTM rank in the comparison group > 0.5 (missing = 0.5); B2 (groups 4010, 4030 only) tangible book per
+    in 4010, 4020, 4030); comparison group = that group, or all eligible financials (sector 40) at t when fewer than 10
+    eligible financials are in it at t (1.1.1, S3); B1 ROE TTM rank in the comparison group > 0.5 (missing = 0.5); B2 (groups 4010, 4030 only) tangible book per
     share now plus dividends per share of the last 12 quarters over tangible book per share 12 quarters before > 1;
     B3 P02 > 0; P1 value score (4010, 4030: mean of the in-group ranks of V02 and V07; 4020: rank of V02; missing rank
     = 0.5) ranked in the comparison group >= 0.70; A2 not a new 12-month low (missing = fail). B4 (December sleeve) is
@@ -1326,12 +1387,15 @@ def pilecki_v1(P):
     F = pd.DataFrame(index=P.index)
     grp = pil_groups(P)
     fin = grp.isin(["4010", "4020", "4030"])
-    size = fin.astype(float).groupby([P.yyyymm, grp]).transform("sum")
-    cmpg = grp.where(size >= 10, "40").where(fin)
-    keys = [P.yyyymm, cmpg]
+    small = pil_small(P, grp, fin)
 
     def rk(v):
-        return pct01(v.where(fin), keys)
+        """1.1.1 (S3): inside the group; rows of a group with fewer than 10 eligible financials at t are ranked among
+        all eligible financials (sector 40) at t"""
+        vv = v.where(fin)
+        a = pct01(vv.where(~small), [P.yyyymm, grp])
+        b = pct01(vv, [P.yyyymm])
+        return a.where(~small, b.where(small))
     r_roe = rk(P.roe).fillna(0.5)
     bs = grp.isin(["4010", "4030"])
     score = ((rk(P.v02).fillna(0.5) + rk(P.v07).fillna(0.5)) / 2).where(bs, rk(P.v02).fillna(0.5)).where(fin)
@@ -1360,7 +1424,7 @@ def ntm_eps(P):
     t_end = pd.to_datetime([ym_end(int(v)) for v in P.yyyymm])
     w1 = ((pd.to_datetime(P.fpe1).values - t_end.values) / np.timedelta64(1, "D")) / 365.25
     w1 = pd.Series(np.clip(w1, 0.0, 1.0), index=P.index)
-    return w1 * P.fy1 + (1 - w1) * P.fy2
+    return w1 * P.fy1b + (1 - w1) * P.fy2b  # 1.1.1 (S1): on the price's share basis
 
 
 def nygren_value(P, floor=0.08, gsrc="ltg"):
@@ -1388,7 +1452,7 @@ def nygren_v1(P):
     rk = [P[c].groupby(P.yyyymm).rank(ascending=False, method="min") for c in ("rq_sale_ttm", "rq_ni_ttm", "ceq")]
     F["B1"] = pd.concat(rk, axis=1).min(axis=1) <= 250
     V, graw, g = nygren_value(P)
-    pv = P.padj_ib / V
+    pv = P.px_ib / V
     F["B2"] = (P.v10 + g) >= 0.08
     F["P4"] = pv < 0.70
     F["A1"] = graw >= 0
@@ -1397,9 +1461,9 @@ def nygren_v1(P):
     F["G1_B2"] = (P.v10 + g) >= 0.09
     F["G2_P4"] = pv < 0.60
     V3, _, g3 = nygren_value(P, floor=0.09)
-    F["G3_B2"], F["G3_P4"], F["G3_A3"] = (P.v10 + g3) >= 0.08, (P.padj_ib / V3) < 0.70, V3.notna()
+    F["G3_B2"], F["G3_P4"], F["G3_A3"] = (P.v10 + g3) >= 0.08, (P.px_ib / V3) < 0.70, V3.notna()
     V4, gr4, g4 = nygren_value(P, gsrc="e04")
-    F["G4_B2"], F["G4_P4"], F["G4_A1"], F["G4_A3"] = (P.v10 + g4) >= 0.08, (P.padj_ib / V4) < 0.70, gr4 >= 0, V4.notna()
+    F["G4_B2"], F["G4_P4"], F["G4_A1"], F["G4_A3"] = (P.v10 + g4) >= 0.08, (P.px_ib / V4) < 0.70, gr4 >= 0, V4.notna()
     return F.fillna(False).astype(bool)
 
 
@@ -1473,7 +1537,7 @@ def sosin_v1(P):
     sk = [P.yyyymm, P.gsector]
     F["B1"] = pct01(P.rq_gm, [P.yyyymm, lvl]) > 0.5
     F["B2"] = ~prof | (pct01(P.q01_ann.where(prof), sk) > 0.5)
-    v03 = (ntm_eps(P) / P.padj_ib).where(P.padj_ib > 0)
+    v03 = (ntm_eps(P) / P.px_ib).where(P.px_ib > 0)
     F["P1"] = (prof & (pct01(P.ey.where(prof), sk) >= 0.5)) | (
         ~prof & (v03 > 0) & (pct01(v03.where(~prof), sk) >= 0.5))
     return F.fillna(False).astype(bool)
@@ -1595,7 +1659,7 @@ RECIPES = {
         "coverage": ["rq_gm", "rq_dgm", "b01", "rq_fcfm", "pfy2", "e04"],
     },
     "pilecki_v1": {
-        "flags": pilecki_v1, "entry": pilecki_v1_entry, "full": pilecki_v1_full, "universe": "all",
+        "flags": pilecki_v1, "entry": pilecki_v1_entry, "full": pilecki_v1_full, "universe": "all", "note": pil_note,
         "not_implemented": ["B4"],
         "labels": ["thin", "financials only", "recipe covers 2 of 7 buy rules fully (decisive)",
                    "house exclusions do not apply (recipe section 0)"],
@@ -1625,8 +1689,9 @@ RECIPES = {
         "coverage": ["rq_sale_ttm", "v10", "ltg", "e04", "fy1", "fy2", "rq_saleg12", "rq_rpsg"],
     },
     "lilu_v1": {
-        "flags": lilu_v1, "entry": lilu_v1_entry, "full": lilu_v1_full, "universe": "house",
-        "labels": ["thin", "recipe covers 3 of 6 buy rules (decisive)"],
+        "flags": lilu_v1, "entry": lilu_v1_entry, "full": lilu_v1_full, "universe": "all", "also_house": True,
+        "labels": ["thin", "recipe covers 3 of 6 buy rules (decisive)", "house exclusions do not apply (recipe section "
+                   "0; 1.1.1, N1)"],
         "criteria": [("B1", "Greenblatt return on capital in the sector's top third", ["rq_q02"]),
                      ("B2", "new 12-month low during the quarter", ["lowq"]),
                      ("P1", "book / price >= 1", ["bp"]),
@@ -1774,6 +1839,7 @@ def load_inputs(load):
     D["dv"] = pd.concat(parts, ignore_index=True)
     D["funda"], D["fqx"], D["t10"] = load("rc_funda"), load("rc_fqx"), load("rc_t10")
     D["fqx2"], D["funda2"], D["ibes2"], D["idx"] = load("rc_fqx2"), load("rc_funda2"), load("rc_ibes2"), load("rc_idx")
+    D["ibes2u"] = load("rc_ibes2u")  # 1.1.1 (S1)
     # no monthly data after the last evaluation quarter-end is read (no forward return)
     D["cf_last"] = D["msf"].sort_values("yyyymm").groupby("permno").cfpr.last()  # 1.0.1: split factor only, no return
     D["msf"] = D["msf"][pd.to_numeric(D["msf"].yyyymm) <= T1].copy()
@@ -1821,20 +1887,21 @@ def _per_set(res):
                      for r in res["per"])
 
 
-def recipe_labels(rec, name):
-    """labels printed with every result block: READING_STATUS labels, 'decisive minus <ids>', firm-wide 13F filer"""
-    lab = list(rec.get("labels", []))
+def recipe_labels(rec, name, extra=None):
+    """labels printed with every result block: READING_STATUS labels, 'decisive minus <ids>', firm-wide 13F filer;
+    1.1.1: run-time labels (provisional split basis)"""
+    lab = list(rec.get("labels", [])) + list(extra or [])
     if rec.get("not_implemented"):
         lab.append("decisive minus %s" % ", ".join(rec["not_implemented"]))
     return lab
 
 
-def evaluate(tgt, E_all, u, r, cp, out, save):
+def evaluate(tgt, E_all, u, r, cp, out, save, r_all=None, extra=None):
     """one recipe on one investor: the section set of the eq_recall_v1 report. kantesaria_v1 keeps the v1 layout
     line for line; every other recipe repeats its labels under each section header."""
     rec = RECIPES[tgt["recipe"]]
     v1 = rec.get("v1_layout", False)
-    labels = recipe_labels(rec, tgt["name"])
+    labels = recipe_labels(rec, tgt["name"], extra)
     lab_txt = "; ".join(labels)
 
     def head(txt):
@@ -1856,7 +1923,8 @@ def evaluate(tgt, E_all, u, r, cp, out, save):
     for c, _ in rec["full_extra"]:
         add["f_" + c] = _or(F, c).values
     E = pd.concat([E, pd.DataFrame(add, index=E.index)], axis=1)
-    rk = r[["permno", "yyyymm", "sec_pct"]]
+    rr_ = r_all if (rec.get("universe") == "all" and r_all is not None) else r   # 1.1.1 (S2): the recipe's own set
+    rk = rr_[["permno", "yyyymm", "sec_pct"]]
     E = E.merge(rk, on=["permno", "yyyymm"], how="left")
     E["ref"] = E.sec_pct.fillna(0) >= REF_TOP
     out("\n# %s: recipe %s (eligible stock-quarters %d%s)" % (
@@ -1875,6 +1943,8 @@ def evaluate(tgt, E_all, u, r, cp, out, save):
         out("%d  %5d %5d  %5.1f %5.1f  %s" % (t, len(d), int(d.dec.sum()), 100 * d.dec.mean(), 100 * d.ref.mean(), cov))
     out("coverage = % of eligible stocks with the measure (fy_run: with any run); rate = decisive pass rate; ref = "
         "reference-book top fifth inside sector")
+    if rec.get("note"):
+        out(rec["note"](E))
     if tgt["recipe"].startswith("kantesaria"):
         out("share-pay source among eligible: quarterly %.1f%%, annual %.1f%%, none (decisive: 0; strict: missing) %.1f%%; "
             "acquisitions filled as none where missing: %.1f%%" % tuple(
@@ -1919,6 +1989,13 @@ def evaluate(tgt, E_all, u, r, cp, out, save):
     else:
         full = {"measurable": False}
         out("FULL FORM: %s" % rec.get("full_note", "not implemented"))
+    house = None
+    if rec.get("also_house"):  # 1.1.1 (N1): the same recipe on the house set, reported
+        EH = recipe_set(E_all, {"universe": "house"})
+        EH["dec"] = rec["entry"](rec["flags"](EH)).values
+        SH = sets_for(Pk, EH, ["dec"])
+        house = summarize({k: SH[k] for k in ("a", "b")}, ["dec"])
+        out(_line("decisive on the house set (reported)", house))
     # baselines
     ctrl = [i for i in INVESTORS if i["group"] == "control" and i["mgrnos"]]
     Pc = pd.concat([investor_purchases(cp, i) for i in ctrl], ignore_index=True) if ctrl else Pk.iloc[0:0]
@@ -1929,6 +2006,13 @@ def evaluate(tgt, E_all, u, r, cp, out, save):
     out("   per version: " + _per_set(base1))
     out(_line("(2) reference-book top fifth on this investor", ref))
     out("   per version: " + _per_set(ref))
+    Ye = S["either"][["t", "permno"]].merge(E[["permno", "yyyymm", "sec_pct"]].rename(columns={"yyyymm": "t"}),
+                                            on=["permno", "t"], how="left")
+    noref = float(Ye.sec_pct.isna().mean()) if len(Ye) else float("nan")   # 1.1.1 (S2)
+    c5_info = not (noref > 0.5)
+    if not v1 or not c5_info:
+        out("   counted purchases without a reference-book score: %s%s" % (
+            fmt(noref, True), "" if c5_info else " (above 50%: condition c5 not informative)"))
 
     # ---------------------------------------------------------------- gate
     head("\n## 4. Gate (A10 item 9): decisive form")
@@ -1949,8 +2033,12 @@ def evaluate(tgt, E_all, u, r, cp, out, save):
         out("lift >= %.2f: %s; interval lower end > %.2f: %s; recall >= %.0f%%: %s; lift above control baseline: %s; "
             "lift above reference-book baseline: %s" % (GATE["lift"], "yes" if c1 else "NO", GATE["lo"],
                                                         "yes" if c2 else "NO", 100 * GATE["recall"], "yes" if c3 else "NO",
-                                                        "yes" if c4 else "NO", "yes" if c5 else "NO"))
-        verdict = "PASS" if (c1 and c2 and c3 and c4 and c5) else "FAIL"
+                                                        "yes" if c4 else "NO",
+                                                        ("yes" if c5 else "NO") if c5_info else "not informative"))
+        if c5_info:
+            verdict = "PASS" if (c1 and c2 and c3 and c4 and c5) else "FAIL"
+        else:  # 1.1.1 (S2): decided on the other four conditions
+            verdict = ("PASS" if (c1 and c2 and c3 and c4) else "FAIL") + " (on four conditions; c5 not informative)"
     out("RECALL GATE: %s  (labels: %s)" % (verdict, lab_txt))
 
     # ---------------------------------------------------------------- per criterion
@@ -2000,7 +2088,7 @@ def evaluate(tgt, E_all, u, r, cp, out, save):
     out("CONTROL pooled  lift %s" % fmt(base1.get("lift", np.nan)))
 
     for nm_, res in (("decisive", dec), ("either", eit), ("strict", strict), ("full", full), ("control", base1),
-                     ("reference", ref)):
+                     ("reference", ref), ("house", house)):
         if res is None:
             continue
         rows.append(dict(kind="result", key=nm_, recall=res.get("recall"), base=res.get("base"), lift=res.get("lift"),
@@ -2046,7 +2134,10 @@ def run(load, save, out):
         out("STOP: GICS history (comp.co_hgic) not available; RECIPE_v1 does not accept today's GICS for A1-A4")
         return
     r = rank_panel(u)
+    r_all = rank_panel(u.assign(excluded=False))  # 1.1.1 (S2): reference score with the house exclusions off
     E = recall_panel(D, u, msf, s, out)
+    prov = "unreadable" in D["ibes2u"].columns     # 1.1.1 (S1)
+    extra = {"zlatev_v1": ["P1 provisional (split basis)"], "nygren_v1": ["P4 provisional (split basis)"]} if prov else {}
     out("panel built %.0f s" % (time.time() - t0))
     cp = load_conv(load)
     parts, summ = [], []
@@ -2054,12 +2145,11 @@ def run(load, save, out):
         rec = RECIPES[tgt["recipe"]]
         if not rec.get("measured", True):
             out("\n# %s: recipe %s" % (tgt["name"], tgt["recipe"]))
-            out("Sosin: not in eq_conv_panel (13F filer %s to be added by an eq_conv input change); not measured"
-                % ",".join(tgt["mgrnos"]))
+            out("Sosin: not in eq_conv_panel (13F filer to be added by an eq_conv input change); not measured")
             summ.append(dict(name=tgt["name"], recipe=tgt["recipe"], n="-", recall=np.nan, base=np.nan, lift=np.nan,
                              lo=np.nan, hi=np.nan, gate="NOT MEASURED", labels="; ".join(recipe_labels(rec, tgt["name"]))))
             continue
-        R_, s_ = evaluate(tgt, E, u, r, cp, out, save)
+        R_, s_ = evaluate(tgt, E, u, r, cp, out, save, r_all=r_all, extra=extra.get(tgt["recipe"]))
         parts.append(R_)
         summ.append(s_)
         out("(%s done %.0f s)" % (tgt["recipe"], time.time() - t0))

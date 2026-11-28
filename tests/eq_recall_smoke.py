@@ -74,6 +74,14 @@ def mk_sql(frb=True):
         if "limit 1" in q and "comp.fundq" in q:
             return pd.DataFrame(columns=["gvkey", "datadate", "fyearq", "fqtr"] + [c for c in R.FQX_COLS if c != "stkcoy"]
                                 + [c for c in R.FQX2_COLS if c != "dvpsxq"])
+        if "ibes.statsumu_epsus" in q:   # 1.1.1: unadjusted summary
+            if not frb:
+                raise RuntimeError("permission denied for table statsumu_epsus")
+            if "limit 1" in q:
+                return pd.DataFrame(columns=["ticker", "cusip", "statpers", "fpi", "fpedats", "meanest", "numest"])
+            assert "fpi in ('1', '2')" in q and "curcode" not in q
+            return pd.DataFrame({"ticker": ["T"], "cusip": ["X"], "statpers": ["2010-01-15"], "fpi": ["1"],
+                                 "fpedats": ["2010-12-31"], "meanest": [2.0], "numest": [3]})
         if "limit 1" in q and "ibes.statsum_epsus" in q:
             return pd.DataFrame(columns=["ticker", "cusip", "statpers", "fpi", "fpedats", "meanest", "numest", "curcode"])
         if "from ibes.statsum_epsus where" in q:
@@ -148,6 +156,7 @@ R.pull(mk_sql(True), save_mem, load_mem, pout, budget=100)         # resumable: 
 assert not any("rows" in x for x in plines) and "ALL PULLS COMPLETE" in "\n".join(plines)
 assert len(queries) == nq, queries[nq:]
 del store["rc_t10"]
+del store["rc_ibes2u"]                                           # 1.1.1: unreadable -> marker, no stop
 plines.clear()
 R.pull(mk_sql(False), save_mem, load_mem, pout, budget=100)
 ptxt = "\n".join(plines)
@@ -156,6 +165,7 @@ pt = store["rc_t10"]
 assert pt.src.iloc[0] == "public.fred.dgs10" and len(pt) == 211 and pt.date.iloc[0] == "2008-06-30"
 assert pt.date.iloc[-1] == "2025-12-31" and abs(pt.y10.iloc[-1] - 4.18) < 1e-9
 assert "FRB table seen" not in ptxt  # no FRB table listed in this mock
+assert "statsumu_epsus not readable" in ptxt and "unreadable" in store["rc_ibes2u"].columns, ptxt
 print("pull(): reuse, fallback pull, empty column, FRB discovery, public H.15 fallback, 1.1.0 pulls reused: OK")
 
 # -------------------------------------------------------------------------------------------- 3. run() end to end
@@ -268,7 +278,8 @@ CPCOLS = ["mgrno", "yyyymm", "permno", "w", "rank", "new", "add", "conv_a", "con
 
 wstore = {"ref_msf": msf, "ref_link": link, "ref_fq": refq, "ref_gics": gics, "ref_ibes": ibes, "ref_names": names,
           "rc_funda": funda, "rc_fqx": fqx, "rc_t10": t10, "rc_fqx2": fqx2, "rc_funda2": funda2, "rc_ibes2": ibes2,
-          "rc_idx": idxf, "eq_conv_panel": pd.DataFrame(cp, columns=CPCOLS)}
+          "rc_idx": idxf, "rc_ibes2u": ibes2[ibes2.fpi != "0"].drop(columns=["curcode"]),
+          "eq_conv_panel": pd.DataFrame(cp, columns=CPCOLS)}
 for y in range(R.CFG["y0"] + 1, R.CFG["y1"] + 1):
     wstore["ref_dv_%d" % y] = dvf[dvf.yyyymm // 100 == y]
 saved = {}
@@ -360,7 +371,8 @@ for tg in R.TARGETS:
     assert ("# %s: recipe %s" % (tg["name"], tg["recipe"])) in txt
     for c, _, _ in R.RECIPES[tg["recipe"]]["criteria"]:
         assert re.search(r"^%s\s" % re.escape(c), txt, re.M), (tg["recipe"], c)
-assert "Sosin: not in eq_conv_panel (13F filer 21801 to be added by an eq_conv input change); not measured" in txt
+assert "Sosin: not in eq_conv_panel (13F filer to be added by an eq_conv input change); not measured" in txt
+assert "21801" not in txt, "no filer number printed (1.1.1, S4)"
 # labels on the blocks
 blk = {}
 for tg in R.TARGETS:
@@ -374,6 +386,19 @@ assert "long/short, longs only tested" in blk["zlatev_v1"]
 assert "firm-wide" in blk["stahl_v1"] and "firm-wide" in blk["nygren_v1"]
 assert "no PRICE criterion in the decisive form" in blk["stahl_v1"] and "no PRICE criterion" in blk["druckenmiller_v1"]
 assert "FULL FORM: not implemented" in blk["druckenmiller_v1"]
+# 1.1.1: S1 basis line, S2 reference share line, S3 fallback count, N1 house-set line, N5 managers line
+assert "I/B/E/S basis of price / estimate criteria (ZLA P1, NYG P4): unadjusted" in txt
+assert "provisional (split basis)" not in txt
+for k_ in ("pilecki_v1", "nygren_v1", "lilu_v1", "hohn_v1"):
+    assert "counted purchases without a reference-book score:" in blk[k_], k_
+assert "counted purchases without a reference-book score" not in blk["kantesaria_v1"]
+assert re.search(r"comparison-group fallback .*: \d+ of \d+ financial stock-quarters", blk["pilecki_v1"])
+assert "decisive on the house set (reported)" in blk["lilu_v1"] and "decisive on the house set" not in blk["hohn_v1"]
+assert "index managers found per 13F quarter-end: median 3" in txt
+PR = saved["rc_pass_pilecki_v1"].merge(gics.assign(permno=permnos)[["permno", "ggroup"]], on="permno")
+assert PR.ref[PR.ggroup.isin(["4010", "4030"])].any(), "S2: banks / insurers get a reference score on the own set"
+LL = saved["rc_pass_lilu_v1"].merge(gics.assign(permno=permnos)[["permno", "ggroup"]], on="permno")
+assert (LL.ggroup == "4030").any(), "N1: Li Lu on his own set"
 assert not re.search(r"^labels: ", blk["kantesaria_v1"].split("## 1.")[1], re.M), "kantesaria_v1 keeps the v1 layout"
 assert re.search(r"^Li Lu\s+lilu_v1", txt, re.M) and re.search(r"^Cliff Sosin\s+sosin_v1 .*NOT MEASURED", txt, re.M)
 # a masked cross table
@@ -421,4 +446,19 @@ if src is not None:
     assert po.equals(pn[list(po.columns)]), "pass panel differs from 1.0.3"
     print("kantesaria_v1 identical to eq_recall 1.0.3 on the mock (%d section lines, %d summary rows, pass panel %d rows): OK"
           % (so.count("\n") + 1, len(A), len(po)))
+# ---------------------------------------------------------------- 5. 1.1.1: unadjusted I/B/E/S unreadable -> provisional
+keep_u = wstore["rc_ibes2u"]
+wstore["rc_ibes2u"] = pd.DataFrame({"unreadable": [1]})
+lines.clear()
+saved.clear()
+R.run(load, save, out)
+txt2 = "\n".join(lines)
+wstore["rc_ibes2u"] = keep_u
+assert "RECALL GATE" in txt2 and "I/B/E/S basis of price / estimate criteria (ZLA P1, NYG P4): provisional" in txt2
+for rc_, lab_ in (("zlatev_v1", "P1 provisional (split basis)"), ("nygren_v1", "P4 provisional (split basis)")):
+    a = txt2.index("recipe %s" % rc_)
+    b = txt2.find("\n# ", a)
+    assert txt2[a:b].count(lab_) >= 7, rc_
+assert txt2.count("provisional (split basis)") == txt2[txt2.index("recipe zlatev_v1"):].count("provisional (split basis)")
+print("1.1.1: unreadable unadjusted I/B/E/S -> labelled provisional, no stop: OK")
 print("\nRECALL SMOKE OK")

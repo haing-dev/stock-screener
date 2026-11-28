@@ -218,9 +218,9 @@
   {
    "registered_job": "recall",
    "module": "eq_recall",
-   "code_sha256": "db3651587e32f58ab9fdd6c9ba666d6a45fd725f6af8b062471b0cc8a9bbb276",
-   "registration": "docs/research/equity/pilot/RECALL_SPEC_v1.md; V04_REGISTRATION A13 item 13; A13 item 19 (1.0.3 public H.15 fallback); A13 item 21 (1.1.0 other recipes, kantesaria_v2, pulls rc_fqx2 / rc_funda2 / rc_ibes2 / rc_idx)",
-   "output": "eq_recall.run: per recipe (kantesaria_v1, kantesaria_v2, druckenmiller_v1, stahl_v1, hohn_v1, zlatev_v1, pilecki_v1, nygren_v1, lilu_v1; sosin_v1 not measured) counts, coverage shares, recall, base rate, lift, 90% bootstrap intervals, gate result, per-criterion rejection shares and a masked cross table of lifts, then a summary table; pull prints 13F index-manager names (metadata); no company, no identifier, no row; reads no forward return. Pass panels (rc_pass_<recipe>) and summary (rc_recall_summary_v11) stay on WRDS",
+   "code_sha256": "46f9a1b82f530dfa31e5c0e4390af435428a06bbf8cd33742e7eb826985448e2",
+   "registration": "docs/research/equity/pilot/RECALL_SPEC_v1.md; V04_REGISTRATION A13 item 13; A13 item 19 (1.0.3 public H.15 fallback); A13 item 21 (1.1.0 other recipes, kantesaria_v2, pulls rc_fqx2 / rc_funda2 / rc_ibes2 / rc_idx); A13 item 22 (1.1.1 review fixes S1-S4, N1, N5; pull rc_ibes2u)",
+   "output": "eq_recall.run: per recipe (kantesaria_v1, kantesaria_v2, druckenmiller_v1, stahl_v1, hohn_v1, zlatev_v1, pilecki_v1, nygren_v1, lilu_v1; sosin_v1 not measured) counts, coverage shares, recall, base rate, lift, 90% bootstrap intervals, gate result, per-criterion rejection shares and a masked cross table of lifts, then a summary table; pull prints 13F index-manager names (metadata); no company, no identifier, no row; reads no forward return. Pull also prints whether ibes.statsumu_epsus is readable (metadata). Pass panels (rc_pass_<recipe>) and summary (rc_recall_summary_v11) stay on WRDS",
    "names": [
     {
      "pattern": "eq_recall_pull_v\\d+[a-z]?",
@@ -255,6 +255,11 @@
      "code_sha256": "146a05e770282a3ec51dbf9c1ff7cf85fb6781789cb2a9ea096afc1c51b47deb",
      "version": "eq_recall-1.0.3",
      "note": "eq_recall_v1 ran with 1.0.3: Kantesaria recall FAIL"
+    },
+    {
+     "code_sha256": "db3651587e32f58ab9fdd6c9ba666d6a45fd725f6af8b062471b0cc8a9bbb276",
+     "version": "eq_recall-1.1.0",
+     "note": "reviewed, not run"
     }
    ]
   }
