@@ -4,6 +4,285 @@ Every rule change gets a new VERSION in gm/run.py and a line here. Every variant
 (1990-2010; extra check 1975-89) is logged so the deflated Sharpe can count the trials. The holdout (2011-2026) is run
 once, after the rules are frozen, by gm/holdout.py.
 
+## Batch B2: Strip reversion and ten card rule layers (registered 2026-11-28, BEFORE the B2 code and run): TESTING_PROTOCOL 7.6 step 9, 7.7, 7.8, register T11, T13-T32
+Registered run entry (no rule, weight, threshold, gate, cost or market change; no gm/ code change, so no feature
+version: the pod and the rule-layer engine are new code under their specs in tools/bbgq/lib, and BASE / CANDIDATE at
+k = 0 are untouched; no statistic of Strip reversion or of any card rule has been computed on any data, cloud or PC;
+the builder read only the pre-B and B1 reports the job pins, i.e. gate outcomes and counts). The LSEG store and the A1
+panel exist only on the PC, so every statistic is computed by one PC job (tools/bbgq/jobs/gm_b2_v1.py, library
+tools/bbgq/lib/b2_batch.py). Every choice below is closed from the registered text (7.x, the specs, the pre-B entry
+and its addenda, the B1 entry, the data entries), with the reason; none reads a result.
+1. The registered text. 7.6 step 9: "Batch B2 = Strip reversion (2 versions), only if R1 passes and daily settlements of
+   dollar contracts 1-8 are locked (else dropped unbuilt, logged); Curve carry if moved; and every card rule that
+   survives its gates"; "Each card rule is tested and labelled on its own (Incubator, Shelved or not judgeable); a
+   card's shadow pod is the sum of its Incubator rules, netted with every other card's (register B19) ... A netting
+   report shows any standing net position left after netting (register C7; reported)." Budget rule: "WORKFLOW's 'at
+   most 4' counts new systematic pods only. Card rule layers do not count". 7.7: Window, Held size ("A rule layer's
+   test return is its position return times 0.10 / 0.40 ... no rescaling"), T1-T4, F0, Verdicts, reported list, P3,
+   P4. 7.2 item 5: "Strip reversion is qualified but has no registered live source ... becomes Core-eligible only if
+   LSEG is registered as a live source (7.10 item 3) before B2 starts." 7.3 items 1-5. CORE BOOK V1 RUN: EMPTY, so "B
+   tests read alpha against a zero book (the pod's own mean)". 7.8 items 1-4.
+2. Contents, from the registered outcomes (PRE-B DIAGNOSTICS RUN; B1 RUN):
+   a. Strip reversion, versions A (adjacent spread S_n) and B (adjacent curvature K_n): R1 PASS (882 of 1,179, 0.748);
+      precondition "daily settlements of dollar contracts 1-8 locked" met by LOCK_LSEG_v5 (pre-B item 4).
+   b. Card rule layers judged in B2 (F0), with the versions the gates kept:
+      | Rule | Versions in B2 | Gates applied |
+      |---|---|---|
+      | card 1 R1 Squeeze | 8 (L 6/12 x FEDFUNDS/GS10 x R4 gate off/on) x entry E1/E3 = 16 | C1-D1 pass; C1-D2 both legs stay; C2-D1 FAIL: no floor versions |
+      | card 1 R2 Tightening into warnings | 8 (T 6/12 x k 2/3 x gate off/on) x E1/E3 = 16 | as R1 |
+      | card 1 R5 After the fall | 4 (G 15/10 x stocks / stocks and bond) x E1/E3 = 8 | C1-D1 pass; C1-D2 both legs stay |
+      | card 2 R1 Not paid to hold | 2: bar 'third' x hedge gate off / on (C2-D2 left out the two bar-0.0 versions) | C2-D2 |
+      | card 2 R2 Rates-only repricing | 2: X 1.5 and X 1.0, labour gate off (C2-D2 left out both gate-on versions) | C2-D2 |
+      | card 3 R2 Steepener | 2 (bar 1.0 / expanding mean) x sizing off/on = 4 | C3-D1 kept, FLAGGED (0.529) |
+      | card 3 R4 No alternative | 2 (B 1.0 / 0.0) x sizing off/on = 4 | C3-D1 kept, FLAGGED (0.631) |
+      | card 4 R1 Year-end window | 6 (entry end-October / mid-December x form A/B/C) | C4-D1 FAIL: no sizing versions |
+      | card 4 R3 After the ramp | 2 (window 1 / window 2) | C4-D1 FAIL: no sizing versions |
+      | card 4 R5 Disinflation steepener | 2 (inflation only / plus Fed cut) | C4-D2: R5 stays; no sizing version exists |
+      62 rule versions in all. Card 3 C3-D2 kept the R1 activity gate, which changes nothing here (card 3 R1 is not
+      judgeable). Card 3's sizing version and card 1's entry versions are versions of the card text (7.6 step 9 table
+      "with entry or sizing versions"; card specs s6), so B2 builds them.
+   c. Not in B2: Curve carry (B1 SHELVED, not moved); card 1 R3, R4, card 3 R1, R3, card 4 R2, R4, card 5 R1 (not
+      judgeable or dropped: analyst watch conditions, logged in the pre-B outcomes); card 1 R6, card 5 R2 (held back).
+3. Core eligibility when the batch starts (7.7 T1): Strip reversion is 7.2-qualified but has no registered live source
+   (lsegdata LIVE_START is not set; Eurodollar futures ended in 2023 and the live dollar strip, SOFR, has no design
+   history and needs its own 60-month normal, spec s8); so B2 has NO Core-eligible pod, the Holm count is 0, raw p
+   values are reported outside it, and no B2 item can be Core. Card rule layers are never Core (7.2 item 3; WORKFLOW
+   s6). T2 is printed, decisive only for Core (as B1). The budget rule is met (one systematic pod; rule layers do not
+   count).
+4. Strip reversion, closed here (spec s3-s9; the R1 readings of the pre-B entry item 5 R1 a-h kept wherever they apply,
+   so the pod reads the same strip, normal and stale screen that passed R1):
+   a. Currencies: sr_usd (Eurodollar, ED) and sr_eur (Euribor, FEI): the only roots with eight quarterly contracts in
+      one locked daily source (data entry "LSEG registered" item 2a: "the strips ED (1982-2012), FEI (1999-2012),
+      daily"; item 3: all eight priced on 3,149 of 3,149 Euribor days 1999-2010). Spec s4: Euribor "enters when all
+      eight have locked daily settlements"; short sterling and Euroswiss are not identified (data entry item 2d), Canada
+      BA and Euroyen are out (spec s4). Contracts: catalog rows per D, status ok, duplicate_of empty, function DS, code
+      "<" + root + H/M/U/Z + year digit + "^" + decade digit + ">" (decade digit >= 5 -> 19xx); serial months unused;
+      settlement on a day = an observation dated that day (R1 a). Last trading day = lseg_rules.dates(root, y, m).
+   b. Days: NYSE days (7.3 item 6; R1 c); decision day d of month t = its last NYSE day, d1 = the next NYSE day.
+      Holding end h(d) = the first US business day of month t + 2 (R1 d). Strip at d = the first eight quarterly
+      deliveries whose last trading day is after h(d) (spec s3 step 1; R1 e); it exists only if all eight have a
+      settlement on d.
+   c. r_k = (100 - settlement) x 100 bp; y_n = mean of r_1..r_n; S_n = y_n - y_(n-1) (n = 2..8, contracts 1..n); K_n =
+      2 y_n - y_(n-1) - y_(n+1) (n = 2..7, contracts 1..n+1).
+   d. Normal (spec s3 step 5; R1 g, for every measure of both versions): mean of the measure over earlier month-ends
+      (from the currency's first month-end with a settlement) whose contract n expires in the same calendar month as
+      contract n at d, using a month-end only where every contract the measure uses has a settlement on its last NYSE
+      day; it exists once the measure's first month-end value is at least 60 calendar months before d and its group has
+      an earlier value; per currency, never across currencies.
+   e. Stale screen (spec s3 step 9; R1 h): a contract fails at d unless its settlement changed on at least 15 of the 20
+      NYSE days before d; a measure with a non-zero weight on a failing contract gives no position at d.
+   f. Gap G = measure at d minus its normal; cost gate (step 8): a measure gives a position only where |G| >= 2 x 0.5 x A
+      (A = 2/n for S_n, (2n+4)/(n(n+1)) for K_n): the spec's "no position from a measure while |G| < 2 x c x A".
+   g. Version position q (step 10): sum over the passing measures of sign(G) x w, w as spec step 7 (S_n: +1/n on
+      contract n, -1/(n(n-1)) on contracts 1..n-1; K_n: -1/(n+1) on n+1, (n+2)/(n(n+1)) on n, -2/((n-1)n(n+1)) on
+      1..n-1); q_j > 0 is long contract j (rates fall, the measure falls).
+   h. Start per currency (spec s7): the first decision month at or after 1990-01 at which the strip exists and every
+      measure of at least one version has its normal (R1 j); the dollar's start is the pod's start; nothing before a
+      currency's start; after it, a month without a strip holds nothing in that currency. "Currencies with a strip" for
+      the equal-risk division (spec s5 item 1) = the started currencies with a strip at d (a currency that cannot hold
+      a position before its normals exist does not share the risk). Expected from metadata: USD 1990-01 (R1: first
+      normal 1990-01), EUR about 2004 (Euribor month-ends from 1998-12 plus 60 months).
+   i. Volatility (spec s3 step 12, "the engine's own estimator"): strip positions on NYSE day tau = the first eight
+      quarterly contracts whose last trading day is on or after tau; slot j's daily return = 0.25 x (P(tau) - P(tau-))
+      / 100 on the contract in slot j on day tau (both settlements needed); "complete days" = days on which all eight
+      slots have a return (other days are missing for every slot); slot j's monthly return = the sum of its complete-day
+      returns in the month (a month without a complete day is missing). sigma(q) = gm.vol.estimate's hybrid form with
+      CANDIDATE's vol config (fast = daily EWMA, half-life 35 days, at least 40 days, else the monthly EWMA, half-life 6,
+      at least 12 months; slow = 120 months, at least 36; 0.7 / 0.3 blend floored at 0.75 x slow; else the 36-month
+      estimate) applied to the return series of today's q on those histories up to d; computed exactly as quadratic
+      forms of EWMA and rolling covariance matrices of the slot returns (identical to gm.vol.estimate on the q series:
+      smoke test; gm.vol's 0.25 outlier screen cannot bind at these magnitudes, also tested).
+   j. Position x_(c,v) = 0.40 / sigma x q / n_c (n_c of item h); pod p = (x_A + x_B) / 2 at the unscaled stage (E7: a
+      missing version adds 0).
+   k. Returns: the notional of slot j decided at t is held from the settlement of d1 (first NYSE day of t + 1) to the
+      settlement of the first NYSE day of t + 2, on the contract in slot j at d; return = 0.25 x (exit - entry) / 100 per
+      unit notional (spec s3 step 11, gm/bloomberg.py short_rate_market convention); a contract without a settlement on
+      either day earns nothing that month (counted on a DATA line).
+   l. Book of the pod alone (spec s5; book.py run() conventions, as B1 4l): one block (all strip contracts of both
+      currencies); block return r_b(t) = sum p(t-1) x return(t); block scaler 1 / (36-month std, at least 24, x sqrt 12),
+      lagged, at most 50; book scaler 0.10 / (36-month std of the active raw book return, at least 24, x sqrt 12),
+      lagged; leg cap (spec s5 item 5, E11): cap_j = 0.10 x 0.10 x 3 / vol_j, vol_j = gm.vol.estimate (CANDIDATE) on
+      slot j's monthly and complete-day returns of item i, the currency's whole vector multiplied by min(1, min_j cap_j
+      / |x_j|) (gm.book.cap_positions, one group per currency, cap_from None); 5x gross cap with gross weight 0.25 / 1.9
+      per contract (E11).
+   m. Costs (spec s9): one-way 0.125 bp of notional per unit traded (0.5 bp of rate per contract per side x 0.25),
+      charged on every change of notional per identified contract (delivery), trade(t) = sum over contracts of |x_c(t)
+      - x_c(t-1)| (a contract absent on one side counts 0 there), no separate roll charge; net(t) = gross(t) - c x
+      cost(t-1), c = 1 (T1) or 2 (T2: "1 bp of rate per side; positions and the gate unchanged").
+   n. Holding cut (7.3 item 5; spec s7): decisions to 2010-10 earn (last return month 2010-11); decisions 2010-11 and
+      2010-12 are computed and earn nothing.
+   o. Window (7.7): return months with a net test return (active block and book scaler) from the first one to
+      2010-11; fewer than 120 = "insufficient data". Expected from metadata: positions from 1990-01, block scaler from
+      about 1992, book scaler about 1994, so about 200 months; the job prints the exact WINDOW line before any
+      statistic.
+   p. Timing: native k = 1 (7.3 item 3). Reported: the decision-day-settlement form (falsifier 2, not tradeable) and the
+      one-month delay (notionals per contract applied one month later; a contract that has expired by then earns
+      nothing, as item k).
+   q. Not computed in b2_batch 1.0.0 (reported lines only, no gate): the weekly-implementation check of spec s7 and 7.7
+      (tranches 1-3 need their own holding-period accounting across month ends; to be added before the freeze review
+      if wanted); the 4.3 correlation with T10 strip markets (none is admitted: A3 empty).
+5. Card rule-layer engine, closed here (card specs s3, s5, s9; pre-B entry item 5 and addenda A3-A6, which define every
+   rule state; nothing in a state is re-read):
+   a. Inputs (as the pre-B job): the A1 panel R (e7f98d44...), free daily D, ^GSPC daily closes, NYSE days, card inputs
+      LOCK_CARD_v1 (card_inputs-1.0.0), panel.fx_usd_value (card 1 R5), free TB3MS (card 3 R4), LSEG DS:@:USSP500|A12FE
+      (card 3 R4), all cut at 2010-12-31 (gm.seal). Volatility = diag_preb.card_vol (engine hybrid, CANDIDATE).
+   b. States and per-version legs = diag_preb 1.1.1's constructions (card1_rules, card1_r5, card2_rules, card3_rules,
+      card3_r4, card4_days, card4_r5 and their helpers leg, tail, pair_vol, pair_rule, par_dur), per version; where
+      diag_preb returns only the average, b2_batch rebuilds the versions with the same formulas, and item 9 proves it.
+   c. Entry versions (card 1 s3 step 5): E1 = the base position. E3, per version and per leg (one market; for R5 each
+      currency's legs): an episode = a maximal run of held decision months of that leg; at its first month the leg
+      holds one third; from the first decision month s of the run at which the leg's cumulative panel excess return
+      since the episode's first month-end, prod over months t0+1..s of (1 + R) - 1 (a missing R counts 0), times the
+      leg's direction is above zero, it holds full size to the end of the run; a new run starts at one third again.
+      Reason: "moved the trade's way is judged per leg, on its cumulative panel excess return" (spec); the panel return
+      is known at the decision close.
+   d. Fixed size (card 3 s5 item 3; card 4 s5 item 2 "Size is fixed while a rule is on", read the same way): card 3 R2,
+      R4 and card 4 R5: per version, the notional (and, for the 2s10s pair, the hedge ratio h = D2 / D10) is fixed at
+      the first decision month of an on-run (consecutive on-months with the same direction) at that month's volatility
+      (card 3 sizing version: max(volatility, its expanding median)) and kept to the run's last month (diag_preb
+      fixed_runs). Card 4 R1, R3: each window's notional = 0.40 / the eq_us_spx volatility at the last month-end before
+      its first held day, fixed for the window (spec s5 item 1 names that volatility; item 2 fixes it while on).
+      Cards 1 and 2: 0.40 / volatility of each decision month (their specs have no fixed-size rule).
+   e. Averaging: rule position = mean over its B2 versions (an off version counts 0).
+   f. Timing: monthly rules at k = 1 (7.3 items 1-2): gm.execution.k1_returns on R and D with the NYSE days (flagged
+      market-months use the k = 0 return, reported); a position decided at month-end t earns month t + 1; decisions to
+      2010-11 (2010-12 is never traded). Card 4 R1, R3 (7.3 item 3): held days entry < day <= exit, earning e(d) =
+      gm.execution.spx_daily_excess (E14) on the A1 panel's eq_us_spx and ^GSPC; a window running into 2011 ends at the
+      last NYSE day of 2010 (spec s7); the month's return = the sum over its days of position x e(d) (spec s3).
+   g. Held size (7.7): test return = net position return x 0.10 / 0.40; no rescaling.
+   h. Costs (specs s9; book.run conventions) on held-size positions per market: one-way gm.book.cost_bp x |change| at
+      each decision, plus |position| x one-way x 2 x rolls / 12 per month held; net(t) = gross(t) - c x cost(t-1).
+      Card 4 R1, R3: one-way at every entry and exit close (charged on that day), roll cost pro rata per held day
+      (|position| x one-way x 2 x rolls / 12 / N(m), N(m) = NYSE days of the month: a full month pays book.run's monthly
+      roll charge). c = 1 or 2.
+   i. Window (7.7, specs s7): return months from the rule's first decision month + 1 to 2010-12, off months 0 (card 4
+      R1, R3: the day window 1975-01-01..2010-12-31, so return months 1975-01..2010-12). First decision months: card 1
+      R1, R5 and card 2 R1, R2: 1975-01; card 1 R2, card 3 R2, card 4 R5: the first month of GS2 (1976-06 in the locked
+      file); card 3 R4: the first month of the LSEG forward EPS (1985-01, META_lseg_v5). A market without a k = 1 return
+      in a held month contributes 0 (counted); a leg without volatility holds nothing (diag_preb leg).
+6. Tests and verdicts (7.7; Core book v1 EMPTY):
+   T1 = gm.stats.alpha_boot(net test return, zero book) on the window (alpha = mean; one-sided centred stationary
+   bootstrap p, 10,000 resamples, mean block 6, seed 20261101); raw p printed, Holm count 0 (item 3). T2 = alpha at twice
+   the costs, printed. T4: not applicable (the B1 / "Core book v1" item 4j reading: a zero book has no volatility target).
+   T3 (1,000 placebos, seed 20261101; share of placebos with net Sharpe >= the item's on its window < 0.05):
+   - Strip reversion: the per-measure score arrays (sign of G where the gate passes, 0 where it fails; both versions,
+     both currencies) of the decision months whose holdings earn the window (the month before each window month) moved
+     jointly in 12-month blocks aligned to the first of them (gm.stats.placebo_perms, move_rows), then masked by the
+     destination month's data rules (strip exists at d, the measure's normal exists, none of its contracts stale: the
+     CHECK_B1 M1 reading of "placebo positions obey the destination month's own data rules"), weighted, re-sized with
+     the destination month's volatility, scalers, caps and costs.
+   - Monthly state rules (every rule but card 4 R1, R3): each version's direction array per leg (before division by
+     volatility; tails and gates inside it) of the decision months start..2010-11, all versions and markets of the rule
+     moved jointly by the same date maps (T = window length, blocks from the first decision month); at the destination
+     the legs are re-sized with that month's volatility (pairs: its hedge ratio), E3 and fixed-size runs are re-applied
+     to the moved runs with the destination's returns and volatilities, a market without volatility there holds
+     nothing (diag_preb leg), same costs. (B1 moved rows labelled by the window months; here the rows are labelled by
+     decision month, so the moved rows are the decisions that earn the window: same block count.)
+   - Card 4 R1, R3 (7.7 T3, gm.stats.move_windows): one random start per distinct window (same entry and exit days) of
+     the rule, uniform among the NYSE days of the same calendar year as its entry, length in NYSE days kept, cut at the
+     last NYSE day of 2010; every version holding that window re-reads its gate at the new dates (R1 forms B / C: the
+     close before the new entry against the last close of the year before the original entry's year; R3: the close
+     before the new entry against the last October close of the year before its window's year); notional at the
+     month-end before the new first held day; numpy default_rng(20261101), draws in a fixed order (placebo, then
+     windows in date order).
+   F0 (7.7): recomputed on the B2 positions (diag_preb.f0 on the held decision months; card 4 R1, R3 on held months as
+   pre-B item 5 F0 a); it must equal the pre-B outcome (item 9, else STOP).
+   Verdicts: Strip reversion: window >= 120 and T1 alpha > 0 and T3 pass -> Incubator, else Shelved; under 120
+   "insufficient data". Each rule on its own: F0 met and T1 alpha > 0 and T3 pass -> Incubator, else Shelved (F0 not
+   met: not judgeable). A failed test is written "not shown" (7.6 step 10).
+7. Reported, not decisive (7.7 list, those that apply; specs s5, s10, s12): eras 1975-89 and 1990-2010 (alpha = mean,
+   one-sided 95% lower bound from the T1 draws, Sharpe; Strip: 1990-2010 only, 1975-89 has no data); POD line (Sharpe,
+   mean, achieved volatility, max drawdown, skew, Lo-adjusted Sharpe); k = 0 and the one-month delay (monthly rules:
+   panel k = 0 returns; delay = book.py delay_months 1 on the k = 0 returns; card 4 R1, R3: not applicable, the dates
+   are the signal; Strip: item 4p); the share of held market-months flagged at k = 1; share of versions positive (each
+   version alone as the whole rule); by class and market (gross contribution); fragility (largest change of the annual
+   net mean without one calendar year, one market or one pair (rules with more than one); flag when one year gives more
+   than 40% of the net profit); P4 with the S&P 500 alone (M1; a2_batch.p4) from 1978-01; T2 as cost sensitivity; Strip
+   leg-cap binding share and achieved volatility; the mean |G| by months to expiry of contract n (spec s15); tuned knobs
+   (7.8 items 3-4 and specs s12: the hybrid estimator in every item; card 1 R1, R2 the R4 gate chosen with post-2010
+   sight; card 2 R1 the hedge gate seen in a related rule; card 3 R2 the 1.0 bar chosen with post-2010 sight; every
+   rule hindsight-flagged); the "loss not seen" flag (specs s10: not flagged, each names window months; printed with
+   whether the item held a position in them); the selection inflation of 7.8 item 2. Falsifier lines (specs s10, fixed
+   now on the design window; returns k = 1 unless named; decisions to 2009-12 wherever a line looks 12 months ahead):
+   - Strip (spec s10): 1 pod and each version's mean gross monthly return <= 0; 2 the same pod entered and exited at the
+     decision-day settlements (d to next d) has gross mean > 0 while the traded pod's is <= 0; 3 correlation of the
+     pod's gross return with the sum of |G| over the measures holding a position <= 0; 4 roll part (each held contract's
+     price change set to minus the rate change that ageing by the holding period, in calendar days, implies on the
+     decision-day strip by linear interpolation in days to expiry, below contract 1 extrapolated from contracts 1 and 2)
+     >= the pod's gross mean; 5 / P3: positions held in 1998-08..1998-10, 2007-07..2007-08, 2008-09..2008-12.
+   - Card 1 R1, R2: the averaged position's gross mean over held months <= 0; or in more than half of the episodes
+     (condition months, any version, F0 c gap rule) whose last condition month is 2009-12 or earlier, GS2 12 months
+     after the last condition month is higher than at it. Card 1 R5: the stock leg's gross mean over its held months <=
+     0 (the Economic trend trade-theme part is not computed: no gate, needs that theme's positions).
+   - Card 2 R1: bd_us_10y's mean return in the months after on-months (any kept version) >= in the months after off
+     months. Card 2 R2: the S&P's compounded panel excess return over t+1..t+12 after on-months >= after other months
+     (decisions to 2009-12); mechanism line: share of episodes in which GS10 rose a further 1.0 or more over the 12 months
+     after the episode's last on-month (printed).
+   - Card 3 R2: the pair's mean monthly return over on-months <= 0, or more than 80% of its net P&L in months after
+     decisions with FEDFUNDS(t) < FEDFUNDS(t-6). Card 3 R4: the S&P's mean return after on-months >= after off-months.
+     Card 3 (c), per rule: the rule's mean return in the worst tenth of eq_us_spx months of its window < 0.
+   - Card 4 R1: in years with the S&P up 15% or more by the day before entry (close against the previous year's last
+     close), the mean e(d) over form A's held days is no higher than in other years, per entry version. Card 4 R3: the
+     mean e(d) over held days of gated windows >= 0. Card 4 R5: more than 80% of net P&L in months after decisions with
+     FEDFUNDS(t) < FEDFUNDS(t-6); reported: share of months version 1 is on.
+8. Netting report (7.6 step 9, register B19 / C7; reported): positions at held size (rule position x 0.25; card 4 R1,
+   R3: the month's mean daily position), per market and decision month 1975-01..2010-11: (i) the shadow book = the sum
+   over cards of their Incubator rules; (ii) for context, the sum of all ten judged rules. Per market: months with a
+   non-zero net, their share of the 431 decision months, the share of those long, months in which two rules held it
+   with opposite signs, and the ratio of mean |net| to mean sum of |rule positions|. Descriptive: no threshold, no flag.
+9. Identity with the pre-B diagnostics (before any statistic; STOP on a difference): (a) Strip: from b2_batch's own
+   strip, normals, stale screen and next-day gaps, R1's counts (eligible, qualifying, by n, left out by reason, window
+   start and end, first normals) equal diag_preb.r1 on the same contracts and days; (b) each card rule: b2_batch's base
+   layer (the versions without E3 and without fixed size; card 2's kept versions; card 3's sizing versions included,
+   as diag_preb builds them) averaged equals the diag_preb 1.1.1 position on the same inputs (card1_rules, card1_r5,
+   card2_rule with diag_preb.c2d2's keep, card3_rules R2, card3_r4, card4_days direction sums per day, card4_r5): max
+   absolute difference <= 1e-12 x max(1, |x|); the full B2 positions (E3, fixed sizes) have the same signs and the same
+   held months as that base layer; (c) diag_preb.c2d2 on the same inputs keeps exactly the versions of item 2b, and F0
+   on the B2 positions gives the pre-B held months and episodes; (d) gm_diag_preb_v1.txt's PREB SUMMARY line carries
+   the outcomes of item 2.
+10. Seal and truncation: inputs cut at 2010-12-31 (gm.seal), outputs checked by gm.seal.check_output. Pod / rule
+   truncation gate (7.4 gate for new paths, as B1 item 7): at the 8 cut dates of gm_engine.CUT_DATES every B2 path
+   (Strip: strip table, normals, gaps, scores, q, volatilities, positions, scalers, legs, gross, net; each rule: states,
+   version positions, rule position, gross, net) is rebuilt with every input dated after T removed (A1 panel, free daily,
+   ^GSPC, card inputs by observation date, fx values, TB3MS, LSEG contracts and EPS) and compared with the full run
+   for months <= T (returns that need the next month's first trading day, i.e. k = 1 returns, the Strip returns and
+   card 4's exit costs, for months <= T - 1, as gm_engine's 'T-1' stages); 0 differing cells = PASS. A planted
+   look-ahead (next month's volatility in one rule; a normal that includes the current month-end in Strip) must FAIL
+   it (control). In the cloud on a mock store and synthetic panels; on the PC inside the job before any statistic
+   (STOP on a FAIL; PASS / FAIL and counts only).
+11. Printing (as B1 item 8): Sharpe ratios, means, alphas, p-values, shares and correlations only over at least 60
+   months, else count and sign; worst-month levels not printed; ids, counts, PASS / FAIL; no LSEG or Bloomberg value.
+12. Trial count (7.8 item 1): 13 gm/trials.csv rows written by the coordinator from the job's TRIAL ROW lines: 11 "pod"
+   rows (Strip reversion; each of the ten rules; k = 1; sr_9010, t_9010, maxdd_9010 over 1990-2010 months, sr_7589 over
+   1975-89 months, each left empty under 60 months; turnover) and 2 "diag" rows (Strip reversion's spec s10 falsifiers
+   incl. the non-tradeable variant; the card falsifier lines and the netting report). Placebos, version-alone,
+   fragility and delay runs are report lines of their trial.
+13. Job (tools/bbgq/jobs/gm_b2_v1.py, the gm_b1_v1 pattern): STOP before any Bloomberg or LSEG value is read unless the
+   gm .py files equal engine_ref.json's code block; sha256(lib\engine_ref.json) = cebd4932...c955e39; ENGINE_VERSION
+   gm-2.2.1 and the config hashes BASE f1d682c384, CANDIDATE 438a092b53, A1_INCUMBENT 77374d7bef, A2_CHALLENGER
+   1faa343535; lib b2_batch.py, diag_preb.py (1.1.1, 2e9cadd9...), card_inputs.py (4091f84b...), diag_a2.py, a2_batch.py,
+   a1_panel.py, gm_engine.py, bbg_panel.py, bbgdata.py, lsegdata.py, lseg_rules.py and the five LSEG config lists = the
+   sha256 in LIB_SHA (the lists also = the store manifest); work\free\gm_card_inputs.zip file by file = LOCK_CARD_v1
+   (6c154f7d...); the book / pod rows of lib\gm\trials.csv have the digest
+   4fd1775ecdbf4bf073d2cce984fb5b3fe07919d3659502fcb8f783a4b2a53a09, N = 42 (41 + the B1 pod row); results\gm_a2_v1.txt
+   gives the A2 facts; gm_core_v1.txt "CORE V1 JOB DONE" and "CORE BOOK V1 EMPTY"; gm_diag_preb_v1.txt "PREB JOB DONE"
+   and item 9d; gm_b1_v1.txt "B1 JOB DONE" and a B1 VERDICT line ending "SHELVED" (Curve carry not moved); Bloomberg
+   LOCK_v2; LSEG LOCK_LSEG_v5 (manifest, read before any table); the free inputs match the reference. Then the A1 panel
+   rebuilt, extension-only, id e7f98d44... (compared with the saved file when present), the A2-final book as run, the
+   identity checks (item 9), the truncation gate (item 10), the WINDOW / DATA lines, the tests, verdicts, reported
+   lines, the netting report and the TRIAL ROW lines. Nothing is written to lib\, the Bloomberg or LSEG stores or
+   work\a1\ (gm_engine.ensure_free_inputs as in every job).
+14. Cloud: no statistic of Strip reversion or of a card rule on LSEG, A1 or free data. Cloud work = the code, tests on
+   synthetic panels and a mock LSEG store with invented settlements (tests/b2_batch_smoke.py in tests/run_tests.py:
+   strip weights and level neutrality, the volatility identity with gm.vol.estimate, caps, contract costs, E3,
+   fixed sizes, card 4 windows and costs, the placebo masks on a mock with coverage gaps (no moved position on an
+   impossible market-month), the diag_preb identity, truncation with its failing control, printing, trial rows, job
+   STOP paths), the engine gates (k = 0 reproduction 24 of 24, truncation 8 of 8: gm/ unchanged, so engine_ref.json is
+   unchanged), build_engine and the build note docs/research/batches/B2_BUILD_2026-11-28.md (sha256 table and queue).
+15. After the run (an "outcomes" paragraph under this entry): each item's verdict (Incubator, Shelved, not judgeable,
+   insufficient data), window, T1-T3; the netting report's shadow book; then the batch review (7.6 step 10). Nothing in
+   the specs, the register or 7.x changes from this run except those status words.
+
 ## Batch B1: Curve carry (registered 2026-11-28, BEFORE the B1 code and run): TESTING_PROTOCOL 7.6 step 8, 7.7, 7.8, register T08
 Registered run entry (no rule, weight, threshold, gate, cost or market change; no gm/ code change, so no feature version:
 the pod is new code under its spec in tools/bbgq/lib, and BASE / CANDIDATE at k = 0 are untouched; no statistic of
